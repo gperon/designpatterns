@@ -1,0 +1,12 @@
+[PropertyInfo]
+contents,designpatterns.structural.bridge.View,false,false, , ,true,<default>
+extent,java.awt.Point,false,false, , ,true,<default>
+imp,designpatterns.structural.bridge.WindowImp,false,false, , ,false,<default>
+origin,java.awt.Point,false,false, , ,true,<default>
+sys,String,false,false, , ,true,<default>
+windowImp,designpatterns.structural.bridge.WindowImp,false,false, , ,true,<default>
+[IconNames]
+
+
+
+

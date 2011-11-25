@@ -1,0 +1,12 @@
+[PropertyInfo]
+empty,boolean,false,false, , ,true,<default>
+h,int,false,false, , ,false,<default>
+text,String,false,false, , ,false,<default>
+w,int,false,false, , ,false,<default>
+x,int,false,false, , ,false,<default>
+y,int,false,false, , ,false,<default>
+[IconNames]
+
+
+
+
