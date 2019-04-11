@@ -50,25 +50,13 @@ public class Stack {
     /**
      * Method description
      *
-     *
-     * @param obj
      */
-    public void push(Object obj) {
-        stk.addElement(obj);
-    }
+    public void dump() {
+        for (int i = 0; i < stk.size(); i++) {
+            ParseObject p = (ParseObject) stk.elementAt(i);
 
-    /**
-     * Method description
-     *
-     *
-     * @return
-     */
-    public ParseObject pop() {
-        ParseObject obj = (ParseObject) stk.lastElement();
-        int i = stk.size() - 1;
-        stk.removeElementAt(i);
-
-        return obj;
+            System.out.println(i + " " + p.getType());
+        }
     }
 
     /**
@@ -85,12 +73,60 @@ public class Stack {
     /**
      * Method description
      *
+     *
+     * @return
      */
-    public void dump() {
-        for (int i = 0; i < stk.size(); i++) {
-            ParseObject p = (ParseObject) stk.elementAt(i);
-            System.out.println(i + " " + p.getType());
+    public ParseObject nextTop() {
+        int i = stk.size();
+
+        if (i > 1) {
+            return (ParseObject) stk.elementAt(i - 2);
+        } else {
+            return null;
         }
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @return
+     */
+    public ParseObject pop() {
+        ParseObject obj = (ParseObject) stk.lastElement();
+        int         i   = stk.size() - 1;
+
+        stk.removeElementAt(i);
+
+        return obj;
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param p
+     */
+    public void pop2Push(ParseObject p) {
+        int i = stk.size();
+
+        if (i >= 2) {
+            pop();
+            pop();
+            push(p);
+        } else {
+            push(p);
+        }
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param obj
+     */
+    public void push(Object obj) {
+        stk.addElement(obj);
     }
 
     /**
@@ -111,37 +147,5 @@ public class Stack {
      */
     public boolean hasMoreElements() {
         return (stk.size() > 0);
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @return
-     */
-    public ParseObject nextTop() {
-        int i = stk.size();
-        if (i > 1) {
-            return (ParseObject) stk.elementAt(i - 2);
-        } else {
-            return null;
-        }
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param p
-     */
-    public void pop2Push(ParseObject p) {
-        int i = stk.size();
-        if (i >= 2) {
-            pop();
-            pop();
-            push(p);
-        } else {
-            push(p);
-        }
     }
 }

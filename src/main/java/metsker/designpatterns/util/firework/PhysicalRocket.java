@@ -59,7 +59,8 @@ public class PhysicalRocket {
      * @param fuelMass
      * @param totalMass
      */
-    public PhysicalRocket(double burnArea, double burnRate, double fuelMass, double totalMass) {
+    public PhysicalRocket(double burnArea, double burnRate, double fuelMass,
+                          double totalMass) {
         this.burnArea = burnArea;
         this.burnRate = burnRate;
         this.initialFuelMass = fuelMass;

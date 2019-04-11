@@ -55,6 +55,18 @@ public class SlashDecorator extends Decorator {
      * Method description
      *
      *
+     * @param g
+     */
+    public void paint(Graphics g) {
+        super.paint(g);
+        g.setColor(Color.red);
+        g.drawLine(0, 0, w1, h1);
+    }
+
+    /**
+     * Method description
+     *
+     *
      * @param x
      * @param y
      * @param w
@@ -66,17 +78,5 @@ public class SlashDecorator extends Decorator {
         w1 = w;
         h1 = h;
         super.setBounds(x, y, w, h);
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param g
-     */
-    public void paint(Graphics g) {
-        super.paint(g);
-        g.setColor(Color.red);
-        g.drawLine(0, 0, w1, h1);
     }
 }

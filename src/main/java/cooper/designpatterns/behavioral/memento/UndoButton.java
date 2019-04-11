@@ -52,6 +52,7 @@ public class UndoButton extends JButton implements Command {
      */
     public UndoButton(ActionListener act, Mediator md) {
         super("Undo");
+
         // setSize(new Dimension(25,25));
         // setBorder(new EmptyBorder(5,5,5,5));
         setToolTipText("Undo");

@@ -56,8 +56,9 @@ public abstract class Compositor {
      *
      * @return
      */
-    public abstract int compose(Coord natural[], Coord stretch[], Coord shrink[],
-                                int componentCount, int lineWidth, int breaks[]);
+    public abstract int compose(Coord natural[], Coord stretch[],
+                                Coord shrink[], int componentCount,
+                                int lineWidth, int breaks[]);
 
     protected Compositor() {}
 

@@ -57,7 +57,7 @@ public class ProductTable extends JScrollPane {
 
 
 class prodModel implements TableModel {
-    int rows, columns;
+    int    rows, columns;
     Vector prodNames, quantities;
 
     /**
@@ -67,13 +67,15 @@ class prodModel implements TableModel {
      * @param products
      */
     public prodModel(Vector products) {
-        rows = products.size();
-        columns = 2;
-        prodNames = new Vector();
+        rows       = products.size();
+        columns    = 2;
+        prodNames  = new Vector();
         quantities = new Vector();
+
         for (int i = 0; i < products.size(); i++) {
-            String s = (String) products.elementAt(i);
-            int index = s.indexOf("--");    // separate qty from name
+            String s     = (String) products.elementAt(i);
+            int    index = s.indexOf("--");    // separate qty from name
+
             if (index > 0) {
                 prodNames.addElement(s.substring(0, index));
                 quantities.addElement(s.substring(index + 2).trim());
@@ -87,10 +89,63 @@ class prodModel implements TableModel {
      * Method description
      *
      *
+     * @param tbm
+     */
+    public void addTableModelListener(TableModelListener tbm) {}
+
+    /**
+     * Method description
+     *
+     *
+     * @param tbm
+     */
+    public void removeTableModelListener(TableModelListener tbm) {}
+
+    /**
+     * Method description
+     *
+     *
+     * @param r
+     * @param c
+     *
+     * @return
+     */
+    public boolean isCellEditable(int r, int c) {
+        return false;
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param c
+     *
+     * @return
+     */
+    public Class getColumnClass(int c) {
+        return (new String("")).getClass();
+    }
+
+    /**
+     * Method description
+     *
+     *
      * @return
      */
     public int getColumnCount() {
         return columns;
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param c
+     *
+     * @return
+     */
+    public String getColumnName(int c) {
+        return "";
     }
 
     /**
@@ -114,52 +169,15 @@ class prodModel implements TableModel {
      */
     public Object getValueAt(int r, int c) {
         switch (c) {
-            case 0 :
-                return prodNames.elementAt(r);
+        case 0 :
+            return prodNames.elementAt(r);
 
-            case 1 :
-                return quantities.elementAt(r);
+        case 1 :
+            return quantities.elementAt(r);
 
-            default :
-                return prodNames.elementAt(r);
+        default :
+            return prodNames.elementAt(r);
         }
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param c
-     *
-     * @return
-     */
-    public Class getColumnClass(int c) {
-        return (new String("")).getClass();
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param r
-     * @param c
-     *
-     * @return
-     */
-    public boolean isCellEditable(int r, int c) {
-        return false;
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param c
-     *
-     * @return
-     */
-    public String getColumnName(int c) {
-        return "";
     }
 
     /**
@@ -171,20 +189,4 @@ class prodModel implements TableModel {
      * @param c
      */
     public void setValueAt(Object obj, int r, int c) {}
-
-    /**
-     * Method description
-     *
-     *
-     * @param tbm
-     */
-    public void addTableModelListener(TableModelListener tbm) {}
-
-    /**
-     * Method description
-     *
-     *
-     * @param tbm
-     */
-    public void removeTableModelListener(TableModelListener tbm) {}
 }

@@ -40,11 +40,13 @@ import java.awt.event.*;
  * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
  */
 public class CmdGardener extends Frame implements ActionListener, ItemListener {
-    private CheckCommand Vegie, Annual, Peren;
-    private Button Center, Border, Shade, Quit;
-    private Garden garden = null;
-    private GardenPanel gardenPlot;
-    private String borderPlant = "", centerPlant = "", shadePlant = "";
+    private Garden       garden      = null;
+    private String       borderPlant = "",
+                         centerPlant = "",
+                         shadePlant  = "";
+    private CheckCommand vegie, annual, peren;
+    private Button       center, border, shade, quit;
+    private GardenPanel  gardenPlot;
 
     /**
      * Constructs ...
@@ -52,61 +54,6 @@ public class CmdGardener extends Frame implements ActionListener, ItemListener {
      */
     public CmdGardener() {
         setGUI();
-    }
-
-    private void setGUI() {
-        setLayout(new GridLayout(1, 2));
-        Panel left = new Panel();
-        add(left);
-        Panel right = new Panel();
-        add(right);
-        // create label and 3 radio buttons on left side
-        left.setLayout(new GridLayout(4, 1));
-        left.add(new Label("Garden type"));
-        CheckboxGroup grp = new CheckboxGroup();
-        Vegie = new CheckCommand("Vegetable", grp, new CommandGardener("Vegie", this));
-        Annual = new CheckCommand("Annual", grp, new CommandGardener("Annual", this));
-        Peren = new CheckCommand("Perennial", grp, new CommandGardener("Peren", this));
-        left.add(Vegie);
-        left.add(Annual);
-        left.add(Peren);
-        Vegie.addItemListener(this);
-        Peren.addItemListener(this);
-        Annual.addItemListener(this);
-        // now create right side
-        right.setLayout(new GridLayout(2, 1));
-        gardenPlot = new GardenPanel();
-        Panel botRight = new Panel();
-        right.add(gardenPlot);
-        right.add(botRight);
-        Center = new Button("Central");
-        Border = new Button("Border");
-        Shade = new Button("Shade");
-        Quit = new Button("Quit");
-        botRight.add(Center);
-        Center.addActionListener(this);
-        botRight.add(Border);
-        Border.addActionListener(this);
-        botRight.add(Shade);
-        Shade.addActionListener(this);
-        botRight.add(Quit);
-        Quit.addActionListener(this);
-        setBounds(200, 200, 400, 300);
-        setVisible(true);
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param g
-     */
-    public void setGarden(Garden g) {
-        garden = g;
-        shadePlant = "";
-        centerPlant = "";
-        borderPlant = "";
-        gardenPlot.repaint();
     }
 
     /**
@@ -117,33 +64,22 @@ public class CmdGardener extends Frame implements ActionListener, ItemListener {
      */
     public void actionPerformed(ActionEvent e) {
         Object obj = e.getSource();
-        if (obj == Center) {
+
+        if (obj == center) {
             setCenter();
         }
-        if (obj == Border) {
+
+        if (obj == border) {
             setBorder();
         }
-        if (obj == Shade) {
+
+        if (obj == shade) {
             setShade();
         }
-        if (obj == Quit) {
+
+        if (obj == quit) {
             System.exit(0);
         }
-    }
-
-    private void setCenter() {
-        centerPlant = garden.getCenter().getName();
-        gardenPlot.repaint();
-    }
-
-    private void setBorder() {
-        borderPlant = garden.getBorder().getName();
-        gardenPlot.repaint();
-    }
-
-    private void setShade() {
-        shadePlant = garden.getShade().getName();
-        gardenPlot.repaint();
     }
 
     /**
@@ -154,6 +90,7 @@ public class CmdGardener extends Frame implements ActionListener, ItemListener {
      */
     public void itemStateChanged(ItemEvent e) {
         Command cmd = (Command) e.getSource();
+
         cmd.execute();
     }
 
@@ -167,6 +104,86 @@ public class CmdGardener extends Frame implements ActionListener, ItemListener {
         new CmdGardener();
     }
 
+    private void setBorder() {
+        borderPlant = garden.getBorder().getName();
+        gardenPlot.repaint();
+    }
+
+    private void setCenter() {
+        centerPlant = garden.getCenter().getName();
+        gardenPlot.repaint();
+    }
+
+    private void setGUI() {
+        setLayout(new GridLayout(1, 2));
+
+        Panel left = new Panel();
+
+        add(left);
+
+        Panel right = new Panel();
+
+        add(right);
+
+        // create label and 3 radio buttons on left side
+        left.setLayout(new GridLayout(4, 1));
+        left.add(new Label("Garden type"));
+
+        CheckboxGroup grp = new CheckboxGroup();
+
+        vegie  = new CheckCommand("Vegetable", grp, new CommandGardener("Vegie", this));
+        annual = new CheckCommand("Annual", grp, new CommandGardener("Annual", this));
+        peren  = new CheckCommand("Perennial", grp, new CommandGardener("Peren", this));
+        left.add(vegie);
+        left.add(annual);
+        left.add(peren);
+        vegie.addItemListener(this);
+        peren.addItemListener(this);
+        annual.addItemListener(this);
+
+        // now create right side
+        right.setLayout(new GridLayout(2, 1));
+        gardenPlot = new GardenPanel();
+
+        Panel botRight = new Panel();
+
+        right.add(gardenPlot);
+        right.add(botRight);
+        center = new Button("Central");
+        border = new Button("Border");
+        shade  = new Button("Shade");
+        quit   = new Button("Quit");
+        botRight.add(center);
+        center.addActionListener(this);
+        botRight.add(border);
+        border.addActionListener(this);
+        botRight.add(shade);
+        shade.addActionListener(this);
+        botRight.add(quit);
+        quit.addActionListener(this);
+        setBounds(200, 200, 400, 300);
+        setVisible(true);
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param g
+     */
+    public void setGarden(Garden g) {
+        garden      = g;
+        shadePlant  = "";
+        centerPlant = "";
+        borderPlant = "";
+        gardenPlot.repaint();
+    }
+
+    private void setShade() {
+        shadePlant = garden.getShade().getName();
+        gardenPlot.repaint();
+    }
+
     class GardenPanel extends Panel {
 
         /**
@@ -177,6 +194,7 @@ public class CmdGardener extends Frame implements ActionListener, ItemListener {
          */
         public void paint(Graphics g) {
             Dimension sz = getSize();
+
             g.setColor(Color.lightGray);
             g.fillArc(0, 0, 80, 80, 0, 360);
             g.setColor(Color.black);
@@ -190,7 +208,7 @@ public class CmdGardener extends Frame implements ActionListener, ItemListener {
 
 
 class CommandGardener implements Command {
-    private String garden_type;
+    private String      garden_type;
     private CmdGardener gard;
 
     /**
@@ -202,7 +220,7 @@ class CommandGardener implements Command {
      */
     public CommandGardener(String gtype, CmdGardener g) {
         garden_type = gtype;
-        gard = g;
+        gard        = g;
     }
 
     /**
@@ -211,12 +229,15 @@ class CommandGardener implements Command {
      */
     public void execute() {
         Garden gd = new VegieGarden();    // default
+
         if (garden_type.equals("Peren")) {
             gd = new PerennialGarden();
         }
+
         if (garden_type.equals("Annual")) {
             gd = new AnnualGarden();
         }
+
         gard.setGarden(gd);
     }
 }

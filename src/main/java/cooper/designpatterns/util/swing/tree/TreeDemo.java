@@ -27,12 +27,12 @@
 
 package cooper.designpatterns.util.swing.tree;
 
-import cooper.designpatterns.util.swing.JxFrame;
-
 import java.awt.*;
 
 import javax.swing.*;
 import javax.swing.tree.*;
+
+import cooper.designpatterns.util.swing.JxFrame;
 
 /**
  * Class description
@@ -50,16 +50,24 @@ public class TreeDemo extends JxFrame {
      */
     public TreeDemo() {
         super("Tree Demo");
+
         JPanel jp = new JPanel();    // create interior panel
+
         jp.setLayout(new BorderLayout());
         getContentPane().add(jp);
+
         // create scroll pane
         JScrollPane sp = new JScrollPane();
+
         jp.add("Center", sp);
+
         // create root node
         root = new DefaultMutableTreeNode("Foods");
+
         JTree tree = new JTree(root);    // create tree
+
         sp.getViewport().add(tree);    // add to scroller
+
         // create 3 nodes, each with three sub nodes
         addNodes("Meats", "Beef", "Chicken", "Pork");
         addNodes("Vegies", "Broccolli", "Carrots", "Peas");
@@ -70,6 +78,7 @@ public class TreeDemo extends JxFrame {
 
     private void addNodes(String b, String n1, String n2, String n3) {
         DefaultMutableTreeNode base = new DefaultMutableTreeNode(b);
+
         root.add(base);
         base.add(new DefaultMutableTreeNode(n1));
         base.add(new DefaultMutableTreeNode(n2));

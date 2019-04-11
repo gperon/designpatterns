@@ -1,8 +1,8 @@
 /*
  * @(#)ShowOptionPane.java   2011-11-01
- * 
+ *
  * Copyright (c) 2011 Giorgio Peron giorgio.peron@gmail.com
- * All Rights Reserved. 
+ * All Rights Reserved.
  *
  * Redistribution and use of this script, with or without modification, is
  * permitted provided that the following conditions are met:
@@ -58,8 +58,8 @@ public class ShowOptionPane {
         UIManager.put("Label.font", font);
         int option;
         do {
-            option = JOptionPane.showConfirmDialog(null, "Had enough?", " A Stubborn Dialog",
-                    JOptionPane.YES_NO_OPTION);
+            option = JOptionPane.showConfirmDialog(null, "Had enough?",
+                    " A Stubborn Dialog", JOptionPane.YES_NO_OPTION);
         } while (option == JOptionPane.NO_OPTION);
     }
 }

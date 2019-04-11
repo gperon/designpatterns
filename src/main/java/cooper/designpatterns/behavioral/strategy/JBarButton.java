@@ -27,11 +27,11 @@
 
 package cooper.designpatterns.behavioral.strategy;
 
-import cooper.designpatterns.behavioral.command.Command;
-
 import java.awt.event.*;
 
 import javax.swing.*;
+
+import cooper.designpatterns.behavioral.command.Command;
 
 /**
  * Class description

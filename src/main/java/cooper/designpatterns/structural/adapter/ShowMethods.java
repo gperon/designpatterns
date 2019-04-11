@@ -45,11 +45,14 @@ public class ShowMethods {
      *
      */
     public ShowMethods() {
-        JList list = new JList();
+        JList    list    = new JList();
         Method[] methods = list.getClass().getMethods();
+
         for (int i = 0; i < methods.length; i++) {
             System.out.println(methods[i].getName());
+
             Class cl[] = methods[i].getParameterTypes();
+
             for (int j = 0; j < cl.length; j++) {
                 System.out.println(cl[j].toString());
             }

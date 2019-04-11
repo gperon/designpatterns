@@ -73,7 +73,8 @@ public class Customer {
      */
     public static void main(String[] args) {
         Firework recommendation = new Customer().getRecommended();
-        System.out.println("Customer recommendation: " + recommendation.toString());
+        System.out.println("Customer recommendation: "
+                           + recommendation.toString());
     }
 
     /**
@@ -83,7 +84,8 @@ public class Customer {
         // if we're promoting a particular firework, return it
         try {
             Properties p = new Properties();
-            p.load(ClassLoader.getSystemResourceAsStream("config/strategy.dat"));
+            p.load(ClassLoader.getSystemResourceAsStream(
+                "config/strategy.dat"));
             String promotedName = p.getProperty("promote");
             if (promotedName != null) {
                 Firework f = Firework.lookup(promotedName);

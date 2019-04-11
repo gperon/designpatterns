@@ -50,24 +50,38 @@ public class MemDraw extends JxFrame implements ActionListener {
      */
     public MemDraw() {
         super("Memento Drawing");
+
         JPanel jp = new JPanel();
+
         getContentPane().add(jp);
         med = new Mediator();
         jp.setLayout(new BorderLayout());
         tbar = new JToolBar();
         jp.add("North", tbar);
+
         RectButton rect = new RectButton(this, med);
+
         tbar.add(rect);
+
         UndoButton undo = new UndoButton(this, med);
+
         tbar.add(undo);
         tbar.addSeparator();
+
         ClearButton clr = new ClearButton(this, med);
+
         tbar.add(clr);
+
         JCanvas canvas = new JCanvas(med);
+
         jp.add("Center", canvas);
+
         MouseApp map = new MouseApp(med);
+
         canvas.addMouseListener(map);
+
         MouseMoveApp mvap = new MouseMoveApp(med);
+
         canvas.addMouseMotionListener(mvap);
         setSize(new Dimension(400, 300));
         setVisible(true);
@@ -81,6 +95,7 @@ public class MemDraw extends JxFrame implements ActionListener {
      */
     public void actionPerformed(ActionEvent e) {
         Command comd = (Command) e.getSource();
+
         comd.Execute();
     }
 

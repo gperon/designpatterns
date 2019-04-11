@@ -65,11 +65,9 @@ public class CircleButton extends JToggleButton implements Command {
     /**
      * Method description
      *
-     *
-     * @return
      */
-    public Dimension getPreferredSize() {
-        return new Dimension(35, 35);
+    public void execute() {
+        med.startCircle();
     }
 
     /**
@@ -80,8 +78,10 @@ public class CircleButton extends JToggleButton implements Command {
      */
     public void paint(Graphics g) {
         super.paint(g);
+
         int h = getHeight();
         int w = getWidth();
+
         g.setColor(Color.black);
         g.drawArc(2, 2, h - 4, h - 4, 0, 360);
     }
@@ -89,8 +89,10 @@ public class CircleButton extends JToggleButton implements Command {
     /**
      * Method description
      *
+     *
+     * @return
      */
-    public void execute() {
-        med.startCircle();
+    public Dimension getPreferredSize() {
+        return new Dimension(35, 35);
     }
 }

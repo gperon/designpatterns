@@ -44,15 +44,19 @@ public class SingleSpooler {
      */
     static public void main(String argv[]) {
         Spooler pr1, pr2;
+
         // open one printer--this should always work
         System.out.println("Opening one spooler");
+
         try {
             pr1 = new Spooler();
         } catch (SingletonException e) {
             System.out.println(e.getMessage());
         }
+
         // try to open another printer --should fail
         System.out.println("Opening two spoolers");
+
         try {
             pr2 = new Spooler();
         } catch (SingletonException e) {

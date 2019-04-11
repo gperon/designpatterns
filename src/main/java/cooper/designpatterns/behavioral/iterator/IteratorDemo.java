@@ -27,16 +27,16 @@
 
 package cooper.designpatterns.behavioral.iterator;
 
-import cooper.designpatterns.util.swing.JxFrame;
-import cooper.designpatterns.structural.adapter.JawtList;
-
-import javax.swing.*;
-import javax.swing.border.*;
-
 import java.awt.*;
 import java.awt.event.*;
 
 import java.util.*;
+
+import javax.swing.*;
+import javax.swing.border.*;
+
+import cooper.designpatterns.structural.adapter.JawtList;
+import cooper.designpatterns.util.swing.JxFrame;
 
 /**
  * Class description
@@ -46,10 +46,10 @@ import java.util.*;
  * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
  */
 public class IteratorDemo extends JxFrame implements ActionListener {
-    JawtList kidList, kidClubList;
+    JawtList  kidList, kidClubList;
     JComboBox tx;
-    JButton get;
-    KidData kdata;
+    JButton   get;
+    KidData   kdata;
 
     /**
      * Constructs ...
@@ -57,11 +57,15 @@ public class IteratorDemo extends JxFrame implements ActionListener {
      */
     public IteratorDemo() {
         super("Iterator demo");
+
         JPanel jp = new JPanel();
+
         getContentPane().add(jp);
         jp.setLayout(new GridLayout(1, 2));
-        JPanel left = new JPanel();
+
+        JPanel left  = new JPanel();
         JPanel right = new JPanel();
+
         jp.add(left);
         jp.add(right);
         left.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -70,10 +74,14 @@ public class IteratorDemo extends JxFrame implements ActionListener {
         left.setLayout(new BorderLayout());
         left.add("Center", kidList);
         right.setLayout(new BorderLayout());
+
         JLabel lbl = new JLabel("Club:");
+
         get = new JButton("Get");
         get.addActionListener(this);
+
         JPanel rtop = new JPanel();
+
         right.add("North", rtop);
         rtop.add(lbl);
         kidClubList = new JawtList(20);
@@ -88,25 +96,6 @@ public class IteratorDemo extends JxFrame implements ActionListener {
         setVisible(true);
     }
 
-    private void fillKidList() {
-        Enumeration ekid = kdata.elements();
-        while (ekid.hasMoreElements()) {
-            Kid k = (Kid) ekid.nextElement();
-            kidList.add(k.getFrname() + " " + k.getLname());
-        }
-    }
-
-    private Object[] getClubs() {
-        Enumeration ekid = kdata.elements();
-        Set clubs = new HashSet();
-        while (ekid.hasMoreElements()) {
-            Kid k = (Kid) ekid.nextElement();
-            clubs.add(k.getClub());
-        }
-
-        return clubs.toArray();
-    }
-
     /**
      * Method description
      *
@@ -115,13 +104,27 @@ public class IteratorDemo extends JxFrame implements ActionListener {
      */
     public void actionPerformed(ActionEvent e) {
         String club = (String) tx.getSelectedItem();
+
         if (club.trim().length() > 0) {
             kidClubList.clear();
+
             Enumeration eclub = kdata.kidsInClub(club);
+
             while (eclub.hasMoreElements()) {
                 Kid k = (Kid) eclub.nextElement();
+
                 kidClubList.add(k.getFrname() + " " + k.getLname());
             }
+        }
+    }
+
+    private void fillKidList() {
+        Enumeration ekid = kdata.elements();
+
+        while (ekid.hasMoreElements()) {
+            Kid k = (Kid) ekid.nextElement();
+
+            kidList.add(k.getFrname() + " " + k.getLname());
         }
     }
 
@@ -133,5 +136,18 @@ public class IteratorDemo extends JxFrame implements ActionListener {
      */
     static public void main(String argv[]) {
         new IteratorDemo();
+    }
+
+    private Object[] getClubs() {
+        Enumeration ekid  = kdata.elements();
+        Set         clubs = new HashSet();
+
+        while (ekid.hasMoreElements()) {
+            Kid k = (Kid) ekid.nextElement();
+
+            clubs.add(k.getClub());
+        }
+
+        return clubs.toArray();
     }
 }

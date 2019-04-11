@@ -40,7 +40,9 @@ public class ParseVerb extends ParseObject {
 
     /** Field description */
     static public final int
-        PRINT = 100, SORTBY = 110, THENBY = 120;
+        PRINT  = 100,
+        SORTBY = 110,
+        THENBY = 120;
     protected Vector args;
 
     /**
@@ -50,36 +52,18 @@ public class ParseVerb extends ParseObject {
      * @param s
      */
     public ParseVerb(String s) {
-        args = new Vector();
-        s = s.toLowerCase();
+        args  = new Vector();
+        s     = s.toLowerCase();
         value = -1;
-        type = VERB;
+        type  = VERB;
+
         if (s.equals("print")) {
             value = PRINT;
         }
+
         if (s.equals("sortby")) {
             value = SORTBY;
         }
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param s
-     *
-     * @return
-     */
-    public ParseVerb getVerb(String s) {
-        switch (value) {
-            case PRINT :
-                return new Print(s);
-
-            case SORTBY :
-                return new Sort(s);
-        }
-
-        return null;
     }
 
     /**
@@ -110,5 +94,25 @@ public class ParseVerb extends ParseObject {
      */
     public boolean isLegal() {
         return (value >= 0);
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param s
+     *
+     * @return
+     */
+    public ParseVerb getVerb(String s) {
+        switch (value) {
+        case PRINT :
+            return new Print(s);
+
+        case SORTBY :
+            return new Sort(s);
+        }
+
+        return null;
     }
 }

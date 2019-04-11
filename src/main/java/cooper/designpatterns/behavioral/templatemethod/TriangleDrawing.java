@@ -27,9 +27,9 @@
 
 package cooper.designpatterns.behavioral.templatemethod;
 
-import cooper.designpatterns.behavioral.chainofresponsibility.JxFrame;
-
 import java.awt.*;
+
+import cooper.designpatterns.behavioral.chainofresponsibility.JxFrame;
 
 /**
  * Class description
@@ -48,12 +48,15 @@ public class TriangleDrawing extends JxFrame {
      */
     public TriangleDrawing() {
         super("Draw triangles");
+
         TPanel tp = new TPanel();
-        t = new StandardTriangle(new Point(10, 10), new Point(150, 50), new Point(100, 75));
+
+        t  = new StandardTriangle(new Point(10, 10), new Point(150, 50), new Point(100, 75));
         it = new IsocelesTriangle(new Point(150, 100), new Point(240, 40), new Point(175, 150));
         t1 = new StandardTriangle(new Point(150, 100), new Point(240, 40), new Point(175, 150));
         tp.addTriangle(t);
         tp.addTriangle(it);
+
         // tp.addTriangle(t1);
         getContentPane().add(tp);
         setSize(300, 200);
@@ -71,6 +74,7 @@ public class TriangleDrawing extends JxFrame {
         new TriangleDrawing();
     }
 }
+
 //class TPanel extends JPanel
 //{
 //   Vector triangles;

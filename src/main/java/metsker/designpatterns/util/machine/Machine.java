@@ -95,7 +95,8 @@ public abstract class Machine extends MachineComponent {
      *            the composite this machine belongs to
      * @param responsible
      */
-    public Machine(int id, TubMediator mediator, MachineComponent parent, Engineer responsible) {
+    public Machine(int id, TubMediator mediator, MachineComponent parent,
+                   Engineer responsible) {
         super(id, parent, responsible);
         this.mediator = mediator;
         initialize();

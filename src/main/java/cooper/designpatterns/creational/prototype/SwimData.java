@@ -27,11 +27,11 @@
 
 package cooper.designpatterns.creational.prototype;
 
-import cooper.designpatterns.util.swing.InputFile;
+import java.io.*;
 
 import java.util.*;
 
-import java.io.*;
+import cooper.designpatterns.util.swing.InputFile;
 
 /**
  * Class description
@@ -51,83 +51,19 @@ public class SwimData implements Cloneable, Serializable {
      */
     public SwimData(String filename) {
         String s = "";
+
         swimmers = new ArrayList();
+
         InputFile f = new InputFile(getClass(), filename);
+
         s = f.readLine();
+
         while (s != null) {
             swimmers.add(new Swimmer(s));
             s = f.readLine();
         }
+
         f.close();
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @return
-     */
-    public int size() {
-        return swimmers.size();
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param i
-     *
-     * @return
-     */
-    public Swimmer getSwimmer(int i) {
-        return swimmers.get(i);
-    }
-
-    /**
-     * Method description
-     *
-     */
-    public void sortByTime() {
-        Collections.sort(swimmers, new Comparator<Swimmer>() {
-            public int compare(Swimmer o1, Swimmer o2) {
-                if (o1.isFemale() && !o2.isFemale()) {
-                    return -1;
-                } else if (!o1.isFemale() && o2.isFemale()) {
-                    return 1;
-                } else {
-                    if (o1.getTime() < o2.getTime()) {
-                        return -1;
-                    } else if (o1.getTime() > o2.getTime()) {
-                        return 1;
-                    } else {
-                        return 0;
-                    }
-                }
-            }
-        });
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @return
-     */
-    public Object deepClone() {
-        try {
-            ByteArrayOutputStream b = new ByteArrayOutputStream();
-            ObjectOutputStream out = new ObjectOutputStream(b);
-            out.writeObject(this);
-            ByteArrayInputStream bIn = new ByteArrayInputStream(b.toByteArray());
-            ObjectInputStream oi = new ObjectInputStream(bIn);
-
-            return (oi.readObject());
-        } catch (Exception e) {
-            System.out.println("exception:" + e.getMessage());
-            e.printStackTrace();
-
-            return null;
-        }
     }
 
     /**
@@ -145,14 +81,86 @@ public class SwimData implements Cloneable, Serializable {
             return null;
         }
     }
+
+    /**
+     * Method description
+     *
+     *
+     * @return
+     */
+    public Object deepClone() {
+        try {
+            ByteArrayOutputStream b   = new ByteArrayOutputStream();
+            ObjectOutputStream    out = new ObjectOutputStream(b);
+
+            out.writeObject(this);
+
+            ByteArrayInputStream bIn = new ByteArrayInputStream(b.toByteArray());
+            ObjectInputStream    oi  = new ObjectInputStream(bIn);
+
+            return (oi.readObject());
+        } catch (Exception e) {
+            System.out.println("exception:" + e.getMessage());
+            e.printStackTrace();
+
+            return null;
+        }
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @return
+     */
+    public int size() {
+        return swimmers.size();
+    }
+
+    /**
+     * Method description
+     *
+     */
+    public void sortByTime() {
+        Collections.sort(swimmers,
+                         new Comparator<Swimmer>() {
+                             public int compare(Swimmer o1, Swimmer o2) {
+                                 if (o1.isFemale() &&!o2.isFemale()) {
+                                     return -1;
+                                 } else if (!o1.isFemale() && o2.isFemale()) {
+                                     return 1;
+                                 } else {
+                                     if (o1.getTime() < o2.getTime()) {
+                                         return -1;
+                                     } else if (o1.getTime() > o2.getTime()) {
+                                         return 1;
+                                     } else {
+                                         return 0;
+                                     }
+                                 }
+                             }
+                         });
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param i
+     *
+     * @return
+     */
+    public Swimmer getSwimmer(int i) {
+        return swimmers.get(i);
+    }
 }
 
 
 class Swimmer implements Serializable {
-    String name;
-    int age;
-    String club;
-    float time;
+    String  name;
+    int     age;
+    String  club;
+    float   time;
     boolean female;
 
     /**
@@ -163,12 +171,15 @@ class Swimmer implements Serializable {
      */
     public Swimmer(String dataline) {
         StringTokenizer st = new StringTokenizer(dataline, ",");
+
         name = st.nextToken();
-        age = new Integer(st.nextToken().trim()).intValue();
+        age  = new Integer(st.nextToken().trim()).intValue();
         club = st.nextToken().trim();
         time = new Float(st.nextToken().trim()).floatValue();
+
         // System.out.println(name+" "+time);
         String sx = st.nextToken().trim().toUpperCase();
+
         female = sx.equals("F");
     }
 
@@ -178,8 +189,14 @@ class Swimmer implements Serializable {
      *
      * @return
      */
-    public boolean isFemale() {
-        return female;
+    public String toString() {
+        String retValue;
+
+        retValue = name + "\t" + (female
+                                  ? "(F)"
+                                  : "(M)") + "\t" + time;
+
+        return retValue;
     }
 
     /**
@@ -198,8 +215,18 @@ class Swimmer implements Serializable {
      *
      * @return
      */
-    public float getTime() {
-        return time;
+    public String getClub() {
+        return club;
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @return
+     */
+    public boolean isFemale() {
+        return female;
     }
 
     /**
@@ -218,20 +245,7 @@ class Swimmer implements Serializable {
      *
      * @return
      */
-    public String getClub() {
-        return club;
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @return
-     */
-    public String toString() {
-        String retValue;
-        retValue = name + "\t" + (female ? "(F)" : "(M)") + "\t" + time;
-
-        return retValue;
+    public float getTime() {
+        return time;
     }
 }

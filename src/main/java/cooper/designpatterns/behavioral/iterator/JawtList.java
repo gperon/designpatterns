@@ -33,99 +33,6 @@ import java.util.*;
 import javax.swing.*;
 import javax.swing.event.*;
 
-//this is a simple adapter class to
-//convert List awt methods to Swing methods
-
-/**
- * Class description
- *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
- */
-public class JawtList extends JScrollPane implements ListSelectionListener, AwtList {
-    private JList listWindow;
-    private JListData listContents;
-
-//  -----------------------------------------
-
-    /**
-     * Constructs ...
-     *
-     *
-     * @param rows
-     */
-    public JawtList(int rows) {
-        listContents = new JListData();
-        listWindow = new JList(listContents);
-        listWindow.setPrototypeCellValue("Abcdefg Hijkmnop");
-        getViewport().add(listWindow);
-    }
-
-//  -----------------------------------------
-
-    /**
-     * Method description
-     *
-     *
-     * @param s
-     */
-    public void add(String s) {
-        listContents.addElement(s);
-    }
-
-//  -----------------------------------------
-
-    /**
-     * Method description
-     *
-     *
-     * @param s
-     */
-    public void remove(String s) {
-        listContents.removeElement(s);
-    }
-
-//  -----------------------------------------
-
-    /**
-     * Method description
-     *
-     */
-    public void clear() {
-        listContents.clear();
-    }
-
-//  -----------------------------------------
-
-    /**
-     * Method description
-     *
-     *
-     * @return
-     */
-    public String[] getSelectedItems() {
-        Object[] obj = listWindow.getSelectedValues();
-        String[] s = new String[obj.length];
-        for (int i = 0; i < obj.length; i++) {
-            s[i] = obj[i].toString();
-        }
-
-        return s;
-    }
-
-//  -----------------------------------------
-
-    /**
-     * Method description
-     *
-     *
-     * @param e
-     */
-    public void valueChanged(ListSelectionEvent e) {}
-}
-
-
 //=========================================
 class JListData extends AbstractListModel {
     private Vector data;
@@ -146,10 +53,37 @@ class JListData extends AbstractListModel {
      * Method description
      *
      *
-     * @return
+     * @param s
      */
-    public int getSize() {
-        return data.size();
+    public void addElement(String s) {
+        data.addElement(s);
+        fireIntervalAdded(this, data.size() - 1, data.size());
+    }
+
+//  -----------------------------------------
+
+    /**
+     * Method description
+     *
+     */
+    public void clear() {
+        int size = data.size();
+
+        data = new Vector();
+        fireIntervalRemoved(this, 0, size);
+    }
+
+//  -----------------------------------------
+
+    /**
+     * Method description
+     *
+     *
+     * @param s
+     */
+    public void removeElement(String s) {
+        data.removeElement(s);
+        fireIntervalRemoved(this, 0, data.size());
     }
 
 //  -----------------------------------------
@@ -172,11 +106,41 @@ class JListData extends AbstractListModel {
      * Method description
      *
      *
-     * @param s
+     * @return
      */
-    public void addElement(String s) {
-        data.addElement(s);
-        fireIntervalAdded(this, data.size() - 1, data.size());
+    public int getSize() {
+        return data.size();
+    }
+}
+
+
+//this is a simple adapter class to
+//convert List awt methods to Swing methods
+
+/**
+ * Class description
+ *
+ *
+ * @version        0.1.1, 2011-11-01
+ * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ */
+public class JawtList extends JScrollPane implements ListSelectionListener, AwtList {
+    private JList     listWindow;
+    private JListData listContents;
+
+//  -----------------------------------------
+
+    /**
+     * Constructs ...
+     *
+     *
+     * @param rows
+     */
+    public JawtList(int rows) {
+        listContents = new JListData();
+        listWindow   = new JList(listContents);
+        listWindow.setPrototypeCellValue("Abcdefg Hijkmnop");
+        getViewport().add(listWindow);
     }
 
 //  -----------------------------------------
@@ -187,9 +151,8 @@ class JListData extends AbstractListModel {
      *
      * @param s
      */
-    public void removeElement(String s) {
-        data.removeElement(s);
-        fireIntervalRemoved(this, 0, data.size());
+    public void add(String s) {
+        listContents.addElement(s);
     }
 
 //  -----------------------------------------
@@ -199,8 +162,47 @@ class JListData extends AbstractListModel {
      *
      */
     public void clear() {
-        int size = data.size();
-        data = new Vector();
-        fireIntervalRemoved(this, 0, size);
+        listContents.clear();
+    }
+
+//  -----------------------------------------
+
+    /**
+     * Method description
+     *
+     *
+     * @param s
+     */
+    public void remove(String s) {
+        listContents.removeElement(s);
+    }
+
+//  -----------------------------------------
+
+    /**
+     * Method description
+     *
+     *
+     * @param e
+     */
+    public void valueChanged(ListSelectionEvent e) {}
+
+//  -----------------------------------------
+
+    /**
+     * Method description
+     *
+     *
+     * @return
+     */
+    public String[] getSelectedItems() {
+        Object[] obj = listWindow.getSelectedValues();
+        String[] s   = new String[obj.length];
+
+        for (int i = 0; i < obj.length; i++) {
+            s[i] = obj[i].toString();
+        }
+
+        return s;
     }
 }

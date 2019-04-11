@@ -27,14 +27,14 @@
 
 package cooper.designpatterns.behavioral.memento;
 
-import cooper.designpatterns.util.swing.JxFrame;
-import cooper.designpatterns.behavioral.command.Command;
-
 import java.awt.*;
 import java.awt.event.*;
 
 //swing classes
 import javax.swing.*;
+
+import cooper.designpatterns.behavioral.command.Command;
+import cooper.designpatterns.util.swing.JxFrame;
 
 /**
  * Class description
@@ -53,24 +53,38 @@ public class MementoDemo extends JxFrame implements ActionListener {
      */
     public MementoDemo() {
         super("Memento Drawing");
+
         JPanel jp = new JPanel();
+
         getContentPane().add(jp);
         med = new Mediator();
         jp.setLayout(new BorderLayout());
         tbar = new JToolBar();
         jp.add("North", tbar);
+
         RectButton rect = new RectButton(this, med);
+
         tbar.add(rect);
+
         UndoButton undo = new UndoButton(this, med);
+
         tbar.add(undo);
         tbar.addSeparator();
+
         ClearButton clr = new ClearButton(this, med);
+
         tbar.add(clr);
+
         JCanvas canvas = new JCanvas(med);
+
         jp.add("Center", canvas);
+
         MouseApp map = new MouseApp(med);
+
         canvas.addMouseListener(map);
+
         MouseMoveApp mvap = new MouseMoveApp(med);
+
         canvas.addMouseMotionListener(mvap);
         setSize(new Dimension(400, 300));
         setVisible(true);
@@ -84,6 +98,7 @@ public class MementoDemo extends JxFrame implements ActionListener {
      */
     public void actionPerformed(ActionEvent e) {
         Command cmd = (Command) e.getSource();
+
         cmd.execute();
     }
 
@@ -97,8 +112,6 @@ public class MementoDemo extends JxFrame implements ActionListener {
         new MementoDemo();
     }
 }
-
-
 
 //class MouseApp extends MouseAdapter {
 //    Mediator med;
@@ -124,5 +137,7 @@ public class MementoDemo extends JxFrame implements ActionListener {
 //        med.drag(e.getX(), e.getY());
 //    }
 //}
+
+
 
 

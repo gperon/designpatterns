@@ -35,10 +35,10 @@ package cooper.designpatterns.behavioral.mediator;
  * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
  */
 public class Mediator {
-    private ClearButton clearButton;
-    private MoveButton moveButton;
-    private KTextField ktext;
-    private KidList klist;
+    private ClearButton    clearButton;
+    private MoveButton     moveButton;
+    private KTextField     ktext;
+    private KidList        klist;
     private PickedKidsList picked;
 
     /**
@@ -46,23 +46,6 @@ public class Mediator {
      *
      */
     public Mediator() {}
-
-    /**
-     * Method description
-     *
-     */
-    public void move() {
-        picked.add(ktext.getText());
-        clearButton.setEnabled(true);
-    }
-
-    /**
-     * Method description
-     *
-     */
-    public void init() {
-        clear();
-    }
 
     /**
      * Method description
@@ -81,11 +64,17 @@ public class Mediator {
      * Method description
      *
      */
-    public void select() {
-        String s = (String) klist.getSelectedValue();
-        ktext.setText(s);
-        moveButton.setEnabled(true);
-        System.out.println("selected");
+    public void init() {
+        clear();
+    }
+
+    /**
+     * Method description
+     *
+     */
+    public void move() {
+        picked.add(ktext.getText());
+        clearButton.setEnabled(true);
     }
 
     /**
@@ -102,20 +91,20 @@ public class Mediator {
      * Method description
      *
      *
-     * @param mv
+     * @param kl
      */
-    public void registerMove(MoveButton mv) {
-        moveButton = mv;
+    public void registerKidList(KidList kl) {
+        klist = kl;
     }
 
     /**
      * Method description
      *
      *
-     * @param tx
+     * @param mv
      */
-    public void registerText(KTextField tx) {
-        ktext = tx;
+    public void registerMove(MoveButton mv) {
+        moveButton = mv;
     }
 
     /**
@@ -132,9 +121,21 @@ public class Mediator {
      * Method description
      *
      *
-     * @param kl
+     * @param tx
      */
-    public void registerKidList(KidList kl) {
-        klist = kl;
+    public void registerText(KTextField tx) {
+        ktext = tx;
+    }
+
+    /**
+     * Method description
+     *
+     */
+    public void select() {
+        String s = (String) klist.getSelectedValue();
+
+        ktext.setText(s);
+        moveButton.setEnabled(true);
+        System.out.println("selected");
     }
 }

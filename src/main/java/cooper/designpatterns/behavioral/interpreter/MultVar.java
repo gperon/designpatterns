@@ -42,6 +42,16 @@ public class MultVar extends ParseVar {
     /**
      * Constructs ...
      *
+     */
+    public MultVar() {
+        super("");
+        multVec = new Vector();
+        type    = MULTVAR;
+    }
+
+    /**
+     * Constructs ...
+     *
      *
      * @param v1
      * @param v2
@@ -51,16 +61,6 @@ public class MultVar extends ParseVar {
         multVec = new Vector();
         multVec.addElement(v1);
         multVec.addElement(v2);
-        type = MULTVAR;
-    }
-
-    /**
-     * Constructs ...
-     *
-     */
-    public MultVar() {
-        super("");
-        multVec = new Vector();
         type = MULTVAR;
     }
 

@@ -41,12 +41,12 @@ import javax.swing.*;
  * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
  */
 public class Mediator {
-    boolean startRect;
-    boolean rectSelected;
-    Vector drawings;
-    Vector undoList;
-    RectButton rect;
-    JPanel canvas;
+    boolean          startRect;
+    boolean          rectSelected;
+    Vector           drawings;
+    Vector           undoList;
+    RectButton       rect;
+    JPanel           canvas;
     VisitorRectangle selectedRectangle;
 
     /**
@@ -54,18 +54,22 @@ public class Mediator {
      *
      */
     public Mediator() {
-        startRect = false;
+        startRect    = false;
         rectSelected = false;
-        drawings = new Vector();
-        undoList = new Vector();
+        drawings     = new Vector();
+        undoList     = new Vector();
     }
 
     /**
      * Method description
      *
      */
-    public void startRectangle() {
-        startRect = true;
+    public void clear() {
+        drawings          = new Vector();
+        undoList          = new Vector();
+        rectSelected      = false;
+        selectedRectangle = null;
+        repaint();
     }
 
     /**
@@ -77,11 +81,15 @@ public class Mediator {
      */
     public void createRect(int x, int y) {
         unpick();    // make sure no rectangle is selected
+
         if (startRect)                     // if rect button is depressed
         {
             Integer count = new Integer(drawings.size());
+
             undoList.addElement(count);    // Save previous drawing list size
+
             VisitorRectangle v = new VisitorRectangle(x, y);
+
             drawings.addElement(v);        // add new element to list
             startRect = false;             // done with this rectangle
             rect.setSelected(false);       // unclick button
@@ -89,88 +97,6 @@ public class Mediator {
         } else {
             pickRect(x, y);                // if not pressed look for rect to select
         }
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param rb
-     */
-    public void registerRectButton(RectButton rb) {
-        rect = rb;
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param p
-     */
-    public void registerCanvas(JPanel p) {
-        canvas = p;
-    }
-
-    private void unpick() {
-        rectSelected = false;
-        if (selectedRectangle != null) {
-            selectedRectangle.setSelected(false);
-            selectedRectangle = null;
-            repaint();
-        }
-    }
-
-    /**
-     * Method description
-     *
-     */
-    public void rememberPosition() {
-        if (rectSelected) {
-            Memento m = new Memento(selectedRectangle);
-            undoList.addElement(m);
-        }
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param x
-     * @param y
-     */
-    public void pickRect(int x, int y) {
-        // save current selected rectangle to avoid double save of undo
-        VisitorRectangle lastPick = selectedRectangle;
-        unpick();
-        for (int i = 0; i < drawings.size(); i++) {
-            VisitorRectangle v = (VisitorRectangle) drawings.elementAt(i);
-            if (v.contains(x, y))                       // did click inside a rectangle
-            {
-                selectedRectangle = v;                  // save it
-                rectSelected = true;
-                if (selectedRectangle != lastPick) {    // but don't save twice
-                    rememberPosition();
-                }
-                v.setSelected(true);                    // turn on handles
-                repaint();                              // and redraw
-            }
-        }
-    }
-
-    /**
-     * Method description
-     *
-     */
-    public void clear() {
-        drawings = new Vector();
-        undoList = new Vector();
-        rectSelected = false;
-        selectedRectangle = null;
-        repaint();
-    }
-
-    private void repaint() {
-        canvas.repaint();
     }
 
     /**
@@ -193,14 +119,92 @@ public class Mediator {
      * Method description
      *
      *
+     * @param x
+     * @param y
+     */
+    public void pickRect(int x, int y) {
+
+        // save current selected rectangle to avoid double save of undo
+        VisitorRectangle lastPick = selectedRectangle;
+
+        unpick();
+
+        for (int i = 0; i < drawings.size(); i++) {
+            VisitorRectangle v = (VisitorRectangle) drawings.elementAt(i);
+
+            if (v.contains(x, y))                       // did click inside a rectangle
+            {
+                selectedRectangle = v;                  // save it
+                rectSelected      = true;
+
+                if (selectedRectangle != lastPick) {    // but don't save twice
+                    rememberPosition();
+                }
+
+                v.setSelected(true);                    // turn on handles
+                repaint();                              // and redraw
+            }
+        }
+    }
+
+    /**
+     * Method description
+     *
+     *
      * @param g
      */
     public void reDraw(Graphics g) {
         g.setColor(Color.black);
+
         for (int i = 0; i < drawings.size(); i++) {
             VisitorRectangle v = (VisitorRectangle) drawings.elementAt(i);
+
             v.draw(g);
         }
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param p
+     */
+    public void registerCanvas(JPanel p) {
+        canvas = p;
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param rb
+     */
+    public void registerRectButton(RectButton rb) {
+        rect = rb;
+    }
+
+    /**
+     * Method description
+     *
+     */
+    public void rememberPosition() {
+        if (rectSelected) {
+            Memento m = new Memento(selectedRectangle);
+
+            undoList.addElement(m);
+        }
+    }
+
+    private void repaint() {
+        canvas.repaint();
+    }
+
+    /**
+     * Method description
+     *
+     */
+    public void startRectangle() {
+        startRect = true;
     }
 
     /**
@@ -209,21 +213,40 @@ public class Mediator {
      */
     public void undo() {
         if (undoList.size() > 0) {
+
             // get last element in undo list
             Object obj = undoList.lastElement();
+
             undoList.removeElement(obj);    // and remove it
+
             // if this is an Integer, the last action was a new rectangle
             if (obj instanceof Integer) {
+
                 // remove last created rectangle
                 Object drawObj = drawings.lastElement();
+
                 drawings.removeElement(drawObj);
             }
+
             // if this is a Memento, the last action was a move
             if (obj instanceof Memento) {
+
                 // get the Memento
                 Memento m = (Memento) obj;
+
                 m.restore();    // and restore the old position
             }
+
+            repaint();
+        }
+    }
+
+    private void unpick() {
+        rectSelected = false;
+
+        if (selectedRectangle != null) {
+            selectedRectangle.setSelected(false);
+            selectedRectangle = null;
             repaint();
         }
     }

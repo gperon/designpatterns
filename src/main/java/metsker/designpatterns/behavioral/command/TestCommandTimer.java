@@ -1,8 +1,8 @@
 /*
  * @(#)TestCommandTimer.java   2011-11-01
- * 
+ *
  * Copyright (c) 2011 Giorgio Peron giorgio.peron@gmail.com
- * All Rights Reserved. 
+ * All Rights Reserved.
  *
  * Redistribution and use of this script, with or without modification, is
  * permitted provided that the following conditions are met:
@@ -37,7 +37,6 @@ package metsker.designpatterns.behavioral.command;
 * Please use this software as you wish with the sole
 * restriction that you may not claim that you wrote it.
  */
-
 import junit.framework.TestCase;
 
 /**
@@ -45,7 +44,7 @@ import junit.framework.TestCase;
  *
  *
  * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>    
+ * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
  */
 public class TestCommandTimer extends TestCase {
 
@@ -65,6 +64,7 @@ public class TestCommandTimer extends TestCase {
         long expected = 2000;
         long delta = 5;
         assertTrue("Should be " + expected + " +/- " + delta + " ms",
-                   (expected - delta <= actual) && (actual <= expected + delta));
+                   (expected - delta <= actual)
+                   && (actual <= expected + delta));
     }
 }

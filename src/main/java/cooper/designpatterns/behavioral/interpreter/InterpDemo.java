@@ -40,9 +40,9 @@ import javax.swing.*;
  * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
  */
 public class InterpDemo extends JxFrame implements ActionListener {
-    JButton Go;
-    KidData kdata;
-    JawtList ptable;
+    JButton    Go;
+    KidData    kdata;
+    JawtList   ptable;
     JTextField tx;
 
     /**
@@ -53,10 +53,14 @@ public class InterpDemo extends JxFrame implements ActionListener {
         super("Interpreter Demo");
         tx = new JTextField(20);
         Go = new JButton("Go");
+
         JPanel p = new JPanel();
+
         getContentPane().add(p);
         p.setLayout(new BorderLayout());
+
         JPanel np = new JPanel();
+
         p.add("North", np);
         np.add(tx);
         np.add(Go);
@@ -76,6 +80,7 @@ public class InterpDemo extends JxFrame implements ActionListener {
      */
     public void actionPerformed(ActionEvent e) {
         Parser p = new Parser(tx.getText());
+
         p.setData(kdata, ptable);
         p.execute();
     }

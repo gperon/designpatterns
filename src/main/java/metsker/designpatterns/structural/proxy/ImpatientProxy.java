@@ -1,8 +1,8 @@
 /*
  * @(#)ImpatientProxy.java   2011-11-01
- * 
+ *
  * Copyright (c) 2011 Giorgio Peron giorgio.peron@gmail.com
- * All Rights Reserved. 
+ * All Rights Reserved.
  *
  * Redistribution and use of this script, with or without modification, is
  * permitted provided that the following conditions are met:
@@ -66,14 +66,15 @@ public class ImpatientProxy implements InvocationHandler {
      *
      * @throws Throwable
      */
-    public Object invoke(Object proxy, Method m, Object[] args) throws Throwable {
+    public Object invoke(Object proxy, Method m, Object[] args)
+            throws Throwable {
         Object result;
         long t1 = System.currentTimeMillis();
         result = m.invoke(obj, args);
         long t2 = System.currentTimeMillis();
         if (t2 - t1 > 10) {
-            System.out.println("> It takes " + (t2 - t1) + " millis to invoke " + m.getName()
-                               + "() with");
+            System.out.println("> It takes " + (t2 - t1) + " millis to invoke "
+                               + m.getName() + "() with");
             for (int i = 0; i < args.length; i++) {
                 System.out.println(">     arg[" + i + "]: " + args[i]);
             }

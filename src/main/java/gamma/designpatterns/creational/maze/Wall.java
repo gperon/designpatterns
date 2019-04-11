@@ -60,7 +60,8 @@ public class Wall implements MapSite {
      *  Description of the Method
      */
     public void enter() {
-        throw new java.lang.UnsupportedOperationException("Method enter() not yet implemented.");
+        throw new java.lang.UnsupportedOperationException(
+            "Method enter() not yet implemented.");
     }
 
     /**

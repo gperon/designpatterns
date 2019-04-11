@@ -27,11 +27,11 @@
 
 package cooper.designpatterns.behavioral.mediator;
 
-import javax.swing.*;
-import javax.swing.border.*;
-
 import java.awt.*;
 import java.awt.event.*;
+
+import javax.swing.*;
+import javax.swing.border.*;
 
 /**
  * Class description
@@ -41,12 +41,12 @@ import java.awt.event.*;
  * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
  */
 public class MedDemo extends JxFrame implements ActionListener {
-    KidList kidList;
+    KidList        kidList;
     PickedKidsList picked;
-    KTextField tx;
-    MoveButton Move;
-    ClearButton Clear;
-    Mediator med;
+    KTextField     tx;
+    MoveButton     Move;
+    ClearButton    Clear;
+    Mediator       med;
 
     /**
      * Constructs ...
@@ -54,13 +54,17 @@ public class MedDemo extends JxFrame implements ActionListener {
      */
     public MedDemo() {
         super("Mediator demo");
+
         Mediator med = new Mediator();
-        JPanel jp = new JPanel();
+        JPanel   jp  = new JPanel();
+
         getContentPane().add(jp);
         jp.setLayout(new BorderLayout());
+
         JPanel center = new JPanel();
-        JPanel left = new JPanel();
-        JPanel right = new JPanel();
+        JPanel left   = new JPanel();
+        JPanel right  = new JPanel();
+
         jp.add("Center", center);
         center.setLayout(new GridLayout(1, 2));
         center.add(left);
@@ -71,10 +75,12 @@ public class MedDemo extends JxFrame implements ActionListener {
         left.setLayout(new BorderLayout());
         left.add("Center", kidList);
         right.setLayout(new BorderLayout());
-        tx = new KTextField(med);
-        Move = new MoveButton(this, med);
+        tx    = new KTextField(med);
+        Move  = new MoveButton(this, med);
         Clear = new ClearButton(this, med);
+
         JPanel rtop = new JPanel();
+
         jp.add("North", rtop);
         rtop.add(tx);
         rtop.add(Move);
@@ -94,6 +100,7 @@ public class MedDemo extends JxFrame implements ActionListener {
      */
     public void actionPerformed(ActionEvent e) {
         Command comd = (Command) e.getSource();
+
         comd.Execute();
     }
 

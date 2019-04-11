@@ -1,8 +1,8 @@
 /*
  * @(#)Queue.java   2011-11-01
- * 
+ *
  * Copyright (c) 2011 Giorgio Peron giorgio.peron@gmail.com
- * All Rights Reserved. 
+ * All Rights Reserved.
  *
  * Redistribution and use of this script, with or without modification, is
  * permitted provided that the following conditions are met:
@@ -44,7 +44,7 @@ import java.util.ArrayList;
  *
  *
  * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>    
+ * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
  */
 public class Queue {
     private ArrayList queue;
@@ -55,6 +55,20 @@ public class Queue {
      */
     public Queue() {
         queue = new ArrayList();
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @return
+     */
+    public Object dequeue() {
+        Object result = queue.get(0);
+
+        queue.remove(0);
+
+        return result;
     }
 
     /**
@@ -73,30 +87,17 @@ public class Queue {
      *
      * @return
      */
-    public boolean isEmpty() {
-        return queue.isEmpty();
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @return
-     */
-    public Object dequeue() {
-        Object result = queue.get(0);
-        queue.remove(0);
-
-        return result;
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @return
-     */
     public int size() {
         return queue.size();
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @return
+     */
+    public boolean isEmpty() {
+        return queue.isEmpty();
     }
 }

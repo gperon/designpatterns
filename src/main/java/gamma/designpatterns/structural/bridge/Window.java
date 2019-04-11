@@ -133,8 +133,8 @@ public abstract class Window {
      */
     public void drawRect(final Point p1, final Point p2) {
         WindowImp imp = getWindowImp();
-        imp.deviceRect(new Coord(p1.getX()), new Coord(p1.getY()), new Coord(p2.getX()),
-                       new Coord(p2.getY()));
+        imp.deviceRect(new Coord(p1.getX()), new Coord(p1.getY()),
+                       new Coord(p2.getX()), new Coord(p2.getY()));
     }
 
     /**

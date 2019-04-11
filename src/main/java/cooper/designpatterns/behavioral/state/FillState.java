@@ -39,8 +39,8 @@ import java.util.*;
  * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
  */
 public class FillState extends State {
-    private Mediator med;    // save Mediator
-    private Color color;     // save current color
+    private Mediator med;      // save Mediator
+    private Color    color;    // save current color
 
     /**
      * Constructs ...
@@ -53,19 +53,6 @@ public class FillState extends State {
     }
 
     /**
-     * Fill drawing if selected
-     *
-     * @param d
-     * @param c
-     */
-    public void select(Drawing d, Color c) {
-        color = c;
-        if (d != null) {
-            d.setFill(c);    // fill that drawing
-        }
-    }
-
-    /**
      * Fill drawing if you click inside one
      *
      * @param x
@@ -73,11 +60,27 @@ public class FillState extends State {
      */
     public void mouseDown(int x, int y) {
         Vector drawings = med.getDrawings();
+
         for (int i = 0; i < drawings.size(); i++) {
             Drawing d = (Drawing) drawings.elementAt(i);
+
             if (d.contains(x, y)) {
                 d.setFill(color);    // fill drawing
             }
+        }
+    }
+
+    /**
+     * Fill drawing if selected
+     *
+     * @param d
+     * @param c
+     */
+    public void select(Drawing d, Color c) {
+        color = c;
+
+        if (d != null) {
+            d.setFill(c);    // fill that drawing
         }
     }
 }

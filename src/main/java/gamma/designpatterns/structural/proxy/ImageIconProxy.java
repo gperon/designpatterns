@@ -40,9 +40,13 @@ import javax.swing.*;
  */
 public class ImageIconProxy extends ImageIcon implements Runnable {
     static final ImageIcon ABSENT =
-        new ImageIcon(ClassLoader.getSystemResource("designpatterns/structural/proxy/absent.jpg"));
+        new ImageIcon(
+            ClassLoader.getSystemResource(
+                "designpatterns/structural/proxy/absent.jpg"));
     static final ImageIcon LOADING =
-        new ImageIcon(ClassLoader.getSystemResource("designpatterns/structural/proxy/loading.jpg"));
+        new ImageIcon(
+            ClassLoader.getSystemResource(
+                "designpatterns/structural/proxy/loading.jpg"));
     ImageIcon current = ABSENT;
     protected String filename;
     protected JFrame callbackFrame;

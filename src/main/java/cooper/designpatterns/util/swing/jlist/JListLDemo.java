@@ -27,14 +27,14 @@
 
 package cooper.designpatterns.util.swing.jlist;
 
-import cooper.designpatterns.util.swing.JxFrame;
-
 import java.awt.*;
 
 import java.util.*;
 
 import javax.swing.*;
 import javax.swing.event.*;
+
+import cooper.designpatterns.util.swing.JxFrame;
 
 /**
  * Class description
@@ -45,7 +45,7 @@ import javax.swing.event.*;
  */
 public class JListLDemo extends JxFrame implements ListSelectionListener {
     JTextField text;
-    JList list;
+    JList      list;
 
     /**
      * Constructs ...
@@ -53,14 +53,19 @@ public class JListLDemo extends JxFrame implements ListSelectionListener {
      */
     public JListLDemo() {
         super("JList demo");
+
         JPanel jp = new JPanel();
+
         getContentPane().add(jp);
         jp.setLayout(new BorderLayout());
+
         // create text field
         text = new JTextField(20);
         jp.add("North", text);
+
         // create scroll pane
         JScrollPane sp = new JScrollPane();
+
         jp.add("Center", sp);    // add to layout
         list = new JList(makeData());    // create list with data
         sp.getViewport().add(list);    // add list to scrollpane
@@ -69,8 +74,19 @@ public class JListLDemo extends JxFrame implements ListSelectionListener {
         setVisible(true);
     }
 
+    /**
+     * Method description
+     *
+     *
+     * @param arv
+     */
+    static public void main(String[] arv) {
+        new JListLDemo();
+    }
+
     private Vector makeData() {
         Vector dlist = new Vector();    // create vector
+
         dlist.addElement("Anchovies");    // and add data
         dlist.addElement("Bananas");
         dlist.addElement("Cilantro");
@@ -88,15 +104,5 @@ public class JListLDemo extends JxFrame implements ListSelectionListener {
      */
     public void valueChanged(ListSelectionEvent e) {
         text.setText((String) list.getSelectedValue());
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param arv
-     */
-    static public void main(String[] arv) {
-        new JListLDemo();
     }
 }

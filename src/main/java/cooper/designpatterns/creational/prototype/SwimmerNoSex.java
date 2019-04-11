@@ -54,16 +54,17 @@ public class SwimmerNoSex extends SwimData {
      *
      */
     public void sortByTime() {
-        Collections.sort(swimmers, new Comparator<Swimmer>() {
-            public int compare(Swimmer o1, Swimmer o2) {
-                if (o1.getTime() < o2.getTime()) {
-                    return -1;
-                } else if (o1.getTime() > o2.getTime()) {
-                    return 1;
-                } else {
-                    return 0;
-                }
-            }
-        });
+        Collections.sort(swimmers,
+                         new Comparator<Swimmer>() {
+                             public int compare(Swimmer o1, Swimmer o2) {
+                                 if (o1.getTime() < o2.getTime()) {
+                                     return -1;
+                                 } else if (o1.getTime() > o2.getTime()) {
+                                     return 1;
+                                 } else {
+                                     return 0;
+                                 }
+                             }
+                         });
     }
 }

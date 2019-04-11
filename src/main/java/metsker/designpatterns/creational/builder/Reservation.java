@@ -1,8 +1,8 @@
 /*
  * @(#)Reservation.java   2011-11-01
- * 
+ *
  * Copyright (c) 2011 Giorgio Peron giorgio.peron@gmail.com
- * All Rights Reserved. 
+ * All Rights Reserved.
  *
  * Redistribution and use of this script, with or without modification, is
  * permitted provided that the following conditions are met:
@@ -66,7 +66,8 @@ public class Reservation implements Serializable {
      * @param dollarsPerHead the price per attendee the customer will pay
      * @param hasSite true, if the customer has a display site in mind
      */
-    Reservation(Date date, int headcount, String city, Dollars dollarsPerHead, boolean hasSite) {
+    Reservation(Date date, int headcount, String city, Dollars dollarsPerHead,
+                boolean hasSite) {
         this.date = date;
         this.headcount = headcount;
         this.city = city;

@@ -76,41 +76,7 @@ public class UnforgivingBuilderTest extends TestCase {
      * @throws ParseException
      */
     public void testDisallowLowDollarsPerHead() throws ParseException {
-        String sample = "Date, November 5, Headcount, 250, "
-                        + "City, Springfield, DollarsPerHead, 1.95, " + "HasSite, false";
-        ReservationBuilder b = new UnforgivingBuilder();
-        new ReservationParser(b).parse(sample);
-        try {
-            Reservation r = b.build();
-            fail("Expected BuilderException: built " + r);
-        } catch (BuilderException expected) {}
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @throws ParseException
-     */
-    public void testDisallowLowHeadCount() throws ParseException {
-        String s = "Date, November 5, Headcount, 2, " + "City, Springfield, DollarsPerHead, 9.95, "
-                   + "HasSite, false";
-        ReservationBuilder b = new UnforgivingBuilder();
-        new ReservationParser(b).parse(s);
-        try {
-            Reservation r = b.build();
-            fail("Expected BuilderException: built " + r);
-        } catch (BuilderException expected) {}
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @throws ParseException
-     */
-    public void testDisallowNoDollars() throws ParseException {
-        String sample = "Date, November 5, Headcount, 250, " + "City, Springfield, "
+        String sample = "Date, November 5, Headcount, 250, " + "City, Springfield, DollarsPerHead, 1.95, "
                         + "HasSite, false";
         ReservationBuilder b = new UnforgivingBuilder();
         new ReservationParser(b).parse(sample);
@@ -126,9 +92,40 @@ public class UnforgivingBuilderTest extends TestCase {
      *
      * @throws ParseException
      */
+    public void testDisallowLowHeadCount() throws ParseException {
+        String s = "Date, November 5, Headcount, 2, " + "City, Springfield, DollarsPerHead, 9.95, " + "HasSite, false";
+        ReservationBuilder b = new UnforgivingBuilder();
+        new ReservationParser(b).parse(s);
+        try {
+            Reservation r = b.build();
+            fail("Expected BuilderException: built " + r);
+        } catch (BuilderException expected) {}
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @throws ParseException
+     */
+    public void testDisallowNoDollars() throws ParseException {
+        String sample = "Date, November 5, Headcount, 250, " + "City, Springfield, " + "HasSite, false";
+        ReservationBuilder b = new UnforgivingBuilder();
+        new ReservationParser(b).parse(sample);
+        try {
+            Reservation r = b.build();
+            fail("Expected BuilderException: built " + r);
+        } catch (BuilderException expected) {}
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @throws ParseException
+     */
     public void testDisallowNoHeadCount() throws ParseException {
-        String s = "Date, November 5, " + "City, Springfield, DollarsPerHead, 9.95, "
-                   + "HasSite, false";
+        String s = "Date, November 5, " + "City, Springfield, DollarsPerHead, 9.95, " + "HasSite, false";
         ReservationBuilder b = new UnforgivingBuilder();
         new ReservationParser(b).parse(s);
         try {
@@ -145,8 +142,7 @@ public class UnforgivingBuilderTest extends TestCase {
      * @throws ParseException
      */
     public void testNormalReservation() throws BuilderException, ParseException {
-        String s = "Date, November 5, Headcount, 250, City, Springfield, "
-                   + "DollarsPerHead, 9.95, HasSite, false";
+        String s = "Date, November 5, Headcount, 250, City, Springfield, " + "DollarsPerHead, 9.95, HasSite, false";
         UnforgivingBuilder b = new UnforgivingBuilder();
         ReservationParser p = new ReservationParser(b);
         p.parse(s);
@@ -165,8 +161,7 @@ public class UnforgivingBuilderTest extends TestCase {
      * @throws ParseException
      */
     public void testDisallowMissingCity() throws ParseException {
-        String s = "Date, November 5, Headcount, 250, " + "DollarsPerHead, 9.95, "
-                   + "HasSite, false";
+        String s = "Date, November 5, Headcount, 250, " + "DollarsPerHead, 9.95, " + "HasSite, false";
         ReservationBuilder b = new UnforgivingBuilder();
         new ReservationParser(b).parse(s);
         try {
@@ -182,8 +177,7 @@ public class UnforgivingBuilderTest extends TestCase {
      * @throws ParseException
      */
     public void testDisallowMissingDate() throws ParseException {
-        String s = "Headcount, 250, " + "City, Springfield, DollarsPerHead, 9.95, "
-                   + "HasSite, false";
+        String s = "Headcount, 250, " + "City, Springfield, DollarsPerHead, 9.95, " + "HasSite, false";
         ReservationBuilder b = new UnforgivingBuilder();
         new ReservationParser(b).parse(s);
         try {

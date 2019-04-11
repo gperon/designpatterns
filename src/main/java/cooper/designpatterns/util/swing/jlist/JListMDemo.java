@@ -27,8 +27,6 @@
 
 package cooper.designpatterns.util.swing.jlist;
 
-import cooper.designpatterns.util.swing.JxFrame;
-
 import java.awt.*;
 import java.awt.event.*;
 
@@ -36,68 +34,7 @@ import java.util.*;
 
 import javax.swing.*;
 
-/**
- * Class description
- *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
- */
-public class JListMDemo extends JxFrame implements ActionListener {
-    JTextField text;
-    JList list;
-    JButton Add;
-    JListData ldata;
-
-    /**
-     * Constructs ...
-     *
-     */
-    public JListMDemo() {
-        super("JList demo");
-        JPanel jp = new JPanel();
-        getContentPane().add(jp);
-        jp.setLayout(new BorderLayout());
-        // create text field
-        text = new JTextField(20);
-        jp.add("North", text);
-        // Add button
-        Add = new JButton("Add");
-        JPanel p = new JPanel();
-        jp.add("South", p);
-        p.add(Add);
-        Add.addActionListener(this);
-        // create scroll pane
-        JScrollPane sp = new JScrollPane();
-        jp.add("Center", sp);    // add to layout
-        ldata = new JListData();
-        list = new JList(ldata);    // create list with data
-        sp.getViewport().add(list);    // add list to scrollpane
-        setSize(200, 200);
-        setVisible(true);
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param e
-     */
-    public void actionPerformed(ActionEvent e) {
-        ldata.addElement(text.getText());
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param arv
-     */
-    static public void main(String[] arv) {
-        new JListMDemo();
-    }
-}
-
+import cooper.designpatterns.util.swing.JxFrame;
 
 class JListData extends AbstractListModel {
     private Vector dlist;    // the color name list
@@ -111,14 +48,17 @@ class JListData extends AbstractListModel {
         makeData();
     }
 
+    // add string to list and tell the list about it
+
     /**
      * Method description
      *
      *
-     * @return
+     * @param s
      */
-    public int getSize() {
-        return dlist.size();
+    public void addElement(String s) {
+        dlist.addElement(s);
+        fireIntervalAdded(this, dlist.size() - 1, dlist.size());
     }
 
     private Vector makeData() {
@@ -144,16 +84,84 @@ class JListData extends AbstractListModel {
         return dlist.elementAt(index);
     }
 
-    // add string to list and tell the list about it
+    /**
+     * Method description
+     *
+     *
+     * @return
+     */
+    public int getSize() {
+        return dlist.size();
+    }
+}
+
+
+/**
+ * Class description
+ *
+ *
+ * @version        0.1.1, 2011-11-01
+ * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ */
+public class JListMDemo extends JxFrame implements ActionListener {
+    JTextField text;
+    JList      list;
+    JButton    Add;
+    JListData  ldata;
+
+    /**
+     * Constructs ...
+     *
+     */
+    public JListMDemo() {
+        super("JList demo");
+
+        JPanel jp = new JPanel();
+
+        getContentPane().add(jp);
+        jp.setLayout(new BorderLayout());
+
+        // create text field
+        text = new JTextField(20);
+        jp.add("North", text);
+
+        // Add button
+        Add = new JButton("Add");
+
+        JPanel p = new JPanel();
+
+        jp.add("South", p);
+        p.add(Add);
+        Add.addActionListener(this);
+
+        // create scroll pane
+        JScrollPane sp = new JScrollPane();
+
+        jp.add("Center", sp);    // add to layout
+        ldata = new JListData();
+        list  = new JList(ldata);    // create list with data
+        sp.getViewport().add(list);    // add list to scrollpane
+        setSize(200, 200);
+        setVisible(true);
+    }
 
     /**
      * Method description
      *
      *
-     * @param s
+     * @param e
      */
-    public void addElement(String s) {
-        dlist.addElement(s);
-        fireIntervalAdded(this, dlist.size() - 1, dlist.size());
+    public void actionPerformed(ActionEvent e) {
+        ldata.addElement(text.getText());
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param arv
+     */
+    static public void main(String[] arv) {
+        new JListMDemo();
     }
 }

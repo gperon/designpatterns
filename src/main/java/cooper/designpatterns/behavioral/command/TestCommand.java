@@ -38,12 +38,12 @@ import java.awt.event.*;
  * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
  */
 public class TestCommand extends Frame implements ActionListener {
-    Menu mnuFile;
+    Menu            mnuFile;
     fileOpenCommand mnuOpen;
     fileExitCommand mnuExit;
-    btnRedCommand btnRed;
-    Panel p;
-    Frame fr;
+    btnRedCommand   btnRed;
+    Panel           p;
+    Frame           fr;
 
     /**
      * Constructs ...
@@ -52,7 +52,9 @@ public class TestCommand extends Frame implements ActionListener {
     public TestCommand() {
         super("Frame without commands");
         fr = this;    // save frame object
+
         MenuBar mbar = new MenuBar();
+
         setMenuBar(mbar);
         mnuFile = new Menu("File", true);
         mbar.add(mnuFile);
@@ -63,7 +65,7 @@ public class TestCommand extends Frame implements ActionListener {
         mnuOpen.addActionListener(this);
         mnuExit.addActionListener(this);
         btnRed = new btnRedCommand("Red");
-        p = new Panel();
+        p      = new Panel();
         add(p);
         p.add(btnRed);
         btnRed.addActionListener(this);
@@ -79,6 +81,7 @@ public class TestCommand extends Frame implements ActionListener {
      */
     public void actionPerformed(ActionEvent e) {
         Command obj = (Command) e.getSource();
+
         obj.execute();
     }
 
@@ -117,29 +120,6 @@ public class TestCommand extends Frame implements ActionListener {
     }
 
 
-    class fileOpenCommand extends MenuItem implements Command {
-
-        /**
-         * Constructs ...
-         *
-         *
-         * @param caption
-         */
-        public fileOpenCommand(String caption) {
-            super(caption);
-        }
-
-        /**
-         * Method description
-         *
-         */
-        public void execute() {
-            FileDialog fDlg = new FileDialog(fr, "Open file");
-            fDlg.setVisible(true);
-        }
-    }
-
-
     class fileExitCommand extends MenuItem implements Command {
 
         /**
@@ -158,6 +138,30 @@ public class TestCommand extends Frame implements ActionListener {
          */
         public void execute() {
             System.exit(0);
+        }
+    }
+
+
+    class fileOpenCommand extends MenuItem implements Command {
+
+        /**
+         * Constructs ...
+         *
+         *
+         * @param caption
+         */
+        public fileOpenCommand(String caption) {
+            super(caption);
+        }
+
+        /**
+         * Method description
+         *
+         */
+        public void execute() {
+            FileDialog fDlg = new FileDialog(fr, "Open file");
+
+            fDlg.setVisible(true);
         }
     }
 }

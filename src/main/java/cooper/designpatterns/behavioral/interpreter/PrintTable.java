@@ -42,7 +42,7 @@ import javax.swing.table.*;
  * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
  */
 public class PrintTable extends JScrollPane {
-    JTable table;
+    JTable       table;
     ProductModel pmodel;
 
     /**
@@ -51,7 +51,7 @@ public class PrintTable extends JScrollPane {
      */
     public PrintTable() {
         pmodel = new ProductModel();
-        table = new JTable(pmodel);
+        table  = new JTable(pmodel);
         getViewport().add(table);
     }
 
@@ -81,7 +81,7 @@ public class PrintTable extends JScrollPane {
 
 
 class ProductModel implements TableModel {
-    int rows, columns;
+    int    rows, columns;
     Vector columnList;
 
     /**
@@ -90,89 +90,24 @@ class ProductModel implements TableModel {
      */
     public ProductModel() {
         columns = 0;
-        rows = 0;
+        rows    = 0;
     }
 
     /**
      * Method description
      *
      *
-     * @param r
-     * @param cols
+     * @param tbm
      */
-    public void setSize(int r, int cols) {
-        columns = cols;
-        rows = r;
-        columnList = new Vector(columns);
-        for (int i = 0; i < columns; i++) {
-            Vector v = new Vector(r);
-            for (int j = 0; j < r; j++) {
-                v.addElement("");
-            }
-            columnList.addElement(v);
-        }
-    }
+    public void addTableModelListener(TableModelListener tbm) {}
 
     /**
      * Method description
      *
      *
-     * @param obj
-     * @param row
-     * @param col
+     * @param tbm
      */
-    public void setValueAt(Object obj, int row, int col) {
-        Vector v = (Vector) columnList.elementAt(col);
-        v.setElementAt(obj, row);
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @return
-     */
-    public int getColumnCount() {
-        return columns;
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @return
-     */
-    public int getRowCount() {
-        return rows;
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param row
-     * @param col
-     *
-     * @return
-     */
-    public Object getValueAt(int row, int col) {
-        Vector v = (Vector) columnList.elementAt(col);
-        System.out.println(row + " " + v.elementAt(row));
-
-        return v.elementAt(row);
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param c
-     *
-     * @return
-     */
-    public Class getColumnClass(int c) {
-        return (new String("")).getClass();
-    }
+    public void removeTableModelListener(TableModelListener tbm) {}
 
     /**
      * Method description
@@ -195,6 +130,28 @@ class ProductModel implements TableModel {
      *
      * @return
      */
+    public Class getColumnClass(int c) {
+        return (new String("")).getClass();
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @return
+     */
+    public int getColumnCount() {
+        return columns;
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param c
+     *
+     * @return
+     */
     public String getColumnName(int c) {
         return "";
     }
@@ -203,15 +160,63 @@ class ProductModel implements TableModel {
      * Method description
      *
      *
-     * @param tbm
+     * @return
      */
-    public void addTableModelListener(TableModelListener tbm) {}
+    public int getRowCount() {
+        return rows;
+    }
 
     /**
      * Method description
      *
      *
-     * @param tbm
+     * @param r
+     * @param cols
      */
-    public void removeTableModelListener(TableModelListener tbm) {}
+    public void setSize(int r, int cols) {
+        columns    = cols;
+        rows       = r;
+        columnList = new Vector(columns);
+
+        for (int i = 0; i < columns; i++) {
+            Vector v = new Vector(r);
+
+            for (int j = 0; j < r; j++) {
+                v.addElement("");
+            }
+
+            columnList.addElement(v);
+        }
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param row
+     * @param col
+     *
+     * @return
+     */
+    public Object getValueAt(int row, int col) {
+        Vector v = (Vector) columnList.elementAt(col);
+
+        System.out.println(row + " " + v.elementAt(row));
+
+        return v.elementAt(row);
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param obj
+     * @param row
+     * @param col
+     */
+    public void setValueAt(Object obj, int row, int col) {
+        Vector v = (Vector) columnList.elementAt(col);
+
+        v.setElementAt(obj, row);
+    }
 }

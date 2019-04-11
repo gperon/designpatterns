@@ -55,7 +55,8 @@ public class Rocket extends Firework {
      * @param thrust
      *            The rated thrust (or force, in newtons) of this rocket
      */
-    public Rocket(String name, double mass, Dollars price, double apogee, double thrust) {
+    public Rocket(String name, double mass, Dollars price, double apogee,
+                  double thrust) {
         super(name, mass, price);
         setApogee(apogee);
         setThrust(thrust);

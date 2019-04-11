@@ -187,7 +187,8 @@ public class Parser {
                     break;
 
                 default :
-                    System.out.printf("token %d, value %d\n", t.getType(), t.getValue());
+                    System.out.printf("token %d, value %d\n", t.getType(),
+                                      t.getValue());
 
                     break;
             }

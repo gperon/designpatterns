@@ -131,8 +131,8 @@ public class Token {
 
 
 enum TokenType {
-    NUM, DIV, MOD, ID, DONE, PLUS('+'), MINUS('-'), STAR('*'), SLASH('/'), LEFT_BRACKET('('),
-    RIGHT_BRACKET(')'), SEMICOLON(';'), NONE;
+    NUM, DIV, MOD, ID, DONE, PLUS('+'), MINUS('-'), STAR('*'), SLASH('/'),
+    LEFT_BRACKET('('), RIGHT_BRACKET(')'), SEMICOLON(';'), NONE;
 
     TokenType(char c) {
         this.symbol = c;

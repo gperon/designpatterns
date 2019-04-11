@@ -42,7 +42,7 @@ public abstract class Garden {
      *
      * @return
      */
-    public abstract Plant getShade();
+    public abstract Plant getBorder();
 
     /**
      * Method description
@@ -58,5 +58,5 @@ public abstract class Garden {
      *
      * @return
      */
-    public abstract Plant getBorder();
+    public abstract Plant getShade();
 }

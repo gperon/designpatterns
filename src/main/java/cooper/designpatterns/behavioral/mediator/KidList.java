@@ -27,22 +27,21 @@
 
 package cooper.designpatterns.behavioral.mediator;
 
-import java.awt.event.*;
-
-import javax.swing.*;
-import javax.swing.event.*;
-import javax.swing.text.*;
-import javax.swing.border.*;
-
-import javax.accessibility.*;
-
-import cooper.designpatterns.structural.adapter.JawtList;
-import cooper.designpatterns.behavioral.iterator.*;
-
 import java.awt.*;
+import java.awt.event.*;
 import java.awt.event.*;
 
 import java.util.*;
+
+import javax.accessibility.*;
+
+import javax.swing.*;
+import javax.swing.border.*;
+import javax.swing.event.*;
+import javax.swing.text.*;
+
+import cooper.designpatterns.behavioral.iterator.*;
+import cooper.designpatterns.structural.adapter.JawtList;
 
 /**
  * Class description
@@ -52,7 +51,7 @@ import java.util.*;
  * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
  */
 public class KidList extends JawtList implements ListSelectionListener {
-    KidData kdata;
+    KidData  kdata;
     Mediator med;
 
     /**
@@ -70,6 +69,16 @@ public class KidList extends JawtList implements ListSelectionListener {
         addListSelectionListener(this);
     }
 
+    private void fillKidList() {
+        Enumeration ekid = kdata.elements();
+
+        while (ekid.hasMoreElements()) {
+            Kid k = (Kid) ekid.nextElement();
+
+            add(k.getFrname() + " " + k.getLname());
+        }
+    }
+
     /**
      * Method description
      *
@@ -78,16 +87,9 @@ public class KidList extends JawtList implements ListSelectionListener {
      */
     public void valueChanged(ListSelectionEvent ls) {
         JList obj = (JList) ls.getSource();
+
         if (obj.getSelectedIndex() >= 0) {
             med.select();
-        }
-    }
-
-    private void fillKidList() {
-        Enumeration ekid = kdata.elements();
-        while (ekid.hasMoreElements()) {
-            Kid k = (Kid) ekid.nextElement();
-            add(k.getFrname() + " " + k.getLname());
         }
     }
 }

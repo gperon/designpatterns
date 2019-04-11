@@ -27,12 +27,12 @@
 
 package cooper.designpatterns.util.swing.simple;
 
-import cooper.designpatterns.util.swing.JxFrame;
-
 import java.awt.*;
 import java.awt.event.*;
 
 import javax.swing.*;
+
+import cooper.designpatterns.util.swing.JxFrame;
 
 /**
  * Class description
@@ -43,8 +43,8 @@ import javax.swing.*;
  */
 public class SimpleJFC2 extends JxFrame implements ActionListener {
     JButton OK, Quit;
-    JPanel jp;
-    Color color;
+    JPanel  jp;
+    Color   color;
 
     /**
      * Constructs ...
@@ -56,9 +56,49 @@ public class SimpleJFC2 extends JxFrame implements ActionListener {
         setGUI();
     }
 
+    /**
+     * Method description
+     *
+     *
+     * @param e
+     */
+    public void actionPerformed(ActionEvent e) {
+        Object obj = e.getSource();
+
+        if (obj == OK) {
+            switchColors();
+        }
+
+        if (obj == Quit) {
+            System.exit(0);
+        }
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param argv
+     */
+    static public void main(String[] argv) {
+        new SimpleJFC2();
+    }
+
+    private void switchColors() {
+        if (color == Color.green) {
+            color = Color.yellow;
+        } else {
+            color = Color.green;
+        }
+
+        jp.setBackground(color);
+        repaint();
+    }
+
     private void setGUI() {
         jp = new JPanel();
         getContentPane().add(jp);
+
         // create and add buttons
         OK = new JButton("OK", new ImageIcon("color.gif"));
         OK.setRolloverIcon(new ImageIcon("overColor.gif"));
@@ -71,41 +111,5 @@ public class SimpleJFC2 extends JxFrame implements ActionListener {
         jp.add(Quit);
         setSize(new Dimension(250, 100));
         setVisible(true);
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param e
-     */
-    public void actionPerformed(ActionEvent e) {
-        Object obj = e.getSource();
-        if (obj == OK) {
-            switchColors();
-        }
-        if (obj == Quit) {
-            System.exit(0);
-        }
-    }
-
-    private void switchColors() {
-        if (color == Color.green) {
-            color = Color.yellow;
-        } else {
-            color = Color.green;
-        }
-        jp.setBackground(color);
-        repaint();
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param argv
-     */
-    static public void main(String[] argv) {
-        new SimpleJFC2();
     }
 }

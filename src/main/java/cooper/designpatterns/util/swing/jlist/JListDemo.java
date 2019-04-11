@@ -27,11 +27,11 @@
 
 package cooper.designpatterns.util.swing.jlist;
 
-import cooper.designpatterns.util.swing.JxFrame;
-
 import java.util.*;
 
 import javax.swing.*;
+
+import cooper.designpatterns.util.swing.JxFrame;
 
 /**
  * Class description
@@ -48,17 +48,25 @@ public class JListDemo extends JxFrame {
      */
     public JListDemo() {
         super("JList demo");
+
         JPanel jp = new JPanel();
+
         getContentPane().add(jp);
+
         JScrollPane sp = new JScrollPane();
+
         jp.add(sp);
+
         Vector dlist = new Vector();
+
         dlist.addElement("Anchovies");
         dlist.addElement("Bananas");
         dlist.addElement("Cilantro");
         dlist.addElement("Doughnuts");
         dlist.addElement("Escarrole");
+
         JList list = new JList(dlist);
+
         sp.getViewport().add(list);
         setSize(200, 200);
         setVisible(true);

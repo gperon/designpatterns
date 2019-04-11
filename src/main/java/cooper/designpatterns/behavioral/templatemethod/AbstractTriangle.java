@@ -58,11 +58,10 @@ public abstract class AbstractTriangle {
      *
      *
      * @param g
+     * @param c
      */
-    public void draw(Graphics g) {
-        drawLine(g, p1, p2);
-        Point current = draw2ndLine(g, p2, p3);
-        closeTriangle(g, current);
+    public void closeTriangle(Graphics g, Point c) {
+        g.drawLine(c.x, c.y, p1.x, p1.y);
     }
 
     /**
@@ -70,11 +69,13 @@ public abstract class AbstractTriangle {
      *
      *
      * @param g
-     * @param a
-     * @param b
      */
-    public void drawLine(Graphics g, Point a, Point b) {
-        g.drawLine(a.x, a.y, b.x, b.y);
+    public void draw(Graphics g) {
+        drawLine(g, p1, p2);
+
+        Point current = draw2ndLine(g, p2, p3);
+
+        closeTriangle(g, current);
     }
 
     /**
@@ -94,9 +95,10 @@ public abstract class AbstractTriangle {
      *
      *
      * @param g
-     * @param c
+     * @param a
+     * @param b
      */
-    public void closeTriangle(Graphics g, Point c) {
-        g.drawLine(c.x, c.y, p1.x, p1.y);
+    public void drawLine(Graphics g, Point a, Point b) {
+        g.drawLine(a.x, a.y, b.x, b.y);
     }
 }

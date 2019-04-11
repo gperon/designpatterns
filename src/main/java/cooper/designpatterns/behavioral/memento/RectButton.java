@@ -52,6 +52,7 @@ public class RectButton extends JToggleButton implements Command {
      */
     public RectButton(ActionListener act, Mediator md) {
         super("Rectangle");
+
         // setSize(new Dimension(25,25));
         // setBorder(new EmptyBorder(5,5,5,5));
         setToolTipText("Draw rectangle");

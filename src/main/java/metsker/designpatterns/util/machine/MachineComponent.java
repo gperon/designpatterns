@@ -76,7 +76,8 @@ public abstract class MachineComponent {
      * @param id this machine's identity
      * @param parent the machine composite that this component belongs to
      */
-    protected MachineComponent(int id, MachineComponent parent, Engineer responsible) {
+    protected MachineComponent(int id, MachineComponent parent,
+                               Engineer responsible) {
         this.id = id;
         this.parent = parent;
         this.responsible = responsible;

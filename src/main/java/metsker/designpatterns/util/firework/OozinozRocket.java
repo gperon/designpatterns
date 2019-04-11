@@ -44,7 +44,8 @@ public class OozinozRocket extends PhysicalRocket implements RocketSim {
      * @param fuelMass
      * @param totalMass
      */
-    public OozinozRocket(double burnArea, double burnRate, double fuelMass, double totalMass) {
+    public OozinozRocket(double burnArea, double burnRate, double fuelMass,
+                         double totalMass) {
         super(burnArea, burnRate, fuelMass, totalMass);
     }
 

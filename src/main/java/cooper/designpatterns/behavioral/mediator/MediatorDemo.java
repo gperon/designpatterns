@@ -27,14 +27,14 @@
 
 package cooper.designpatterns.behavioral.mediator;
 
-import cooper.designpatterns.util.swing.JxFrame;
-import cooper.designpatterns.behavioral.command.Command;
+import java.awt.*;
+import java.awt.event.*;
 
 import javax.swing.*;
 import javax.swing.border.*;
 
-import java.awt.*;
-import java.awt.event.*;
+import cooper.designpatterns.behavioral.command.Command;
+import cooper.designpatterns.util.swing.JxFrame;
 
 /**
  * Class description
@@ -44,12 +44,12 @@ import java.awt.event.*;
  * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
  */
 public class MediatorDemo extends JxFrame implements ActionListener {
-    KidList kidList;
+    KidList        kidList;
     PickedKidsList picked;
-    KTextField tx;
-    MoveButton move;
-    ClearButton clear;
-    Mediator med;
+    KTextField     tx;
+    MoveButton     move;
+    ClearButton    clear;
+    Mediator       med;
 
     /**
      * Constructs ...
@@ -57,13 +57,17 @@ public class MediatorDemo extends JxFrame implements ActionListener {
      */
     public MediatorDemo() {
         super("Mediator demo");
+
         Mediator med = new Mediator();
-        JPanel jp = new JPanel();
+        JPanel   jp  = new JPanel();
+
         getContentPane().add(jp);
         jp.setLayout(new BorderLayout());
+
         JPanel center = new JPanel();
-        JPanel left = new JPanel();
-        JPanel right = new JPanel();
+        JPanel left   = new JPanel();
+        JPanel right  = new JPanel();
+
         jp.add("Center", center);
         center.setLayout(new GridLayout(1, 2));
         center.add(left);
@@ -74,10 +78,12 @@ public class MediatorDemo extends JxFrame implements ActionListener {
         left.setLayout(new BorderLayout());
         left.add("Center", kidList);
         right.setLayout(new BorderLayout());
-        tx = new KTextField(med);
-        move = new MoveButton(this, med);
+        tx    = new KTextField(med);
+        move  = new MoveButton(this, med);
         clear = new ClearButton(this, med);
+
         JPanel rtop = new JPanel();
+
         jp.add("North", rtop);
         rtop.add(tx);
         rtop.add(move);
@@ -97,6 +103,7 @@ public class MediatorDemo extends JxFrame implements ActionListener {
      */
     public void actionPerformed(ActionEvent e) {
         Command comd = (Command) e.getSource();
+
         comd.execute();
     }
 

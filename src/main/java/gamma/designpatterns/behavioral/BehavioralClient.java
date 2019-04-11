@@ -27,6 +27,8 @@
 
 package gamma.designpatterns.behavioral;
 
+import java.io.*;
+
 //import designpatterns.behavioral.iterator.*;
 import gamma.designpatterns.behavioral.chainofresponsibility.*;
 import gamma.designpatterns.behavioral.command.*;
@@ -37,8 +39,6 @@ import gamma.designpatterns.behavioral.state.*;
 import gamma.designpatterns.behavioral.strategy.*;
 import gamma.designpatterns.behavioral.visitor.*;
 import gamma.designpatterns.structural.composite.*;
-
-import java.io.*;
 
 /**
  *  <p>
@@ -56,143 +56,12 @@ import java.io.*;
  * @version    1.0
  */
 public class BehavioralClient {
+    static BufferedReader input;
 
     /**
      *  Constructor for the BehavioralClient object
      */
     public BehavioralClient() {}
-
-    static BufferedReader input;
-
-    /**
-     *  A unit test for JUnit
-     */
-    private static void testChainOfResponsibility() {
-        gamma.designpatterns.behavioral.chainofresponsibility.Application application =
-            new gamma.designpatterns.behavioral.chainofresponsibility.Application(
-                Topic.APPLICATION_TOPIC);
-        Dialog dialog = new Dialog(application, Topic.PRINT_TOPIC);
-        gamma.designpatterns.behavioral.chainofresponsibility.Button button =
-            new gamma.designpatterns.behavioral.chainofresponsibility.Button(dialog,
-                Topic.PAPER_ORIENTATION_TOPIC);
-        button.handleHelp();
-        dialog.handleHelp();
-        application.handleHelp();
-    }
-
-    /**
-     *  A unit test for JUnit
-     */
-    private static void testCommand() {
-        gamma.designpatterns.behavioral.command.Application appl =
-            new gamma.designpatterns.behavioral.command.Application();
-        Document docA = new Document("pippo.txt");
-        Document docB = new Document("pluto.txt");
-        MacroCommand cmds = new MacroCommand();
-        cmds.add(new OpenCommand(appl));
-        cmds.add(new PasteCommand(docA));
-        cmds.add(new PasteCommand(docB));
-        cmds.execute();
-    }
-
-    /**
-     *  A unit test for JUnit
-     */
-    private static void testInterpreter() {
-        BooleanExp expression;
-        Context context = Context.instance();
-        VariableExp x = new VariableExp("X");
-        VariableExp y = new VariableExp("Y");
-        expression = new OrExp(new AndExp(new Constant(true), x), new AndExp(y, new NotExp(x)));
-        context.assign(x, false);
-        context.assign(y, true);
-        boolean result = expression.evaluate(context);
-        System.out.println("result: " + result);
-    }
-
-    /**
-     *  A unit test for JUnit
-     */
-    private static void testIterator() {
-        List<gamma.designpatterns.behavioral.iterator.Employee> l =
-            new List<gamma.designpatterns.behavioral.iterator.Employee>(4);
-        l.append(new gamma.designpatterns.behavioral.iterator.Employee("John"));
-        l.append(new gamma.designpatterns.behavioral.iterator.Employee("Peter"));
-        l.append(new gamma.designpatterns.behavioral.iterator.Employee("Paul"));
-        l.append(new gamma.designpatterns.behavioral.iterator.Employee("Samantha"));
-        Iterator i = l.iterator();
-        for (i.first(); !i.isDone(); i.next()) {
-            System.out.println("Employee: " + i.currentItem());
-        }
-    }
-
-    /**
-     *  A unit test for JUnit
-     */
-    private static void testMediator() {}
-
-    /**
-     *  A unit test for JUnit
-     */
-    private static void testMemento() {}
-
-    /**
-     *  A unit test for JUnit
-     */
-    private static void testObserver() {
-        ClockTimer timer = new ClockTimer();
-        DigitalClock digital = new DigitalClock(timer);
-        AnalogClock analog = new AnalogClock(timer);
-        timer.tick();
-    }
-
-    /**
-     *  A unit test for JUnit
-     */
-    private static void testState() {
-        new ShowCarousel().main(null);
-    }
-
-    /**
-     *  A unit test for JUnit
-     */
-    private static void testStrategy() {
-        try {
-            new Customer().main(null);
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-        Composition quick = new Composition(new SimpleCompositor());
-        Composition slick = new Composition(new TeXCompositor());
-        Composition iconic = new Composition(new ArrayCompositor(100));
-    }
-
-    /**
-     *  A unit test for JUnit
-     */
-    private static void testTemplateMethod() {}
-
-    /**
-     *  A unit test for JUnit
-     */
-    private static void testVisitor() {
-        CompositeEquipment cabinet = new Cabinet("PC Cabinet");
-        CompositeEquipment chassis = new Chassis("PC Chassis");
-        cabinet.add(chassis);
-        CompositeEquipment bus = new Bus("MCA Bus");
-        bus.add(new Card("16Mbs Token Ring"));
-        bus.add(new Card("16Mbs Token Ring"));
-        chassis.add(bus);
-        chassis.add(new FloppyDisk("3.5in Floppy"));
-        chassis.add(new FloppyDisk("3.5in Floppy"));
-        chassis.add(new FloppyDisk("3.5in Floppy"));
-        InventoryVisitor visitor = new InventoryVisitor();
-        cabinet.accept(visitor);
-        System.out.println("Inventory " + cabinet.name() + " " + visitor.getInventory());
-        PricingVisitor newVisitor = new PricingVisitor();
-        cabinet.accept(newVisitor);
-        System.out.println("Pricing " + cabinet.name() + " " + newVisitor.getTotal());
-    }
 
     /**
      *  The main program for the CreationalClient class
@@ -201,73 +70,74 @@ public class BehavioralClient {
      */
     public static void main(String[] args) {
         switch (showMenu()) {
-            case '1' :
-                testChainOfResponsibility();
+        case '1' :
+            testChainOfResponsibility();
 
-                break;
+            break;
 
-            case '2' :
-                testCommand();
+        case '2' :
+            testCommand();
 
-                break;
+            break;
 
-            case '3' :
-                testInterpreter();
+        case '3' :
+            testInterpreter();
 
-                break;
+            break;
 
-            case '4' :
-                testIterator();
+        case '4' :
+            testIterator();
 
-                break;
+            break;
 
-            case '5' :
-                testMediator();
+        case '5' :
+            testMediator();
 
-                break;
+            break;
 
-            case '6' :
-                testMemento();
+        case '6' :
+            testMemento();
 
-                break;
+            break;
 
-            case '7' :
-                testObserver();
+        case '7' :
+            testObserver();
 
-                break;
+            break;
 
-            case '8' :
-                testState();
+        case '8' :
+            testState();
 
-                break;
+            break;
 
-            case '9' :
-                testStrategy();
+        case '9' :
+            testStrategy();
 
-                break;
+            break;
 
-            case 10 :
-                testTemplateMethod();
+        case 10 :
+            testTemplateMethod();
 
-                break;
+            break;
 
-            case 11 :
-                testVisitor();
+        case 11 :
+            testVisitor();
 
-                break;
+            break;
 
-            case 'q' :
-                System.exit(1);
-            case '0' :
-                return;
+        case 'q' :
+            System.exit(1);
+        case '0' :
+            return;
 
-            default :
-                break;
+        default :
+            break;
         }
     }
 
     static char showMenu() {
         String s;
+
         System.out.println("*** Design Patterns Examples - Behavioral ***");
         System.out.println(" 0) Back");
         System.out.println("");
@@ -287,18 +157,168 @@ public class BehavioralClient {
         System.out.println("");
         System.out.print("-> ");
         System.out.flush();
+
         if (input == null) {
             input = new BufferedReader(new InputStreamReader(System.in));
         }
+
         try {
             s = input.readLine();
         } catch (IOException e) {
             return 'q';
         }
+
         if (s.length() > 0) {
             return s.charAt(0);
         } else {
             return (char) 0;
         }
+    }
+
+    /**
+     *  A unit test for JUnit
+     */
+    private static void testChainOfResponsibility() {
+        gamma.designpatterns.behavioral.chainofresponsibility.Application application =
+            new gamma.designpatterns.behavioral.chainofresponsibility.Application(Topic.APPLICATION_TOPIC);
+        Dialog                                                       dialog = new Dialog(application,
+                                                                                         Topic.PRINT_TOPIC);
+        gamma.designpatterns.behavioral.chainofresponsibility.Button button =
+            new gamma.designpatterns.behavioral.chainofresponsibility.Button(dialog,
+                                                                             Topic.PAPER_ORIENTATION_TOPIC);
+
+        button.handleHelp();
+        dialog.handleHelp();
+        application.handleHelp();
+    }
+
+    /**
+     *  A unit test for JUnit
+     */
+    private static void testCommand() {
+        gamma.designpatterns.behavioral.command.Application appl =
+            new gamma.designpatterns.behavioral.command.Application();
+        Document     docA = new Document("pippo.txt");
+        Document     docB = new Document("pluto.txt");
+        MacroCommand cmds = new MacroCommand();
+
+        cmds.add(new OpenCommand(appl));
+        cmds.add(new PasteCommand(docA));
+        cmds.add(new PasteCommand(docB));
+        cmds.execute();
+    }
+
+    /**
+     *  A unit test for JUnit
+     */
+    private static void testInterpreter() {
+        BooleanExp  expression;
+        Context     context = Context.instance();
+        VariableExp x       = new VariableExp("X");
+        VariableExp y       = new VariableExp("Y");
+
+        expression = new OrExp(new AndExp(new Constant(true), x), new AndExp(y, new NotExp(x)));
+        context.assign(x, false);
+        context.assign(y, true);
+
+        boolean result = expression.evaluate(context);
+
+        System.out.println("result: " + result);
+    }
+
+    /**
+     *  A unit test for JUnit
+     */
+    private static void testIterator() {
+        List<gamma.designpatterns.behavioral.iterator.Employee> l =
+            new List<gamma.designpatterns.behavioral.iterator.Employee>(4);
+
+        l.append(new gamma.designpatterns.behavioral.iterator.Employee("John"));
+        l.append(new gamma.designpatterns.behavioral.iterator.Employee("Peter"));
+        l.append(new gamma.designpatterns.behavioral.iterator.Employee("Paul"));
+        l.append(new gamma.designpatterns.behavioral.iterator.Employee("Samantha"));
+
+        Iterator i = l.iterator();
+
+        for (i.first(); !i.isDone(); i.next()) {
+            System.out.println("Employee: " + i.currentItem());
+        }
+    }
+
+    /**
+     *  A unit test for JUnit
+     */
+    private static void testMediator() {}
+
+    /**
+     *  A unit test for JUnit
+     */
+    private static void testMemento() {}
+
+    /**
+     *  A unit test for JUnit
+     */
+    private static void testObserver() {
+        ClockTimer   timer   = new ClockTimer();
+        DigitalClock digital = new DigitalClock(timer);
+        AnalogClock  analog  = new AnalogClock(timer);
+
+        timer.tick();
+    }
+
+    /**
+     *  A unit test for JUnit
+     */
+    private static void testState() {
+        new ShowCarousel().main(null);
+    }
+
+    /**
+     *  A unit test for JUnit
+     */
+    private static void testStrategy() {
+        try {
+            new Customer().main(null);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+        Composition quick  = new Composition(new SimpleCompositor());
+        Composition slick  = new Composition(new TeXCompositor());
+        Composition iconic = new Composition(new ArrayCompositor(100));
+    }
+
+    /**
+     *  A unit test for JUnit
+     */
+    private static void testTemplateMethod() {}
+
+    /**
+     *  A unit test for JUnit
+     */
+    private static void testVisitor() {
+        CompositeEquipment cabinet = new Cabinet("PC Cabinet");
+        CompositeEquipment chassis = new Chassis("PC Chassis");
+
+        cabinet.add(chassis);
+
+        CompositeEquipment bus = new Bus("MCA Bus");
+
+        bus.add(new Card("16Mbs Token Ring"));
+        bus.add(new Card("16Mbs Token Ring"));
+        chassis.add(bus);
+        chassis.add(new FloppyDisk("3.5in Floppy"));
+        chassis.add(new FloppyDisk("3.5in Floppy"));
+        chassis.add(new FloppyDisk("3.5in Floppy"));
+
+        InventoryVisitor visitor = new InventoryVisitor();
+
+        cabinet.accept(visitor);
+        System.out.println("Inventory " + cabinet.name() + " " + visitor.getInventory());
+
+        PricingVisitor newVisitor = new PricingVisitor();
+
+        cabinet.accept(newVisitor);
+        System.out.println("Pricing " + cabinet.name() + " " + newVisitor.getTotal());
     }
 }

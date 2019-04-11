@@ -38,8 +38,8 @@ import java.awt.*;
  */
 public class IsocelesTriangle extends AbstractTriangle {
     Point newc;
-    int newcx, newcy;
-    int incr;
+    int   newcx, newcy;
+    int   incr;
 
     /**
      * Constructs ...
@@ -51,32 +51,37 @@ public class IsocelesTriangle extends AbstractTriangle {
      */
     public IsocelesTriangle(Point a, Point b, Point c) {
         super(a, b, c);
-        double dx1 = b.x - a.x;
-        double dy1 = b.y - a.y;
-        double dx2 = c.x - b.x;
-        double dy2 = c.y - b.y;
+
+        double dx1   = b.x - a.x;
+        double dy1   = b.y - a.y;
+        double dx2   = c.x - b.x;
+        double dy2   = c.y - b.y;
         double side1 = calcSide(dx1, dy1);
         double side2 = calcSide(dx2, dy2);
+
         if (side2 < side1) {
             incr = -1;
         } else {
             incr = 1;
         }
-        double slope = dy2 / dx2;
+
+        double slope     = dy2 / dx2;
         double intercept = c.y - slope * c.x;
 
         /* move point c so that this is an isoceles triangle */
         newcx = c.x;
         newcy = c.y;
+
         while (Math.abs(side1 - side2) > 1) {
 
             /* iterate a pixel at a time until close */
             newcx += incr;
             newcy = (int) (slope * newcx + intercept);
-            dx2 = newcx - b.x;
-            dy2 = newcy - b.y;
+            dx2   = newcx - b.x;
+            dy2   = newcy - b.y;
             side2 = calcSide(dx2, dy2);
         }
+
         newc = new Point(newcx, newcy);
     }
 

@@ -116,7 +116,8 @@ public class Room implements MapSite {
      *  Description of the Method
      */
     public void enter() {
-        throw new java.lang.UnsupportedOperationException("Method enter() not yet implemented.");
+        throw new java.lang.UnsupportedOperationException(
+            "Method enter() not yet implemented.");
     }
 
     /**
@@ -168,7 +169,8 @@ public class Room implements MapSite {
      * @return        Description of the Return Value
      */
     public boolean equals(Object parm1) {
-        if ((parm1 instanceof Room) && ((Room) parm1).getRoomNumber() == roomNumber) {
+        if ((parm1 instanceof Room)
+                && ((Room) parm1).getRoomNumber() == roomNumber) {
             return true;
         }
 

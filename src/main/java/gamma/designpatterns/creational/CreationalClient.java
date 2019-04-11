@@ -27,14 +27,8 @@
 
 package gamma.designpatterns.creational;
 
-import gamma.designpatterns.creational.maze.BombedWall;
-import gamma.designpatterns.creational.maze.Door;
-import gamma.designpatterns.creational.maze.DoorNeedingSpell;
-import gamma.designpatterns.creational.maze.Maze;
-import gamma.designpatterns.creational.maze.MazeGame;
-import gamma.designpatterns.creational.maze.Room;
-import gamma.designpatterns.creational.maze.RoomWithABomb;
-import gamma.designpatterns.creational.maze.Wall;
+import java.io.*;
+
 import gamma.designpatterns.creational.abstractfactory.BombedMazeFactory;
 import gamma.designpatterns.creational.abstractfactory.EnchantedMazeFactory;
 import gamma.designpatterns.creational.abstractfactory.MazeFactory;
@@ -43,10 +37,16 @@ import gamma.designpatterns.creational.builder.MazeBuilder;
 import gamma.designpatterns.creational.builder.StandardMazeBuilder;
 import gamma.designpatterns.creational.factorymethod.BombedMazeGame;
 import gamma.designpatterns.creational.factorymethod.EnchantedMazeGame;
+import gamma.designpatterns.creational.maze.BombedWall;
+import gamma.designpatterns.creational.maze.Door;
+import gamma.designpatterns.creational.maze.DoorNeedingSpell;
+import gamma.designpatterns.creational.maze.Maze;
+import gamma.designpatterns.creational.maze.MazeGame;
+import gamma.designpatterns.creational.maze.Room;
+import gamma.designpatterns.creational.maze.RoomWithABomb;
+import gamma.designpatterns.creational.maze.Wall;
 import gamma.designpatterns.creational.prototype.MazePrototypeFactory;
 import gamma.designpatterns.creational.singleton.MazeFactorySingleton;
-
-import java.io.*;
 
 /**
  *  <p>
@@ -64,89 +64,13 @@ import java.io.*;
  * @version    1.0
  */
 public class CreationalClient {
+    private static BufferedReader input;
+
     enum Creational {
         HALT, ABSTRACT_FACTORY, BUILDER, FACTORY_METHOD, PROTOTYPE, SINGLETON, QUIT
     }
 
     ;
-    private static BufferedReader input;
-
-    /**
-     *  A unit test for JUnit
-     */
-    private static void testAbstractFactory() {
-        Maze maze;
-        // standard maze
-        maze = MazeGame.createMaze(new MazeFactory());
-        System.out.println(maze);
-        // spell maze
-        maze = MazeGame.createMaze(new EnchantedMazeFactory());
-        System.out.println(maze);
-        // bombed maze
-        maze = MazeGame.createMaze(new BombedMazeFactory());
-        System.out.println(maze);
-    }
-
-    /**
-     *  A unit test for JUnit
-     */
-    private static void testBuilder() {
-        Maze maze;
-        MazeGame game = new MazeGame();
-        MazeBuilder builder = new StandardMazeBuilder();
-        game.createMaze(builder);
-        maze = builder.getMaze();
-        System.out.println(maze);
-        // A more exotic MazeBuilder
-        CountingMazeBuilder countingBuilder = new CountingMazeBuilder();
-        game.createMaze(countingBuilder);
-        System.out.println("The maze has " + countingBuilder.getRoomCount() + " rooms and "
-                           + countingBuilder.getDoorCount() + " doors");
-    }
-
-    /**
-     *  A unit test for JUnit
-     */
-    private static void testFactoryMethod() {
-        Maze maze;
-        MazeGame game;
-        game = new MazeGame();
-        maze = game.createMaze();
-        System.out.println(maze);
-        // Bombed game
-        game = new BombedMazeGame();
-        maze = game.createMaze();
-        System.out.println(maze);
-        // Enchanted game
-        game = new EnchantedMazeGame();
-        maze = game.createMaze();
-        System.out.println(maze);
-    }
-
-    /**
-     *  A unit test for JUnit
-     */
-    private static void testPrototype() {
-        Maze maze;
-        MazePrototypeFactory simpleMazeFactory = new MazePrototypeFactory(new Maze(), new Wall(),
-                                                     new Room(), new Door());
-        maze = MazeGame.createMaze(simpleMazeFactory);
-        System.out.println(maze);
-        MazePrototypeFactory bombedMazeFactory = new MazePrototypeFactory(new Maze(),
-                                                     new BombedWall(), new RoomWithABomb(),
-                                                     new DoorNeedingSpell());
-        maze = MazeGame.createMaze(bombedMazeFactory);
-        System.out.println(maze);
-    }
-
-    /**
-     *  A unit test for JUnit
-     */
-    private static void testSingleton() {
-        System.setProperty("mazestyle", "standard");
-        Maze maze = MazeGame.createMaze(MazeFactorySingleton.getInstance());
-        System.out.println(maze);
-    }
 
     /**
      *  The main program for the CreationalClient class
@@ -156,44 +80,45 @@ public class CreationalClient {
     public static void main(String[] args) {
         while (true) {
             switch (showMenu()) {
-                case ABSTRACT_FACTORY :
-                    testAbstractFactory();
+            case ABSTRACT_FACTORY :
+                testAbstractFactory();
 
-                    break;
+                break;
 
-                case BUILDER :
-                    testBuilder();
+            case BUILDER :
+                testBuilder();
 
-                    break;
+                break;
 
-                case FACTORY_METHOD :
-                    testFactoryMethod();
+            case FACTORY_METHOD :
+                testFactoryMethod();
 
-                    break;
+                break;
 
-                case PROTOTYPE :
-                    testPrototype();
+            case PROTOTYPE :
+                testPrototype();
 
-                    break;
+                break;
 
-                case SINGLETON :
-                    testSingleton();
+            case SINGLETON :
+                testSingleton();
 
-                    break;
+                break;
 
-                case QUIT :
-                    System.exit(1);
-                case HALT :
-                    return;
+            case QUIT :
+                System.exit(1);
+            case HALT :
+                return;
 
-                default :
-                    break;
+            default :
+                break;
             }
         }
     }
 
     private static Creational showMenu() {
         String s;
+
         System.out.println("*** Design Patterns Examples - Creational ***");
         System.out.println("0) Back");
         System.out.println("");
@@ -207,14 +132,17 @@ public class CreationalClient {
         System.out.println("");
         System.out.print("-> ");
         System.out.flush();
+
         if (input == null) {
             input = new BufferedReader(new InputStreamReader(System.in));
         }
+
         try {
             s = input.readLine();
         } catch (IOException e) {
             return Creational.QUIT;
         }
+
         if (s.length() > 0) {
             try {
                 return Creational.values()[Integer.parseInt(s)];
@@ -226,5 +154,99 @@ public class CreationalClient {
         } else {
             return Creational.HALT;
         }
+    }
+
+    /**
+     *  A unit test for JUnit
+     */
+    private static void testAbstractFactory() {
+        Maze maze;
+
+        // standard maze
+        maze = MazeGame.createMaze(new MazeFactory());
+        System.out.println(maze);
+
+        // spell maze
+        maze = MazeGame.createMaze(new EnchantedMazeFactory());
+        System.out.println(maze);
+
+        // bombed maze
+        maze = MazeGame.createMaze(new BombedMazeFactory());
+        System.out.println(maze);
+    }
+
+    /**
+     *  A unit test for JUnit
+     */
+    private static void testBuilder() {
+        Maze        maze;
+        MazeGame    game    = new MazeGame();
+        MazeBuilder builder = new StandardMazeBuilder();
+
+        game.createMaze(builder);
+        maze = builder.getMaze();
+        System.out.println(maze);
+
+        // A more exotic MazeBuilder
+        CountingMazeBuilder countingBuilder = new CountingMazeBuilder();
+
+        game.createMaze(countingBuilder);
+        System.out.println("The maze has " + countingBuilder.getRoomCount() + " rooms and "
+                           + countingBuilder.getDoorCount() + " doors");
+    }
+
+    /**
+     *  A unit test for JUnit
+     */
+    private static void testFactoryMethod() {
+        Maze     maze;
+        MazeGame game;
+
+        game = new MazeGame();
+        maze = game.createMaze();
+        System.out.println(maze);
+
+        // Bombed game
+        game = new BombedMazeGame();
+        maze = game.createMaze();
+        System.out.println(maze);
+
+        // Enchanted game
+        game = new EnchantedMazeGame();
+        maze = game.createMaze();
+        System.out.println(maze);
+    }
+
+    /**
+     *  A unit test for JUnit
+     */
+    private static void testPrototype() {
+        Maze                 maze;
+        MazePrototypeFactory simpleMazeFactory = new MazePrototypeFactory(new Maze(),
+                                                                          new Wall(),
+                                                                          new Room(),
+                                                                          new Door());
+
+        maze = MazeGame.createMaze(simpleMazeFactory);
+        System.out.println(maze);
+
+        MazePrototypeFactory bombedMazeFactory = new MazePrototypeFactory(new Maze(),
+                                                                          new BombedWall(),
+                                                                          new RoomWithABomb(),
+                                                                          new DoorNeedingSpell());
+
+        maze = MazeGame.createMaze(bombedMazeFactory);
+        System.out.println(maze);
+    }
+
+    /**
+     *  A unit test for JUnit
+     */
+    private static void testSingleton() {
+        System.setProperty("mazestyle", "standard");
+
+        Maze maze = MazeGame.createMaze(MazeFactorySingleton.getInstance());
+
+        System.out.println(maze);
     }
 }

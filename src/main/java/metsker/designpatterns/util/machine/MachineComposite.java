@@ -79,7 +79,8 @@ public class MachineComposite extends MachineComponent {
      * @param parent
      * @param responsible
      */
-    public MachineComposite(int id, MachineComponent parent, Engineer responsible) {
+    public MachineComposite(int id, MachineComponent parent,
+                            Engineer responsible) {
         super(id, parent, responsible);
     }
 
@@ -94,7 +95,8 @@ public class MachineComposite extends MachineComponent {
      * @param components
      *            the children of this composite
      */
-    public MachineComposite(int id, MachineComponent parent, MachineComponent[] components) {
+    public MachineComposite(int id, MachineComponent parent,
+                            MachineComponent[] components) {
         super(id, parent);
         for (int i = 0; i < components.length; i++) {
             add(components[i]);

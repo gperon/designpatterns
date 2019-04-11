@@ -109,7 +109,10 @@ public class UI {
      */
     public JPanel createPaddedPanel() {
         JPanel panel = new JPanel();
-        panel.setBorder(BorderFactory.createEmptyBorder(getPad(), getPad(), getPad(), getPad()));
+        panel.setBorder(BorderFactory.createEmptyBorder(getPad(),
+                getPad(),
+                getPad(),
+                getPad()));
 
         return panel;
     }
@@ -161,9 +164,10 @@ public class UI {
      * @return a titled border with the given title.
      */
     public TitledBorder createTitledBorder(String title) {
-        TitledBorder border =
-            BorderFactory.createTitledBorder(BorderFactory.createBevelBorder(BevelBorder.RAISED),
-                title, TitledBorder.LEFT, TitledBorder.TOP);
+        TitledBorder border = BorderFactory.createTitledBorder(
+                                  BorderFactory.createBevelBorder(
+                                      BevelBorder.RAISED), title,
+                                          TitledBorder.LEFT, TitledBorder.TOP);
         border.setTitleColor(Color.black);
         border.setTitleFont(getFont());
 

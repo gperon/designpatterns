@@ -40,10 +40,46 @@ import javax.swing.*;
  */
 public class PlotPanel extends JPanel {
     float xfactor, yfactor;
-    int xpmin, ypmin, xpmax, ypmax;
+    int   xpmin, ypmin, xpmax, ypmax;
     float minX, maxX, minY, maxY;
     float x[], y[];
     Color color;
+
+    protected int calcx(float xp) {
+        return (int) ((xp - minX) * xfactor + xpmin);
+    }
+
+    protected int calcy(float yp) {
+        int ypnt = (int) ((yp - minY) * yfactor);
+
+        return ypmax - ypnt;
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param xp
+     * @param yp
+     * @param c
+     */
+    public void plot(float[] xp, float[] yp, Color c) {
+        x     = xp;    // copy in the arrays
+        y     = yp;
+        color = c;     // and color
+
+        // compute bounds and sclaing factors
+        int w = getWidth() - getInsets().left - getInsets().right;
+        int h = getHeight() - getInsets().top - getInsets().bottom;
+
+        xfactor = (0.9f * w) / (maxX - minX);
+        yfactor = (0.9f * h) / (maxY - minY);
+        xpmin   = (int) (0.05f * w);
+        ypmin   = (int) (0.05f * h);
+        xpmax   = w - xpmin;
+        ypmax   = h - ypmin;
+        repaint();    // this causes the actual plot
+    }
 
     /**
      * Method description
@@ -59,39 +95,5 @@ public class PlotPanel extends JPanel {
         maxX = maxx;
         minY = miny;
         maxY = maxy;
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param xp
-     * @param yp
-     * @param c
-     */
-    public void plot(float[] xp, float[] yp, Color c) {
-        x = xp;       // copy in the arrays
-        y = yp;
-        color = c;    // and color
-        // compute bounds and sclaing factors
-        int w = getWidth() - getInsets().left - getInsets().right;
-        int h = getHeight() - getInsets().top - getInsets().bottom;
-        xfactor = (0.9f * w) / (maxX - minX);
-        yfactor = (0.9f * h) / (maxY - minY);
-        xpmin = (int) (0.05f * w);
-        ypmin = (int) (0.05f * h);
-        xpmax = w - xpmin;
-        ypmax = h - ypmin;
-        repaint();    // this causes the actual plot
-    }
-
-    protected int calcx(float xp) {
-        return (int) ((xp - minX) * xfactor + xpmin);
-    }
-
-    protected int calcy(float yp) {
-        int ypnt = (int) ((yp - minY) * yfactor);
-
-        return ypmax - ypnt;
     }
 }

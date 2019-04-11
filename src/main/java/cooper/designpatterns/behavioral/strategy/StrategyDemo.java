@@ -27,13 +27,13 @@
 
 package cooper.designpatterns.behavioral.strategy;
 
-import cooper.designpatterns.util.swing.JxFrame;
-import cooper.designpatterns.behavioral.command.Command;
-
 import java.awt.*;
 import java.awt.event.*;
 
 import javax.swing.*;
+
+import cooper.designpatterns.behavioral.command.Command;
+import cooper.designpatterns.util.swing.JxFrame;
 
 /**
  * Class description
@@ -51,7 +51,9 @@ public class StrategyDemo extends JxFrame implements ActionListener {
      */
     public StrategyDemo() {
         super("Strategy Plots");
+
         JPanel jp = new JPanel();
+
         getContentPane().add(jp);
         context = new Context();
         jp.add(new JBarButton(this, context));
@@ -68,6 +70,7 @@ public class StrategyDemo extends JxFrame implements ActionListener {
      */
     public void actionPerformed(ActionEvent e) {
         Command comd = (Command) e.getSource();
+
         comd.execute();
     }
 

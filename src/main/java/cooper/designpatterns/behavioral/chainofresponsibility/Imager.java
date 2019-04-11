@@ -27,21 +27,20 @@
 
 package cooper.designpatterns.behavioral.chainofresponsibility;
 
-import java.awt.event.*;
-
-import javax.swing.*;
-import javax.swing.event.*;
-import javax.swing.text.*;
-import javax.swing.border.*;
-
-import javax.accessibility.*;
-
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.event.*;
+
+import java.io.*;
 
 import java.util.*;
 
-import java.io.*;
+import javax.accessibility.*;
+
+import javax.swing.*;
+import javax.swing.border.*;
+import javax.swing.event.*;
+import javax.swing.text.*;
 
 /**
  * Class description
@@ -51,8 +50,8 @@ import java.io.*;
  * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
  */
 public class Imager extends JPanel implements Chain {
-    private Chain nextChain;
-    private Image img;
+    private Chain   nextChain;
+    private Image   img;
     private boolean loaded;
 
     /**
@@ -75,31 +74,45 @@ public class Imager extends JPanel implements Chain {
         nextChain = c;    // next in chain of resp
     }
 
-    /**
-     * Method description
-     *
-     *
-     * @param mesg
-     */
-    public void sendToChain(String mesg) {
-        // if there is a JPEG file with this root name
-        // load it and display it.
-        if (findImage(mesg)) {
-            loadImage(mesg + ".jpg");
+    private boolean findImage(String file) {
+        XFile   xfile   = null;
+        File    dir     = new File(System.getProperty("user.dir"));
+        boolean found   = false;
+        String  files[] = dir.list();
+        int     i       = 0;
+
+        while ((!found) && (i < files.length)) {
+            xfile = new XFile(files[i]);
+            found = xfile.matchRoot(file);
+
+            if (!found) {
+                i++;
+            }
+        }
+
+        if (found) {
+            return xfile.matchName(file + ".jpg");
         } else {
-            // Otherwise, pass request along chain
-            nextChain.sendToChain(mesg);
+            return found;    // false
         }
     }
 
-    /**
-     * Method description
-     *
-     *
-     * @return
-     */
-    public Chain getChain() {
-        return nextChain;
+    private void loadImage(String file) {
+        loaded = false;
+
+        MediaTracker tracker = new MediaTracker(this);
+
+        img = Toolkit.getDefaultToolkit().getImage(file);
+        tracker.addImage(img, 0);    // watch for image loading
+
+        // this begins actual image loading
+        try {
+            tracker.waitForID(0, 1);
+        } catch (InterruptedException e) {}
+
+        loaded = true;
+        validate();
+        repaint();
     }
 
     /**
@@ -114,37 +127,32 @@ public class Imager extends JPanel implements Chain {
         }
     }
 
-    private void loadImage(String file) {
-        loaded = false;
-        MediaTracker tracker = new MediaTracker(this);
-        img = Toolkit.getDefaultToolkit().getImage(file);
-        tracker.addImage(img, 0);    // watch for image loading
-        // this begins actual image loading
-        try {
-            tracker.waitForID(0, 1);
-        } catch (InterruptedException e) {}
-        loaded = true;
-        validate();
-        repaint();
+    /**
+     * Method description
+     *
+     *
+     * @param mesg
+     */
+    public void sendToChain(String mesg) {
+
+        // if there is a JPEG file with this root name
+        // load it and display it.
+        if (findImage(mesg)) {
+            loadImage(mesg + ".jpg");
+        } else {
+
+            // Otherwise, pass request along chain
+            nextChain.sendToChain(mesg);
+        }
     }
 
-    private boolean findImage(String file) {
-        XFile xfile = null;
-        File dir = new File(System.getProperty("user.dir"));
-        boolean found = false;
-        String files[] = dir.list();
-        int i = 0;
-        while ((!found) && (i < files.length)) {
-            xfile = new XFile(files[i]);
-            found = xfile.matchRoot(file);
-            if (!found) {
-                i++;
-            }
-        }
-        if (found) {
-            return xfile.matchName(file + ".jpg");
-        } else {
-            return found;    // false
-        }
+    /**
+     * Method description
+     *
+     *
+     * @return
+     */
+    public Chain getChain() {
+        return nextChain;
     }
 }

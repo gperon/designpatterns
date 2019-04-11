@@ -85,7 +85,8 @@ public class ShellAssembler extends Machine {
      * @param parent
      *            the composite this machine belongs to
      */
-    public ShellAssembler(int id, TubMediator mediator, MachineComponent parent) {
+    public ShellAssembler(int id, TubMediator mediator,
+                          MachineComponent parent) {
         super(id, mediator, parent);
     }
 

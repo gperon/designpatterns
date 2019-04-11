@@ -1,8 +1,8 @@
 /*
  * @(#)ShowFlight2.java   2011-11-01
- * 
+ *
  * Copyright (c) 2011 Giorgio Peron giorgio.peron@gmail.com
- * All Rights Reserved. 
+ * All Rights Reserved.
  *
  * Redistribution and use of this script, with or without modification, is
  * permitted provided that the following conditions are met:
@@ -51,7 +51,7 @@ import metsker.designpatterns.util.ui.UI;
  *
  *
  * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>    
+ * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
  */
 public class ShowFlight2 {
 
@@ -61,11 +61,13 @@ public class ShowFlight2 {
      * @param args
      */
     public static void main(String[] args) {
-        PlotPanel p = new PlotPanel(101, new T(), new ShowFlight2().new YFunction());
+        PlotPanel p = new PlotPanel(101, new T(),
+                                    new ShowFlight2().new YFunction());
         p.setPreferredSize(new Dimension(300, 200));
         JFrame frame = new JFrame("Flight Path for Shell Duds");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.getContentPane().add(UI.NORMAL.createTitledPanel("Flight Path", p));
+        frame.getContentPane().add(UI.NORMAL.createTitledPanel("Flight Path",
+                p));
         frame.pack();
         frame.setVisible(true);
     }

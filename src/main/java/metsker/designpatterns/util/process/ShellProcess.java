@@ -70,11 +70,13 @@ public class ShellProcess {
     protected static ProcessAlternation reworkOrFinish() {
         return new ProcessAlternation("Rework inner shell, or complete shell",
                                       new ProcessComponent[] { rework(),
-                finish() });
+                                              finish() });
     }
 
     protected static ProcessSequence rework() {
-        return new ProcessSequence("Rework", new ProcessComponent[] { disassemble(), make() });
+        return new ProcessSequence("Rework",
+                                   new ProcessComponent[] { disassemble(),
+                                           make() });
     }
 
     protected static ProcessStep disassemble() {

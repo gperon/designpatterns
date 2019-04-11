@@ -32,6 +32,7 @@ package cooper.designpatterns.creational.singleton;
  * @author gperon
  */
 public class Printer {
+
     // this is a prototype for a printer-spooler class
     // such that only one instance can ever exist
     static boolean instance_flag = false;    // true if 1 instance
@@ -48,6 +49,7 @@ public class Printer {
         } else {
             instance_flag = true;    // set flag for 1 instance
         }
+
         System.out.println("printer opened");
     }
 

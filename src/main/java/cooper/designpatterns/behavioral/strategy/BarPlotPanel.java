@@ -44,7 +44,7 @@ public class BarPlotPanel extends PlotPanel {
      *
      */
     public BarPlotPanel() {
-        colors = new Color[6];
+        colors    = new Color[6];
         colors[0] = Color.red;
         colors[1] = Color.blue;
         colors[2] = Color.green;
@@ -62,11 +62,13 @@ public class BarPlotPanel extends PlotPanel {
     public void paint(Graphics g) {
         int xp, yp;
         int ypm = (int) (ypmax * 1.05f);
+
         g.setColor(Color.white);
         g.fillRect(0, 0, getWidth(), getHeight());
         g.setColor(Color.black);
         g.drawRect(xpmin, ypmin, xpmax, ypm - ypmin);
         g.setColor(colors[0]);
+
         for (int i = 0; i < x.length; i++) {
             g.setColor(colors[i]);
             xp = calcx(x[i]);

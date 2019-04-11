@@ -56,7 +56,8 @@ public class ChemicalFactoryTest extends TestCase {
      *
      */
     public void testGetFactory() {
-        assertEquals("Carbon(C)[12.0]", ChemicalFactory.getChemical("CARBON").toString());
+        assertEquals("Carbon(C)[12.0]",
+                     ChemicalFactory.getChemical("CARBON").toString());
     }
 
     /**
@@ -64,6 +65,7 @@ public class ChemicalFactoryTest extends TestCase {
      *
      */
     public void testChemicalFactory2() {
-        assertEquals("Carbon(C)[12.0]", ChemicalFactory2.getChemical("CARBON").toString());
+        assertEquals("Carbon(C)[12.0]",
+                     ChemicalFactory2.getChemical("CARBON").toString());
     }
 }

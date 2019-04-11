@@ -127,18 +127,21 @@ public class EmpTree extends JxFrame implements TreeSelectionListener {
         marketVP.add(advMgr = new Employee("Advt Mgr", 50000));
         for (int i = 0; i < 5; i++) {
             salesMgr.add(new Employee("Sales " + new Integer(i).toString(),
-                                      30000.0F + (float) (Math.random() - 0.5) * 10000));
+                                      30000.0F
+                                      + (float) (Math.random() - 0.5) * 10000));
         }
         advMgr.add(new Employee("Secy", 20000));
         prodVP.add(prodMgr = new Employee("Prod Mgr", 40000));
         prodVP.add(shipMgr = new Employee("Ship Mgr", 35000));
         for (int i = 0; i < 4; i++) {
             prodMgr.add(new Employee("Manuf " + new Integer(i).toString(),
-                                     25000.0F + (float) (Math.random() - 0.5) * 5000));
+                                     25000.0F
+                                     + (float) (Math.random() - 0.5) * 5000));
         }
         for (int i = 0; i < 3; i++) {
             shipMgr.add(new Employee("ShipClrk " + new Integer(i).toString(),
-                                     20000.0F + (float) (Math.random() - 0.5) * 5000));
+                                     20000.0F
+                                     + (float) (Math.random() - 0.5) * 5000));
         }
     }
 

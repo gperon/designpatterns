@@ -1,8 +1,8 @@
 /*
  * @(#)Client.java   2011-11-01
- * 
+ *
  * Copyright (c) 2011 Giorgio Peron giorgio.peron@gmail.com
- * All Rights Reserved. 
+ * All Rights Reserved.
  *
  * Redistribution and use of this script, with or without modification, is
  * permitted provided that the following conditions are met:
@@ -27,62 +27,24 @@
 
 package gamma.designpatterns;
 
+import java.io.*;
+
 import gamma.designpatterns.behavioral.BehavioralClient;
 import gamma.designpatterns.creational.CreationalClient;
 import gamma.designpatterns.structural.StructuralClient;
-
-import java.io.*;
 
 /**
  * Class description
  *
  *
  * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>    
+ * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
  */
 public class Client {
-    static final char CREATIONAL = '1';
-    static final char STRUCTURAL = '2';
-    static final char BEHAVIORAL = '3';
+    static final char     CREATIONAL = '1';
+    static final char     STRUCTURAL = '2';
+    static final char     BEHAVIORAL = '3';
     static BufferedReader input;
-
-    static char showMenu() {
-        String s;
-        System.out.println("*** Design Patterns Examples ***");
-        System.out.println("1) Creational");
-        System.out.println("2) Structural");
-        System.out.println("3) Behavioral");
-        System.out.println("");
-        System.out.println("Press q to quit");
-        System.out.println("");
-        System.out.print("-> ");
-        System.out.flush();
-        if (input == null) {
-            input = new BufferedReader(new InputStreamReader(System.in));
-        }
-        try {
-            s = input.readLine();
-        } catch (IOException e) {
-            return 'q';
-        }
-        if (s.length() > 0) {
-            return s.charAt(0);
-        } else {
-            return (char) 0;
-        }
-    }
-
-    static void startCreationalExample() {
-        new CreationalClient().main(null);
-    }
-
-    static void startStructuralExample() {
-        new StructuralClient().main(null);
-    }
-
-    static void startBehavioralExample() {
-        new BehavioralClient().main(null);
-    }
 
     /**
      * Method description
@@ -92,30 +54,74 @@ public class Client {
      */
     public static void main(String args[]) {
         int choice;
+
         System.out.println("The purpose of this program is to demonstrate design patterns issues.");
         System.out.println("");
+
         while (true) {
             switch (showMenu()) {
-                case CREATIONAL :
-                    startCreationalExample();
+            case CREATIONAL :
+                startCreationalExample();
 
-                    break;
+                break;
 
-                case STRUCTURAL :
-                    startStructuralExample();
+            case STRUCTURAL :
+                startStructuralExample();
 
-                    break;
+                break;
 
-                case BEHAVIORAL :
-                    startBehavioralExample();
+            case BEHAVIORAL :
+                startBehavioralExample();
 
-                    break;
+                break;
 
-                case 'q' :
-                    System.exit(1);
-                default :
-                    break;
+            case 'q' :
+                System.exit(1);
+            default :
+                break;
             }
         }
+    }
+
+    static char showMenu() {
+        String s;
+
+        System.out.println("*** Design Patterns Examples ***");
+        System.out.println("1) Creational");
+        System.out.println("2) Structural");
+        System.out.println("3) Behavioral");
+        System.out.println("");
+        System.out.println("Press q to quit");
+        System.out.println("");
+        System.out.print("-> ");
+        System.out.flush();
+
+        if (input == null) {
+            input = new BufferedReader(new InputStreamReader(System.in));
+        }
+
+        try {
+            s = input.readLine();
+        } catch (IOException e) {
+            return 'q';
+        }
+
+        if (s.length() > 0) {
+            return s.charAt(0);
+        } else {
+            return (char) 0;
+        }
+    }
+
+    static void startBehavioralExample() {
+        new BehavioralClient().main(null);
+    }
+
+    static void startCreationalExample() {
+        new CreationalClient().main(null);
+    }
+
+    static void startStructuralExample() {
+        new StructuralClient().main(null);
     }
 }

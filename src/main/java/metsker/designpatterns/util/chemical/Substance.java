@@ -59,7 +59,8 @@ public class Substance {
      * @param grams
      *            The mass of this batch of substance.
      */
-    public Substance(String name, String symbol, double atomicWeight, double grams) {
+    public Substance(String name, String symbol, double atomicWeight,
+                     double grams) {
         this.name = name;
         this.symbol = symbol;
         this.atomicWeight = atomicWeight;

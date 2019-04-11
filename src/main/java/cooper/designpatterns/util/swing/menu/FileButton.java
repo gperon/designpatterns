@@ -63,6 +63,7 @@ public class FileButton extends ActionButton {
      */
     public void actionPerformed(ActionEvent e) {
         FileDialog fdlg = new FileDialog(fr, "Open File", FileDialog.LOAD);
+
         // JFileChooser fdlg = new JFileChooser();
         // fdlg.showOpenDialog(fr);
     }

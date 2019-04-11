@@ -49,16 +49,6 @@ public class BonusVacationVisitor extends Visitor {
      * Method description
      *
      *
-     * @return
-     */
-    public int getTotalDays() {
-        return total_days;
-    }
-
-    /**
-     * Method description
-     *
-     *
      * @param boss
      */
     public void visit(Boss boss) {
@@ -74,5 +64,15 @@ public class BonusVacationVisitor extends Visitor {
      */
     public void visit(Employee emp) {
         total_days += emp.getVacDays();
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @return
+     */
+    public int getTotalDays() {
+        return total_days;
     }
 }

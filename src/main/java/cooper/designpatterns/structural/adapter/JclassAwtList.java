@@ -27,11 +27,11 @@
 
 package cooper.designpatterns.structural.adapter;
 
-import cooper.designpatterns.util.swing.AwtList;
-
 import javax.swing.JList;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+
+import cooper.designpatterns.util.swing.AwtList;
 
 //this is a simple adapter class to
 //convert List awt methods to Swing methods
@@ -90,17 +90,9 @@ public class JclassAwtList extends JList implements ListSelectionListener, AwtLi
      * Method description
      *
      *
-     * @return
+     * @param e
      */
-    public String[] getSelectedItems() {
-        Object[] obj = getSelectedValues();
-        String[] s = new String[obj.length];
-        for (int i = 0; i < obj.length; i++) {
-            s[i] = obj[i].toString();
-        }
-
-        return s;
-    }
+    public void valueChanged(ListSelectionEvent e) {}
 
 //  -----------------------------------------
 
@@ -108,7 +100,16 @@ public class JclassAwtList extends JList implements ListSelectionListener, AwtLi
      * Method description
      *
      *
-     * @param e
+     * @return
      */
-    public void valueChanged(ListSelectionEvent e) {}
+    public String[] getSelectedItems() {
+        Object[] obj = getSelectedValues();
+        String[] s   = new String[obj.length];
+
+        for (int i = 0; i < obj.length; i++) {
+            s[i] = obj[i].toString();
+        }
+
+        return s;
+    }
 }

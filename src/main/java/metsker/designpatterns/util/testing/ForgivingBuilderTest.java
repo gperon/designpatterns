@@ -62,7 +62,9 @@ public class ForgivingBuilderTest extends TestCase {
      */
     public void setUp() {
         // Pick a date definitely in the past: 11-5-2000
-        nextNov5 = ReservationBuilder.futurize(new Date(2000 - 1900, 11 - 1, 5));
+        nextNov5 = ReservationBuilder.futurize(new Date(2000 - 1900,
+                11 - 1,
+                5));
     }
 
     /**
@@ -72,7 +74,8 @@ public class ForgivingBuilderTest extends TestCase {
      */
     public void testLowDollars() throws ParseException {
         String s = "Date, November 5, Headcount, 250, "
-                   + "City, Springfield, DollarsPerHead, 1.95, " + "HasSite, false";
+                   + "City, Springfield, DollarsPerHead, 1.95, "
+                   + "HasSite, false";
         ReservationBuilder b = new ForgivingBuilder();
         new ReservationParser(b).parse(s);
         try {
@@ -87,7 +90,8 @@ public class ForgivingBuilderTest extends TestCase {
      * @throws ParseException
      */
     public void testLowHeadCount() throws ParseException {
-        String s = "Date, November 5, Headcount, 2, " + "City, Springfield, DollarsPerHead, 9.95, "
+        String s = "Date, November 5, Headcount, 2, "
+                   + "City, Springfield, DollarsPerHead, 9.95, "
                    + "HasSite, false";
         ReservationBuilder b = new ForgivingBuilder();
         new ReservationParser(b).parse(s);
@@ -103,8 +107,8 @@ public class ForgivingBuilderTest extends TestCase {
      * @throws ParseException
      */
     public void testNoCity() throws ParseException {
-        String s = "Date, November 5, Headcount, 250, " + "DollarsPerHead, 9.95, "
-                   + "HasSite, false";
+        String s = "Date, November 5, Headcount, 250, "
+                   + "DollarsPerHead, 9.95, " + "HasSite, false";
         ReservationBuilder b = new ForgivingBuilder();
         new ReservationParser(b).parse(s);
         try {
@@ -119,7 +123,8 @@ public class ForgivingBuilderTest extends TestCase {
      * @throws ParseException
      */
     public void testNoDate() throws ParseException {
-        String s = "Headcount, 250, " + "City, Springfield, DollarsPerHead, 9.95, "
+        String s = "Headcount, 250, "
+                   + "City, Springfield, DollarsPerHead, 9.95, "
                    + "HasSite, false";
         ReservationBuilder b = new ForgivingBuilder();
         new ReservationParser(b).parse(s);
@@ -138,7 +143,8 @@ public class ForgivingBuilderTest extends TestCase {
      * @throws ParseException
      */
     public void testNoDollar() throws BuilderException, ParseException {
-        String s = "Date, November 5, Headcount, 250, City, Springfield, " + "  HasSite, false";
+        String s = "Date, November 5, Headcount, 250, City, Springfield, "
+                   + "  HasSite, false";
         ForgivingBuilder b = new ForgivingBuilder();
         ReservationParser p = new ReservationParser(b);
         p.parse(s);
@@ -183,8 +189,10 @@ public class ForgivingBuilderTest extends TestCase {
      * @throws BuilderException
      * @throws ParseException
      */
-    public void testNoHeadcountNoDollar() throws BuilderException, ParseException {
-        String s = "Date, November 5,   City, Springfield, " + "  HasSite, false";
+    public void testNoHeadcountNoDollar()
+            throws BuilderException, ParseException {
+        String s = "Date, November 5,   City, Springfield, "
+                   + "  HasSite, false";
         ForgivingBuilder b = new ForgivingBuilder();
         ReservationParser p = new ReservationParser(b);
         p.parse(s);

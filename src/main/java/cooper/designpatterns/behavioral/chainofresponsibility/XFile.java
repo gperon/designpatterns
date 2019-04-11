@@ -52,16 +52,12 @@ public class XFile extends File {
      * Method description
      *
      *
+     * @param filename
+     *
      * @return
      */
-    public String getRoot() {
-        String name = getName();
-        int i = name.lastIndexOf(".");
-        if (i > 0) {
-            name = name.substring(0, i);
-        }
-
-        return name;
+    public boolean matchName(String filename) {
+        return filename.toLowerCase().equals(getName().toLowerCase());
     }
 
     /**
@@ -73,7 +69,7 @@ public class XFile extends File {
      * @return
      */
     public boolean matchRoot(String filename) {
-        String root = getRoot().toLowerCase();
+        String root  = getRoot().toLowerCase();
         String fname = filename.toLowerCase();
 
         return fname.equals(root);
@@ -83,11 +79,16 @@ public class XFile extends File {
      * Method description
      *
      *
-     * @param filename
-     *
      * @return
      */
-    public boolean matchName(String filename) {
-        return filename.toLowerCase().equals(getName().toLowerCase());
+    public String getRoot() {
+        String name = getName();
+        int    i    = name.lastIndexOf(".");
+
+        if (i > 0) {
+            name = name.substring(0, i);
+        }
+
+        return name;
     }
 }

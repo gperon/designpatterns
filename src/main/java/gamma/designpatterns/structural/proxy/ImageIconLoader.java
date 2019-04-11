@@ -37,8 +37,10 @@ import javax.swing.*;
  * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
  */
 public class ImageIconLoader extends ImageIcon implements Runnable {
-    static final ImageIcon ABSENT = new ImageIcon(ClassLoader.getSystemResource("absent.jpg"));
-    static final ImageIcon LOADING = new ImageIcon(ClassLoader.getSystemResource("loading.jpg"));
+    static final ImageIcon ABSENT =
+        new ImageIcon(ClassLoader.getSystemResource("absent.jpg"));
+    static final ImageIcon LOADING =
+        new ImageIcon(ClassLoader.getSystemResource("loading.jpg"));
     protected String filename;
     protected JFrame callbackFrame;
 
@@ -71,7 +73,8 @@ public class ImageIconLoader extends ImageIcon implements Runnable {
      * Load the desired image (presumably in a separate thread).
      */
     public void run() {
-        setImage(new ImageIcon(ClassLoader.getSystemResource(filename)).getImage());
+        setImage(
+            new ImageIcon(ClassLoader.getSystemResource(filename)).getImage());
         callbackFrame.pack();
     }
 }

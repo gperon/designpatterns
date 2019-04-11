@@ -29,6 +29,43 @@ package cooper.designpatterns.behavioral.memento;
 
 import java.awt.*;
 
+class Memento {
+    VisitorRectangle rect;
+
+    // saved fields- remember internal fields
+    // of the specified visual rectangle
+    int x, y, w, h;
+
+    /**
+     * Constructs ...
+     *
+     *
+     * @param r
+     */
+    public Memento(VisitorRectangle r) {
+        rect = r;
+        x    = rect.x;
+        y    = rect.y;
+        w    = rect.w;
+        h    = rect.h;
+    }
+
+    /**
+     * Method description
+     *
+     */
+    public void restore() {
+
+        // restore the internal state of
+        // the specified rectangle
+        rect.x = x;
+        rect.y = y;
+        rect.h = h;
+        rect.w = w;
+    }
+}
+
+
 /**
  * Class description
  *
@@ -37,9 +74,9 @@ import java.awt.*;
  * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
  */
 public class VisitorRectangle {
-    int x, y, w, h;
+    int       x, y, w, h;
     Rectangle rect;
-    boolean selected;
+    boolean   selected;
 
     /**
      * Constructs ...
@@ -60,14 +97,13 @@ public class VisitorRectangle {
      * Method description
      *
      *
-     * @param b
+     * @param x
+     * @param y
+     *
+     * @return
      */
-    public void setSelected(boolean b) {
-        selected = b;
-    }
-
-    private void saveAsRect() {
-        rect = new Rectangle(x - w / 2, y - h / 2, w, h);
+    public boolean contains(int x, int y) {
+        return rect.contains(x, y);
     }
 
     /**
@@ -78,25 +114,13 @@ public class VisitorRectangle {
      */
     public void draw(Graphics g) {
         g.drawRect(x, y, w, h);
+
         if (selected) {
             g.fillRect(x + w / 2, y - 2, 4, 4);
             g.fillRect(x - 2, y + h / 2, 4, 4);
             g.fillRect(x + w / 2, y + h - 2, 4, 4);
             g.fillRect(x + w - 2, y + h / 2, 4, 4);
         }
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param x
-     * @param y
-     *
-     * @return
-     */
-    public boolean contains(int x, int y) {
-        return rect.contains(x, y);
     }
 
     /**
@@ -111,39 +135,18 @@ public class VisitorRectangle {
         y = ypt;
         saveAsRect();
     }
-}
 
-
-class Memento {
-    VisitorRectangle rect;
-    // saved fields- remember internal fields
-    // of the specified visual rectangle
-    int x, y, w, h;
-
-    /**
-     * Constructs ...
-     *
-     *
-     * @param r
-     */
-    public Memento(VisitorRectangle r) {
-        rect = r;
-        x = rect.x;
-        y = rect.y;
-        w = rect.w;
-        h = rect.h;
+    private void saveAsRect() {
+        rect = new Rectangle(x - w / 2, y - h / 2, w, h);
     }
 
     /**
      * Method description
      *
+     *
+     * @param b
      */
-    public void restore() {
-        // restore the internal state of
-        // the specified rectangle
-        rect.x = x;
-        rect.y = y;
-        rect.h = h;
-        rect.w = w;
+    public void setSelected(boolean b) {
+        selected = b;
     }
 }

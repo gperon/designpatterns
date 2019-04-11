@@ -1,8 +1,8 @@
 /*
  * @(#)MoveATub.java   2011-11-01
- * 
+ *
  * Copyright (c) 2011 Giorgio Peron giorgio.peron@gmail.com
- * All Rights Reserved. 
+ * All Rights Reserved.
  *
  * Redistribution and use of this script, with or without modification, is
  * permitted provided that the following conditions are met:
@@ -56,7 +56,8 @@ import metsker.designpatterns.util.ui.UI;
  * next step will be to create a mediator class, factoring the action logic
  * out of this class.
  */
-public class MoveATub extends JPanel implements ListSelectionListener, ActionListener {
+public class MoveATub extends JPanel
+        implements ListSelectionListener, ActionListener {
     private static Hashtable tubMachine;
     private List boxes;
     private JList boxList;
@@ -108,7 +109,9 @@ public class MoveATub extends JPanel implements ListSelectionListener, ActionLis
         result.add(new JLabel(label), BorderLayout.NORTH);
         result.add(new JScrollPane(list), BorderLayout.CENTER);
         int borderWidth = 15;
-        result.setBorder(BorderFactory.createEmptyBorder(borderWidth, borderWidth, borderWidth,
+        result.setBorder(BorderFactory.createEmptyBorder(borderWidth,
+                borderWidth,
+                borderWidth,
                 borderWidth));
 
         return result;

@@ -43,8 +43,8 @@ public class PerennialGarden extends Garden {
      * @return
      */
     @Override
-    public Plant getShade() {
-        return new Plant("Astilbe");
+    public Plant getBorder() {
+        return new Plant("Sedum");
     }
 
     /**
@@ -65,7 +65,7 @@ public class PerennialGarden extends Garden {
      * @return
      */
     @Override
-    public Plant getBorder() {
-        return new Plant("Sedum");
+    public Plant getShade() {
+        return new Plant("Astilbe");
     }
 }

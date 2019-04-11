@@ -88,8 +88,10 @@ public class PMWindowImp extends WindowImp {
         point[2].y = bottom.getIntValue();
         point[3].x = left.getIntValue();
         point[3].y = bottom.getIntValue();
-        if ((!gpiBeginPath(hps, 1L)) || (!gpiSetCurrentPosition(hps, point[3]))
-                || (gpiPolyLine(hps, 4L, point) == GPI_ERROR) || (!gpiEndPath(hps))) {
+        if ((!gpiBeginPath(hps, 1L))
+                || (!gpiSetCurrentPosition(hps, point[3]))
+                || (gpiPolyLine(hps, 4L, point) == GPI_ERROR)
+                || (!gpiEndPath(hps))) {
             // report error
         } else {
             gpiStrokePath(hps, 1L, 0L);

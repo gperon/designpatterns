@@ -54,10 +54,10 @@ public class Boss extends Employee {
      * Method description
      *
      *
-     * @param bonus
+     * @param v
      */
-    public void setBonusDays(int bonus) {
-        bonusDays = bonus;
+    public void accept(Visitor v) {
+        v.visit(this);
     }
 
     /**
@@ -74,9 +74,9 @@ public class Boss extends Employee {
      * Method description
      *
      *
-     * @param v
+     * @param bonus
      */
-    public void accept(Visitor v) {
-        v.visit(this);
+    public void setBonusDays(int bonus) {
+        bonusDays = bonus;
     }
 }

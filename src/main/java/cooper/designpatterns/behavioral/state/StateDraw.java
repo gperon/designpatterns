@@ -27,84 +27,13 @@
 
 package cooper.designpatterns.behavioral.state;
 
-import cooper.designpatterns.util.swing.JxFrame;
-import cooper.designpatterns.behavioral.command.Command;
-
 import java.awt.*;
 import java.awt.event.*;
 
 import javax.swing.*;
 
-/**
- * Class description
- *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
- */
-public class StateDraw extends JxFrame implements ActionListener {
-    JToolBar tbar;
-    Mediator med;
-
-    /**
-     * Constructs ...
-     *
-     */
-    public StateDraw() {
-        super("State Drawing");
-        JPanel jp = new JPanel();
-        getContentPane().add(jp);
-        med = new Mediator();
-        jp.setLayout(new BorderLayout());
-        tbar = new JToolBar();
-        tbar.setFloatable(false);
-        jp.add("North", tbar);
-        PickButton pick = new PickButton(this, med);
-        tbar.add(pick);
-        tbar.addSeparator();
-        RectButton rect = new RectButton(this, med);
-        tbar.add(rect);
-        FillButton fill = new FillButton(this, med);
-        tbar.add(fill);
-        CircleButton circ = new CircleButton(this, med);
-        tbar.add(circ);
-        tbar.addSeparator();
-        UndoButton undo = new UndoButton(this, med);
-        tbar.add(undo);
-        ClearButton clr = new ClearButton(this, med);
-        tbar.add(clr);
-        JCanvas canvas = new JCanvas(med);
-        jp.add("Center", canvas);
-        MouseApp map = new MouseApp(med);
-        canvas.addMouseListener(map);
-        MouseMoveApp mvap = new MouseMoveApp(med);
-        canvas.addMouseMotionListener(mvap);
-        setSize(new Dimension(400, 300));
-        setVisible(true);
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param e
-     */
-    public void actionPerformed(ActionEvent e) {
-        Command comd = (Command) e.getSource();
-        comd.execute();
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param argv
-     */
-    static public void main(String[] argv) {
-        new StateDraw();
-    }
-}
-
+import cooper.designpatterns.behavioral.command.Command;
+import cooper.designpatterns.util.swing.JxFrame;
 
 class MouseApp extends MouseAdapter {
     Mediator med;
@@ -164,5 +93,97 @@ class MouseMoveApp extends MouseMotionAdapter {
      */
     public void mouseDragged(MouseEvent e) {
         med.mouseDrag(e.getX(), e.getY());
+    }
+}
+
+
+/**
+ * Class description
+ *
+ *
+ * @version        0.1.1, 2011-11-01
+ * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ */
+public class StateDraw extends JxFrame implements ActionListener {
+    JToolBar tbar;
+    Mediator med;
+
+    /**
+     * Constructs ...
+     *
+     */
+    public StateDraw() {
+        super("State Drawing");
+
+        JPanel jp = new JPanel();
+
+        getContentPane().add(jp);
+        med = new Mediator();
+        jp.setLayout(new BorderLayout());
+        tbar = new JToolBar();
+        tbar.setFloatable(false);
+        jp.add("North", tbar);
+
+        PickButton pick = new PickButton(this, med);
+
+        tbar.add(pick);
+        tbar.addSeparator();
+
+        RectButton rect = new RectButton(this, med);
+
+        tbar.add(rect);
+
+        FillButton fill = new FillButton(this, med);
+
+        tbar.add(fill);
+
+        CircleButton circ = new CircleButton(this, med);
+
+        tbar.add(circ);
+        tbar.addSeparator();
+
+        UndoButton undo = new UndoButton(this, med);
+
+        tbar.add(undo);
+
+        ClearButton clr = new ClearButton(this, med);
+
+        tbar.add(clr);
+
+        JCanvas canvas = new JCanvas(med);
+
+        jp.add("Center", canvas);
+
+        MouseApp map = new MouseApp(med);
+
+        canvas.addMouseListener(map);
+
+        MouseMoveApp mvap = new MouseMoveApp(med);
+
+        canvas.addMouseMotionListener(mvap);
+        setSize(new Dimension(400, 300));
+        setVisible(true);
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param e
+     */
+    public void actionPerformed(ActionEvent e) {
+        Command comd = (Command) e.getSource();
+
+        comd.execute();
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param argv
+     */
+    static public void main(String[] argv) {
+        new StateDraw();
     }
 }

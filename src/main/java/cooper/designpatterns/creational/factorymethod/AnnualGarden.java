@@ -43,8 +43,8 @@ public class AnnualGarden extends Garden {
      * @return
      */
     @Override
-    public Plant getShade() {
-        return new Plant("Coleus");
+    public Plant getBorder() {
+        return new Plant("Alyssum");
     }
 
     /**
@@ -65,7 +65,7 @@ public class AnnualGarden extends Garden {
      * @return
      */
     @Override
-    public Plant getBorder() {
-        return new Plant("Alyssum");
+    public Plant getShade() {
+        return new Plant("Coleus");
     }
 }

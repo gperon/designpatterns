@@ -30,12 +30,10 @@ package cooper.designpatterns.util.swing.table;
 import javax.swing.table.*;
 
 class MusicModel extends AbstractTableModel {
-    String[] columnNames = { "Composer", "Title", "Orchestral" };
-    Object[][] musicData = {
-        { "Tschaikovsky", "1812 Overture", new Boolean(true) },
-        { "Stravinsky", "Le Sacre", new Boolean(true) },
-        { "Lennon", "Eleanor Rigby", new Boolean(false) },
-        { "Wagner", "Gotterdammerung", new Boolean(true) }
+    String[]   columnNames = { "Composer", "Title", "Orchestral" };
+    Object[][] musicData   = {
+        { "Tschaikovsky", "1812 Overture", new Boolean(true) }, { "Stravinsky", "Le Sacre", new Boolean(true) },
+        { "Lennon", "Eleanor Rigby", new Boolean(false) }, { "Wagner", "Gotterdammerung", new Boolean(true) }
     };
     int rowCount, columnCount;
 
@@ -44,8 +42,43 @@ class MusicModel extends AbstractTableModel {
      *
      */
     public MusicModel() {
-        rowCount = 4;
+        rowCount    = 4;
         columnCount = 3;
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param row
+     * @param col
+     *
+     * @return
+     */
+    public boolean isCellEditable(int row, int col) {
+        return (col > 1);
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param col
+     *
+     * @return
+     */
+    public Class getColumnClass(int col) {
+        return getValueAt(0, col).getClass();
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @return
+     */
+    public int getColumnCount() {
+        return columnCount;
     }
 
     /**
@@ -74,35 +107,13 @@ class MusicModel extends AbstractTableModel {
      * Method description
      *
      *
-     * @return
-     */
-    public int getColumnCount() {
-        return columnCount;
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param col
-     *
-     * @return
-     */
-    public Class getColumnClass(int col) {
-        return getValueAt(0, col).getClass();
-    }
-
-    /**
-     * Method description
-     *
-     *
      * @param row
      * @param col
      *
      * @return
      */
-    public boolean isCellEditable(int row, int col) {
-        return (col > 1);
+    public Object getValueAt(int row, int col) {
+        return musicData[row][col];
     }
 
     /**
@@ -116,18 +127,5 @@ class MusicModel extends AbstractTableModel {
     public void setValueAt(Object obj, int row, int col) {
         musicData[row][col] = obj;
         fireTableCellUpdated(row, col);
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param row
-     * @param col
-     *
-     * @return
-     */
-    public Object getValueAt(int row, int col) {
-        return musicData[row][col];
     }
 }

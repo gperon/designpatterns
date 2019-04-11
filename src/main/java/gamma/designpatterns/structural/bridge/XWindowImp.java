@@ -83,8 +83,8 @@ public class XWindowImp extends WindowImp {
         XDrawRectangle(dpy, winid, gc, x, y, w, h);
     }
 
-    private void XDrawRectangle(Display dpy, Drawable winid, GC gc, long x, long y, long w,
-                                long h) {}
+    private void XDrawRectangle(Display dpy, Drawable winid, GC gc, long x,
+                                long y, long w, long h) {}
 
     /**
      * deviceText

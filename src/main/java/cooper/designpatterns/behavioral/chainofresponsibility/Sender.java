@@ -27,11 +27,11 @@
 
 package cooper.designpatterns.behavioral.chainofresponsibility;
 
-import javax.swing.*;
-import javax.swing.border.*;
-
 import java.awt.*;
 import java.awt.event.*;
+
+import javax.swing.*;
+import javax.swing.border.*;
 
 /**
  * Class description
@@ -41,9 +41,9 @@ import java.awt.event.*;
  * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
  */
 public class Sender extends JPanel implements Chain, ActionListener {
-    private Chain nextChain;
+    private Chain      nextChain;
     private JTextField tx;
-    private JButton Send;
+    private JButton    Send;
 
     /**
      * Constructs ...
@@ -51,8 +51,10 @@ public class Sender extends JPanel implements Chain, ActionListener {
      */
     public Sender() {
         setLayout(new GridLayout(2, 1));
+
         JPanel tp = new JPanel();
         JPanel bp = new JPanel();
+
         add(tp);
         add(bp);
         tx = new JTextField(10);
@@ -71,6 +73,7 @@ public class Sender extends JPanel implements Chain, ActionListener {
      */
     public void actionPerformed(ActionEvent e) {
         String file = tx.getText();
+
         if ((file.length() > 0) && (nextChain != null)) {
             nextChain.sendToChain(file);
         }

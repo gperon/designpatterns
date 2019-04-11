@@ -30,9 +30,9 @@ package cooper.designpatterns.behavioral.state;
 import java.awt.*;
 import java.awt.event.*;
 
-import cooper.designpatterns.behavioral.command.Command;
-
 import javax.swing.*;
+
+import cooper.designpatterns.behavioral.command.Command;
 
 /**
  * Class description

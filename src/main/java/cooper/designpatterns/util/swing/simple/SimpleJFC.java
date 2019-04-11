@@ -27,12 +27,12 @@
 
 package cooper.designpatterns.util.swing.simple;
 
-import cooper.designpatterns.util.swing.JxFrame;
-
 import java.awt.*;
 import java.awt.event.*;
 
 import javax.swing.*;
+
+import cooper.designpatterns.util.swing.JxFrame;
 
 /**
  * Class description
@@ -43,8 +43,8 @@ import javax.swing.*;
  */
 public class SimpleJFC extends JxFrame implements ActionListener {
     JButton OK, Quit;
-    JPanel jp;
-    Color color;
+    JPanel  jp;
+    Color   color;
 
     /**
      * Constructs ...
@@ -56,20 +56,6 @@ public class SimpleJFC extends JxFrame implements ActionListener {
         setGUI();
     }
 
-    private void setGUI() {
-        jp = new JPanel();
-        getContentPane().add(jp);
-        // create and add buttons
-        OK = new JButton("OK");
-        Quit = new JButton("Quit");
-        OK.addActionListener(this);
-        Quit.addActionListener(this);
-        jp.add(OK);
-        jp.add(Quit);
-        setSize(new Dimension(250, 100));
-        setVisible(true);
-    }
-
     /**
      * Method description
      *
@@ -78,22 +64,14 @@ public class SimpleJFC extends JxFrame implements ActionListener {
      */
     public void actionPerformed(ActionEvent e) {
         Object obj = e.getSource();
+
         if (obj == OK) {
             switchColors();
         }
+
         if (obj == Quit) {
             System.exit(0);
         }
-    }
-
-    private void switchColors() {
-        if (color == Color.green) {
-            color = Color.yellow;
-        } else {
-            color = Color.green;
-        }
-        jp.setBackground(color);
-        repaint();
     }
 
     /**
@@ -104,5 +82,31 @@ public class SimpleJFC extends JxFrame implements ActionListener {
      */
     static public void main(String[] argv) {
         new SimpleJFC();
+    }
+
+    private void switchColors() {
+        if (color == Color.green) {
+            color = Color.yellow;
+        } else {
+            color = Color.green;
+        }
+
+        jp.setBackground(color);
+        repaint();
+    }
+
+    private void setGUI() {
+        jp = new JPanel();
+        getContentPane().add(jp);
+
+        // create and add buttons
+        OK   = new JButton("OK");
+        Quit = new JButton("Quit");
+        OK.addActionListener(this);
+        Quit.addActionListener(this);
+        jp.add(OK);
+        jp.add(Quit);
+        setSize(new Dimension(250, 100));
+        setVisible(true);
     }
 }

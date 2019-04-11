@@ -27,10 +27,10 @@
 
 package cooper.designpatterns.behavioral.interpreter;
 
-import javax.swing.*;
-
 import java.awt.*;
 import java.awt.event.*;
+
+import javax.swing.*;
 
 /**
  * Class description
@@ -40,10 +40,10 @@ import java.awt.event.*;
  * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
  */
 public class InterpreterDemo extends JxFrame implements ActionListener {
-    JButton go;
+    JButton    go;
     JTextField tx;
-    KidData kdata;
-    JawtList ptable;
+    KidData    kdata;
+    JawtList   ptable;
 
     /**
      * Constructs ...
@@ -54,13 +54,19 @@ public class InterpreterDemo extends JxFrame implements ActionListener {
         tx = new JTextField(20);
         tx.setText("print frname lname age club time");
         go = new JButton("Go");
+
         JLabel hlp = new JLabel("Ex: print frname age sortby age");
-        JPanel p = new JPanel();
+        JPanel p   = new JPanel();
+
         getContentPane().add(p);
         p.setLayout(new BorderLayout());
+
         JPanel np = new JPanel();
+
         np.setLayout(new BorderLayout());
+
         JPanel nnp = new JPanel();
+
         p.add("North", np);
         nnp.add(tx);
         nnp.add(go);
@@ -82,6 +88,7 @@ public class InterpreterDemo extends JxFrame implements ActionListener {
      */
     public void actionPerformed(ActionEvent e) {
         Parser p = new Parser(tx.getText());
+
         p.setData(kdata, ptable);
         p.execute();
     }

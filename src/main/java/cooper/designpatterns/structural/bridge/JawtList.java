@@ -27,12 +27,80 @@
 
 package cooper.designpatterns.structural.bridge;
 
-import cooper.designpatterns.structural.adapter.AwtList;
-
 import java.util.*;
 
 import javax.swing.*;
 import javax.swing.event.*;
+
+import cooper.designpatterns.structural.adapter.AwtList;
+
+//=========================================
+class JListData extends AbstractListModel {
+    private Vector data;
+
+//  -----------------------------------------
+
+    /**
+     * Constructs ...
+     *
+     */
+    public JListData() {
+        data = new Vector();
+    }
+
+//  -----------------------------------------
+
+    /**
+     * Method description
+     *
+     *
+     * @param s
+     */
+    public void addElement(String s) {
+        data.addElement(s);
+        fireIntervalAdded(this, data.size() - 1, data.size());
+    }
+
+//  -----------------------------------------
+
+    /**
+     * Method description
+     *
+     *
+     * @param s
+     */
+    public void removeElement(String s) {
+        data.removeElement(s);
+        fireIntervalRemoved(this, 0, data.size());
+    }
+
+//  -----------------------------------------
+
+    /**
+     * Method description
+     *
+     *
+     * @param index
+     *
+     * @return
+     */
+    public Object getElementAt(int index) {
+        return data.elementAt(index);
+    }
+
+//  -----------------------------------------
+
+    /**
+     * Method description
+     *
+     *
+     * @return
+     */
+    public int getSize() {
+        return data.size();
+    }
+}
+
 
 //this is a simple adapter class to
 //convert List awt methods to Swing methods
@@ -45,7 +113,7 @@ import javax.swing.event.*;
  * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
  */
 public class JawtList extends JScrollPane implements ListSelectionListener, AwtList {
-    private JList listWindow;
+    private JList     listWindow;
     private JListData listContents;
 
 //  -----------------------------------------
@@ -58,7 +126,7 @@ public class JawtList extends JScrollPane implements ListSelectionListener, AwtL
      */
     public JawtList(int rows) {
         listContents = new JListData();
-        listWindow = new JList(listContents);
+        listWindow   = new JList(listContents);
         listWindow.setPrototypeCellValue("Abcdefg Hijkmnop");
         getViewport().add(listWindow);
     }
@@ -93,93 +161,26 @@ public class JawtList extends JScrollPane implements ListSelectionListener, AwtL
      * Method description
      *
      *
+     * @param e
+     */
+    public void valueChanged(ListSelectionEvent e) {}
+
+//  -----------------------------------------
+
+    /**
+     * Method description
+     *
+     *
      * @return
      */
     public String[] getSelectedItems() {
         Object[] obj = listWindow.getSelectedValues();
-        String[] s = new String[obj.length];
+        String[] s   = new String[obj.length];
+
         for (int i = 0; i < obj.length; i++) {
             s[i] = obj[i].toString();
         }
 
         return s;
-    }
-
-//  -----------------------------------------
-
-    /**
-     * Method description
-     *
-     *
-     * @param e
-     */
-    public void valueChanged(ListSelectionEvent e) {}
-}
-
-
-//=========================================
-class JListData extends AbstractListModel {
-    private Vector data;
-
-//  -----------------------------------------
-
-    /**
-     * Constructs ...
-     *
-     */
-    public JListData() {
-        data = new Vector();
-    }
-
-//  -----------------------------------------
-
-    /**
-     * Method description
-     *
-     *
-     * @return
-     */
-    public int getSize() {
-        return data.size();
-    }
-
-//  -----------------------------------------
-
-    /**
-     * Method description
-     *
-     *
-     * @param index
-     *
-     * @return
-     */
-    public Object getElementAt(int index) {
-        return data.elementAt(index);
-    }
-
-//  -----------------------------------------
-
-    /**
-     * Method description
-     *
-     *
-     * @param s
-     */
-    public void addElement(String s) {
-        data.addElement(s);
-        fireIntervalAdded(this, data.size() - 1, data.size());
-    }
-
-//  -----------------------------------------
-
-    /**
-     * Method description
-     *
-     *
-     * @param s
-     */
-    public void removeElement(String s) {
-        data.removeElement(s);
-        fireIntervalRemoved(this, 0, data.size());
     }
 }

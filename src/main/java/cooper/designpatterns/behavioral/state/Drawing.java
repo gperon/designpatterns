@@ -37,20 +37,23 @@ import java.awt.*;
  * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
  */
 public class Drawing {
-    protected int x, y, w, h;
+    protected int       x, y, w, h;
     protected Rectangle rect;
-    protected boolean selected;
-    protected boolean filled;
-    protected Color fillColor;
+    protected boolean   selected;
+    protected boolean   filled;
+    protected Color     fillColor;
 
     /**
      * Method description
      *
      *
-     * @param b
+     * @param x
+     * @param y
+     *
+     * @return
      */
-    public void setSelected(boolean b) {
-        selected = b;
+    public boolean contains(int x, int y) {
+        return rect.contains(x, y);
     }
 
     /**
@@ -73,25 +76,22 @@ public class Drawing {
         y = ypt;
     }
 
-    /**
-     * Method description
-     *
-     *
-     * @param x
-     * @param y
-     *
-     * @return
-     */
-    public boolean contains(int x, int y) {
-        return rect.contains(x, y);
-    }
-
     protected void saveAsRect() {
         rect = new Rectangle(x - w / 2, y - h / 2, w, h);
     }
 
     protected void setFill(Color c) {
-        filled = true;
+        filled    = true;
         fillColor = c;
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param b
+     */
+    public void setSelected(boolean b) {
+        selected = b;
     }
 }

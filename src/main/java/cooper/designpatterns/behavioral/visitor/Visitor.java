@@ -42,7 +42,7 @@ public abstract class Visitor {
      *
      * @param emp
      */
-    public abstract void visit(Employee emp);
+    public abstract void visit(Boss emp);
 
     /**
      * Method description
@@ -50,5 +50,5 @@ public abstract class Visitor {
      *
      * @param emp
      */
-    public abstract void visit(Boss emp);
+    public abstract void visit(Employee emp);
 }

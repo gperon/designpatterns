@@ -38,10 +38,10 @@ import java.awt.*;
  */
 public class StateManager {
     private State currentState;
-    RectState rState;
-    ArrowState aState;
-    CircleState cState;
-    FillState fState;
+    RectState     rState;
+    ArrowState    aState;
+    CircleState   cState;
+    FillState     fState;
 
     /**
      * Constructs ...
@@ -50,19 +50,63 @@ public class StateManager {
      * @param med
      */
     public StateManager(Mediator med) {
-        rState = new RectState(med);
-        cState = new CircleState(med);
-        aState = new ArrowState(med);
-        fState = new FillState(med);
+        rState       = new RectState(med);
+        cState       = new CircleState(med);
+        aState       = new ArrowState(med);
+        fState       = new FillState(med);
         currentState = aState;
     }
 
     /**
      * Method description
      *
+     *
+     * @param x
+     * @param y
      */
-    public void setRect() {
-        currentState = rState;
+    public void mouseDown(int x, int y) {
+        currentState.mouseDown(x, y);
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param x
+     * @param y
+     */
+    public void mouseDrag(int x, int y) {
+        currentState.mouseDrag(x, y);
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param x
+     * @param y
+     */
+    public void mouseUp(int x, int y) {
+        currentState.mouseUp(x, y);
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param d
+     * @param c
+     */
+    public void select(Drawing d, Color c) {
+        currentState.select(d, c);
+    }
+
+    /**
+     * Method description
+     *
+     */
+    public void setArrow() {
+        currentState = aState;
     }
 
     /**
@@ -85,51 +129,7 @@ public class StateManager {
      * Method description
      *
      */
-    public void setArrow() {
-        currentState = aState;
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param x
-     * @param y
-     */
-    public void mouseDown(int x, int y) {
-        currentState.mouseDown(x, y);
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param x
-     * @param y
-     */
-    public void mouseUp(int x, int y) {
-        currentState.mouseUp(x, y);
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param x
-     * @param y
-     */
-    public void mouseDrag(int x, int y) {
-        currentState.mouseDrag(x, y);
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param d
-     * @param c
-     */
-    public void select(Drawing d, Color c) {
-        currentState.select(d, c);
+    public void setRect() {
+        currentState = rState;
     }
 }

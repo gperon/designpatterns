@@ -1,8 +1,8 @@
 /*
  * @(#)ShowInterpreter.java   2011-11-01
- * 
+ *
  * Copyright (c) 2011 Giorgio Peron giorgio.peron@gmail.com
- * All Rights Reserved. 
+ * All Rights Reserved.
  *
  * Redistribution and use of this script, with or without modification, is
  * permitted provided that the following conditions are met:
@@ -49,7 +49,8 @@ public class ShowInterpreter {
      */
     public static void main(String[] args) {
         MachineComposite dublin = OozinozFactory.dublin();
-        ShellAssembler assembler = (ShellAssembler) dublin.find("ShellAssembler:3302");
+        ShellAssembler assembler =
+            (ShellAssembler) dublin.find("ShellAssembler:3302");
         StarPress press = (StarPress) dublin.find("StarPress:3404");
         Fuser fuser = (Fuser) dublin.find("Fuser:3102");
         assembler.load(new Bin(11011));

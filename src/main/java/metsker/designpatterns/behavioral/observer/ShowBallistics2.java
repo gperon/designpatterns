@@ -1,8 +1,8 @@
 /*
  * @(#)ShowBallistics2.java   2011-11-01
- * 
+ *
  * Copyright (c) 2011 Giorgio Peron giorgio.peron@gmail.com
- * All Rights Reserved. 
+ * All Rights Reserved.
  *
  * Redistribution and use of this script, with or without modification, is
  * permitted provided that the following conditions are met:
@@ -71,7 +71,8 @@ public class ShowBallistics2 {
      * @param args
      */
     public static void main(String[] args) {
-        SwingFacade.launch(new ShowBallistics2().mainPanel(), "Effects of tPeak");
+        SwingFacade.launch(new ShowBallistics2().mainPanel(),
+                           "Effects of tPeak");
     }
 
     protected BallisticsPanel2 burnPanel() {

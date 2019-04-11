@@ -57,6 +57,7 @@ public class ActionToolBar extends JToolBar {
      */
     public void add(Action act, String tip) {
         JButton button = super.add(act);
+
         button.setText("");
         button.setToolTipText(tip);
         button.setMargin(new Insets(0, 0, 0, 0));

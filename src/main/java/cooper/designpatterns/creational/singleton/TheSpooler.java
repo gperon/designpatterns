@@ -28,6 +28,7 @@
 package cooper.designpatterns.creational.singleton;
 
 class TheSpooler {
+
     // this is a prototype for a printer-spooler class
     // such that only one instance can ever exist
     static boolean instance_flag = false;    // true if 1 instance

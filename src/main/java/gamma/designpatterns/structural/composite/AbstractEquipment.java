@@ -71,7 +71,8 @@ public abstract class AbstractEquipment implements Equipment {
      * @return    Description of the Return Value
      */
     public int power() {
-        throw new java.lang.UnsupportedOperationException("Method power() not yet implemented.");
+        throw new java.lang.UnsupportedOperationException(
+            "Method power() not yet implemented.");
     }
 
     /**
@@ -80,7 +81,8 @@ public abstract class AbstractEquipment implements Equipment {
      * @return    Description of the Return Value
      */
     public double netPrice() {
-        throw new java.lang.UnsupportedOperationException("Method netPrice() not yet implemented.");
+        throw new java.lang.UnsupportedOperationException(
+            "Method netPrice() not yet implemented.");
     }
 
     /**
@@ -99,7 +101,8 @@ public abstract class AbstractEquipment implements Equipment {
      * @param  equipment  Description of the Parameter
      */
     public void add(Equipment equipment) {
-        throw new java.lang.UnsupportedOperationException("Method add() not yet implemented.");
+        throw new java.lang.UnsupportedOperationException(
+            "Method add() not yet implemented.");
     }
 
     /**
@@ -108,7 +111,8 @@ public abstract class AbstractEquipment implements Equipment {
      * @param  equipment  Description of the Parameter
      */
     public void remove(Equipment equipment) {
-        throw new java.lang.UnsupportedOperationException("Method remove() not yet implemented.");
+        throw new java.lang.UnsupportedOperationException(
+            "Method remove() not yet implemented.");
     }
 
     /**

@@ -49,20 +49,20 @@ public class VacationVisitor extends Visitor {
      * Method description
      *
      *
-     * @param emp
+     * @param boss
      */
-    public void visit(Employee emp) {
-        total_days += emp.getVacDays();
+    public void visit(Boss boss) {
+        total_days += boss.getVacDays();
     }
 
     /**
      * Method description
      *
      *
-     * @param boss
+     * @param emp
      */
-    public void visit(Boss boss) {
-        total_days += boss.getVacDays();
+    public void visit(Employee emp) {
+        total_days += emp.getVacDays();
     }
 
     /**

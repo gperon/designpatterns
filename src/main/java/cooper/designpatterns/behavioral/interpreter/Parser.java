@@ -27,9 +27,9 @@
 
 package cooper.designpatterns.behavioral.interpreter;
 
-import cooper.designpatterns.behavioral.command.Command;
-
 import java.util.*;
+
+import cooper.designpatterns.behavioral.command.Command;
 
 /**
  * Class description
@@ -39,10 +39,11 @@ import java.util.*;
  * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
  */
 public class Parser implements Command {
-    Stack stk;
-    Vector actionList;
+    Stack   stk;
+    Vector  actionList;
     KidData kdata;
-    Data data;
+    Data    data;
+
     // PrintTable ptable;
     JawtList ptable;
 
@@ -53,27 +54,26 @@ public class Parser implements Command {
      * @param line
      */
     public Parser(String line) {
-        stk = new Stack();
+        stk        = new Stack();
         actionList = new Vector();
+
         StringTokenizer tok = new StringTokenizer(line);
+
         while (tok.hasMoreElements()) {
             ParseObject token = tokenize(tok.nextToken());
+
             if (token != null) {
                 stk.push(token);
             }
         }
     }
 
-    /**
-     * Method description
-     *
-     *
-     * @param k
-     * @param pt
-     */
-    public void setData(KidData k, JawtList pt) {
-        data = new Data(k.getData());
-        ptable = pt;
+    private void addArgsToVerb() {
+        ParseObject v    = stk.pop();
+        ParseVerb   verb = (ParseVerb) stk.pop();
+
+        verb.addArgs(v);
+        stk.push(verb);
     }
 
     /**
@@ -84,29 +84,36 @@ public class Parser implements Command {
             if (topStack(ParseObject.VAR, ParseObject.VAR)) {
 
                 /* reduce (Var Var) to Multvar */
-                ParseVar v = (ParseVar) stk.pop();
+                ParseVar v  = (ParseVar) stk.pop();
                 ParseVar v1 = (ParseVar) stk.pop();
-                MultVar mv = new MultVar(v1, v);
+                MultVar  mv = new MultVar(v1, v);
+
                 stk.push(mv);
             }
 
             /* reduce MULTVAR VAR to MULTVAR */
             if (topStack(ParseObject.MULTVAR, ParseObject.VAR)) {
-                MultVar mv = new MultVar();
-                MultVar mvo = (MultVar) stk.pop();
-                ParseVar v = (ParseVar) stk.pop();
+                MultVar  mv  = new MultVar();
+                MultVar  mvo = (MultVar) stk.pop();
+                ParseVar v   = (ParseVar) stk.pop();
+
                 mv.add(v);
+
                 Vector mvec = mvo.getVector();
+
                 for (int i = 0; i < mvec.size(); i++) {
                     mv.add((ParseVar) mvec.elementAt(i));
                 }
+
                 stk.push(mv);
             }
+
             if (topStack(ParseObject.VAR, ParseObject.MULTVAR)) {
 
                 /* reduce (Multvar Var) to Multvar */
-                ParseVar v = (ParseVar) stk.pop();
-                MultVar mv = (MultVar) stk.pop();
+                ParseVar v  = (ParseVar) stk.pop();
+                MultVar  mv = (MultVar) stk.pop();
+
                 mv.add(v);
                 stk.push(mv);
             }
@@ -130,24 +137,15 @@ public class Parser implements Command {
         /* now execute the verbs */
         for (int i = 0; i < actionList.size(); i++) {
             Verb v = (Verb) actionList.elementAt(i);
+
             v.setData(data, ptable);
             v.execute();
         }
     }
 
-    private void addArgsToVerb() {
-        ParseObject v = stk.pop();
-        ParseVerb verb = (ParseVerb) stk.pop();
-        verb.addArgs(v);
-        stk.push(verb);
-    }
-
-    private boolean topStack(int c1, int c2) {
-        return (stk.top().getType() == c1) && (stk.nextTop().getType() == c2);
-    }
-
     private ParseObject tokenize(String s) {
         ParseObject obj = getVerb(s);
+
         if (obj == null) {
             obj = getVar(s);
         }
@@ -155,21 +153,41 @@ public class Parser implements Command {
         return obj;
     }
 
-    private ParseVerb getVerb(String s) {
-        ParseVerb v;
-        v = new ParseVerb(s);
+    private boolean topStack(int c1, int c2) {
+        return (stk.top().getType() == c1) && (stk.nextTop().getType() == c2);
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param k
+     * @param pt
+     */
+    public void setData(KidData k, JawtList pt) {
+        data   = new Data(k.getData());
+        ptable = pt;
+    }
+
+    private ParseVar getVar(String s) {
+        ParseVar v;
+
+        v = new ParseVar(s);
+
         if (v.isLegal()) {
-            return v.getVerb(s);
+            return v;
         } else {
             return null;
         }
     }
 
-    private ParseVar getVar(String s) {
-        ParseVar v;
-        v = new ParseVar(s);
+    private ParseVerb getVerb(String s) {
+        ParseVerb v;
+
+        v = new ParseVerb(s);
+
         if (v.isLegal()) {
-            return v;
+            return v.getVerb(s);
         } else {
             return null;
         }

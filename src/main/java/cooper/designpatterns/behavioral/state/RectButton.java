@@ -30,9 +30,9 @@ package cooper.designpatterns.behavioral.state;
 import java.awt.*;
 import java.awt.event.*;
 
-import cooper.designpatterns.behavioral.command.Command;
-
 import javax.swing.*;
+
+import cooper.designpatterns.behavioral.command.Command;
 
 /**
  * Class description
@@ -65,11 +65,9 @@ public class RectButton extends JToggleButton implements Command {
     /**
      * Method description
      *
-     *
-     * @return
      */
-    public Dimension getPreferredSize() {
-        return new Dimension(35, 35);
+    public void execute() {
+        med.startRectangle();
     }
 
     /**
@@ -80,8 +78,10 @@ public class RectButton extends JToggleButton implements Command {
      */
     public void paint(Graphics g) {
         super.paint(g);
+
         int h = getHeight();
         int w = getWidth();
+
         g.setColor(Color.black);
         g.drawRect(4, 4, w - 8, h - 8);
     }
@@ -89,8 +89,10 @@ public class RectButton extends JToggleButton implements Command {
     /**
      * Method description
      *
+     *
+     * @return
      */
-    public void execute() {
-        med.startRectangle();
+    public Dimension getPreferredSize() {
+        return new Dimension(35, 35);
     }
 }

@@ -35,8 +35,8 @@ package cooper.designpatterns.behavioral.visitor;
  * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
  */
 public class Employee {
-    int sickDays, vacDays;
-    float salary;
+    int    sickDays, vacDays;
+    float  salary;
     String name;
 
     /**
@@ -49,10 +49,20 @@ public class Employee {
      * @param sickdays
      */
     public Employee(String name, float salary, int vacdays, int sickdays) {
-        vacDays = vacdays;
-        sickDays = sickdays;
+        vacDays     = vacdays;
+        sickDays    = sickdays;
         this.salary = salary;
-        this.name = name;
+        this.name   = name;
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param v
+     */
+    public void accept(Visitor v) {
+        v.visit(this);
     }
 
     /**
@@ -63,6 +73,16 @@ public class Employee {
      */
     public String getName() {
         return this.name;
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @return
+     */
+    public float getSalary() {
+        return this.salary;
     }
 
     /**
@@ -83,25 +103,5 @@ public class Employee {
      */
     public int getVacDays() {
         return vacDays;
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @return
-     */
-    public float getSalary() {
-        return this.salary;
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param v
-     */
-    public void accept(Visitor v) {
-        v.visit(this);
     }
 }

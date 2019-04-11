@@ -38,11 +38,11 @@ import java.awt.event.*;
  * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
  */
 public class ActionCommand extends Frame {
-    Menu mnuFile;
+    Menu     mnuFile;
     MenuItem mnuOpen, mnuExit;
-    Button btnRed;
-    Panel p;
-    Frame fr;
+    Button   btnRed;
+    Panel    p;
+    Frame    fr;
 
     /**
      * Constructs ...
@@ -51,7 +51,9 @@ public class ActionCommand extends Frame {
     public ActionCommand() {
         super("Frame without commands");
         fr = this;    // sae cop of this frame
+
         MenuBar mbar = new MenuBar();
+
         setMenuBar(mbar);
         mnuFile = new Menu("File", true);
         mbar.add(mnuFile);
@@ -62,7 +64,7 @@ public class ActionCommand extends Frame {
         mnuOpen.addActionListener(new fileOpen());
         mnuExit.addActionListener(new fileExit());
         btnRed = new Button("Red");
-        p = new Panel();
+        p      = new Panel();
         add(p);
         p.add(btnRed);
         btnRed.addActionListener(new btnRed());
@@ -83,24 +85,6 @@ public class ActionCommand extends Frame {
     static public void main(String argv[]) {
         new ActionCommand();
     }
-
-    /*
-     * inner classes
-     */
-    class fileOpen implements ActionListener {
-
-        /**
-         * Method description
-         *
-         *
-         * @param e
-         */
-        public void actionPerformed(ActionEvent e) {
-            FileDialog fDlg = new FileDialog(fr, "Open a file", FileDialog.LOAD);
-            fDlg.setVisible(true);
-        }
-    }
-
 
     class btnRed implements ActionListener {
 
@@ -126,6 +110,25 @@ public class ActionCommand extends Frame {
          */
         public void actionPerformed(ActionEvent e) {
             System.exit(0);
+        }
+    }
+
+
+    /*
+     * inner classes
+     */
+    class fileOpen implements ActionListener {
+
+        /**
+         * Method description
+         *
+         *
+         * @param e
+         */
+        public void actionPerformed(ActionEvent e) {
+            FileDialog fDlg = new FileDialog(fr, "Open a file", FileDialog.LOAD);
+
+            fDlg.setVisible(true);
         }
     }
 }

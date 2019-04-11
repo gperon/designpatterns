@@ -1,8 +1,8 @@
 /*
  * @(#)QuickFuse.java   2011-11-01
- * 
+ *
  * Copyright (c) 2011 Giorgio Peron giorgio.peron@gmail.com
- * All Rights Reserved. 
+ * All Rights Reserved.
  *
  * Redistribution and use of this script, with or without modification, is
  * permitted provided that the following conditions are met:
@@ -43,6 +43,6 @@ package metsker.designpatterns.creational.construction;
  *
  *
  * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>    
+ * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
  */
 public class QuickFuse extends Fuse {}

@@ -57,10 +57,10 @@ public class JxFrame extends JFrame {
     private void setCloseClick() {
         // create window listener to respond to window close click
         addWindowListener(new WindowAdapter() {
-            public void windowClosing(WindowEvent e) {
-                System.exit(0);
-            }
-        });
+                              public void windowClosing(WindowEvent e) {
+                                  System.exit(0);
+                              }
+                          });
     }
 
     /**

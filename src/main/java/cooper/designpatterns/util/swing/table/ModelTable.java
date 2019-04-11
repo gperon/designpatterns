@@ -27,11 +27,11 @@
 
 package cooper.designpatterns.util.swing.table;
 
-import cooper.designpatterns.util.swing.JxFrame;
-
 import java.awt.*;
 
 import javax.swing.*;
+
+import cooper.designpatterns.util.swing.JxFrame;
 
 /**
  * Class description
@@ -48,10 +48,14 @@ public class ModelTable extends JxFrame {
      */
     public ModelTable() {
         super("Simple table");
+
         JPanel jp = new JPanel();
+
         getContentPane().add(jp);
-        JTable table = new JTable(new MusicModel());
-        JScrollPane sp = new JScrollPane(table);
+
+        JTable      table = new JTable(new MusicModel());
+        JScrollPane sp    = new JScrollPane(table);
+
         table.setPreferredScrollableViewportSize(new Dimension(250, 170));
         jp.add(sp);
         setSize(300, 200);

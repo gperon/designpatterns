@@ -27,17 +27,18 @@
 
 package cooper.designpatterns.structural.decorator;
 
-import cooper.designpatterns.util.swing.JxFrame;
-
 import java.awt.*;
 import java.awt.event.*;
 
 import java.util.*;
 
-//swing classes
-import javax.swing.text.*;
 import javax.swing.*;
 import javax.swing.event.*;
+
+//swing classes
+import javax.swing.text.*;
+
+import cooper.designpatterns.util.swing.JxFrame;
 
 /**
  * Class description
@@ -55,10 +56,13 @@ public class DecoratorWindow extends JxFrame implements ActionListener {
      */
     public DecoratorWindow() {
         super("Deco Button");
+
         JPanel jp = new JPanel();
+
         getContentPane().add(jp);
         jp.add(new CoolDecorator(new JButton("Cbutton")));
         jp.add(new SlashDecorator(new CoolDecorator(new JButton("Dbutton"))));
+
         // jp.add( new CoolDecorator(new JButton("Dbutton")));
         jp.add(Quit = new JButton("Quit"));
         Quit.addActionListener(this);

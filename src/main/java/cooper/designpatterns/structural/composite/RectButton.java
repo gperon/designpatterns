@@ -27,13 +27,13 @@
 
 package cooper.designpatterns.structural.composite;
 
-import cooper.designpatterns.behavioral.command.Command;
-import cooper.designpatterns.behavioral.state.Mediator;
-
 import java.awt.event.*;
 
 import javax.swing.*;
 import javax.swing.border.*;
+
+import cooper.designpatterns.behavioral.command.Command;
+import cooper.designpatterns.behavioral.state.Mediator;
 
 /**
  * Class description

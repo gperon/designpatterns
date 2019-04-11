@@ -1,8 +1,8 @@
 /*
  * @(#)ShowBrightness.java   2011-11-01
- * 
+ *
  * Copyright (c) 2011 Giorgio Peron giorgio.peron@gmail.com
- * All Rights Reserved. 
+ * All Rights Reserved.
  *
  * Redistribution and use of this script, with or without modification, is
  * permitted provided that the following conditions are met:
@@ -51,9 +51,15 @@ public class ShowBrightness {
     public static void main(String args[]) {
         FunPanel panel = new FunPanel();
         panel.setPreferredSize(new java.awt.Dimension(200, 200));
-        Function brightness = new Arithmetic('*',
-                                  new Exp(new Arithmetic('*', new Constant(-4), new T())),
-                                  new Sin(new Arithmetic('*', new Constant(Math.PI), new T())));
+        Function brightness = new Arithmetic('*', new Exp(new Arithmetic('*',
+                                                                         new Constant(
+                                                                             -4),
+                                                                         new T())), new Sin(
+                                                                             new Arithmetic(
+                                                                                 '*',
+                                                                                         new Constant(
+                                                                                             Math.PI),
+                                                                                         new T())));
         panel.setXY(new T(), brightness);
         SwingFacade.launch(panel, "Brightness");
     }

@@ -28,6 +28,7 @@
 package cooper.designpatterns.creational.singleton;
 
 final class Spooler {
+
     // a static class implementation of Singleton pattern
 
     /**

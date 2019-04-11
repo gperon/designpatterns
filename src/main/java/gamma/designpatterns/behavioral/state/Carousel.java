@@ -84,7 +84,8 @@ public class Carousel extends Observable implements ActionListener {
     public void click() {
         if (state == CarouselState.CLOSED) {
             this.state = CarouselState.OPENING;
-        } else if ((state == CarouselState.OPENING) || (state == CarouselState.STAYOPEN)) {
+        } else if ((state == CarouselState.OPENING)
+                   || (state == CarouselState.STAYOPEN)) {
             this.state = CarouselState.CLOSING;
         } else if (state == CarouselState.OPEN) {
             this.state = CarouselState.STAYOPEN;

@@ -27,13 +27,13 @@
 
 package cooper.designpatterns.util.swing.buttons;
 
-import cooper.designpatterns.util.swing.JxFrame;
-
 import java.awt.*;
 import java.awt.event.*;
 
 import javax.swing.*;
 import javax.swing.border.*;
+
+import cooper.designpatterns.util.swing.JxFrame;
 
 /**
  * Class description
@@ -43,10 +43,10 @@ import javax.swing.border.*;
  * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
  */
 public class Buttons extends JxFrame implements ActionListener {
-    JToolBar toolbar;
-    JCheckBox YMCA, Rotary, ACLU;
+    JToolBar     toolbar;
+    JCheckBox    YMCA, Rotary, ACLU;
     JRadioButton Rep, Dem, Flat;
-    JButton Clear, Quit;
+    JButton      Clear, Quit;
 
     /**
      * Constructs ...
@@ -54,16 +54,22 @@ public class Buttons extends JxFrame implements ActionListener {
      */
     public Buttons() {
         super("Buttons and Checks");
+
         JPanel jp = new JPanel();
+
         getContentPane().add(jp);
         jp.setLayout(new BorderLayout());
         toolbar = new JToolBar();
         jp.add("North", toolbar);
+
         JPanel center = new JPanel();
+
         jp.add("Center", center);
         center.setLayout(new GridLayout(1, 2));
-        JPanel left = new JPanel();
+
+        JPanel left  = new JPanel();
         JPanel right = new JPanel();
+
         center.add(left);
         center.add(right);
         left.setLayout(new GridLayout(3, 1));
@@ -76,35 +82,15 @@ public class Buttons extends JxFrame implements ActionListener {
         right.add(Rep = new JRadioButton("Republicrat"));
         right.add(Dem = new JRadioButton("Demmican"));
         right.add(Flat = new JRadioButton("Flat Earth"));
+
         ButtonGroup bgroup = new ButtonGroup();
+
         bgroup.add(Rep);
         bgroup.add(Dem);
         bgroup.add(Flat);
         setBar();
         setSize(300, 200);
         setVisible(true);
-    }
-
-    private void setBar() {
-        Clear = new ToolButton(new ImageIcon("erase.gif"));
-        Quit = new ToolButton(new ImageIcon("stop.gif"));
-        toolbar.add(Clear);
-        Clear.setToolTipText("Clear all boxes");
-        Quit.setToolTipText("Exit from program");
-        toolbar.add(Quit);
-        Clear.addActionListener(this);
-        Quit.addActionListener(this);
-        toolbar.addSeparator();
-        JToggleButton a = new JToggleButton("a");
-        JToggleButton b = new JToggleButton("b");
-        JToggleButton c = new JToggleButton("c");
-        toolbar.add(a);
-        toolbar.add(b);
-        toolbar.add(c);
-        ButtonGroup tgroup = new ButtonGroup();
-        tgroup.add(a);
-        tgroup.add(b);
-        tgroup.add(c);
     }
 
     /**
@@ -115,9 +101,11 @@ public class Buttons extends JxFrame implements ActionListener {
      */
     public void actionPerformed(ActionEvent e) {
         Object obj = e.getSource();
+
         if (obj == Quit) {
             System.exit(0);
         }
+
         if (obj == Clear) {
             YMCA.setSelected(false);
             Rotary.setSelected(false);
@@ -136,5 +124,31 @@ public class Buttons extends JxFrame implements ActionListener {
      */
     static public void main(String argv[]) {
         new Buttons();
+    }
+
+    private void setBar() {
+        Clear = new ToolButton(new ImageIcon("erase.gif"));
+        Quit  = new ToolButton(new ImageIcon("stop.gif"));
+        toolbar.add(Clear);
+        Clear.setToolTipText("Clear all boxes");
+        Quit.setToolTipText("Exit from program");
+        toolbar.add(Quit);
+        Clear.addActionListener(this);
+        Quit.addActionListener(this);
+        toolbar.addSeparator();
+
+        JToggleButton a = new JToggleButton("a");
+        JToggleButton b = new JToggleButton("b");
+        JToggleButton c = new JToggleButton("c");
+
+        toolbar.add(a);
+        toolbar.add(b);
+        toolbar.add(c);
+
+        ButtonGroup tgroup = new ButtonGroup();
+
+        tgroup.add(a);
+        tgroup.add(b);
+        tgroup.add(c);
     }
 }

@@ -62,6 +62,7 @@ public class RandomCaseFilter extends OozinozFilter {
      */
     public void write(int c) throws IOException {
         out.write((Math.random() < .5)
-                  ? Character.toLowerCase((char) c) : Character.toUpperCase((char) c));
+                  ? Character.toLowerCase((char) c)
+                  : Character.toUpperCase((char) c));
     }
 }

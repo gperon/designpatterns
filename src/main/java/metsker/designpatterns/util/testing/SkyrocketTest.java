@@ -60,14 +60,18 @@ public class SkyrocketTest extends TestCase {
         double fuelMass = burnVolume * FUEL_DENSITY;
         double totalMass = fuelMass * 1.1;
         double burnRate = .020;
-        PhysicalRocket r = new PhysicalRocket(burnArea, burnRate, fuelMass, totalMass);
+        PhysicalRocket r = new PhysicalRocket(burnArea, burnRate, fuelMass,
+                               totalMass);
         double bt = burnDepth / burnRate;
         double tol = 0.01;
         assertEquals("check burn time", bt, r.getBurnTime(), tol);
         assertEquals("initial mass", totalMass, r.getMass(0), tol);
-        assertEquals("burnt out mass", totalMass - fuelMass, r.getMass(bt), tol);
-        assertEquals("half mass", totalMass - fuelMass * .5, r.getMass(bt / 2), tol);
-        assertEquals("thrust", SPECIFIC_IMPULSE * FUEL_DENSITY * burnArea * burnRate,
+        assertEquals("burnt out mass", totalMass - fuelMass, r.getMass(bt),
+                     tol);
+        assertEquals("half mass", totalMass - fuelMass * .5, r.getMass(bt / 2),
+                     tol);
+        assertEquals("thrust",
+                     SPECIFIC_IMPULSE * FUEL_DENSITY * burnArea * burnRate,
                      r.getThrust(bt / 2), tol);
     }
 
@@ -82,12 +86,14 @@ public class SkyrocketTest extends TestCase {
         double fuelMass = burnVolume * FUEL_DENSITY;
         double totalMass = fuelMass * 1.1;
         double burnRate = .020;
-        PhysicalRocket pr = new PhysicalRocket(burnArea, burnRate, fuelMass, totalMass);
+        PhysicalRocket pr = new PhysicalRocket(burnArea, burnRate, fuelMass,
+                                totalMass);
         OozinozSkyrocket or = new OozinozSkyrocket(pr);
         double tol = 0.01;
         or.setSimTime(0);
         assertEquals("initial mass", totalMass, or.getMass(), tol);
-        assertEquals("thrust", SPECIFIC_IMPULSE * FUEL_DENSITY * burnArea * burnRate,
+        assertEquals("thrust",
+                     SPECIFIC_IMPULSE * FUEL_DENSITY * burnArea * burnRate,
                      or.getThrust(), tol);
         double bt = burnDepth / burnRate;
         or.setSimTime(bt * 1.01);

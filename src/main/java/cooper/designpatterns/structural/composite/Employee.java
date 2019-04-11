@@ -37,11 +37,11 @@ import java.util.*;
  * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
  */
 public class Employee {
-    String name;
-    float salary;
-    Vector subordinates;
-    boolean isLeaf;
     Employee parent = null;
+    String   name;
+    float    salary;
+    Vector   subordinates;
+    boolean  isLeaf;
 
     /**
      * Constructs ...
@@ -51,10 +51,10 @@ public class Employee {
      * @param _salary
      */
     public Employee(String _name, float _salary) {
-        name = _name;
-        salary = _salary;
+        name         = _name;
+        salary       = _salary;
         subordinates = new Vector();
-        isLeaf = false;
+        isLeaf       = false;
     }
 
     /**
@@ -66,41 +66,11 @@ public class Employee {
      * @param _salary
      */
     public Employee(Employee _parent, String _name, float _salary) {
-        name = _name;
-        salary = _salary;
-        parent = _parent;
+        name         = _name;
+        salary       = _salary;
+        parent       = _parent;
         subordinates = new Vector();
-        isLeaf = false;
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param b
-     */
-    public void setLeaf(boolean b) {
-        isLeaf = b;    // if true, do not allow children
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @return
-     */
-    public float getSalary() {
-        return salary;
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @return
-     */
-    public String getName() {
-        return name;
+        isLeaf       = false;
     }
 
     /**
@@ -123,6 +93,16 @@ public class Employee {
      * Method description
      *
      *
+     * @return
+     */
+    public Enumeration elements() {
+        return subordinates.elements();
+    }
+
+    /**
+     * Method description
+     *
+     *
      * @param e
      */
     public void remove(Employee e) {
@@ -135,35 +115,29 @@ public class Employee {
      * Method description
      *
      *
-     * @return
-     */
-    public Enumeration elements() {
-        return subordinates.elements();
-    }
-
-    /**
-     * Method description
-     *
-     *
      * @param s
      *
      * @return
      */
     public Employee getChild(String s) {
         Employee newEmp = null;
+
         if (getName().equals(s)) {
             return this;
         } else {
-            boolean found = false;
-            Enumeration e = elements();
+            boolean     found = false;
+            Enumeration e     = elements();
+
             while (e.hasMoreElements() && (!found)) {
                 newEmp = (Employee) e.nextElement();
-                found = newEmp.getName().equals(s);
+                found  = newEmp.getName().equals(s);
+
                 if (!found) {
                     newEmp = newEmp.getChild(s);
-                    found = (newEmp != null);
+                    found  = (newEmp != null);
                 }
             }
+
             if (found) {
                 return newEmp;
             } else {
@@ -176,14 +150,45 @@ public class Employee {
      * Method description
      *
      *
+     * @param b
+     */
+    public void setLeaf(boolean b) {
+        isLeaf = b;    // if true, do not allow children
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @return
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * Method description
+     *
+     *
      * @return
      */
     public float getSalaries() {
         float sum = salary;
+
         for (int i = 0; i < subordinates.size(); i++) {
             sum += ((Employee) subordinates.elementAt(i)).getSalaries();
         }
 
         return sum;
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @return
+     */
+    public float getSalary() {
+        return salary;
     }
 }

@@ -26,6 +26,7 @@
 
 
 package cooper.designpatterns.structural.adapter;
+
 //Demonstratiob of simple Two-list program
 //using JFC controls
 
@@ -55,9 +56,9 @@ import javax.swing.UnsupportedLookAndFeelException;
  * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
  */
 public class JTwoClassList extends JFrame implements ActionListener {
-    private JButton Add, MoveRight, MoveLeft;
+    private JButton       Add, MoveRight, MoveLeft;
     private JclassAwtList leftList, rightList;
-    private TextField txt;
+    private TextField     txt;
 
     /**
      * Constructs ...
@@ -70,70 +71,6 @@ public class JTwoClassList extends JFrame implements ActionListener {
         setGUI();
     }
 
-    private void setGUI() {
-        getContentPane().setLayout(new GridLayout(1, 2));    // two columns
-        setBackground(Color.lightGray);
-        JPanel pLeft = new JPanel();
-        JPanel pRight = new JPanel();
-        getContentPane().add(pLeft);
-        getContentPane().add(pRight);
-        pLeft.setLayout(new BorderLayout());
-        JPanel pTop = new JPanel();
-        pLeft.add("North", pTop);
-        txt = new TextField(15);
-        pTop.add(txt);
-        Add = new JButton("Insert");
-        Add.setMargin(new Insets(0, 0, 0, 0));
-        pTop.add(Add);
-        JPanel rBorder = new JPanel();
-        rBorder.setLayout(new GridLayout(2, 1));
-        MoveRight = new JButton("Add --->");
-        MoveLeft = new JButton("<--- Remove");
-        JPanel rbTop = new JPanel();
-        rbTop.add(MoveRight);
-        rBorder.add(rbTop);
-        JPanel rbBot = new JPanel();
-        rbBot.add(MoveLeft);
-        rBorder.add(rbBot);
-        pLeft.add("East", rBorder);
-        leftList = new JclassAwtList(15);
-        JScrollPane lsp = new JScrollPane();
-        pLeft.add("Center", lsp);
-        lsp.getViewport().add(leftList);
-        rightList = new JclassAwtList(15);
-        JScrollPane rsp = new JScrollPane();
-        pRight.setLayout(new BorderLayout());
-        pRight.add("Center", rsp);
-        rsp.getViewport().add(rightList);
-        // Add button action listenes
-        Add.addActionListener(this);
-        MoveRight.addActionListener(this);
-        MoveLeft.addActionListener(this);
-        setSize(new Dimension(400, 300));
-        setVisible(true);
-    }
-
-    private void setCloseClick() {
-        // create window listener to respond to window close click
-        addWindowListener(new WindowAdapter() {
-            public void windowClosing(WindowEvent e) {
-                System.exit(0);
-            }
-        });
-    }
-
-    private void setLF() {
-        // Force SwingApp to come up in the System L&F
-        String laf = UIManager.getSystemLookAndFeelClassName();
-        try {
-            UIManager.setLookAndFeel(laf);
-        } catch (UnsupportedLookAndFeelException exc) {
-            System.err.println("Warning: UnsupportedLookAndFeel: " + laf);
-        } catch (Exception exc) {
-            System.err.println("Error loading " + laf + ": " + exc);
-        }
-    }
-
     /**
      * Method description
      *
@@ -142,12 +79,15 @@ public class JTwoClassList extends JFrame implements ActionListener {
      */
     public void actionPerformed(ActionEvent e) {
         JButton b = (JButton) e.getSource();
+
         if (b == Add) {
             addName();
         }
+
         if (b == MoveRight) {
             moveNameRight();
         }
+
         if (b == MoveLeft) {
             moveNameLeft();
         }
@@ -160,26 +100,6 @@ public class JTwoClassList extends JFrame implements ActionListener {
         }
     }
 
-    private void moveNameRight() {
-        String sel[] = leftList.getSelectedItems();
-        if (sel != null) {
-            rightList.add(sel[0]);
-            leftList.remove(sel[0]);
-        }
-    }
-
-    /**
-     * Method description
-     *
-     */
-    public void moveNameLeft() {
-        String sel[] = rightList.getSelectedItems();
-        if (sel != null) {
-            leftList.add(sel[0]);
-            rightList.remove(sel[0]);
-        }
-    }
-
     /**
      * Method description
      *
@@ -188,5 +108,109 @@ public class JTwoClassList extends JFrame implements ActionListener {
      */
     static public void main(String argv[]) {
         new JTwoList();
+    }
+
+    /**
+     * Method description
+     *
+     */
+    public void moveNameLeft() {
+        String sel[] = rightList.getSelectedItems();
+
+        if (sel != null) {
+            leftList.add(sel[0]);
+            rightList.remove(sel[0]);
+        }
+    }
+
+    private void moveNameRight() {
+        String sel[] = leftList.getSelectedItems();
+
+        if (sel != null) {
+            rightList.add(sel[0]);
+            leftList.remove(sel[0]);
+        }
+    }
+
+    private void setCloseClick() {
+
+        // create window listener to respond to window close click
+        addWindowListener(new WindowAdapter() {
+                              public void windowClosing(WindowEvent e) {
+                                  System.exit(0);
+                              }
+                          });
+    }
+
+    private void setGUI() {
+        getContentPane().setLayout(new GridLayout(1, 2));    // two columns
+        setBackground(Color.lightGray);
+
+        JPanel pLeft  = new JPanel();
+        JPanel pRight = new JPanel();
+
+        getContentPane().add(pLeft);
+        getContentPane().add(pRight);
+        pLeft.setLayout(new BorderLayout());
+
+        JPanel pTop = new JPanel();
+
+        pLeft.add("North", pTop);
+        txt = new TextField(15);
+        pTop.add(txt);
+        Add = new JButton("Insert");
+        Add.setMargin(new Insets(0, 0, 0, 0));
+        pTop.add(Add);
+
+        JPanel rBorder = new JPanel();
+
+        rBorder.setLayout(new GridLayout(2, 1));
+        MoveRight = new JButton("Add --->");
+        MoveLeft  = new JButton("<--- Remove");
+
+        JPanel rbTop = new JPanel();
+
+        rbTop.add(MoveRight);
+        rBorder.add(rbTop);
+
+        JPanel rbBot = new JPanel();
+
+        rbBot.add(MoveLeft);
+        rBorder.add(rbBot);
+        pLeft.add("East", rBorder);
+        leftList = new JclassAwtList(15);
+
+        JScrollPane lsp = new JScrollPane();
+
+        pLeft.add("Center", lsp);
+        lsp.getViewport().add(leftList);
+        rightList = new JclassAwtList(15);
+
+        JScrollPane rsp = new JScrollPane();
+
+        pRight.setLayout(new BorderLayout());
+        pRight.add("Center", rsp);
+        rsp.getViewport().add(rightList);
+
+        // Add button action listenes
+        Add.addActionListener(this);
+        MoveRight.addActionListener(this);
+        MoveLeft.addActionListener(this);
+        setSize(new Dimension(400, 300));
+        setVisible(true);
+    }
+
+    private void setLF() {
+
+        // Force SwingApp to come up in the System L&F
+        String laf = UIManager.getSystemLookAndFeelClassName();
+
+        try {
+            UIManager.setLookAndFeel(laf);
+        } catch (UnsupportedLookAndFeelException exc) {
+            System.err.println("Warning: UnsupportedLookAndFeel: " + laf);
+        } catch (Exception exc) {
+            System.err.println("Error loading " + laf + ": " + exc);
+        }
     }
 }

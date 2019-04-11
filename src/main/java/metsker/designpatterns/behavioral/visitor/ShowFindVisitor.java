@@ -1,8 +1,8 @@
 /*
  * @(#)ShowFindVisitor.java   2011-11-01
- * 
+ *
  * Copyright (c) 2011 Giorgio Peron giorgio.peron@gmail.com
- * All Rights Reserved. 
+ * All Rights Reserved.
  *
  * Redistribution and use of this script, with or without modification, is
  * permitted provided that the following conditions are met:
@@ -57,6 +57,7 @@ public class ShowFindVisitor {
     public static void main(String[] args) {
         MachineComponent factory = OozinozFactory.dublin();
         MachineComponent machine = new FindVisitor().find(factory, 3404);
-        System.out.println((machine != null) ? machine.toString() : "Not found");
+        System.out.println((machine != null)
+                           ? machine.toString() : "Not found");
     }
 }

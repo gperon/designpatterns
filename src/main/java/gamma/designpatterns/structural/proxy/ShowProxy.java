@@ -40,7 +40,8 @@ import javax.swing.*;
  * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
  */
 public class ShowProxy implements ActionListener {
-    private ImageIconProxy proxy = new ImageIconProxy("designpatterns/structural/proxy/fest.jpg");
+    private ImageIconProxy proxy =
+        new ImageIconProxy("designpatterns/structural/proxy/fest.jpg");
     private JFrame frame;
     private JButton loadButton;
 

@@ -27,11 +27,11 @@
 
 package cooper.designpatterns.behavioral.chainofresponsibility;
 
-import cooper.designpatterns.structural.adapter.JawtList;
-
 import java.awt.*;
 
 import javax.swing.border.*;
+
+import cooper.designpatterns.structural.adapter.JawtList;
 
 /**
  * Class description
@@ -71,6 +71,7 @@ public class RestList extends JawtList implements Chain {
     public void sendToChain(String mesg) {
         add(mesg);    // this is the end of the chain
         repaint();
+
         if (nextChain != null) {
             nextChain.sendToChain(mesg);
         }

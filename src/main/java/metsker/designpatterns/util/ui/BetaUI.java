@@ -55,7 +55,8 @@ public class BetaUI extends UI {
      */
     public BetaUI() {
         Font oldFont = getFont();
-        font = new Font(oldFont.getName(), oldFont.getStyle() | Font.ITALIC, oldFont.getSize());
+        font = new Font(oldFont.getName(), oldFont.getStyle() | Font.ITALIC,
+                        oldFont.getSize());
     }
 
     /**

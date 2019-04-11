@@ -57,7 +57,9 @@ public class OzTextArea extends JPanel {
     public OzTextArea() {
         setLayout(new BorderLayout());
         JScrollPane jsp = new JScrollPane(textArea);
-        jsp.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createRaisedBevelBorder(),
+        jsp.setBorder(
+            BorderFactory.createCompoundBorder(
+                BorderFactory.createRaisedBevelBorder(),
                 BorderFactory.createEmptyBorder(5, 5, 5, 5)));
         add(jsp, "Center");
     }

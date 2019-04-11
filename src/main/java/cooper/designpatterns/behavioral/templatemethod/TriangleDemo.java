@@ -27,55 +27,13 @@
 
 package cooper.designpatterns.behavioral.templatemethod;
 
-import cooper.designpatterns.util.swing.JxFrame;
-
 import java.awt.*;
 
 import java.util.*;
 
 import javax.swing.*;
 
-/**
- * Class description
- *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
- */
-public class TriangleDemo extends JxFrame {
-    StandardTriangle t, t1;
-    IsocelesTriangle it;
-
-    /**
-     * Constructs ...
-     *
-     */
-    public TriangleDemo() {
-        super("Draw triangles");
-        TPanel tp = new TPanel();
-        t = new StandardTriangle(new Point(10, 10), new Point(150, 50), new Point(100, 75));
-        it = new IsocelesTriangle(new Point(150, 100), new Point(240, 40), new Point(175, 150));
-        t1 = new StandardTriangle(new Point(100, 100), new Point(240, 40), new Point(175, 150));
-        tp.addTriangle(t);
-        tp.addTriangle(it);
-        tp.addTriangle(t1);
-        getContentPane().add(tp);
-        setSize(300, 200);
-        setBackground(Color.white);
-        setVisible(true);
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param arg
-     */
-    static public void main(String[] arg) {
-        new TriangleDemo();
-    }
-}
-
+import cooper.designpatterns.util.swing.JxFrame;
 
 class TPanel extends JPanel {
     Vector triangles;
@@ -107,7 +65,52 @@ class TPanel extends JPanel {
     public void paint(Graphics g) {
         for (int i = 0; i < triangles.size(); i++) {
             AbstractTriangle tngl = (AbstractTriangle) triangles.elementAt(i);
+
             tngl.draw(g);
         }
+    }
+}
+
+
+/**
+ * Class description
+ *
+ *
+ * @version        0.1.1, 2011-11-01
+ * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ */
+public class TriangleDemo extends JxFrame {
+    StandardTriangle t, t1;
+    IsocelesTriangle it;
+
+    /**
+     * Constructs ...
+     *
+     */
+    public TriangleDemo() {
+        super("Draw triangles");
+
+        TPanel tp = new TPanel();
+
+        t  = new StandardTriangle(new Point(10, 10), new Point(150, 50), new Point(100, 75));
+        it = new IsocelesTriangle(new Point(150, 100), new Point(240, 40), new Point(175, 150));
+        t1 = new StandardTriangle(new Point(100, 100), new Point(240, 40), new Point(175, 150));
+        tp.addTriangle(t);
+        tp.addTriangle(it);
+        tp.addTriangle(t1);
+        getContentPane().add(tp);
+        setSize(300, 200);
+        setBackground(Color.white);
+        setVisible(true);
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param arg
+     */
+    static public void main(String[] arg) {
+        new TriangleDemo();
     }
 }

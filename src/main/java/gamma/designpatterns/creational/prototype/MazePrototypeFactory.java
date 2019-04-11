@@ -89,7 +89,8 @@ public class MazePrototypeFactory extends MazeFactory {
         Room room;
         try {
             room = (Room) prototypeRoom.clone();
-            MapSite[] sides = new MapSite[] { makeWall(), makeWall(), makeWall(), makeWall(), };
+            MapSite[] sides = new MapSite[] { makeWall(), makeWall(),
+                                              makeWall(), makeWall(), };
             room.initialize(n, sides);
 
             return room;

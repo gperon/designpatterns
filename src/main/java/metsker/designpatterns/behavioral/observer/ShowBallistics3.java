@@ -1,8 +1,8 @@
 /*
  * @(#)ShowBallistics3.java   2011-11-01
- * 
+ *
  * Copyright (c) 2011 Giorgio Peron giorgio.peron@gmail.com
- * All Rights Reserved. 
+ * All Rights Reserved.
  *
  * Redistribution and use of this script, with or without modification, is
  * permitted provided that the following conditions are met:
@@ -63,7 +63,8 @@ public class ShowBallistics3 {
      * @param args
      */
     public static void main(String[] args) {
-        SwingFacade.launch(new ShowBallistics3().mainPanel(), "Effects of tPeak");
+        SwingFacade.launch(new ShowBallistics3().mainPanel(),
+                           "Effects of tPeak");
     }
 
     protected BallisticsPanel3 burnPanel;
@@ -117,13 +118,16 @@ public class ShowBallistics3 {
             sliderMax = slider.getMaximum();
             sliderMin = slider.getMinimum();
             slider.addChangeListener(new ChangeListener() {
-                public void stateChanged(ChangeEvent e) {
-                    if (sliderMax == sliderMin) {
-                        return;
-                    }
-                    tPeak.setValue((slider.getValue() - sliderMin) / (sliderMax - sliderMin));
-                }
-            });
+                                         public void stateChanged(
+                                                 ChangeEvent e) {
+                                             if (sliderMax == sliderMin) {
+                                                 return;
+                                             }
+                                             tPeak.setValue((slider.getValue()
+                                             - sliderMin) / (sliderMax
+                                                 - sliderMin));
+                                         }
+                                     });
             slider.setValue(slider.getMinimum());
         }
 

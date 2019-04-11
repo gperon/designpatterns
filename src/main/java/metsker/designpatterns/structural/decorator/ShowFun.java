@@ -1,8 +1,8 @@
 /*
  * @(#)ShowFun.java   2011-11-01
- * 
+ *
  * Copyright (c) 2011 Giorgio Peron giorgio.peron@gmail.com
- * All Rights Reserved. 
+ * All Rights Reserved.
  *
  * Redistribution and use of this script, with or without modification, is
  * permitted provided that the following conditions are met:
@@ -44,7 +44,7 @@ import metsker.designpatterns.util.ui.SwingFacade;
  *
  *
  * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>    
+ * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
  */
 public class ShowFun {
 
@@ -55,8 +55,10 @@ public class ShowFun {
      * @param args
      */
     public static void main(String[] args) {
-        Function theta = new Arithmetic('*', new T(), new Constant(2 * Math.PI));
-        Function theta2 = new Arithmetic('*', new T(), new Constant(2 * Math.PI * 5));
+        Function theta = new Arithmetic('*', new T(),
+                                        new Constant(2 * Math.PI));
+        Function theta2 = new Arithmetic('*', new T(),
+                                         new Constant(2 * Math.PI * 5));
         Function x = new Arithmetic('+', new Cos(theta), new Cos(theta2));
         Function y = new Arithmetic('+', new Sin(theta), new Sin(theta2));
         FunPanel panel = new FunPanel(1000);

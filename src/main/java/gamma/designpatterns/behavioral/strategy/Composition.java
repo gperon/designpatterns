@@ -77,8 +77,8 @@ public class Composition {
         breaks[0] = 1;
         // determine where the breaks are:
         int breakCount;
-        breakCount = compositor.compose(natural, stretchability, shrinkability, componentCount,
-                                        lineWidth, breaks);
+        breakCount = compositor.compose(natural, stretchability, shrinkability,
+                                        componentCount, lineWidth, breaks);
         // lay out components according to breaks
         // ...
     }

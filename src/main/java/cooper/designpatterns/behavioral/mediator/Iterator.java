@@ -42,6 +42,14 @@ public interface Iterator {
      *
      * @return
      */
+    public Object CurrentItem();
+
+    /**
+     * Method description
+     *
+     *
+     * @return
+     */
     public Object First();
 
     /**
@@ -59,12 +67,4 @@ public interface Iterator {
      * @return
      */
     public boolean isDone();
-
-    /**
-     * Method description
-     *
-     *
-     * @return
-     */
-    public Object CurrentItem();
 }

@@ -40,7 +40,7 @@ import javax.swing.*;
  * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
  */
 public class CoolDecorator extends Decorator {
-    boolean mouse_over;    // true when mose over button
+    boolean    mouse_over;    // true when mose over button
     JComponent thisComp;
 
     /**
@@ -52,18 +52,19 @@ public class CoolDecorator extends Decorator {
     public CoolDecorator(JComponent c) {
         super(c);
         mouse_over = false;
-        thisComp = this;    // save this component
+        thisComp   = this;    // save this component
+
         // catch mouse movements in inner class
         c.addMouseListener(new MouseAdapter() {
-            public void mouseEntered(MouseEvent e) {
-                mouse_over = true;    // set flag when mouse over
-                thisComp.repaint();
-            }
-            public void mouseExited(MouseEvent e) {
-                mouse_over = false;    // clear flag when mouse not over
-                thisComp.repaint();
-            }
-        });
+                               public void mouseEntered(MouseEvent e) {
+                                   mouse_over = true;    // set flag when mouse over
+                                   thisComp.repaint();
+                               }
+                               public void mouseExited(MouseEvent e) {
+                                   mouse_over = false;    // clear flag when mouse not over
+                                   thisComp.repaint();
+                               }
+                           });
     }
 
     // paint the button
@@ -76,11 +77,14 @@ public class CoolDecorator extends Decorator {
      */
     public void paint(Graphics g) {
         super.paint(g);    // first draw the parent button
+
         if (!mouse_over)
+
         // if the mouse is not over the button
         // erase the borders
         {
             Dimension size = super.getSize();
+
             g.setColor(Color.lightGray);
             g.drawRect(0, 0, size.width - 1, size.height - 1);
             g.drawLine(size.width - 2, 0, size.width - 2, size.height - 1);

@@ -27,11 +27,11 @@
 
 package cooper.designpatterns.behavioral.strategy;
 
-import cooper.designpatterns.util.swing.InputFile;
-
 import java.awt.*;
 
 import java.util.*;
+
+import cooper.designpatterns.util.swing.InputFile;
 
 /**
  * Class description
@@ -41,10 +41,11 @@ import java.util.*;
  * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
  */
 public class Context {
+
     // this object selects one of the strategies
     // to be used for plotting
     private PlotStrategy plotStrategy;
-    float x[], y[];
+    float                x[], y[];
 
     /**
      * Constructs ...
@@ -52,6 +53,50 @@ public class Context {
      */
     public Context() {
         setLinePlot();
+    }
+
+    /**
+     * Method description
+     *
+     */
+    public void plot() {
+        plotStrategy.plot(x, y);
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param filename
+     */
+    public void readData(String filename) {
+        StringTokenizer tok;
+        InputFile       f  = new InputFile(getClass(), filename);
+        Vector          xv = new Vector();
+        Vector          yv = new Vector();
+        String          s  = "";
+
+        // read data into 2 Vectors
+        while (s != null) {
+            s = f.readLine();                      // read a line at a time
+
+            if (s != null) {
+                tok = new StringTokenizer(s);
+                xv.addElement(tok.nextToken());    // x data
+                yv.addElement(tok.nextToken());    // y data
+            }
+        }
+
+        f.close();
+
+        // copy data into two float arrays
+        x = new float[xv.size()];
+        y = new float[yv.size()];
+
+        for (int i = 0; i < xv.size(); i++) {
+            x[i] = new Float((String) xv.elementAt(i)).floatValue();
+            y[i] = new Float((String) yv.elementAt(i)).floatValue();
+        }
     }
 
     /**
@@ -73,49 +118,10 @@ public class Context {
     /**
      * Method description
      *
-     */
-    public void plot() {
-        plotStrategy.plot(x, y);
-    }
-
-    /**
-     * Method description
-     *
      *
      * @param c
      */
     public void setPenColor(Color c) {
         plotStrategy.setPenColor(c);
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param filename
-     */
-    public void readData(String filename) {
-        StringTokenizer tok;
-        InputFile f = new InputFile(getClass(), filename);
-        Vector xv = new Vector();
-        Vector yv = new Vector();
-        String s = "";
-        // read data into 2 Vectors
-        while (s != null) {
-            s = f.readLine();                      // read a line at a time
-            if (s != null) {
-                tok = new StringTokenizer(s);
-                xv.addElement(tok.nextToken());    // x data
-                yv.addElement(tok.nextToken());    // y data
-            }
-        }
-        f.close();
-        // copy data into two float arrays
-        x = new float[xv.size()];
-        y = new float[yv.size()];
-        for (int i = 0; i < xv.size(); i++) {
-            x[i] = new Float((String) xv.elementAt(i)).floatValue();
-            y[i] = new Float((String) yv.elementAt(i)).floatValue();
-        }
     }
 }

@@ -1,8 +1,8 @@
 /*
  * @(#)DesignPatterns_AboutBox.java   2011-11-01
- * 
+ *
  * Copyright (c) 2011 Giorgio Peron giorgio.peron@gmail.com
- * All Rights Reserved. 
+ * All Rights Reserved.
  *
  * Redistribution and use of this script, with or without modification, is
  * permitted provided that the following conditions are met:
@@ -45,26 +45,34 @@ import javax.swing.*;
  * @version 1.0
  */
 public class DesignPatterns_AboutBox extends JDialog implements ActionListener {
-    JPanel panel1 = new JPanel();
-    JPanel panel2 = new JPanel();
-    JPanel insetsPanel1 = new JPanel();
-    JPanel insetsPanel2 = new JPanel();
-    JPanel insetsPanel3 = new JPanel();
-    JButton button1 = new JButton();
-    JLabel imageLabel = new JLabel();
-    JLabel label1 = new JLabel();
-    JLabel label2 = new JLabel();
-    JLabel label3 = new JLabel();
-    JLabel label4 = new JLabel();
-    ImageIcon image1 = new ImageIcon();
+    JPanel       panel1        = new JPanel();
+    JPanel       panel2        = new JPanel();
+    JPanel       insetsPanel1  = new JPanel();
+    JPanel       insetsPanel2  = new JPanel();
+    JPanel       insetsPanel3  = new JPanel();
+    JButton      button1       = new JButton();
+    JLabel       imageLabel    = new JLabel();
+    JLabel       label1        = new JLabel();
+    JLabel       label2        = new JLabel();
+    JLabel       label3        = new JLabel();
+    JLabel       label4        = new JLabel();
+    ImageIcon    image1        = new ImageIcon();
     BorderLayout borderLayout1 = new BorderLayout();
     BorderLayout borderLayout2 = new BorderLayout();
-    FlowLayout flowLayout1 = new FlowLayout();
-    GridLayout gridLayout1 = new GridLayout();
-    String product = "Design Patterns";
-    String version = "1.0";
-    String copyright = "Copyright (c) 2003-2005";
-    String comments = "";
+    FlowLayout   flowLayout1   = new FlowLayout();
+    GridLayout   gridLayout1   = new GridLayout();
+    String       product       = "Design Patterns";
+    String       version       = "1.0";
+    String       copyright     = "Copyright (c) 2003-2005";
+    String       comments      = "";
+
+    /**
+     * Constructs ...
+     *
+     */
+    public DesignPatterns_AboutBox() {
+        this(null);
+    }
 
     /**
      * Constructs ...
@@ -74,6 +82,7 @@ public class DesignPatterns_AboutBox extends JDialog implements ActionListener {
      */
     public DesignPatterns_AboutBox(Frame parent) {
         super(parent);
+
         try {
             setDefaultCloseOperation(DISPOSE_ON_CLOSE);
             jbInit();
@@ -83,11 +92,14 @@ public class DesignPatterns_AboutBox extends JDialog implements ActionListener {
     }
 
     /**
-     * Constructs ...
+     * Close the dialog on a button event.
      *
+     * @param actionEvent ActionEvent
      */
-    public DesignPatterns_AboutBox() {
-        this(null);
+    public void actionPerformed(ActionEvent actionEvent) {
+        if (actionEvent.getSource() == button1) {
+            dispose();
+        }
     }
 
     /**
@@ -126,16 +138,5 @@ public class DesignPatterns_AboutBox extends JDialog implements ActionListener {
         panel1.add(insetsPanel1, BorderLayout.SOUTH);
         panel1.add(panel2, BorderLayout.NORTH);
         setResizable(true);
-    }
-
-    /**
-     * Close the dialog on a button event.
-     *
-     * @param actionEvent ActionEvent
-     */
-    public void actionPerformed(ActionEvent actionEvent) {
-        if (actionEvent.getSource() == button1) {
-            dispose();
-        }
     }
 }

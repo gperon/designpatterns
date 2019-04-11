@@ -64,7 +64,8 @@ public final class MazeFactorySingleton extends MazeFactory {
         if (instance == null) {
             MazeStyle style;
             // style = MazeStyle.valueOf(MAZESTYLE);
-            String mazeStyle = System.getProperty(MAZESTYLE, MazeStyle.STANDARD.toString());
+            String mazeStyle = System.getProperty(MAZESTYLE,
+                                   MazeStyle.STANDARD.toString());
             style = MazeStyle.valueOf(mazeStyle);
             if (style == MazeStyle.STANDARD) {
                 instance = new BombedMazeFactory();

@@ -37,7 +37,7 @@ import cooper.designpatterns.behavioral.command.Command;
  * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
  */
 public class Verb extends ParseVerb implements Command {
-    protected Data data;
+    protected Data     data;
     protected JawtList ptable;
 
     /**
@@ -64,7 +64,7 @@ public class Verb extends ParseVerb implements Command {
      * @param pt
      */
     public void setData(Data dt, JawtList pt) {
-        data = dt;
+        data   = dt;
         ptable = pt;
     }
 }

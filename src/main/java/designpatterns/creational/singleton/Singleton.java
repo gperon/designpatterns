@@ -1,8 +1,8 @@
 /*
  * @(#)Singleton.java   2011-11-01
- * 
+ *
  * Copyright (c) 2011 Giorgio Peron giorgio.peron@gmail.com
- * All Rights Reserved. 
+ * All Rights Reserved.
  *
  * Redistribution and use of this script, with or without modification, is
  * permitted provided that the following conditions are met:
@@ -36,7 +36,8 @@
 package designpatterns.creational.singleton;
 
 /**
- * Defines an Instance operation that lets clients access its unique instance. Instance is a class operation (that is, a class method in Smalltalk and a static member function in C++).
+ * Defines an Instance operation that lets clients access its unique instance.
+ * Instance is a class operation (that is, a class method in Smalltalk and a static member function in C++).
  * May be responsible for creating its own unique instance.
  *
  * @author gperon

@@ -29,6 +29,44 @@ package cooper.designpatterns.behavioral.state;
 
 import java.awt.*;
 
+class CircleMemento extends Memento {
+    VisitorCircle circ;
+
+    // saved fields- remember internal fields
+    // of the specified visual rectangle
+    int x, y, w, h;
+
+    /**
+     * Constructs ...
+     *
+     *
+     * @param r
+     */
+    public CircleMemento(VisitorCircle r) {
+        super(r);
+        circ = r;
+        x    = circ.x;
+        y    = circ.y;
+        w    = circ.w;
+        h    = circ.h;
+    }
+
+    /**
+     * Method description
+     *
+     */
+    public void restore() {
+
+        // restore the internal state of
+        // the specified rectangle
+        circ.x = x;
+        circ.y = y;
+        circ.h = h;
+        circ.w = w;
+    }
+}
+
+
 /**
  * Class description
  *
@@ -61,10 +99,12 @@ public class VisitorCircle extends Drawing {
      */
     public void draw(Graphics g) {
         g.drawArc(x, y, w, h, 0, 360);
+
         if (filled) {
             g.setColor(fillColor);
             g.fillArc(x, y, w, h, 0, 360);
         }
+
         if (selected) {
             g.setColor(Color.black);
             g.fillRect(x + w / 2, y - 2, 4, 4);
@@ -72,41 +112,5 @@ public class VisitorCircle extends Drawing {
             g.fillRect(x + w / 2, y + h - 2, 4, 4);
             g.fillRect(x + w - 2, y + h / 2, 4, 4);
         }
-    }
-}
-
-
-class CircleMemento extends Memento {
-    VisitorCircle circ;
-    // saved fields- remember internal fields
-    // of the specified visual rectangle
-    int x, y, w, h;
-
-    /**
-     * Constructs ...
-     *
-     *
-     * @param r
-     */
-    public CircleMemento(VisitorCircle r) {
-        super(r);
-        circ = r;
-        x = circ.x;
-        y = circ.y;
-        w = circ.w;
-        h = circ.h;
-    }
-
-    /**
-     * Method description
-     *
-     */
-    public void restore() {
-        // restore the internal state of
-        // the specified rectangle
-        circ.x = x;
-        circ.y = y;
-        circ.h = h;
-        circ.w = w;
     }
 }

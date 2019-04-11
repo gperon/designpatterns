@@ -60,7 +60,8 @@ public class Character implements Glyph {
     public void draw(Window win, GlyphContext context) {
 
         /** @todo Implement this designpatterns.structural.flyweight.Glyph method */
-        throw new java.lang.UnsupportedOperationException("Method draw() not yet implemented.");
+        throw new java.lang.UnsupportedOperationException(
+            "Method draw() not yet implemented.");
     }
 
     /**
@@ -73,7 +74,8 @@ public class Character implements Glyph {
     public void setFont(Font font, GlyphContext context) {
 
         /** @todo Implement this designpatterns.structural.flyweight.Glyph method */
-        throw new java.lang.UnsupportedOperationException("Method setFont() not yet implemented.");
+        throw new java.lang.UnsupportedOperationException(
+            "Method setFont() not yet implemented.");
     }
 
     /**
@@ -85,7 +87,8 @@ public class Character implements Glyph {
     public void first(GlyphContext context) {
 
         /** @todo Implement this designpatterns.structural.flyweight.Glyph method */
-        throw new java.lang.UnsupportedOperationException("Method first() not yet implemented.");
+        throw new java.lang.UnsupportedOperationException(
+            "Method first() not yet implemented.");
     }
 
     /**
@@ -97,7 +100,8 @@ public class Character implements Glyph {
     public void next(GlyphContext context) {
 
         /** @todo Implement this designpatterns.structural.flyweight.Glyph method */
-        throw new java.lang.UnsupportedOperationException("Method next() not yet implemented.");
+        throw new java.lang.UnsupportedOperationException(
+            "Method next() not yet implemented.");
     }
 
     /**
@@ -111,7 +115,8 @@ public class Character implements Glyph {
     public boolean isDone(GlyphContext context) {
 
         /** @todo Implement this designpatterns.structural.flyweight.Glyph method */
-        throw new java.lang.UnsupportedOperationException("Method isDone() not yet implemented.");
+        throw new java.lang.UnsupportedOperationException(
+            "Method isDone() not yet implemented.");
     }
 
     /**
@@ -125,7 +130,8 @@ public class Character implements Glyph {
     public Glyph current(GlyphContext context) {
 
         /** @todo Implement this designpatterns.structural.flyweight.Glyph method */
-        throw new java.lang.UnsupportedOperationException("Method current() not yet implemented.");
+        throw new java.lang.UnsupportedOperationException(
+            "Method current() not yet implemented.");
     }
 
     /**
@@ -138,7 +144,8 @@ public class Character implements Glyph {
     public void insert(Glyph glyph, GlyphContext context) {
 
         /** @todo Implement this designpatterns.structural.flyweight.Glyph method */
-        throw new java.lang.UnsupportedOperationException("Method insert() not yet implemented.");
+        throw new java.lang.UnsupportedOperationException(
+            "Method insert() not yet implemented.");
     }
 
     /**
@@ -150,6 +157,7 @@ public class Character implements Glyph {
     public void remove(GlyphContext context) {
 
         /** @todo Implement this designpatterns.structural.flyweight.Glyph method */
-        throw new java.lang.UnsupportedOperationException("Method remove() not yet implemented.");
+        throw new java.lang.UnsupportedOperationException(
+            "Method remove() not yet implemented.");
     }
 }

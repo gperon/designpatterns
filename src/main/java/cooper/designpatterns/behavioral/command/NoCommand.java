@@ -38,10 +38,10 @@ import java.awt.event.*;
  * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
  */
 public class NoCommand extends Frame implements ActionListener {
-    Menu mnuFile;
+    Menu     mnuFile;
     MenuItem mnuOpen, mnuExit;
-    Button btnRed;
-    Panel p;
+    Button   btnRed;
+    Panel    p;
 
     /**
      * Constructs ...
@@ -49,7 +49,9 @@ public class NoCommand extends Frame implements ActionListener {
      */
     public NoCommand() {
         super("Frame without commands");
+
         MenuBar mbar = new MenuBar();
+
         setMenuBar(mbar);
         mnuFile = new Menu("File", true);
         mbar.add(mnuFile);
@@ -60,7 +62,7 @@ public class NoCommand extends Frame implements ActionListener {
         mnuOpen.addActionListener(this);
         mnuExit.addActionListener(this);
         btnRed = new Button("Red");
-        p = new Panel();
+        p      = new Panel();
         add(p);
         p.add(btnRed);
         btnRed.addActionListener(this);
@@ -76,12 +78,15 @@ public class NoCommand extends Frame implements ActionListener {
      */
     public void actionPerformed(ActionEvent e) {
         Object obj = e.getSource();
+
         if (obj == mnuOpen) {
             fileOpen();
         }
+
         if (obj == mnuExit) {
             exitClicked();
         }
+
         if (obj == btnRed) {
             redClicked();
         }
@@ -93,11 +98,8 @@ public class NoCommand extends Frame implements ActionListener {
 
     private void fileOpen() {
         FileDialog fDlg = new FileDialog(this, "Open a file", FileDialog.LOAD);
-        fDlg.setVisible(true);
-    }
 
-    private void redClicked() {
-        p.setBackground(Color.red);
+        fDlg.setVisible(true);
     }
 
     /**
@@ -108,5 +110,9 @@ public class NoCommand extends Frame implements ActionListener {
      */
     static public void main(String argv[]) {
         new NoCommand();
+    }
+
+    private void redClicked() {
+        p.setBackground(Color.red);
     }
 }

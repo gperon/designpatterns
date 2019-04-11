@@ -49,7 +49,8 @@ public class WritePropertiesFile {
      */
     public static void main(String[] args) throws Exception {
         FileOutputStream out =
-            new FileOutputStream("src/java/designpatterns/behavioral/strategy/strategy.dat");
+            new FileOutputStream(
+                "src/java/designpatterns/behavioral/strategy/strategy.dat");
         Properties p = new Properties(System.getProperties());
         p.setProperty("promote", "JSquirrel");
         p.store(out, "myheader");

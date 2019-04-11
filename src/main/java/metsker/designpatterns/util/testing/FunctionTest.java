@@ -67,8 +67,8 @@ public class FunctionTest extends TestCase {
      */
     public void testScale() {
         Function c = new Scale(0, 100);    // let Celsius go 0 to 100
-        Function f = new Scale(new Constant(0), c, new Constant(100), new Constant(32),
-                               new Constant(212));
+        Function f = new Scale(new Constant(0), c, new Constant(100),
+                               new Constant(32), new Constant(212));
         assertEquals(32.0, f.f(0), fuzz);
         assertEquals(-40, f.f(-0.4), fuzz);
         assertEquals(212, f.f(1), fuzz);

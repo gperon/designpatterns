@@ -27,14 +27,14 @@
 
 package cooper.designpatterns.structural.flyweight;
 
-import cooper.designpatterns.util.swing.JxFrame;
-
-import javax.swing.*;
-
 import java.awt.*;
 import java.awt.event.*;
 
 import java.util.*;
+
+import javax.swing.*;
+
+import cooper.designpatterns.util.swing.JxFrame;
 
 /**
  * Class description
@@ -44,13 +44,17 @@ import java.util.*;
  * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
  */
 public class FlyCanvas extends JxFrame implements MouseMotionListener {
-    Folder folder;
-    Vector names;
+    final int     Top          = 30,
+                  Left         = 30;
+    final int     W            = 50,
+                  H            = 30;
+    final int     VSpace       = 80,
+                  HSpace       = 70,
+                  HCount       = 3;
+    String        selectedName = "";
+    Folder        folder;
+    Vector        names;
     FolderFactory fact;
-    final int Top = 30, Left = 30;
-    final int W = 50, H = 30;
-    final int VSpace = 80, HSpace = 70, HCount = 3;
-    String selectedName = "";
 
     /**
      * Constructs ...
@@ -59,7 +63,9 @@ public class FlyCanvas extends JxFrame implements MouseMotionListener {
     public FlyCanvas() {
         super("Flyweight Canvas");
         loadNames();
+
         JPanel jp = new JPanel();
+
         getContentPane().add(jp);
         setSize(new Dimension(300, 300));
         addMouseMotionListener(this);
@@ -69,7 +75,7 @@ public class FlyCanvas extends JxFrame implements MouseMotionListener {
 
     private void loadNames() {
         names = new Vector();
-        fact = new FolderFactory();
+        fact  = new FolderFactory();
         names.addElement("Alan");
         names.addElement("Barry");
         names.addElement("Charlie");
@@ -84,62 +90,10 @@ public class FlyCanvas extends JxFrame implements MouseMotionListener {
      * Method description
      *
      *
-     * @param g
+     * @param argv
      */
-    public void paint(Graphics g) {
-        Folder f;
-        String name;
-        int j = 0;        // count number in row
-        int row = Top;    // start in upper left
-        int x = Left;
-        // go through all the names and folders
-        for (int i = 0; i < names.size(); i++) {
-            name = (String) names.elementAt(i);
-            if (name.equals(selectedName)) {
-                f = fact.getFolder(true);
-            } else {
-                f = fact.getFolder(false);
-            }
-            // have that folder draw itself at this spot
-            f.Draw(g, x, row, name);
-            x = x + HSpace;     // change to next posn
-            j++;
-            if (j >= HCount)    // reset for next row
-            {
-                j = 0;
-                row += VSpace;
-                x = Left;
-            }
-        }
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param e
-     */
-    public void mouseMoved(MouseEvent e) {
-        int j = 0;        // count number in row
-        int row = Top;    // start in upper left
-        int x = Left;
-        // go through all the names and folders
-        for (int i = 0; i < names.size(); i++) {
-            // see if this folder contains the mouse
-            Rectangle r = new Rectangle(x, row, W, H);
-            if (r.contains(e.getX(), e.getY())) {
-                selectedName = (String) names.elementAt(i);
-                repaint();
-            }
-            x = x + HSpace;     // change to next posn
-            j++;
-            if (j >= HCount)    // reset for next row
-            {
-                j = 0;
-                row += VSpace;
-                x = Left;
-            }
-        }
+    static public void main(String[] argv) {
+        new FlyCanvas();
     }
 
     /**
@@ -154,17 +108,79 @@ public class FlyCanvas extends JxFrame implements MouseMotionListener {
      * Method description
      *
      *
-     * @param argv
+     * @param e
      */
-    static public void main(String[] argv) {
-        new FlyCanvas();
+    public void mouseMoved(MouseEvent e) {
+        int j   = 0;      // count number in row
+        int row = Top;    // start in upper left
+        int x   = Left;
+
+        // go through all the names and folders
+        for (int i = 0; i < names.size(); i++) {
+
+            // see if this folder contains the mouse
+            Rectangle r = new Rectangle(x, row, W, H);
+
+            if (r.contains(e.getX(), e.getY())) {
+                selectedName = (String) names.elementAt(i);
+                repaint();
+            }
+
+            x = x + HSpace;     // change to next posn
+            j++;
+
+            if (j >= HCount)    // reset for next row
+            {
+                j   = 0;
+                row += VSpace;
+                x   = Left;
+            }
+        }
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param g
+     */
+    public void paint(Graphics g) {
+        Folder f;
+        String name;
+        int    j   = 0;      // count number in row
+        int    row = Top;    // start in upper left
+        int    x   = Left;
+
+        // go through all the names and folders
+        for (int i = 0; i < names.size(); i++) {
+            name = (String) names.elementAt(i);
+
+            if (name.equals(selectedName)) {
+                f = fact.getFolder(true);
+            } else {
+                f = fact.getFolder(false);
+            }
+
+            // have that folder draw itself at this spot
+            f.Draw(g, x, row, name);
+            x = x + HSpace;     // change to next posn
+            j++;
+
+            if (j >= HCount)    // reset for next row
+            {
+                j   = 0;
+                row += VSpace;
+                x   = Left;
+            }
+        }
     }
 }
 
 
 class Folder extends JPanel {
+    final int     W = 50,
+                  H = 30;
     private Color color;
-    final int W = 50, H = 30;
 
     /**
      * Constructs ...
@@ -212,7 +228,8 @@ class FolderFactory {
      */
     public FolderFactory() {
         Color brown = new Color(0x5f5f1c);
-        Selected = new Folder(brown);
+
+        Selected   = new Folder(brown);
         unSelected = new Folder(Color.yellow);
     }
 

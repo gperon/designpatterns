@@ -1,8 +1,8 @@
 /*
  * @(#)ShowWhile.java   2011-11-01
- * 
+ *
  * Copyright (c) 2011 Giorgio Peron giorgio.peron@gmail.com
- * All Rights Reserved. 
+ * All Rights Reserved.
  *
  * Redistribution and use of this script, with or without modification, is
  * permitted provided that the following conditions are met:
@@ -55,7 +55,8 @@ public class ShowWhile {
         starPress.eval().load(new Bin(77));
         starPress.eval().load(new Bin(88));
         WhileCommand command = new WhileCommand(new HasMaterial(starPress),
-                                   new CarryCommand(starPress, fuser));
+                                   new CarryCommand(starPress,
+                                           fuser));
         command.execute();
     }
 }

@@ -46,7 +46,8 @@ public class PromotionAdvisor implements Advisor {
     private PromotionAdvisor() {
         try {
             Properties p = new Properties();
-            p.load(ClassLoader.getSystemResourceAsStream("config/strategy.dat"));
+            p.load(ClassLoader.getSystemResourceAsStream(
+                "config/strategy.dat"));
             String promotedFireworkName = p.getProperty("promote");
             if (promotedFireworkName != null) {
                 promoted = Firework.lookup(promotedFireworkName);

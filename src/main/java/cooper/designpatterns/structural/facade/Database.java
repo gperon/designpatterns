@@ -32,13 +32,13 @@ import java.sql.*;
 import java.util.*;
 
 class Database {
-    Connection con;
-    ResultSet results;
+    Connection        con;
+    ResultSet         results;
     ResultSetMetaData rsmd;
-    DatabaseMetaData dma;
-    String catalog;
-    String types[];
-    String database_url;
+    DatabaseMetaData  dma;
+    String            catalog;
+    String            types[];
+    String            database_url;
 
     /**
      * Constructs ...
@@ -47,8 +47,9 @@ class Database {
      * @param driver
      */
     public Database(String driver) {
-        types = new String[1];
+        types    = new String[1];
         types[0] = "TABLES";    // initialize type array
+
         try {
             Class.forName(driver);
         }    // load the Bridge driver
@@ -73,12 +74,37 @@ class Database {
      * Method description
      *
      *
+     * @param sql
+     *
+     * @return
+     */
+    public ResultSet execute(String sql) {
+
+        // execute an SQL query on this database
+        results = null;
+
+        try {
+            Statement stmt = con.createStatement();
+
+            results = new ResultSet(stmt.executeQuery(sql));
+        } catch (Exception e) {
+            System.out.println("execute error: " + e.getMessage());
+        }
+
+        return results;
+    }
+
+    /**
+     * Method description
+     *
+     *
      * @param url
      * @param cat
      */
     public void open(String url, String cat) {
-        catalog = cat;
+        catalog      = cat;
         database_url = url;
+
         try {
             con = DriverManager.getConnection(url);
             dma = con.getMetaData();    // get the meta data
@@ -104,59 +130,15 @@ class Database {
      * Method description
      *
      *
-     * @return
-     */
-    public String[] getTableNames() {
-        String[] tbnames = null;
-        Vector tname = new Vector();
-        // add the table names to a Vector
-        // since we don't know how many there are
-        try {
-            results = new ResultSet(dma.getTables(catalog, null, "%", types));
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-        while (results.hasMoreElements()) {
-            tname.addElement(results.getColumnValue("TABLE_NAME"));
-        }
-        // copy the table names into a String array
-        tbnames = new String[tname.size()];
-        for (int i = 0; i < tname.size(); i++) {
-            tbnames[i] = (String) tname.elementAt(i);
-        }
-
-        return tbnames;
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @return
-     */
-    public String[] getTableMetaData() {
-        // return the table type information
-        results = null;
-        try {
-            results = new ResultSet(dma.getTables(catalog, null, "%", types));
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-
-        return results.getMetaData();
-    }
-
-    /**
-     * Method description
-     *
-     *
      * @param tablename
      *
      * @return
      */
     public String[] getColumnMetaData(String tablename) {
+
         // return the data on a column
         results = null;
+
         try {
             results = new ResultSet(dma.getColumns(catalog, null, tablename, null));
         } catch (Exception e) {
@@ -175,18 +157,23 @@ class Database {
      * @return
      */
     public String[] getColumnNames(String table) {
+
         // return an array of Column names
         String[] tbnames = null;
-        Vector tname = new Vector();
+        Vector   tname   = new Vector();
+
         try {
             results = new ResultSet(dma.getColumns(catalog, null, table, null));
+
             while (results.hasMoreElements()) {
                 tname.addElement(results.getColumnValue("COLUMN_NAME"));
             }
         } catch (Exception e) {
             System.out.println(e);
         }
+
         tbnames = new String[tname.size()];
+
         for (int i = 0; i < tname.size(); i++) {
             tbnames[i] = (String) tname.elementAt(i);
         }
@@ -204,13 +191,15 @@ class Database {
      * @return
      */
     public String getColumnValue(String table, String columnName) {
+
         // return the value of a given column
         String res = null;
+
         try {
             if (table.length() > 0) {
-                results = execute("Select " + columnName + " from " + table + " order by "
-                                  + columnName);
+                results = execute("Select " + columnName + " from " + table + " order by " + columnName);
             }
+
             if (results.hasMoreElements()) {
                 res = results.getColumnValue(columnName);
             }
@@ -230,9 +219,11 @@ class Database {
      * @return
      */
     public String getNextValue(String columnName) {
+
         // return the next value in that column
         // using the remembered resultSet
         String res = "";
+
         try {
             if (results.hasMoreElements()) {
                 res = results.getColumnValue(columnName);
@@ -248,20 +239,51 @@ class Database {
      * Method description
      *
      *
-     * @param sql
+     * @return
+     */
+    public String[] getTableMetaData() {
+
+        // return the table type information
+        results = null;
+
+        try {
+            results = new ResultSet(dma.getTables(catalog, null, "%", types));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        return results.getMetaData();
+    }
+
+    /**
+     * Method description
+     *
      *
      * @return
      */
-    public ResultSet execute(String sql) {
-        // execute an SQL query on this database
-        results = null;
+    public String[] getTableNames() {
+        String[] tbnames = null;
+        Vector   tname   = new Vector();
+
+        // add the table names to a Vector
+        // since we don't know how many there are
         try {
-            Statement stmt = con.createStatement();
-            results = new ResultSet(stmt.executeQuery(sql));
+            results = new ResultSet(dma.getTables(catalog, null, "%", types));
         } catch (Exception e) {
-            System.out.println("execute error: " + e.getMessage());
+            System.out.println(e);
         }
 
-        return results;
+        while (results.hasMoreElements()) {
+            tname.addElement(results.getColumnValue("TABLE_NAME"));
+        }
+
+        // copy the table names into a String array
+        tbnames = new String[tname.size()];
+
+        for (int i = 0; i < tname.size(); i++) {
+            tbnames[i] = (String) tname.elementAt(i);
+        }
+
+        return tbnames;
     }
 }

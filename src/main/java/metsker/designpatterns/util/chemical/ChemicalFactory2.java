@@ -104,7 +104,9 @@ public class ChemicalFactory2 {
         ChemicalFactory2 factory = new ChemicalFactory2();
         chemicals.put("carbon", factory.new ChemicalImpl("Carbon", "C", 12));
         chemicals.put("sulfur", factory.new ChemicalImpl("Sulfur", "S", 32));
-        chemicals.put("saltpeter", factory.new ChemicalImpl("Saltpeter", "KN03", 101));
+        chemicals.put("saltpeter", factory.new ChemicalImpl("Saltpeter",
+                "KN03",
+                101));
         // ...
     }
 

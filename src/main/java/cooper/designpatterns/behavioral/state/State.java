@@ -54,7 +54,7 @@ public class State {
      * @param x
      * @param y
      */
-    public void mouseUp(int x, int y) {}
+    public void mouseDrag(int x, int y) {}
 
     /**
      * Method description
@@ -63,7 +63,7 @@ public class State {
      * @param x
      * @param y
      */
-    public void mouseDrag(int x, int y) {}
+    public void mouseUp(int x, int y) {}
 
     /**
      * Method description

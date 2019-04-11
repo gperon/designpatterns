@@ -62,8 +62,8 @@ public class TeXCompositor extends Compositor {
      * @todo Implement this designpatterns.behavioral.strategy.Compositor
      *   method
      */
-    public int compose(Coord[] natural, Coord[] stretch, Coord[] shrink, int componentCount,
-                       int lineWidth, int[] breaks) {
+    public int compose(Coord[] natural, Coord[] stretch, Coord[] shrink,
+                       int componentCount, int lineWidth, int[] breaks) {
         return 0;
     }
 }

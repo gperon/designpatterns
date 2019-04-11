@@ -27,6 +27,8 @@
 
 package gamma.designpatterns.structural;
 
+import java.io.*;
+
 import gamma.designpatterns.structural.adapter.AnotherTextView;
 import gamma.designpatterns.structural.adapter.Manipulator;
 import gamma.designpatterns.structural.adapter.Shape;
@@ -49,8 +51,6 @@ import gamma.designpatterns.structural.decorator.ScrollDecorator;
 import gamma.designpatterns.structural.facade.BytecodeStream;
 import gamma.designpatterns.structural.proxy.ShowProxy;
 
-import java.io.*;
-
 /**
  *  <p>
  *
@@ -67,14 +67,104 @@ import java.io.*;
  * @version    1.0
  */
 public class StructuralClient {
-    static final char ADAPTER = '1';
-    static final char BRIDGE = '2';
-    static final char COMPOSITE = '3';
-    static final char FACADE = '4';
-    static final char DECORATOR = '5';
-    static final char FLYWEIGHT = '6';
-    static final char PROXY = '7';
+    static final char     ADAPTER   = '1';
+    static final char     BRIDGE    = '2';
+    static final char     COMPOSITE = '3';
+    static final char     FACADE    = '4';
+    static final char     DECORATOR = '5';
+    static final char     FLYWEIGHT = '6';
+    static final char     PROXY     = '7';
     static BufferedReader input;
+
+    /**
+     *  The main program for the CreationalClient class
+     *
+     * @param  args  The command line arguments
+     */
+    public static void main(String[] args) {
+        while (true) {
+            switch (showMenu()) {
+            case ADAPTER :
+                testAdapter();
+
+                break;
+
+            case BRIDGE :
+                testBridge();
+
+                break;
+
+            case COMPOSITE :
+                testComposite();
+
+                break;
+
+            case FACADE :
+                testFacade();
+
+                break;
+
+            case DECORATOR :
+                testDecorator();
+
+                break;
+
+            case FLYWEIGHT :
+                testFlyweight();
+
+                break;
+
+            case PROXY :
+                testProxy();
+
+                break;
+
+            case 'q' :
+                System.exit(1);
+            case '0' :
+                return;
+
+            default :
+                break;
+            }
+        }
+    }
+
+    static char showMenu() {
+        String s;
+
+        System.out.println("*** Design Patterns Examples - Structural ***");
+        System.out.println("0) Back");
+        System.out.println("");
+        System.out.println("1) Adapter");
+        System.out.println("2) Bridge");
+        System.out.println("3) Composite");
+        System.out.println("4) Facade");
+        System.out.println("5) Decorator");
+        System.out.println("6) Flyweight");
+        System.out.println("7) Proxy");
+        System.out.println("");
+        System.out.println("Press q to quit");
+        System.out.println("");
+        System.out.print("-> ");
+        System.out.flush();
+
+        if (input == null) {
+            input = new BufferedReader(new InputStreamReader(System.in));
+        }
+
+        try {
+            s = input.readLine();
+        } catch (IOException e) {
+            return 'q';
+        }
+
+        if (s.length() > 0) {
+            return s.charAt(0);
+        } else {
+            return (char) 0;
+        }
+    }
 
     /**
      *  A unit test for JUnit
@@ -83,8 +173,11 @@ public class StructuralClient {
 
         /* Drawing editor */
         Shape s = new TextShape();
+
         System.out.println(s);
+
         Manipulator m = s.createManipulator();
+
         m.move(5, 3);
         System.out.println(s);
         s = new TextShapeComposition(new AnotherTextView());
@@ -98,13 +191,17 @@ public class StructuralClient {
      *  A unit test for JUnit
      */
     private static void testBridge() {
+
         // new ProductDisplay();
-        View view = new ContentView();
+        View   view  = new ContentView();
         Window iconX = new IconWindow(view);
+
         iconX.setSys("X");
         iconX.getWindowImp();
         System.out.println(iconX);
+
         Window iconPM = new IconWindow(view);
+
         iconPM.setSys("PM");
         iconPM.getWindowImp();
         System.out.println(iconPM);
@@ -116,8 +213,11 @@ public class StructuralClient {
     private static void testComposite() {
         CompositeEquipment cabinet = new Cabinet("PC Cabinet");
         CompositeEquipment chassis = new Chassis("PC Chassis");
+
         cabinet.add(chassis);
+
         CompositeEquipment bus = new Bus("MCA Bus");
+
         bus.add(new Card("16Mbs Token Ring"));
         chassis.add(bus);
         chassis.add(new FloppyDisk("3.5in Floppy"));
@@ -129,7 +229,8 @@ public class StructuralClient {
      */
     private static void testDecorator() {
         TextView textView = new TextView();
-        Window window = new TransientWindow(textView);
+        Window   window   = new TransientWindow(textView);
+
         System.out.println(window);
         System.out.println("without decoration");
         window.drawContents();
@@ -145,12 +246,14 @@ public class StructuralClient {
     private static void testFacade() {
         try {
             byte[] buffer = new byte[1024];
-            new FileInputStream("src/java/designpatterns/structural/facade/source.txt").read(
-                buffer);
-            InputStream is = new ByteArrayInputStream(buffer);
-            BytecodeStream bs = new BytecodeStream();
+
+            new FileInputStream("src/java/designpatterns/structural/facade/source.txt").read(buffer);
+
+            InputStream                                     is       = new ByteArrayInputStream(buffer);
+            BytecodeStream                                  bs       = new BytecodeStream();
             gamma.designpatterns.structural.facade.Compiler compiler =
                 new gamma.designpatterns.structural.facade.Compiler();
+
             compiler.compile(is, bs);
             System.out.println(bs.toString());
         } catch (Exception ex) {
@@ -173,91 +276,5 @@ public class StructuralClient {
          *          TextDocument text = new TextDocument();
          *          text.insert(new ImageProxy("anImageFileName"));
          */
-    }
-
-    /**
-     *  The main program for the CreationalClient class
-     *
-     * @param  args  The command line arguments
-     */
-    public static void main(String[] args) {
-        while (true) {
-            switch (showMenu()) {
-                case ADAPTER :
-                    testAdapter();
-
-                    break;
-
-                case BRIDGE :
-                    testBridge();
-
-                    break;
-
-                case COMPOSITE :
-                    testComposite();
-
-                    break;
-
-                case FACADE :
-                    testFacade();
-
-                    break;
-
-                case DECORATOR :
-                    testDecorator();
-
-                    break;
-
-                case FLYWEIGHT :
-                    testFlyweight();
-
-                    break;
-
-                case PROXY :
-                    testProxy();
-
-                    break;
-
-                case 'q' :
-                    System.exit(1);
-                case '0' :
-                    return;
-
-                default :
-                    break;
-            }
-        }
-    }
-
-    static char showMenu() {
-        String s;
-        System.out.println("*** Design Patterns Examples - Structural ***");
-        System.out.println("0) Back");
-        System.out.println("");
-        System.out.println("1) Adapter");
-        System.out.println("2) Bridge");
-        System.out.println("3) Composite");
-        System.out.println("4) Facade");
-        System.out.println("5) Decorator");
-        System.out.println("6) Flyweight");
-        System.out.println("7) Proxy");
-        System.out.println("");
-        System.out.println("Press q to quit");
-        System.out.println("");
-        System.out.print("-> ");
-        System.out.flush();
-        if (input == null) {
-            input = new BufferedReader(new InputStreamReader(System.in));
-        }
-        try {
-            s = input.readLine();
-        } catch (IOException e) {
-            return 'q';
-        }
-        if (s.length() > 0) {
-            return s.charAt(0);
-        } else {
-            return (char) 0;
-        }
     }
 }

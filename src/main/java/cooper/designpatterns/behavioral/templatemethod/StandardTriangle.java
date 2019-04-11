@@ -27,9 +27,9 @@
 
 package cooper.designpatterns.behavioral.templatemethod;
 
-import designpatterns.behavioral.templatemethod.ConcreteClass;
-
 import java.awt.*;
+
+import designpatterns.behavioral.templatemethod.ConcreteClass;
 
 /**
  * Class description

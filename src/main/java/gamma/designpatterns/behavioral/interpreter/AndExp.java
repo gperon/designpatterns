@@ -90,6 +90,7 @@ public class AndExp implements BooleanExp {
      *   method
      */
     public BooleanExp replace(String aName, BooleanExp exp) {
-        return new AndExp(operand1.replace(aName, exp), operand2.replace(aName, exp));
+        return new AndExp(operand1.replace(aName,
+                                           exp), operand2.replace(aName, exp));
     }
 }

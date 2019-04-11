@@ -32,6 +32,7 @@ package cooper.designpatterns.creational.singleton;
  * @author gperon
  */
 public class SingletonException extends RuntimeException {
+
     // new exception type for singleton classes
 
     /**

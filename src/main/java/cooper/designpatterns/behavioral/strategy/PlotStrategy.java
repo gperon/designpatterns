@@ -31,6 +31,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 import javax.swing.*;
+
 //this is the abstact base class that
 //concrete plot strategies are derived from
 
@@ -43,9 +44,9 @@ import javax.swing.*;
  */
 public abstract class PlotStrategy extends JFrame {
     protected float[] x, y;
-    protected float minX, minY, maxX, maxY;
-    protected int width, height;
-    protected Color color;
+    protected float   minX, minY, maxX, maxY;
+    protected int     width, height;
+    protected Color   color;
 
     /**
      * Constructs ...
@@ -55,10 +56,37 @@ public abstract class PlotStrategy extends JFrame {
      */
     public PlotStrategy(String title) {
         super(title);
-        width = 300;
+        width  = 300;
         height = 200;
-        color = Color.black;
+        color  = Color.black;
         addWindowListener(new WindAp(this));
+    }
+
+    /**
+     * Method description
+     *
+     */
+    public void findBounds() {
+        minX = minY = Float.MAX_VALUE;
+        maxX = maxY = Float.MIN_VALUE;
+
+        for (int i = 0; i < x.length; i++) {
+            if (x[i] > maxX) {
+                maxX = x[i];
+            }
+
+            if (x[i] < minX) {
+                minX = x[i];
+            }
+
+            if (y[i] > maxY) {
+                maxY = y[i];
+            }
+
+            if (y[i] < minY) {
+                minY = y[i];
+            }
+        }
     }
 
     /**
@@ -74,17 +102,6 @@ public abstract class PlotStrategy extends JFrame {
      * Method description
      *
      *
-     * @param sz
-     */
-    public void setSize(Dimension sz) {
-        width = sz.width;
-        height = sz.height;
-    }
-
-    /**
-     * Method description
-     *
-     *
      * @param c
      */
     public void setPenColor(Color c) {
@@ -94,24 +111,12 @@ public abstract class PlotStrategy extends JFrame {
     /**
      * Method description
      *
+     *
+     * @param sz
      */
-    public void findBounds() {
-        minX = minY = Float.MAX_VALUE;
-        maxX = maxY = Float.MIN_VALUE;
-        for (int i = 0; i < x.length; i++) {
-            if (x[i] > maxX) {
-                maxX = x[i];
-            }
-            if (x[i] < minX) {
-                minX = x[i];
-            }
-            if (y[i] > maxY) {
-                maxY = y[i];
-            }
-            if (y[i] < minY) {
-                minY = y[i];
-            }
-        }
+    public void setSize(Dimension sz) {
+        width  = sz.width;
+        height = sz.height;
     }
 }
 

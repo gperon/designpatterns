@@ -62,6 +62,14 @@ public abstract class ActionButton extends AbstractAction {
      * Method description
      *
      *
+     * @param e
+     */
+    public abstract void actionPerformed(ActionEvent e);
+
+    /**
+     * Method description
+     *
+     *
      * @param key
      * @param value
      */
@@ -80,12 +88,4 @@ public abstract class ActionButton extends AbstractAction {
     public Object getValue(String key) {
         return properties.get(key);
     }
-
-    /**
-     * Method description
-     *
-     *
-     * @param e
-     */
-    public abstract void actionPerformed(ActionEvent e);
 }

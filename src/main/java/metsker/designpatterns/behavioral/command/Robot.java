@@ -1,8 +1,8 @@
 /*
  * @(#)Robot.java   2011-11-01
- * 
+ *
  * Copyright (c) 2011 Giorgio Peron giorgio.peron@gmail.com
- * All Rights Reserved. 
+ * All Rights Reserved.
  *
  * Redistribution and use of this script, with or without modification, is
  * permitted provided that the following conditions are met:
@@ -59,7 +59,8 @@ public class Robot {
      *  @param toMachine the "to" machine
      */
     public void carry(Machine fromMachine, Machine toMachine) {
-        System.out.println("Robot carrying from " + fromMachine + " to " + toMachine);
+        System.out.println("Robot carrying from " + fromMachine + " to "
+                           + toMachine);
         Bin b = fromMachine.unload();
         if (b != null) {
             toMachine.load(b);

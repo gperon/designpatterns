@@ -79,7 +79,8 @@ public class Customer2 extends Customer {
      */
     public static void main(String[] args) {
         Firework recommendation = new Customer2().getRecommended();
-        System.out.println("Customer2 recommendation: " + recommendation.toString());
+        System.out.println("Customer2 recommendation: "
+                           + recommendation.toString());
     }
 
     /**

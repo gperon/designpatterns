@@ -27,13 +27,13 @@
 
 package cooper.designpatterns.behavioral.strategy;
 
-import cooper.designpatterns.behavioral.chainofresponsibility.JxFrame;
-import cooper.designpatterns.behavioral.state.Command;
-
 import java.awt.*;
 import java.awt.event.*;
 
 import javax.swing.*;
+
+import cooper.designpatterns.behavioral.chainofresponsibility.JxFrame;
+import cooper.designpatterns.behavioral.state.Command;
 
 /**
  * Class description
@@ -53,7 +53,9 @@ public class StrategyPlot extends JxFrame implements ActionListener {
      */
     public StrategyPlot() {
         super("Strategy Plots");
+
         JPanel jp = new JPanel();
+
         getContentPane().add(jp);
         context = new Context();
         jp.add(new JBarButton(this, context));
@@ -72,6 +74,7 @@ public class StrategyPlot extends JxFrame implements ActionListener {
      */
     public void actionPerformed(ActionEvent e) {
         Command comd = (Command) e.getSource();
+
         comd.Execute();
     }
 

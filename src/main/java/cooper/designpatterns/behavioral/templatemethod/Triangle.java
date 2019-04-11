@@ -27,11 +27,10 @@
 
 package cooper.designpatterns.behavioral.templatemethod;
 
-import designpatterns.behavioral.templatemethod.PrimitiveOperation;
-
 import java.awt.*;
 
 import designpatterns.behavioral.templatemethod.AbstractClass;
+import designpatterns.behavioral.templatemethod.PrimitiveOperation;
 
 /**
  * Class description
@@ -53,10 +52,24 @@ public abstract class Triangle {
      * @param c
      */
     public Triangle(Point a, Point b, Point c) {
+
         // save
         p1 = a;
         p2 = b;
         p3 = c;
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param g
+     * @param c
+     */
+    public void closeTriangle(Graphics g, Point c) {
+
+        /* draw back to first point */
+        g.drawLine(c.x, c.y, p1.x, p1.y);
     }
 
     /**
@@ -69,20 +82,10 @@ public abstract class Triangle {
 
         /* This routine draws a general triangle */
         drawLine(g, p1, p2);
-        Point current = draw2ndLine(g, p2, p3);
-        closeTriangle(g, current);
-    }
 
-    /**
-     * Method description
-     *
-     *
-     * @param g
-     * @param a
-     * @param b
-     */
-    public void drawLine(Graphics g, Point a, Point b) {
-        g.drawLine(a.x, a.y, b.x, b.y);
+        Point current = draw2ndLine(g, p2, p3);
+
+        closeTriangle(g, current);
     }
 
     /**
@@ -103,11 +106,10 @@ public abstract class Triangle {
      *
      *
      * @param g
-     * @param c
+     * @param a
+     * @param b
      */
-    public void closeTriangle(Graphics g, Point c) {
-
-        /* draw back to first point */
-        g.drawLine(c.x, c.y, p1.x, p1.y);
+    public void drawLine(Graphics g, Point a, Point b) {
+        g.drawLine(a.x, a.y, b.x, b.y);
     }
 }

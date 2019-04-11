@@ -61,9 +61,10 @@ public class SwingFacade {
      * @return a (beveled) titled border with the given title
      */
     public static TitledBorder createTitledBorder(String title) {
-        TitledBorder tb =
-            BorderFactory.createTitledBorder(BorderFactory.createBevelBorder(BevelBorder.RAISED),
-                title, TitledBorder.LEFT, TitledBorder.TOP);
+        TitledBorder tb = BorderFactory.createTitledBorder(
+                              BorderFactory.createBevelBorder(
+                                  BevelBorder.RAISED), title,
+                                      TitledBorder.LEFT, TitledBorder.TOP);
         tb.setTitleColor(Color.black);
         tb.setTitleFont(getStandardFont());
 

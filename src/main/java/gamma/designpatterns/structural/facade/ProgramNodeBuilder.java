@@ -62,7 +62,8 @@ public class ProgramNodeBuilder {
         return null;
     }
 
-    ProgramNode newCondition(ProgramNode condition, ProgramNode truePart, ProgramNode falsePart) {
+    ProgramNode newCondition(ProgramNode condition, ProgramNode truePart,
+                             ProgramNode falsePart) {
         return null;
     }
 

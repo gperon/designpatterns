@@ -27,11 +27,11 @@
 
 package cooper.designpatterns.behavioral.mediator;
 
+import java.awt.event.*;
+
 import javax.swing.*;
 
 import cooper.designpatterns.behavioral.command.Command;
-
-import java.awt.event.*;
 
 /**
  * Class description

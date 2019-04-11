@@ -1,8 +1,8 @@
 /*
  * @(#)Dollars.java   2011-11-01
- * 
+ *
  * Copyright (c) 2011 Giorgio Peron giorgio.peron@gmail.com
- * All Rights Reserved. 
+ * All Rights Reserved.
  *
  * Redistribution and use of this script, with or without modification, is
  * permitted provided that the following conditions are met:
@@ -43,14 +43,14 @@ package metsker.designpatterns.util;
  *
  *
  * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>    
+ * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
  */
 public class Dollars {
 
     /** Field description */
-    public static final Dollars cent = new Dollars(0.01);
-    static final int CENTS_PER_DOLLAR = 100;
-    long cents;
+    public static final Dollars cent             = new Dollars(0.01);
+    static final int            CENTS_PER_DOLLAR = 100;
+    long                        cents;
 
     /**
      * Constructs ...
@@ -68,8 +68,62 @@ public class Dollars {
      *
      * @return
      */
-    public boolean isZero() {
-        return cents == 0;
+    public long asCents() {
+        return cents;
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param that
+     *
+     * @return
+     */
+    public double dividedBy(Dollars that) {
+        return (1.0 * this.cents) / that.cents;
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param divisor
+     *
+     * @return
+     */
+    public Dollars dividedBy(int divisor) {
+        double newCents = (1.0 * cents / divisor) / CENTS_PER_DOLLAR;
+
+        return new Dollars(newCents);
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param obj
+     *
+     * @return
+     */
+    public boolean equals(Object obj) {
+        if (!obj.getClass().equals(this.getClass())) {
+            return false;
+        }
+
+        Dollars that = (Dollars) obj;
+
+        return this.cents == that.cents;
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @return
+     */
+    public int hashCode() {
+        return (int) cents;
     }
 
     /**
@@ -100,26 +154,24 @@ public class Dollars {
      * Method description
      *
      *
-     * @param divisor
-     *
      * @return
      */
-    public Dollars dividedBy(int divisor) {
-        double newCents = (1.0 * cents / divisor) / CENTS_PER_DOLLAR;
+    public String toString() {
+        StringBuffer result  = new StringBuffer("$");
+        long         dollars = cents / CENTS_PER_DOLLAR;
 
-        return new Dollars(newCents);
-    }
+        result.append(dollars);
+        result.append('.');
 
-    /**
-     * Method description
-     *
-     *
-     * @param that
-     *
-     * @return
-     */
-    public double dividedBy(Dollars that) {
-        return (1.0 * this.cents) / that.cents;
+        long pennies = cents % CENTS_PER_DOLLAR;
+
+        if (pennies < 10) {
+            result.append('0');
+        }
+
+        result.append(pennies);
+
+        return result.toString();
     }
 
     /**
@@ -140,54 +192,7 @@ public class Dollars {
      *
      * @return
      */
-    public String toString() {
-        StringBuffer result = new StringBuffer("$");
-        long dollars = cents / CENTS_PER_DOLLAR;
-        result.append(dollars);
-        result.append('.');
-        long pennies = cents % CENTS_PER_DOLLAR;
-        if (pennies < 10) {
-            result.append('0');
-        }
-        result.append(pennies);
-
-        return result.toString();
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param obj
-     *
-     * @return
-     */
-    public boolean equals(Object obj) {
-        if (!obj.getClass().equals(this.getClass())) {
-            return false;
-        }
-        Dollars that = (Dollars) obj;
-
-        return this.cents == that.cents;
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @return
-     */
-    public int hashCode() {
-        return (int) cents;
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @return
-     */
-    public long asCents() {
-        return cents;
+    public boolean isZero() {
+        return cents == 0;
     }
 }

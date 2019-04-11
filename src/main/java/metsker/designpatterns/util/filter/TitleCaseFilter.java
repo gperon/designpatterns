@@ -63,7 +63,9 @@ public class TitleCaseFilter extends OozinozFilter {
      * @throws IOException if an I/O error occurs
      */
     public void write(int c) throws IOException {
-        out.write(inWhite ? Character.toUpperCase((char) c) : Character.toLowerCase((char) c));
+        out.write(inWhite
+                  ? Character.toUpperCase((char) c)
+                  : Character.toLowerCase((char) c));
         inWhite = Character.isWhitespace((char) c) || (c == '"');
     }
 }

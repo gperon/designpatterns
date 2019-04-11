@@ -1,8 +1,8 @@
 /*
  * @(#)ShowFilters3.java   2011-11-01
- * 
+ *
  * Copyright (c) 2011 Giorgio Peron giorgio.peron@gmail.com
- * All Rights Reserved. 
+ * All Rights Reserved.
  *
  * Redistribution and use of this script, with or without modification, is
  * permitted provided that the following conditions are met:
@@ -60,9 +60,10 @@ public class ShowFilters3 {
      */
     public static void main(String args[]) throws IOException {
         BufferedReader in = new BufferedReader(new FileReader(args[0]));
-        WrapFilter out =
-            new WrapFilter(new BufferedWriter(new RandomCaseFilter(new PrintWriter(System.out))),
-                           15);
+        WrapFilter out = new WrapFilter(
+                             new BufferedWriter(
+                                 new RandomCaseFilter(
+                                     new PrintWriter(System.out))), 15);
         out.setCenter(true);
         while (true) {
             String s = in.readLine();

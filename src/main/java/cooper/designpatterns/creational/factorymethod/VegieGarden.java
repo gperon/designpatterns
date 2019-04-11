@@ -43,8 +43,8 @@ public class VegieGarden extends Garden {
      * @return
      */
     @Override
-    public Plant getShade() {
-        return new Plant("Broccoli");
+    public Plant getBorder() {
+        return new Plant("Peas");
     }
 
     /**
@@ -65,7 +65,7 @@ public class VegieGarden extends Garden {
      * @return
      */
     @Override
-    public Plant getBorder() {
-        return new Plant("Peas");
+    public Plant getShade() {
+        return new Plant("Broccoli");
     }
 }

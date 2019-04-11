@@ -27,11 +27,11 @@
 
 package cooper.designpatterns.util.swing.menu;
 
-import cooper.designpatterns.util.swing.JxFrame;
-
 import java.awt.*;
 
 import javax.swing.*;
+
+import cooper.designpatterns.util.swing.JxFrame;
 
 /**
  * Class description
@@ -41,9 +41,9 @@ import javax.swing.*;
  * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
  */
 public class xMenu extends JxFrame {
-    JPanel jp;
+    JPanel    jp;
     JMenuItem menuitem;
-    JToolBar toolbar;
+    JToolBar  toolbar;
 
     /**
      * Constructs ...
@@ -51,22 +51,32 @@ public class xMenu extends JxFrame {
      */
     public xMenu() {
         super("Extended Menu");
+
         JMenuBar mbar = new JMenuBar();    // set up  menu bar
+
         setJMenuBar(mbar);
+
         // Add File menu
         JMenu mFile = new JMenu("File");
+
         mbar.add(mFile);
+
         // create two Action Objects
         Action Open = new FileButton("Open", new ImageIcon("open.gif"), this);
+
         mFile.add(Open);
+
         Action Exit = new ExitButton("Exit", new ImageIcon("exit.gif"), this);
+
         mFile.addSeparator();
         mFile.add(Exit);
+
         // now create toolbar that fixes up the buttons as you add them
         toolbar = new JToolBar();
         getContentPane().add(jp = new JPanel());
         jp.setLayout(new BorderLayout());
         jp.add("North", toolbar);
+
         // add the two action objects
         toolbar.add(Open);
         toolbar.addSeparator();

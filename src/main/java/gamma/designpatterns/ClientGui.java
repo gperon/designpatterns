@@ -1,8 +1,8 @@
 /*
  * @(#)ClientGui.java   2011-11-01
- * 
+ *
  * Copyright (c) 2011 Giorgio Peron giorgio.peron@gmail.com
- * All Rights Reserved. 
+ * All Rights Reserved.
  *
  * Redistribution and use of this script, with or without modification, is
  * permitted provided that the following conditions are met:
@@ -51,6 +51,7 @@ public class ClientGui {
      */
     public ClientGui() {
         DesignPatterns frame = new DesignPatterns();
+
         // Validate frames that have preset sizes
         // Pack frames that have useful preferred size info, e.g. from their layout
         if (packFrame) {
@@ -58,17 +59,20 @@ public class ClientGui {
         } else {
             frame.validate();
         }
+
         // Center the window
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        Dimension frameSize = frame.getSize();
+        Dimension frameSize  = frame.getSize();
+
         if (frameSize.height > screenSize.height) {
             frameSize.height = screenSize.height;
         }
+
         if (frameSize.width > screenSize.width) {
             frameSize.width = screenSize.width;
         }
-        frame.setLocation((screenSize.width - frameSize.width) / 2,
-                          (screenSize.height - frameSize.height) / 2);
+
+        frame.setLocation((screenSize.width - frameSize.width) / 2, (screenSize.height - frameSize.height) / 2);
         frame.setVisible(true);
     }
 
@@ -79,14 +83,15 @@ public class ClientGui {
      */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-                } catch (Exception exception) {
-                    exception.printStackTrace();
-                }
-                new ClientGui();
-            }
-        });
+                                       public void run() {
+                                           try {
+                                               UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+                                           } catch (Exception exception) {
+                                               exception.printStackTrace();
+                                           }
+
+                                           new ClientGui();
+                                       }
+                                   });
     }
 }

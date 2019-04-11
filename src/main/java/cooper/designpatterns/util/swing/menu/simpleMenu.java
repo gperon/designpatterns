@@ -27,9 +27,9 @@
 
 package cooper.designpatterns.util.swing.menu;
 
-import cooper.designpatterns.util.swing.JxFrame;
-
 import javax.swing.*;
+
+import cooper.designpatterns.util.swing.JxFrame;
 
 /**
  * Class description
@@ -46,12 +46,18 @@ public class simpleMenu extends JxFrame {
      */
     public simpleMenu() {
         super("Simple Menu");
+
         JMenuBar mbar = new JMenuBar();
+
         setJMenuBar(mbar);
+
         JMenu mFile = new JMenu("File");
+
         mbar.add(mFile);
+
         JMenuItem Open = new JMenuItem("Open");
         JMenuItem Exit = new JMenuItem("Exit");
+
         mFile.add(Open);
         mFile.addSeparator();
         mFile.add(Exit);

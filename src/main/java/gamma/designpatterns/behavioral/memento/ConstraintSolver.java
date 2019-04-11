@@ -78,7 +78,8 @@ public class ConstraintSolver {
      * @param startConnection
      * @param endConnection
      */
-    public void removeConstraint(Graphic startConnection, Graphic endConnection) {}
+    public void removeConstraint(Graphic startConnection,
+                                 Graphic endConnection) {}
 
     /**
      * Method description

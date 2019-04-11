@@ -37,11 +37,11 @@ import java.util.*;
  * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
  */
 public class KidClub implements Enumeration {
-    String clubMask;
-    int index;
-    Kid kid;
+    String      clubMask;
+    int         index;
+    Kid         kid;
     Enumeration ke;
-    KidData kdata;
+    KidData     kdata;
 
     /**
      * Constructs ...
@@ -52,29 +52,10 @@ public class KidClub implements Enumeration {
      */
     public KidClub(KidData kd, String club) {
         clubMask = club;
-        kdata = kd;
-        index = 0;
-        kid = null;
-        ke = kdata.elements();
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @return
-     */
-    public boolean hasMoreElements() {
-        boolean found = false;
-        while (ke.hasMoreElements() && !found) {
-            kid = (Kid) ke.nextElement();
-            found = kid.getClub().equals(clubMask);
-        }
-        if (!found) {
-            kid = null;
-        }
-
-        return found;
+        kdata    = kd;
+        index    = 0;
+        kid      = null;
+        ke       = kdata.elements();
     }
 
     /**
@@ -89,5 +70,26 @@ public class KidClub implements Enumeration {
         } else {
             throw new NoSuchElementException();
         }
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @return
+     */
+    public boolean hasMoreElements() {
+        boolean found = false;
+
+        while (ke.hasMoreElements() &&!found) {
+            kid   = (Kid) ke.nextElement();
+            found = kid.getClub().equals(clubMask);
+        }
+
+        if (!found) {
+            kid = null;
+        }
+
+        return found;
     }
 }

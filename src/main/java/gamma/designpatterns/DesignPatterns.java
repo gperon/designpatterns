@@ -1,8 +1,8 @@
 /*
  * @(#)DesignPatterns.java   2011-11-01
- * 
+ *
  * Copyright (c) 2011 Giorgio Peron giorgio.peron@gmail.com
- * All Rights Reserved. 
+ * All Rights Reserved.
  *
  * Redistribution and use of this script, with or without modification, is
  * permitted provided that the following conditions are met:
@@ -45,51 +45,51 @@ import javax.swing.*;
  * @version 1.0
  */
 public class DesignPatterns extends JFrame {
-    JPanel contentPane;
-    BorderLayout borderLayout1 = new BorderLayout();
-    JMenuBar jMenuBar1 = new JMenuBar();
-    JMenu jMenuFile = new JMenu();
-    JMenuItem jMenuFileExit = new JMenuItem();
-    JMenu jMenuHelp = new JMenu();
-    JMenuItem jMenuHelpAbout = new JMenuItem();
-    JToolBar jToolBar = new JToolBar();
-    JButton jButton1 = new JButton();
-    JButton jButton2 = new JButton();
-    JButton jButton3 = new JButton();
-    ImageIcon image1 =
+    BorderLayout borderLayout1            = new BorderLayout();
+    JMenuBar     jMenuBar1                = new JMenuBar();
+    JMenu        jMenuFile                = new JMenu();
+    JMenuItem    jMenuFileExit            = new JMenuItem();
+    JMenu        jMenuHelp                = new JMenu();
+    JMenuItem    jMenuHelpAbout           = new JMenuItem();
+    JToolBar     jToolBar                 = new JToolBar();
+    JButton      jButton1                 = new JButton();
+    JButton      jButton2                 = new JButton();
+    JButton      jButton3                 = new JButton();
+    ImageIcon    image1                   =
         new ImageIcon(gamma.designpatterns.DesignPatterns.class.getResource("openFile.png"));
-    ImageIcon image2 =
+    ImageIcon    image2                   =
         new ImageIcon(gamma.designpatterns.DesignPatterns.class.getResource("closeFile.png"));
-    ImageIcon image3 =
+    ImageIcon    image3                   =
         new ImageIcon(gamma.designpatterns.DesignPatterns.class.getResource("help.png"));
-    JLabel statusBar = new JLabel();
-    JMenu jMenuCreational = new JMenu();
-    JMenuItem jMenuItemAbstractFactory = new JMenuItem();
-    JMenuItem jMenuItemBuilder = new JMenuItem();
-    JMenuItem jMenuItemFactoryMethod = new JMenuItem();
-    JMenuItem jMenuItemPrototype = new JMenuItem();
-    JMenuItem jMenuItemSingleton = new JMenuItem();
-    JMenu jMenuDesignPatterns = new JMenu();
-    JMenu jMenuBehavioral = new JMenu();
-    JMenuItem jMenuItemResponsability = new JMenuItem();
-    JMenuItem jMenuItemCommand = new JMenuItem();
-    JMenuItem jMenuItemObserver = new JMenuItem();
-    JMenuItem jMenuItemVisitor = new JMenuItem();
-    JMenu jMenuStructural = new JMenu();
-    JMenuItem jMenuItemAdapter = new JMenuItem();
-    JMenuItem jMenuItemBridge = new JMenuItem();
-    JMenuItem jMenuItemComposite = new JMenuItem();
-    JMenuItem jMenuItemDecorator = new JMenuItem();
-    JMenuItem jMenuItemFacade = new JMenuItem();
-    JMenuItem jMenuItemFlyweight = new JMenuItem();
-    JMenuItem jMenuItemProxy = new JMenuItem();
-    JMenuItem jMenuItemInterpreter = new JMenuItem();
-    JMenuItem jMenuItemIterator = new JMenuItem();
-    JMenuItem jMenuItemMediator = new JMenuItem();
-    JMenuItem jMenuItemMemento = new JMenuItem();
-    JMenuItem jMenuItemState = new JMenuItem();
-    JMenuItem jMenuItemStrategy = new JMenuItem();
-    JMenuItem jMenuItemTemplateMethod = new JMenuItem();
+    JLabel       statusBar                = new JLabel();
+    JMenu        jMenuCreational          = new JMenu();
+    JMenuItem    jMenuItemAbstractFactory = new JMenuItem();
+    JMenuItem    jMenuItemBuilder         = new JMenuItem();
+    JMenuItem    jMenuItemFactoryMethod   = new JMenuItem();
+    JMenuItem    jMenuItemPrototype       = new JMenuItem();
+    JMenuItem    jMenuItemSingleton       = new JMenuItem();
+    JMenu        jMenuDesignPatterns      = new JMenu();
+    JMenu        jMenuBehavioral          = new JMenu();
+    JMenuItem    jMenuItemResponsability  = new JMenuItem();
+    JMenuItem    jMenuItemCommand         = new JMenuItem();
+    JMenuItem    jMenuItemObserver        = new JMenuItem();
+    JMenuItem    jMenuItemVisitor         = new JMenuItem();
+    JMenu        jMenuStructural          = new JMenu();
+    JMenuItem    jMenuItemAdapter         = new JMenuItem();
+    JMenuItem    jMenuItemBridge          = new JMenuItem();
+    JMenuItem    jMenuItemComposite       = new JMenuItem();
+    JMenuItem    jMenuItemDecorator       = new JMenuItem();
+    JMenuItem    jMenuItemFacade          = new JMenuItem();
+    JMenuItem    jMenuItemFlyweight       = new JMenuItem();
+    JMenuItem    jMenuItemProxy           = new JMenuItem();
+    JMenuItem    jMenuItemInterpreter     = new JMenuItem();
+    JMenuItem    jMenuItemIterator        = new JMenuItem();
+    JMenuItem    jMenuItemMediator        = new JMenuItem();
+    JMenuItem    jMenuItemMemento         = new JMenuItem();
+    JMenuItem    jMenuItemState           = new JMenuItem();
+    JMenuItem    jMenuItemStrategy        = new JMenuItem();
+    JMenuItem    jMenuItemTemplateMethod  = new JMenuItem();
+    JPanel       contentPane;
 
     /**
      * Constructs ...
@@ -103,6 +103,40 @@ public class DesignPatterns extends JFrame {
             exception.printStackTrace();
         }
     }
+
+    /**
+     * File | Exit action performed.
+     *
+     * @param actionEvent ActionEvent
+     */
+    void jMenuFileExit_actionPerformed(ActionEvent actionEvent) {
+        System.exit(0);
+    }
+
+    /**
+     * Help | About action performed.
+     *
+     * @param actionEvent ActionEvent
+     */
+    void jMenuHelpAbout_actionPerformed(ActionEvent actionEvent) {
+        DesignPatterns_AboutBox dlg     = new DesignPatterns_AboutBox(this);
+        Dimension               dlgSize = dlg.getPreferredSize();
+        Dimension               frmSize = getSize();
+        Point                   loc     = getLocation();
+
+        dlg.setLocation((frmSize.width - dlgSize.width) / 2 + loc.x, (frmSize.height - dlgSize.height) / 2 + loc.y);
+        dlg.setModal(true);
+        dlg.pack();
+        dlg.setVisible(true);
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param e
+     */
+    public void jMenuItem1_actionPerformed(ActionEvent e) {}
 
     /**
      * Component initialization.
@@ -124,8 +158,7 @@ public class DesignPatterns extends JFrame {
         jMenuCreational.setText("Creational");
         jMenuItemAbstractFactory.setActionCommand("Abstract Factory");
         jMenuItemAbstractFactory.setText("Abstract Factory");
-        jMenuItemAbstractFactory.addActionListener(
-            new DesignPatterns_jMenuItem1_actionAdapter(this));
+        jMenuItemAbstractFactory.addActionListener(new DesignPatterns_jMenuItem1_actionAdapter(this));
         jMenuItemBuilder.setText("Builder");
         jMenuItemFactoryMethod.setText("Factory Method");
         jMenuItemPrototype.setText("Prototype");
@@ -195,40 +228,6 @@ public class DesignPatterns extends JFrame {
         jMenuStructural.add(jMenuItemFlyweight);
         jMenuStructural.add(jMenuItemProxy);
     }
-
-    /**
-     * File | Exit action performed.
-     *
-     * @param actionEvent ActionEvent
-     */
-    void jMenuFileExit_actionPerformed(ActionEvent actionEvent) {
-        System.exit(0);
-    }
-
-    /**
-     * Help | About action performed.
-     *
-     * @param actionEvent ActionEvent
-     */
-    void jMenuHelpAbout_actionPerformed(ActionEvent actionEvent) {
-        DesignPatterns_AboutBox dlg = new DesignPatterns_AboutBox(this);
-        Dimension dlgSize = dlg.getPreferredSize();
-        Dimension frmSize = getSize();
-        Point loc = getLocation();
-        dlg.setLocation((frmSize.width - dlgSize.width) / 2 + loc.x,
-                        (frmSize.height - dlgSize.height) / 2 + loc.y);
-        dlg.setModal(true);
-        dlg.pack();
-        dlg.setVisible(true);
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param e
-     */
-    public void jMenuItem1_actionPerformed(ActionEvent e) {}
 }
 
 
@@ -251,25 +250,6 @@ class DesignPatterns_jMenuFileExit_ActionAdapter implements ActionListener {
 }
 
 
-class DesignPatterns_jMenuItem1_actionAdapter implements ActionListener {
-    private DesignPatterns adaptee;
-
-    DesignPatterns_jMenuItem1_actionAdapter(DesignPatterns adaptee) {
-        this.adaptee = adaptee;
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param e
-     */
-    public void actionPerformed(ActionEvent e) {
-        adaptee.jMenuItem1_actionPerformed(e);
-    }
-}
-
-
 class DesignPatterns_jMenuHelpAbout_ActionAdapter implements ActionListener {
     DesignPatterns adaptee;
 
@@ -285,5 +265,24 @@ class DesignPatterns_jMenuHelpAbout_ActionAdapter implements ActionListener {
      */
     public void actionPerformed(ActionEvent actionEvent) {
         adaptee.jMenuHelpAbout_actionPerformed(actionEvent);
+    }
+}
+
+
+class DesignPatterns_jMenuItem1_actionAdapter implements ActionListener {
+    private DesignPatterns adaptee;
+
+    DesignPatterns_jMenuItem1_actionAdapter(DesignPatterns adaptee) {
+        this.adaptee = adaptee;
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param e
+     */
+    public void actionPerformed(ActionEvent e) {
+        adaptee.jMenuItem1_actionPerformed(e);
     }
 }

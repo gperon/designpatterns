@@ -1,8 +1,8 @@
 /*
  * @(#)ShowRandom.java   2011-11-01
- * 
+ *
  * Copyright (c) 2011 Giorgio Peron giorgio.peron@gmail.com
- * All Rights Reserved. 
+ * All Rights Reserved.
  *
  * Redistribution and use of this script, with or without modification, is
  * permitted provided that the following conditions are met:
@@ -57,8 +57,10 @@ public class ShowRandom {
      * @throws IOException
      */
     public static void main(String[] args) throws IOException {
-        BufferedWriter w = new BufferedWriter(new RandomCaseFilter(new ConsoleWriter()));
-        w.write("buy two packs now and get a " + "zippie pocket rocket -- free!");
+        BufferedWriter w =
+            new BufferedWriter(new RandomCaseFilter(new ConsoleWriter()));
+        w.write("buy two packs now and get a "
+                + "zippie pocket rocket -- free!");
         w.newLine();
         w.close();
     }

@@ -41,16 +41,16 @@ import javax.swing.*;
  * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
  */
 public class Mediator {
-    boolean startRect;
-    boolean dSelected;
-    Vector drawings;
-    Vector undoList;
-    RectButton rectButton;
-    FillButton fillButton;
+    boolean      startRect;
+    boolean      dSelected;
+    Vector       drawings;
+    Vector       undoList;
+    RectButton   rectButton;
+    FillButton   fillButton;
     CircleButton circButton;
-    PickButton arrowButton;
-    JPanel canvas;
-    Drawing selectedDrawing;
+    PickButton   arrowButton;
+    JPanel       canvas;
+    Drawing      selectedDrawing;
     StateManager stMgr;
 
     /**
@@ -60,18 +60,175 @@ public class Mediator {
     public Mediator() {
         startRect = false;
         dSelected = false;
-        drawings = new Vector();
-        undoList = new Vector();
-        stMgr = new StateManager(this);
+        drawings  = new Vector();
+        undoList  = new Vector();
+        stMgr     = new StateManager(this);
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param d
+     */
+    public void addDrawing(Drawing d) {
+        drawings.addElement(d);
     }
 
     /**
      * Method description
      *
      */
-    public void startRectangle() {
-        stMgr.setRect();
-        arrowButton.setSelected(false);
+    public void clear() {
+        drawings        = new Vector();
+        undoList        = new Vector();
+        dSelected       = false;
+        selectedDrawing = null;
+        repaint();
+    }
+
+    /**
+     * Method description
+     *
+     */
+    public void fillSelected() {
+        if (dSelected) {
+            selectedDrawing.setFill(Color.red);
+        }
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param x
+     * @param y
+     */
+    public void mouseDown(int x, int y) {
+        stMgr.mouseDown(x, y);
+        repaint();
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param x
+     * @param y
+     */
+    public void mouseDrag(int x, int y) {
+        stMgr.mouseDrag(x, y);
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param x
+     * @param y
+     */
+    public void mouseUp(int x, int y) {
+        stMgr.mouseUp(x, y);
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param x
+     * @param y
+     */
+    public void pickRect(int x, int y) {}
+
+    /**
+     * Method description
+     *
+     *
+     * @param g
+     */
+    public void reDraw(Graphics g) {
+        g.setColor(Color.black);
+
+        for (int i = 0; i < drawings.size(); i++) {
+            Drawing v = (Drawing) drawings.elementAt(i);
+
+            v.draw(g);
+        }
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param ab
+     */
+    public void registerArrowButton(PickButton ab) {
+        arrowButton = ab;
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param p
+     */
+    public void registerCanvas(JPanel p) {
+        canvas = p;
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param cb
+     */
+    public void registerCircleButton(CircleButton cb) {
+        circButton = cb;
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param fb
+     */
+    public void registerFillButton(FillButton fb) {
+        fillButton = fb;
+    }
+
+    /**
+     * Method description
+     *
+     *
+     * @param rb
+     */
+    public void registerRectButton(RectButton rb) {
+        rectButton = rb;
+    }
+
+    /**
+     * Method description
+     *
+     */
+    public void rememberPosition() {
+        if (dSelected) {
+
+            // Memento m = new Memento(d);
+            // undoList.addElement(m);
+        }
+    }
+
+    private void repaint() {
+        canvas.repaint();
+    }
+
+    /**
+     * Method description
+     *
+     */
+    public void startArrow() {
+        stMgr.setArrow();
+        rectButton.setSelected(false);
         circButton.setSelected(false);
         fillButton.setSelected(false);
     }
@@ -104,9 +261,9 @@ public class Mediator {
      * Method description
      *
      */
-    public void startArrow() {
-        stMgr.setArrow();
-        rectButton.setSelected(false);
+    public void startRectangle() {
+        stMgr.setRect();
+        arrowButton.setSelected(false);
         circButton.setSelected(false);
         fillButton.setSelected(false);
     }
@@ -114,20 +271,48 @@ public class Mediator {
     /**
      * Method description
      *
-     *
-     * @return
      */
-    public Drawing getSelected() {
-        return selectedDrawing;
+    public void undo() {
+        if (undoList.size() > 0) {
+
+            // get last element in undo list
+            Object obj = undoList.lastElement();
+
+            undoList.removeElement(obj);    // and remove it
+
+            // if this is an Integer, the last action was a new rectangle
+            if (obj instanceof Integer) {
+
+                // remove last created rectangle
+                Object drawObj = drawings.lastElement();
+
+                drawings.removeElement(drawObj);
+            }
+
+            // if this is a Memento, the last action was a move
+            if (obj instanceof Memento) {
+
+                // get the Memento
+                Memento m = (Memento) obj;
+
+                m.restore();    // and restore the old position
+            }
+
+            repaint();
+        }
     }
 
     /**
      * Method description
      *
      */
-    public void fillSelected() {
-        if (dSelected) {
-            selectedDrawing.setFill(Color.red);
+    public void unpick() {
+        dSelected = false;
+
+        if (selectedDrawing != null) {
+            selectedDrawing.setSelected(false);
+            selectedDrawing = null;
+            repaint();
         }
     }
 
@@ -145,107 +330,10 @@ public class Mediator {
      * Method description
      *
      *
-     * @param d
+     * @return
      */
-    public void addDrawing(Drawing d) {
-        drawings.addElement(d);
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param rb
-     */
-    public void registerRectButton(RectButton rb) {
-        rectButton = rb;
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param cb
-     */
-    public void registerCircleButton(CircleButton cb) {
-        circButton = cb;
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param ab
-     */
-    public void registerArrowButton(PickButton ab) {
-        arrowButton = ab;
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param fb
-     */
-    public void registerFillButton(FillButton fb) {
-        fillButton = fb;
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param p
-     */
-    public void registerCanvas(JPanel p) {
-        canvas = p;
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param x
-     * @param y
-     */
-    public void mouseDown(int x, int y) {
-        stMgr.mouseDown(x, y);
-        repaint();
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param x
-     * @param y
-     */
-    public void mouseUp(int x, int y) {
-        stMgr.mouseUp(x, y);
-    }
-
-    /**
-     * Method description
-     *
-     */
-    public void unpick() {
-        dSelected = false;
-        if (selectedDrawing != null) {
-            selectedDrawing.setSelected(false);
-            selectedDrawing = null;
-            repaint();
-        }
-    }
-
-    /**
-     * Method description
-     *
-     */
-    public void rememberPosition() {
-        if (dSelected) {
-            // Memento m = new Memento(d);
-            // undoList.addElement(m);
-        }
+    public Drawing getSelected() {
+        return selectedDrawing;
     }
 
     /**
@@ -256,84 +344,9 @@ public class Mediator {
      */
     public void setSelected(Drawing d) {
         if (d != null) {
-            dSelected = true;
+            dSelected       = true;
             selectedDrawing = d;
             d.setSelected(true);
-            repaint();
-        }
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param x
-     * @param y
-     */
-    public void pickRect(int x, int y) {}
-
-    /**
-     * Method description
-     *
-     */
-    public void clear() {
-        drawings = new Vector();
-        undoList = new Vector();
-        dSelected = false;
-        selectedDrawing = null;
-        repaint();
-    }
-
-    private void repaint() {
-        canvas.repaint();
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param x
-     * @param y
-     */
-    public void mouseDrag(int x, int y) {
-        stMgr.mouseDrag(x, y);
-    }
-
-    /**
-     * Method description
-     *
-     *
-     * @param g
-     */
-    public void reDraw(Graphics g) {
-        g.setColor(Color.black);
-        for (int i = 0; i < drawings.size(); i++) {
-            Drawing v = (Drawing) drawings.elementAt(i);
-            v.draw(g);
-        }
-    }
-
-    /**
-     * Method description
-     *
-     */
-    public void undo() {
-        if (undoList.size() > 0) {
-            // get last element in undo list
-            Object obj = undoList.lastElement();
-            undoList.removeElement(obj);    // and remove it
-            // if this is an Integer, the last action was a new rectangle
-            if (obj instanceof Integer) {
-                // remove last created rectangle
-                Object drawObj = drawings.lastElement();
-                drawings.removeElement(drawObj);
-            }
-            // if this is a Memento, the last action was a move
-            if (obj instanceof Memento) {
-                // get the Memento
-                Memento m = (Memento) obj;
-                m.restore();    // and restore the old position
-            }
             repaint();
         }
     }

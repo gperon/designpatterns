@@ -50,7 +50,7 @@ public class OurRenderer extends JLabel implements TableCellRenderer {
         super();
         setOpaque(true);
         setBackground(Color.white);
-        bold = new Font("SansSerif", Font.BOLD, 12);
+        bold  = new Font("SansSerif", Font.BOLD, 12);
         plain = new Font("SansSerif", Font.PLAIN, 12);
         setFont(plain);
     }
@@ -68,9 +68,10 @@ public class OurRenderer extends JLabel implements TableCellRenderer {
      *
      * @return
      */
-    public Component getTableCellRendererComponent(JTable jt, Object value, boolean isSelected,
-            boolean hasFocus, int row, int column) {
+    public Component getTableCellRendererComponent(JTable jt, Object value, boolean isSelected, boolean hasFocus,
+                                                   int row, int column) {
         setText((String) value);
+
         if ((row == 1) && (column == 1)) {
             setFont(bold);
             setForeground(Color.red);
