@@ -41,9 +41,9 @@ import gamma.designpatterns.structural.StructuralClient;
  * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
  */
 public class Client {
-    static final char     CREATIONAL = '1';
-    static final char     STRUCTURAL = '2';
-    static final char     BEHAVIORAL = '3';
+    static final char CREATIONAL = '1';
+    static final char STRUCTURAL = '2';
+    static final char BEHAVIORAL = '3';
     static BufferedReader input;
 
     /**
@@ -54,38 +54,35 @@ public class Client {
      */
     public static void main(String args[]) {
         int choice;
-
         System.out.println("The purpose of this program is to demonstrate design patterns issues.");
         System.out.println("");
-
         while (true) {
             switch (showMenu()) {
-            case CREATIONAL :
-                startCreationalExample();
+                case CREATIONAL :
+                    startCreationalExample();
 
-                break;
+                    break;
 
-            case STRUCTURAL :
-                startStructuralExample();
+                case STRUCTURAL :
+                    startStructuralExample();
 
-                break;
+                    break;
 
-            case BEHAVIORAL :
-                startBehavioralExample();
+                case BEHAVIORAL :
+                    startBehavioralExample();
 
-                break;
+                    break;
 
-            case 'q' :
-                System.exit(1);
-            default :
-                break;
+                case 'q' :
+                    System.exit(0);
+                default :
+                    break;
             }
         }
     }
 
     static char showMenu() {
         String s;
-
         System.out.println("*** Design Patterns Examples ***");
         System.out.println("1) Creational");
         System.out.println("2) Structural");
@@ -95,17 +92,14 @@ public class Client {
         System.out.println("");
         System.out.print("-> ");
         System.out.flush();
-
         if (input == null) {
             input = new BufferedReader(new InputStreamReader(System.in));
         }
-
         try {
             s = input.readLine();
         } catch (IOException e) {
             return 'q';
         }
-
         if (s.length() > 0) {
             return s.charAt(0);
         } else {
