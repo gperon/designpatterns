@@ -24,32 +24,31 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.chainofresponsibility;
 
 /**
- *  <p>
+ * <p>
+ * <p>
+ * Title: </p> <p>
+ * <p>
+ * Description: Design Patterns Examples</p> <p>
+ * <p>
+ * Copyright: Copyright (c) 2003</p> <p>
+ * <p>
+ * Company: GioPerLab</p>
  *
- *  Title: </p> <p>
- *
- *  Description: Design Patterns Examples</p> <p>
- *
- *  Copyright: Copyright (c) 2003</p> <p>
- *
- *  Company: GioPerLab</p>
- *
- * @author     giorgio_peron@libero.it
- * @created    2 marzo 2003
- * @version    1.0
+ * @author giorgio_peron@libero.it
+ * @version 1.0
+ * @created 2 marzo 2003
  */
 public class Widget extends HelpHandler {
-    private Widget parent;
+    private final Widget parent;
 
     /**
-     *  Constructor for the Widget object
+     * Constructor for the Widget object
      *
-     * @param  parent  Description of the Parameter
-     * @param  topic   Description of the Parameter
+     * @param parent Description of the Parameter
+     * @param topic  Description of the Parameter
      */
     protected Widget(Widget parent, Topic topic) {
         super(parent, topic);

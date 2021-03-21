@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.structural.facade;
 
 /**
@@ -45,7 +44,6 @@ public class VariableNode implements ProgramNode {
     /**
      * Constructs ...
      *
-     *
      * @param t
      */
     public VariableNode(Token t) {
@@ -57,35 +55,38 @@ public class VariableNode implements ProgramNode {
      *
      * @param pn ProgramNode
      * @todo Implement this designpatterns.structural.facade.ProgramNode
-     *   method
+     * method
      */
-    public void add(ProgramNode pn) {}
+    public void add(ProgramNode pn) {
+    }
 
     /**
      * getSourcePosition
      *
-     * @param line int
+     * @param line  int
      * @param index int
      * @todo Implement this designpatterns.structural.facade.ProgramNode
-     *   method
+     * method
      */
-    public void getSourcePosition(int line, int index) {}
+    public void getSourcePosition(int line, int index) {
+    }
 
     /**
      * remove
      *
      * @param pn ProgramNode
      * @todo Implement this designpatterns.structural.facade.ProgramNode
-     *   method
+     * method
      */
-    public void remove(ProgramNode pn) {}
+    public void remove(ProgramNode pn) {
+    }
 
     /**
      * traverse
      *
      * @param cg CodeGenerator
      * @todo Implement this designpatterns.structural.facade.ProgramNode
-     *   method
+     * method
      */
     public void traverse(CodeGenerator cg) {
         cg.visit(this);
@@ -93,7 +94,6 @@ public class VariableNode implements ProgramNode {
 
     /**
      * Method description
-     *
      *
      * @return
      */

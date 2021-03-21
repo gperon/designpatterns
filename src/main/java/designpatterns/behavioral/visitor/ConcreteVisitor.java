@@ -26,12 +26,12 @@
 
 
 /*
-* ConcreteVisitor.java
-*
-* Created on 16 dicembre 2006, 17.20
-*
-* To change this template, choose Tools | Template Manager
-* and open the template in the editor.
+ * ConcreteVisitor.java
+ *
+ * Created on 16 dicembre 2006, 17.20
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
  */
 package designpatterns.behavioral.visitor;
 
@@ -43,4 +43,5 @@ package designpatterns.behavioral.visitor;
  *
  * @author gperon
  */
-public @interface ConcreteVisitor {}
+public @interface ConcreteVisitor {
+}

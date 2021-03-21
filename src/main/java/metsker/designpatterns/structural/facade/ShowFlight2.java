@@ -24,34 +24,32 @@
  */
 
 
-
 package metsker.designpatterns.structural.facade;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import java.awt.Dimension;
-
-import javax.swing.JFrame;
 
 import metsker.designpatterns.structural.decorator.Function;
 import metsker.designpatterns.structural.decorator.T;
 import metsker.designpatterns.util.ui.PlotPanel;
 import metsker.designpatterns.util.ui.UI;
 
+import javax.swing.*;
+import java.awt.*;
+
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class ShowFlight2 {
 
@@ -62,7 +60,7 @@ public class ShowFlight2 {
      */
     public static void main(String[] args) {
         PlotPanel p = new PlotPanel(101, new T(),
-                                    new ShowFlight2().new YFunction());
+                new ShowFlight2().new YFunction());
         p.setPreferredSize(new Dimension(300, 200));
         JFrame frame = new JFrame("Flight Path for Shell Duds");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -76,18 +74,15 @@ public class ShowFlight2 {
 
         /**
          * Constructs ...
-         *
          */
         public YFunction() {
-            super(new Function[] {});
+            super(new Function[]{});
         }
 
         /**
          * Method description
          *
-         *
          * @param t
-         *
          * @return
          */
         public double f(double t) {

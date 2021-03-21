@@ -24,32 +24,29 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.mediator;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class Mediator {
-    private ClearButton    clearButton;
-    private MoveButton     moveButton;
-    private KTextField     ktext;
-    private KidList        klist;
+    private ClearButton clearButton;
+    private MoveButton moveButton;
+    private KTextField ktext;
+    private KidList klist;
     private PickedKidsList picked;
 
     /**
      * Constructs ...
-     *
      */
-    public Mediator() {}
+    public Mediator() {
+    }
 
     /**
      * Method description
-     *
      */
     public void clear() {
         ktext.setText("");
@@ -62,7 +59,6 @@ public class Mediator {
 
     /**
      * Method description
-     *
      */
     public void init() {
         clear();
@@ -70,7 +66,6 @@ public class Mediator {
 
     /**
      * Method description
-     *
      */
     public void move() {
         picked.add(ktext.getText());
@@ -79,7 +74,6 @@ public class Mediator {
 
     /**
      * Method description
-     *
      *
      * @param cb
      */
@@ -90,7 +84,6 @@ public class Mediator {
     /**
      * Method description
      *
-     *
      * @param kl
      */
     public void registerKidList(KidList kl) {
@@ -99,7 +92,6 @@ public class Mediator {
 
     /**
      * Method description
-     *
      *
      * @param mv
      */
@@ -110,7 +102,6 @@ public class Mediator {
     /**
      * Method description
      *
-     *
      * @param pl
      */
     public void registerPicked(PickedKidsList pl) {
@@ -120,7 +111,6 @@ public class Mediator {
     /**
      * Method description
      *
-     *
      * @param tx
      */
     public void registerText(KTextField tx) {
@@ -129,7 +119,6 @@ public class Mediator {
 
     /**
      * Method description
-     *
      */
     public void select() {
         String s = (String) klist.getSelectedValue();

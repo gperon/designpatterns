@@ -24,14 +24,13 @@
  */
 
 
-
 package cooper.designpatterns.structural.adapter;
 
-import javax.swing.JList;
+import cooper.designpatterns.util.swing.AwtList;
+
+import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-
-import cooper.designpatterns.util.swing.AwtList;
 
 //this is a simple adapter class to
 //convert List awt methods to Swing methods
@@ -39,18 +38,16 @@ import cooper.designpatterns.util.swing.AwtList;
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class JclassAwtList extends JList implements ListSelectionListener, AwtList {
-    private JListData listContents;
+    private final JListData listContents;
 
 //  -----------------------------------------
 
     /**
      * Constructs ...
-     *
      *
      * @param rows
      */
@@ -65,7 +62,6 @@ public class JclassAwtList extends JList implements ListSelectionListener, AwtLi
     /**
      * Method description
      *
-     *
      * @param s
      */
     public void add(String s) {
@@ -76,7 +72,6 @@ public class JclassAwtList extends JList implements ListSelectionListener, AwtLi
 
     /**
      * Method description
-     *
      *
      * @param s
      */
@@ -89,22 +84,21 @@ public class JclassAwtList extends JList implements ListSelectionListener, AwtLi
     /**
      * Method description
      *
-     *
      * @param e
      */
-    public void valueChanged(ListSelectionEvent e) {}
+    public void valueChanged(ListSelectionEvent e) {
+    }
 
 //  -----------------------------------------
 
     /**
      * Method description
      *
-     *
      * @return
      */
     public String[] getSelectedItems() {
         Object[] obj = getSelectedValues();
-        String[] s   = new String[obj.length];
+        String[] s = new String[obj.length];
 
         for (int i = 0; i < obj.length; i++) {
             s[i] = obj[i].toString();

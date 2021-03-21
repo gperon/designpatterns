@@ -24,43 +24,40 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.chainofresponsibility;
 
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 import java.awt.*;
-
-import java.io.*;
-
-import javax.swing.border.*;
+import java.io.File;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class FileList extends RestList {
-    String        files[];
+    String[] files;
     private Chain nextChain;
 
     /**
      * Constructs ...
-     *
      */
     public FileList() {
         super();
         setBorder(new CompoundBorder(new EmptyBorder(5, 5, 5, 5), new LineBorder(Color.black)));
 
         String tmp = "";
-        File   dir = new File(System.getProperty("user.dir"));
+        File dir = new File(System.getProperty("user.dir"));
 
         files = dir.list();
 
         for (int i = 0; i < files.length; i++) {
             for (int j = i; j < files.length; j++) {
                 if (files[i].toLowerCase().compareTo(files[j].toLowerCase()) > 0) {
-                    tmp      = files[i];
+                    tmp = files[i];
                     files[i] = files[j];
                     files[j] = tmp;
                 }
@@ -75,7 +72,6 @@ public class FileList extends RestList {
     /**
      * Method description
      *
-     *
      * @param c
      */
     public void addChain(Chain c) {
@@ -85,12 +81,11 @@ public class FileList extends RestList {
     /**
      * Method description
      *
-     *
      * @param mesg
      */
     public void sendToChain(String mesg) {
         boolean found = false;
-        int     i     = 0;
+        int i = 0;
 
         while ((!found) && (i < files.length)) {
             XFile xfile = new XFile(files[i]);

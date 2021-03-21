@@ -24,24 +24,21 @@
  */
 
 
-
 package metsker.designpatterns.behavioral.observer;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import java.awt.Graphics;
 
-import javax.swing.JPanel;
-
-import metsker.designpatterns.behavioral.observer.BallisticsFunction;
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * Plot a ballistics function.
@@ -58,9 +55,8 @@ public class BallisticsPanel extends JPanel {
     /**
      * Create a panel that can display the provided function.
      *
-     * @param func
-     *            the ballistics function to plot. Ballistics functions vary
-     *            with time and with the time of peak burn area.
+     * @param func the ballistics function to plot. Ballistics functions vary
+     *             with time and with the time of peak burn area.
      */
     public BallisticsPanel(BallisticsFunction func) {
         this.func = func;
@@ -69,8 +65,7 @@ public class BallisticsPanel extends JPanel {
     /**
      * Set the time at which the peak burn area is reached.
      *
-     * @param tPeak
-     *            the time at which the peak burn area is reached
+     * @param tPeak the time at which the peak burn area is reached
      */
     public void setTPeak(double tPeak) {
         this.tPeak = tPeak;

@@ -24,29 +24,28 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.iterator;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class ParseObject {
 
-    /** Field description */
+    /**
+     * Field description
+     */
     public static final int
-        VERB    = 1000,
-        VAR     = 1010,
-        MULTVAR = 1020;
+            VERB = 1000,
+            VAR = 1010,
+            MULTVAR = 1020;
     protected int value;
     protected int type;
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -56,7 +55,6 @@ public class ParseObject {
 
     /**
      * Method description
-     *
      *
      * @return
      */

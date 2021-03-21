@@ -24,15 +24,13 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.strategy;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class Firework {
     protected String name;
@@ -61,7 +59,7 @@ public class Firework {
     /**
      * Construct a firework with the given name.
      *
-     * @param name the name of the firework
+     * @param name  the name of the firework
      * @param price the price of the firework
      */
     public Firework(String name, double price) {
@@ -71,8 +69,8 @@ public class Firework {
     /**
      * Construct a firework with the given name and classification.
      *
-     * @param name the name of the firework
-     * @param price the price of the firework
+     * @param name           the name of the firework
+     * @param price          the price of the firework
      * @param classification the classification of the firework
      */
     public Firework(String name, double price, Classification classification) {
@@ -114,7 +112,7 @@ public class Firework {
      * Return a random firework from our shelves.
      *
      * @return a random firework from our shelves; not actually
-     *         implemented
+     * implemented
      */
     public static Firework getRandom() {
         return null;
@@ -125,7 +123,7 @@ public class Firework {
      * class's name.
      *
      * @return the type of this firework, essentially the
-     *         class's name
+     * class's name
      */
     public String getType() {
         String s = getClass().getName();
@@ -138,7 +136,7 @@ public class Firework {
      *
      * @param name a name to lookup
      * @return a firework of the given name; not actually
-     *         implemented
+     * implemented
      */
     public static Firework lookup(String name) {
         return new Firework("demo", 0);

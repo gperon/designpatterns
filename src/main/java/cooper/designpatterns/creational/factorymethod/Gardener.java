@@ -24,11 +24,13 @@
  */
 
 
-
 package cooper.designpatterns.creational.factorymethod;
 
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 class GardenMaker {
 
@@ -38,9 +40,7 @@ class GardenMaker {
     /**
      * Method description
      *
-     *
      * @param gtype
-     *
      * @return
      */
     public Garden getGarden(String gtype) {
@@ -62,22 +62,20 @@ class GardenMaker {
 /**
  * Illustrates use of Abstract Factory pattern.
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class Gardener extends Frame implements ActionListener, ItemListener {
-    private Garden      garden      = null;
-    private String      borderPlant = "",
-                        centerPlant = "",
-                        shadePlant  = "";
-    private Checkbox    vegie, annual, peren;
-    private Button      center, border, shade, quit;
+    private Garden garden = null;
+    private String borderPlant = "",
+            centerPlant = "",
+            shadePlant = "";
+    private Checkbox vegie, annual, peren;
+    private Button center, border, shade, quit;
     private GardenPanel gardenPlot;
 
     /**
      * Constructs ...
-     *
      */
     public Gardener() {
         super("Garden planner");
@@ -86,7 +84,6 @@ public class Gardener extends Frame implements ActionListener, ItemListener {
 
     /**
      * Method description
-     *
      *
      * @param e
      */
@@ -113,14 +110,13 @@ public class Gardener extends Frame implements ActionListener, ItemListener {
     /**
      * Method description
      *
-     *
      * @param e
      */
     public void itemStateChanged(ItemEvent e) {
         Checkbox ck = (Checkbox) e.getSource();
 
-        garden      = new GardenMaker().getGarden(ck.getLabel());
-        shadePlant  = "";
+        garden = new GardenMaker().getGarden(ck.getLabel());
+        shadePlant = "";
         centerPlant = "";
         borderPlant = "";
         gardenPlot.repaint();
@@ -129,10 +125,9 @@ public class Gardener extends Frame implements ActionListener, ItemListener {
     /**
      * Method description
      *
-     *
      * @param argv
      */
-    static public void main(String argv[]) {
+    static public void main(String[] argv) {
         new Gardener();
     }
 
@@ -170,9 +165,9 @@ public class Gardener extends Frame implements ActionListener, ItemListener {
 
         CheckboxGroup grp = new CheckboxGroup();
 
-        vegie  = new Checkbox("Vegetable", grp, false);
+        vegie = new Checkbox("Vegetable", grp, false);
         annual = new Checkbox("Annual", grp, false);
-        peren  = new Checkbox("Perennial", grp, false);
+        peren = new Checkbox("Perennial", grp, false);
         left.add(vegie);
         left.add(annual);
         left.add(peren);
@@ -191,8 +186,8 @@ public class Gardener extends Frame implements ActionListener, ItemListener {
         right.add(botRight);
         center = new Button("Central");
         border = new Button("Border");
-        shade  = new Button("Shade");
-        quit   = new Button("Quit");
+        shade = new Button("Shade");
+        quit = new Button("Quit");
         botRight.add(center);
         center.addActionListener(this);
         botRight.add(border);
@@ -217,7 +212,6 @@ public class Gardener extends Frame implements ActionListener, ItemListener {
 
         /**
          * Method description
-         *
          *
          * @param g
          */

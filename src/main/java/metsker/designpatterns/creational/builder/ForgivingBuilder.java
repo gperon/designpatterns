@@ -24,35 +24,33 @@
  */
 
 
-
 package metsker.designpatterns.creational.builder;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
+
 import metsker.designpatterns.util.Dollars;
 
 /**
- *  This class builds a valid reservation from its attributes,
- *  and fills in values where it can if the attributes are not
- *  set. This builder must receive a city and a date, but it
- *  will set reasonable values for the other reservation values.
+ * This class builds a valid reservation from its attributes,
+ * and fills in values where it can if the attributes are not
+ * set. This builder must receive a city and a date, but it
+ * will set reasonable values for the other reservation values.
  */
 public class ForgivingBuilder extends ReservationBuilder {
 
     /**
      * Method description
      *
-     *
      * @return
-     *
      * @throws BuilderException
      */
     public Reservation build() throws BuilderException {

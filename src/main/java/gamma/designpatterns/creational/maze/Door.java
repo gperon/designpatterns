@@ -24,23 +24,22 @@
  */
 
 
-
 package gamma.designpatterns.creational.maze;
 
 /**
- *  <p>
+ * <p>
+ * <p>
+ * Title: Design Patterns</p> <p>
+ * <p>
+ * Description: </p> <p>
+ * <p>
+ * Copyright: Copyright (c) 2002</p> <p>
+ * <p>
+ * Company: GioPerLab</p>
  *
- *  Title: Design Patterns</p> <p>
- *
- *  Description: </p> <p>
- *
- *  Copyright: Copyright (c) 2002</p> <p>
- *
- *  Company: GioPerLab</p>
- *
- * @author     giorgio_peron@libero.it
- * @created    8 giugno 2002
- * @version    1.0
+ * @author giorgio_peron@libero.it
+ * @version 1.0
+ * @created 8 giugno 2002
  */
 public class Door implements MapSite {
     private Room r1;
@@ -48,10 +47,10 @@ public class Door implements MapSite {
     private boolean isOpen;
 
     /**
-     *  Constructor for the Door object
+     * Constructor for the Door object
      *
-     * @param  r1  Description of the Parameter
-     * @param  r2  Description of the Parameter
+     * @param r1 Description of the Parameter
+     * @param r2 Description of the Parameter
      */
     public Door(Room r1, Room r2) {
         this.r1 = r1;
@@ -59,15 +58,16 @@ public class Door implements MapSite {
     }
 
     /**
-     *  Constructor for the Door object
+     * Constructor for the Door object
      */
-    public Door() {}
+    public Door() {
+    }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  r1  Description of the Parameter
-     * @param  r2  Description of the Parameter
+     * @param r1 Description of the Parameter
+     * @param r2 Description of the Parameter
      */
     public void initialize(Room r1, Room r2) {
         this.r1 = r1;
@@ -75,9 +75,9 @@ public class Door implements MapSite {
     }
 
     /**
-     *  Constructor for the Door object
+     * Constructor for the Door object
      *
-     * @param  door  Description of the Parameter
+     * @param door Description of the Parameter
      */
     protected Door(Door door) {
         try {
@@ -104,10 +104,10 @@ public class Door implements MapSite {
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  r  Description of the Parameter
-     * @return    Description of the Return Value
+     * @param r Description of the Parameter
+     * @return Description of the Return Value
      */
     public Room otherSideFrom(Room r) {
         if (r1.equals(r)) {
@@ -121,20 +121,20 @@ public class Door implements MapSite {
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      */
     public void enter() {
         throw new java.lang.UnsupportedOperationException(
-            "Method enter() not yet implemented.");
+                "Method enter() not yet implemented.");
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @return                                           Description of the
-     *      Return Value
-     * @exception  java.lang.CloneNotSupportedException  Description of the
-     *      Exception
+     * @return Description of the
+     * Return Value
+     * @throws java.lang.CloneNotSupportedException Description of the
+     *                                              Exception
      */
     public Object clone() throws java.lang.CloneNotSupportedException {
         return new Door(this);
@@ -142,7 +142,6 @@ public class Door implements MapSite {
 
     /**
      * Method description
-     *
      *
      * @return
      */

@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.strategy;
 
 /**
@@ -44,7 +43,6 @@ public class ArrayCompositor extends Compositor {
     /**
      * Constructs ...
      *
-     *
      * @param capacity
      */
     public ArrayCompositor(int capacity) {
@@ -54,15 +52,15 @@ public class ArrayCompositor extends Compositor {
     /**
      * compose
      *
-     * @param natural Coord[]
-     * @param stretch Coord[]
-     * @param shrink Coord[]
+     * @param natural        Coord[]
+     * @param stretch        Coord[]
+     * @param shrink         Coord[]
      * @param componentCount int
-     * @param lineWidth int
-     * @param breaks int[]
+     * @param lineWidth      int
+     * @param breaks         int[]
      * @return int
      * @todo Implement this designpatterns.behavioral.strategy.Compositor
-     *   method
+     * method
      */
     public int compose(Coord[] natural, Coord[] stretch, Coord[] shrink,
                        int componentCount, int lineWidth, int[] breaks) {

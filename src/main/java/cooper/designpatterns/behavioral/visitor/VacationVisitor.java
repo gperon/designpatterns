@@ -24,22 +24,19 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.visitor;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class VacationVisitor extends Visitor {
     protected int total_days;
 
     /**
      * Constructs ...
-     *
      */
     public VacationVisitor() {
         total_days = 0;
@@ -47,7 +44,6 @@ public class VacationVisitor extends Visitor {
 
     /**
      * Method description
-     *
      *
      * @param boss
      */
@@ -58,7 +54,6 @@ public class VacationVisitor extends Visitor {
     /**
      * Method description
      *
-     *
      * @param emp
      */
     public void visit(Employee emp) {
@@ -67,7 +62,6 @@ public class VacationVisitor extends Visitor {
 
     /**
      * Method description
-     *
      *
      * @return
      */

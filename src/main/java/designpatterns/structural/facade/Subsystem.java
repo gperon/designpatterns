@@ -26,12 +26,12 @@
 
 
 /*
-* Subsystem.java
-*
-* Created on 28 dicembre 2006, 18.09
-*
-* To change this template, choose Tools | Template Manager
-* and open the template in the editor.
+ * Subsystem.java
+ *
+ * Created on 28 dicembre 2006, 18.09
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
  */
 package designpatterns.structural.facade;
 
@@ -42,4 +42,5 @@ package designpatterns.structural.facade;
  *
  * @author gperon
  */
-public @interface Subsystem {}
+public @interface Subsystem {
+}

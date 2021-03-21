@@ -24,23 +24,23 @@
  */
 
 
-
 package metsker.designpatterns.util.process;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import java.util.Set;
 
 import metsker.designpatterns.behavioral.iterator.ComponentIterator;
 import metsker.designpatterns.behavioral.iterator.LeafIterator;
+
+import java.util.Set;
 
 /**
  * Represent an individual process step.
@@ -50,8 +50,7 @@ public class ProcessStep extends ProcessComponent {
     /**
      * Create a step with the given name.
      *
-     * @param name
-     *            the name of this process step
+     * @param name the name of this process step
      */
     public ProcessStep(String name) {
         super(name);
@@ -71,9 +70,7 @@ public class ProcessStep extends ProcessComponent {
     /**
      * Method description
      *
-     *
      * @param visited
-     *
      * @return
      */
     public ComponentIterator iterator(Set visited) {
@@ -81,9 +78,8 @@ public class ProcessStep extends ProcessComponent {
     }
 
     /**
+     * @param visited components already visited while traversing this component
      * @return the number of steps in this step, namely 1.
-     * @param visited
-     *            components already visited while traversing this component
      */
     public int getStepCount(Set visited) {
         visited.add(name);

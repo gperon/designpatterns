@@ -24,65 +24,64 @@
  */
 
 
-
 package metsker.designpatterns.util.controller;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
 
 /**
- *  This class just supports examples in the Bridge chapter.
- *  It doesn't really control a fuser.
+ * This class just supports examples in the Bridge chapter.
+ * It doesn't really control a fuser.
  */
 public class FuserController {
 
     /**
      * Method description
-     *
      */
-    public void startMachine() {}
+    public void startMachine() {
+    }
 
     /**
      * Method description
-     *
      */
-    public void stopMachine() {}
+    public void stopMachine() {
+    }
 
     /**
      * Method description
-     *
      */
-    public void begin() {}
+    public void begin() {
+    }
 
     /**
      * Method description
-     *
      */
-    public void end() {}
+    public void end() {
+    }
 
     /**
      * Method description
-     *
      */
-    public void conveyIn() {}
+    public void conveyIn() {
+    }
 
     /**
      * Method description
-     *
      */
-    public void conveyOut() {}
+    public void conveyOut() {
+    }
 
     /**
      * Method description
-     *
      */
-    public void switchSpool() {}
+    public void switchSpool() {
+    }
 }

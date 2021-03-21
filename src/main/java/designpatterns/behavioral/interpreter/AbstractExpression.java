@@ -26,12 +26,12 @@
 
 
 /*
-* AbstractExpression.java
-*
-* Created on 16 dicembre 2006, 17.08
-*
-* To change this template, choose Tools | Template Manager
-* and open the template in the editor.
+ * AbstractExpression.java
+ *
+ * Created on 16 dicembre 2006, 17.08
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
  */
 package designpatterns.behavioral.interpreter;
 
@@ -40,4 +40,5 @@ package designpatterns.behavioral.interpreter;
  *
  * @author gperon
  */
-public @interface AbstractExpression {}
+public @interface AbstractExpression {
+}

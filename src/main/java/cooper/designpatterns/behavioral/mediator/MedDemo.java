@@ -24,46 +24,43 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.mediator;
 
-import java.awt.*;
-import java.awt.event.*;
-
 import javax.swing.*;
-import javax.swing.border.*;
+import javax.swing.border.EmptyBorder;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class MedDemo extends JxFrame implements ActionListener {
-    KidList        kidList;
+    KidList kidList;
     PickedKidsList picked;
-    KTextField     tx;
-    MoveButton     Move;
-    ClearButton    Clear;
-    Mediator       med;
+    KTextField tx;
+    MoveButton Move;
+    ClearButton Clear;
+    Mediator med;
 
     /**
      * Constructs ...
-     *
      */
     public MedDemo() {
         super("Mediator demo");
 
         Mediator med = new Mediator();
-        JPanel   jp  = new JPanel();
+        JPanel jp = new JPanel();
 
         getContentPane().add(jp);
         jp.setLayout(new BorderLayout());
 
         JPanel center = new JPanel();
-        JPanel left   = new JPanel();
-        JPanel right  = new JPanel();
+        JPanel left = new JPanel();
+        JPanel right = new JPanel();
 
         jp.add("Center", center);
         center.setLayout(new GridLayout(1, 2));
@@ -75,8 +72,8 @@ public class MedDemo extends JxFrame implements ActionListener {
         left.setLayout(new BorderLayout());
         left.add("Center", kidList);
         right.setLayout(new BorderLayout());
-        tx    = new KTextField(med);
-        Move  = new MoveButton(this, med);
+        tx = new KTextField(med);
+        Move = new MoveButton(this, med);
         Clear = new ClearButton(this, med);
 
         JPanel rtop = new JPanel();
@@ -95,7 +92,6 @@ public class MedDemo extends JxFrame implements ActionListener {
     /**
      * Method description
      *
-     *
      * @param e
      */
     public void actionPerformed(ActionEvent e) {
@@ -107,10 +103,9 @@ public class MedDemo extends JxFrame implements ActionListener {
     /**
      * Method description
      *
-     *
      * @param argv
      */
-    static public void main(String argv[]) {
+    static public void main(String[] argv) {
         new MedDemo();
     }
 }

@@ -26,12 +26,12 @@
 
 
 /*
-* Facade.java
-*
-* Created on November 13, 2006, 11:59 AM
-*
-* To change this template, choose Tools | Template Manager
-* and open the template in the editor.
+ * Facade.java
+ *
+ * Created on November 13, 2006, 11:59 AM
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
  */
 package designpatterns.structural.facade;
 
@@ -41,4 +41,5 @@ package designpatterns.structural.facade;
  *
  * @author giorgiop
  */
-public @interface Facade {}
+public @interface Facade {
+}

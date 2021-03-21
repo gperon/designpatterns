@@ -24,10 +24,9 @@
  */
 
 
-
 package gamma.designpatterns.structural.facade;
 
-import java.io.*;
+import java.io.IOException;
 
 /**
  * <p>Title: Design Patterns</p>
@@ -51,14 +50,14 @@ public class HumanCodeGenerator extends CodeGenerator {
      *
      * @param en ExpressionNode
      * @todo Implement this designpatterns.structural.facade.CodeGenerator
-     *   method
+     * method
      */
     public void visit(ExpressionNode en) {
         Token t = en.getToken();
         if (t != null) {
             try {
                 output.write(t.toByteArray());
-                output.write((char) '(');
+                output.write('(');
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
@@ -70,7 +69,7 @@ public class HumanCodeGenerator extends CodeGenerator {
      *
      * @param fn FactorNode
      * @todo Implement this designpatterns.structural.facade.CodeGenerator
-     *   method
+     * method
      */
     public void visit(FactorNode fn) {
         try {
@@ -89,11 +88,11 @@ public class HumanCodeGenerator extends CodeGenerator {
      *
      * @param loen ListOfExpressionNode
      * @todo Implement this designpatterns.structural.facade.CodeGenerator
-     *   method
+     * method
      */
     public void visit(ListOfExpressionNode loen) {
         try {
-            output.write(new byte[] { ';', '\n' });
+            output.write(new byte[]{';', '\n'});
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -104,7 +103,7 @@ public class HumanCodeGenerator extends CodeGenerator {
      *
      * @param sn StatementNode
      * @todo Implement this designpatterns.structural.facade.CodeGenerator
-     *   method
+     * method
      */
     public void visit(StatementNode sn) {
         // throw new NoSuchMethodException("Method visit(StatementNode sn) not implemented");
@@ -115,7 +114,7 @@ public class HumanCodeGenerator extends CodeGenerator {
      *
      * @param tn TermNode
      * @todo Implement this designpatterns.structural.facade.CodeGenerator
-     *   method
+     * method
      */
     public void visit(TermNode tn) {
         Token t = tn.getToken();
@@ -131,10 +130,9 @@ public class HumanCodeGenerator extends CodeGenerator {
     /**
      * visit
      *
-     * @todo Implement this designpatterns.structural.facade.CodeGenerator
-     *   method
-     *
      * @param vn
+     * @todo Implement this designpatterns.structural.facade.CodeGenerator
+     * method
      */
     public void visit(VariableNode vn) {
         Token t = vn.getToken();

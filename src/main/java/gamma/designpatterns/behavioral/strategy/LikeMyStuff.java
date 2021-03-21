@@ -24,15 +24,13 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.strategy;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class LikeMyStuff {
 
@@ -41,7 +39,6 @@ public class LikeMyStuff {
      * or her previous purchases.
      *
      * @param c
-     *
      * @return
      */
     public static Object suggest(Customer c) {

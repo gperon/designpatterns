@@ -24,11 +24,9 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.strategy;
 
 /**
  * Enum description
- *
  */
-public enum Classification { CONSUMER, DISPLAY }
+public enum Classification {CONSUMER, DISPLAY}

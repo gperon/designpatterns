@@ -24,11 +24,9 @@
  */
 
 
-
 package cooper.designpatterns.creational.singleton;
 
 /**
- *
  * @author gperon
  */
 public class SingletonException extends RuntimeException {
@@ -37,7 +35,6 @@ public class SingletonException extends RuntimeException {
 
     /**
      * Constructs ...
-     *
      */
     public SingletonException() {
         super();
@@ -45,7 +42,6 @@ public class SingletonException extends RuntimeException {
 
     /**
      * Constructs ...
-     *
      *
      * @param s
      */

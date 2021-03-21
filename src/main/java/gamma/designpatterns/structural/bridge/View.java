@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.structural.bridge;
 
 import gamma.designpatterns.structural.decorator.VisualComponent;

@@ -24,19 +24,19 @@
  */
 
 
-
 package metsker.designpatterns.behavioral.interpreter;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
+
 import metsker.designpatterns.util.machine.Machine;
 
 /**
@@ -49,8 +49,9 @@ public class ShutDownCommand extends Command {
     /**
      * Construct a command to shut down a machine indicated by the provided
      * term.
+     *
      * @param term a term to evaulate when this command executes; the machine it
-     *            evaulates to will be shut down
+     *             evaulates to will be shut down
      */
     public ShutDownCommand(Term term) {
         this.term = term;

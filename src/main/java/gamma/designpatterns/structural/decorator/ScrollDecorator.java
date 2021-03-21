@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.structural.decorator;
 
 /**
@@ -44,7 +43,6 @@ public class ScrollDecorator extends Decorator {
     /**
      * Constructs ...
      *
-     *
      * @param vc
      */
     public ScrollDecorator(VisualComponent vc) {
@@ -53,7 +51,6 @@ public class ScrollDecorator extends Decorator {
 
     /**
      * Method description
-     *
      */
     public void draw() {
         super.draw();

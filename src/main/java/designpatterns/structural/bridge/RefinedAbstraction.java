@@ -26,12 +26,12 @@
 
 
 /*
-* RefinedAbstraction.java
-*
-* Created on November 13, 2006, 10:43 AM
-*
-* To change this template, choose Tools | Template Manager
-* and open the template in the editor.
+ * RefinedAbstraction.java
+ *
+ * Created on November 13, 2006, 10:43 AM
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
  */
 package designpatterns.structural.bridge;
 
@@ -40,4 +40,5 @@ package designpatterns.structural.bridge;
  *
  * @author giorgiop
  */
-public @interface RefinedAbstraction {}
+public @interface RefinedAbstraction {
+}

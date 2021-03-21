@@ -26,12 +26,12 @@
 
 
 /*
-* Director.java
-*
-* Created on 7 novembre 2006, 21.22
-*
-* To change this template, choose Tools | Template Manager
-* and open the template in the editor.
+ * Director.java
+ *
+ * Created on 7 novembre 2006, 21.22
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
  */
 package designpatterns.creational.builder;
 
@@ -40,4 +40,5 @@ package designpatterns.creational.builder;
  *
  * @author gperon
  */
-public @interface Director {}
+public @interface Director {
+}

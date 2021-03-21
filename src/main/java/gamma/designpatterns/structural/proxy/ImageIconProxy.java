@@ -24,29 +24,26 @@
  */
 
 
-
 package gamma.designpatterns.structural.proxy;
 
-import java.awt.*;
-
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class ImageIconProxy extends ImageIcon implements Runnable {
     static final ImageIcon ABSENT =
-        new ImageIcon(
-            ClassLoader.getSystemResource(
-                "designpatterns/structural/proxy/absent.jpg"));
+            new ImageIcon(
+                    ClassLoader.getSystemResource(
+                            "designpatterns/structural/proxy/absent.jpg"));
     static final ImageIcon LOADING =
-        new ImageIcon(
-            ClassLoader.getSystemResource(
-                "designpatterns/structural/proxy/loading.jpg"));
+            new ImageIcon(
+                    ClassLoader.getSystemResource(
+                            "designpatterns/structural/proxy/loading.jpg"));
     ImageIcon current = ABSENT;
     protected String filename;
     protected JFrame callbackFrame;
@@ -83,7 +80,6 @@ public class ImageIconProxy extends ImageIcon implements Runnable {
     /**
      * Load the desired image and call back the provided frame
      * when done.
-     *
      *
      * @param callbackFrame
      */

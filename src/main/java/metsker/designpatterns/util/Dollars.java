@@ -24,37 +24,36 @@
  */
 
 
-
 package metsker.designpatterns.util;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class Dollars {
 
-    /** Field description */
-    public static final Dollars cent             = new Dollars(0.01);
-    static final int            CENTS_PER_DOLLAR = 100;
-    long                        cents;
+    /**
+     * Field description
+     */
+    public static final Dollars cent = new Dollars(0.01);
+    static final int CENTS_PER_DOLLAR = 100;
+    long cents;
 
     /**
      * Constructs ...
-     *
      *
      * @param value
      */
@@ -65,7 +64,6 @@ public class Dollars {
     /**
      * Method description
      *
-     *
      * @return
      */
     public long asCents() {
@@ -75,9 +73,7 @@ public class Dollars {
     /**
      * Method description
      *
-     *
      * @param that
-     *
      * @return
      */
     public double dividedBy(Dollars that) {
@@ -87,9 +83,7 @@ public class Dollars {
     /**
      * Method description
      *
-     *
      * @param divisor
-     *
      * @return
      */
     public Dollars dividedBy(int divisor) {
@@ -101,9 +95,7 @@ public class Dollars {
     /**
      * Method description
      *
-     *
      * @param obj
-     *
      * @return
      */
     public boolean equals(Object obj) {
@@ -119,7 +111,6 @@ public class Dollars {
     /**
      * Method description
      *
-     *
      * @return
      */
     public int hashCode() {
@@ -129,9 +120,7 @@ public class Dollars {
     /**
      * Method description
      *
-     *
      * @param that
-     *
      * @return
      */
     public Dollars plus(Dollars that) {
@@ -141,9 +130,7 @@ public class Dollars {
     /**
      * Method description
      *
-     *
      * @param multiplier
-     *
      * @return
      */
     public Dollars times(int multiplier) {
@@ -153,12 +140,11 @@ public class Dollars {
     /**
      * Method description
      *
-     *
      * @return
      */
     public String toString() {
-        StringBuffer result  = new StringBuffer("$");
-        long         dollars = cents / CENTS_PER_DOLLAR;
+        StringBuffer result = new StringBuffer("$");
+        long dollars = cents / CENTS_PER_DOLLAR;
 
         result.append(dollars);
         result.append('.');
@@ -177,9 +163,7 @@ public class Dollars {
     /**
      * Method description
      *
-     *
      * @param that
-     *
      * @return
      */
     public boolean isLessThan(Dollars that) {
@@ -188,7 +172,6 @@ public class Dollars {
 
     /**
      * Method description
-     *
      *
      * @return
      */

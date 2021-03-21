@@ -26,12 +26,12 @@
 
 
 /*
-* ConcreteImplementor.java
-*
-* Created on November 13, 2006, 10:45 AM
-*
-* To change this template, choose Tools | Template Manager
-* and open the template in the editor.
+ * ConcreteImplementor.java
+ *
+ * Created on November 13, 2006, 10:45 AM
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
  */
 package designpatterns.structural.bridge;
 
@@ -40,4 +40,5 @@ package designpatterns.structural.bridge;
  *
  * @author giorgiop
  */
-public @interface ConcreteImplementor {}
+public @interface ConcreteImplementor {
+}

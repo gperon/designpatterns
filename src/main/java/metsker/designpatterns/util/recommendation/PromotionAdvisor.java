@@ -24,22 +24,22 @@
  */
 
 
-
 package metsker.designpatterns.util.recommendation;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import java.util.Properties;
 
 import metsker.designpatterns.util.firework.Firework;
+
+import java.util.Properties;
 
 /**
  * Implement the Advisor interface, recommending a currently promoted firework.
@@ -51,13 +51,12 @@ public class PromotionAdvisor implements Advisor {
 
     /**
      * Constructs ...
-     *
      */
     public PromotionAdvisor() {
         try {
             Properties p = new Properties();
             p.load(ClassLoader.getSystemResourceAsStream(
-                "config/strategy.dat"));
+                    "config/strategy.dat"));
             String promotedFireworkName = p.getProperty("promote");
             if (promotedFireworkName != null) {
                 promoted = Firework.lookup(promotedFireworkName);
@@ -77,7 +76,6 @@ public class PromotionAdvisor implements Advisor {
 
     /**
      * Recommend a nice item for this customer, based what we're promoting.
-     *
      *
      * @param c
      * @return a nice item for the customer to buy

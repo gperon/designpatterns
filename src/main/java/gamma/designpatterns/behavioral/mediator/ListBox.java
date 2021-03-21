@@ -24,10 +24,9 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.mediator;
 
-import java.util.*;
+import java.util.List;
 
 /**
  * <p>Title: Design Patterns</p>
@@ -46,7 +45,6 @@ public class ListBox extends Widget {
     /**
      * Constructs ...
      *
-     *
      * @param dd
      */
     public ListBox(DialogDirector dd) {
@@ -59,11 +57,11 @@ public class ListBox extends Widget {
      * @param event any
      * @todo Implement this designpatterns.structural.mediator.Widget method
      */
-    public void handleMouse(MouseEvent event) {}
+    public void handleMouse(MouseEvent event) {
+    }
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -74,9 +72,9 @@ public class ListBox extends Widget {
     /**
      * Method description
      *
-     *
      * @param listItems
      */
-    public void setList(List<String> listItems) {}
+    public void setList(List<String> listItems) {
+    }
     // ...
 }

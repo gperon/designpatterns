@@ -24,56 +24,56 @@
  */
 
 
-
 package gamma.designpatterns.creational.maze;
 
 /**
- *  <p>
+ * <p>
+ * <p>
+ * Title: Design Patterns</p> <p>
+ * <p>
+ * Description: </p> <p>
+ * <p>
+ * Copyright: Copyright (c) 2002</p> <p>
+ * <p>
+ * Company: GioPerLab</p>
  *
- *  Title: Design Patterns</p> <p>
- *
- *  Description: </p> <p>
- *
- *  Copyright: Copyright (c) 2002</p> <p>
- *
- *  Company: GioPerLab</p>
- *
- * @author     giorgio_peron@libero.it
- * @created    2 giugno 2002
- * @version    1.0
+ * @author giorgio_peron@libero.it
+ * @version 1.0
+ * @created 2 giugno 2002
  */
 public class BombedWall extends Wall {
 
     /**
-     *  Constructor for the BombedWall object
+     * Constructor for the BombedWall object
      */
-    public BombedWall() {}
+    public BombedWall() {
+    }
 
     /**
-     *  Constructor for the BombedWall object
+     * Constructor for the BombedWall object
      *
-     * @param  wall  Description of the Parameter
+     * @param wall Description of the Parameter
      */
     protected BombedWall(BombedWall wall) {
         super(wall);
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @return    Description of the Return Value
+     * @return Description of the Return Value
      */
     public String toString() {
         return "Bombed " + super.toString();
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @return                                           Description of the
-     *      Return Value
-     * @exception  java.lang.CloneNotSupportedException  Description of the
-     *      Exception
+     * @return Description of the
+     * Return Value
+     * @throws java.lang.CloneNotSupportedException Description of the
+     *                                              Exception
      */
     public Object clone() throws java.lang.CloneNotSupportedException {
         return new BombedWall(this);

@@ -24,36 +24,34 @@
  */
 
 
-
 package metsker.designpatterns.structural.adapter;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import java.awt.Component;
-import java.awt.Font;
+
+import metsker.designpatterns.util.Dollars;
+import metsker.designpatterns.util.firework.Rocket;
 
 import javax.swing.*;
-
-import metsker.designpatterns.util.firework.Rocket;
-import metsker.designpatterns.util.Dollars;
+import java.awt.*;
 
 /*
-* Copyright (c) 2001 Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001 Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
 
 /**
@@ -66,7 +64,6 @@ public class ShowRocketTable {
 
     /**
      * Method description
-     *
      *
      * @param args
      */
@@ -82,7 +79,7 @@ public class ShowRocketTable {
     /**
      * Display a Swing component. We'll refactor this later into a nice facade.
      *
-     * @param c the component to display
+     * @param c     the component to display
      * @param title the window title
      */
     public static void display(Component c, String title) {
@@ -97,7 +94,7 @@ public class ShowRocketTable {
         Rocket r1 = new Rocket("Shooter", 1.0, new Dollars(3.95), 50.0, 4.5);
         Rocket r2 = new Rocket("Orbit", 2.0, new Dollars(29.03), 5000, 3.2);
 
-        return new RocketTableModel(new Rocket[] { r1, r2 });
+        return new RocketTableModel(new Rocket[]{r1, r2});
     }
 
     private static void setFonts() {

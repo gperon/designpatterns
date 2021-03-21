@@ -24,21 +24,21 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.memento;
 
-import java.awt.*;
-import java.awt.event.*;
-
-//swing classes
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionAdapter;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class MemDraw extends JxFrame implements ActionListener {
     JToolBar tbar;
@@ -46,7 +46,6 @@ public class MemDraw extends JxFrame implements ActionListener {
 
     /**
      * Constructs ...
-     *
      */
     public MemDraw() {
         super("Memento Drawing");
@@ -90,7 +89,6 @@ public class MemDraw extends JxFrame implements ActionListener {
     /**
      * Method description
      *
-     *
      * @param e
      */
     public void actionPerformed(ActionEvent e) {
@@ -101,7 +99,6 @@ public class MemDraw extends JxFrame implements ActionListener {
 
     /**
      * Method description
-     *
      *
      * @param argv
      */
@@ -117,7 +114,6 @@ class MouseApp extends MouseAdapter {
     /**
      * Constructs ...
      *
-     *
      * @param md
      */
     public MouseApp(Mediator md) {
@@ -128,7 +124,6 @@ class MouseApp extends MouseAdapter {
     /**
      * Method description
      *
-     *
      * @param e
      */
     public void mousePressed(MouseEvent e) {
@@ -137,7 +132,6 @@ class MouseApp extends MouseAdapter {
 
     /**
      * Method description
-     *
      *
      * @param e
      */
@@ -153,7 +147,6 @@ class MouseMoveApp extends MouseMotionAdapter {
     /**
      * Constructs ...
      *
-     *
      * @param md
      */
     public MouseMoveApp(Mediator md) {
@@ -163,7 +156,6 @@ class MouseMoveApp extends MouseMotionAdapter {
 
     /**
      * Method description
-     *
      *
      * @param e
      */

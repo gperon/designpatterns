@@ -24,19 +24,17 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.state;
 
-import java.util.*;
-
 import javax.swing.*;
+import java.util.Observable;
+import java.util.Observer;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class CarouselLabel extends JLabel implements Observer {
 
@@ -52,7 +50,7 @@ public class CarouselLabel extends JLabel implements Observer {
         repaint();
     }
 
-    private Carousel carousel;
+    private final Carousel carousel;
 
     /**
      * Construct a label that will observe the provided carousel.

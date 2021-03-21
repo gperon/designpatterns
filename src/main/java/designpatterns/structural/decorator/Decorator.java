@@ -26,12 +26,12 @@
 
 
 /*
-* Decorator.java
-*
-* Created on 16 dicembre 2006, 17.25
-*
-* To change this template, choose Tools | Template Manager
-* and open the template in the editor.
+ * Decorator.java
+ *
+ * Created on 16 dicembre 2006, 17.25
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
  */
 package designpatterns.structural.decorator;
 
@@ -40,4 +40,5 @@ package designpatterns.structural.decorator;
  *
  * @author gperon
  */
-public @interface Decorator {}
+public @interface Decorator {
+}

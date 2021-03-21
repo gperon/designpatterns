@@ -24,20 +24,20 @@
  */
 
 
-
 package metsker.designpatterns.util.businesscore;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import java.util.*;
+
+import java.util.ArrayList;
 
 /**
  * This class supports various examples that rely on the idea of a central
@@ -45,7 +45,7 @@ import java.util.*;
  */
 public class Factory {
     private static Factory factory;
-    private static Object classLock = Factory.class;
+    private static final Object classLock = Factory.class;
     private long wipMoves;
 
     private Factory() {
@@ -54,7 +54,6 @@ public class Factory {
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -70,7 +69,6 @@ public class Factory {
 
     /**
      * Method description
-     *
      */
     public void recordWipMove() {
         synchronized (classLock) {
@@ -82,13 +80,13 @@ public class Factory {
 
     /**
      * Method description
-     *
      */
-    public void collectPaste() {}
+    public void collectPaste() {
+    }
 
     /**
      * @return an example list of "up" machines, supporting
-     *         "ShowConcurrentWhile" and other examples).
+     * "ShowConcurrentWhile" and other examples).
      */
     public static ArrayList upMachineNames() {
         ArrayList result = new ArrayList();

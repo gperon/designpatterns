@@ -24,16 +24,16 @@
  */
 
 
-
 package gamma.designpatterns.structural.bridge;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.RandomAccessFile;
 
 /**
- *  Description of the Class
+ * Description of the Class
  *
- * @author     giorgio
- * @created    9 giugno 2002
+ * @author giorgio
+ * @created 9 giugno 2002
  */
 public class InputFile {
     RandomAccessFile f = null;
@@ -41,9 +41,9 @@ public class InputFile {
     String s = null;
 
     /**
-     *  Constructor for the InputFile object
+     * Constructor for the InputFile object
      *
-     * @param  fname  Description of the Parameter
+     * @param fname Description of the Parameter
      */
     public InputFile(String fname) {
         errflag = false;
@@ -59,18 +59,18 @@ public class InputFile {
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @return    Description of the Return Value
+     * @return Description of the Return Value
      */
     public boolean checkErr() {
         return errflag;
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @return    Description of the Return Value
+     * @return Description of the Return Value
      */
     public String read() {
 //      read a single field up to a comma or end of line
@@ -106,9 +106,9 @@ public class InputFile {
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @return    Description of the Return Value
+     * @return Description of the Return Value
      */
     public String readLine() {
         // read in a line from the file
@@ -125,7 +125,7 @@ public class InputFile {
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      */
     public void close() {
         try {

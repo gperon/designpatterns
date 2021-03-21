@@ -24,23 +24,24 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.state;
-
-import java.awt.*;
-import java.awt.event.*;
-
-import javax.swing.*;
 
 import cooper.designpatterns.behavioral.command.Command;
 import cooper.designpatterns.util.swing.JxFrame;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionAdapter;
 
 class MouseApp extends MouseAdapter {
     Mediator med;
 
     /**
      * Constructs ...
-     *
      *
      * @param md
      */
@@ -52,7 +53,6 @@ class MouseApp extends MouseAdapter {
     /**
      * Method description
      *
-     *
      * @param e
      */
     public void mousePressed(MouseEvent e) {
@@ -61,7 +61,6 @@ class MouseApp extends MouseAdapter {
 
     /**
      * Method description
-     *
      *
      * @param e
      */
@@ -77,7 +76,6 @@ class MouseMoveApp extends MouseMotionAdapter {
     /**
      * Constructs ...
      *
-     *
      * @param md
      */
     public MouseMoveApp(Mediator md) {
@@ -87,7 +85,6 @@ class MouseMoveApp extends MouseMotionAdapter {
 
     /**
      * Method description
-     *
      *
      * @param e
      */
@@ -100,9 +97,8 @@ class MouseMoveApp extends MouseMotionAdapter {
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class StateDraw extends JxFrame implements ActionListener {
     JToolBar tbar;
@@ -110,7 +106,6 @@ public class StateDraw extends JxFrame implements ActionListener {
 
     /**
      * Constructs ...
-     *
      */
     public StateDraw() {
         super("State Drawing");
@@ -168,7 +163,6 @@ public class StateDraw extends JxFrame implements ActionListener {
     /**
      * Method description
      *
-     *
      * @param e
      */
     public void actionPerformed(ActionEvent e) {
@@ -179,7 +173,6 @@ public class StateDraw extends JxFrame implements ActionListener {
 
     /**
      * Method description
-     *
      *
      * @param argv
      */

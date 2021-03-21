@@ -24,29 +24,25 @@
  */
 
 
-
 package metsker.designpatterns.behavioral.observer;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import java.awt.Dimension;
-
-import javax.swing.*;
 
 import metsker.designpatterns.util.ui.SwingFacade;
 
-import javax.swing.event.*;
-
-import java.awt.BorderLayout;
-import java.awt.GridLayout;
+import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import java.awt.*;
 
 /**
  * Show the standard burn rate and thrust equations. This class is refactored
@@ -64,7 +60,7 @@ public class ShowBallistics3 {
      */
     public static void main(String[] args) {
         SwingFacade.launch(new ShowBallistics3().mainPanel(),
-                           "Effects of tPeak");
+                "Effects of tPeak");
     }
 
     protected BallisticsPanel3 burnPanel;
@@ -118,16 +114,16 @@ public class ShowBallistics3 {
             sliderMax = slider.getMaximum();
             sliderMin = slider.getMinimum();
             slider.addChangeListener(new ChangeListener() {
-                                         public void stateChanged(
-                                                 ChangeEvent e) {
-                                             if (sliderMax == sliderMin) {
-                                                 return;
-                                             }
-                                             tPeak.setValue((slider.getValue()
-                                             - sliderMin) / (sliderMax
-                                                 - sliderMin));
-                                         }
-                                     });
+                public void stateChanged(
+                        ChangeEvent e) {
+                    if (sliderMax == sliderMin) {
+                        return;
+                    }
+                    tPeak.setValue((slider.getValue()
+                            - sliderMin) / (sliderMax
+                            - sliderMin));
+                }
+            });
             slider.setValue(slider.getMinimum());
         }
 

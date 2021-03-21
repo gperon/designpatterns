@@ -24,33 +24,33 @@
  */
 
 
-
 package cooper.designpatterns.creational.factorymethod;
 
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 //illustrates use of Abstract Factory pattern
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class CmdGardener extends Frame implements ActionListener, ItemListener {
-    private Garden       garden      = null;
-    private String       borderPlant = "",
-                         centerPlant = "",
-                         shadePlant  = "";
+    private Garden garden = null;
+    private String borderPlant = "",
+            centerPlant = "",
+            shadePlant = "";
     private CheckCommand vegie, annual, peren;
-    private Button       center, border, shade, quit;
-    private GardenPanel  gardenPlot;
+    private Button center, border, shade, quit;
+    private GardenPanel gardenPlot;
 
     /**
      * Constructs ...
-     *
      */
     public CmdGardener() {
         setGUI();
@@ -58,7 +58,6 @@ public class CmdGardener extends Frame implements ActionListener, ItemListener {
 
     /**
      * Method description
-     *
      *
      * @param e
      */
@@ -85,7 +84,6 @@ public class CmdGardener extends Frame implements ActionListener, ItemListener {
     /**
      * Method description
      *
-     *
      * @param e
      */
     public void itemStateChanged(ItemEvent e) {
@@ -97,10 +95,9 @@ public class CmdGardener extends Frame implements ActionListener, ItemListener {
     /**
      * Method description
      *
-     *
      * @param argv
      */
-    static public void main(String argv[]) {
+    static public void main(String[] argv) {
         new CmdGardener();
     }
 
@@ -131,9 +128,9 @@ public class CmdGardener extends Frame implements ActionListener, ItemListener {
 
         CheckboxGroup grp = new CheckboxGroup();
 
-        vegie  = new CheckCommand("Vegetable", grp, new CommandGardener("Vegie", this));
+        vegie = new CheckCommand("Vegetable", grp, new CommandGardener("Vegie", this));
         annual = new CheckCommand("Annual", grp, new CommandGardener("Annual", this));
-        peren  = new CheckCommand("Perennial", grp, new CommandGardener("Peren", this));
+        peren = new CheckCommand("Perennial", grp, new CommandGardener("Peren", this));
         left.add(vegie);
         left.add(annual);
         left.add(peren);
@@ -151,8 +148,8 @@ public class CmdGardener extends Frame implements ActionListener, ItemListener {
         right.add(botRight);
         center = new Button("Central");
         border = new Button("Border");
-        shade  = new Button("Shade");
-        quit   = new Button("Quit");
+        shade = new Button("Shade");
+        quit = new Button("Quit");
         botRight.add(center);
         center.addActionListener(this);
         botRight.add(border);
@@ -168,12 +165,11 @@ public class CmdGardener extends Frame implements ActionListener, ItemListener {
     /**
      * Method description
      *
-     *
      * @param g
      */
     public void setGarden(Garden g) {
-        garden      = g;
-        shadePlant  = "";
+        garden = g;
+        shadePlant = "";
         centerPlant = "";
         borderPlant = "";
         gardenPlot.repaint();
@@ -188,7 +184,6 @@ public class CmdGardener extends Frame implements ActionListener, ItemListener {
 
         /**
          * Method description
-         *
          *
          * @param g
          */
@@ -208,24 +203,22 @@ public class CmdGardener extends Frame implements ActionListener, ItemListener {
 
 
 class CommandGardener implements Command {
-    private String      garden_type;
-    private CmdGardener gard;
+    private final String garden_type;
+    private final CmdGardener gard;
 
     /**
      * Constructs ...
-     *
      *
      * @param gtype
      * @param g
      */
     public CommandGardener(String gtype, CmdGardener g) {
         garden_type = gtype;
-        gard        = g;
+        gard = g;
     }
 
     /**
      * Method description
-     *
      */
     public void execute() {
         Garden gd = new VegieGarden();    // default

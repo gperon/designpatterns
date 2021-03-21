@@ -24,44 +24,41 @@
  */
 
 
-
 package metsker.designpatterns.creational.abstractfactory;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import java.awt.Component;
-import java.awt.Cursor;
-import java.awt.Point;
+
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-
 import java.util.ArrayList;
-
-import javax.swing.JFileChooser;
 
 /**
  * This class handles the UI events for the Visualization class
  */
 public class VisMediator {
 
-    /** Field description */
+    /**
+     * Field description
+     */
     public static final Point DEFAULT_LOCATION = new Point(10, 10);
     protected int initX;
     protected int initY;
@@ -73,7 +70,6 @@ public class VisMediator {
     /**
      * Constructs ...
      *
-     *
      * @param m
      */
     public VisMediator(FactoryModel m) {
@@ -82,7 +78,6 @@ public class VisMediator {
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -97,7 +92,6 @@ public class VisMediator {
     /**
      * Method description
      *
-     *
      * @return
      */
     public ActionListener undoAction() {
@@ -111,7 +105,6 @@ public class VisMediator {
     /**
      * Method description
      *
-     *
      * @return
      */
     public MouseListener mouseDownAction() {
@@ -119,6 +112,7 @@ public class VisMediator {
             public void mousePressed(MouseEvent e) {
                 VisMediator.this.mouseDown(e);
             }
+
             public void mouseReleased(MouseEvent e) {
                 VisMediator.this.mouseUp(e);
             }
@@ -128,7 +122,6 @@ public class VisMediator {
     /**
      * Method description
      *
-     *
      * @return
      */
     public MouseMotionListener mouseMotionAction() {
@@ -136,7 +129,9 @@ public class VisMediator {
             public void mouseDragged(MouseEvent e) {
                 VisMediator.this.mouseMove(e);
             }
-            public void mouseMoved(MouseEvent e) {}
+
+            public void mouseMoved(MouseEvent e) {
+            }
         };
     }
 
@@ -179,8 +174,8 @@ public class VisMediator {
         parent.setCursor(originalCursor);
         isMouseDown = false;
         factoryModel.drag(initLocation,
-                          new Point(initLocation.x + e.getX() - initX,
-                                    initLocation.y + e.getY() - initY));
+                new Point(initLocation.x + e.getX() - initX,
+                        initLocation.y + e.getY() - initY));
     }
 
     // User clicked "Save As..." menu item
@@ -188,9 +183,7 @@ public class VisMediator {
     /**
      * Method description
      *
-     *
      * @param source
-     *
      * @throws Exception
      */
     public void save(Component source) throws Exception {
@@ -217,9 +210,7 @@ public class VisMediator {
     /**
      * Method description
      *
-     *
      * @param source
-     *
      * @throws Exception
      */
     public void restore(Component source) throws Exception {

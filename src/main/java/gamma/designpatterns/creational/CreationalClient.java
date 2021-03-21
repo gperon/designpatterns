@@ -24,10 +24,7 @@
  */
 
 
-
 package gamma.designpatterns.creational;
-
-import java.io.*;
 
 import gamma.designpatterns.creational.abstractfactory.BombedMazeFactory;
 import gamma.designpatterns.creational.abstractfactory.EnchantedMazeFactory;
@@ -48,20 +45,24 @@ import gamma.designpatterns.creational.maze.Wall;
 import gamma.designpatterns.creational.prototype.MazePrototypeFactory;
 import gamma.designpatterns.creational.singleton.MazeFactorySingleton;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 /**
- *  <p>
+ * <p>
+ * <p>
+ * Title: Design Patterns</p> <p>
+ * <p>
+ * Description: </p> <p>
+ * <p>
+ * Copyright: Copyright (c) 2002</p> <p>
+ * <p>
+ * Company: GioPerLab</p>
  *
- *  Title: Design Patterns</p> <p>
- *
- *  Description: </p> <p>
- *
- *  Copyright: Copyright (c) 2002</p> <p>
- *
- *  Company: GioPerLab</p>
- *
- * @author     giorgio_peron@libero.it
- * @created    2 giugno 2002
- * @version    1.0
+ * @author giorgio_peron@libero.it
+ * @version 1.0
+ * @created 2 giugno 2002
  */
 public class CreationalClient {
     private static BufferedReader input;
@@ -70,48 +71,46 @@ public class CreationalClient {
         HALT, ABSTRACT_FACTORY, BUILDER, FACTORY_METHOD, PROTOTYPE, SINGLETON, QUIT
     }
 
-    ;
-
     /**
-     *  The main program for the CreationalClient class
+     * The main program for the CreationalClient class
      *
-     * @param  args  The command line arguments
+     * @param args The command line arguments
      */
     public static void main(String[] args) {
         while (true) {
             switch (showMenu()) {
-            case ABSTRACT_FACTORY :
-                testAbstractFactory();
+                case ABSTRACT_FACTORY:
+                    testAbstractFactory();
 
-                break;
+                    break;
 
-            case BUILDER :
-                testBuilder();
+                case BUILDER:
+                    testBuilder();
 
-                break;
+                    break;
 
-            case FACTORY_METHOD :
-                testFactoryMethod();
+                case FACTORY_METHOD:
+                    testFactoryMethod();
 
-                break;
+                    break;
 
-            case PROTOTYPE :
-                testPrototype();
+                case PROTOTYPE:
+                    testPrototype();
 
-                break;
+                    break;
 
-            case SINGLETON :
-                testSingleton();
+                case SINGLETON:
+                    testSingleton();
 
-                break;
+                    break;
 
-            case QUIT :
-                System.exit(1);
-            case HALT :
-                return;
+                case QUIT:
+                    System.exit(1);
+                case HALT:
+                    return;
 
-            default :
-                break;
+                default:
+                    break;
             }
         }
     }
@@ -121,15 +120,15 @@ public class CreationalClient {
 
         System.out.println("*** Design Patterns Examples - Creational ***");
         System.out.println("0) Back");
-        System.out.println("");
+        System.out.println();
         System.out.println("1) Abstract Factory");
         System.out.println("2) Builder");
         System.out.println("3) Factory Method");
         System.out.println("4) Prototype");
         System.out.println("5) Singleton");
-        System.out.println("");
+        System.out.println();
         System.out.println("Press q to quit");
-        System.out.println("");
+        System.out.println();
         System.out.print("-> ");
         System.out.flush();
 
@@ -157,7 +156,7 @@ public class CreationalClient {
     }
 
     /**
-     *  A unit test for JUnit
+     * A unit test for JUnit
      */
     private static void testAbstractFactory() {
         Maze maze;
@@ -176,11 +175,11 @@ public class CreationalClient {
     }
 
     /**
-     *  A unit test for JUnit
+     * A unit test for JUnit
      */
     private static void testBuilder() {
-        Maze        maze;
-        MazeGame    game    = new MazeGame();
+        Maze maze;
+        MazeGame game = new MazeGame();
         MazeBuilder builder = new StandardMazeBuilder();
 
         game.createMaze(builder);
@@ -192,14 +191,14 @@ public class CreationalClient {
 
         game.createMaze(countingBuilder);
         System.out.println("The maze has " + countingBuilder.getRoomCount() + " rooms and "
-                           + countingBuilder.getDoorCount() + " doors");
+                + countingBuilder.getDoorCount() + " doors");
     }
 
     /**
-     *  A unit test for JUnit
+     * A unit test for JUnit
      */
     private static void testFactoryMethod() {
-        Maze     maze;
+        Maze maze;
         MazeGame game;
 
         game = new MazeGame();
@@ -218,29 +217,29 @@ public class CreationalClient {
     }
 
     /**
-     *  A unit test for JUnit
+     * A unit test for JUnit
      */
     private static void testPrototype() {
-        Maze                 maze;
+        Maze maze;
         MazePrototypeFactory simpleMazeFactory = new MazePrototypeFactory(new Maze(),
-                                                                          new Wall(),
-                                                                          new Room(),
-                                                                          new Door());
+                new Wall(),
+                new Room(),
+                new Door());
 
         maze = MazeGame.createMaze(simpleMazeFactory);
         System.out.println(maze);
 
         MazePrototypeFactory bombedMazeFactory = new MazePrototypeFactory(new Maze(),
-                                                                          new BombedWall(),
-                                                                          new RoomWithABomb(),
-                                                                          new DoorNeedingSpell());
+                new BombedWall(),
+                new RoomWithABomb(),
+                new DoorNeedingSpell());
 
         maze = MazeGame.createMaze(bombedMazeFactory);
         System.out.println(maze);
     }
 
     /**
-     *  A unit test for JUnit
+     * A unit test for JUnit
      */
     private static void testSingleton() {
         System.setProperty("mazestyle", "standard");

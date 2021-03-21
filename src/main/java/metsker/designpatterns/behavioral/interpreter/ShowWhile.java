@@ -24,18 +24,12 @@
  */
 
 
-
 package metsker.designpatterns.behavioral.interpreter;
 
 import metsker.designpatterns.util.machine.Bin;
 import metsker.designpatterns.util.machine.Machine;
 import metsker.designpatterns.util.machine.MachineComposite;
 import metsker.designpatterns.util.machine.OozinozFactory;
-import metsker.designpatterns.behavioral.interpreter.CarryCommand;
-import metsker.designpatterns.behavioral.interpreter.Constant;
-import metsker.designpatterns.behavioral.interpreter.HasMaterial;
-import metsker.designpatterns.behavioral.interpreter.Term;
-import metsker.designpatterns.behavioral.interpreter.WhileCommand;
 
 /**
  * Show the use of a "while" interpreter.
@@ -44,7 +38,6 @@ public class ShowWhile {
 
     /**
      * Method description
-     *
      *
      * @param args
      */
@@ -55,8 +48,8 @@ public class ShowWhile {
         starPress.eval().load(new Bin(77));
         starPress.eval().load(new Bin(88));
         WhileCommand command = new WhileCommand(new HasMaterial(starPress),
-                                   new CarryCommand(starPress,
-                                           fuser));
+                new CarryCommand(starPress,
+                        fuser));
         command.execute();
     }
 }

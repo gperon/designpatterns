@@ -24,7 +24,6 @@
  */
 
 
-
 package cooper.designpatterns.creational.factorymethod;
 
 import java.awt.*;
@@ -32,16 +31,14 @@ import java.awt.*;
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class CheckCommand extends Checkbox implements Command {
     Command cmd;
 
     /**
      * Constructs ...
-     *
      *
      * @param caption
      * @param grp
@@ -54,7 +51,6 @@ public class CheckCommand extends Checkbox implements Command {
 
     /**
      * Method description
-     *
      */
     public void execute() {
         cmd.execute();

@@ -24,19 +24,17 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.interpreter;
 
-import java.util.*;
-
 import cooper.designpatterns.util.swing.InputFile;
+
+import java.util.Vector;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class KidData {
     Vector kids;
@@ -44,14 +42,13 @@ public class KidData {
     /**
      * Constructs ...
      *
-     *
      * @param filename
      */
     public KidData(String filename) {
         kids = new Vector();
 
         InputFile f = new InputFile(getClass(), filename);
-        String    s = f.readLine();
+        String s = f.readLine();
 
         while (s != null) {
             if (s.trim().length() > 0) {
@@ -67,7 +64,6 @@ public class KidData {
     /**
      * Method description
      *
-     *
      * @return
      */
     public int size() {
@@ -76,7 +72,6 @@ public class KidData {
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -93,9 +88,7 @@ public class KidData {
     /**
      * Method description
      *
-     *
      * @param i
-     *
      * @return
      */
     public Kid getKid(int i) {
@@ -105,9 +98,7 @@ public class KidData {
     /**
      * Method description
      *
-     *
      * @param key
-     *
      * @return
      */
     public Vector getKidData(int key) {
@@ -123,9 +114,7 @@ public class KidData {
     /**
      * Method description
      *
-     *
      * @param tabName
-     *
      * @return
      */
     public int getTableKey(String tabName) {
@@ -159,25 +148,23 @@ public class KidData {
     /**
      * Method description
      *
-     *
      * @param i
-     *
      * @return
      */
     public String getTableName(int i) {
         String name = "";
 
         switch (i) {
-        case ParseVar.FRNAME :
-            name = "frname";
-        case ParseVar.LNAME :
-            name = "lname";
-        case ParseVar.AGE :
-            name = "age";
-        case ParseVar.CLUB :
-            name = "club";
-        case ParseVar.TIME :
-            name = "time";
+            case ParseVar.FRNAME:
+                name = "frname";
+            case ParseVar.LNAME:
+                name = "lname";
+            case ParseVar.AGE:
+                name = "age";
+            case ParseVar.CLUB:
+                name = "club";
+            case ParseVar.TIME:
+                name = "time";
         }
 
         return name;

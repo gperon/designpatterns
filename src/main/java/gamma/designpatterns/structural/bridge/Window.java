@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.structural.bridge;
 
 import java.awt.*;
@@ -55,7 +54,6 @@ public abstract class Window {
 
     /**
      * Method description
-     *
      */
     public void drawContents() {
         contents.draw();
@@ -63,25 +61,21 @@ public abstract class Window {
 
     /**
      * Method description
-     *
      */
     public abstract void open();
 
     /**
      * Method description
-     *
      */
     public abstract void close();
 
     /**
      * Method description
-     *
      */
     public abstract void iconify();
 
     /**
      * Method description
-     *
      */
     public abstract void deiconify();
 
@@ -90,7 +84,6 @@ public abstract class Window {
     /**
      * Method description
      *
-     *
      * @param at
      */
     public abstract void setOrigin(final Point at);
@@ -98,26 +91,22 @@ public abstract class Window {
     /**
      * Method description
      *
-     *
      * @param extent
      */
     public abstract void setExtent(final Point extent);
 
     /**
      * Method description
-     *
      */
     public abstract void raise();
 
     /**
      * Method description
-     *
      */
     public abstract void lower();
 
     /**
      * Method description
-     *
      *
      * @param p0
      * @param p1
@@ -127,19 +116,17 @@ public abstract class Window {
     /**
      * Method description
      *
-     *
      * @param p1
      * @param p2
      */
     public void drawRect(final Point p1, final Point p2) {
         WindowImp imp = getWindowImp();
         imp.deviceRect(new Coord(p1.getX()), new Coord(p1.getY()),
-                       new Coord(p2.getX()), new Coord(p2.getY()));
+                new Coord(p2.getX()), new Coord(p2.getY()));
     }
 
     /**
      * Method description
-     *
      *
      * @param vertex
      * @param n
@@ -149,7 +136,6 @@ public abstract class Window {
     /**
      * Method description
      *
-     *
      * @param s
      * @param p
      */
@@ -157,7 +143,6 @@ public abstract class Window {
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -174,7 +159,6 @@ public abstract class Window {
     /**
      * Method description
      *
-     *
      * @param contents
      */
     public void setContents(View contents) {
@@ -184,7 +168,6 @@ public abstract class Window {
     /**
      * Method description
      *
-     *
      * @param sys
      */
     public void setSys(String sys) {
@@ -193,7 +176,6 @@ public abstract class Window {
 
     /**
      * Method description
-     *
      *
      * @return
      */

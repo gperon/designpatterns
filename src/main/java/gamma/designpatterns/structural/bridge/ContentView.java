@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.structural.bridge;
 
 /**
@@ -43,17 +42,18 @@ public class ContentView implements View {
 
     /**
      * Constructs ...
-     *
      */
-    public ContentView() {}
+    public ContentView() {
+    }
 
     /**
      * draw
      *
      * @todo Implement this
-     *   designpatterns.structural.decorator.VisualComponent method
+     * designpatterns.structural.decorator.VisualComponent method
      */
-    public void draw() {}
+    public void draw() {
+    }
 
     /**
      * drawOn
@@ -61,13 +61,15 @@ public class ContentView implements View {
      * @param w Window
      * @todo Implement this designpatterns.structural.bridge.View method
      */
-    public void drawOn(Window w) {}
+    public void drawOn(Window w) {
+    }
 
     /**
      * resize
      *
      * @todo Implement this
-     *   designpatterns.structural.decorator.VisualComponent method
+     * designpatterns.structural.decorator.VisualComponent method
      */
-    public void resize() {}
+    public void resize() {
+    }
 }

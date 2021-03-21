@@ -24,19 +24,19 @@
  */
 
 
-
 package metsker.designpatterns.behavioral.interpreter;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,6 +49,7 @@ public class CommandSequence extends Command {
     /**
      * Add a command to the sequence of commands to which this object will
      * cascade an Execute() command.
+     *
      * @param c a command to add
      */
     public void addCommand(Command c) {

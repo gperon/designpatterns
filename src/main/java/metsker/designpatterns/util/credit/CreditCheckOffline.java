@@ -24,31 +24,31 @@
  */
 
 
-
 package metsker.designpatterns.util.credit;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
+
 import metsker.designpatterns.util.Dollars;
 
 /**
- *  Objects of this class check credit using a series of
- *  agent/customer dialogs.
+ * Objects of this class check credit using a series of
+ * agent/customer dialogs.
  */
 public class CreditCheckOffline implements CreditCheck {
 
     /**
-     *  @return the acceptable credit limit for the person
-     *  with the supplied identification number.
-     *  @param id the customer id
+     * @param id the customer id
+     * @return the acceptable credit limit for the person
+     * with the supplied identification number.
      */
     public Dollars creditLimit(int id) {
         // logic goes here to dialog with call center rep to

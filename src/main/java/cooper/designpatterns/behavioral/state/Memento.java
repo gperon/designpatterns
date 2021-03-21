@@ -24,29 +24,27 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.state;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class Memento {
 
     /**
      * Constructs ...
      *
-     *
      * @param d
      */
-    public Memento(Drawing d) {}
+    public Memento(Drawing d) {
+    }
 
     /**
      * Method description
-     *
      */
-    public void restore() {}
+    public void restore() {
+    }
 }

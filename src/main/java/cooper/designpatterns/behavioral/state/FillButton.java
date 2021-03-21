@@ -24,29 +24,25 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.state;
 
-import java.awt.*;
-import java.awt.event.*;
+import cooper.designpatterns.behavioral.command.Command;
 
 import javax.swing.*;
-
-import cooper.designpatterns.behavioral.command.Command;
+import java.awt.*;
+import java.awt.event.ActionListener;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class FillButton extends JToggleButton implements Command {
     Mediator med;
 
     /**
      * Constructs ...
-     *
      *
      * @param act
      * @param md
@@ -64,7 +60,6 @@ public class FillButton extends JToggleButton implements Command {
 
     /**
      * Method description
-     *
      */
     public void execute() {
         if (isSelected()) {
@@ -74,7 +69,6 @@ public class FillButton extends JToggleButton implements Command {
 
     /**
      * Method description
-     *
      *
      * @param g
      */
@@ -92,7 +86,6 @@ public class FillButton extends JToggleButton implements Command {
 
     /**
      * Method description
-     *
      *
      * @return
      */

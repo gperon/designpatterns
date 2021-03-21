@@ -24,26 +24,22 @@
  */
 
 
-
 package cooper.designpatterns.structural.decorator;
 
-import java.awt.*;
-
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class SlashDecorator extends Decorator {
     int x1, y1, w1, h1;
 
     /**
      * Constructs ...
-     *
      *
      * @param c
      */
@@ -53,7 +49,6 @@ public class SlashDecorator extends Decorator {
 
     /**
      * Method description
-     *
      *
      * @param g
      */
@@ -65,7 +60,6 @@ public class SlashDecorator extends Decorator {
 
     /**
      * Method description
-     *
      *
      * @param x
      * @param y

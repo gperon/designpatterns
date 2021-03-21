@@ -24,22 +24,21 @@
  */
 
 
-
 package metsker.designpatterns.util.ui;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import java.awt.*;
 
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * This class shows the idea of establishing user interface kits with
@@ -50,7 +49,6 @@ public class UIKit {
     protected OzTextArea textArea = new OzTextArea();
 
     /**
-     *
      * @param text
      * @return a (copy of a prototypical) button
      */

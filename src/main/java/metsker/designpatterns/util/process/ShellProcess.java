@@ -24,18 +24,17 @@
  */
 
 
-
 package metsker.designpatterns.util.process;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
 
 /**
@@ -69,14 +68,14 @@ public class ShellProcess {
 
     protected static ProcessAlternation reworkOrFinish() {
         return new ProcessAlternation("Rework inner shell, or complete shell",
-                                      new ProcessComponent[] { rework(),
-                                              finish() });
+                new ProcessComponent[]{rework(),
+                        finish()});
     }
 
     protected static ProcessSequence rework() {
         return new ProcessSequence("Rework",
-                                   new ProcessComponent[] { disassemble(),
-                                           make() });
+                new ProcessComponent[]{disassemble(),
+                        make()});
     }
 
     protected static ProcessStep disassemble() {

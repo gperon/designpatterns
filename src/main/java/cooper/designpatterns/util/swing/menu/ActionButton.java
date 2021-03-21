@@ -24,28 +24,23 @@
  */
 
 
-
 package cooper.designpatterns.util.swing.menu;
 
-import java.awt.event.*;
-
-import java.util.*;
-
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.util.Hashtable;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public abstract class ActionButton extends AbstractAction {
     Hashtable properties;
 
     /**
      * Constructs ...
-     *
      *
      * @param caption
      * @param img
@@ -61,14 +56,12 @@ public abstract class ActionButton extends AbstractAction {
     /**
      * Method description
      *
-     *
      * @param e
      */
     public abstract void actionPerformed(ActionEvent e);
 
     /**
      * Method description
-     *
      *
      * @param key
      * @param value
@@ -80,9 +73,7 @@ public abstract class ActionButton extends AbstractAction {
     /**
      * Method description
      *
-     *
      * @param key
-     *
      * @return
      */
     public Object getValue(String key) {

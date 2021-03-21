@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.structural.adapter;
 
 /**
@@ -43,10 +42,9 @@ public class AnotherTextView extends TextView {
 
     /**
      * Constructs ...
-     *
      */
     public AnotherTextView() {
         super();
-        this.text = new String("Another Text View");
+        this.text = "Another Text View";
     }
 }

@@ -24,7 +24,6 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.state;
 
 import java.awt.*;
@@ -32,34 +31,31 @@ import java.awt.*;
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class StateManager {
     private State currentState;
-    RectState     rState;
-    ArrowState    aState;
-    CircleState   cState;
-    FillState     fState;
+    RectState rState;
+    ArrowState aState;
+    CircleState cState;
+    FillState fState;
 
     /**
      * Constructs ...
      *
-     *
      * @param med
      */
     public StateManager(Mediator med) {
-        rState       = new RectState(med);
-        cState       = new CircleState(med);
-        aState       = new ArrowState(med);
-        fState       = new FillState(med);
+        rState = new RectState(med);
+        cState = new CircleState(med);
+        aState = new ArrowState(med);
+        fState = new FillState(med);
         currentState = aState;
     }
 
     /**
      * Method description
-     *
      *
      * @param x
      * @param y
@@ -71,7 +67,6 @@ public class StateManager {
     /**
      * Method description
      *
-     *
      * @param x
      * @param y
      */
@@ -81,7 +76,6 @@ public class StateManager {
 
     /**
      * Method description
-     *
      *
      * @param x
      * @param y
@@ -93,7 +87,6 @@ public class StateManager {
     /**
      * Method description
      *
-     *
      * @param d
      * @param c
      */
@@ -103,7 +96,6 @@ public class StateManager {
 
     /**
      * Method description
-     *
      */
     public void setArrow() {
         currentState = aState;
@@ -111,7 +103,6 @@ public class StateManager {
 
     /**
      * Method description
-     *
      */
     public void setCircle() {
         currentState = cState;
@@ -119,7 +110,6 @@ public class StateManager {
 
     /**
      * Method description
-     *
      */
     public void setFill() {
         currentState = fState;
@@ -127,7 +117,6 @@ public class StateManager {
 
     /**
      * Method description
-     *
      */
     public void setRect() {
         currentState = rState;

@@ -26,12 +26,12 @@
 
 
 /*
-* NonterminalExpression.java
-*
-* Created on 16 dicembre 2006, 17.10
-*
-* To change this template, choose Tools | Template Manager
-* and open the template in the editor.
+ * NonterminalExpression.java
+ *
+ * Created on 16 dicembre 2006, 17.10
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
  */
 package designpatterns.behavioral.interpreter;
 
@@ -43,4 +43,5 @@ package designpatterns.behavioral.interpreter;
  *
  * @author gperon
  */
-public @interface NonterminalExpression {}
+public @interface NonterminalExpression {
+}

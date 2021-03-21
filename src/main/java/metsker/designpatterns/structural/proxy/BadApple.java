@@ -24,7 +24,6 @@
  */
 
 
-
 package metsker.designpatterns.structural.proxy;
 
 /**
@@ -32,11 +31,14 @@ package metsker.designpatterns.structural.proxy;
  */
 public class BadApple {
 
-    /** Field description */
+    /**
+     * Field description
+     */
     public String name;
 
     /**
      * Create a "bad apple" with the given name.
+     *
      * @param name
      */
     public BadApple(String name) {
@@ -48,7 +50,6 @@ public class BadApple {
      * participation in sets.
      *
      * @param o
-     *
      * @return
      */
     public boolean equals(Object o) {
@@ -69,7 +70,8 @@ public class BadApple {
     public int hashCode() {
         try {
             Thread.sleep(1200);
-        } catch (InterruptedException ignored) {}
+        } catch (InterruptedException ignored) {
+        }
 
         return name.hashCode();
     }

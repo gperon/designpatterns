@@ -24,32 +24,28 @@
  */
 
 
-
 package cooper.designpatterns.util.swing.jlist;
 
-import java.awt.*;
-
-import java.util.*;
+import cooper.designpatterns.util.swing.JxFrame;
 
 import javax.swing.*;
-import javax.swing.event.*;
-
-import cooper.designpatterns.util.swing.JxFrame;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+import java.awt.*;
+import java.util.Vector;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class JListLDemo extends JxFrame implements ListSelectionListener {
     JTextField text;
-    JList      list;
+    JList list;
 
     /**
      * Constructs ...
-     *
      */
     public JListLDemo() {
         super("JList demo");
@@ -77,7 +73,6 @@ public class JListLDemo extends JxFrame implements ListSelectionListener {
     /**
      * Method description
      *
-     *
      * @param arv
      */
     static public void main(String[] arv) {
@@ -98,7 +93,6 @@ public class JListLDemo extends JxFrame implements ListSelectionListener {
 
     /**
      * Method description
-     *
      *
      * @param e
      */

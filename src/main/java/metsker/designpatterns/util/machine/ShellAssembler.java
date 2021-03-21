@@ -24,7 +24,6 @@
  */
 
 
-
 package metsker.designpatterns.util.machine;
 
 import metsker.designpatterns.util.planning.MachinePlanner;
@@ -35,7 +34,6 @@ import metsker.designpatterns.util.planning.ShellPlanner;
  * shell.
  *
  * @author Steven J. Metsker
- *
  */
 public class ShellAssembler extends Machine {
 
@@ -43,10 +41,8 @@ public class ShellAssembler extends Machine {
      * Create an assembler with the given id and with the supplied parent
      * machine.
      *
-     * @param id
-     *            the identity of this shell assembler
-     * @param parent
-     *            the composite this machine belongs to
+     * @param id     the identity of this shell assembler
+     * @param parent the composite this machine belongs to
      */
     public ShellAssembler(int id, MachineComponent parent) {
         super(id, parent);
@@ -55,8 +51,7 @@ public class ShellAssembler extends Machine {
     /**
      * Create an assembler with the given id.
      *
-     * @param id
-     *            the identity of this shell assembler
+     * @param id the identity of this shell assembler
      */
     public ShellAssembler(int id) {
         super(id);
@@ -66,10 +61,8 @@ public class ShellAssembler extends Machine {
      * Create an assembler with the given id and with access to the mediator
      * that will control bin/machine relations.
      *
-     * @param id
-     *            the identity of this shell assembler
-     * @param Mediator
-     *            the mediator that controls this machine's relation to bins
+     * @param id       the identity of this shell assembler
+     * @param Mediator the mediator that controls this machine's relation to bins
      */
     protected ShellAssembler(int id, TubMediator mediator) {
         this(id, mediator, null);
@@ -79,11 +72,9 @@ public class ShellAssembler extends Machine {
      * Create an assembler with the given id, with access to the mediator that
      * will control bin/machine relations, and with the supplied parent machine.
      *
-     * @param id
-     *            the identity of this shell assembler
+     * @param id       the identity of this shell assembler
      * @param mediator
-     * @param parent
-     *            the composite this machine belongs to
+     * @param parent   the composite this machine belongs to
      */
     public ShellAssembler(int id, TubMediator mediator,
                           MachineComponent parent) {

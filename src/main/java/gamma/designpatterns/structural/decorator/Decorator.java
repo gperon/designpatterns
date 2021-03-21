@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.structural.decorator;
 
 import gamma.designpatterns.structural.bridge.View;
@@ -43,11 +42,10 @@ import gamma.designpatterns.structural.bridge.Window;
  * @version 1.0
  */
 public class Decorator implements View {
-    private VisualComponent component;
+    private final VisualComponent component;
 
     /**
      * Constructs ...
-     *
      *
      * @param vc
      */
@@ -59,7 +57,7 @@ public class Decorator implements View {
      * draw
      *
      * @todo Implement this
-     *   designpatterns.structural.decorator.VisualComponent method
+     * designpatterns.structural.decorator.VisualComponent method
      */
     public void draw() {
         component.draw();
@@ -69,7 +67,7 @@ public class Decorator implements View {
      * resize
      *
      * @todo Implement this
-     *   designpatterns.structural.decorator.VisualComponent method
+     * designpatterns.structural.decorator.VisualComponent method
      */
     public void resize() {
         component.resize();
@@ -78,8 +76,8 @@ public class Decorator implements View {
     /**
      * Method description
      *
-     *
      * @param w
      */
-    public void drawOn(Window w) {}
+    public void drawOn(Window w) {
+    }
 }

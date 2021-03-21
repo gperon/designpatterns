@@ -24,19 +24,19 @@
  */
 
 
-
 package metsker.designpatterns.behavioral.interpreter;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
+
 import metsker.designpatterns.util.machine.Machine;
 
 /**
@@ -50,8 +50,7 @@ public class HasMaterial extends Term {
      * Construct a term that represent a Boolean function regarding whether the
      * term refers to a machine that has material.
      *
-     * @param term
-     *            the term (usuaully a variable or machine) to check
+     * @param term the term (usuaully a variable or machine) to check
      */
     public HasMaterial(Term term) {
         this.term = term;
@@ -59,7 +58,7 @@ public class HasMaterial extends Term {
 
     /**
      * @return null if this term's subterm evaluates to a machine that has no
-     *         material. Otherwise return the machine.
+     * material. Otherwise return the machine.
      */
     public Machine eval() {
         Machine m = term.eval();

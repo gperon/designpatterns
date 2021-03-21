@@ -24,34 +24,30 @@
  */
 
 
-
 package cooper.designpatterns.util.swing.jlist;
 
-import java.awt.*;
-import java.awt.event.*;
-
-import java.util.*;
+import cooper.designpatterns.util.swing.JxFrame;
 
 import javax.swing.*;
-
-import cooper.designpatterns.util.swing.JxFrame;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Vector;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class JListADemo extends JxFrame implements ActionListener {
     JTextField text;
-    JList      list;
-    JButton    Add;
-    Vector     dlist;
+    JList list;
+    JButton Add;
+    Vector dlist;
 
     /**
      * Constructs ...
-     *
      */
     public JListADemo() {
         super("JList demo");
@@ -87,7 +83,6 @@ public class JListADemo extends JxFrame implements ActionListener {
     /**
      * Method description
      *
-     *
      * @param e
      */
     public void actionPerformed(ActionEvent e) {
@@ -98,7 +93,6 @@ public class JListADemo extends JxFrame implements ActionListener {
 
     /**
      * Method description
-     *
      *
      * @param arv
      */

@@ -24,25 +24,23 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.strategy;
 
-import java.awt.*;
-
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class PlotPanel extends JPanel {
     float xfactor, yfactor;
-    int   xpmin, ypmin, xpmax, ypmax;
+    int xpmin, ypmin, xpmax, ypmax;
     float minX, maxX, minY, maxY;
-    float x[], y[];
+    float[] x;
+    float[] y;
     Color color;
 
     protected int calcx(float xp) {
@@ -58,14 +56,13 @@ public class PlotPanel extends JPanel {
     /**
      * Method description
      *
-     *
      * @param xp
      * @param yp
      * @param c
      */
     public void plot(float[] xp, float[] yp, Color c) {
-        x     = xp;    // copy in the arrays
-        y     = yp;
+        x = xp;    // copy in the arrays
+        y = yp;
         color = c;     // and color
 
         // compute bounds and sclaing factors
@@ -74,16 +71,15 @@ public class PlotPanel extends JPanel {
 
         xfactor = (0.9f * w) / (maxX - minX);
         yfactor = (0.9f * h) / (maxY - minY);
-        xpmin   = (int) (0.05f * w);
-        ypmin   = (int) (0.05f * h);
-        xpmax   = w - xpmin;
-        ypmax   = h - ypmin;
+        xpmin = (int) (0.05f * w);
+        ypmin = (int) (0.05f * h);
+        xpmax = w - xpmin;
+        ypmax = h - ypmin;
         repaint();    // this causes the actual plot
     }
 
     /**
      * Method description
-     *
      *
      * @param minx
      * @param miny

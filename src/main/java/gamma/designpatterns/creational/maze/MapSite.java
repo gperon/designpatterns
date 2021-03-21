@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.creational.maze;
 
 /**
@@ -32,6 +31,7 @@ package gamma.designpatterns.creational.maze;
  * <p>Description: </p>
  * <p>Copyright: Copyright (c) 2002</p>
  * <p>Company: GioPerLab</p>
+ *
  * @author giorgio_peron@libero.it
  * @version 1.0
  */

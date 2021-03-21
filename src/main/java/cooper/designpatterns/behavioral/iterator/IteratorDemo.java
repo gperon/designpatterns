@@ -24,36 +24,34 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.iterator;
-
-import java.awt.*;
-import java.awt.event.*;
-
-import java.util.*;
-
-import javax.swing.*;
-import javax.swing.border.*;
 
 import cooper.designpatterns.structural.adapter.JawtList;
 import cooper.designpatterns.util.swing.JxFrame;
 
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Enumeration;
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class IteratorDemo extends JxFrame implements ActionListener {
-    JawtList  kidList, kidClubList;
+    JawtList kidList, kidClubList;
     JComboBox tx;
-    JButton   get;
-    KidData   kdata;
+    JButton get;
+    KidData kdata;
 
     /**
      * Constructs ...
-     *
      */
     public IteratorDemo() {
         super("Iterator demo");
@@ -63,7 +61,7 @@ public class IteratorDemo extends JxFrame implements ActionListener {
         getContentPane().add(jp);
         jp.setLayout(new GridLayout(1, 2));
 
-        JPanel left  = new JPanel();
+        JPanel left = new JPanel();
         JPanel right = new JPanel();
 
         jp.add(left);
@@ -99,7 +97,6 @@ public class IteratorDemo extends JxFrame implements ActionListener {
     /**
      * Method description
      *
-     *
      * @param e
      */
     public void actionPerformed(ActionEvent e) {
@@ -131,16 +128,15 @@ public class IteratorDemo extends JxFrame implements ActionListener {
     /**
      * Method description
      *
-     *
      * @param argv
      */
-    static public void main(String argv[]) {
+    static public void main(String[] argv) {
         new IteratorDemo();
     }
 
     private Object[] getClubs() {
-        Enumeration ekid  = kdata.elements();
-        Set         clubs = new HashSet();
+        Enumeration ekid = kdata.elements();
+        Set clubs = new HashSet();
 
         while (ekid.hasMoreElements()) {
             Kid k = (Kid) ekid.nextElement();

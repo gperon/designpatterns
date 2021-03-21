@@ -24,20 +24,20 @@
  */
 
 
-
 package metsker.designpatterns.behavioral.state2;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import java.util.*;
+
+import java.util.Observable;
 
 /**
  * This class provides an initial models a carousel door and uses constants for
@@ -64,7 +64,6 @@ public class Door extends Observable implements DoorConstants {
 
     /**
      * Method description
-     *
      *
      * @param state
      */

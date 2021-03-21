@@ -24,24 +24,25 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.strategy;
 
-import java.io.*;
-
-import java.util.*;
+import java.io.IOException;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Properties;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class Customer {
     private Advisor advisor;
 
-    /** Field description */
+    /**
+     * Field description
+     */
     public static final int BIG_SPENDER_DOLLARS = 1000;
 
     /**
@@ -49,8 +50,8 @@ public class Customer {
      * his or her preference profile.
      *
      * @return true if this customer has registered (or entered)
-     *         his or her preference profile. This method is not
-     *         actually implemented.
+     * his or her preference profile. This method is not
+     * actually implemented.
      */
     public boolean isRegistered() {
         return false;
@@ -60,10 +61,9 @@ public class Customer {
      * Return the amount of dough this customer has spent with
      * us since the provided date.
      *
-     *
      * @param date
      * @return the amount of dough this customer has spent with
-     *         us since the provided date; not actually implemented.
+     * us since the provided date; not actually implemented.
      */
     public double spendingSince(Date date) {
         return 1000;
@@ -89,14 +89,13 @@ public class Customer {
      * Return a firework to recommend to this customer.
      *
      * @return a firework to recommend to this customer
-     *
      * @throws IOException
      */
     public Firework getRecommended() throws IOException {
         // see if we're promoting a particular firework
         Properties p = new Properties();
         p.load(ClassLoader.getSystemResourceAsStream(
-            "designpatterns/behavioral/strategy/strategy.dat"));
+                "designpatterns/behavioral/strategy/strategy.dat"));
         String promotedFireworkName = p.getProperty("promote");
         if (promotedFireworkName != null) {
             Firework f = Firework.lookup(promotedFireworkName);
@@ -123,8 +122,8 @@ public class Customer {
      * Return a firework to recommend to this customer.
      *
      * @return a firework to recommend to this customer. This
-     *         method is refactored to employ the Strategy
-     *         pattern.
+     * method is refactored to employ the Strategy
+     * pattern.
      */
     public Firework getRecommended_2() {
         return getAdvisor().recommend(this);
@@ -147,7 +146,6 @@ public class Customer {
      * and reading from a properties file.
      *
      * @param args
-     *
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {

@@ -24,48 +24,47 @@
  */
 
 
-
 package gamma.designpatterns.creational.maze;
 
 /**
- *  ** <p>
+ * ** <p>
+ * <p>
+ * Title: Design Patterns</p> <p>
+ * <p>
+ * Description: </p> <p>
+ * <p>
+ * Copyright: Copyright (c) 2002</p> <p>
+ * <p>
+ * Company: GioPerLab</p>
  *
- *  Title: Design Patterns</p> <p>
- *
- *  Description: </p> <p>
- *
- *  Copyright: Copyright (c) 2002</p> <p>
- *
- *  Company: GioPerLab</p>
- *
- * @author     giorgio_peron@libero.it
- * @created    2 giugno 2002
- * @version    1.0
+ * @author giorgio_peron@libero.it
+ * @version 1.0
+ * @created 2 giugno 2002
  */
 public enum Direction {
     NORTH, SOUTH, EAST, WEST;
 
     /**
-     *  Gets the oppositeDirection attribute of the Direction class
+     * Gets the oppositeDirection attribute of the Direction class
      *
-     * @param  d  Description of the Parameter
-     * @return    The oppositeDirection value
+     * @param d Description of the Parameter
+     * @return The oppositeDirection value
      */
     public static Direction getOppositeDirection(Direction d) {
         switch (d) {
-            case NORTH :
+            case NORTH:
                 return SOUTH;
 
-            case EAST :
+            case EAST:
                 return WEST;
 
-            case SOUTH :
+            case SOUTH:
                 return NORTH;
 
-            case WEST :
+            case WEST:
                 return EAST;
 
-            default :
+            default:
                 return null;
         }
     }

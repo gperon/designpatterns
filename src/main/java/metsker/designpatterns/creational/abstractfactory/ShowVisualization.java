@@ -24,33 +24,32 @@
  */
 
 
-
 package metsker.designpatterns.creational.abstractfactory;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import javax.swing.JPanel;
 
 import metsker.designpatterns.util.ui.SwingFacade;
 import metsker.designpatterns.util.ui.UI;
 
+import javax.swing.*;
+
 /**
  * Show the use of an alternative GUI kit (an alternative
- *  abstract factory).
+ * abstract factory).
  */
 public class ShowVisualization {
 
     /**
      * Method description
-     *
      *
      * @param args
      */

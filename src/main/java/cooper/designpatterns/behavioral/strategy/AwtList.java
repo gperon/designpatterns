@@ -24,39 +24,34 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.strategy;
 
 /**
  * Interface description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public interface AwtList {
 
     /**
      * Method description
      *
-     *
      * @param s
      */
-    public void add(String s);
+    void add(String s);
 
     /**
      * Method description
      *
-     *
      * @param s
      */
-    public void remove(String s);
+    void remove(String s);
 
     /**
      * Method description
-     *
      *
      * @return
      */
-    public String[] getSelectedItems();
+    String[] getSelectedItems();
 }

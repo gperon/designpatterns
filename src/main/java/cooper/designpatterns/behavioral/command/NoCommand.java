@@ -24,28 +24,26 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.command;
 
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class NoCommand extends Frame implements ActionListener {
-    Menu     mnuFile;
+    Menu mnuFile;
     MenuItem mnuOpen, mnuExit;
-    Button   btnRed;
-    Panel    p;
+    Button btnRed;
+    Panel p;
 
     /**
      * Constructs ...
-     *
      */
     public NoCommand() {
         super("Frame without commands");
@@ -62,7 +60,7 @@ public class NoCommand extends Frame implements ActionListener {
         mnuOpen.addActionListener(this);
         mnuExit.addActionListener(this);
         btnRed = new Button("Red");
-        p      = new Panel();
+        p = new Panel();
         add(p);
         p.add(btnRed);
         btnRed.addActionListener(this);
@@ -72,7 +70,6 @@ public class NoCommand extends Frame implements ActionListener {
 
     /**
      * Method description
-     *
      *
      * @param e
      */
@@ -105,10 +102,9 @@ public class NoCommand extends Frame implements ActionListener {
     /**
      * Method description
      *
-     *
      * @param argv
      */
-    static public void main(String argv[]) {
+    static public void main(String[] argv) {
         new NoCommand();
     }
 

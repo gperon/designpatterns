@@ -24,27 +24,27 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.strategy;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class ItemAdvisor implements Advisor {
 
-    /** Field description */
+    /**
+     * Field description
+     */
     public static final ItemAdvisor singleton = new ItemAdvisor();
 
-    private ItemAdvisor() {}
+    private ItemAdvisor() {
+    }
 
     /**
      * Recommend a nice item for this customer, based on a model
      * of the customer's recent spending with us.
-     *
      *
      * @param c
      * @return a nice item for the customer to buy

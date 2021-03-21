@@ -26,12 +26,12 @@
 
 
 /*
-* AbstractProduct.java
-*
-* Created on 7 novembre 2006, 21.17
-*
-* To change this template, choose Tools | Template Manager
-* and open the template in the editor.
+ * AbstractProduct.java
+ *
+ * Created on 7 novembre 2006, 21.17
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
  */
 package designpatterns.creational.factorymethod;
 
@@ -40,4 +40,5 @@ package designpatterns.creational.factorymethod;
  *
  * @author gperon
  */
-public @interface AbstractProduct {}
+public @interface AbstractProduct {
+}

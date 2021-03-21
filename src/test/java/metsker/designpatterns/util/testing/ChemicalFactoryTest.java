@@ -37,35 +37,26 @@ package metsker.designpatterns.util.testing;
 * Please use this software as you wish with the sole
 * restriction that you may not claim that you wrote it.
  */
-import junit.framework.TestCase;
-
 import metsker.designpatterns.util.chemical.ChemicalFactory;
 import metsker.designpatterns.util.chemical.ChemicalFactory2;
 
-/**
- * Class description
- *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
- */
-public class ChemicalFactoryTest extends TestCase {
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-    /**
-     * Method description
-     *
-     */
+import org.junit.jupiter.api.Test;
+
+/**
+ * Test for Chemical Factory.
+ *
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
+ */
+public class ChemicalFactoryTest {
+    @Test
     public void testGetFactory() {
-        assertEquals("Carbon(C)[12.0]",
-                     ChemicalFactory.getChemical("CARBON").toString());
+        assertEquals("Carbon(C)[12.0]", ChemicalFactory.getChemical("CARBON").toString());
     }
 
-    /**
-     * Method description
-     *
-     */
     public void testChemicalFactory2() {
-        assertEquals("Carbon(C)[12.0]",
-                     ChemicalFactory2.getChemical("CARBON").toString());
+        assertEquals("Carbon(C)[12.0]", ChemicalFactory2.getChemical("CARBON").toString());
     }
 }

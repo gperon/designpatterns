@@ -24,28 +24,32 @@
  */
 
 
-
 package cooper.designpatterns.creational.prototype;
 
-import java.io.*;
-
-import java.util.*;
-
 import cooper.designpatterns.util.swing.InputFile;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.StringTokenizer;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class SwimData implements Cloneable, Serializable {
     protected List<Swimmer> swimmers;
 
     /**
      * Constructs ...
-     *
      *
      * @param filename
      */
@@ -69,7 +73,6 @@ public class SwimData implements Cloneable, Serializable {
     /**
      * Method description
      *
-     *
      * @return
      */
     public Object clone() {
@@ -85,18 +88,17 @@ public class SwimData implements Cloneable, Serializable {
     /**
      * Method description
      *
-     *
      * @return
      */
     public Object deepClone() {
         try {
-            ByteArrayOutputStream b   = new ByteArrayOutputStream();
-            ObjectOutputStream    out = new ObjectOutputStream(b);
+            ByteArrayOutputStream b = new ByteArrayOutputStream();
+            ObjectOutputStream out = new ObjectOutputStream(b);
 
             out.writeObject(this);
 
             ByteArrayInputStream bIn = new ByteArrayInputStream(b.toByteArray());
-            ObjectInputStream    oi  = new ObjectInputStream(bIn);
+            ObjectInputStream oi = new ObjectInputStream(bIn);
 
             return (oi.readObject());
         } catch (Exception e) {
@@ -110,7 +112,6 @@ public class SwimData implements Cloneable, Serializable {
     /**
      * Method description
      *
-     *
      * @return
      */
     public int size() {
@@ -119,35 +120,32 @@ public class SwimData implements Cloneable, Serializable {
 
     /**
      * Method description
-     *
      */
     public void sortByTime() {
         Collections.sort(swimmers,
-                         new Comparator<Swimmer>() {
-                             public int compare(Swimmer o1, Swimmer o2) {
-                                 if (o1.isFemale() &&!o2.isFemale()) {
-                                     return -1;
-                                 } else if (!o1.isFemale() && o2.isFemale()) {
-                                     return 1;
-                                 } else {
-                                     if (o1.getTime() < o2.getTime()) {
-                                         return -1;
-                                     } else if (o1.getTime() > o2.getTime()) {
-                                         return 1;
-                                     } else {
-                                         return 0;
-                                     }
-                                 }
-                             }
-                         });
+                new Comparator<Swimmer>() {
+                    public int compare(Swimmer o1, Swimmer o2) {
+                        if (o1.isFemale() && !o2.isFemale()) {
+                            return -1;
+                        } else if (!o1.isFemale() && o2.isFemale()) {
+                            return 1;
+                        } else {
+                            if (o1.getTime() < o2.getTime()) {
+                                return -1;
+                            } else if (o1.getTime() > o2.getTime()) {
+                                return 1;
+                            } else {
+                                return 0;
+                            }
+                        }
+                    }
+                });
     }
 
     /**
      * Method description
      *
-     *
      * @param i
-     *
      * @return
      */
     public Swimmer getSwimmer(int i) {
@@ -157,15 +155,14 @@ public class SwimData implements Cloneable, Serializable {
 
 
 class Swimmer implements Serializable {
-    String  name;
-    int     age;
-    String  club;
-    float   time;
+    String name;
+    int age;
+    String club;
+    float time;
     boolean female;
 
     /**
      * Constructs ...
-     *
      *
      * @param dataline
      */
@@ -173,7 +170,7 @@ class Swimmer implements Serializable {
         StringTokenizer st = new StringTokenizer(dataline, ",");
 
         name = st.nextToken();
-        age  = new Integer(st.nextToken().trim()).intValue();
+        age = new Integer(st.nextToken().trim()).intValue();
         club = st.nextToken().trim();
         time = new Float(st.nextToken().trim()).floatValue();
 
@@ -186,22 +183,20 @@ class Swimmer implements Serializable {
     /**
      * Method description
      *
-     *
      * @return
      */
     public String toString() {
         String retValue;
 
         retValue = name + "\t" + (female
-                                  ? "(F)"
-                                  : "(M)") + "\t" + time;
+                ? "(F)"
+                : "(M)") + "\t" + time;
 
         return retValue;
     }
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -212,7 +207,6 @@ class Swimmer implements Serializable {
     /**
      * Method description
      *
-     *
      * @return
      */
     public String getClub() {
@@ -221,7 +215,6 @@ class Swimmer implements Serializable {
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -232,7 +225,6 @@ class Swimmer implements Serializable {
     /**
      * Method description
      *
-     *
      * @return
      */
     public String getName() {
@@ -241,7 +233,6 @@ class Swimmer implements Serializable {
 
     /**
      * Method description
-     *
      *
      * @return
      */

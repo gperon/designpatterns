@@ -24,28 +24,24 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.mediator;
 
-import java.awt.event.*;
+import cooper.designpatterns.behavioral.command.Command;
 
 import javax.swing.*;
-
-import cooper.designpatterns.behavioral.command.Command;
+import java.awt.event.ActionListener;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class MoveButton extends JButton implements Command {
     Mediator med;    // copy of the Mediator
 
     /**
      * Constructs ...
-     *
      *
      * @param fr
      * @param md
@@ -59,7 +55,6 @@ public class MoveButton extends JButton implements Command {
 
     /**
      * Method description
-     *
      */
     public void execute() {    // execute the copy
         med.move();

@@ -24,7 +24,6 @@
  */
 
 
-
 package cooper.designpatterns.creational.prototype;
 
 import java.util.Collections;
@@ -33,15 +32,13 @@ import java.util.Comparator;
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class SwimmerNoSex extends SwimData {
 
     /**
      * Constructs ...
-     *
      *
      * @param filename
      */
@@ -51,20 +48,19 @@ public class SwimmerNoSex extends SwimData {
 
     /**
      * Method description
-     *
      */
     public void sortByTime() {
         Collections.sort(swimmers,
-                         new Comparator<Swimmer>() {
-                             public int compare(Swimmer o1, Swimmer o2) {
-                                 if (o1.getTime() < o2.getTime()) {
-                                     return -1;
-                                 } else if (o1.getTime() > o2.getTime()) {
-                                     return 1;
-                                 } else {
-                                     return 0;
-                                 }
-                             }
-                         });
+                new Comparator<Swimmer>() {
+                    public int compare(Swimmer o1, Swimmer o2) {
+                        if (o1.getTime() < o2.getTime()) {
+                            return -1;
+                        } else if (o1.getTime() > o2.getTime()) {
+                            return 1;
+                        } else {
+                            return 0;
+                        }
+                    }
+                });
     }
 }

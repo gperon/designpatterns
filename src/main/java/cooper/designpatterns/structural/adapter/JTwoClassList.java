@@ -24,45 +24,31 @@
  */
 
 
-
 package cooper.designpatterns.structural.adapter;
 
 //Demonstratiob of simple Two-list program
 //using JFC controls
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.GridLayout;
-import java.awt.Insets;
-import java.awt.TextField;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
-
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class JTwoClassList extends JFrame implements ActionListener {
-    private JButton       Add, MoveRight, MoveLeft;
+    private JButton Add, MoveRight, MoveLeft;
     private JclassAwtList leftList, rightList;
-    private TextField     txt;
+    private TextField txt;
 
     /**
      * Constructs ...
-     *
      */
     public JTwoClassList() {
         super("Two Lists");
@@ -73,7 +59,6 @@ public class JTwoClassList extends JFrame implements ActionListener {
 
     /**
      * Method description
-     *
      *
      * @param e
      */
@@ -103,19 +88,17 @@ public class JTwoClassList extends JFrame implements ActionListener {
     /**
      * Method description
      *
-     *
      * @param argv
      */
-    static public void main(String argv[]) {
+    static public void main(String[] argv) {
         new JTwoList();
     }
 
     /**
      * Method description
-     *
      */
     public void moveNameLeft() {
-        String sel[] = rightList.getSelectedItems();
+        String[] sel = rightList.getSelectedItems();
 
         if (sel != null) {
             leftList.add(sel[0]);
@@ -124,7 +107,7 @@ public class JTwoClassList extends JFrame implements ActionListener {
     }
 
     private void moveNameRight() {
-        String sel[] = leftList.getSelectedItems();
+        String[] sel = leftList.getSelectedItems();
 
         if (sel != null) {
             rightList.add(sel[0]);
@@ -136,17 +119,17 @@ public class JTwoClassList extends JFrame implements ActionListener {
 
         // create window listener to respond to window close click
         addWindowListener(new WindowAdapter() {
-                              public void windowClosing(WindowEvent e) {
-                                  System.exit(0);
-                              }
-                          });
+            public void windowClosing(WindowEvent e) {
+                System.exit(0);
+            }
+        });
     }
 
     private void setGUI() {
         getContentPane().setLayout(new GridLayout(1, 2));    // two columns
         setBackground(Color.lightGray);
 
-        JPanel pLeft  = new JPanel();
+        JPanel pLeft = new JPanel();
         JPanel pRight = new JPanel();
 
         getContentPane().add(pLeft);
@@ -166,7 +149,7 @@ public class JTwoClassList extends JFrame implements ActionListener {
 
         rBorder.setLayout(new GridLayout(2, 1));
         MoveRight = new JButton("Add --->");
-        MoveLeft  = new JButton("<--- Remove");
+        MoveLeft = new JButton("<--- Remove");
 
         JPanel rbTop = new JPanel();
 

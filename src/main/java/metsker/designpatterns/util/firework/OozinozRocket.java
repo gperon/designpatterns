@@ -24,20 +24,18 @@
  */
 
 
-
 package metsker.designpatterns.util.firework;
 
 import metsker.designpatterns.util.simulation.RocketSim;
 
 /**
- *  An adapter that lets a rocket participate in a simulation.
+ * An adapter that lets a rocket participate in a simulation.
  */
 public class OozinozRocket extends PhysicalRocket implements RocketSim {
     private double time;
 
     /**
      * Constructs ...
-     *
      *
      * @param burnArea
      * @param burnRate
@@ -52,7 +50,6 @@ public class OozinozRocket extends PhysicalRocket implements RocketSim {
     /**
      * Method description
      *
-     *
      * @return
      */
     public double getMass() {
@@ -62,7 +59,6 @@ public class OozinozRocket extends PhysicalRocket implements RocketSim {
     /**
      * Method description
      *
-     *
      * @return
      */
     public double getThrust() {
@@ -71,7 +67,6 @@ public class OozinozRocket extends PhysicalRocket implements RocketSim {
 
     /**
      * Method description
-     *
      *
      * @param time
      */

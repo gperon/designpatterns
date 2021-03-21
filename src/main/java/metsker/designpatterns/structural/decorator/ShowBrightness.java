@@ -24,16 +24,9 @@
  */
 
 
-
 package metsker.designpatterns.structural.decorator;
 
 import metsker.designpatterns.util.ui.SwingFacade;
-import metsker.designpatterns.structural.decorator.Arithmetic;
-import metsker.designpatterns.structural.decorator.Constant;
-import metsker.designpatterns.structural.decorator.Exp;
-import metsker.designpatterns.structural.decorator.Function;
-import metsker.designpatterns.structural.decorator.Sin;
-import metsker.designpatterns.structural.decorator.T;
 
 /**
  * Show the brightness of a (fireworks) star.
@@ -45,21 +38,20 @@ public class ShowBrightness {
     /**
      * Method description
      *
-     *
      * @param args
      */
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         FunPanel panel = new FunPanel();
         panel.setPreferredSize(new java.awt.Dimension(200, 200));
         Function brightness = new Arithmetic('*', new Exp(new Arithmetic('*',
-                                                                         new Constant(
-                                                                             -4),
-                                                                         new T())), new Sin(
-                                                                             new Arithmetic(
-                                                                                 '*',
-                                                                                         new Constant(
-                                                                                             Math.PI),
-                                                                                         new T())));
+                new Constant(
+                        -4),
+                new T())), new Sin(
+                new Arithmetic(
+                        '*',
+                        new Constant(
+                                Math.PI),
+                        new T())));
         panel.setXY(new T(), brightness);
         SwingFacade.launch(panel, "Brightness");
     }

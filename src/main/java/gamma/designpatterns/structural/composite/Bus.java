@@ -24,52 +24,51 @@
  */
 
 
-
 package gamma.designpatterns.structural.composite;
 
 import gamma.designpatterns.behavioral.visitor.EquipmentVisitor;
 
-import java.util.*;
+import java.util.Iterator;
 
 /**
- *  <p>
+ * <p>
+ * <p>
+ * Title: </p> <p>
+ * <p>
+ * Description: Design Patterns Examples</p> <p>
+ * <p>
+ * Copyright: Copyright (c) 2003</p> <p>
+ * <p>
+ * Company: GioPerLab</p>
  *
- *  Title: </p> <p>
- *
- *  Description: Design Patterns Examples</p> <p>
- *
- *  Copyright: Copyright (c) 2003</p> <p>
- *
- *  Company: GioPerLab</p>
- *
- * @author     giorgio_peron@libero.it
- * @created    8 marzo 2003
- * @version    1.0
+ * @author giorgio_peron@libero.it
+ * @version 1.0
+ * @created 8 marzo 2003
  */
 public class Bus extends CompositeEquipment {
 
     /**
-     *  Constructor for the Bus object
+     * Constructor for the Bus object
      *
-     * @param  name  Description of the Parameter
+     * @param name Description of the Parameter
      */
     public Bus(String name) {
         super(name);
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @return    Description of the Return Value
+     * @return Description of the Return Value
      */
     public double netPrice() {
         return super.netPrice() + 12.0d;
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  visitor  Description of the Parameter
+     * @param visitor Description of the Parameter
      */
     public void accept(EquipmentVisitor visitor) {
         Iterator i = super.createIterator();

@@ -24,7 +24,6 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.state;
 
 import java.awt.*;
@@ -32,45 +31,44 @@ import java.awt.*;
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class State {
 
     /**
      * Method description
      *
-     *
      * @param x
      * @param y
      */
-    public void mouseDown(int x, int y) {}
+    public void mouseDown(int x, int y) {
+    }
 
     /**
      * Method description
      *
-     *
      * @param x
      * @param y
      */
-    public void mouseDrag(int x, int y) {}
+    public void mouseDrag(int x, int y) {
+    }
 
     /**
      * Method description
      *
-     *
      * @param x
      * @param y
      */
-    public void mouseUp(int x, int y) {}
+    public void mouseUp(int x, int y) {
+    }
 
     /**
      * Method description
-     *
      *
      * @param d
      * @param c
      */
-    public void select(Drawing d, Color c) {}
+    public void select(Drawing d, Color c) {
+    }
 }

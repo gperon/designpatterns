@@ -24,31 +24,30 @@
  */
 
 
-
 package gamma.designpatterns.structural.adapter;
 
 /**
- *  <p>
+ * <p>
+ * <p>
+ * Title: Design Patterns</p> <p>
+ * <p>
+ * Description: </p> <p>
+ * <p>
+ * Copyright: Copyright (c) 2002</p> <p>
+ * <p>
+ * Company: GioPerLab</p>
  *
- *  Title: Design Patterns</p> <p>
- *
- *  Description: </p> <p>
- *
- *  Copyright: Copyright (c) 2002</p> <p>
- *
- *  Company: GioPerLab</p>
- *
- * @author     giorgio_peron@libero.it
- * @created    1 marzo 2003
- * @version    1.0
+ * @author giorgio_peron@libero.it
+ * @version 1.0
+ * @created 1 marzo 2003
  */
 public class TextManipulator implements Manipulator {
-    private TextView tv;
+    private final TextView tv;
 
     /**
-     *  Constructor for the TextManipulator object
+     * Constructor for the TextManipulator object
      *
-     * @param  ts  Description of the Parameter
+     * @param ts Description of the Parameter
      */
     public TextManipulator(TextShape ts) {
         this.tv = ts;
@@ -56,7 +55,6 @@ public class TextManipulator implements Manipulator {
 
     /**
      * Constructs ...
-     *
      *
      * @param tsc
      */
@@ -70,7 +68,7 @@ public class TextManipulator implements Manipulator {
      * @param x int
      * @param y int
      * @todo Implement this designpatterns.structural.adapter.Manipulator
-     *   method
+     * method
      */
     public void move(int x, int y) {
         tv.x += x;
@@ -82,7 +80,8 @@ public class TextManipulator implements Manipulator {
      *
      * @param degree double
      * @todo Implement this designpatterns.structural.adapter.Manipulator
-     *   method
+     * method
      */
-    public void rotate(double degree) {}
+    public void rotate(double degree) {
+    }
 }

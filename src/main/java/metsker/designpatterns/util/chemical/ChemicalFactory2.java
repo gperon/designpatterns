@@ -24,20 +24,21 @@
  */
 
 
-
 package metsker.designpatterns.util.chemical;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import java.util.*;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * This class creates and returns Chemical objects. This is a refactoring that
@@ -45,12 +46,12 @@ import java.util.*;
  * ChemicalImpl class.
  */
 public class ChemicalFactory2 {
-    private static Map chemicals = new HashMap();
+    private static final Map chemicals = new HashMap();
 
     class ChemicalImpl implements Chemical2 {
-        private String name;
-        private String symbol;
-        private double atomicWeight;
+        private final String name;
+        private final String symbol;
+        private final double atomicWeight;
 
         ChemicalImpl(String name, String symbol, double atomicWeight) {
             this.name = name;
@@ -61,7 +62,6 @@ public class ChemicalFactory2 {
         /**
          * Method description
          *
-         *
          * @return
          */
         public String getName() {
@@ -70,7 +70,6 @@ public class ChemicalFactory2 {
 
         /**
          * Method description
-         *
          *
          * @return
          */
@@ -81,7 +80,6 @@ public class ChemicalFactory2 {
         /**
          * Method description
          *
-         *
          * @return
          */
         public double getAtomicWeight() {
@@ -90,7 +88,6 @@ public class ChemicalFactory2 {
 
         /**
          * Method description
-         *
          *
          * @return
          */

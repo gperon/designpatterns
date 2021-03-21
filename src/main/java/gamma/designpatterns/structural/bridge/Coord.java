@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.structural.bridge;
 
 /**
@@ -44,7 +43,6 @@ public class Coord {
 
     /**
      * Constructs ...
-     *
      */
     public Coord() {
         this.value = 0;
@@ -52,7 +50,6 @@ public class Coord {
 
     /**
      * Constructs ...
-     *
      *
      * @param v
      */
@@ -63,7 +60,6 @@ public class Coord {
     /**
      * Method description
      *
-     *
      * @return
      */
     public double getValue() {
@@ -73,7 +69,6 @@ public class Coord {
     /**
      * Method description
      *
-     *
      * @param value
      */
     public void setValue(double value) {
@@ -82,7 +77,6 @@ public class Coord {
 
     /**
      * Method description
-     *
      *
      * @return
      */

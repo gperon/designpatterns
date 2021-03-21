@@ -24,24 +24,21 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.interpreter;
 
-import java.util.*;
+import java.util.Vector;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class Stack {
     Vector stk;
 
     /**
      * Constructs ...
-     *
      */
     public Stack() {
         stk = new Vector();
@@ -49,7 +46,6 @@ public class Stack {
 
     /**
      * Method description
-     *
      */
     public void dump() {
         for (int i = 0; i < stk.size(); i++) {
@@ -62,7 +58,6 @@ public class Stack {
     /**
      * Method description
      *
-     *
      * @param s
      */
     public void dump(String s) {
@@ -72,7 +67,6 @@ public class Stack {
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -89,12 +83,11 @@ public class Stack {
     /**
      * Method description
      *
-     *
      * @return
      */
     public ParseObject pop() {
         ParseObject obj = (ParseObject) stk.lastElement();
-        int         i   = stk.size() - 1;
+        int i = stk.size() - 1;
 
         stk.removeElementAt(i);
 
@@ -103,7 +96,6 @@ public class Stack {
 
     /**
      * Method description
-     *
      *
      * @param p
      */
@@ -122,7 +114,6 @@ public class Stack {
     /**
      * Method description
      *
-     *
      * @param obj
      */
     public void push(Object obj) {
@@ -132,7 +123,6 @@ public class Stack {
     /**
      * Method description
      *
-     *
      * @return
      */
     public ParseObject top() {
@@ -141,7 +131,6 @@ public class Stack {
 
     /**
      * Method description
-     *
      *
      * @return
      */

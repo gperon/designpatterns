@@ -24,24 +24,23 @@
  */
 
 
-
 package metsker.designpatterns.creational.builder;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import java.io.Serializable;
-
-import java.util.Date;
 
 import metsker.designpatterns.util.Dollars;
+
+import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Objects of this class represent reservations for fireworks displays, but note
@@ -49,22 +48,23 @@ import metsker.designpatterns.util.Dollars;
  * to use builders to class is just a target for the builders in this package.
  */
 public class Reservation implements Serializable {
-    private Date date;
-    private int headcount;
-    private String city;
-    private Dollars dollarsPerHead;
-    private boolean hasSite;
+    private final Date date;
+    private final int headcount;
+    private final String city;
+    private final Dollars dollarsPerHead;
+    private final boolean hasSite;
 
     /**
      * Construct a reservation with the given parameters. The proper way to
      * construct a reservation is with one of the builders in this package, so
      * this method is private.
-     * @param date when to put on a display
-     * @param headcount how many people our customer will guarantee to be in
-     *            attendance
-     * @param city the city (or nearest city) for the display
+     *
+     * @param date           when to put on a display
+     * @param headcount      how many people our customer will guarantee to be in
+     *                       attendance
+     * @param city           the city (or nearest city) for the display
      * @param dollarsPerHead the price per attendee the customer will pay
-     * @param hasSite true, if the customer has a display site in mind
+     * @param hasSite        true, if the customer has a display site in mind
      */
     Reservation(Date date, int headcount, String city, Dollars dollarsPerHead,
                 boolean hasSite) {

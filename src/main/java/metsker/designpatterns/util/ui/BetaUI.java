@@ -24,24 +24,21 @@
  */
 
 
-
 package metsker.designpatterns.util.ui;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import java.awt.Font;
 
-import javax.swing.JButton;
-
-import metsker.designpatterns.util.ui.UI;
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * Shows an Abstract Factory where a GUI kit can introduce a small change to
@@ -51,17 +48,15 @@ public class BetaUI extends UI {
 
     /**
      * Constructs ...
-     *
      */
     public BetaUI() {
         Font oldFont = getFont();
         font = new Font(oldFont.getName(), oldFont.getStyle() | Font.ITALIC,
-                        oldFont.getSize());
+                oldFont.getSize());
     }
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -74,7 +69,6 @@ public class BetaUI extends UI {
 
     /**
      * Method description
-     *
      *
      * @return
      */

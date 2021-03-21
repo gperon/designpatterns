@@ -24,41 +24,37 @@
  */
 
 
-
 package cooper.designpatterns.structural.flyweight;
 
-import java.awt.*;
-import java.awt.event.*;
-
-import java.util.*;
+import cooper.designpatterns.util.swing.JxFrame;
 
 import javax.swing.*;
-
-import cooper.designpatterns.util.swing.JxFrame;
+import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionListener;
+import java.util.Vector;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class FlyCanvas extends JxFrame implements MouseMotionListener {
-    final int     Top          = 30,
-                  Left         = 30;
-    final int     W            = 50,
-                  H            = 30;
-    final int     VSpace       = 80,
-                  HSpace       = 70,
-                  HCount       = 3;
-    String        selectedName = "";
-    Folder        folder;
-    Vector        names;
+    final int Top = 30,
+            Left = 30;
+    final int W = 50,
+            H = 30;
+    final int VSpace = 80,
+            HSpace = 70,
+            HCount = 3;
+    String selectedName = "";
+    Folder folder;
+    Vector names;
     FolderFactory fact;
 
     /**
      * Constructs ...
-     *
      */
     public FlyCanvas() {
         super("Flyweight Canvas");
@@ -75,7 +71,7 @@ public class FlyCanvas extends JxFrame implements MouseMotionListener {
 
     private void loadNames() {
         names = new Vector();
-        fact  = new FolderFactory();
+        fact = new FolderFactory();
         names.addElement("Alan");
         names.addElement("Barry");
         names.addElement("Charlie");
@@ -89,7 +85,6 @@ public class FlyCanvas extends JxFrame implements MouseMotionListener {
     /**
      * Method description
      *
-     *
      * @param argv
      */
     static public void main(String[] argv) {
@@ -99,21 +94,20 @@ public class FlyCanvas extends JxFrame implements MouseMotionListener {
     /**
      * Method description
      *
-     *
      * @param e
      */
-    public void mouseDragged(MouseEvent e) {}
+    public void mouseDragged(MouseEvent e) {
+    }
 
     /**
      * Method description
      *
-     *
      * @param e
      */
     public void mouseMoved(MouseEvent e) {
-        int j   = 0;      // count number in row
+        int j = 0;      // count number in row
         int row = Top;    // start in upper left
-        int x   = Left;
+        int x = Left;
 
         // go through all the names and folders
         for (int i = 0; i < names.size(); i++) {
@@ -131,9 +125,9 @@ public class FlyCanvas extends JxFrame implements MouseMotionListener {
 
             if (j >= HCount)    // reset for next row
             {
-                j   = 0;
+                j = 0;
                 row += VSpace;
-                x   = Left;
+                x = Left;
             }
         }
     }
@@ -141,15 +135,14 @@ public class FlyCanvas extends JxFrame implements MouseMotionListener {
     /**
      * Method description
      *
-     *
      * @param g
      */
     public void paint(Graphics g) {
         Folder f;
         String name;
-        int    j   = 0;      // count number in row
-        int    row = Top;    // start in upper left
-        int    x   = Left;
+        int j = 0;      // count number in row
+        int row = Top;    // start in upper left
+        int x = Left;
 
         // go through all the names and folders
         for (int i = 0; i < names.size(); i++) {
@@ -168,9 +161,9 @@ public class FlyCanvas extends JxFrame implements MouseMotionListener {
 
             if (j >= HCount)    // reset for next row
             {
-                j   = 0;
+                j = 0;
                 row += VSpace;
-                x   = Left;
+                x = Left;
             }
         }
     }
@@ -178,13 +171,12 @@ public class FlyCanvas extends JxFrame implements MouseMotionListener {
 
 
 class Folder extends JPanel {
-    final int     W = 50,
-                  H = 30;
-    private Color color;
+    final int W = 50,
+            H = 30;
+    private final Color color;
 
     /**
      * Constructs ...
-     *
      *
      * @param c
      */
@@ -194,7 +186,6 @@ class Folder extends JPanel {
 
     /**
      * Method description
-     *
      *
      * @param g
      * @param tx
@@ -224,21 +215,18 @@ class FolderFactory {
 
     /**
      * Constructs ...
-     *
      */
     public FolderFactory() {
         Color brown = new Color(0x5f5f1c);
 
-        Selected   = new Folder(brown);
+        Selected = new Folder(brown);
         unSelected = new Folder(Color.yellow);
     }
 
     /**
      * Method description
      *
-     *
      * @param isSelected
-     *
      * @return
      */
     public Folder getFolder(boolean isSelected) {

@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.visitor;
 
 import gamma.designpatterns.structural.composite.Bus;
@@ -33,68 +32,69 @@ import gamma.designpatterns.structural.composite.Chassis;
 import gamma.designpatterns.structural.composite.FloppyDisk;
 
 /**
- *  <p>
+ * <p>
+ * <p>
+ * Title: </p> <p>
+ * <p>
+ * Description: Design Patterns Examples</p> <p>
+ * <p>
+ * Copyright: Copyright (c) 2003</p> <p>
+ * <p>
+ * Company: GioPerLab</p>
  *
- *  Title: </p> <p>
- *
- *  Description: Design Patterns Examples</p> <p>
- *
- *  Copyright: Copyright (c) 2003</p> <p>
- *
- *  Company: GioPerLab</p>
- *
- * @author     giorgio_peron@libero.it
- * @created    8 marzo 2003
- * @version    1.0
+ * @author giorgio_peron@libero.it
+ * @version 1.0
+ * @created 8 marzo 2003
  */
 public class PricingVisitor implements EquipmentVisitor {
     double total;
 
     /**
-     *  Constructor for the PricingVisitor object
+     * Constructor for the PricingVisitor object
      */
-    public PricingVisitor() {}
+    public PricingVisitor() {
+    }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  floppy  Description of the Parameter
+     * @param floppy Description of the Parameter
      */
     public void visitFloppyDisk(FloppyDisk floppy) {
         total += floppy.netPrice();
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  card  Description of the Parameter
+     * @param card Description of the Parameter
      */
     public void visitCard(Card card) {
         total += card.netPrice();
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  chassis  Description of the Parameter
+     * @param chassis Description of the Parameter
      */
     public void visitChassis(Chassis chassis) {
         total += chassis.discountPrice();
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  bus  Description of the Parameter
+     * @param bus Description of the Parameter
      */
     public void visitBus(Bus bus) {
         total += bus.netPrice();
     }
 
     /**
-     *  Gets the total attribute of the PricingVisitor object
+     * Gets the total attribute of the PricingVisitor object
      *
-     * @return    The total value
+     * @return The total value
      */
     public double getTotal() {
         return total;

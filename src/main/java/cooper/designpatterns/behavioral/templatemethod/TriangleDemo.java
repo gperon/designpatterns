@@ -24,23 +24,19 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.templatemethod;
 
-import java.awt.*;
-
-import java.util.*;
+import cooper.designpatterns.util.swing.JxFrame;
 
 import javax.swing.*;
-
-import cooper.designpatterns.util.swing.JxFrame;
+import java.awt.*;
+import java.util.Vector;
 
 class TPanel extends JPanel {
     Vector triangles;
 
     /**
      * Constructs ...
-     *
      */
     public TPanel() {
         triangles = new Vector();
@@ -48,7 +44,6 @@ class TPanel extends JPanel {
 
     /**
      * Method description
-     *
      *
      * @param t
      */
@@ -58,7 +53,6 @@ class TPanel extends JPanel {
 
     /**
      * Method description
-     *
      *
      * @param g
      */
@@ -75,9 +69,8 @@ class TPanel extends JPanel {
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class TriangleDemo extends JxFrame {
     StandardTriangle t, t1;
@@ -85,14 +78,13 @@ public class TriangleDemo extends JxFrame {
 
     /**
      * Constructs ...
-     *
      */
     public TriangleDemo() {
         super("Draw triangles");
 
         TPanel tp = new TPanel();
 
-        t  = new StandardTriangle(new Point(10, 10), new Point(150, 50), new Point(100, 75));
+        t = new StandardTriangle(new Point(10, 10), new Point(150, 50), new Point(100, 75));
         it = new IsocelesTriangle(new Point(150, 100), new Point(240, 40), new Point(175, 150));
         t1 = new StandardTriangle(new Point(100, 100), new Point(240, 40), new Point(175, 150));
         tp.addTriangle(t);
@@ -106,7 +98,6 @@ public class TriangleDemo extends JxFrame {
 
     /**
      * Method description
-     *
      *
      * @param arg
      */

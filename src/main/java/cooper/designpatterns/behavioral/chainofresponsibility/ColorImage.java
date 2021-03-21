@@ -24,27 +24,23 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.chainofresponsibility;
 
-import java.awt.*;
-
 import javax.swing.*;
-import javax.swing.border.*;
+import javax.swing.border.LineBorder;
+import java.awt.*;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class ColorImage extends JPanel implements Chain {
     private Chain nextChain;
 
     /**
      * Constructs ...
-     *
      */
     public ColorImage() {
         super();
@@ -54,7 +50,6 @@ public class ColorImage extends JPanel implements Chain {
     /**
      * Method description
      *
-     *
      * @param c
      */
     public void addChain(Chain c) {
@@ -63,7 +58,6 @@ public class ColorImage extends JPanel implements Chain {
 
     /**
      * Method description
-     *
      *
      * @param mesg
      */
@@ -83,7 +77,6 @@ public class ColorImage extends JPanel implements Chain {
     /**
      * Method description
      *
-     *
      * @return
      */
     public Chain getChain() {
@@ -92,7 +85,7 @@ public class ColorImage extends JPanel implements Chain {
 
     private Color getColor(String mesg) {
         String lmesg = mesg.toLowerCase();
-        Color  c     = null;
+        Color c = null;
 
         if (lmesg.equals("red")) {
             c = Color.red;

@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.structural.facade;
 
 /**
@@ -40,7 +39,7 @@ package gamma.designpatterns.structural.facade;
  * @version 1.0
  */
 public class Token {
-    private TokenType type;
+    private final TokenType type;
     private String value;
 
     Token(TokenType type, String value) {
@@ -60,7 +59,6 @@ public class Token {
     /**
      * Method description
      *
-     *
      * @return
      */
     public TokenType getType() {
@@ -70,31 +68,29 @@ public class Token {
     /**
      * Method description
      *
-     *
      * @return
      */
     public Object getValue() {
         switch (type) {
-            case NUM :
+            case NUM:
                 return Integer.parseInt(value);
 
-            case PLUS :
-            case MINUS :
-            case STAR :
-            case SLASH :
-            case LEFT_BRACKET :
-            case RIGHT_BRACKET :
-            case SEMICOLON :
+            case PLUS:
+            case MINUS:
+            case STAR:
+            case SLASH:
+            case LEFT_BRACKET:
+            case RIGHT_BRACKET:
+            case SEMICOLON:
                 return type.getSymbol();
 
-            default :
+            default:
                 return value;
         }
     }
 
     /**
      * Method description
-     *
      *
      * @param value
      */
@@ -104,7 +100,6 @@ public class Token {
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -117,9 +112,9 @@ public class Token {
      *
      * @return a clone of this instance.
      * @throws CloneNotSupportedException if the object's class does not
-     *   support the <code>Cloneable</code> interface. Subclasses that
-     *   override the <code>clone</code> method can also throw this
-     *   exception to indicate that an instance cannot be cloned.
+     *                                    support the <code>Cloneable</code> interface. Subclasses that
+     *                                    override the <code>clone</code> method can also throw this
+     *                                    exception to indicate that an instance cannot be cloned.
      * @todo Implement this java.lang.Object method
      */
     protected Object clone() throws CloneNotSupportedException {
@@ -145,9 +140,7 @@ enum TokenType {
     /**
      * Method description
      *
-     *
      * @param sym
-     *
      * @return
      */
     public static TokenType getTypeBySymbol(char sym) {
@@ -160,11 +153,10 @@ enum TokenType {
         return NONE;
     }
 
-    private char symbol;
+    private final char symbol;
 
     /**
      * Method description
-     *
      *
      * @return
      */

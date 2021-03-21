@@ -24,19 +24,19 @@
  */
 
 
-
 package metsker.designpatterns.behavioral.state;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
+
 import java.util.Observable;
 
 /**
@@ -45,19 +45,29 @@ import java.util.Observable;
  */
 public class Door2 extends Observable {
 
-    /** Field description */
+    /**
+     * Field description
+     */
     public final DoorState CLOSED = new DoorClosed(this);
 
-    /** Field description */
+    /**
+     * Field description
+     */
     public final DoorState CLOSING = new DoorClosing(this);
 
-    /** Field description */
+    /**
+     * Field description
+     */
     public final DoorState OPEN = new DoorOpen(this);
 
-    /** Field description */
+    /**
+     * Field description
+     */
     public final DoorState OPENING = new DoorOpening(this);
 
-    /** Field description */
+    /**
+     * Field description
+     */
     public final DoorState STAYOPEN = new DoorStayOpen(this);
     private DoorState state = CLOSED;
 

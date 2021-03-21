@@ -24,21 +24,18 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.state;
 
-import java.util.*;
-
-import java.awt.*;
-
 import javax.swing.*;
+import java.awt.*;
+import java.util.Observable;
+import java.util.Observer;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class CarouselPanel extends JPanel implements Observer {
     protected void paintComponent(Graphics g) {
@@ -62,7 +59,7 @@ public class CarouselPanel extends JPanel implements Observer {
         repaint();
     }
 
-    private Carousel carousel;
+    private final Carousel carousel;
 
     /**
      * Construct a panel that will portray a carousel's

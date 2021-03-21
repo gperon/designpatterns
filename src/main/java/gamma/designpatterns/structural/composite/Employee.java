@@ -24,16 +24,16 @@
  */
 
 
-
 package gamma.designpatterns.structural.composite;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- *  Description of the Class
+ * Description of the Class
  *
- * @author     giorgio
- * @created    9 giugno 2002
+ * @author giorgio
+ * @created 9 giugno 2002
  */
 public class Employee {
     String name;
@@ -43,10 +43,10 @@ public class Employee {
     Employee parent = null;
 
     /**
-     *  Constructor for the Employee object
+     * Constructor for the Employee object
      *
-     * @param  name    Description of the Parameter
-     * @param  salary  Description of the Parameter
+     * @param name   Description of the Parameter
+     * @param salary Description of the Parameter
      */
     public Employee(String name, float salary) {
         this.name = name;
@@ -56,11 +56,11 @@ public class Employee {
     }
 
     /**
-     *  Constructor for the Employee object
+     * Constructor for the Employee object
      *
-     * @param  parent  Description of the Parameter
-     * @param  name    Description of the Parameter
-     * @param  salary  Description of the Parameter
+     * @param parent Description of the Parameter
+     * @param name   Description of the Parameter
+     * @param salary Description of the Parameter
      */
     public Employee(Employee parent, String name, float salary) {
         this(name, salary);
@@ -68,9 +68,9 @@ public class Employee {
     }
 
     /**
-     *  Sets the leaf attribute of the Employee object
+     * Sets the leaf attribute of the Employee object
      *
-     * @param  b  The new leaf value
+     * @param b The new leaf value
      */
     public void setLeaf(boolean b) {
         isLeaf = b;
@@ -78,28 +78,28 @@ public class Employee {
     }
 
     /**
-     *  Gets the salary attribute of the Employee object
+     * Gets the salary attribute of the Employee object
      *
-     * @return    The salary value
+     * @return The salary value
      */
     public float getSalary() {
         return salary;
     }
 
     /**
-     *  Gets the name attribute of the Employee object
+     * Gets the name attribute of the Employee object
      *
-     * @return    The name value
+     * @return The name value
      */
     public String getName() {
         return name;
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  e  Description of the Parameter
-     * @return    Description of the Return Value
+     * @param e Description of the Parameter
+     * @return Description of the Return Value
      */
     public boolean add(Employee e) {
         if (!isLeaf) {
@@ -111,9 +111,9 @@ public class Employee {
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  e  Description of the Parameter
+     * @param e Description of the Parameter
      */
     public void remove(Employee e) {
         if (!isLeaf) {
@@ -122,19 +122,19 @@ public class Employee {
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @return    Description of the Return Value
+     * @return Description of the Return Value
      */
     public List<Employee> elements() {
         return subordinates;
     }
 
     /**
-     *  Gets the child attribute of the Employee object
+     * Gets the child attribute of the Employee object
      *
-     * @param  s  Description of the Parameter
-     * @return    The child value
+     * @param s Description of the Parameter
+     * @return The child value
      */
     public Employee getChild(String s) {
         Employee newEmp = null;
@@ -159,9 +159,9 @@ public class Employee {
     }
 
     /**
-     *  Gets the salaries attribute of the Employee object
+     * Gets the salaries attribute of the Employee object
      *
-     * @return    The salaries value
+     * @return The salaries value
      */
     public float getSalaries() {
         float sum = salary;

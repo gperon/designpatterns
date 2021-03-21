@@ -24,7 +24,6 @@
  */
 
 
-
 package metsker.designpatterns.behavioral.visitor;
 
 import metsker.designpatterns.util.machine.Machine;
@@ -32,7 +31,7 @@ import metsker.designpatterns.util.machine.MachineComponent;
 import metsker.designpatterns.util.machine.MachineComposite;
 import metsker.designpatterns.util.machine.MachineVisitor;
 
-import java.util.*;
+import java.util.Iterator;
 
 /**
  * This class uses the visitor mechanics of the machine hierarchy to add a
@@ -46,7 +45,6 @@ public class FindVisitor implements MachineVisitor {
     private MachineComponent found;
 
     /**
-     *
      * @param mc
      * @param id the id of the machine to find
      * @return a machine with the given id, within the given machine composite

@@ -24,24 +24,24 @@
  */
 
 
-
 package metsker.designpatterns.behavioral.interpreter;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import java.util.List;
 
 import metsker.designpatterns.util.machine.Machine;
 import metsker.designpatterns.util.machine.MachineComponent;
 import metsker.designpatterns.util.machine.MachineComposite;
+
+import java.util.List;
 
 /**
  * This class represents a "for" loop that will execute its body for each
@@ -59,7 +59,7 @@ public class ForCommand extends Command {
      * variable to each machine.
      *
      * @param mc
-     * @param v the variable to set for each loop
+     * @param v    the variable to set for each loop
      * @param body the body of the for command
      */
     public ForCommand(MachineComponent mc, Variable v, Command body) {

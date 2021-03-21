@@ -24,19 +24,19 @@
  */
 
 
-
 package metsker.designpatterns.util.firework;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
+
 import metsker.designpatterns.util.Dollars;
 
 /**
@@ -45,10 +45,9 @@ import metsker.designpatterns.util.Dollars;
 public class Firework {
 
     /**
+     * @param name a name to lookup
      * @return a firework of the given name. This method supports a "Strategy"
-     *         example, but it isn't really implemented.
-     * @param name
-     *            a name to lookup
+     * example, but it isn't really implemented.
      */
     public static Firework lookup(String name) {
         return new Firework(name, 9.0, new Dollars(3));
@@ -56,7 +55,7 @@ public class Firework {
 
     /**
      * @return a random firework from our shelves. This method is not actually
-     *         implemented -- it's here as part of a "Strategy" example.
+     * implemented -- it's here as part of a "Strategy" example.
      */
     public static Firework getRandom() {
         return new Firework("Random firework", 10.0, new Dollars(15));
@@ -70,17 +69,15 @@ public class Firework {
      * Allow creation of empty objects to support reconstruction from persistent
      * store.
      */
-    public Firework() {}
+    public Firework() {
+    }
 
     /**
      * Create a firework, providing all of its properties.
      *
-     * @param name
-     *            The unique name of this type of firework
-     * @param mass
-     *            The mass, in kilograms, of one instance of this type
-     * @param price
-     *            The price (in dollars) of one instance of this type
+     * @param name  The unique name of this type of firework
+     * @param mass  The mass, in kilograms, of one instance of this type
+     * @param price The price (in dollars) of one instance of this type
      */
     public Firework(String name, double mass, Dollars price) {
         setName(name);
@@ -100,7 +97,6 @@ public class Firework {
     /**
      * Method description
      *
-     *
      * @param value
      */
     public void setName(String value) {
@@ -119,7 +115,6 @@ public class Firework {
     /**
      * Method description
      *
-     *
      * @param value
      */
     public void setMass(double value) {
@@ -137,7 +132,6 @@ public class Firework {
 
     /**
      * Method description
-     *
      *
      * @param value
      */

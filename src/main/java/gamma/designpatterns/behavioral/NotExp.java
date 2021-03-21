@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.behavioral;
 
 import gamma.designpatterns.behavioral.interpreter.BooleanExp;
@@ -43,11 +42,10 @@ import gamma.designpatterns.behavioral.interpreter.Context;
  * @version 1.0
  */
 public class NotExp implements BooleanExp {
-    private BooleanExp operand;
+    private final BooleanExp operand;
 
     /**
      * Constructs ...
-     *
      *
      * @param operand
      */
@@ -60,7 +58,7 @@ public class NotExp implements BooleanExp {
      *
      * @return BooleanExp
      * @todo Implement this designpatterns.behavioral.interpreter.BooleanExp
-     *   method
+     * method
      */
     public BooleanExp copy() {
         return new NotExp(operand.copy());
@@ -72,7 +70,7 @@ public class NotExp implements BooleanExp {
      * @param aContext Context
      * @return boolean
      * @todo Implement this designpatterns.behavioral.interpreter.BooleanExp
-     *   method
+     * method
      */
     public boolean evaluate(Context aContext) {
         return !operand.evaluate(aContext);
@@ -82,10 +80,10 @@ public class NotExp implements BooleanExp {
      * replace
      *
      * @param aName String
-     * @param exp BooleanExp
+     * @param exp   BooleanExp
      * @return BooleanExp
      * @todo Implement this designpatterns.behavioral.interpreter.BooleanExp
-     *   method
+     * method
      */
     public BooleanExp replace(String aName, BooleanExp exp) {
         return new NotExp(operand.replace(aName, exp));

@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.memento;
 
 /**
@@ -41,17 +40,21 @@ package gamma.designpatterns.behavioral.memento;
  */
 public class ConstraintSolver {
 
-    /** Field description */
+    /**
+     * Field description
+     */
     public Graphic startConnection;
 
-    /** Field description */
+    /**
+     * Field description
+     */
     public Graphic endConnection;
 
-    protected ConstraintSolver() {}
+    protected ConstraintSolver() {
+    }
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -61,29 +64,28 @@ public class ConstraintSolver {
 
     /**
      * Method description
-     *
      */
-    public void solve() {}
+    public void solve() {
+    }
 
     /**
      * Method description
-     *
      */
-    public void addConstraint() {}
+    public void addConstraint() {
+    }
 
     /**
      * Method description
-     *
      *
      * @param startConnection
      * @param endConnection
      */
     public void removeConstraint(Graphic startConnection,
-                                 Graphic endConnection) {}
+                                 Graphic endConnection) {
+    }
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -91,7 +93,8 @@ public class ConstraintSolver {
         return null;
     }
 
-    void setMemento(ConstraintSolverMemento csm) {}
+    void setMemento(ConstraintSolverMemento csm) {
+    }
     // nontrivial state and operations for enforcing
     // connectivity semantics
 }

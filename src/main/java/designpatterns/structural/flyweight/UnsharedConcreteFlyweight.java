@@ -26,12 +26,12 @@
 
 
 /*
-* UnsharedConcreteFlyweight.java
-*
-* Created on November 13, 2006, 12:05 PM
-*
-* To change this template, choose Tools | Template Manager
-* and open the template in the editor.
+ * UnsharedConcreteFlyweight.java
+ *
+ * Created on November 13, 2006, 12:05 PM
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
  */
 package designpatterns.structural.flyweight;
 
@@ -43,4 +43,5 @@ package designpatterns.structural.flyweight;
  *
  * @author giorgiop
  */
-public @interface UnsharedConcreteFlyweight {}
+public @interface UnsharedConcreteFlyweight {
+}

@@ -24,26 +24,26 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.strategy;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class RandomAdvisor implements Advisor {
 
-    /** Field description */
+    /**
+     * Field description
+     */
     public static final RandomAdvisor singleton = new RandomAdvisor();
 
-    private RandomAdvisor() {}
+    private RandomAdvisor() {
+    }
 
     /**
      * Just recommend a random firework.
-     *
      *
      * @param c
      * @return a random firework

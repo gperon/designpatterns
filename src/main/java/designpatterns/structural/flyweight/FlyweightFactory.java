@@ -26,12 +26,12 @@
 
 
 /*
-* FlyweightFactory.java
-*
-* Created on November 13, 2006, 12:06 PM
-*
-* To change this template, choose Tools | Template Manager
-* and open the template in the editor.
+ * FlyweightFactory.java
+ *
+ * Created on November 13, 2006, 12:06 PM
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
  */
 package designpatterns.structural.flyweight;
 
@@ -42,4 +42,5 @@ package designpatterns.structural.flyweight;
  *
  * @author giorgiop
  */
-public @interface FlyweightFactory {}
+public @interface FlyweightFactory {
+}

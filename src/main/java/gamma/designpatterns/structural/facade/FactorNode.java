@@ -24,10 +24,10 @@
  */
 
 
-
 package gamma.designpatterns.structural.facade;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <p>Title: Design Patterns</p>
@@ -47,7 +47,6 @@ public class FactorNode implements ProgramNode {
 
     /**
      * Constructs ...
-     *
      */
     public FactorNode() {
         this.children = new ArrayList<ProgramNode>();
@@ -55,7 +54,6 @@ public class FactorNode implements ProgramNode {
 
     /**
      * Constructs ...
-     *
      *
      * @param t
      */
@@ -67,19 +65,20 @@ public class FactorNode implements ProgramNode {
     /**
      * getSourcePosition
      *
-     * @param line int
+     * @param line  int
      * @param index int
      * @todo Implement this designpatterns.structural.facade.ProgramNode
-     *   method
+     * method
      */
-    public void getSourcePosition(int line, int index) {}
+    public void getSourcePosition(int line, int index) {
+    }
 
     /**
      * add
      *
      * @param pn ProgramNode
      * @todo Implement this designpatterns.structural.facade.ProgramNode
-     *   method
+     * method
      */
     public void add(ProgramNode pn) {
         children.add(pn);
@@ -90,16 +89,17 @@ public class FactorNode implements ProgramNode {
      *
      * @param pn ProgramNode
      * @todo Implement this designpatterns.structural.facade.ProgramNode
-     *   method
+     * method
      */
-    public void remove(ProgramNode pn) {}
+    public void remove(ProgramNode pn) {
+    }
 
     /**
      * traverse
      *
      * @param cg CodeGenerator
      * @todo Implement this designpatterns.structural.facade.ProgramNode
-     *   method
+     * method
      */
     public void traverse(CodeGenerator cg) {
         children.get(0).traverse(cg);
@@ -111,7 +111,6 @@ public class FactorNode implements ProgramNode {
 
     /**
      * Method description
-     *
      *
      * @return
      */

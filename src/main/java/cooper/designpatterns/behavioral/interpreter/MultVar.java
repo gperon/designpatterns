@@ -24,34 +24,30 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.interpreter;
 
-import java.util.*;
+import java.util.Vector;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class MultVar extends ParseVar {
     Vector multVec;
 
     /**
      * Constructs ...
-     *
      */
     public MultVar() {
         super("");
         multVec = new Vector();
-        type    = MULTVAR;
+        type = MULTVAR;
     }
 
     /**
      * Constructs ...
-     *
      *
      * @param v1
      * @param v2
@@ -67,7 +63,6 @@ public class MultVar extends ParseVar {
     /**
      * Method description
      *
-     *
      * @param v1
      */
     public void add(ParseObject v1) {
@@ -76,7 +71,6 @@ public class MultVar extends ParseVar {
 
     /**
      * Method description
-     *
      *
      * @return
      */

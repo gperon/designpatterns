@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.structural.adapter;
 
 /**
@@ -32,6 +31,7 @@ package gamma.designpatterns.structural.adapter;
  * <p>Description: </p>
  * <p>Copyright: Copyright (c) 2002</p>
  * <p>Company: GioPerLab</p>
+ *
  * @author giorgio_peron@libero.it
  * @version 1.0
  */

@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.structural.flyweight;
 
 import java.awt.*;
@@ -34,6 +33,7 @@ import java.awt.*;
  * <p>Description: Design Patterns Examples</p>
  * <p>Copyright: Copyright (c) 2003</p>
  * <p>Company: GioPerLab</p>
+ *
  * @author giorgio_peron@libero.it
  * @version 1.0
  */

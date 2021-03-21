@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.mediator;
 
 /**
@@ -40,17 +39,16 @@ package gamma.designpatterns.behavioral.mediator;
  * @version 1.0
  */
 public abstract class DialogDirector {
-    protected DialogDirector() {}
+    protected DialogDirector() {
+    }
 
     /**
      * Method description
-     *
      */
     public abstract void showDialog();
 
     /**
      * Method description
-     *
      *
      * @param w
      */

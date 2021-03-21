@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.memento;
 
 /**
@@ -43,7 +42,6 @@ public class ConstraintSolverMemento {
 
     /**
      * Constructs ...
-     *
      */
     public ConstraintSolverMemento() {
         super();

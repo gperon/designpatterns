@@ -24,68 +24,67 @@
  */
 
 
-
 package gamma.designpatterns.creational.maze;
 
 /**
- *  <p>
+ * <p>
+ * <p>
+ * Title: Design Patterns</p> <p>
+ * <p>
+ * Description: </p> <p>
+ * <p>
+ * Copyright: Copyright (c) 2002</p> <p>
+ * <p>
+ * Company: GioPerLab</p>
  *
- *  Title: Design Patterns</p> <p>
- *
- *  Description: </p> <p>
- *
- *  Copyright: Copyright (c) 2002</p> <p>
- *
- *  Company: GioPerLab</p>
- *
- * @author     giorgio_peron@libero.it
- * @created    8 giugno 2002
- * @version    1.0
+ * @author giorgio_peron@libero.it
+ * @version 1.0
+ * @created 8 giugno 2002
  */
 public class DoorNeedingSpell extends Door {
 
     /**
-     *  Constructor for the DoorNeedingSpell object
+     * Constructor for the DoorNeedingSpell object
      *
-     * @param  r1  Description of the Parameter
-     * @param  r2  Description of the Parameter
+     * @param r1 Description of the Parameter
+     * @param r2 Description of the Parameter
      */
     public DoorNeedingSpell(Room r1, Room r2) {
         super(r1, r2);
     }
 
     /**
-     *  Constructor for the DoorNeedingSpell object
+     * Constructor for the DoorNeedingSpell object
      */
     public DoorNeedingSpell() {
         super();
     }
 
     /**
-     *  Constructor for the DoorNeedingSpell object
+     * Constructor for the DoorNeedingSpell object
      *
-     * @param  door  Description of the Parameter
+     * @param door Description of the Parameter
      */
     protected DoorNeedingSpell(DoorNeedingSpell door) {
         super(door);
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @return    Description of the Return Value
+     * @return Description of the Return Value
      */
     public String toString() {
         return super.toString() + " needing spell";
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @return                                           Description of the
-     *      Return Value
-     * @exception  java.lang.CloneNotSupportedException  Description of the
-     *      Exception
+     * @return Description of the
+     * Return Value
+     * @throws java.lang.CloneNotSupportedException Description of the
+     *                                              Exception
      */
     public Object clone() throws java.lang.CloneNotSupportedException {
         return new DoorNeedingSpell(this);

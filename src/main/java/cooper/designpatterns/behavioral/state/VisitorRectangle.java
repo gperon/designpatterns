@@ -24,7 +24,6 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.state;
 
 import java.awt.*;
@@ -39,21 +38,19 @@ class RectangleMemento extends Memento {
     /**
      * Constructs ...
      *
-     *
      * @param r
      */
     public RectangleMemento(VisitorRectangle r) {
         super(r);
         rect = r;
-        x    = rect.x;
-        y    = rect.y;
-        w    = rect.w;
-        h    = rect.h;
+        x = rect.x;
+        y = rect.y;
+        w = rect.w;
+        h = rect.h;
     }
 
     /**
      * Method description
-     *
      */
     public void restore() {
 
@@ -70,15 +67,13 @@ class RectangleMemento extends Memento {
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class VisitorRectangle extends Drawing {
 
     /**
      * Constructs ...
-     *
      *
      * @param xpt
      * @param ypt
@@ -93,7 +88,6 @@ public class VisitorRectangle extends Drawing {
 
     /**
      * Method description
-     *
      *
      * @param g
      */

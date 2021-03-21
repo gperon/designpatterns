@@ -24,50 +24,44 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.state;
 
-import java.awt.*;
-
-import java.util.*;
-
 import javax.swing.*;
+import java.awt.*;
+import java.util.Vector;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class Mediator {
-    boolean      startRect;
-    boolean      dSelected;
-    Vector       drawings;
-    Vector       undoList;
-    RectButton   rectButton;
-    FillButton   fillButton;
+    boolean startRect;
+    boolean dSelected;
+    Vector drawings;
+    Vector undoList;
+    RectButton rectButton;
+    FillButton fillButton;
     CircleButton circButton;
-    PickButton   arrowButton;
-    JPanel       canvas;
-    Drawing      selectedDrawing;
+    PickButton arrowButton;
+    JPanel canvas;
+    Drawing selectedDrawing;
     StateManager stMgr;
 
     /**
      * Constructs ...
-     *
      */
     public Mediator() {
         startRect = false;
         dSelected = false;
-        drawings  = new Vector();
-        undoList  = new Vector();
-        stMgr     = new StateManager(this);
+        drawings = new Vector();
+        undoList = new Vector();
+        stMgr = new StateManager(this);
     }
 
     /**
      * Method description
-     *
      *
      * @param d
      */
@@ -77,19 +71,17 @@ public class Mediator {
 
     /**
      * Method description
-     *
      */
     public void clear() {
-        drawings        = new Vector();
-        undoList        = new Vector();
-        dSelected       = false;
+        drawings = new Vector();
+        undoList = new Vector();
+        dSelected = false;
         selectedDrawing = null;
         repaint();
     }
 
     /**
      * Method description
-     *
      */
     public void fillSelected() {
         if (dSelected) {
@@ -99,7 +91,6 @@ public class Mediator {
 
     /**
      * Method description
-     *
      *
      * @param x
      * @param y
@@ -112,7 +103,6 @@ public class Mediator {
     /**
      * Method description
      *
-     *
      * @param x
      * @param y
      */
@@ -122,7 +112,6 @@ public class Mediator {
 
     /**
      * Method description
-     *
      *
      * @param x
      * @param y
@@ -134,15 +123,14 @@ public class Mediator {
     /**
      * Method description
      *
-     *
      * @param x
      * @param y
      */
-    public void pickRect(int x, int y) {}
+    public void pickRect(int x, int y) {
+    }
 
     /**
      * Method description
-     *
      *
      * @param g
      */
@@ -159,7 +147,6 @@ public class Mediator {
     /**
      * Method description
      *
-     *
      * @param ab
      */
     public void registerArrowButton(PickButton ab) {
@@ -168,7 +155,6 @@ public class Mediator {
 
     /**
      * Method description
-     *
      *
      * @param p
      */
@@ -179,7 +165,6 @@ public class Mediator {
     /**
      * Method description
      *
-     *
      * @param cb
      */
     public void registerCircleButton(CircleButton cb) {
@@ -188,7 +173,6 @@ public class Mediator {
 
     /**
      * Method description
-     *
      *
      * @param fb
      */
@@ -199,7 +183,6 @@ public class Mediator {
     /**
      * Method description
      *
-     *
      * @param rb
      */
     public void registerRectButton(RectButton rb) {
@@ -208,7 +191,6 @@ public class Mediator {
 
     /**
      * Method description
-     *
      */
     public void rememberPosition() {
         if (dSelected) {
@@ -224,7 +206,6 @@ public class Mediator {
 
     /**
      * Method description
-     *
      */
     public void startArrow() {
         stMgr.setArrow();
@@ -235,7 +216,6 @@ public class Mediator {
 
     /**
      * Method description
-     *
      */
     public void startCircle() {
         stMgr.setCircle();
@@ -246,7 +226,6 @@ public class Mediator {
 
     /**
      * Method description
-     *
      */
     public void startFill() {
         stMgr.setFill();
@@ -259,7 +238,6 @@ public class Mediator {
 
     /**
      * Method description
-     *
      */
     public void startRectangle() {
         stMgr.setRect();
@@ -270,7 +248,6 @@ public class Mediator {
 
     /**
      * Method description
-     *
      */
     public void undo() {
         if (undoList.size() > 0) {
@@ -304,7 +281,6 @@ public class Mediator {
 
     /**
      * Method description
-     *
      */
     public void unpick() {
         dSelected = false;
@@ -319,7 +295,6 @@ public class Mediator {
     /**
      * Method description
      *
-     *
      * @return
      */
     public Vector getDrawings() {
@@ -328,7 +303,6 @@ public class Mediator {
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -339,12 +313,11 @@ public class Mediator {
     /**
      * Method description
      *
-     *
      * @param d
      */
     public void setSelected(Drawing d) {
         if (d != null) {
-            dSelected       = true;
+            dSelected = true;
             selectedDrawing = d;
             d.setSelected(true);
             repaint();

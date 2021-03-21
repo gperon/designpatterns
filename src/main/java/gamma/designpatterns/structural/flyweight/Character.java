@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.structural.flyweight;
 
 import java.awt.*;
@@ -34,15 +33,15 @@ import java.awt.*;
  * <p>Description: Design Patterns Examples</p>
  * <p>Copyright: Copyright (c) 2003</p>
  * <p>Company: GioPerLab</p>
+ *
  * @author giorgio_peron@libero.it
  * @version 1.0
  */
 public class Character implements Glyph {
-    private char charcode;
+    private final char charcode;
 
     /**
      * Constructs ...
-     *
      *
      * @param charcode
      */
@@ -53,7 +52,6 @@ public class Character implements Glyph {
     /**
      * Method description
      *
-     *
      * @param win
      * @param context
      */
@@ -61,12 +59,11 @@ public class Character implements Glyph {
 
         /** @todo Implement this designpatterns.structural.flyweight.Glyph method */
         throw new java.lang.UnsupportedOperationException(
-            "Method draw() not yet implemented.");
+                "Method draw() not yet implemented.");
     }
 
     /**
      * Method description
-     *
      *
      * @param font
      * @param context
@@ -75,12 +72,11 @@ public class Character implements Glyph {
 
         /** @todo Implement this designpatterns.structural.flyweight.Glyph method */
         throw new java.lang.UnsupportedOperationException(
-            "Method setFont() not yet implemented.");
+                "Method setFont() not yet implemented.");
     }
 
     /**
      * Method description
-     *
      *
      * @param context
      */
@@ -88,12 +84,11 @@ public class Character implements Glyph {
 
         /** @todo Implement this designpatterns.structural.flyweight.Glyph method */
         throw new java.lang.UnsupportedOperationException(
-            "Method first() not yet implemented.");
+                "Method first() not yet implemented.");
     }
 
     /**
      * Method description
-     *
      *
      * @param context
      */
@@ -101,42 +96,37 @@ public class Character implements Glyph {
 
         /** @todo Implement this designpatterns.structural.flyweight.Glyph method */
         throw new java.lang.UnsupportedOperationException(
-            "Method next() not yet implemented.");
+                "Method next() not yet implemented.");
     }
 
     /**
      * Method description
      *
-     *
      * @param context
-     *
      * @return
      */
     public boolean isDone(GlyphContext context) {
 
         /** @todo Implement this designpatterns.structural.flyweight.Glyph method */
         throw new java.lang.UnsupportedOperationException(
-            "Method isDone() not yet implemented.");
+                "Method isDone() not yet implemented.");
     }
 
     /**
      * Method description
      *
-     *
      * @param context
-     *
      * @return
      */
     public Glyph current(GlyphContext context) {
 
         /** @todo Implement this designpatterns.structural.flyweight.Glyph method */
         throw new java.lang.UnsupportedOperationException(
-            "Method current() not yet implemented.");
+                "Method current() not yet implemented.");
     }
 
     /**
      * Method description
-     *
      *
      * @param glyph
      * @param context
@@ -145,12 +135,11 @@ public class Character implements Glyph {
 
         /** @todo Implement this designpatterns.structural.flyweight.Glyph method */
         throw new java.lang.UnsupportedOperationException(
-            "Method insert() not yet implemented.");
+                "Method insert() not yet implemented.");
     }
 
     /**
      * Method description
-     *
      *
      * @param context
      */
@@ -158,6 +147,6 @@ public class Character implements Glyph {
 
         /** @todo Implement this designpatterns.structural.flyweight.Glyph method */
         throw new java.lang.UnsupportedOperationException(
-            "Method remove() not yet implemented.");
+                "Method remove() not yet implemented.");
     }
 }

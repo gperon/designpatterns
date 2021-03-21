@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.creational.abstractfactory;
 
 import gamma.designpatterns.creational.maze.Door;
@@ -33,30 +32,30 @@ import gamma.designpatterns.creational.maze.Room;
 import gamma.designpatterns.creational.maze.Wall;
 
 /**
- *  <p>
+ * <p>
+ * <p>
+ * Title: Design Patterns</p> <p>
+ * <p>
+ * Description: </p> <p>
+ * <p>
+ * Copyright: Copyright (c) 2002</p> <p>
+ * <p>
+ * Company: GioPerLab</p>
  *
- *  Title: Design Patterns</p> <p>
- *
- *  Description: </p> <p>
- *
- *  Copyright: Copyright (c) 2002</p> <p>
- *
- *  Company: GioPerLab</p>
- *
- * @author     giorgio_peron@libero.it
- * @created    2 giugno 2002
- * @version    1.0
+ * @author giorgio_peron@libero.it
+ * @version 1.0
+ * @created 2 giugno 2002
  */
 public class MazeFactory implements AbstractMazeFactory {
 
     /**
-     *  Constructor for the MazeFactory object
+     * Constructor for the MazeFactory object
      */
-    public MazeFactory() {}
+    public MazeFactory() {
+    }
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -67,7 +66,6 @@ public class MazeFactory implements AbstractMazeFactory {
     /**
      * Method description
      *
-     *
      * @return
      */
     public Wall makeWall() {
@@ -77,9 +75,7 @@ public class MazeFactory implements AbstractMazeFactory {
     /**
      * Method description
      *
-     *
      * @param roomNumber
-     *
      * @return
      */
     public Room makeRoom(int roomNumber) {
@@ -89,10 +85,8 @@ public class MazeFactory implements AbstractMazeFactory {
     /**
      * Method description
      *
-     *
      * @param r1
      * @param r2
-     *
      * @return
      */
     public Door makeDoor(Room r1, Room r2) {

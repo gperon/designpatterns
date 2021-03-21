@@ -24,33 +24,35 @@
  */
 
 
-
 package metsker.designpatterns.structural.adapter;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import javax.swing.table.*;
 
 import metsker.designpatterns.util.firework.Rocket;
 
+import javax.swing.table.AbstractTableModel;
+
 /**
  * Adapt a collection of rockets for display in a JTable.
+ *
  * @author Steven J. Metsker
  */
 public class RocketTableModel extends AbstractTableModel {
     protected Rocket[] rockets;
-    protected String[] columnNames = new String[] { "Name", "Price", "Apogee" };
+    protected String[] columnNames = new String[]{"Name", "Price", "Apogee"};
 
     /**
      * Construct a rocket table from an array of rockets.
+     *
      * @param rockets an array of rockets
      */
     public RocketTableModel(Rocket[] rockets) {
@@ -58,14 +60,13 @@ public class RocketTableModel extends AbstractTableModel {
     }
 
     /**
-     *  @return the number of columns in this table.
+     * @return the number of columns in this table.
      */
     public int getColumnCount() {
         return columnNames.length;
     }
 
     /**
-     *
      * @param i
      * @return the name of the indicated column
      */
@@ -87,16 +88,16 @@ public class RocketTableModel extends AbstractTableModel {
      */
     public Object getValueAt(int row, int col) {
         switch (col) {
-            case 0 :
+            case 0:
                 return rockets[row].getName();
 
-            case 1 :
+            case 1:
                 return rockets[row].getPrice();
 
-            case 2 :
+            case 2:
                 return new Double(rockets[row].getApogee());
 
-            default :
+            default:
                 return null;
         }
     }

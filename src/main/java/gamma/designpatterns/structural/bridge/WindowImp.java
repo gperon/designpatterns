@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.structural.bridge;
 
 import java.awt.*;
@@ -42,23 +41,21 @@ import java.awt.*;
  * @version 1.0
  */
 public abstract class WindowImp {
-    protected WindowImp() {}
+    protected WindowImp() {
+    }
 
     /**
      * Method description
-     *
      */
     public abstract void impTop();
 
     /**
      * Method description
-     *
      */
     public abstract void impBottom();
 
     /**
      * Method description
-     *
      *
      * @param p
      */
@@ -67,14 +64,12 @@ public abstract class WindowImp {
     /**
      * Method description
      *
-     *
      * @param p
      */
     public abstract void impSetOrigin(final Point p);
 
     /**
      * Method description
-     *
      *
      * @param a
      * @param b
@@ -86,7 +81,6 @@ public abstract class WindowImp {
     /**
      * Method description
      *
-     *
      * @param s
      * @param a
      * @param b
@@ -95,7 +89,6 @@ public abstract class WindowImp {
 
     /**
      * Method description
-     *
      *
      * @param s
      * @param a

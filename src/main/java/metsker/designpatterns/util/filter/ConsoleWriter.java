@@ -24,41 +24,40 @@
  */
 
 
-
 package metsker.designpatterns.util.filter;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
+
 import java.io.Writer;
 
 /**
- *  This "filter" directs its characters to the console.
+ * This "filter" directs its characters to the console.
  */
 public class ConsoleWriter extends Writer {
 
     /**
      * Method description
-     *
      */
-    public void close() {}
+    public void close() {
+    }
 
     /**
      * Method description
-     *
      */
-    public void flush() {}
+    public void flush() {
+    }
 
     /**
      * Method description
-     *
      *
      * @param buffer
      * @param offset

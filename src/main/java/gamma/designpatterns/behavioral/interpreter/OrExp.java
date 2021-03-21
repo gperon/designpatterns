@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.interpreter;
 
 /**
@@ -40,12 +39,11 @@ package gamma.designpatterns.behavioral.interpreter;
  * @version 1.0
  */
 public class OrExp implements BooleanExp {
-    private BooleanExp operand1;
-    private BooleanExp operand2;
+    private final BooleanExp operand1;
+    private final BooleanExp operand2;
 
     /**
      * Constructs ...
-     *
      *
      * @param operand1
      * @param operand2
@@ -60,7 +58,7 @@ public class OrExp implements BooleanExp {
      *
      * @return BooleanExp
      * @todo Implement this designpatterns.behavioral.interpreter.BooleanExp
-     *   method
+     * method
      */
     public BooleanExp copy() {
         return new OrExp(operand1.copy(), operand2.copy());
@@ -72,7 +70,7 @@ public class OrExp implements BooleanExp {
      * @param aContext Context
      * @return boolean
      * @todo Implement this designpatterns.behavioral.interpreter.BooleanExp
-     *   method
+     * method
      */
     public boolean evaluate(Context aContext) {
         return operand1.evaluate(aContext) || operand2.evaluate(aContext);
@@ -82,13 +80,13 @@ public class OrExp implements BooleanExp {
      * replace
      *
      * @param aName String
-     * @param exp BooleanExp
+     * @param exp   BooleanExp
      * @return BooleanExp
      * @todo Implement this designpatterns.behavioral.interpreter.BooleanExp
-     *   method
+     * method
      */
     public BooleanExp replace(String aName, BooleanExp exp) {
         return new OrExp(operand1.replace(aName,
-                                          exp), operand2.replace(aName, exp));
+                exp), operand2.replace(aName, exp));
     }
 }

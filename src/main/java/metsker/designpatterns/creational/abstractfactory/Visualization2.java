@@ -24,25 +24,25 @@
  */
 
 
-
 package metsker.designpatterns.creational.abstractfactory;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
+
 import metsker.designpatterns.util.ui.SwingFacade;
 import metsker.designpatterns.util.ui.UI;
 
-import java.awt.event.*;
-
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * This version of the visualization adds a menu that
@@ -52,7 +52,6 @@ public class Visualization2 extends Visualization {
 
     /**
      * Method description
-     *
      *
      * @param args
      */
@@ -66,7 +65,6 @@ public class Visualization2 extends Visualization {
     /**
      * Constructs ...
      *
-     *
      * @param ui
      */
     public Visualization2(UI ui) {
@@ -76,7 +74,6 @@ public class Visualization2 extends Visualization {
     /**
      * Method description
      *
-     *
      * @return
      */
     public JMenuBar menus() {
@@ -85,19 +82,19 @@ public class Visualization2 extends Visualization {
         menuBar.add(menu);
         JMenuItem menuItem = new JMenuItem("Save As...");
         menuItem.addActionListener(new ActionListener() {
-                                       public void actionPerformed(
-                                               ActionEvent e) {
-                                           save();
-                                       }
-                                   });
+            public void actionPerformed(
+                    ActionEvent e) {
+                save();
+            }
+        });
         menu.add(menuItem);
         menuItem = new JMenuItem("Restore From...");
         menuItem.addActionListener(new ActionListener() {
-                                       public void actionPerformed(
-                                               ActionEvent e) {
-                                           restore();
-                                       }
-                                   });
+            public void actionPerformed(
+                    ActionEvent e) {
+                restore();
+            }
+        });
         menu.add(menuItem);
 
         return menuBar;
@@ -105,7 +102,6 @@ public class Visualization2 extends Visualization {
 
     /**
      * Method description
-     *
      */
     public void save() {
         try {
@@ -117,7 +113,6 @@ public class Visualization2 extends Visualization {
 
     /**
      * Method description
-     *
      */
     public void restore() {
         try {

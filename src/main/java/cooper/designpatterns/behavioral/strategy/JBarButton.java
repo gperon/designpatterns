@@ -24,28 +24,24 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.strategy;
 
-import java.awt.event.*;
+import cooper.designpatterns.behavioral.command.Command;
 
 import javax.swing.*;
-
-import cooper.designpatterns.behavioral.command.Command;
+import java.awt.event.ActionListener;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class JBarButton extends JButton implements Command {
     Context context;
 
     /**
      * Constructs ...
-     *
      *
      * @param act
      * @param ctx
@@ -58,7 +54,6 @@ public class JBarButton extends JButton implements Command {
 
     /**
      * Method description
-     *
      */
     public void execute() {
         context.readData("data.txt");

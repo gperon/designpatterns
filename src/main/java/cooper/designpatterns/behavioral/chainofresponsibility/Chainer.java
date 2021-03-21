@@ -24,35 +24,31 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.chainofresponsibility;
 
-import java.awt.*;
+import cooper.designpatterns.util.swing.JxFrame;
 
 import javax.swing.*;
-import javax.swing.border.*;
-
-import cooper.designpatterns.util.swing.JxFrame;
+import javax.swing.border.EmptyBorder;
+import java.awt.*;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class Chainer extends JxFrame {
 
     // list of chain members
-    Sender     sender;        // gets commands
-    Imager     imager;        // displays images
-    FileList   fileList;      // highlights file names
+    Sender sender;        // gets commands
+    Imager imager;        // displays images
+    FileList fileList;      // highlights file names
     ColorImage colorImage;    // shows colors
-    RestList   restList;      // shows rest of list
+    RestList restList;      // shows rest of list
 
     /**
      * Constructs ...
-     *
      */
     public Chainer() {
         super("Chain demo");
@@ -80,7 +76,7 @@ public class Chainer extends JxFrame {
         jp.add(mid);
         mid.setBorder(new EmptyBorder(5, 5, 5, 5));
         mid.setLayout(new GridLayout(2, 1));
-        fileList   = new FileList();
+        fileList = new FileList();
         colorImage = new ColorImage();
         mid.add(fileList);
         mid.add(colorImage);
@@ -103,10 +99,9 @@ public class Chainer extends JxFrame {
     /**
      * Method description
      *
-     *
      * @param argv
      */
-    static public void main(String argv[]) {
+    static public void main(String[] argv) {
         new Chainer();
     }
 }

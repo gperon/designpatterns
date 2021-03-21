@@ -24,26 +24,29 @@
  */
 
 
-
 package metsker.designpatterns.util.machine;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import java.util.*;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * This class manages the relation of tubs to machines.
  *
  * @author Steven J. Metsker
- *
  */
 public class TubMediator {
     protected Map tubToMachine = new HashMap();
@@ -51,9 +54,7 @@ public class TubMediator {
     /**
      * Method description
      *
-     *
      * @param t
-     *
      * @return
      */
     public Machine getMachine(Tub t) {
@@ -63,9 +64,7 @@ public class TubMediator {
     /**
      * Method description
      *
-     *
      * @param m
-     *
      * @return
      */
     public Set getTubs(Machine m) {
@@ -83,7 +82,6 @@ public class TubMediator {
 
     /**
      * Method description
-     *
      *
      * @param t
      * @param m

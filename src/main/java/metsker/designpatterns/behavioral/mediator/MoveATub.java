@@ -24,32 +24,32 @@
  */
 
 
-
 package metsker.designpatterns.behavioral.mediator;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-import java.util.*;
-import java.util.List;
+import metsker.designpatterns.util.ui.SwingFacade;
+import metsker.designpatterns.util.ui.UI;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-
-import metsker.designpatterns.util.ui.SwingFacade;
-import metsker.designpatterns.util.ui.UI;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.Hashtable;
+import java.util.List;
 
 /**
  * This class is partially refactored, with a method for each control. The
@@ -66,11 +66,10 @@ public class MoveATub extends JPanel
     private JList machineList;
     private Object selectedMachine;
     private JButton assignButton;
-    private UI ui = UI.NORMAL;
+    private final UI ui = UI.NORMAL;
 
     /**
      * Method description
-     *
      *
      * @param args
      */
@@ -82,7 +81,6 @@ public class MoveATub extends JPanel
 
     /**
      * Constructs ...
-     *
      */
     public MoveATub() {
         super(new GridLayout(1, 4));
@@ -152,7 +150,7 @@ public class MoveATub extends JPanel
 
     private JList tubList() {
         if (tubList == null) {
-            tubList = ui.createList(new String[] {});
+            tubList = ui.createList(new String[]{});
             tubList.addListSelectionListener(this);
         }
 
@@ -204,7 +202,6 @@ public class MoveATub extends JPanel
     /**
      * Method description
      *
-     *
      * @param e
      */
     public void valueChanged(ListSelectionEvent e) {
@@ -221,12 +218,11 @@ public class MoveATub extends JPanel
             }
         }
         assignButton().setEnabled(!tubList().isSelectionEmpty()
-                                  && !machineList().isSelectionEmpty());
+                && !machineList().isSelectionEmpty());
     }
 
     /**
      * Method description
-     *
      *
      * @param e
      */

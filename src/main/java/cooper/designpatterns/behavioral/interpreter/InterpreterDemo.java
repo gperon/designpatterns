@@ -24,30 +24,27 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.interpreter;
 
-import java.awt.*;
-import java.awt.event.*;
-
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class InterpreterDemo extends JxFrame implements ActionListener {
-    JButton    go;
+    JButton go;
     JTextField tx;
-    KidData    kdata;
-    JawtList   ptable;
+    KidData kdata;
+    JawtList ptable;
 
     /**
      * Constructs ...
-     *
      */
     public InterpreterDemo() {
         super("Interpreter Demo");
@@ -56,7 +53,7 @@ public class InterpreterDemo extends JxFrame implements ActionListener {
         go = new JButton("Go");
 
         JLabel hlp = new JLabel("Ex: print frname age sortby age");
-        JPanel p   = new JPanel();
+        JPanel p = new JPanel();
 
         getContentPane().add(p);
         p.setLayout(new BorderLayout());
@@ -83,7 +80,6 @@ public class InterpreterDemo extends JxFrame implements ActionListener {
     /**
      * Method description
      *
-     *
      * @param e
      */
     public void actionPerformed(ActionEvent e) {
@@ -96,10 +92,9 @@ public class InterpreterDemo extends JxFrame implements ActionListener {
     /**
      * Method description
      *
-     *
      * @param argv
      */
-    static public void main(String argv[]) {
+    static public void main(String[] argv) {
         new InterpreterDemo();
     }
 }

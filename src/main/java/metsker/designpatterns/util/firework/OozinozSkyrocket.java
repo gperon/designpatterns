@@ -24,7 +24,6 @@
  */
 
 
-
 package metsker.designpatterns.util.firework;
 
 import metsker.designpatterns.util.simulation.Skyrocket;
@@ -35,11 +34,10 @@ import metsker.designpatterns.util.simulation.Skyrocket;
  * the PhysicalRocket class to meet the needs of clients of the Skyrocket class.
  */
 public class OozinozSkyrocket extends Skyrocket {
-    private PhysicalRocket rocket;
+    private final PhysicalRocket rocket;
 
     /**
      * Constructs ...
-     *
      *
      * @param r
      */
@@ -50,6 +48,7 @@ public class OozinozSkyrocket extends Skyrocket {
 
     /**
      * Use a PhysicalRocket object to model a rocket's mass at simulation time.
+     *
      * @return mass
      */
     public double getMass() {
@@ -59,6 +58,7 @@ public class OozinozSkyrocket extends Skyrocket {
     /**
      * Use a PhysicalRocket object to model a rocket's thrust at simulation
      * time.
+     *
      * @return thrust
      */
     public double getThrust() {

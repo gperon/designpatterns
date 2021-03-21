@@ -24,23 +24,23 @@
  */
 
 
-
 package metsker.designpatterns.util.process;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import java.util.HashSet;
-import java.util.Set;
 
 import metsker.designpatterns.behavioral.iterator.ComponentIterator;
+
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Objects of this class represent either individual process steps or
@@ -53,8 +53,7 @@ public abstract class ProcessComponent {
     /**
      * Create a process component with the given name.
      *
-     * @param name
-     *            this process component's name
+     * @param name this process component's name
      */
     public ProcessComponent(String name) {
         this.name = name;
@@ -63,8 +62,7 @@ public abstract class ProcessComponent {
     /**
      * Accept a "visitor".
      *
-     * @param v
-     *            the visitor
+     * @param v the visitor
      */
     public abstract void accept(ProcessVisitor v);
 
@@ -78,7 +76,6 @@ public abstract class ProcessComponent {
     /**
      * Method description
      *
-     *
      * @return
      */
     public ComponentIterator iterator() {
@@ -88,9 +85,7 @@ public abstract class ProcessComponent {
     /**
      * Method description
      *
-     *
      * @param visited
-     *
      * @return
      */
     public abstract ComponentIterator iterator(Set visited);
@@ -103,9 +98,8 @@ public abstract class ProcessComponent {
     }
 
     /**
+     * @param visited components already visited while traversing this component
      * @return the number of leaf node steps in this composite.
-     * @param visited
-     *            components already visited while traversing this component
      */
     public abstract int getStepCount(Set visited);
 

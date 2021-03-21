@@ -24,40 +24,37 @@
  */
 
 
-
 package cooper.designpatterns.structural.composite;
 
-import java.awt.*;
-
-import java.util.*;
+import cooper.designpatterns.util.swing.JxFrame;
 
 import javax.swing.*;
-import javax.swing.border.*;
-import javax.swing.event.*;
-import javax.swing.tree.*;
-
-import cooper.designpatterns.util.swing.JxFrame;
+import javax.swing.border.BevelBorder;
+import javax.swing.event.TreeSelectionEvent;
+import javax.swing.event.TreeSelectionListener;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.TreePath;
+import java.awt.*;
+import java.util.Enumeration;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class EmployeeTree extends JxFrame implements TreeSelectionListener {
-    Employee               boss, marketVP, prodVP;
-    Employee               salesMgr, advMgr;
-    Employee               prodMgr, shipMgr;
-    JScrollPane            sp;
-    JPanel                 treePanel;
-    JTree                  tree;
+    Employee boss, marketVP, prodVP;
+    Employee salesMgr, advMgr;
+    Employee prodMgr, shipMgr;
+    JScrollPane sp;
+    JPanel treePanel;
+    JTree tree;
     DefaultMutableTreeNode troot;
-    JLabel                 cost;
+    JLabel cost;
 
     /**
      * Constructs ...
-     *
      */
     public EmployeeTree() {
         super("Employee tree");
@@ -67,7 +64,7 @@ public class EmployeeTree extends JxFrame implements TreeSelectionListener {
 
     private void addNodes(DefaultMutableTreeNode pnode, Employee emp) {
         DefaultMutableTreeNode node;
-        Enumeration            e = emp.elements();
+        Enumeration e = emp.elements();
 
         while (e.hasMoreElements()) {
             Employee newEmp = (Employee) e.nextElement();
@@ -80,7 +77,6 @@ public class EmployeeTree extends JxFrame implements TreeSelectionListener {
 
     /**
      * Method description
-     *
      *
      * @param topDog
      */
@@ -100,10 +96,9 @@ public class EmployeeTree extends JxFrame implements TreeSelectionListener {
     /**
      * Method description
      *
-     *
      * @param argv
      */
-    static public void main(String argv[]) {
+    static public void main(String[] argv) {
         new EmployeeTree();
     }
 
@@ -116,7 +111,7 @@ public class EmployeeTree extends JxFrame implements TreeSelectionListener {
 
         for (int i = 0; i < 5; i++) {
             salesMgr.add(new Employee("Sales " + new Integer(i).toString(),
-                                      30000.0F + (float) (Math.random() - 0.5) * 10000));
+                    30000.0F + (float) (Math.random() - 0.5) * 10000));
         }
 
         advMgr.add(new Employee("Secy", 20000));
@@ -125,25 +120,24 @@ public class EmployeeTree extends JxFrame implements TreeSelectionListener {
 
         for (int i = 0; i < 4; i++) {
             prodMgr.add(new Employee("Manuf " + new Integer(i).toString(),
-                                     25000.0F + (float) (Math.random() - 0.5) * 5000));
+                    25000.0F + (float) (Math.random() - 0.5) * 5000));
         }
 
         for (int i = 0; i < 3; i++) {
             shipMgr.add(new Employee("ShipClrk " + new Integer(i).toString(),
-                                     20000.0F + (float) (Math.random() - 0.5) * 5000));
+                    20000.0F + (float) (Math.random() - 0.5) * 5000));
         }
     }
 
     /**
      * Method description
      *
-     *
      * @param evt
      */
     public void valueChanged(TreeSelectionEvent evt) {
-        TreePath path         = evt.getPath();
-        String   selectedTerm = path.getLastPathComponent().toString();
-        Employee emp          = boss.getChild(selectedTerm);
+        TreePath path = evt.getPath();
+        String selectedTerm = path.getLastPathComponent().toString();
+        Employee emp = boss.getChild(selectedTerm);
 
         if (emp != null) {
             cost.setText(new Float(emp.getSalaries()).toString());
@@ -159,7 +153,7 @@ public class EmployeeTree extends JxFrame implements TreeSelectionListener {
         treePanel.add("South", cost = new JLabel("          "));
         treePanel.setBorder(new BevelBorder(BevelBorder.RAISED));
         troot = new DefaultMutableTreeNode(boss.getName());
-        tree  = new JTree(troot);
+        tree = new JTree(troot);
         tree.setBackground(Color.lightGray);
         loadTree(boss);
 

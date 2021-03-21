@@ -24,44 +24,34 @@
  */
 
 
-
 package cooper.designpatterns.structural.bridge;
 
-import java.awt.*;
-import java.awt.event.*;
-
-import java.util.*;
+import cooper.designpatterns.util.swing.JxFrame;
 
 import javax.swing.*;
-import javax.swing.border.*;
-import javax.swing.event.*;
-
-//swing classes
-import javax.swing.text.*;
-import javax.swing.tree.*;
-
-import cooper.designpatterns.util.swing.*;
+import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.util.Vector;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class ProductDisplay extends JxFrame {
 
     /**
      * Constructs ...
-     *
      */
     public ProductDisplay() {
         super("The Java Factory-- Products");
         setLF();            // set look and feel
         setCloseClick();    // set close on window close click
 
-        InputFile f    = new InputFile("products.txt");
-        Vector    prod = new Vector();
+        InputFile f = new InputFile("products.txt");
+        Vector prod = new Vector();
 
         // read in product list
         String s = f.readLine();
@@ -76,7 +66,7 @@ public class ProductDisplay extends JxFrame {
         getContentPane().add(p);
         p.setLayout(new GridLayout(1, 2));
 
-        JPanel pleft  = new JPanel();
+        JPanel pleft = new JPanel();
         JPanel pright = new JPanel();
 
         p.add(pleft);
@@ -98,10 +88,9 @@ public class ProductDisplay extends JxFrame {
     /**
      * Method description
      *
-     *
      * @param argv
      */
-    static public void main(String argv[]) {
+    static public void main(String[] argv) {
         new ProductDisplay();
     }
 
@@ -109,10 +98,10 @@ public class ProductDisplay extends JxFrame {
 
         // create window listener to respond to window close click
         addWindowListener(new WindowAdapter() {
-                              public void windowClosing(WindowEvent e) {
-                                  System.exit(0);
-                              }
-                          });
+            public void windowClosing(WindowEvent e) {
+                System.exit(0);
+            }
+        });
     }
 
     private void setLF() {

@@ -24,31 +24,29 @@
  */
 
 
-
 package cooper.designpatterns.creational.prototype;
 
-import java.awt.*;
-import java.awt.event.*;
+import cooper.designpatterns.util.swing.JxFrame;
 
-import cooper.designpatterns.util.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class SwimInfo extends JxFrame implements ActionListener {
     SwimData sdata,
-             sxdata = null;
-    List     swList, cloneList;
-    Button   clone, refresh, quit;
-    Swimmer  sw;
+            sxdata = null;
+    List swList, cloneList;
+    Button clone, refresh, quit;
+    Swimmer sw;
 
     /**
      * Constructs ...
-     *
      */
     public SwimInfo() {
         super("Prototype example");
@@ -61,7 +59,6 @@ public class SwimInfo extends JxFrame implements ActionListener {
 
     /**
      * Method description
-     *
      *
      * @param e
      */
@@ -107,17 +104,16 @@ public class SwimInfo extends JxFrame implements ActionListener {
     /**
      * Method description
      *
-     *
      * @param argv
      */
-    static public void main(String argv[]) {
+    static public void main(String[] argv) {
         new SwimInfo();
     }
 
     private void setGUI() {
         setLayout(new GridLayout(1, 3));
         setBackground(Color.lightGray);
-        swList    = new List(15);
+        swList = new List(15);
         cloneList = new List(15);
 
         Panel cp = new Panel();
@@ -125,9 +121,9 @@ public class SwimInfo extends JxFrame implements ActionListener {
         add(swList);
         add(cp);
         add(cloneList);
-        clone   = new Button("Clone -->");
+        clone = new Button("Clone -->");
         refresh = new Button("<--Refresh");
-        quit    = new Button("Quit");
+        quit = new Button("Quit");
         cp.setLayout(new GridLayout(3, 1));
 
         Panel p1 = new Panel();

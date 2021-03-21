@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.creational.builder;
 
 import gamma.designpatterns.creational.maze.Maze;
@@ -34,6 +33,7 @@ import gamma.designpatterns.creational.maze.Maze;
  * <p>Description: </p>
  * <p>Copyright: Copyright (c) 2002</p>
  * <p>Company: GioPerLab</p>
+ *
  * @author giorgio_peron@libero.it
  * @version 1.0
  */

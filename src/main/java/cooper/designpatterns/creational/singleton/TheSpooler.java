@@ -24,7 +24,6 @@
  */
 
 
-
 package cooper.designpatterns.creational.singleton;
 
 class TheSpooler {
@@ -33,11 +32,11 @@ class TheSpooler {
     // such that only one instance can ever exist
     static boolean instance_flag = false;    // true if 1 instance
 
-    private TheSpooler() {}
+    private TheSpooler() {
+    }
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -53,7 +52,6 @@ class TheSpooler {
 
     /**
      * Method description
-     *
      */
     public void finalize() {
         instance_flag = false;

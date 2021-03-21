@@ -26,12 +26,12 @@
 
 
 /*
-* ConcreteElement.java
-*
-* Created on 16 dicembre 2006, 17.21
-*
-* To change this template, choose Tools | Template Manager
-* and open the template in the editor.
+ * ConcreteElement.java
+ *
+ * Created on 16 dicembre 2006, 17.21
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
  */
 package designpatterns.behavioral.visitor;
 
@@ -40,4 +40,5 @@ package designpatterns.behavioral.visitor;
  *
  * @author gperon
  */
-public @interface ConcreteElement {}
+public @interface ConcreteElement {
+}

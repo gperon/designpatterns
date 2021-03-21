@@ -24,20 +24,18 @@
  */
 
 
-
 package cooper.designpatterns.structural.facade;
 
 class ResultSet {
 
-//  this class is a higher level abstraction
+    //  this class is a higher level abstraction
 //  of the JDBC ResultSet object
-    java.sql.ResultSet         rs;
+    java.sql.ResultSet rs;
     java.sql.ResultSetMetaData rsmd;
-    int                        numCols;
+    int numCols;
 
     /**
      * Constructs ...
-     *
      *
      * @param rset
      */
@@ -47,7 +45,7 @@ class ResultSet {
         try {
 
             // get the meta data and column count at once
-            rsmd    = rs.getMetaData();
+            rsmd = rs.getMetaData();
             numCols = rsmd.getColumnCount();
         } catch (Exception e) {
             System.out.println("resultset error" + e.getMessage());
@@ -56,7 +54,6 @@ class ResultSet {
 
     /**
      * Method description
-     *
      */
     public void finalize() {
         try {
@@ -68,7 +65,6 @@ class ResultSet {
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -91,9 +87,7 @@ class ResultSet {
     /**
      * Method description
      *
-     *
      * @param i
-     *
      * @return
      */
     public String getColumnValue(int i) {
@@ -111,9 +105,7 @@ class ResultSet {
     /**
      * Method description
      *
-     *
      * @param columnName
-     *
      * @return
      */
     public String getColumnValue(String columnName) {
@@ -131,14 +123,13 @@ class ResultSet {
     /**
      * Method description
      *
-     *
      * @return
      */
     public String[] getMetaData() {
 
         // returns an array of all the column names
         // or other meta data
-        String md[] = new String[numCols];
+        String[] md = new String[numCols];
 
         try {
             for (int i = 1; i <= numCols; i++) {
@@ -153,7 +144,6 @@ class ResultSet {
 
     /**
      * Method description
-     *
      *
      * @return
      */

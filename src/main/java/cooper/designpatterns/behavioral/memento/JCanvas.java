@@ -24,26 +24,22 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.memento;
 
-import java.awt.*;
-
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class JCanvas extends JPanel {
     Mediator med;
 
     /**
      * Constructs ...
-     *
      *
      * @param md
      */
@@ -55,7 +51,6 @@ public class JCanvas extends JPanel {
 
     /**
      * Method description
-     *
      *
      * @param g
      */

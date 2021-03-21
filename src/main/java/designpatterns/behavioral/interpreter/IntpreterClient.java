@@ -26,12 +26,12 @@
 
 
 /*
-* IntpreterClient.java
-*
-* Created on 16 dicembre 2006, 17.12
-*
-* To change this template, choose Tools | Template Manager
-* and open the template in the editor.
+ * IntpreterClient.java
+ *
+ * Created on 16 dicembre 2006, 17.12
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
  */
 package designpatterns.behavioral.interpreter;
 
@@ -41,4 +41,5 @@ package designpatterns.behavioral.interpreter;
  *
  * @author gperon
  */
-public @interface IntpreterClient {}
+public @interface IntpreterClient {
+}

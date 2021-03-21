@@ -24,25 +24,24 @@
  */
 
 
-
 package metsker.designpatterns.behavioral.templatemethod;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
 
 /**
  * This class runs on the (fictional) Aster star press and aids communication
  * with the factory in which the star press runs. In fact this class is a
  * mock-up that shows how a client might supply a template method.
- *
+ * <p>
  * The "Template Method" chapter in "Design Patterns in C#" describes this
  * class.
  */
@@ -53,13 +52,15 @@ public abstract class AsterStarPress {
      * Extrude all of the chemical paste (used for firework stars) to waste
      * area.
      */
-    public void dischargePaste() {}
+    public void dischargePaste() {
+    }
 
     /**
      * Spray water over the processing and discharge areas, keeping the press
      * from getting gunky.
      */
-    public void flush() {}
+    public void flush() {
+    }
 
     /**
      * @return true if the machine is processing a mold.
@@ -72,8 +73,7 @@ public abstract class AsterStarPress {
      * Subclasses have to fill in how the host factory can deal with the problem
      * of an incompletely processed mold.
      *
-     * @param id
-     *            which mold is incomplete
+     * @param id which mold is incomplete
      */
     public abstract void markMoldIncomplete(int id);
 
@@ -94,10 +94,12 @@ public abstract class AsterStarPress {
     /**
      * Stop the processing subassembly.
      */
-    public void stopProcessing() {}
+    public void stopProcessing() {
+    }
 
     /**
      * Move all molds to the output conveyor.
      */
-    public void usherInputMolds() {}
+    public void usherInputMolds() {
+    }
 }

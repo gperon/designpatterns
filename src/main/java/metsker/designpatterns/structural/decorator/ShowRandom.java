@@ -24,24 +24,24 @@
  */
 
 
-
 package metsker.designpatterns.structural.decorator;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import java.io.BufferedWriter;
-import java.io.IOException;
 
 import metsker.designpatterns.util.filter.ConsoleWriter;
 import metsker.designpatterns.util.filter.RandomCaseFilter;
+
+import java.io.BufferedWriter;
+import java.io.IOException;
 
 /**
  * Show the effects of randomizing text.
@@ -51,14 +51,12 @@ public class ShowRandom {
     /**
      * Method description
      *
-     *
      * @param args
-     *
      * @throws IOException
      */
     public static void main(String[] args) throws IOException {
         BufferedWriter w =
-            new BufferedWriter(new RandomCaseFilter(new ConsoleWriter()));
+                new BufferedWriter(new RandomCaseFilter(new ConsoleWriter()));
         w.write("buy two packs now and get a "
                 + "zippie pocket rocket -- free!");
         w.newLine();

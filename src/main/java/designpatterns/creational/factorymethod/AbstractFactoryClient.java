@@ -26,12 +26,12 @@
 
 
 /*
-* AbstractFactoryClient.java
-*
-* Created on 7 novembre 2006, 21.18
-*
-* To change this template, choose Tools | Template Manager
-* and open the template in the editor.
+ * AbstractFactoryClient.java
+ *
+ * Created on 7 novembre 2006, 21.18
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
  */
 package designpatterns.creational.factorymethod;
 
@@ -40,4 +40,5 @@ package designpatterns.creational.factorymethod;
  *
  * @author gperon
  */
-public @interface AbstractFactoryClient {}
+public @interface AbstractFactoryClient {
+}

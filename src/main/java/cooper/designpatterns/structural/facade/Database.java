@@ -24,43 +24,43 @@
  */
 
 
-
 package cooper.designpatterns.structural.facade;
 
-import java.sql.*;
-
-import java.util.*;
+import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.DriverManager;
+import java.sql.ResultSetMetaData;
+import java.sql.Statement;
+import java.util.Vector;
 
 class Database {
-    Connection        con;
-    ResultSet         results;
+    Connection con;
+    ResultSet results;
     ResultSetMetaData rsmd;
-    DatabaseMetaData  dma;
-    String            catalog;
-    String            types[];
-    String            database_url;
+    DatabaseMetaData dma;
+    String catalog;
+    String[] types;
+    String database_url;
 
     /**
      * Constructs ...
      *
-     *
      * @param driver
      */
     public Database(String driver) {
-        types    = new String[1];
+        types = new String[1];
         types[0] = "TABLES";    // initialize type array
 
         try {
             Class.forName(driver);
         }    // load the Bridge driver
-                catch (Exception e) {
+        catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
 
     /**
      * Method description
-     *
      */
     public void close() {
         try {
@@ -73,9 +73,7 @@ class Database {
     /**
      * Method description
      *
-     *
      * @param sql
-     *
      * @return
      */
     public ResultSet execute(String sql) {
@@ -97,12 +95,11 @@ class Database {
     /**
      * Method description
      *
-     *
      * @param url
      * @param cat
      */
     public void open(String url, String cat) {
-        catalog      = cat;
+        catalog = cat;
         database_url = url;
 
         try {
@@ -115,7 +112,6 @@ class Database {
 
     /**
      * Method description
-     *
      */
     public void reOpen() {
         try {
@@ -129,9 +125,7 @@ class Database {
     /**
      * Method description
      *
-     *
      * @param tablename
-     *
      * @return
      */
     public String[] getColumnMetaData(String tablename) {
@@ -151,16 +145,14 @@ class Database {
     /**
      * Method description
      *
-     *
      * @param table
-     *
      * @return
      */
     public String[] getColumnNames(String table) {
 
         // return an array of Column names
         String[] tbnames = null;
-        Vector   tname   = new Vector();
+        Vector tname = new Vector();
 
         try {
             results = new ResultSet(dma.getColumns(catalog, null, table, null));
@@ -184,10 +176,8 @@ class Database {
     /**
      * Method description
      *
-     *
      * @param table
      * @param columnName
-     *
      * @return
      */
     public String getColumnValue(String table, String columnName) {
@@ -213,9 +203,7 @@ class Database {
     /**
      * Method description
      *
-     *
      * @param columnName
-     *
      * @return
      */
     public String getNextValue(String columnName) {
@@ -238,7 +226,6 @@ class Database {
     /**
      * Method description
      *
-     *
      * @return
      */
     public String[] getTableMetaData() {
@@ -258,12 +245,11 @@ class Database {
     /**
      * Method description
      *
-     *
      * @return
      */
     public String[] getTableNames() {
         String[] tbnames = null;
-        Vector   tname   = new Vector();
+        Vector tname = new Vector();
 
         // add the table names to a Vector
         // since we don't know how many there are

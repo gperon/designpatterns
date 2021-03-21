@@ -26,12 +26,12 @@
 
 
 /*
-* PrimitiveOperation.java
-*
-* Created on 28 dicembre 2006, 13.51
-*
-* To change this template, choose Tools | Template Manager
-* and open the template in the editor.
+ * PrimitiveOperation.java
+ *
+ * Created on 28 dicembre 2006, 13.51
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
  */
 package designpatterns.behavioral.templatemethod;
 
@@ -39,8 +39,8 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Target;
 
 /**
- *
  * @author gperon
  */
 @Target(ElementType.METHOD)
-public @interface PrimitiveOperation {}
+public @interface PrimitiveOperation {
+}

@@ -26,12 +26,12 @@
 
 
 /*
-* Strategy.java
-*
-* Created on 16 dicembre 2006, 17.16
-*
-* To change this template, choose Tools | Template Manager
-* and open the template in the editor.
+ * Strategy.java
+ *
+ * Created on 16 dicembre 2006, 17.16
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
  */
 package designpatterns.behavioral.strategy;
 
@@ -40,4 +40,5 @@ package designpatterns.behavioral.strategy;
  *
  * @author gperon
  */
-public @interface Strategy {}
+public @interface Strategy {
+}

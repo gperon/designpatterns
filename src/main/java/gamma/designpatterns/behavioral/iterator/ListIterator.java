@@ -26,23 +26,21 @@
 
 
 /*
-* ListIterator.java
-*
-* Created on 4 novembre 2006, 10.30
-*
-* To change this template, choose Tools | Template Manager
-* and open the template in the editor.
+ * ListIterator.java
+ *
+ * Created on 4 novembre 2006, 10.30
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
  */
 package gamma.designpatterns.behavioral.iterator;
 
 /**
- *
- * @author gperon
- *
  * @param <Item>
+ * @author gperon
  */
 public class ListIterator<Item> implements Iterator {
-    private List<Item> list;
+    private final List<Item> list;
     private int current;
 
     /**
@@ -57,7 +55,6 @@ public class ListIterator<Item> implements Iterator {
 
     /**
      * Method description
-     *
      */
     public void first() {
         current = 0;
@@ -65,7 +62,6 @@ public class ListIterator<Item> implements Iterator {
 
     /**
      * Method description
-     *
      */
     public void next() {
         current++;
@@ -73,7 +69,6 @@ public class ListIterator<Item> implements Iterator {
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -83,7 +78,6 @@ public class ListIterator<Item> implements Iterator {
 
     /**
      * Method description
-     *
      *
      * @return
      */

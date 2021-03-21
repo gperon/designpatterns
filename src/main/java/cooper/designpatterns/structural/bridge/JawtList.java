@@ -24,25 +24,23 @@
  */
 
 
-
 package cooper.designpatterns.structural.bridge;
-
-import java.util.*;
-
-import javax.swing.*;
-import javax.swing.event.*;
 
 import cooper.designpatterns.structural.adapter.AwtList;
 
+import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+import java.util.Vector;
+
 //=========================================
 class JListData extends AbstractListModel {
-    private Vector data;
+    private final Vector data;
 
 //  -----------------------------------------
 
     /**
      * Constructs ...
-     *
      */
     public JListData() {
         data = new Vector();
@@ -52,7 +50,6 @@ class JListData extends AbstractListModel {
 
     /**
      * Method description
-     *
      *
      * @param s
      */
@@ -66,7 +63,6 @@ class JListData extends AbstractListModel {
     /**
      * Method description
      *
-     *
      * @param s
      */
     public void removeElement(String s) {
@@ -79,9 +75,7 @@ class JListData extends AbstractListModel {
     /**
      * Method description
      *
-     *
      * @param index
-     *
      * @return
      */
     public Object getElementAt(int index) {
@@ -92,7 +86,6 @@ class JListData extends AbstractListModel {
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -108,25 +101,23 @@ class JListData extends AbstractListModel {
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class JawtList extends JScrollPane implements ListSelectionListener, AwtList {
-    private JList     listWindow;
-    private JListData listContents;
+    private final JList listWindow;
+    private final JListData listContents;
 
 //  -----------------------------------------
 
     /**
      * Constructs ...
      *
-     *
      * @param rows
      */
     public JawtList(int rows) {
         listContents = new JListData();
-        listWindow   = new JList(listContents);
+        listWindow = new JList(listContents);
         listWindow.setPrototypeCellValue("Abcdefg Hijkmnop");
         getViewport().add(listWindow);
     }
@@ -135,7 +126,6 @@ public class JawtList extends JScrollPane implements ListSelectionListener, AwtL
 
     /**
      * Method description
-     *
      *
      * @param s
      */
@@ -148,7 +138,6 @@ public class JawtList extends JScrollPane implements ListSelectionListener, AwtL
     /**
      * Method description
      *
-     *
      * @param s
      */
     public void remove(String s) {
@@ -160,22 +149,21 @@ public class JawtList extends JScrollPane implements ListSelectionListener, AwtL
     /**
      * Method description
      *
-     *
      * @param e
      */
-    public void valueChanged(ListSelectionEvent e) {}
+    public void valueChanged(ListSelectionEvent e) {
+    }
 
 //  -----------------------------------------
 
     /**
      * Method description
      *
-     *
      * @return
      */
     public String[] getSelectedItems() {
         Object[] obj = listWindow.getSelectedValues();
-        String[] s   = new String[obj.length];
+        String[] s = new String[obj.length];
 
         for (int i = 0; i < obj.length; i++) {
             s[i] = obj[i].toString();

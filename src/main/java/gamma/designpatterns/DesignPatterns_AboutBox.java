@@ -24,13 +24,12 @@
  */
 
 
-
 package gamma.designpatterns;
 
-import java.awt.*;
-import java.awt.event.*;
-
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * <p>Title: Design Patterns</p>
@@ -45,30 +44,29 @@ import javax.swing.*;
  * @version 1.0
  */
 public class DesignPatterns_AboutBox extends JDialog implements ActionListener {
-    JPanel       panel1        = new JPanel();
-    JPanel       panel2        = new JPanel();
-    JPanel       insetsPanel1  = new JPanel();
-    JPanel       insetsPanel2  = new JPanel();
-    JPanel       insetsPanel3  = new JPanel();
-    JButton      button1       = new JButton();
-    JLabel       imageLabel    = new JLabel();
-    JLabel       label1        = new JLabel();
-    JLabel       label2        = new JLabel();
-    JLabel       label3        = new JLabel();
-    JLabel       label4        = new JLabel();
-    ImageIcon    image1        = new ImageIcon();
+    JPanel panel1 = new JPanel();
+    JPanel panel2 = new JPanel();
+    JPanel insetsPanel1 = new JPanel();
+    JPanel insetsPanel2 = new JPanel();
+    JPanel insetsPanel3 = new JPanel();
+    JButton button1 = new JButton();
+    JLabel imageLabel = new JLabel();
+    JLabel label1 = new JLabel();
+    JLabel label2 = new JLabel();
+    JLabel label3 = new JLabel();
+    JLabel label4 = new JLabel();
+    ImageIcon image1 = new ImageIcon();
     BorderLayout borderLayout1 = new BorderLayout();
     BorderLayout borderLayout2 = new BorderLayout();
-    FlowLayout   flowLayout1   = new FlowLayout();
-    GridLayout   gridLayout1   = new GridLayout();
-    String       product       = "Design Patterns";
-    String       version       = "1.0";
-    String       copyright     = "Copyright (c) 2003-2005";
-    String       comments      = "";
+    FlowLayout flowLayout1 = new FlowLayout();
+    GridLayout gridLayout1 = new GridLayout();
+    String product = "Design Patterns";
+    String version = "1.0";
+    String copyright = "Copyright (c) 2003-2005";
+    String comments = "";
 
     /**
      * Constructs ...
-     *
      */
     public DesignPatterns_AboutBox() {
         this(null);
@@ -76,7 +74,6 @@ public class DesignPatterns_AboutBox extends JDialog implements ActionListener {
 
     /**
      * Constructs ...
-     *
      *
      * @param parent
      */

@@ -24,35 +24,31 @@
  */
 
 
-
 package cooper.designpatterns.util.swing.table;
 
-import javax.swing.table.*;
+import javax.swing.table.AbstractTableModel;
 
 class MusicModel extends AbstractTableModel {
-    String[]   columnNames = { "Composer", "Title", "Orchestral" };
-    Object[][] musicData   = {
-        { "Tschaikovsky", "1812 Overture", new Boolean(true) }, { "Stravinsky", "Le Sacre", new Boolean(true) },
-        { "Lennon", "Eleanor Rigby", new Boolean(false) }, { "Wagner", "Gotterdammerung", new Boolean(true) }
+    String[] columnNames = {"Composer", "Title", "Orchestral"};
+    Object[][] musicData = {
+            {"Tschaikovsky", "1812 Overture", new Boolean(true)}, {"Stravinsky", "Le Sacre", new Boolean(true)},
+            {"Lennon", "Eleanor Rigby", new Boolean(false)}, {"Wagner", "Gotterdammerung", new Boolean(true)}
     };
     int rowCount, columnCount;
 
     /**
      * Constructs ...
-     *
      */
     public MusicModel() {
-        rowCount    = 4;
+        rowCount = 4;
         columnCount = 3;
     }
 
     /**
      * Method description
      *
-     *
      * @param row
      * @param col
-     *
      * @return
      */
     public boolean isCellEditable(int row, int col) {
@@ -62,9 +58,7 @@ class MusicModel extends AbstractTableModel {
     /**
      * Method description
      *
-     *
      * @param col
-     *
      * @return
      */
     public Class getColumnClass(int col) {
@@ -73,7 +67,6 @@ class MusicModel extends AbstractTableModel {
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -84,9 +77,7 @@ class MusicModel extends AbstractTableModel {
     /**
      * Method description
      *
-     *
      * @param col
-     *
      * @return
      */
     public String getColumnName(int col) {
@@ -95,7 +86,6 @@ class MusicModel extends AbstractTableModel {
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -106,10 +96,8 @@ class MusicModel extends AbstractTableModel {
     /**
      * Method description
      *
-     *
      * @param row
      * @param col
-     *
      * @return
      */
     public Object getValueAt(int row, int col) {
@@ -118,7 +106,6 @@ class MusicModel extends AbstractTableModel {
 
     /**
      * Method description
-     *
      *
      * @param obj
      * @param row

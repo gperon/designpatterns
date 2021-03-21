@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.behavioral;
 
 import gamma.designpatterns.behavioral.interpreter.BooleanExp;
@@ -43,11 +42,10 @@ import gamma.designpatterns.behavioral.interpreter.Context;
  * @version 1.0
  */
 public class Constant implements BooleanExp {
-    private boolean value;
+    private final boolean value;
 
     /**
      * Constructs ...
-     *
      *
      * @param value
      */
@@ -60,7 +58,7 @@ public class Constant implements BooleanExp {
      *
      * @return BooleanExp
      * @todo Implement this designpatterns.behavioral.interpreter.BooleanExp
-     *   method
+     * method
      */
     public BooleanExp copy() {
         return new Constant(value);
@@ -72,7 +70,7 @@ public class Constant implements BooleanExp {
      * @param aContext Context
      * @return boolean
      * @todo Implement this designpatterns.behavioral.interpreter.BooleanExp
-     *   method
+     * method
      */
     public boolean evaluate(Context aContext) {
         return value;
@@ -82,10 +80,10 @@ public class Constant implements BooleanExp {
      * replace
      *
      * @param aName String
-     * @param exp BooleanExp
+     * @param exp   BooleanExp
      * @return BooleanExp
      * @todo Implement this designpatterns.behavioral.interpreter.BooleanExp
-     *   method
+     * method
      */
     public BooleanExp replace(String aName, BooleanExp exp) {
         return this;

@@ -24,19 +24,19 @@
  */
 
 
-
 package metsker.designpatterns.behavioral.iterator;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -44,9 +44,8 @@ import java.util.List;
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class ShowForeach {
 
@@ -64,7 +63,6 @@ public class ShowForeach {
 
     /**
      * Method description
-     *
      */
     public void showIterator() {
         List names = new ArrayList();
@@ -80,7 +78,6 @@ public class ShowForeach {
 
     /**
      * Method description
-     *
      */
     public void showForeach() {
         List<String> names = new ArrayList<String>();

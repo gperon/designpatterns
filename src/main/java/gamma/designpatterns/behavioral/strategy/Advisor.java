@@ -24,24 +24,21 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.strategy;
 
 /**
  * Interface description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public interface Advisor {
 
     /**
      * Recommend a nice firework for this customer to purchase.
      *
-     *
      * @param c
      * @return a nice firework for this customer to purchase
      */
-    public Firework recommend(Customer c);
+    Firework recommend(Customer c);
 }

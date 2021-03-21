@@ -24,10 +24,9 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.strategy;
 
-import java.util.*;
+import java.util.List;
 
 /**
  * <p>Title: Design Patterns</p>
@@ -53,14 +52,13 @@ public class Composition {
     /**
      * Constructs ...
      *
-     *
      * @param compositor
      */
-    public Composition(Compositor compositor) {}
+    public Composition(Compositor compositor) {
+    }
 
     /**
      * Method description
-     *
      */
     public void repair() {
         Coord[] natural = new Coord[1];
@@ -78,7 +76,7 @@ public class Composition {
         // determine where the breaks are:
         int breakCount;
         breakCount = compositor.compose(natural, stretchability, shrinkability,
-                                        componentCount, lineWidth, breaks);
+                componentCount, lineWidth, breaks);
         // lay out components according to breaks
         // ...
     }

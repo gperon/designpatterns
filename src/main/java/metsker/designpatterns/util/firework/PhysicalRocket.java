@@ -24,35 +24,33 @@
  */
 
 
-
 package metsker.designpatterns.util.firework;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
 
 /**
  * A physical model of a rocket for use in simulations.
  */
 public class PhysicalRocket {
-    private double burnArea;
-    private double burnRate;
-    private double initialFuelMass;
-    private double totalMass;
-    private double totalBurnTime;
-    private static double SPECIFIC_IMPULSE = 620;    // Newtons/Kg
-    private static double FUEL_DENSITY = 1800;       // Kg/M**3
+    private final double burnArea;
+    private final double burnRate;
+    private final double initialFuelMass;
+    private final double totalMass;
+    private final double totalBurnTime;
+    private static final double SPECIFIC_IMPULSE = 620;    // Newtons/Kg
+    private static final double FUEL_DENSITY = 1800;       // Kg/M**3
 
     /**
      * Constructs ...
-     *
      *
      * @param burnArea
      * @param burnRate
@@ -70,10 +68,9 @@ public class PhysicalRocket {
     }
 
     /**
-     *
      * @param t
      * @return The remaining mass of the rocket after burning off a portion of
-     *         its fuel.
+     * its fuel.
      */
     public double getMass(double t) {
         if (t > totalBurnTime) {

@@ -24,32 +24,31 @@
  */
 
 
-
 package metsker.designpatterns.util.planning;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import java.util.Date;
 
 import metsker.designpatterns.util.machine.Machine;
 
+import java.util.Date;
+
 /**
- *  A planner for estimating when a shell assembler will
- *  become available.
+ * A planner for estimating when a shell assembler will
+ * become available.
  */
 public class ShellPlanner extends MachinePlanner {
 
     /**
      * Constructs ...
-     *
      *
      * @param m
      */
@@ -58,8 +57,8 @@ public class ShellPlanner extends MachinePlanner {
     }
 
     /**
-     *  Say when this planner's machine will be available; this
-     *  method is not yet actually implemented.
+     * Say when this planner's machine will be available; this
+     * method is not yet actually implemented.
      *
      * @return
      */

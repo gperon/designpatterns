@@ -24,22 +24,23 @@
  */
 
 
-
 package gamma.designpatterns.structural.composite;
 
 //swing classes
-import java.awt.*;
 
 import javax.swing.*;
-import javax.swing.border.*;
-import javax.swing.event.*;
-import javax.swing.tree.*;
+import javax.swing.border.BevelBorder;
+import javax.swing.event.TreeSelectionEvent;
+import javax.swing.event.TreeSelectionListener;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.TreePath;
+import java.awt.*;
 
 /**
- *  Description of the Class
+ * Description of the Class
  *
- * @author     giorgio
- * @created    9 giugno 2002
+ * @author giorgio
+ * @created 9 giugno 2002
  */
 public class EmpTree extends JxFrame implements TreeSelectionListener {
     Employee boss, marketVP, prodVP;
@@ -52,7 +53,7 @@ public class EmpTree extends JxFrame implements TreeSelectionListener {
     JLabel cost;
 
     /**
-     *  Constructor for the empTree object
+     * Constructor for the empTree object
      */
     public EmpTree() {
         super("Employee tree");
@@ -61,7 +62,7 @@ public class EmpTree extends JxFrame implements TreeSelectionListener {
     }
 
     /**
-     *  Sets the GUI
+     * Sets the GUI
      */
     private void jbInit() {
         treePanel = new JPanel();
@@ -85,9 +86,9 @@ public class EmpTree extends JxFrame implements TreeSelectionListener {
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  topDog  Description of the Parameter
+     * @param topDog Description of the Parameter
      */
     public void loadTree(Employee topDog) {
         DefaultMutableTreeNode troot;
@@ -102,10 +103,10 @@ public class EmpTree extends JxFrame implements TreeSelectionListener {
     }
 
     /**
-     *  Adds a feature to the Nodes attribute of the empTree object
+     * Adds a feature to the Nodes attribute of the empTree object
      *
-     * @param  pnode  The feature to be added to the Nodes attribute
-     * @param  emp    The feature to be added to the Nodes attribute
+     * @param pnode The feature to be added to the Nodes attribute
+     * @param emp   The feature to be added to the Nodes attribute
      */
     private void addNodes(DefaultMutableTreeNode pnode, Employee emp) {
         DefaultMutableTreeNode node;
@@ -117,7 +118,7 @@ public class EmpTree extends JxFrame implements TreeSelectionListener {
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      */
     private void makeEmployees() {
         boss = new Employee("CEO", 200000);
@@ -127,28 +128,28 @@ public class EmpTree extends JxFrame implements TreeSelectionListener {
         marketVP.add(advMgr = new Employee("Advt Mgr", 50000));
         for (int i = 0; i < 5; i++) {
             salesMgr.add(new Employee("Sales " + new Integer(i).toString(),
-                                      30000.0F
-                                      + (float) (Math.random() - 0.5) * 10000));
+                    30000.0F
+                            + (float) (Math.random() - 0.5) * 10000));
         }
         advMgr.add(new Employee("Secy", 20000));
         prodVP.add(prodMgr = new Employee("Prod Mgr", 40000));
         prodVP.add(shipMgr = new Employee("Ship Mgr", 35000));
         for (int i = 0; i < 4; i++) {
             prodMgr.add(new Employee("Manuf " + new Integer(i).toString(),
-                                     25000.0F
-                                     + (float) (Math.random() - 0.5) * 5000));
+                    25000.0F
+                            + (float) (Math.random() - 0.5) * 5000));
         }
         for (int i = 0; i < 3; i++) {
             shipMgr.add(new Employee("ShipClrk " + new Integer(i).toString(),
-                                     20000.0F
-                                     + (float) (Math.random() - 0.5) * 5000));
+                    20000.0F
+                            + (float) (Math.random() - 0.5) * 5000));
         }
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  evt  Description of the Parameter
+     * @param evt Description of the Parameter
      */
     public void valueChanged(TreeSelectionEvent evt) {
         TreePath path = evt.getPath();
@@ -160,11 +161,11 @@ public class EmpTree extends JxFrame implements TreeSelectionListener {
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  argv  Description of the Parameter
+     * @param argv Description of the Parameter
      */
-    public static void main(String argv[]) {
+    public static void main(String[] argv) {
         new EmpTree();
     }
 }

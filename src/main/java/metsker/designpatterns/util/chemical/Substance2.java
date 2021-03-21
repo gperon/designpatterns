@@ -24,35 +24,32 @@
  */
 
 
-
 package metsker.designpatterns.util.chemical;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
 
 /**
  * This class represents a batch of chemical.
  */
 public class Substance2 {
-    private double grams;
-    private Chemical2 chemical;
+    private final double grams;
+    private final Chemical2 chemical;
 
     /**
      * Model a batch of stuff, revised from the original Substance class to rely
      * on an (immutable) Chemical class.
      *
-     * @param grams
-     *            The mass of this batch of substance.
-     * @param chemical
-     *            This batch's chemical composition
+     * @param grams    The mass of this batch of substance.
+     * @param chemical This batch's chemical composition
      */
     public Substance2(double grams, Chemical2 chemical) {
         this.grams = grams;

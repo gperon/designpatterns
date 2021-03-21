@@ -24,7 +24,6 @@
  */
 
 
-
 package metsker.designpatterns.util.machine;
 
 import metsker.designpatterns.util.planning.BasicPlanner;
@@ -34,7 +33,6 @@ import metsker.designpatterns.util.planning.MachinePlanner;
  * An unload buffer is a conveyor that contains bins of completed material.
  *
  * @author Steven J. Metsker
- *
  */
 public class UnloadBuffer extends Machine {
 
@@ -50,10 +48,8 @@ public class UnloadBuffer extends Machine {
     /**
      * Create a buffer with the given id and with the supplied parent machine.
      *
-     * @param id
-     *            the identity of this unload buffer
-     * @param parent
-     *            the composite this machine belongs to
+     * @param id     the identity of this unload buffer
+     * @param parent the composite this machine belongs to
      */
     public UnloadBuffer(int id, MachineComponent parent) {
         super(id, parent);
@@ -62,8 +58,7 @@ public class UnloadBuffer extends Machine {
     /**
      * Create a buffer with the given id.
      *
-     * @param id
-     *            the identity of this unload buffer
+     * @param id the identity of this unload buffer
      */
     public UnloadBuffer(int id) {
         super(id);
@@ -73,10 +68,8 @@ public class UnloadBuffer extends Machine {
      * Create a buffer with the given id and with access to the mediator that
      * will control bin/machine relations.
      *
-     * @param id
-     *            the identity of this unload buffer
-     * @param Mediator
-     *            the mediator that controls this machine's relation to bins
+     * @param id       the identity of this unload buffer
+     * @param Mediator the mediator that controls this machine's relation to bins
      */
     protected UnloadBuffer(int id, TubMediator mediator) {
         this(id, mediator, null);
@@ -86,11 +79,9 @@ public class UnloadBuffer extends Machine {
      * Create a buffer with the given id, with access to the mediator that will
      * control bin/machine relations, and with the supplied parent machine.
      *
-     * @param id
-     *            the identity of this unload buffer
+     * @param id       the identity of this unload buffer
      * @param mediator
-     * @param parent
-     *            the composite this machine belongs to
+     * @param parent   the composite this machine belongs to
      */
     public UnloadBuffer(int id, TubMediator mediator, MachineComponent parent) {
         super(id, mediator, parent);

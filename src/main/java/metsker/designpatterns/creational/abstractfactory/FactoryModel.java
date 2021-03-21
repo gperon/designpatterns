@@ -24,41 +24,38 @@
  */
 
 
-
 package metsker.designpatterns.creational.abstractfactory;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import java.awt.Point;
 
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
-
 /**
  * A model of a factory; at the moment this model just contains
- *  machine locations. However, the factory also provides support
- *  for undo by storing off mementos each time the factory
- *  configuration changes.
+ * machine locations. However, the factory also provides support
+ * for undo by storing off mementos each time the factory
+ * configuration changes.
  */
 public class FactoryModel {
-    private Stack mementos;
-    private ArrayList listeners = new ArrayList();
+    private final Stack mementos;
+    private final ArrayList listeners = new ArrayList();
 
     /**
      * Constructs ...
-     *
      */
     public FactoryModel() {
         mementos = new Stack();
@@ -67,7 +64,6 @@ public class FactoryModel {
 
     /**
      * Method description
-     *
      *
      * @param location
      */
@@ -81,7 +77,6 @@ public class FactoryModel {
 
     /**
      * Method description
-     *
      *
      * @param oldLocation
      * @param newLocation
@@ -98,7 +93,6 @@ public class FactoryModel {
     /**
      * Method description
      *
-     *
      * @return
      */
     public boolean canUndo() {
@@ -107,7 +101,6 @@ public class FactoryModel {
 
     /**
      * Method description
-     *
      */
     public void undo() {
         if (!canUndo()) {
@@ -120,7 +113,6 @@ public class FactoryModel {
     /**
      * Method description
      *
-     *
      * @return
      */
     public List getLocations() {
@@ -129,7 +121,6 @@ public class FactoryModel {
 
     /**
      * Method description
-     *
      *
      * @param list
      */
@@ -141,7 +132,6 @@ public class FactoryModel {
     /**
      * Method description
      *
-     *
      * @param listener
      */
     public void addChangeListener(ChangeListener listener) {
@@ -150,12 +140,11 @@ public class FactoryModel {
 
     /**
      * Method description
-     *
      */
     public void notifyListeners() {
         for (int i = 0; i < listeners.size(); i++) {
             ((ChangeListener) listeners.get(i)).stateChanged(
-                new ChangeEvent(this));
+                    new ChangeEvent(this));
         }
     }
 }

@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.visitor;
 
 import gamma.designpatterns.structural.composite.Bus;
@@ -33,47 +32,47 @@ import gamma.designpatterns.structural.composite.Chassis;
 import gamma.designpatterns.structural.composite.FloppyDisk;
 
 /**
- *  <p>
+ * <p>
+ * <p>
+ * Title: </p> <p>
+ * <p>
+ * Description: Design Patterns Examples</p> <p>
+ * <p>
+ * Copyright: Copyright (c) 2003</p> <p>
+ * <p>
+ * Company: GioPerLab</p>
  *
- *  Title: </p> <p>
- *
- *  Description: Design Patterns Examples</p> <p>
- *
- *  Copyright: Copyright (c) 2003</p> <p>
- *
- *  Company: GioPerLab</p>
- *
- * @author     giorgio_peron@libero.it
- * @created    8 marzo 2003
- * @version    1.0
+ * @author giorgio_peron@libero.it
+ * @version 1.0
+ * @created 8 marzo 2003
  */
 public interface EquipmentVisitor {
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  floppy
+     * @param floppy
      */
     void visitFloppyDisk(FloppyDisk floppy);
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  card  Description of the Parameter
+     * @param card Description of the Parameter
      */
     void visitCard(Card card);
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  chassis  Description of the Parameter
+     * @param chassis Description of the Parameter
      */
     void visitChassis(Chassis chassis);
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  bus  Description of the Parameter
+     * @param bus Description of the Parameter
      */
     void visitBus(Bus bus);
 }

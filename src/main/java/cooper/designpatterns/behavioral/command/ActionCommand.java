@@ -24,29 +24,27 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.command;
 
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class ActionCommand extends Frame {
-    Menu     mnuFile;
+    Menu mnuFile;
     MenuItem mnuOpen, mnuExit;
-    Button   btnRed;
-    Panel    p;
-    Frame    fr;
+    Button btnRed;
+    Panel p;
+    Frame fr;
 
     /**
      * Constructs ...
-     *
      */
     public ActionCommand() {
         super("Frame without commands");
@@ -64,7 +62,7 @@ public class ActionCommand extends Frame {
         mnuOpen.addActionListener(new fileOpen());
         mnuExit.addActionListener(new fileExit());
         btnRed = new Button("Red");
-        p      = new Panel();
+        p = new Panel();
         add(p);
         p.add(btnRed);
         btnRed.addActionListener(new btnRed());
@@ -79,10 +77,9 @@ public class ActionCommand extends Frame {
     /**
      * Method description
      *
-     *
      * @param argv
      */
-    static public void main(String argv[]) {
+    static public void main(String[] argv) {
         new ActionCommand();
     }
 
@@ -90,7 +87,6 @@ public class ActionCommand extends Frame {
 
         /**
          * Method description
-         *
          *
          * @param e
          */
@@ -104,7 +100,6 @@ public class ActionCommand extends Frame {
 
         /**
          * Method description
-         *
          *
          * @param e
          */
@@ -121,7 +116,6 @@ public class ActionCommand extends Frame {
 
         /**
          * Method description
-         *
          *
          * @param e
          */

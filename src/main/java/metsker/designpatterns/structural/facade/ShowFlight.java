@@ -24,34 +24,29 @@
  */
 
 
-
 package metsker.designpatterns.structural.facade;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.Graphics;
 
-import javax.swing.BorderFactory;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.TitledBorder;
+import java.awt.*;
 
 /**
  * This class displays the flight path of a dud (a non-exploding aerial shell),
  * but it needs refactoring. When you refactor it, you should see a facade
  * emerge for displaying Swing components.
+ *
  * @author Steven J. Metsker
  */
 public class ShowFlight extends JPanel {
@@ -76,14 +71,13 @@ public class ShowFlight extends JPanel {
      * Create a titled border with the given title.
      *
      * @param title
-     *
      * @return
      */
     public static TitledBorder createTitledBorder(String title) {
         TitledBorder tb = BorderFactory.createTitledBorder(
-                              BorderFactory.createBevelBorder(
-                                  BevelBorder.RAISED), title,
-                                      TitledBorder.LEFT, TitledBorder.TOP);
+                BorderFactory.createBevelBorder(
+                        BevelBorder.RAISED), title,
+                TitledBorder.LEFT, TitledBorder.TOP);
         tb.setTitleColor(Color.black);
         tb.setTitleFont(getStandardFont());
 
@@ -95,7 +89,6 @@ public class ShowFlight extends JPanel {
      *
      * @param title
      * @param in
-     *
      * @return
      */
     public static JPanel createTitledPanel(String title, JPanel in) {

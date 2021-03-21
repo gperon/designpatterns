@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.structural.bridge;
 
 /**
@@ -40,13 +39,13 @@ package gamma.designpatterns.structural.bridge;
  * @version 1.0
  */
 public class WindowSystemFactory {
-    private static WindowSystemFactory instance = new WindowSystemFactory();
+    private static final WindowSystemFactory instance = new WindowSystemFactory();
 
-    private WindowSystemFactory() {}
+    private WindowSystemFactory() {
+    }
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -57,9 +56,7 @@ public class WindowSystemFactory {
     /**
      * Method description
      *
-     *
      * @param imp
-     *
      * @return
      */
     public WindowImp makeWindowImp(String imp) {

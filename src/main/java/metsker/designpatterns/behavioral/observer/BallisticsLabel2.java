@@ -24,23 +24,24 @@
  */
 
 
-
 package metsker.designpatterns.behavioral.observer;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import javax.swing.*;
-import javax.swing.event.*;
 
 import metsker.designpatterns.util.Format;
+
+import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 /**
  * Instances of this class are labels that show the value of a slider as a
@@ -52,6 +53,7 @@ public class BallisticsLabel2 extends JLabel implements ChangeListener {
 
     /**
      * Update the label when the slider moves.
+     *
      * @param e ChangeEvent object (ignored)
      */
     public void stateChanged(ChangeEvent e) {
@@ -66,7 +68,6 @@ public class BallisticsLabel2 extends JLabel implements ChangeListener {
 
     /**
      * Construct a label that will show the value of a slider.
-     *
      *
      * @param slider
      */

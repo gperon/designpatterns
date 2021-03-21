@@ -24,24 +24,21 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.interpreter;
 
-import java.util.*;
+import java.util.Vector;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class Print extends Verb {
     Kid[] kids;
 
     /**
      * Constructs ...
-     *
      *
      * @param s
      */
@@ -52,7 +49,6 @@ public class Print extends Verb {
 
     /**
      * Method description
-     *
      */
     public void execute() {
         String pline;
@@ -69,8 +65,8 @@ public class Print extends Verb {
                 ParseVar v = (ParseVar) args.elementAt(j);
 
                 if (v instanceof MultVar) {
-                    MultVar mv    = (MultVar) v;
-                    Vector  vlist = mv.getVector();
+                    MultVar mv = (MultVar) v;
+                    Vector vlist = mv.getVector();
 
                     for (int k = 0; k < vlist.size(); k++) {
                         ParseVar pv = (ParseVar) vlist.elementAt(k);

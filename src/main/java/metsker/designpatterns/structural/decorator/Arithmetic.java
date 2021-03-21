@@ -24,18 +24,17 @@
  */
 
 
-
 package metsker.designpatterns.structural.decorator;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
 
 /**
@@ -48,39 +47,35 @@ public class Arithmetic extends Function {
      * Construct an arithmetic function that decorates the provided source
      * functions.
      *
-     *
      * @param op
-     * @param f1
-     *            Another function wrapper
-     * @param f2
-     *            Yet another function wrapper
+     * @param f1 Another function wrapper
+     * @param f2 Yet another function wrapper
      */
     public Arithmetic(char op, Function f1, Function f2) {
-        super(new Function[] { f1, f2 });
+        super(new Function[]{f1, f2});
         this.op = op;
     }
 
     /**
+     * @param t time
      * @return an arithmetic operation (as indicated in the constructor) applied
-     *         to the source functions' values at time t.
-     * @param t
-     *            time
+     * to the source functions' values at time t.
      */
     public double f(double t) {
         switch (op) {
-            case '+' :
+            case '+':
                 return sources[0].f(t) + sources[1].f(t);
 
-            case '-' :
+            case '-':
                 return sources[0].f(t) - sources[1].f(t);
 
-            case '*' :
+            case '*':
                 return sources[0].f(t) * sources[1].f(t);
 
-            case '/' :
+            case '/':
                 return sources[0].f(t) / sources[1].f(t);
 
-            default :
+            default:
                 return 0;
         }
     }

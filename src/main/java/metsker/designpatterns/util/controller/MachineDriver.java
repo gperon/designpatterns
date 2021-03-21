@@ -24,60 +24,54 @@
  */
 
 
-
 package metsker.designpatterns.util.controller;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
 
 /**
  * This interface defines the abstract operations that a machine controller
  * needs.
+ *
  * @author Steven J. Metsker
  */
 public interface MachineDriver {
 
     /**
      * Method description
-     *
      */
-    public abstract void startMachine();
+    void startMachine();
 
     /**
      * Method description
-     *
      */
-    public abstract void stopMachine();
+    void stopMachine();
 
     /**
      * Method description
-     *
      */
-    public abstract void startProcess();
+    void startProcess();
 
     /**
      * Method description
-     *
      */
-    public abstract void stopProcess();
+    void stopProcess();
 
     /**
      * Method description
-     *
      */
-    public abstract void conveyIn();
+    void conveyIn();
 
     /**
      * Method description
-     *
      */
-    public abstract void conveyOut();
+    void conveyOut();
 }

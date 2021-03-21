@@ -24,21 +24,12 @@
  */
 
 
-
 package cooper.designpatterns.structural.adapter;
 
 //Demonstratio of simple Two-list program
 //using awt controls
 
-import java.awt.BorderLayout;
-import java.awt.Button;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Frame;
-import java.awt.GridLayout;
-import java.awt.List;
-import java.awt.Panel;
-import java.awt.TextField;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
@@ -47,18 +38,16 @@ import java.awt.event.WindowEvent;
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class TwoList extends Frame implements ActionListener {
-    private Button    Add, MoveRight, MoveLeft;
-    private List      leftList, rightList;
+    private Button Add, MoveRight, MoveLeft;
+    private List leftList, rightList;
     private TextField txt;
 
     /**
      * Constructs ...
-     *
      */
     public TwoList() {
         super("Two Lists");
@@ -70,7 +59,6 @@ public class TwoList extends Frame implements ActionListener {
 
     /**
      * Method description
-     *
      *
      * @param e
      */
@@ -103,10 +91,9 @@ public class TwoList extends Frame implements ActionListener {
     /**
      * Method description
      *
-     *
      * @param argv
      */
-    static public void main(String argv[]) {
+    static public void main(String[] argv) {
         new TwoList();
     }
 
@@ -114,10 +101,9 @@ public class TwoList extends Frame implements ActionListener {
 
     /**
      * Method description
-     *
      */
     public void moveNameLeft() {
-        String sel[] = rightList.getSelectedItems();
+        String[] sel = rightList.getSelectedItems();
 
         if (sel != null) {
             leftList.add(sel[0]);
@@ -127,7 +113,7 @@ public class TwoList extends Frame implements ActionListener {
 
     // --------------------------------------------
     private void moveNameRight() {
-        String sel[] = leftList.getSelectedItems();
+        String[] sel = leftList.getSelectedItems();
 
         if (sel != null) {
             rightList.add(sel[0]);
@@ -140,10 +126,10 @@ public class TwoList extends Frame implements ActionListener {
 
         // create window listener to respond to window close click
         addWindowListener(new WindowAdapter() {
-                              public void windowClosing(WindowEvent e) {
-                                  System.exit(0);
-                              }
-                          });
+            public void windowClosing(WindowEvent e) {
+                System.exit(0);
+            }
+        });
     }
 
     // --------------------------------------------
@@ -151,7 +137,7 @@ public class TwoList extends Frame implements ActionListener {
         setLayout(new GridLayout(1, 2));    // two columns
         setBackground(Color.lightGray);
 
-        Panel pLeft  = new Panel();
+        Panel pLeft = new Panel();
         Panel pRight = new Panel();
 
         add(pLeft);
@@ -173,7 +159,7 @@ public class TwoList extends Frame implements ActionListener {
 
         rBorder.setLayout(new GridLayout(2, 1));
         MoveRight = new Button("Add --->");
-        MoveLeft  = new Button("<--- Remove");
+        MoveLeft = new Button("<--- Remove");
 
         Panel rbTop = new Panel();
 

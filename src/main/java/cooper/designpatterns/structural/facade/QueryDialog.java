@@ -24,23 +24,21 @@
  */
 
 
-
 package cooper.designpatterns.structural.facade;
 
 import java.awt.*;
-import java.awt.event.*;
-
-import java.util.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Vector;
 
 class QueryDialog extends Dialog implements ActionListener {
     ResultSet results;
-    Button    OK;
+    Button OK;
     textPanel pc;
-    Vector    tables;
+    Vector tables;
 
     /**
      * Constructs ...
-     *
      *
      * @param f
      * @param r
@@ -68,7 +66,6 @@ class QueryDialog extends Dialog implements ActionListener {
     /**
      * Method description
      *
-     *
      * @param e
      */
     public void actionPerformed(ActionEvent e) {
@@ -78,7 +75,7 @@ class QueryDialog extends Dialog implements ActionListener {
     private void makeTables() {
         tables = new Vector();
 
-        String t[] = results.getMetaData();
+        String[] t = results.getMetaData();
 
         tables.addElement(t);
 
@@ -92,14 +89,13 @@ class QueryDialog extends Dialog implements ActionListener {
         /**
          * Method description
          *
-         *
          * @param g
          */
         public void paint(Graphics g) {
-            String s[];
-            int    x      = 0;
-            int    y      = g.getFontMetrics().getHeight();
-            int    deltaX = (int) 1.5f * (g.getFontMetrics().stringWidth("wwwwwwwwwwwwww"));
+            String[] s;
+            int x = 0;
+            int y = g.getFontMetrics().getHeight();
+            int deltaX = (int) 1.5f * (g.getFontMetrics().stringWidth("wwwwwwwwwwwwww"));
 
             for (int i = 0; i < tables.size(); i++) {
                 s = (String[]) tables.elementAt(i);

@@ -24,27 +24,23 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.state;
 
 import java.awt.*;
-
-import java.util.*;
+import java.util.Vector;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class FillState extends State {
-    private Mediator med;      // save Mediator
-    private Color    color;    // save current color
+    private final Mediator med;      // save Mediator
+    private Color color;    // save current color
 
     /**
      * Constructs ...
-     *
      *
      * @param md
      */

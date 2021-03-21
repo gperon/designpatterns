@@ -24,33 +24,33 @@
  */
 
 
-
 package gamma.designpatterns.structural.composite;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- *  <p>
+ * <p>
+ * <p>
+ * Title: </p> <p>
+ * <p>
+ * Description: Design Patterns Examples</p> <p>
+ * <p>
+ * Copyright: Copyright (c) 2003</p> <p>
+ * <p>
+ * Company: GioPerLab</p>
  *
- *  Title: </p> <p>
- *
- *  Description: Design Patterns Examples</p> <p>
- *
- *  Copyright: Copyright (c) 2003</p> <p>
- *
- *  Company: GioPerLab</p>
- *
- * @author     giorgio_peron@libero.it
- * @created    8 marzo 2003
- * @version    1.0
+ * @author giorgio_peron@libero.it
+ * @version 1.0
+ * @created 8 marzo 2003
  */
 public abstract class CompositeEquipment extends AbstractEquipment {
-    private List<Equipment> equipments;
+    private final List<Equipment> equipments;
 
     /**
-     *  Constructor for the CompositeEquipment object
+     * Constructor for the CompositeEquipment object
      *
-     * @param  name  Description of the Parameter
+     * @param name Description of the Parameter
      */
     public CompositeEquipment(String name) {
         super(name);
@@ -58,36 +58,36 @@ public abstract class CompositeEquipment extends AbstractEquipment {
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @return    Description of the Return Value
+     * @return Description of the Return Value
      */
     public List<Equipment> getEquipments() {
         return equipments;
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  equipment  Description of the Parameter
+     * @param equipment Description of the Parameter
      */
     public void add(Equipment equipment) {
         equipments.add(equipment);
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  equipment  Description of the Parameter
+     * @param equipment Description of the Parameter
      */
     public void remove(Equipment equipment) {
         equipments.remove(equipment);
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @return    Description of the Return Value
+     * @return Description of the Return Value
      */
     public int power() {
         int tot = 0;
@@ -99,9 +99,9 @@ public abstract class CompositeEquipment extends AbstractEquipment {
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @return    Description of the Return Value
+     * @return Description of the Return Value
      */
     public double discountPrice() {
         double tot = 0;
@@ -113,9 +113,9 @@ public abstract class CompositeEquipment extends AbstractEquipment {
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @return    Description of the Return Value
+     * @return Description of the Return Value
      */
     public double netPrice() {
         double tot = 0;

@@ -24,32 +24,31 @@
  */
 
 
-
 package metsker.designpatterns.util.machine;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import java.util.*;
 
-import metsker.designpatterns.util.planning.BasicPlanner;
-import metsker.designpatterns.util.planning.MachinePlanner;
 import metsker.designpatterns.behavioral.iterator.ComponentIterator;
 import metsker.designpatterns.behavioral.iterator.LeafIterator;
 import metsker.designpatterns.util.Queue;
+import metsker.designpatterns.util.planning.BasicPlanner;
+import metsker.designpatterns.util.planning.MachinePlanner;
+
+import java.util.Set;
 
 /**
  * Represent a machine in an Oozinoz factory.
  *
  * @author Steven J. Metsker
- *
  */
 public abstract class Machine extends MachineComponent {
     protected Queue bins = new Queue();
@@ -61,10 +60,8 @@ public abstract class Machine extends MachineComponent {
      * Create a machine with the given id and with access to the mediator that
      * will control bin/machine relations.
      *
-     * @param id
-     *            the identity of this machine
-     * @param Mediator
-     *            the mediator that controls this machine's relation to bins
+     * @param id       the identity of this machine
+     * @param Mediator the mediator that controls this machine's relation to bins
      */
     protected Machine(int id, TubMediator mediator) {
         this(id, mediator, null);
@@ -74,11 +71,9 @@ public abstract class Machine extends MachineComponent {
      * Create a machine with the given id, with access to the mediator that will
      * control bin/machine relations, and with the supplied parent machine.
      *
-     * @param id
-     *            the identity of this machine
+     * @param id       the identity of this machine
      * @param mediator
-     * @param parent
-     *            the composite this machine belongs to
+     * @param parent   the composite this machine belongs to
      */
     public Machine(int id, TubMediator mediator, MachineComponent parent) {
         this(id, mediator, parent, null);
@@ -88,11 +83,9 @@ public abstract class Machine extends MachineComponent {
      * Create a machine with the given id, with access to the mediator that will
      * control bin/machine relations, and with the supplied parent machine.
      *
-     * @param id
-     *            the identity of this machine
+     * @param id          the identity of this machine
      * @param mediator
-     * @param parent
-     *            the composite this machine belongs to
+     * @param parent      the composite this machine belongs to
      * @param responsible
      */
     public Machine(int id, TubMediator mediator, MachineComponent parent,
@@ -105,8 +98,7 @@ public abstract class Machine extends MachineComponent {
     /**
      * Create a machine with the given id.
      *
-     * @param id
-     *            the identity of this machine
+     * @param id the identity of this machine
      */
     public Machine(int id) {
         super(id);
@@ -115,10 +107,8 @@ public abstract class Machine extends MachineComponent {
     /**
      * Create a machine with the given id and with the supplied parent machine.
      *
-     * @param id
-     *            the identity of this machine
-     * @param parent
-     *            the composite this machine belongs to
+     * @param id     the identity of this machine
+     * @param parent the composite this machine belongs to
      */
     public Machine(int id, MachineComponent parent) {
         super(id, parent);
@@ -128,7 +118,6 @@ public abstract class Machine extends MachineComponent {
 
     /**
      * Method description
-     *
      */
     public void initialize() {
         bins = new Queue();
@@ -136,7 +125,6 @@ public abstract class Machine extends MachineComponent {
 
     /**
      * Queue up a bin for processing at this machine.
-     *
      *
      * @param b
      */
@@ -209,7 +197,6 @@ public abstract class Machine extends MachineComponent {
      * here is to call back the visitor indicating the type of this node, namely
      * Machine.
      *
-     *
      * @param v
      */
     public void accept(MachineVisitor v) {
@@ -218,7 +205,6 @@ public abstract class Machine extends MachineComponent {
 
     /**
      * Place a tub of chemicals at this machine.
-     *
      *
      * @param t
      */
@@ -267,10 +253,9 @@ public abstract class Machine extends MachineComponent {
     }
 
     /**
-     *
      * @param visited
      * @return an iterator that will "iterate over" this machine, returning it
-     *         once.
+     * once.
      */
     public ComponentIterator iterator(Set visited) {
         return new LeafIterator(this, visited);
@@ -279,8 +264,7 @@ public abstract class Machine extends MachineComponent {
     /**
      * Record whether or not this machine is up.
      *
-     * @param isUp
-     *            whether or not this machine is up
+     * @param isUp whether or not this machine is up
      */
     public void setIsUp(boolean isUp) {
         this.isUp = isUp;

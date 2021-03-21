@@ -24,25 +24,19 @@
  */
 
 
-
 package metsker.designpatterns.behavioral.interpreter;
 
 import metsker.designpatterns.util.machine.MachineComposite;
 import metsker.designpatterns.util.machine.OozinozFactory;
-import metsker.designpatterns.behavioral.interpreter.Command;
-import metsker.designpatterns.behavioral.interpreter.ForCommand;
-import metsker.designpatterns.behavioral.interpreter.ShutDownCommand;
-import metsker.designpatterns.behavioral.interpreter.Variable;
 
 /**
- *  Show the construction and use of a (tiny) interpreter that shuts
- *  down all the machines at a particular plant.
+ * Show the construction and use of a (tiny) interpreter that shuts
+ * down all the machines at a particular plant.
  */
 class ShowDown {
 
     /**
      * Method description
-     *
      *
      * @param args
      */

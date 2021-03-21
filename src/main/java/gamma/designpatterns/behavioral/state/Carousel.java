@@ -24,21 +24,18 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.state;
 
-import java.util.*;
-
-import java.awt.event.*;
-
-import javax.swing.Timer;
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Observable;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class Carousel extends Observable implements ActionListener {
     private double percentClosed = 1.00;
@@ -51,13 +48,11 @@ public class Carousel extends Observable implements ActionListener {
 
     /**
      * Enum description
-     *
      */
     public enum CarouselState {
         CLOSED, OPENING, OPEN, CLOSING, STAYOPEN
     }
 
-    ;
     //
     private CarouselState state = CarouselState.CLOSED;
 
@@ -85,7 +80,7 @@ public class Carousel extends Observable implements ActionListener {
         if (state == CarouselState.CLOSED) {
             this.state = CarouselState.OPENING;
         } else if ((state == CarouselState.OPENING)
-                   || (state == CarouselState.STAYOPEN)) {
+                || (state == CarouselState.STAYOPEN)) {
             this.state = CarouselState.CLOSING;
         } else if (state == CarouselState.OPEN) {
             this.state = CarouselState.STAYOPEN;
@@ -169,6 +164,7 @@ public class Carousel extends Observable implements ActionListener {
     /**
      * Insert the method's description here.
      * Creation date: (5/15/01 12:30:54 PM)
+     *
      * @param args java.lang.String[]
      */
     private Timer timeoutTimer() {
@@ -187,19 +183,19 @@ public class Carousel extends Observable implements ActionListener {
      */
     public String status() {
         switch (state) {
-            case OPENING :
+            case OPENING:
                 return "Opening";
 
-            case OPEN :
+            case OPEN:
                 return "Open";
 
-            case CLOSING :
+            case CLOSING:
                 return "Closing";
 
-            case STAYOPEN :
+            case STAYOPEN:
                 return "StayOpen";
 
-            default :
+            default:
                 return "Closed";
         }
     }

@@ -24,35 +24,35 @@
  */
 
 
-
 package metsker.designpatterns.behavioral.templatemethod;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
 
 /**
  * This class is a revision of the AsterStarPress class that uses the Command
  * pattern to let a client modify its behavior.
- *
+ * <p>
  * The "Command" chapter in "Design Patterns in Java" describes this class.
  */
 public class AsterStarPress2 {
 
-    /** Field description */
+    /**
+     * Field description
+     */
     public Hook moldIncompleteHook;
     protected int currentMoldID;
 
     /**
      * Constructs ...
-     *
      */
     public AsterStarPress2() {
         moldIncompleteHook = new NullHook();
@@ -60,7 +60,6 @@ public class AsterStarPress2 {
 
     /**
      * Method description
-     *
      *
      * @param hook
      */
@@ -81,13 +80,15 @@ public class AsterStarPress2 {
      * Extrude all of the chemical paste (used for firework stars) to waste
      * area.
      */
-    public void dischargePaste() {}
+    public void dischargePaste() {
+    }
 
     /**
      * Spray water over the processing and discharge areas, keeping the press
      * from getting gunky.
      */
-    public void flush() {}
+    public void flush() {
+    }
 
     /**
      * @return true if the machine is processing a mold
@@ -113,10 +114,12 @@ public class AsterStarPress2 {
     /**
      * Stop the processing subassembly.
      */
-    public void stopProcessing() {}
+    public void stopProcessing() {
+    }
 
     /**
      * Move all molds to the output conveyor.
      */
-    public void usherInputMolds() {}
+    public void usherInputMolds() {
+    }
 }

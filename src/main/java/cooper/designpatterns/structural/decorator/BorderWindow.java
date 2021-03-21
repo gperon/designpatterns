@@ -24,30 +24,30 @@
  */
 
 
-
 package cooper.designpatterns.structural.decorator;
 
-import java.awt.*;
-import java.awt.event.*;
+import cooper.designpatterns.util.swing.JxFrame;
 
 import javax.swing.*;
-import javax.swing.border.*;
-
-import cooper.designpatterns.util.swing.JxFrame;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.EtchedBorder;
+import javax.swing.border.LineBorder;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class BorderWindow extends JxFrame implements ActionListener {
     JButton Quit, Cbutton, Dbutton;
 
     /**
      * Constructs ...
-     *
      */
     public BorderWindow() {
         super("Deco Button");
@@ -59,7 +59,7 @@ public class BorderWindow extends JxFrame implements ActionListener {
         jp.add(Dbutton = new JButton("Dbutton"));
 
         EmptyBorder ep = new EmptyBorder(4, 4, 4, 4);
-        LineBorder  lb = new LineBorder(Color.black, 2);
+        LineBorder lb = new LineBorder(Color.black, 2);
 
         Dbutton.setBorder(new CompoundBorder(lb, ep));
         jp.add(Quit = new JButton("Quit"));
@@ -76,7 +76,6 @@ public class BorderWindow extends JxFrame implements ActionListener {
     /**
      * Method description
      *
-     *
      * @param e
      */
     public void actionPerformed(ActionEvent e) {
@@ -86,10 +85,9 @@ public class BorderWindow extends JxFrame implements ActionListener {
     /**
      * Method description
      *
-     *
      * @param argv
      */
-    static public void main(String argv[]) {
+    static public void main(String[] argv) {
         new BorderWindow();
     }
 }

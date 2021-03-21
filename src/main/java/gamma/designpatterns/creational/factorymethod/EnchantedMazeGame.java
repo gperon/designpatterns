@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.creational.factorymethod;
 
 import gamma.designpatterns.creational.maze.Door;
@@ -35,52 +34,53 @@ import gamma.designpatterns.creational.maze.Room;
 import gamma.designpatterns.creational.maze.Spell;
 
 /**
- *  <p>
+ * <p>
+ * <p>
+ * Title: Design Patterns</p> <p>
+ * <p>
+ * Description: </p> <p>
+ * <p>
+ * Copyright: Copyright (c) 2002</p> <p>
+ * <p>
+ * Company: GioPerLab</p>
  *
- *  Title: Design Patterns</p> <p>
- *
- *  Description: </p> <p>
- *
- *  Copyright: Copyright (c) 2002</p> <p>
- *
- *  Company: GioPerLab</p>
- *
- * @author     giorgio_peron@libero.it
- * @created    8 giugno 2002
- * @version    1.0
+ * @author giorgio_peron@libero.it
+ * @version 1.0
+ * @created 8 giugno 2002
  */
 public class EnchantedMazeGame extends MazeGame {
 
     /**
-     *  Constructor for the EnchantedMazeGame object
+     * Constructor for the EnchantedMazeGame object
      */
-    public EnchantedMazeGame() {}
+    public EnchantedMazeGame() {
+    }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  n  Description of the Parameter
-     * @return    Description of the Return Value
+     * @param n Description of the Parameter
+     * @return Description of the Return Value
      */
     public Room makeRoom(int n) {
         return new EnchantedRoom(n, castSpell());
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  r1  Description of the Parameter
-     * @param  r2  Description of the Parameter
-     * @return     Description of the Return Value
+     * @param r1 Description of the Parameter
+     * @param r2 Description of the Parameter
+     * @return Description of the Return Value
      */
     public Door makeDoor(Room r1, Room r2) {
         return new DoorNeedingSpell(r1, r2);
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @return    Description of the Return Value
+     * @return Description of the Return Value
      */
     protected Spell castSpell() {
         return Spell.ENGLISH;

@@ -24,25 +24,22 @@
  */
 
 
-
 package cooper.designpatterns.structural.composite;
 
-import java.awt.event.*;
-
 import javax.swing.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class JxFrame extends JFrame {
 
     /**
      * Constructs ...
-     *
      *
      * @param title
      */
@@ -56,10 +53,10 @@ public class JxFrame extends JFrame {
 
         // create window listener to respond to window close click
         addWindowListener(new WindowAdapter() {
-                              public void windowClosing(WindowEvent e) {
-                                  System.exit(0);
-                              }
-                          });
+            public void windowClosing(WindowEvent e) {
+                System.exit(0);
+            }
+        });
     }
 
     private void setLF() {

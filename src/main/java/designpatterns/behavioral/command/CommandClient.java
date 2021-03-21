@@ -26,12 +26,12 @@
 
 
 /*
-* CommandClient.java
-*
-* Created on November 13, 2006, 11:33 AM
-*
-* To change this template, choose Tools | Template Manager
-* and open the template in the editor.
+ * CommandClient.java
+ *
+ * Created on November 13, 2006, 11:33 AM
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
  */
 package designpatterns.behavioral.command;
 
@@ -40,4 +40,5 @@ package designpatterns.behavioral.command;
  *
  * @author giorgiop
  */
-public @interface CommandClient {}
+public @interface CommandClient {
+}

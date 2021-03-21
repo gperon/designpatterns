@@ -26,12 +26,12 @@
 
 
 /*
-* Component.java
-*
-* Created on November 13, 2006, 11:35 AM
-*
-* To change this template, choose Tools | Template Manager
-* and open the template in the editor.
+ * Component.java
+ *
+ * Created on November 13, 2006, 11:35 AM
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
  */
 package designpatterns.structural.composite;
 
@@ -45,4 +45,5 @@ package designpatterns.structural.composite;
  *
  * @author giorgiop
  */
-public @interface Component {}
+public @interface Component {
+}

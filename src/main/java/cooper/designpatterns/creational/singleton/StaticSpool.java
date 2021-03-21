@@ -24,7 +24,6 @@
  */
 
 
-
 package cooper.designpatterns.creational.singleton;
 
 final class Spooler {
@@ -33,7 +32,6 @@ final class Spooler {
 
     /**
      * Method description
-     *
      *
      * @param s
      */
@@ -46,19 +44,17 @@ final class Spooler {
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class StaticSpool {
 
     /**
      * Method description
      *
-     *
      * @param argv
      */
-    public static void main(String argv[]) {
+    public static void main(String[] argv) {
         Printer.print("here it is");
     }
 }

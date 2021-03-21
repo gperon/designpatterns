@@ -1,8 +1,8 @@
 /*
  * @(#)CompositeIterator.java   2011-11-01
- * 
+ *
  * Copyright (c) 2011 Giorgio Peron giorgio.peron@gmail.com
- * All Rights Reserved. 
+ * All Rights Reserved.
  *
  * Redistribution and use of this script, with or without modification, is
  * permitted provided that the following conditions are met:
@@ -24,31 +24,30 @@
  */
 
 
-
 package metsker.designpatterns.behavioral.iterator;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
+
+import metsker.designpatterns.util.process.ProcessComponent;
+
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-import metsker.designpatterns.util.process.ProcessComponent;
-
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>    
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class CompositeIterator extends ComponentIterator {
     protected Object peek;
@@ -57,7 +56,6 @@ public class CompositeIterator extends ComponentIterator {
 
     /**
      * Constructs ...
-     *
      *
      * @param head
      * @param components
@@ -70,7 +68,6 @@ public class CompositeIterator extends ComponentIterator {
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -85,7 +82,6 @@ public class CompositeIterator extends ComponentIterator {
     /**
      * Method description
      *
-     *
      * @return
      */
     public boolean hasNext() {
@@ -98,7 +94,6 @@ public class CompositeIterator extends ComponentIterator {
 
     /**
      * Method description
-     *
      *
      * @return
      */

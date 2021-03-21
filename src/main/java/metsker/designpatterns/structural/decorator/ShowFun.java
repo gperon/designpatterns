@@ -24,41 +24,39 @@
  */
 
 
-
 package metsker.designpatterns.structural.decorator;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
+
 import metsker.designpatterns.util.ui.SwingFacade;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class ShowFun {
 
     /**
      * Method description
      *
-     *
      * @param args
      */
     public static void main(String[] args) {
         Function theta = new Arithmetic('*', new T(),
-                                        new Constant(2 * Math.PI));
+                new Constant(2 * Math.PI));
         Function theta2 = new Arithmetic('*', new T(),
-                                         new Constant(2 * Math.PI * 5));
+                new Constant(2 * Math.PI * 5));
         Function x = new Arithmetic('+', new Cos(theta), new Cos(theta2));
         Function y = new Arithmetic('+', new Sin(theta), new Sin(theta2));
         FunPanel panel = new FunPanel(1000);

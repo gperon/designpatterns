@@ -24,22 +24,22 @@
  */
 
 
-
 package metsker.designpatterns.util.filter;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import java.io.*;
 
-import java.util.*;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.util.Arrays;
 
 /**
  * A WrapFilter object compresses whitespace and wraps text at a specified
@@ -53,6 +53,7 @@ import java.util.*;
  * characters. One way to arrange for this is to read input with a
  * BufferedReader object that handles platform differences in how line breaks
  * are indicated.
+ *
  * @author Steven J. Metsker
  */
 public class WrapFilter extends OozinozFilter {
@@ -65,7 +66,8 @@ public class WrapFilter extends OozinozFilter {
 
     /**
      * Construct a filter that will wrap its writes at the specified length.
-     * @param out a writer to which to pass down writes
+     *
+     * @param out        a writer to which to pass down writes
      * @param lineLength the length at which to wrap text
      */
     public WrapFilter(BufferedWriter out, int lineLength) {
@@ -75,6 +77,7 @@ public class WrapFilter extends OozinozFilter {
 
     /**
      * Flush and close the stream.
+     *
      * @throws IOException if an I/O error occurs
      */
     public void close() throws IOException {
@@ -84,6 +87,7 @@ public class WrapFilter extends OozinozFilter {
 
     /**
      * Write out any characters that were being held, awaiting a full line.
+     *
      * @throws IOException if an I/O error occurs
      */
     public void flush() throws IOException {
@@ -142,6 +146,7 @@ public class WrapFilter extends OozinozFilter {
      * Add the given character to the current word buffer, unless the character
      * is whitespace. Whitespace marks the end of words. On seeing end of a
      * word, "post" it.
+     *
      * @param c the character to write
      * @throws IOException if an I/O error occurs
      */

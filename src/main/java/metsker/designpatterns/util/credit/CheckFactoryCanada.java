@@ -24,7 +24,6 @@
  */
 
 
-
 package metsker.designpatterns.util.credit;
 
 /**

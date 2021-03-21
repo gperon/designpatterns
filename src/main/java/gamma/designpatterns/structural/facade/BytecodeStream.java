@@ -24,12 +24,12 @@
  */
 
 
-
 package gamma.designpatterns.structural.facade;
 
-import java.io.*;
-
-import java.util.*;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <p>Title: Design Patterns</p>
@@ -44,11 +44,10 @@ import java.util.*;
  * @version 1.0
  */
 public class BytecodeStream extends OutputStream {
-    private List<Bytecode> stream;
+    private final List<Bytecode> stream;
 
     /**
      * Constructs ...
-     *
      */
     public BytecodeStream() {
         this.stream = new ArrayList<Bytecode>();
@@ -72,11 +71,11 @@ public class BytecodeStream extends OutputStream {
      * Writes <code>len</code> bytes from the specified byte array starting
      * at offset <code>off</code> to this output stream.
      *
-     * @param b the data.
+     * @param b   the data.
      * @param off the start offset in the data.
      * @param len the number of bytes to write.
      * @throws IOException if an I/O error occurs. In particular, an
-     *   <code>IOException</code> is thrown if the output stream is closed.
+     *                     <code>IOException</code> is thrown if the output stream is closed.
      * @todo Implement this java.io.OutputStream method
      */
     public void write(byte[] b, int off, int len) throws IOException {
@@ -90,8 +89,8 @@ public class BytecodeStream extends OutputStream {
      *
      * @param b the <code>byte</code>.
      * @throws IOException if an I/O error occurs. In particular, an
-     *   <code>IOException</code> may be thrown if the output stream has
-     *   been closed.
+     *                     <code>IOException</code> may be thrown if the output stream has
+     *                     been closed.
      * @todo Implement this java.io.OutputStream method
      */
     public void write(int b) throws IOException {

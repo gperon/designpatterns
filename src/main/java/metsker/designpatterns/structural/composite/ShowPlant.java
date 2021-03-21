@@ -24,20 +24,18 @@
  */
 
 
-
 package metsker.designpatterns.structural.composite;
 
 import metsker.designpatterns.util.machine.MachineComponent;
 import metsker.designpatterns.util.machine.OozinozFactory;
 
 /**
- *  This class sets up a challenge in the Composite chapter.
+ * This class sets up a challenge in the Composite chapter.
  */
 public class ShowPlant {
 
     /**
      * Method description
-     *
      *
      * @param args
      */

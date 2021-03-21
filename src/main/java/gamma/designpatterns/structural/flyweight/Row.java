@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.structural.flyweight;
 
 /**
@@ -32,6 +31,7 @@ package gamma.designpatterns.structural.flyweight;
  * <p>Description: Design Patterns Examples</p>
  * <p>Copyright: Copyright (c) 2003</p>
  * <p>Company: GioPerLab</p>
+ *
  * @author giorgio_peron@libero.it
  * @version 1.0
  */
@@ -39,7 +39,7 @@ public class Row {
 
     /**
      * Constructs ...
-     *
      */
-    public Row() {}
+    public Row() {
+    }
 }

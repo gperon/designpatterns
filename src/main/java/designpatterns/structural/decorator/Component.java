@@ -26,12 +26,12 @@
 
 
 /*
-* Component.java
-*
-* Created on 16 dicembre 2006, 17.24
-*
-* To change this template, choose Tools | Template Manager
-* and open the template in the editor.
+ * Component.java
+ *
+ * Created on 16 dicembre 2006, 17.24
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
  */
 package designpatterns.structural.decorator;
 
@@ -40,4 +40,5 @@ package designpatterns.structural.decorator;
  *
  * @author gperon
  */
-public @interface Component {}
+public @interface Component {
+}

@@ -24,25 +24,24 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.interpreter;
 
-import java.util.*;
-
 import cooper.designpatterns.behavioral.command.Command;
+
+import java.util.StringTokenizer;
+import java.util.Vector;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class Parser implements Command {
-    Stack   stk;
-    Vector  actionList;
+    Stack stk;
+    Vector actionList;
     KidData kdata;
-    Data    data;
+    Data data;
 
     // PrintTable ptable;
     JawtList ptable;
@@ -50,11 +49,10 @@ public class Parser implements Command {
     /**
      * Constructs ...
      *
-     *
      * @param line
      */
     public Parser(String line) {
-        stk        = new Stack();
+        stk = new Stack();
         actionList = new Vector();
 
         StringTokenizer tok = new StringTokenizer(line);
@@ -69,8 +67,8 @@ public class Parser implements Command {
     }
 
     private void addArgsToVerb() {
-        ParseObject v    = stk.pop();
-        ParseVerb   verb = (ParseVerb) stk.pop();
+        ParseObject v = stk.pop();
+        ParseVerb verb = (ParseVerb) stk.pop();
 
         verb.addArgs(v);
         stk.push(verb);
@@ -84,18 +82,18 @@ public class Parser implements Command {
             if (topStack(ParseObject.VAR, ParseObject.VAR)) {
 
                 /* reduce (Var Var) to Multvar */
-                ParseVar v  = (ParseVar) stk.pop();
+                ParseVar v = (ParseVar) stk.pop();
                 ParseVar v1 = (ParseVar) stk.pop();
-                MultVar  mv = new MultVar(v1, v);
+                MultVar mv = new MultVar(v1, v);
 
                 stk.push(mv);
             }
 
             /* reduce MULTVAR VAR to MULTVAR */
             if (topStack(ParseObject.MULTVAR, ParseObject.VAR)) {
-                MultVar  mv  = new MultVar();
-                MultVar  mvo = (MultVar) stk.pop();
-                ParseVar v   = (ParseVar) stk.pop();
+                MultVar mv = new MultVar();
+                MultVar mvo = (MultVar) stk.pop();
+                ParseVar v = (ParseVar) stk.pop();
 
                 mv.add(v);
 
@@ -111,8 +109,8 @@ public class Parser implements Command {
             if (topStack(ParseObject.VAR, ParseObject.MULTVAR)) {
 
                 /* reduce (Multvar Var) to Multvar */
-                ParseVar v  = (ParseVar) stk.pop();
-                MultVar  mv = (MultVar) stk.pop();
+                ParseVar v = (ParseVar) stk.pop();
+                MultVar mv = (MultVar) stk.pop();
 
                 mv.add(v);
                 stk.push(mv);
@@ -160,12 +158,11 @@ public class Parser implements Command {
     /**
      * Method description
      *
-     *
      * @param k
      * @param pt
      */
     public void setData(KidData k, JawtList pt) {
-        data   = new Data(k.getData());
+        data = new Data(k.getData());
         ptable = pt;
     }
 

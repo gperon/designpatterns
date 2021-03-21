@@ -24,11 +24,9 @@
  */
 
 
-
 package cooper.designpatterns.creational.singleton;
 
 /**
- *
  * @author gperon
  */
 public class Printer {
@@ -39,7 +37,6 @@ public class Printer {
 
     /**
      * Constructs ...
-     *
      *
      * @throws SingletonException
      */
@@ -55,7 +52,6 @@ public class Printer {
 
     /**
      * Method description
-     *
      */
     public void finalize() {
         instance_flag = false;

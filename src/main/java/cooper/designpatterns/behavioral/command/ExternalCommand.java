@@ -24,30 +24,28 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.command;
 
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class ExternalCommand extends Frame implements ActionListener {
-    Menu            mnuFile;
+    Menu mnuFile;
     fileOpenCommand mnuOpen;
     fileExitCommand mnuExit;
-    btnRedCommand   btnRed;
-    Panel           p;
-    Frame           fr;
+    btnRedCommand btnRed;
+    Panel p;
+    Frame fr;
 
     /**
      * Constructs ...
-     *
      */
     public ExternalCommand() {
         super("Frame with external commands");
@@ -76,7 +74,6 @@ public class ExternalCommand extends Frame implements ActionListener {
     /**
      * Method description
      *
-     *
      * @param e
      */
     public void actionPerformed(ActionEvent e) {
@@ -88,10 +85,9 @@ public class ExternalCommand extends Frame implements ActionListener {
     /**
      * Method description
      *
-     *
      * @param argv
      */
-    static public void main(String argv[]) {
+    static public void main(String[] argv) {
         new ExternalCommand();
     }
 }
@@ -103,7 +99,6 @@ class btnRedCommand extends Button implements Command {
     /**
      * Constructs ...
      *
-     *
      * @param caption
      * @param pnl
      */
@@ -114,7 +109,6 @@ class btnRedCommand extends Button implements Command {
 
     /**
      * Method description
-     *
      */
     public void execute() {
         p.setBackground(Color.red);
@@ -127,7 +121,6 @@ class fileExitCommand extends MenuItem implements Command {
     /**
      * Constructs ...
      *
-     *
      * @param caption
      */
     public fileExitCommand(String caption) {
@@ -136,7 +129,6 @@ class fileExitCommand extends MenuItem implements Command {
 
     /**
      * Method description
-     *
      */
     public void execute() {
         System.exit(0);
@@ -150,7 +142,6 @@ class fileOpenCommand extends MenuItem implements Command {
     /**
      * Constructs ...
      *
-     *
      * @param caption
      * @param frm
      */
@@ -161,7 +152,6 @@ class fileOpenCommand extends MenuItem implements Command {
 
     /**
      * Method description
-     *
      */
     public void execute() {
         FileDialog fDlg = new FileDialog(fr, "Open file");

@@ -26,12 +26,12 @@
 
 
 /*
-* Implementor.java
-*
-* Created on November 13, 2006, 10:44 AM
-*
-* To change this template, choose Tools | Template Manager
-* and open the template in the editor.
+ * Implementor.java
+ *
+ * Created on November 13, 2006, 10:44 AM
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
  */
 package designpatterns.structural.bridge;
 
@@ -44,4 +44,5 @@ package designpatterns.structural.bridge;
  *
  * @author giorgiop
  */
-public @interface Implementor {}
+public @interface Implementor {
+}

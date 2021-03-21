@@ -24,7 +24,6 @@
  */
 
 
-
 package metsker.designpatterns.util.planning;
 
 import metsker.designpatterns.util.machine.StarPress;
@@ -52,8 +51,8 @@ public class StarPressPlanner extends MachinePlanner {
      * next become available.
      *
      * @return Date when the star press that this planner represents will next
-     *         become available. In practice, this method would employ some
-     *         operational modeling logic to determine this time.
+     * become available. In practice, this method would employ some
+     * operational modeling logic to determine this time.
      */
     public java.util.Date getAvailable() {
         // just return the current time, in this example

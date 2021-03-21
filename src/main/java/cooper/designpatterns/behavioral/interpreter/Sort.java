@@ -24,25 +24,22 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.interpreter;
 
-import java.util.*;
+import java.util.Vector;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class Sort extends Verb {
     Kid[] kids;
-    int   pindex;
+    int pindex;
 
     /**
      * Constructs ...
-     *
      *
      * @param s
      */
@@ -55,33 +52,33 @@ public class Sort extends Verb {
         boolean cval;
 
         switch (key) {
-        case ParseVar.FRNAME :
-            cval = kids[i].getFrname().compareTo(kids[j].getFrname()) > 0;
+            case ParseVar.FRNAME:
+                cval = kids[i].getFrname().compareTo(kids[j].getFrname()) > 0;
 
-            break;
+                break;
 
-        case ParseVar.LNAME :
-            cval = kids[i].getLname().compareTo(kids[j].getLname()) > 0;
+            case ParseVar.LNAME:
+                cval = kids[i].getLname().compareTo(kids[j].getLname()) > 0;
 
-            break;
+                break;
 
-        case ParseVar.CLUB :
-            cval = kids[i].getClub().compareTo(kids[j].getClub()) > 0;
+            case ParseVar.CLUB:
+                cval = kids[i].getClub().compareTo(kids[j].getClub()) > 0;
 
-            break;
+                break;
 
-        case ParseVar.AGE :
-            cval = kids[i].getAge() > kids[j].getAge();
+            case ParseVar.AGE:
+                cval = kids[i].getAge() > kids[j].getAge();
 
-            break;
+                break;
 
-        case ParseVar.TIME :
-            cval = kids[i].getTime() > kids[j].getTime();
+            case ParseVar.TIME:
+                cval = kids[i].getTime() > kids[j].getTime();
 
-            break;
+                break;
 
-        default :
-            cval = false;
+            default:
+                cval = false;
         }
 
         return cval;
@@ -89,7 +86,6 @@ public class Sort extends Verb {
 
     /**
      * Method description
-     *
      */
     public void execute() {
         int sortKey;
@@ -100,8 +96,8 @@ public class Sort extends Verb {
             ParseVar v = (ParseVar) args.elementAt(a);
 
             if (v instanceof MultVar) {
-                MultVar mv   = (MultVar) v;
-                Vector  mvec = mv.getVector();
+                MultVar mv = (MultVar) v;
+                Vector mvec = mv.getVector();
 
                 for (int k = mvec.size() - 1; k >= 0; k--) {
                     ParseVar pv = (ParseVar) mvec.elementAt(k);

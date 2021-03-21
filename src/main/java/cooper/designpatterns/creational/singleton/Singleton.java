@@ -24,5 +24,4 @@
  */
 
 
-
 package cooper.designpatterns.creational.singleton;

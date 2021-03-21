@@ -24,25 +24,25 @@
  */
 
 
-
 package metsker.designpatterns.structural.proxy;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
+
 import metsker.designpatterns.util.ui.SwingFacade;
 
-import java.awt.*;
-import java.awt.event.*;
-
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Show the use of ImageIconLoader, a class that shows the intent of the Proxy
@@ -50,6 +50,7 @@ import javax.swing.*;
  * calls around, this class just switches the image that is displayed. For this
  * class to execute, an "images" directory must be in the classpath, and this
  * directory must contain absent.jpg, loading.jpg, and fest.jpg.
+ *
  * @author Steven J. Metsker
  */
 public class ShowLoader implements ActionListener {
@@ -95,5 +96,5 @@ public class ShowLoader implements ActionListener {
         return p;
     }
 
-    private LoadingImageIcon loader = new LoadingImageIcon("images/fest.jpg");
+    private final LoadingImageIcon loader = new LoadingImageIcon("images/fest.jpg");
 }

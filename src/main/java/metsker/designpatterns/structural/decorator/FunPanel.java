@@ -24,25 +24,21 @@
  */
 
 
-
 package metsker.designpatterns.structural.decorator;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import metsker.designpatterns.structural.decorator.Function;
-import metsker.designpatterns.structural.decorator.T;
-
-import java.awt.*;
 
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * Plots a curve given parametric functions x and y that are parameterized on
@@ -63,7 +59,6 @@ public class FunPanel extends JPanel {
 
     /**
      * Constructs ...
-     *
      */
     public FunPanel() {
         this(101);
@@ -71,7 +66,6 @@ public class FunPanel extends JPanel {
 
     /**
      * Constructs ...
-     *
      *
      * @param nPoint
      */
@@ -97,10 +91,8 @@ public class FunPanel extends JPanel {
     /**
      * Establish the functions to plot.
      *
-     * @param fx
-     *            the x function
-     * @param fy
-     *            the y function
+     * @param fx the x function
+     * @param fy the y function
      */
     public void setXY(Function fx, Function fy) {
         this.fx = fx;

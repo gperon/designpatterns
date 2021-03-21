@@ -24,45 +24,44 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.command;
 
 /**
- *  <p>
+ * <p>
+ * <p>
+ * Title: </p> <p>
+ * <p>
+ * Description: Design Patterns Examples</p> <p>
+ * <p>
+ * Copyright: Copyright (c) 2003</p> <p>
+ * <p>
+ * Company: GioPerLab</p>
  *
- *  Title: </p> <p>
- *
- *  Description: Design Patterns Examples</p> <p>
- *
- *  Copyright: Copyright (c) 2003</p> <p>
- *
- *  Company: GioPerLab</p>
- *
- * @author     giorgio_peron@libero.it
- * @created    2 marzo 2003
- * @version    1.0
+ * @author giorgio_peron@libero.it
+ * @version 1.0
+ * @created 2 marzo 2003
  */
 public class Document {
-    private String name;
+    private final String name;
 
     /**
-     *  Constructor for the Document object
+     * Constructor for the Document object
      *
-     * @param  name  Description of the Parameter
+     * @param name Description of the Parameter
      */
     public Document(String name) {
         this.name = name;
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      */
     public void open() {
         System.out.println("open document " + name);
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      */
     public void paste() {
         System.out.println("paste on document " + name);

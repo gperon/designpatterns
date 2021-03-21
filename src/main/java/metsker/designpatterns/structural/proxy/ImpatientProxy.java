@@ -24,10 +24,11 @@
  */
 
 
-
 package metsker.designpatterns.structural.proxy;
 
-import java.lang.reflect.*;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
 
 /**
  * This class is an example of a dynamic proxy. Instances of this class wrap a
@@ -36,10 +37,11 @@ import java.lang.reflect.*;
  * warning message.
  */
 public class ImpatientProxy implements InvocationHandler {
-    private Object obj;
+    private final Object obj;
 
     /**
      * Construct a dynamic proxy around the given object.
+     *
      * @param obj the object to wrap
      * @return the proxy
      */
@@ -61,9 +63,7 @@ public class ImpatientProxy implements InvocationHandler {
      * @param proxy
      * @param m
      * @param args
-     *
      * @return
-     *
      * @throws Throwable
      */
     public Object invoke(Object proxy, Method m, Object[] args)
@@ -74,7 +74,7 @@ public class ImpatientProxy implements InvocationHandler {
         long t2 = System.currentTimeMillis();
         if (t2 - t1 > 10) {
             System.out.println("> It takes " + (t2 - t1) + " millis to invoke "
-                               + m.getName() + "() with");
+                    + m.getName() + "() with");
             for (int i = 0; i < args.length; i++) {
                 System.out.println(">     arg[" + i + "]: " + args[i]);
             }

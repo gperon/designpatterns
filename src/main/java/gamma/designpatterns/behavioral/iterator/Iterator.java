@@ -26,20 +26,18 @@
 
 
 /*
-* Iterator.java
-*
-* Created on 4 novembre 2006, 10.29
-*
-* To change this template, choose Tools | Template Manager
-* and open the template in the editor.
+ * Iterator.java
+ *
+ * Created on 4 novembre 2006, 10.29
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
  */
 package gamma.designpatterns.behavioral.iterator;
 
 /**
- *
- * @author gperon
- *
  * @param <Item>
+ * @author gperon
  */
 public interface Iterator<Item> {
     void first();

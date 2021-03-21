@@ -26,12 +26,12 @@
 
 
 /*
-* AdapterClient.java
-*
-* Created on November 13, 2006, 10:48 AM
-*
-* To change this template, choose Tools | Template Manager
-* and open the template in the editor.
+ * AdapterClient.java
+ *
+ * Created on November 13, 2006, 10:48 AM
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
  */
 package designpatterns.structural.adapter;
 
@@ -40,4 +40,5 @@ package designpatterns.structural.adapter;
  *
  * @author giorgiop
  */
-public @interface AdapterClient {}
+public @interface AdapterClient {
+}

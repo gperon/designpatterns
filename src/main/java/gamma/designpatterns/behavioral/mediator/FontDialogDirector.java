@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.mediator;
 
 /**
@@ -47,7 +46,6 @@ public class FontDialogDirector extends DialogDirector {
 
     /**
      * Constructs ...
-     *
      */
     public FontDialogDirector() {
         super();
@@ -55,7 +53,6 @@ public class FontDialogDirector extends DialogDirector {
 
     /**
      * Method description
-     *
      *
      * @param theChangedWidget
      */
@@ -83,7 +80,8 @@ public class FontDialogDirector extends DialogDirector {
      * showDialog
      *
      * @todo Implement this
-     *   designpatterns.structural.mediator.DialogDirector method
+     * designpatterns.structural.mediator.DialogDirector method
      */
-    public void showDialog() {}
+    public void showDialog() {
+    }
 }

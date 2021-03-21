@@ -24,39 +24,27 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.mediator;
 
-import java.awt.*;
-import java.awt.event.*;
-import java.awt.event.*;
-
-import java.util.*;
-
-import javax.accessibility.*;
+import cooper.designpatterns.structural.adapter.JawtList;
 
 import javax.swing.*;
-import javax.swing.border.*;
-import javax.swing.event.*;
-import javax.swing.text.*;
-
-import cooper.designpatterns.behavioral.iterator.*;
-import cooper.designpatterns.structural.adapter.JawtList;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+import java.util.Enumeration;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class KidList extends JawtList implements ListSelectionListener {
-    KidData  kdata;
+    KidData kdata;
     Mediator med;
 
     /**
      * Constructs ...
-     *
      *
      * @param md
      */
@@ -81,7 +69,6 @@ public class KidList extends JawtList implements ListSelectionListener {
 
     /**
      * Method description
-     *
      *
      * @param ls
      */

@@ -24,30 +24,30 @@
  */
 
 
-
 package metsker.designpatterns.behavioral.interpreter;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
+
 import metsker.designpatterns.util.machine.Machine;
 
 /**
- *  Represent a specific machine.
+ * Represent a specific machine.
  */
 public class Constant extends Term {
     protected Machine machine;
 
     /**
-     *  Construct a term that always referst to a specific
-     *  machine.
+     * Construct a term that always referst to a specific
+     * machine.
      *
      * @param machine
      */
@@ -56,8 +56,8 @@ public class Constant extends Term {
     }
 
     /**
-     *  @return true if the provided object equals this one.
-     *  @param obj an object to compare to
+     * @param obj an object to compare to
+     * @return true if the provided object equals this one.
      */
     public boolean equals(Object obj) {
         if (obj == this) {
@@ -72,21 +72,21 @@ public class Constant extends Term {
     }
 
     /**
-     *  @return a hash code for this object.
+     * @return a hash code for this object.
      */
     public int hashCode() {
         return machine.hashCode();
     }
 
     /**
-     *  @return the machine that this term wraps.
+     * @return the machine that this term wraps.
      */
     public Machine eval() {
         return machine;
     }
 
     /**
-     *  @return a string description of this constant.
+     * @return a string description of this constant.
      */
     public String toString() {
         return machine.toString();

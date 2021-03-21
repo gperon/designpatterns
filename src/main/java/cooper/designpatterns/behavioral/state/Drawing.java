@@ -24,7 +24,6 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.state;
 
 import java.awt.*;
@@ -32,24 +31,21 @@ import java.awt.*;
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class Drawing {
-    protected int       x, y, w, h;
+    protected int x, y, w, h;
     protected Rectangle rect;
-    protected boolean   selected;
-    protected boolean   filled;
-    protected Color     fillColor;
+    protected boolean selected;
+    protected boolean filled;
+    protected Color fillColor;
 
     /**
      * Method description
      *
-     *
      * @param x
      * @param y
-     *
      * @return
      */
     public boolean contains(int x, int y) {
@@ -59,14 +55,13 @@ public class Drawing {
     /**
      * Method description
      *
-     *
      * @param g
      */
-    public void draw(Graphics g) {}
+    public void draw(Graphics g) {
+    }
 
     /**
      * Method description
-     *
      *
      * @param xpt
      * @param ypt
@@ -81,13 +76,12 @@ public class Drawing {
     }
 
     protected void setFill(Color c) {
-        filled    = true;
+        filled = true;
         fillColor = c;
     }
 
     /**
      * Method description
-     *
      *
      * @param b
      */

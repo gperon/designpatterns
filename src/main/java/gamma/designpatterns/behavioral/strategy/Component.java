@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.strategy;
 
 /**
@@ -43,7 +42,6 @@ public class Component {
 
     /**
      * Constructs ...
-     *
      */
     public Component() {
         super();

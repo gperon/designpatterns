@@ -24,7 +24,6 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.strategy;
 
 import java.awt.*;
@@ -32,16 +31,14 @@ import java.awt.*;
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class BarPlotStrategy extends PlotStrategy {
     BarPlotPanel bp;
 
     /**
      * Constructs ...
-     *
      */
     public BarPlotStrategy() {
         super("Bar Plot");
@@ -52,11 +49,10 @@ public class BarPlotStrategy extends PlotStrategy {
     /**
      * Method description
      *
-     *
      * @param xp
      * @param yp
      */
-    public void plot(float xp[], float yp[]) {
+    public void plot(float[] xp, float[] yp) {
         x = xp;
         y = yp;    // copy in data
         findBounds();                  // find maxes and mins

@@ -24,47 +24,41 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.mediator;
 
 /**
  * Interface description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public interface Iterator {
 
     /**
      * Method description
      *
-     *
      * @return
      */
-    public Object CurrentItem();
+    Object CurrentItem();
 
     /**
      * Method description
      *
-     *
      * @return
      */
-    public Object First();
+    Object First();
 
     /**
      * Method description
      *
-     *
      * @return
      */
-    public Object Next();
+    Object Next();
 
     /**
      * Method description
      *
-     *
      * @return
      */
-    public boolean isDone();
+    boolean isDone();
 }

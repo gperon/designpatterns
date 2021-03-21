@@ -24,15 +24,14 @@
  */
 
 
-
 package metsker.designpatterns.structural.proxy;
+
+import metsker.designpatterns.util.Dollars;
+import metsker.designpatterns.util.firework.Firecracker;
+import metsker.designpatterns.util.firework.Sparkler;
 
 import java.util.HashSet;
 import java.util.Set;
-
-import metsker.designpatterns.util.firework.Firecracker;
-import metsker.designpatterns.util.firework.Sparkler;
-import metsker.designpatterns.util.Dollars;
 
 /**
  * Show an example of using a dynamic proxy to add behavior to an object. In
@@ -43,7 +42,6 @@ public class ShowDynamicProxy {
 
     /**
      * Method description
-     *
      *
      * @param args
      */

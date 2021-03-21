@@ -24,29 +24,29 @@
  */
 
 
-
 package metsker.designpatterns.util.machine;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import java.util.*;
 
 import metsker.designpatterns.behavioral.iterator.ComponentIterator;
+
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Objects of this class represent either individual machines or composites of
  * machines.
  *
  * @author Steven J. Metsker
- *
  */
 public abstract class MachineComponent {
     protected int id = 0;
@@ -56,6 +56,7 @@ public abstract class MachineComponent {
 
     /**
      * Create a machine component with the given id.
+     *
      * @param id this machine's identity
      */
     protected MachineComponent(int id) {
@@ -64,7 +65,8 @@ public abstract class MachineComponent {
 
     /**
      * Create a machine component with the given id and parent
-     * @param id this machine's identity
+     *
+     * @param id     this machine's identity
      * @param parent the machine composite that this component belongs to
      */
     protected MachineComponent(int id, MachineComponent parent) {
@@ -73,7 +75,8 @@ public abstract class MachineComponent {
 
     /**
      * Create a machine component with the given id and parent
-     * @param id this machine's identity
+     *
+     * @param id     this machine's identity
      * @param parent the machine composite that this component belongs to
      */
     protected MachineComponent(int id, MachineComponent parent,
@@ -84,7 +87,7 @@ public abstract class MachineComponent {
     }
 
     /**
-     *   @param visitor a visitor that will add some sort of behavior
+     * @param visitor a visitor that will add some sort of behavior
      */
     public abstract void accept(MachineVisitor visitor);
 
@@ -100,7 +103,7 @@ public abstract class MachineComponent {
 
     /**
      * @return true if this component is atop an acyclic graph in which no node
-     *         has two parents (two references to it).
+     * has two parents (two references to it).
      */
     public boolean isTree() {
         return isTree(new HashSet());
@@ -116,9 +119,7 @@ public abstract class MachineComponent {
     /**
      * Method description
      *
-     *
      * @param set
-     *
      * @return
      */
     public abstract ComponentIterator iterator(Set set);
@@ -136,10 +137,9 @@ public abstract class MachineComponent {
     }
 
     /**
-     *
      * @param o
      * @return true if, according to business rules, this component and the
-     *         supplied object refer to the same thing.
+     * supplied object refer to the same thing.
      */
     public boolean equals(Object o) {
         if (o == this) {
@@ -196,7 +196,6 @@ public abstract class MachineComponent {
     }
 
     /**
-     *
      * @param thatId
      * @return a machine within this machine graph, given its ID.
      */
@@ -209,7 +208,6 @@ public abstract class MachineComponent {
     }
 
     /**
-     *
      * @param name
      * @return a machine with the given name.
      */

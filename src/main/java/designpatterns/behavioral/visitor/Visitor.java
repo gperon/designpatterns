@@ -26,12 +26,12 @@
 
 
 /*
-* Visitor.java
-*
-* Created on 16 dicembre 2006, 17.19
-*
-* To change this template, choose Tools | Template Manager
-* and open the template in the editor.
+ * Visitor.java
+ *
+ * Created on 16 dicembre 2006, 17.19
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
  */
 package designpatterns.behavioral.visitor;
 
@@ -43,4 +43,5 @@ package designpatterns.behavioral.visitor;
  *
  * @author gperon
  */
-public @interface Visitor {}
+public @interface Visitor {
+}

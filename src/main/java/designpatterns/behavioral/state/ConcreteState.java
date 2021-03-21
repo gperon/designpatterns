@@ -26,12 +26,12 @@
 
 
 /*
-* ConcreteState.java
-*
-* Created on 16 dicembre 2006, 17.15
-*
-* To change this template, choose Tools | Template Manager
-* and open the template in the editor.
+ * ConcreteState.java
+ *
+ * Created on 16 dicembre 2006, 17.15
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
  */
 package designpatterns.behavioral.state;
 
@@ -40,4 +40,5 @@ package designpatterns.behavioral.state;
  *
  * @author gperon
  */
-public @interface ConcreteState {}
+public @interface ConcreteState {
+}

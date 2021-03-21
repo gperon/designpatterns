@@ -24,25 +24,23 @@
  */
 
 
-
 package metsker.designpatterns.util.recommendation;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import java.lang.String;
+
+import metsker.designpatterns.util.firework.Firework;
 
 import java.util.Calendar;
 import java.util.Date;
-
-import metsker.designpatterns.util.firework.Firework;
 
 /**
  * Represents a customer. This class is the refactored strategy class. It
@@ -51,17 +49,19 @@ import metsker.designpatterns.util.firework.Firework;
  */
 public class Customer2 extends Customer {
     private Advisor advisor;
-    private static PromotionAdvisor promotionAdvisor = new PromotionAdvisor();
-    private static GroupAdvisor groupAdvisor = new GroupAdvisor();
-    private static ItemAdvisor itemAdvisor = new ItemAdvisor();
-    private static RandomAdvisor randomAdvisor = new RandomAdvisor();
+    private static final PromotionAdvisor promotionAdvisor = new PromotionAdvisor();
+    private static final GroupAdvisor groupAdvisor = new GroupAdvisor();
+    private static final ItemAdvisor itemAdvisor = new ItemAdvisor();
+    private static final RandomAdvisor randomAdvisor = new RandomAdvisor();
 
-    /** Field description */
+    /**
+     * Field description
+     */
     public static final int BIG_SPENDER_DOLLARS = 1000;
 
     /**
      * @return true if this customer has registered (or entered) his or her
-     *         preference profile. This method is not actually implemented
+     * preference profile. This method is not actually implemented
      */
     public boolean isRegistered() {
         return false;
@@ -80,12 +80,12 @@ public class Customer2 extends Customer {
     public static void main(String[] args) {
         Firework recommendation = new Customer2().getRecommended();
         System.out.println("Customer2 recommendation: "
-                           + recommendation.toString());
+                + recommendation.toString());
     }
 
     /**
      * @return a firework to recommend to this customer. This method is
-     *         refactored to employ the Strategy pattern.
+     * refactored to employ the Strategy pattern.
      */
     public Firework getRecommended() {
         Firework recommend = getAdvisor().recommend(this);
@@ -110,9 +110,9 @@ public class Customer2 extends Customer {
     }
 
     /**
-     * @return the amount of money this customer has spent with us since the
-     *         provided date.
      * @param date Since when?
+     * @return the amount of money this customer has spent with us since the
+     * provided date.
      */
     public double spendingSince(Date date) {
         return 1000;

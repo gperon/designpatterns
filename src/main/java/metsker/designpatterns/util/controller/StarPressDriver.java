@@ -24,31 +24,30 @@
  */
 
 
-
 package metsker.designpatterns.util.controller;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
 
 /**
  * This class is a refactoring of StarPressController that occurs when you
  * refactor the MachineController_ hierarchy to use a bridge.
+ *
  * @author Steven J. Metsker
  */
 public class StarPressDriver implements MachineDriver {
-    private StarPressController controller = new StarPressController();
+    private final StarPressController controller = new StarPressController();
 
     /**
      * Method description
-     *
      */
     public void startMachine() {
         controller.start();
@@ -56,7 +55,6 @@ public class StarPressDriver implements MachineDriver {
 
     /**
      * Method description
-     *
      */
     public void stopMachine() {
         controller.stop();
@@ -64,7 +62,6 @@ public class StarPressDriver implements MachineDriver {
 
     /**
      * Method description
-     *
      */
     public void startProcess() {
         controller.startProcess();
@@ -72,7 +69,6 @@ public class StarPressDriver implements MachineDriver {
 
     /**
      * Method description
-     *
      */
     public void stopProcess() {
         controller.endProcess();
@@ -80,7 +76,6 @@ public class StarPressDriver implements MachineDriver {
 
     /**
      * Method description
-     *
      */
     public void conveyIn() {
         controller.index();
@@ -88,7 +83,6 @@ public class StarPressDriver implements MachineDriver {
 
     /**
      * Method description
-     *
      */
     public void conveyOut() {
         controller.discharge();

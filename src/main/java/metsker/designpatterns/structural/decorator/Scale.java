@@ -24,18 +24,17 @@
  */
 
 
-
 package metsker.designpatterns.structural.decorator;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
 
 /**
@@ -50,73 +49,56 @@ public class Scale extends Function {
     /**
      * Construct a Scale that goes from "from" to "to" as time goes 0 to 1.
      *
-     * @param from
-     *            the "from" number
-     * @param to
-     *            the "to" number
+     * @param from the "from" number
+     * @param to   the "to" number
      */
     public Scale(double from, double to) {
         this(new Constant(from), new Constant(to));
     }
 
     /**
-     *
      * Construct a Scale that goes from "aFrom" to "aTo" as function b goes from
      * "bFrom" to "bTo".
      *
-     * @param aFrom
-     *            the "from" value on the "a" scale (usually constant)
-     * @param a
-     *            the "a" function that typical varies with time
-     * @param aTo
-     *            the "to" value ont the "a" scale
-     * @param bFrom
-     *            the "from" value on the "b" scale
-     * @param bTo
-     *            the "to" value on the "b" scale
+     * @param aFrom the "from" value on the "a" scale (usually constant)
+     * @param a     the "a" function that typical varies with time
+     * @param aTo   the "to" value ont the "a" scale
+     * @param bFrom the "from" value on the "b" scale
+     * @param bTo   the "to" value on the "b" scale
      */
     public Scale(double aFrom, Function a, double aTo, double bFrom,
                  double bTo) {
         this(new Constant(aFrom), a, new Constant(aTo), new Constant(bFrom),
-             new Constant(bTo));
+                new Constant(bTo));
     }
 
     /**
      * Construct a Scale that goes from "from" to "to" as time goes 0 to 1.
      *
-     * @param f1
-     *            the "from" function
-     * @param f2
-     *            the "to" function
+     * @param f1 the "from" function
+     * @param f2 the "to" function
      */
     public Scale(Function f1, Function f2) {
         this(new Constant(0), new T(), new Constant(1), f1, f2);
     }
 
     /**
-     * @param aFrom
-     *            the "from" value on the "a" scale (usually constant)
-     * @param a
-     *            the "a" function that typical varies with time
-     * @param aTo
-     *            the "to" value ont the "a" scale
-     * @param bFrom
-     *            the "from" value on the "b" scale
-     * @param bTo
-     *            the "to" value on the "b" scale
+     * @param aFrom the "from" value on the "a" scale (usually constant)
+     * @param a     the "a" function that typical varies with time
+     * @param aTo   the "to" value ont the "a" scale
+     * @param bFrom the "from" value on the "b" scale
+     * @param bTo   the "to" value on the "b" scale
      */
     public Scale(Function aFrom, Function a, Function aTo, Function bFrom,
                  Function bTo) {
-        super(new Function[] { aFrom, a, aTo, bFrom, bTo });
+        super(new Function[]{aFrom, a, aTo, bFrom, bTo});
     }
 
     /**
      * Return value as a linear function that goes from "bFrom" to "bTo"
      * as "a" goes from "aFrom" to "aTo".
      *
-     * @param t
-     *            a normalized "time" between 0 and 1
-     *
+     * @param t a normalized "time" between 0 and 1
      * @return
      */
     public double f(double t) {

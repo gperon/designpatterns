@@ -26,12 +26,12 @@
 
 
 /*
-* ObjectStructure.java
-*
-* Created on 16 dicembre 2006, 17.21
-*
-* To change this template, choose Tools | Template Manager
-* and open the template in the editor.
+ * ObjectStructure.java
+ *
+ * Created on 16 dicembre 2006, 17.21
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
  */
 package designpatterns.behavioral.visitor;
 
@@ -42,4 +42,5 @@ package designpatterns.behavioral.visitor;
  *
  * @author gperon
  */
-public @interface ObjectStructure {}
+public @interface ObjectStructure {
+}

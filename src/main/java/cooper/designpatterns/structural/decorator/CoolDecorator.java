@@ -24,54 +24,51 @@
  */
 
 
-
 package cooper.designpatterns.structural.decorator;
 
-import java.awt.*;
-import java.awt.event.*;
-
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class CoolDecorator extends Decorator {
-    boolean    mouse_over;    // true when mose over button
+    boolean mouse_over;    // true when mose over button
     JComponent thisComp;
 
     /**
      * Constructs ...
-     *
      *
      * @param c
      */
     public CoolDecorator(JComponent c) {
         super(c);
         mouse_over = false;
-        thisComp   = this;    // save this component
+        thisComp = this;    // save this component
 
         // catch mouse movements in inner class
         c.addMouseListener(new MouseAdapter() {
-                               public void mouseEntered(MouseEvent e) {
-                                   mouse_over = true;    // set flag when mouse over
-                                   thisComp.repaint();
-                               }
-                               public void mouseExited(MouseEvent e) {
-                                   mouse_over = false;    // clear flag when mouse not over
-                                   thisComp.repaint();
-                               }
-                           });
+            public void mouseEntered(MouseEvent e) {
+                mouse_over = true;    // set flag when mouse over
+                thisComp.repaint();
+            }
+
+            public void mouseExited(MouseEvent e) {
+                mouse_over = false;    // clear flag when mouse not over
+                thisComp.repaint();
+            }
+        });
     }
 
     // paint the button
 
     /**
      * Method description
-     *
      *
      * @param g
      */

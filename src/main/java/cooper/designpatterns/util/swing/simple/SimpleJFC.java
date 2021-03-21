@@ -24,31 +24,28 @@
  */
 
 
-
 package cooper.designpatterns.util.swing.simple;
 
-import java.awt.*;
-import java.awt.event.*;
+import cooper.designpatterns.util.swing.JxFrame;
 
 import javax.swing.*;
-
-import cooper.designpatterns.util.swing.JxFrame;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class SimpleJFC extends JxFrame implements ActionListener {
     JButton OK, Quit;
-    JPanel  jp;
-    Color   color;
+    JPanel jp;
+    Color color;
 
     /**
      * Constructs ...
-     *
      */
     public SimpleJFC() {
         super("Simple JFC Program");
@@ -58,7 +55,6 @@ public class SimpleJFC extends JxFrame implements ActionListener {
 
     /**
      * Method description
-     *
      *
      * @param e
      */
@@ -76,7 +72,6 @@ public class SimpleJFC extends JxFrame implements ActionListener {
 
     /**
      * Method description
-     *
      *
      * @param argv
      */
@@ -100,7 +95,7 @@ public class SimpleJFC extends JxFrame implements ActionListener {
         getContentPane().add(jp);
 
         // create and add buttons
-        OK   = new JButton("OK");
+        OK = new JButton("OK");
         Quit = new JButton("Quit");
         OK.addActionListener(this);
         Quit.addActionListener(this);

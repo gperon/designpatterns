@@ -37,23 +37,28 @@ package metsker.designpatterns.util.testing;
 * Please use this software as you wish with the sole
 * restriction that you may not claim that you wrote it.
  */
-import junit.framework.TestCase;
-
 import metsker.designpatterns.util.machine.Fuser;
 import metsker.designpatterns.util.machine.Machine;
 import metsker.designpatterns.util.machine.MachineComponent;
 import metsker.designpatterns.util.machine.MachineComposite;
 import metsker.designpatterns.util.machine.OozinozFactory;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.Test;
+
 /**
- *  Test the MachineComponent hierarchy, especially its ability
- *  to tell whether or not an object model is cyclic.
+ * Test the MachineComponent hierarchy, especially its ability to tell whether
+ * or not an object model is cyclic.
  */
-public class MachineTest extends TestCase {
+public class MachineTest {
 
     /**
-     *  @return a normal little tree with 3 leaves.
+     * @return a normal little tree with 3 leaves.
      */
+    @Test
     public static MachineComposite tree() {
         Machine m1 = new Fuser(1);
         Machine m2 = new Fuser(2);
@@ -69,9 +74,10 @@ public class MachineTest extends TestCase {
     }
 
     /**
-     *  @return a tiny process flow that shows a composite that is
-     *  not a tree: m1->m2->m3->m1
+     * @return a tiny process flow that shows a composite that is not a tree:
+     * m1->m2->m3->m1
      */
+    @Test
     public static MachineComponent cycle() {
         MachineComposite m1 = new MachineComposite(1);
         MachineComposite m2 = new MachineComposite(2);
@@ -84,9 +90,10 @@ public class MachineTest extends TestCase {
     }
 
     /**
-     *  @return a tiny machine composite that shows a composite that is
-     *  not a tree: An acyclic non-tree m1->m2, m3; m3-> m2.
+     * @return a tiny machine composite that shows a composite that is not a
+     * tree: An acyclic non-tree m1->m2, m3; m3-> m2.
      */
+    @Test
     public static MachineComponent nonTree() {
         MachineComposite m1 = new MachineComposite(1);
         MachineComposite m3 = new MachineComposite(3);
@@ -98,18 +105,12 @@ public class MachineTest extends TestCase {
         return m1;
     }
 
-    /**
-     * Method description
-     *
-     */
+    @Test
     public void testCanCountLeaves() {
         assertEquals(3, tree().getMachineCount());
     }
 
-    /**
-     * Method description
-     *
-     */
+    @Test
     public void testThatCycleIsNotATree() {
         assertFalse(cycle().isTree());
         assertFalse(nonTree().isTree());
@@ -117,10 +118,7 @@ public class MachineTest extends TestCase {
         assertFalse(OozinozFactory.plant().isTree());
     }
 
-    /**
-     * Method description
-     *
-     */
+    @Test
     public void testThatAMachineIsATree() {
         assertTrue(new Fuser(1).isTree());
     }

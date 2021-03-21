@@ -24,24 +24,25 @@
  */
 
 
-
 package metsker.designpatterns.util.remote;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import java.rmi.*;
+
+import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
 /**
  * This class demonstrates how to implement an RMI interface.
+ *
  * @author Steven J. Metsker
  */
 public class RocketImpl extends UnicastRemoteObject implements Rocket {
@@ -53,7 +54,6 @@ public class RocketImpl extends UnicastRemoteObject implements Rocket {
      *
      * @param price
      * @param apogee
-     *
      * @throws RemoteException
      */
     public RocketImpl(double price, double apogee) throws RemoteException {
@@ -63,6 +63,7 @@ public class RocketImpl extends UnicastRemoteObject implements Rocket {
 
     /**
      * Set a factor to adjust a particular rocket's apogee.
+     *
      * @param factor the factor
      */
     public void boost(double factor) {
@@ -71,7 +72,6 @@ public class RocketImpl extends UnicastRemoteObject implements Rocket {
 
     /**
      * @return the expected height this rocket will reach
-     *
      * @throws RemoteException
      */
     public double getApogee() throws RemoteException {
@@ -80,7 +80,6 @@ public class RocketImpl extends UnicastRemoteObject implements Rocket {
 
     /**
      * @return the price of this rocket
-     *
      * @throws RemoteException
      */
     public double getPrice() throws RemoteException {

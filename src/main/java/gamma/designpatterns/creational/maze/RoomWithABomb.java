@@ -24,67 +24,66 @@
  */
 
 
-
 package gamma.designpatterns.creational.maze;
 
 /**
- *  <p>
+ * <p>
+ * <p>
+ * Title: Design Patterns</p> <p>
+ * <p>
+ * Description: </p> <p>
+ * <p>
+ * Copyright: Copyright (c) 2002</p> <p>
+ * <p>
+ * Company: GioPerLab</p>
  *
- *  Title: Design Patterns</p> <p>
- *
- *  Description: </p> <p>
- *
- *  Copyright: Copyright (c) 2002</p> <p>
- *
- *  Company: GioPerLab</p>
- *
- * @author     giorgio_peron@libero.it
- * @created    2 giugno 2002
- * @version    1.0
+ * @author giorgio_peron@libero.it
+ * @version 1.0
+ * @created 2 giugno 2002
  */
 public class RoomWithABomb extends Room {
 
     /**
-     *  Constructor for the RoomWithABomb object
+     * Constructor for the RoomWithABomb object
      *
-     * @param  roomNumber  Description of the Parameter
+     * @param roomNumber Description of the Parameter
      */
     public RoomWithABomb(int roomNumber) {
         super(roomNumber);
     }
 
     /**
-     *  Constructor for the RoomWithABomb object
+     * Constructor for the RoomWithABomb object
      */
     public RoomWithABomb() {
         super();
     }
 
     /**
-     *  Constructor for the RoomWithABomb object
+     * Constructor for the RoomWithABomb object
      *
-     * @param  room  Description of the Parameter
+     * @param room Description of the Parameter
      */
     protected RoomWithABomb(RoomWithABomb room) {
         super(room);
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @return    Description of the Return Value
+     * @return Description of the Return Value
      */
     public String toString() {
         return super.toString() + " with a Bomb";
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @return                                           Description of the
-     *      Return Value
-     * @exception  java.lang.CloneNotSupportedException  Description of the
-     *      Exception
+     * @return Description of the
+     * Return Value
+     * @throws java.lang.CloneNotSupportedException Description of the
+     *                                              Exception
      */
     public Object clone() throws java.lang.CloneNotSupportedException {
         return new RoomWithABomb(this);

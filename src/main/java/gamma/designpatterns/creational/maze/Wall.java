@@ -24,62 +24,63 @@
  */
 
 
-
 package gamma.designpatterns.creational.maze;
 
 /**
- *  <p>
+ * <p>
+ * <p>
+ * Title: Design Patterns</p> <p>
+ * <p>
+ * Description: </p> <p>
+ * <p>
+ * Copyright: Copyright (c) 2002</p> <p>
+ * <p>
+ * Company: GioPerLab</p>
  *
- *  Title: Design Patterns</p> <p>
- *
- *  Description: </p> <p>
- *
- *  Copyright: Copyright (c) 2002</p> <p>
- *
- *  Company: GioPerLab</p>
- *
- * @author     giorgio_peron@libero.it
- * @created    8 giugno 2002
- * @version    1.0
+ * @author giorgio_peron@libero.it
+ * @version 1.0
+ * @created 8 giugno 2002
  */
 public class Wall implements MapSite {
 
     /**
-     *  Constructor for the Wall object
+     * Constructor for the Wall object
      */
-    public Wall() {}
-
-    /**
-     *  Constructor for the Wall object
-     *
-     * @param  wall  Description of the Parameter
-     */
-    protected Wall(Wall wall) {}
-
-    /**
-     *  Description of the Method
-     */
-    public void enter() {
-        throw new java.lang.UnsupportedOperationException(
-            "Method enter() not yet implemented.");
+    public Wall() {
     }
 
     /**
-     *  Description of the Method
+     * Constructor for the Wall object
      *
-     * @return                                           Description of the
-     *      Return Value
-     * @exception  java.lang.CloneNotSupportedException  Description of the
-     *      Exception
+     * @param wall Description of the Parameter
+     */
+    protected Wall(Wall wall) {
+    }
+
+    /**
+     * Description of the Method
+     */
+    public void enter() {
+        throw new java.lang.UnsupportedOperationException(
+                "Method enter() not yet implemented.");
+    }
+
+    /**
+     * Description of the Method
+     *
+     * @return Description of the
+     * Return Value
+     * @throws java.lang.CloneNotSupportedException Description of the
+     *                                              Exception
      */
     public Object clone() throws java.lang.CloneNotSupportedException {
         return new Wall();
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @return    Description of the Return Value
+     * @return Description of the Return Value
      */
     public String toString() {
         return "Wall";

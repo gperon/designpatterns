@@ -24,42 +24,41 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.observer;
 
 /**
- *  <p>
+ * <p>
+ * <p>
+ * Title: </p> <p>
+ * <p>
+ * Description: Design Patterns Examples</p> <p>
+ * <p>
+ * Copyright: Copyright (c) 2003</p> <p>
+ * <p>
+ * Company: GioPerLab</p>
  *
- *  Title: </p> <p>
- *
- *  Description: Design Patterns Examples</p> <p>
- *
- *  Copyright: Copyright (c) 2003</p> <p>
- *
- *  Company: GioPerLab</p>
- *
- * @author     giorgio_peron@libero.it
- * @created    2 marzo 2003
- * @version    1.0
+ * @author giorgio_peron@libero.it
+ * @version 1.0
+ * @created 2 marzo 2003
  */
 public interface Subject {
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  observer  Description of the Parameter
+     * @param observer Description of the Parameter
      */
     void attach(Observer observer);
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  observer  Description of the Parameter
+     * @param observer Description of the Parameter
      */
     void detach(Observer observer);
 
     /**
-     *  Description of the Method
+     * Description of the Method
      */
     void subjectNotify();
 }

@@ -24,23 +24,27 @@
  */
 
 
-
 package metsker.designpatterns.structural.decorator;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import java.io.*;
 
 import metsker.designpatterns.util.filter.RandomCaseFilter;
 import metsker.designpatterns.util.filter.WrapFilter;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  * This class just shows a slightly different approach to the same service that
@@ -53,17 +57,15 @@ public class ShowFilters3 {
     /**
      * Method description
      *
-     *
      * @param args
-     *
      * @throws IOException
      */
-    public static void main(String args[]) throws IOException {
+    public static void main(String[] args) throws IOException {
         BufferedReader in = new BufferedReader(new FileReader(args[0]));
         WrapFilter out = new WrapFilter(
-                             new BufferedWriter(
-                                 new RandomCaseFilter(
-                                     new PrintWriter(System.out))), 15);
+                new BufferedWriter(
+                        new RandomCaseFilter(
+                                new PrintWriter(System.out))), 15);
         out.setCenter(true);
         while (true) {
             String s = in.readLine();

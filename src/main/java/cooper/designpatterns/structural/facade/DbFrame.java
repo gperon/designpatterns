@@ -24,28 +24,28 @@
  */
 
 
-
 package cooper.designpatterns.structural.facade;
 
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class DbFrame extends Frame implements ActionListener, ItemListener {
-    Database      db;
+    Database db;
     java.awt.List Tables, Columns, Data;
-    TextArea      query;
-    Button        Search, Quit;
+    TextArea query;
+    Button Search, Quit;
 
     /**
      * Constructs ...
-     *
      */
     public DbFrame() {
         super("Database demonstration");
@@ -53,21 +53,20 @@ public class DbFrame extends Frame implements ActionListener, ItemListener {
         db = new Database("sun.jdbc.odbc.JdbcOdbcDriver");
         db.open("jdbc:odbc:Grocery prices", null);
 
-        String tnames[] = db.getTableNames();
+        String[] tnames = db.getTableNames();
 
         loadList(Tables, tnames);
 
         String queryText = "SELECT DISTINCTROW FoodName, StoreName, Price "
-                           + "FROM (Food INNER JOIN FoodPrice ON Food.FoodKey = FoodPrice.FoodKey) "
-                           + "INNER JOIN Stores ON FoodPrice.StoreKey = Stores.StoreKey "
-                           + "WHERE (((Food.FoodName)=\'Oranges\')) ORDER BY FoodPrice.Price;";
+                + "FROM (Food INNER JOIN FoodPrice ON Food.FoodKey = FoodPrice.FoodKey) "
+                + "INNER JOIN Stores ON FoodPrice.StoreKey = Stores.StoreKey "
+                + "WHERE (((Food.FoodName)='Oranges')) ORDER BY FoodPrice.Price;";
 
         query.setText(queryText);
     }
 
     /**
      * Method description
-     *
      *
      * @param e
      */
@@ -91,8 +90,8 @@ public class DbFrame extends Frame implements ActionListener, ItemListener {
     }
 
     private void clickedSearch() {
-        ResultSet rs       = db.execute(query.getText());
-        String    cnames[] = rs.getMetaData();
+        ResultSet rs = db.execute(query.getText());
+        String[] cnames = rs.getMetaData();
 
         Columns.removeAll();
 
@@ -103,7 +102,6 @@ public class DbFrame extends Frame implements ActionListener, ItemListener {
 
     /**
      * Method description
-     *
      *
      * @param e
      */
@@ -130,22 +128,21 @@ public class DbFrame extends Frame implements ActionListener, ItemListener {
     /**
      * Method description
      *
-     *
      * @param argv
      */
-    static public void main(String argv[]) {
+    static public void main(String[] argv) {
         new DbFrame();
     }
 
     private void showColumns() {
-        String cnames[] = db.getColumnNames(Tables.getSelectedItem());
+        String[] cnames = db.getColumnNames(Tables.getSelectedItem());
 
         loadList(Columns, cnames);
     }
 
     private void showData() {
         String colname = Columns.getSelectedItem();
-        String colval  = db.getColumnValue(Tables.getSelectedItem(), colname);
+        String colval = db.getColumnValue(Tables.getSelectedItem(), colname);
 
         Data.setVisible(false);
         Data.removeAll();

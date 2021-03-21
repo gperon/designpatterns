@@ -24,12 +24,10 @@
  */
 
 
-
 package gamma.designpatterns;
 
-import java.awt.*;
-
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * <p>Title: Design Patterns</p>
@@ -62,7 +60,7 @@ public class ClientGui {
 
         // Center the window
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        Dimension frameSize  = frame.getSize();
+        Dimension frameSize = frame.getSize();
 
         if (frameSize.height > screenSize.height) {
             frameSize.height = screenSize.height;
@@ -83,15 +81,15 @@ public class ClientGui {
      */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
-                                       public void run() {
-                                           try {
-                                               UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-                                           } catch (Exception exception) {
-                                               exception.printStackTrace();
-                                           }
+            public void run() {
+                try {
+                    UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
 
-                                           new ClientGui();
-                                       }
-                                   });
+                new ClientGui();
+            }
+        });
     }
 }

@@ -24,27 +24,23 @@
  */
 
 
-
 package cooper.designpatterns.util.swing.jlist;
 
-import java.util.*;
+import cooper.designpatterns.util.swing.JxFrame;
 
 import javax.swing.*;
-
-import cooper.designpatterns.util.swing.JxFrame;
+import java.util.Vector;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class JListDemo extends JxFrame {
 
     /**
      * Constructs ...
-     *
      */
     public JListDemo() {
         super("JList demo");
@@ -74,7 +70,6 @@ public class JListDemo extends JxFrame {
 
     /**
      * Method description
-     *
      *
      * @param arv
      */

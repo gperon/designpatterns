@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.visitor;
 
 import gamma.designpatterns.structural.composite.Bus;
@@ -33,73 +32,74 @@ import gamma.designpatterns.structural.composite.Chassis;
 import gamma.designpatterns.structural.composite.Equipment;
 import gamma.designpatterns.structural.composite.FloppyDisk;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
- *  <p>
+ * <p>
+ * <p>
+ * Title: </p> <p>
+ * <p>
+ * Description: Design Patterns Examples</p> <p>
+ * <p>
+ * Copyright: Copyright (c) 2003</p> <p>
+ * <p>
+ * Company: GioPerLab</p>
  *
- *  Title: </p> <p>
- *
- *  Description: Design Patterns Examples</p> <p>
- *
- *  Copyright: Copyright (c) 2003</p> <p>
- *
- *  Company: GioPerLab</p>
- *
- * @author     giorgio_peron@libero.it
- * @created    8 marzo 2003
- * @version    1.0
+ * @author giorgio_peron@libero.it
+ * @version 1.0
+ * @created 8 marzo 2003
  */
 public class InventoryVisitor implements EquipmentVisitor {
-    private Map<String, Double> inventory;
+    private final Map<String, Double> inventory;
 
     /**
-     *  Constructor for the InventoryVisitor object
+     * Constructor for the InventoryVisitor object
      */
     public InventoryVisitor() {
         this.inventory = new HashMap();
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  floppy  Description of the Parameter
+     * @param floppy Description of the Parameter
      */
     public void visitFloppyDisk(FloppyDisk floppy) {
         accumulate(floppy);
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  card  Description of the Parameter
+     * @param card Description of the Parameter
      */
     public void visitCard(Card card) {
         accumulate(card);
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  chassis  Description of the Parameter
+     * @param chassis Description of the Parameter
      */
     public void visitChassis(Chassis chassis) {
         accumulate(chassis);
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  bus  Description of the Parameter
+     * @param bus Description of the Parameter
      */
     public void visitBus(Bus bus) {
         accumulate(bus);
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  e  Description of the Parameter
+     * @param e Description of the Parameter
      */
     private void accumulate(Equipment e) {
         if (inventory.containsKey(e.name())) {
@@ -113,9 +113,9 @@ public class InventoryVisitor implements EquipmentVisitor {
     }
 
     /**
-     *  Gets the inventory attribute of the InventoryVisitor object
+     * Gets the inventory attribute of the InventoryVisitor object
      *
-     * @return    The inventory value
+     * @return The inventory value
      */
     public Map<String, Double> getInventory() {
         return inventory;

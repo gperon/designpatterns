@@ -24,41 +24,38 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.iterator;
 
-import java.util.*;
+import java.util.Enumeration;
+import java.util.NoSuchElementException;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class KidClub implements Enumeration {
-    String      clubMask;    // name of club
-    Kid         kid;         // next kid to return
+    String clubMask;    // name of club
+    Kid kid;         // next kid to return
     Enumeration ke;          // gets all kids
-    KidData     kdata;       // class containing kids
+    KidData kdata;       // class containing kids
 
     /**
      * Constructs ...
-     *
      *
      * @param kd
      * @param club
      */
     public KidClub(KidData kd, String club) {
         clubMask = club;                // save the club
-        kdata    = kd;                  // copy the class
-        kid      = null;                // default
-        ke       = kdata.elements();    // get Enumerator
+        kdata = kd;                  // copy the class
+        kid = null;                // default
+        ke = kdata.elements();    // get Enumerator
     }
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -75,7 +72,6 @@ public class KidClub implements Enumeration {
     /**
      * Method description
      *
-     *
      * @return
      */
     public boolean hasMoreElements() {
@@ -84,8 +80,8 @@ public class KidClub implements Enumeration {
         // belonging to the specified club
         boolean found = false;
 
-        while (ke.hasMoreElements() &&!found) {
-            kid   = (Kid) ke.nextElement();
+        while (ke.hasMoreElements() && !found) {
+            kid = (Kid) ke.nextElement();
             found = kid.getClub().equals(clubMask);
         }
 

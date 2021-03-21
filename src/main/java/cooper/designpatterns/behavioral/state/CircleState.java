@@ -24,22 +24,19 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.state;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class CircleState extends State {
-    private Mediator med;    // save Mediator
+    private final Mediator med;    // save Mediator
 
     /**
      * Constructs ...
-     *
      *
      * @param md
      */
@@ -51,7 +48,6 @@ public class CircleState extends State {
 
     /**
      * Method description
-     *
      *
      * @param x
      * @param y

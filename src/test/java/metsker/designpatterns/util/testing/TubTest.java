@@ -24,35 +24,34 @@
  */
 
 
-
 package metsker.designpatterns.util.testing;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
+
 import metsker.designpatterns.util.machine.Fuser;
 import metsker.designpatterns.util.machine.Machine;
 import metsker.designpatterns.util.machine.Tub;
 import metsker.designpatterns.util.machine.TubMediator;
-
-import junit.framework.TestCase;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.Test;
 
 /**
- *  Test Machine/Tub relationships.
+ * Test Machine/Tub relationships.
  */
-public class TubTest extends TestCase {
+public class TubTest  {
 
-    /**
-     * Method description
-     *
-     */
+    @Test
     public void testAddTub() {
         TubMediator mediator = new TubMediator();
         Tub tub = new Tub("T402", mediator);
@@ -68,10 +67,7 @@ public class TubTest extends TestCase {
         assertEquals(1, m2.getTubs().size());
     }
 
-    /**
-     * Method description
-     *
-     */
+    @Test
     public void testLocationChange() {
         TubMediator mediator = new TubMediator();
         Tub t = new Tub("T403", mediator);

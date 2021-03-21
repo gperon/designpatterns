@@ -24,39 +24,38 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.command;
 
 /**
- *  <p>
+ * <p>
+ * <p>
+ * Title: </p> <p>
+ * <p>
+ * Description: Design Patterns Examples</p> <p>
+ * <p>
+ * Copyright: Copyright (c) 2003</p> <p>
+ * <p>
+ * Company: GioPerLab</p>
  *
- *  Title: </p> <p>
- *
- *  Description: Design Patterns Examples</p> <p>
- *
- *  Copyright: Copyright (c) 2003</p> <p>
- *
- *  Company: GioPerLab</p>
- *
- * @author     giorgio_peron@libero.it
- * @created    2 marzo 2003
- * @version    1.0
+ * @author giorgio_peron@libero.it
+ * @version 1.0
+ * @created 2 marzo 2003
  */
 public class OpenCommand implements Command {
     private String response;
-    private Application application;
+    private final Application application;
 
     /**
-     *  Constructor for the OpenCommand object
+     * Constructor for the OpenCommand object
      *
-     * @param  application  Description of the Parameter
+     * @param application Description of the Parameter
      */
     public OpenCommand(Application application) {
         this.application = application;
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      */
     public void execute() {
         String name = askUser();
@@ -68,9 +67,9 @@ public class OpenCommand implements Command {
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @return    Description of the Return Value
+     * @return Description of the Return Value
      */
     protected String askUser() {
         return "askUser";

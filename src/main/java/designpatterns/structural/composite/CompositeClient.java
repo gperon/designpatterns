@@ -26,12 +26,12 @@
 
 
 /*
-* CompositeClient.java
-*
-* Created on November 13, 2006, 11:41 AM
-*
-* To change this template, choose Tools | Template Manager
-* and open the template in the editor.
+ * CompositeClient.java
+ *
+ * Created on November 13, 2006, 11:41 AM
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
  */
 package designpatterns.structural.composite;
 
@@ -40,4 +40,5 @@ package designpatterns.structural.composite;
  *
  * @author giorgiop
  */
-public @interface CompositeClient {}
+public @interface CompositeClient {
+}

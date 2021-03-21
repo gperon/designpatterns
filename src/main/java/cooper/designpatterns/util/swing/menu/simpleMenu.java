@@ -24,25 +24,22 @@
  */
 
 
-
 package cooper.designpatterns.util.swing.menu;
 
-import javax.swing.*;
-
 import cooper.designpatterns.util.swing.JxFrame;
+
+import javax.swing.*;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class simpleMenu extends JxFrame {
 
     /**
      * Constructs ...
-     *
      */
     public simpleMenu() {
         super("Simple Menu");
@@ -68,10 +65,9 @@ public class simpleMenu extends JxFrame {
     /**
      * Method description
      *
-     *
      * @param argv
      */
-    static public void main(String argv[]) {
+    static public void main(String[] argv) {
         new simpleMenu();
     }
 }

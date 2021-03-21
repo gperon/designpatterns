@@ -24,59 +24,58 @@
  */
 
 
-
 package metsker.designpatterns.util.controller;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
 
 /**
- *  This class just supports examples in the Bridge chapter.
- *  It doesn't really control a star press.
+ * This class just supports examples in the Bridge chapter.
+ * It doesn't really control a star press.
  */
 public class StarPressController {
 
     /**
      * Method description
-     *
      */
-    public void start() {}
+    public void start() {
+    }
 
     /**
      * Method description
-     *
      */
-    public void stop() {}
+    public void stop() {
+    }
 
     /**
      * Method description
-     *
      */
-    public void startProcess() {}
+    public void startProcess() {
+    }
 
     /**
      * Method description
-     *
      */
-    public void endProcess() {}
+    public void endProcess() {
+    }
 
     /**
      * Method description
-     *
      */
-    public void index() {}
+    public void index() {
+    }
 
     /**
      * Method description
-     *
      */
-    public void discharge() {}
+    public void discharge() {
+    }
 }

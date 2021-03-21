@@ -26,12 +26,12 @@
 
 
 /*
-* Handler.java
-*
-* Created on November 13, 2006, 11:29 AM
-*
-* To change this template, choose Tools | Template Manager
-* and open the template in the editor.
+ * Handler.java
+ *
+ * Created on November 13, 2006, 11:29 AM
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
  */
 package designpatterns.behavioral.chainofresponsibility;
 
@@ -41,4 +41,5 @@ package designpatterns.behavioral.chainofresponsibility;
  *
  * @author giorgiop
  */
-public @interface Handler {}
+public @interface Handler {
+}

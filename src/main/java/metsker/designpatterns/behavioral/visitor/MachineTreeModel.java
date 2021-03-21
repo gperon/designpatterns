@@ -24,29 +24,29 @@
  */
 
 
-
 package metsker.designpatterns.behavioral.visitor;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import javax.swing.tree.TreeModel;
-import javax.swing.tree.TreePath;
 
 import metsker.designpatterns.util.machine.Machine;
 import metsker.designpatterns.util.machine.MachineComponent;
 import metsker.designpatterns.util.machine.MachineComposite;
 
+import javax.swing.tree.TreeModel;
+import javax.swing.tree.TreePath;
+
 /**
  * This class adapts a machine composite to behave as a tree model.
- *
+ * <p>
  * (You might think that this class should subclass DefaultTreeModel, but that
  * class requires its nodes to be TreeNode objects.)
  *
@@ -60,11 +60,11 @@ public class MachineTreeModel implements TreeModel {
      *
      * @param l
      */
-    public void addTreeModelListener(javax.swing.event.TreeModelListener l) {}
+    public void addTreeModelListener(javax.swing.event.TreeModelListener l) {
+    }
 
     /**
-     * @param parent
-     *            a node in the tree
+     * @param parent a node in the tree
      * @param index
      * @return the child of the parent at the given index
      */
@@ -79,9 +79,7 @@ public class MachineTreeModel implements TreeModel {
     }
 
     /**
-     *
-     * @param parent
-     *            a node in the tree
+     * @param parent a node in the tree
      * @return the number of children of the given node
      */
     public int getChildCount(Object parent) {
@@ -95,10 +93,8 @@ public class MachineTreeModel implements TreeModel {
     }
 
     /**
-     * @param parent
-     *            a node in the tree
-     * @param child
-     *            a node in the tree
+     * @param parent a node in the tree
+     * @param child  a node in the tree
      * @return the index of the child at the parent node
      */
     public int getIndexOfChild(Object parent, Object child) {
@@ -119,8 +115,7 @@ public class MachineTreeModel implements TreeModel {
     }
 
     /**
-     * @param node
-     *            a node in the tree
+     * @param node a node in the tree
      * @return true if the given node is a leaf
      */
     public boolean isLeaf(Object node) {
@@ -133,7 +128,8 @@ public class MachineTreeModel implements TreeModel {
      * @param l
      */
     public void removeTreeModelListener(
-            javax.swing.event.TreeModelListener l) {}
+            javax.swing.event.TreeModelListener l) {
+    }
 
     /**
      * Ignored.
@@ -141,7 +137,8 @@ public class MachineTreeModel implements TreeModel {
      * @param path
      * @param newValue
      */
-    public void valueForPathChanged(TreePath path, Object newValue) {}
+    public void valueForPathChanged(TreePath path, Object newValue) {
+    }
 
     /**
      * Construct a tree model of the supplied MachineComponent object.

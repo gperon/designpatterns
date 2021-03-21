@@ -24,38 +24,37 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.interpreter;
 
-import java.util.*;
+import java.util.Vector;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class ParseVerb extends ParseObject {
 
-    /** Field description */
+    /**
+     * Field description
+     */
     static public final int
-        PRINT  = 100,
-        SORTBY = 110,
-        THENBY = 120;
+            PRINT = 100,
+            SORTBY = 110,
+            THENBY = 120;
     protected Vector args;
 
     /**
      * Constructs ...
      *
-     *
      * @param s
      */
     public ParseVerb(String s) {
-        args  = new Vector();
-        s     = s.toLowerCase();
+        args = new Vector();
+        s = s.toLowerCase();
         value = -1;
-        type  = VERB;
+        type = VERB;
 
         if (s.equals("print")) {
             value = PRINT;
@@ -69,16 +68,14 @@ public class ParseVerb extends ParseObject {
     /**
      * Method description
      *
-     *
      * @param mv
      */
     public void addArgs(MultVar mv) {
-        args = mv.getVector();;
+        args = mv.getVector();
     }
 
     /**
      * Method description
-     *
      *
      * @param p
      */
@@ -89,7 +86,6 @@ public class ParseVerb extends ParseObject {
     /**
      * Method description
      *
-     *
      * @return
      */
     public boolean isLegal() {
@@ -99,18 +95,16 @@ public class ParseVerb extends ParseObject {
     /**
      * Method description
      *
-     *
      * @param s
-     *
      * @return
      */
     public ParseVerb getVerb(String s) {
         switch (value) {
-        case PRINT :
-            return new Print(s);
+            case PRINT:
+                return new Print(s);
 
-        case SORTBY :
-            return new Sort(s);
+            case SORTBY:
+                return new Sort(s);
         }
 
         return null;

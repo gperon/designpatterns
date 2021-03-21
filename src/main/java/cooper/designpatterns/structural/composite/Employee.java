@@ -24,61 +24,56 @@
  */
 
 
-
 package cooper.designpatterns.structural.composite;
 
-import java.util.*;
+import java.util.Enumeration;
+import java.util.Vector;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class Employee {
     Employee parent = null;
-    String   name;
-    float    salary;
-    Vector   subordinates;
-    boolean  isLeaf;
+    String name;
+    float salary;
+    Vector subordinates;
+    boolean isLeaf;
 
     /**
      * Constructs ...
-     *
      *
      * @param _name
      * @param _salary
      */
     public Employee(String _name, float _salary) {
-        name         = _name;
-        salary       = _salary;
+        name = _name;
+        salary = _salary;
         subordinates = new Vector();
-        isLeaf       = false;
+        isLeaf = false;
     }
 
     /**
      * Constructs ...
-     *
      *
      * @param _parent
      * @param _name
      * @param _salary
      */
     public Employee(Employee _parent, String _name, float _salary) {
-        name         = _name;
-        salary       = _salary;
-        parent       = _parent;
+        name = _name;
+        salary = _salary;
+        parent = _parent;
         subordinates = new Vector();
-        isLeaf       = false;
+        isLeaf = false;
     }
 
     /**
      * Method description
      *
-     *
      * @param e
-     *
      * @return
      */
     public boolean add(Employee e) {
@@ -92,7 +87,6 @@ public class Employee {
     /**
      * Method description
      *
-     *
      * @return
      */
     public Enumeration elements() {
@@ -101,7 +95,6 @@ public class Employee {
 
     /**
      * Method description
-     *
      *
      * @param e
      */
@@ -114,9 +107,7 @@ public class Employee {
     /**
      * Method description
      *
-     *
      * @param s
-     *
      * @return
      */
     public Employee getChild(String s) {
@@ -125,16 +116,16 @@ public class Employee {
         if (getName().equals(s)) {
             return this;
         } else {
-            boolean     found = false;
-            Enumeration e     = elements();
+            boolean found = false;
+            Enumeration e = elements();
 
             while (e.hasMoreElements() && (!found)) {
                 newEmp = (Employee) e.nextElement();
-                found  = newEmp.getName().equals(s);
+                found = newEmp.getName().equals(s);
 
                 if (!found) {
                     newEmp = newEmp.getChild(s);
-                    found  = (newEmp != null);
+                    found = (newEmp != null);
                 }
             }
 
@@ -149,7 +140,6 @@ public class Employee {
     /**
      * Method description
      *
-     *
      * @param b
      */
     public void setLeaf(boolean b) {
@@ -159,7 +149,6 @@ public class Employee {
     /**
      * Method description
      *
-     *
      * @return
      */
     public String getName() {
@@ -168,7 +157,6 @@ public class Employee {
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -184,7 +172,6 @@ public class Employee {
 
     /**
      * Method description
-     *
      *
      * @return
      */

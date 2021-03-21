@@ -24,7 +24,6 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.templatemethod;
 
 import java.awt.*;
@@ -32,16 +31,14 @@ import java.awt.*;
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public abstract class AbstractTriangle {
     Point p1, p2, p3;
 
     /**
      * Constructs ...
-     *
      *
      * @param a
      * @param b
@@ -56,7 +53,6 @@ public abstract class AbstractTriangle {
     /**
      * Method description
      *
-     *
      * @param g
      * @param c
      */
@@ -66,7 +62,6 @@ public abstract class AbstractTriangle {
 
     /**
      * Method description
-     *
      *
      * @param g
      */
@@ -81,18 +76,15 @@ public abstract class AbstractTriangle {
     /**
      * Method description
      *
-     *
      * @param g
      * @param a
      * @param b
-     *
      * @return
      */
     abstract public Point draw2ndLine(Graphics g, Point a, Point b);
 
     /**
      * Method description
-     *
      *
      * @param g
      * @param a

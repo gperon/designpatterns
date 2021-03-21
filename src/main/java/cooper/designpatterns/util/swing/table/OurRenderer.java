@@ -24,33 +24,29 @@
  */
 
 
-
 package cooper.designpatterns.util.swing.table;
 
-import java.awt.*;
-
 import javax.swing.*;
-import javax.swing.table.*;
+import javax.swing.table.TableCellRenderer;
+import java.awt.*;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class OurRenderer extends JLabel implements TableCellRenderer {
     Font bold, plain;
 
     /**
      * Constructs ...
-     *
      */
     public OurRenderer() {
         super();
         setOpaque(true);
         setBackground(Color.white);
-        bold  = new Font("SansSerif", Font.BOLD, 12);
+        bold = new Font("SansSerif", Font.BOLD, 12);
         plain = new Font("SansSerif", Font.PLAIN, 12);
         setFont(plain);
     }
@@ -58,14 +54,12 @@ public class OurRenderer extends JLabel implements TableCellRenderer {
     /**
      * Method description
      *
-     *
      * @param jt
      * @param value
      * @param isSelected
      * @param hasFocus
      * @param row
      * @param column
-     *
      * @return
      */
     public Component getTableCellRendererComponent(JTable jt, Object value, boolean isSelected, boolean hasFocus,

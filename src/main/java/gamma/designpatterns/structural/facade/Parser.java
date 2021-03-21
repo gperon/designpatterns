@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.structural.facade;
 
 /**
@@ -35,7 +34,7 @@ package gamma.designpatterns.structural.facade;
  * <p>Copyright: Copyright (c) 2003-2005</p>
  *
  * <p>Company: GioPerLab</p>
- *
+ * <p>
  * Parser calls back on ProgramNodeBuilder to build the parse tree incrementally.
  * These classes interact according to the Builder pattern.
  *
@@ -44,13 +43,12 @@ package gamma.designpatterns.structural.facade;
  */
 public class Parser {
     private Token lookahead;
-    private ProgramNodeBuilder builder;
-    private Scanner scanner;
+    private final ProgramNodeBuilder builder;
+    private final Scanner scanner;
     private final static boolean DEBUG = false;
 
     /**
      * Constructs ...
-     *
      *
      * @param s
      * @param pnb
@@ -77,8 +75,8 @@ public class Parser {
         pn.add(term);
         while (true) {
             switch (lookahead.getType()) {
-                case PLUS :
-                case MINUS :
+                case PLUS:
+                case MINUS:
                     emit(lookahead);
                     term = builder.newTerm((Token) lookahead.clone());
                     match(lookahead.getType());
@@ -87,7 +85,7 @@ public class Parser {
 
                     break;
 
-                default :
+                default:
                     return;
             }
         }
@@ -99,10 +97,10 @@ public class Parser {
         pn.add(factor);
         while (true) {
             switch (lookahead.getType()) {
-                case STAR :
-                case SLASH :
-                case DIV :
-                case MOD :
+                case STAR:
+                case SLASH:
+                case DIV:
+                case MOD:
                     emit(lookahead);
                     factor = builder.newFactor((Token) lookahead.clone());
                     match(lookahead.getType());
@@ -111,7 +109,7 @@ public class Parser {
 
                     break;
 
-                default :
+                default:
                     return;
             }
         }
@@ -119,7 +117,7 @@ public class Parser {
 
     private void factor(ProgramNode pn) throws Exception {
         switch (lookahead.getType()) {
-            case LEFT_BRACKET :
+            case LEFT_BRACKET:
                 match(TokenType.LEFT_BRACKET);
                 ProgramNode expr = builder.newExpression();
                 expr(expr);
@@ -128,21 +126,21 @@ public class Parser {
 
                 break;
 
-            case NUM :
+            case NUM:
                 emit(lookahead);
                 pn.add(builder.newVariable((Token) lookahead.clone()));
                 match(TokenType.NUM);
 
                 break;
 
-            case ID :
+            case ID:
                 emit(lookahead);
                 pn.add(builder.newVariable((Token) lookahead.clone()));
                 match(TokenType.ID);
 
                 break;
 
-            default :
+            default:
                 throw new Exception("syntax error");
         }
     }
@@ -158,37 +156,37 @@ public class Parser {
     private void emit(Token t) {
         if (DEBUG) {
             switch (t.getType()) {
-                case PLUS :
-                case MINUS :
-                case STAR :
-                case SLASH :
+                case PLUS:
+                case MINUS:
+                case STAR:
+                case SLASH:
                     System.out.printf("%c\n", t.getValue());
 
                     break;
 
-                case DIV :
+                case DIV:
                     System.out.println("DIV");
 
                     break;
 
-                case MOD :
+                case MOD:
                     System.out.println("MOD");
 
                     break;
 
-                case NUM :
+                case NUM:
                     System.out.printf("%d\n", t.getValue());
 
                     break;
 
-                case ID :
+                case ID:
                     System.out.printf("%s\n", t.getValue());
 
                     break;
 
-                default :
+                default:
                     System.out.printf("token %d, value %d\n", t.getType(),
-                                      t.getValue());
+                            t.getValue());
 
                     break;
             }

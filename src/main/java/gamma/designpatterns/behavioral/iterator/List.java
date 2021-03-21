@@ -26,26 +26,22 @@
 
 
 /*
-* List.java
-*
-* Created on 4 novembre 2006, 10.24
-*
-* To change this template, choose Tools | Template Manager
-* and open the template in the editor.
+ * List.java
+ *
+ * Created on 4 novembre 2006, 10.24
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
  */
 package gamma.designpatterns.behavioral.iterator;
 
-import java.util.*;
-
 /**
- *
- * @author gperon
- *
  * @param <Item>
+ * @author gperon
  */
 public class List<Item> {
     private int size;
-    private Item[] array;
+    private final Item[] array;
 
     /**
      * Creates a new instance of List
@@ -60,7 +56,6 @@ public class List<Item> {
     /**
      * Constructs ...
      *
-     *
      * @param l
      */
     public List(List l) {
@@ -69,7 +64,6 @@ public class List<Item> {
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -80,9 +74,7 @@ public class List<Item> {
     /**
      * Method description
      *
-     *
      * @param index
-     *
      * @return
      */
     public Item get(int index) {
@@ -91,7 +83,6 @@ public class List<Item> {
 
     /**
      * Method description
-     *
      *
      * @param item
      */
@@ -106,7 +97,6 @@ public class List<Item> {
 
     /**
      * Method description
-     *
      *
      * @return
      */

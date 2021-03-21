@@ -24,21 +24,18 @@
  */
 
 
-
 package metsker.designpatterns.creational.builder;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class ShowForgiving {
 
     /**
      * Method description
-     *
      *
      * @param args
      */
@@ -46,8 +43,8 @@ public class ShowForgiving {
 
         /* Remove "DollarsPerHead, 9.95" to see how that field is calculated if omitted. */
         String sample =
-            "Date, November 5, Headcount, 250, "
-            + "City, Springfield, DollarsPerHead, 9.95, HasSite, False";
+                "Date, November 5, Headcount, 250, "
+                        + "City, Springfield, DollarsPerHead, 9.95, HasSite, False";
         ReservationBuilder builder = new ForgivingBuilder();
         try {
             new ReservationParser(builder).parse(sample);

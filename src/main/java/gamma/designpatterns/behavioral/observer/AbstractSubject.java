@@ -24,56 +24,56 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.observer;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- *  <p>
+ * <p>
+ * <p>
+ * Title: </p> <p>
+ * <p>
+ * Description: Design Patterns Examples</p> <p>
+ * <p>
+ * Copyright: Copyright (c) 2003</p> <p>
+ * <p>
+ * Company: GioPerLab</p>
  *
- *  Title: </p> <p>
- *
- *  Description: Design Patterns Examples</p> <p>
- *
- *  Copyright: Copyright (c) 2003</p> <p>
- *
- *  Company: GioPerLab</p>
- *
- * @author     giorgio_peron@libero.it
- * @created    2 marzo 2003
- * @version    1.0
+ * @author giorgio_peron@libero.it
+ * @version 1.0
+ * @created 2 marzo 2003
  */
 public class AbstractSubject implements Subject {
-    private List<Observer> observers;
+    private final List<Observer> observers;
 
     /**
-     *  Constructor for the AbstractSubject object
+     * Constructor for the AbstractSubject object
      */
     protected AbstractSubject() {
         this.observers = new ArrayList();
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  observer  Description of the Parameter
+     * @param observer Description of the Parameter
      */
     public void attach(Observer observer) {
         observers.add(observer);
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  observer  Description of the Parameter
+     * @param observer Description of the Parameter
      */
     public void detach(Observer observer) {
         observers.remove(observer);
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      */
     public void subjectNotify() {
         for (Observer obs : observers) {

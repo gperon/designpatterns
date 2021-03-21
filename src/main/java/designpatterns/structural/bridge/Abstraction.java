@@ -26,12 +26,12 @@
 
 
 /*
-* Abstraction.java
-*
-* Created on November 13, 2006, 10:42 AM
-*
-* To change this template, choose Tools | Template Manager
-* and open the template in the editor.
+ * Abstraction.java
+ *
+ * Created on November 13, 2006, 10:42 AM
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
  */
 package designpatterns.structural.bridge;
 
@@ -41,4 +41,5 @@ package designpatterns.structural.bridge;
  *
  * @author giorgiop
  */
-public @interface Abstraction {}
+public @interface Abstraction {
+}

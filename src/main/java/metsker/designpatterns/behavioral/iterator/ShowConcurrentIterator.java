@@ -24,20 +24,24 @@
  */
 
 
-
 package metsker.designpatterns.behavioral.iterator;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * Show that modifying a list while an iterator iterates over it causes an
@@ -47,13 +51,12 @@ public class ShowConcurrentIterator implements Runnable {
     private List list;
 
     protected static List upMachineNames() {
-        return new ArrayList(Arrays.asList(new String[] { "Mixer1201",
-                "ShellAssembler1301", "StarPress1401", "UnloadBuffer1501" }));
+        return new ArrayList(Arrays.asList("Mixer1201",
+                "ShellAssembler1301", "StarPress1401", "UnloadBuffer1501"));
     }
 
     /**
      * Method description
-     *
      *
      * @param args
      */
@@ -71,7 +74,8 @@ public class ShowConcurrentIterator implements Runnable {
                 new Thread(this).start();
                 try {
                     Thread.sleep(100);
-                } catch (InterruptedException ignored) {}
+                } catch (InterruptedException ignored) {
+                }
             }
             System.out.println(iter.next());
         }

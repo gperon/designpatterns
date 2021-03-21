@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.creational.singleton;
 
 import gamma.designpatterns.creational.abstractfactory.BombedMazeFactory;
@@ -32,40 +31,41 @@ import gamma.designpatterns.creational.abstractfactory.EnchantedMazeFactory;
 import gamma.designpatterns.creational.abstractfactory.MazeFactory;
 
 /**
- *  <p>
+ * <p>
+ * <p>
+ * Title: Design Patterns</p> <p>
+ * <p>
+ * Description: </p> <p>
+ * <p>
+ * Copyright: Copyright (c) 2002</p> <p>
+ * <p>
+ * Company: GioPerLab</p>
  *
- *  Title: Design Patterns</p> <p>
- *
- *  Description: </p> <p>
- *
- *  Copyright: Copyright (c) 2002</p> <p>
- *
- *  Company: GioPerLab</p>
- *
- * @author     giorgio_peron@libero.it
- * @created    8 giugno 2002
- * @version    1.0
+ * @author giorgio_peron@libero.it
+ * @version 1.0
+ * @created 8 giugno 2002
  */
 public final class MazeFactorySingleton extends MazeFactory {
     private static MazeFactory instance;
     private final static String MAZESTYLE = "BOMBED";
 
     /**
-     *  Constructor for the MazeFactorySingleton object
+     * Constructor for the MazeFactorySingleton object
      */
-    private MazeFactorySingleton() {}
+    private MazeFactorySingleton() {
+    }
 
     /**
-     *  Gets the instance attribute of the MazeFactorySingleton object
+     * Gets the instance attribute of the MazeFactorySingleton object
      *
-     * @return    The instance value
+     * @return The instance value
      */
     public static MazeFactory getInstance() {
         if (instance == null) {
             MazeStyle style;
             // style = MazeStyle.valueOf(MAZESTYLE);
             String mazeStyle = System.getProperty(MAZESTYLE,
-                                   MazeStyle.STANDARD.toString());
+                    MazeStyle.STANDARD.toString());
             style = MazeStyle.valueOf(mazeStyle);
             if (style == MazeStyle.STANDARD) {
                 instance = new BombedMazeFactory();

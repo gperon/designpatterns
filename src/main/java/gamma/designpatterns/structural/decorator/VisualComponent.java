@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.structural.decorator;
 
 /**

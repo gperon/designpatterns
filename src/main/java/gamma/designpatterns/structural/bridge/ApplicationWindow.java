@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.structural.bridge;
 
 import java.awt.*;
@@ -46,7 +45,6 @@ public class ApplicationWindow extends Window {
     /**
      * Constructs ...
      *
-     *
      * @param contents
      */
     public ApplicationWindow(View contents) {
@@ -58,14 +56,16 @@ public class ApplicationWindow extends Window {
      *
      * @todo Implement this designpatterns.structural.bridge.Window method
      */
-    public void close() {}
+    public void close() {
+    }
 
     /**
      * deiconify
      *
      * @todo Implement this designpatterns.structural.bridge.Window method
      */
-    public void deiconify() {}
+    public void deiconify() {
+    }
 
     /**
      * drawContents
@@ -83,16 +83,18 @@ public class ApplicationWindow extends Window {
      * @param p1 Point
      * @todo Implement this designpatterns.structural.bridge.Window method
      */
-    public void drawLine(Point p0, Point p1) {}
+    public void drawLine(Point p0, Point p1) {
+    }
 
     /**
      * drawPolygon
      *
      * @param vertex Point[]
-     * @param n int
+     * @param n      int
      * @todo Implement this designpatterns.structural.bridge.Window method
      */
-    public void drawPolygon(Point[] vertex, int n) {}
+    public void drawPolygon(Point[] vertex, int n) {
+    }
 
     /**
      * drawRect
@@ -101,7 +103,8 @@ public class ApplicationWindow extends Window {
      * @param p1 Point
      * @todo Implement this designpatterns.structural.bridge.Window method
      */
-    public void drawRect(Point p0, Point p1) {}
+    public void drawRect(Point p0, Point p1) {
+    }
 
     /**
      * drawText
@@ -110,7 +113,8 @@ public class ApplicationWindow extends Window {
      * @param p Point
      * @todo Implement this designpatterns.structural.bridge.Window method
      */
-    public void drawText(String s, Point p) {}
+    public void drawText(String s, Point p) {
+    }
 
     /**
      * getView
@@ -127,28 +131,32 @@ public class ApplicationWindow extends Window {
      *
      * @todo Implement this designpatterns.structural.bridge.Window method
      */
-    public void iconify() {}
+    public void iconify() {
+    }
 
     /**
      * lower
      *
      * @todo Implement this designpatterns.structural.bridge.Window method
      */
-    public void lower() {}
+    public void lower() {
+    }
 
     /**
      * open
      *
      * @todo Implement this designpatterns.structural.bridge.Window method
      */
-    public void open() {}
+    public void open() {
+    }
 
     /**
      * raise
      *
      * @todo Implement this designpatterns.structural.bridge.Window method
      */
-    public void raise() {}
+    public void raise() {
+    }
 
     /**
      * setExtent
@@ -156,7 +164,8 @@ public class ApplicationWindow extends Window {
      * @param extent Point
      * @todo Implement this designpatterns.structural.bridge.Window method
      */
-    public void setExtent(Point extent) {}
+    public void setExtent(Point extent) {
+    }
 
     /**
      * setOrigin
@@ -164,5 +173,6 @@ public class ApplicationWindow extends Window {
      * @param at Point
      * @todo Implement this designpatterns.structural.bridge.Window method
      */
-    public void setOrigin(Point at) {}
+    public void setOrigin(Point at) {
+    }
 }

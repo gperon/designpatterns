@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.mediator;
 
 /**
@@ -44,7 +43,6 @@ public class EntryField extends Widget {
     /**
      * Constructs ...
      *
-     *
      * @param dd
      */
     public EntryField(DialogDirector dd) {
@@ -57,19 +55,19 @@ public class EntryField extends Widget {
      * @param event any
      * @todo Implement this designpatterns.structural.mediator.Widget method
      */
-    public void handleMouse(MouseEvent event) {}
+    public void handleMouse(MouseEvent event) {
+    }
 
     /**
      * Method description
-     *
      *
      * @param text
      */
-    public void setText(final String text) {}
+    public void setText(final String text) {
+    }
 
     /**
      * Method description
-     *
      *
      * @return
      */

@@ -24,27 +24,23 @@
  */
 
 
-
 package cooper.designpatterns.util.swing.table;
 
-import java.awt.*;
+import cooper.designpatterns.util.swing.JxFrame;
 
 import javax.swing.*;
-
-import cooper.designpatterns.util.swing.JxFrame;
+import java.awt.*;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class SimpleTable extends JxFrame {
 
     /**
      * Constructs ...
-     *
      */
     public SimpleTable() {
         super("Simple table");
@@ -54,12 +50,12 @@ public class SimpleTable extends JxFrame {
         getContentPane().add(jp);
 
         Object[][] musicData = {
-            { "Tschaikovsky", "1812 Overture", new Boolean(true) }, { "Stravinsky", "Le Sacre", new Boolean(true) },
-            { "Lennon", "Eleanor Rigby", new Boolean(false) }, { "Wagner", "Gotterdammerung", new Boolean(true) }
+                {"Tschaikovsky", "1812 Overture", new Boolean(true)}, {"Stravinsky", "Le Sacre", new Boolean(true)},
+                {"Lennon", "Eleanor Rigby", new Boolean(false)}, {"Wagner", "Gotterdammerung", new Boolean(true)}
         };
-        String[]    columnNames = { "Composer", "Title", "Orchestral" };
-        JTable      table       = new JTable(musicData, columnNames);
-        JScrollPane sp          = new JScrollPane(table);
+        String[] columnNames = {"Composer", "Title", "Orchestral"};
+        JTable table = new JTable(musicData, columnNames);
+        JScrollPane sp = new JScrollPane(table);
 
         table.setPreferredScrollableViewportSize(new Dimension(250, 170));
         jp.add(sp);
@@ -70,10 +66,9 @@ public class SimpleTable extends JxFrame {
     /**
      * Method description
      *
-     *
      * @param argv
      */
-    static public void main(String argv[]) {
+    static public void main(String[] argv) {
         new SimpleTable();
     }
 }

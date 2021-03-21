@@ -24,33 +24,32 @@
  */
 
 
-
 package metsker.designpatterns.creational.builder;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import java.util.*;
 
 import metsker.designpatterns.util.Dollars;
 
+import java.util.Calendar;
+import java.util.Date;
+
 /**
- *  Subclasses of this abstract class validate a reservation's
- *  attributes before constructing a Reservation object.
+ * Subclasses of this abstract class validate a reservation's
+ * attributes before constructing a Reservation object.
  */
 public abstract class ReservationBuilder {
 
-    /** Field description */
     public static final int MINHEAD = 25;
 
-    /** Field description */
     public static final Dollars MINTOTAL = new Dollars(495.95);
     protected Date date = null;
     protected String city;
@@ -59,10 +58,11 @@ public abstract class ReservationBuilder {
     protected boolean hasSite;
 
     /**
-     *  Push a date into the future by rolling forward the year.
-     *  @param inDate a date to push forward
-     *  @return a date like the one provided but with a year
-     *  that makes the date in the future
+     * Push a date into the future by rolling forward the year.
+     *
+     * @param inDate a date to push forward
+     * @return a date like the one provided but with a year
+     * that makes the date in the future
      */
     public static Date futurize(Date inDate) {
         Calendar now = Calendar.getInstance();
@@ -76,18 +76,18 @@ public abstract class ReservationBuilder {
     }
 
     /**
-     *  Construct a valid reservation from attributes that have
-     *  been presumably been set for this builder. Subclasses may
-     *  throw an exception if a valid reservation cannot
-     *  be formed.
-     * @return a valid reservation
+     * Construct a valid reservation from attributes that have
+     * been presumably been set for this builder. Subclasses may
+     * throw an exception if a valid reservation cannot
+     * be formed.
      *
+     * @return a valid reservation
      * @throws BuilderException
      */
     public abstract Reservation build() throws BuilderException;
 
     /**
-     *  The city for a reservation
+     * The city for a reservation
      *
      * @return
      */
@@ -95,18 +95,12 @@ public abstract class ReservationBuilder {
         return city;
     }
 
-    /**
-     * Method description
-     *
-     *
-     * @param value
-     */
     public void setCity(String value) {
         city = value;
     }
 
     /**
-     *  The date for a reservation.
+     * The date for a reservation.
      *
      * @return
      */
@@ -114,18 +108,12 @@ public abstract class ReservationBuilder {
         return date;
     }
 
-    /**
-     * Method description
-     *
-     *
-     * @param value
-     */
     public void setDate(Date value) {
         date = value;
     }
 
     /**
-     *  The dollars/head that a customer will pay for a display.
+     * The dollars/head that a customer will pay for a display.
      *
      * @return
      */
@@ -133,19 +121,13 @@ public abstract class ReservationBuilder {
         return dollarsPerHead;
     }
 
-    /**
-     * Method description
-     *
-     *
-     * @param value
-     */
     public void setDollarsPerHead(Dollars value) {
         dollarsPerHead = value;
     }
 
     /**
-     *  Indicates whether a customer has a site in mind for a
-     *  display.
+     * Indicates whether a customer has a site in mind for a
+     * display.
      *
      * @return
      */
@@ -153,19 +135,13 @@ public abstract class ReservationBuilder {
         return hasSite;
     }
 
-    /**
-     * Method description
-     *
-     *
-     * @param value
-     */
     public void setHasSite(boolean value) {
         hasSite = value;
     }
 
     /**
-     *  The number of people that a customer will guarantee for
-     *  a display.
+     * The number of people that a customer will guarantee for
+     * a display.
      *
      * @return
      */
@@ -173,12 +149,6 @@ public abstract class ReservationBuilder {
         return headcount;
     }
 
-    /**
-     * Method description
-     *
-     *
-     * @param value
-     */
     public void setHeadcount(int value) {
         headcount = value;
     }

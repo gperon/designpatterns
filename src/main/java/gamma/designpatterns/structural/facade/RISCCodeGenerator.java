@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.structural.facade;
 
 /**
@@ -44,7 +43,6 @@ public class RISCCodeGenerator extends CodeGenerator {
     /**
      * Constructs ...
      *
-     *
      * @param bs
      */
     public RISCCodeGenerator(BytecodeStream bs) {
@@ -56,7 +54,7 @@ public class RISCCodeGenerator extends CodeGenerator {
      *
      * @param en ExpressionNode
      * @todo Implement this designpatterns.structural.facade.CodeGenerator
-     *   method
+     * method
      */
     public void visit(ExpressionNode en) {
         super.visit(en);
@@ -67,7 +65,8 @@ public class RISCCodeGenerator extends CodeGenerator {
      *
      * @param sn StatementNode
      * @todo Implement this designpatterns.structural.facade.CodeGenerator
-     *   method
+     * method
      */
-    public void visit(StatementNode sn) {}
+    public void visit(StatementNode sn) {
+    }
 }

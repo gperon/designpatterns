@@ -26,12 +26,12 @@
 
 
 /*
-* Singleton.java
-*
-* Created on 16 dicembre 2006, 17.23
-*
-* To change this template, choose Tools | Template Manager
-* and open the template in the editor.
+ * Singleton.java
+ *
+ * Created on 16 dicembre 2006, 17.23
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
  */
 package designpatterns.creational.singleton;
 
@@ -42,4 +42,5 @@ package designpatterns.creational.singleton;
  *
  * @author gperon
  */
-public @interface Singleton {}
+public @interface Singleton {
+}

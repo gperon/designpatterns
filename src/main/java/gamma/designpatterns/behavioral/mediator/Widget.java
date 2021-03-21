@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.mediator;
 
 /**
@@ -40,11 +39,10 @@ package gamma.designpatterns.behavioral.mediator;
  * @version 1.0
  */
 public abstract class Widget {
-    private DialogDirector director;
+    private final DialogDirector director;
 
     /**
      * Constructs ...
-     *
      *
      * @param dd
      */
@@ -54,7 +52,6 @@ public abstract class Widget {
 
     /**
      * Method description
-     *
      */
     public void changed() {
         director.widgetChanged(this);
@@ -62,7 +59,6 @@ public abstract class Widget {
 
     /**
      * Method description
-     *
      *
      * @param event
      */

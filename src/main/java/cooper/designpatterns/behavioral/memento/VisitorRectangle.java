@@ -24,7 +24,6 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.memento;
 
 import java.awt.*;
@@ -39,20 +38,18 @@ class Memento {
     /**
      * Constructs ...
      *
-     *
      * @param r
      */
     public Memento(VisitorRectangle r) {
         rect = r;
-        x    = rect.x;
-        y    = rect.y;
-        w    = rect.w;
-        h    = rect.h;
+        x = rect.x;
+        y = rect.y;
+        w = rect.w;
+        h = rect.h;
     }
 
     /**
      * Method description
-     *
      */
     public void restore() {
 
@@ -69,18 +66,16 @@ class Memento {
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class VisitorRectangle {
-    int       x, y, w, h;
+    int x, y, w, h;
     Rectangle rect;
-    boolean   selected;
+    boolean selected;
 
     /**
      * Constructs ...
-     *
      *
      * @param xpt
      * @param ypt
@@ -96,10 +91,8 @@ public class VisitorRectangle {
     /**
      * Method description
      *
-     *
      * @param x
      * @param y
-     *
      * @return
      */
     public boolean contains(int x, int y) {
@@ -108,7 +101,6 @@ public class VisitorRectangle {
 
     /**
      * Method description
-     *
      *
      * @param g
      */
@@ -126,7 +118,6 @@ public class VisitorRectangle {
     /**
      * Method description
      *
-     *
      * @param xpt
      * @param ypt
      */
@@ -142,7 +133,6 @@ public class VisitorRectangle {
 
     /**
      * Method description
-     *
      *
      * @param b
      */

@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.mediator;
 
 /**
@@ -43,7 +42,6 @@ public class Button extends Widget {
 
     /**
      * Constructs ...
-     *
      *
      * @param dd
      */
@@ -64,8 +62,8 @@ public class Button extends Widget {
     /**
      * Method description
      *
-     *
      * @param text
      */
-    public void setText(final String text) {}
+    public void setText(final String text) {
+    }
 }

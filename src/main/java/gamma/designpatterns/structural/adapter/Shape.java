@@ -24,41 +24,40 @@
  */
 
 
-
 package gamma.designpatterns.structural.adapter;
 
 import java.awt.*;
 
 /**
- *  <p>
+ * <p>
+ * <p>
+ * Title: Design Patterns</p> <p>
+ * <p>
+ * Description: </p> <p>
+ * <p>
+ * Copyright: Copyright (c) 2002</p> <p>
+ * <p>
+ * Company: GioPerLab</p>
  *
- *  Title: Design Patterns</p> <p>
- *
- *  Description: </p> <p>
- *
- *  Copyright: Copyright (c) 2002</p> <p>
- *
- *  Company: GioPerLab</p>
- *
- * @author     giorgio_peron@libero.it
- * @created    9 giugno 2002
- * @version    1.0
+ * @author giorgio_peron@libero.it
+ * @version 1.0
+ * @created 9 giugno 2002
  */
 public interface Shape {
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  bottomLeft  Description of the Parameter
-     * @param  topRight    Description of the Parameter
-     * @return             Description of the Return Value
+     * @param bottomLeft Description of the Parameter
+     * @param topRight   Description of the Parameter
+     * @return Description of the Return Value
      */
     void boundingBox(Point bottomLeft, Point topRight);
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @return    Description of the Return Value
+     * @return Description of the Return Value
      */
     Manipulator createManipulator();
 }

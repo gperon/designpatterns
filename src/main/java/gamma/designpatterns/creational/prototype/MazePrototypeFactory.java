@@ -24,44 +24,43 @@
  */
 
 
-
 package gamma.designpatterns.creational.prototype;
 
+import gamma.designpatterns.creational.abstractfactory.MazeFactory;
 import gamma.designpatterns.creational.maze.Door;
 import gamma.designpatterns.creational.maze.MapSite;
 import gamma.designpatterns.creational.maze.Maze;
 import gamma.designpatterns.creational.maze.Room;
 import gamma.designpatterns.creational.maze.Wall;
-import gamma.designpatterns.creational.abstractfactory.MazeFactory;
 
 /**
- *  <p>
+ * <p>
+ * <p>
+ * Title: Design Patterns</p> <p>
+ * <p>
+ * Description: </p> <p>
+ * <p>
+ * Copyright: Copyright (c) 2002</p> <p>
+ * <p>
+ * Company: GioPerLab</p>
  *
- *  Title: Design Patterns</p> <p>
- *
- *  Description: </p> <p>
- *
- *  Copyright: Copyright (c) 2002</p> <p>
- *
- *  Company: GioPerLab</p>
- *
- * @author     giorgio_peron@libero.it
- * @created    8 giugno 2002
- * @version    1.0
+ * @author giorgio_peron@libero.it
+ * @version 1.0
+ * @created 8 giugno 2002
  */
 public class MazePrototypeFactory extends MazeFactory {
-    private Maze prototypeMaze;
-    private Room prototypeRoom;
-    private Wall prototypeWall;
-    private Door prototypeDoor;
+    private final Maze prototypeMaze;
+    private final Room prototypeRoom;
+    private final Wall prototypeWall;
+    private final Door prototypeDoor;
 
     /**
-     *  Constructor for the MazePrototypeFactory object
+     * Constructor for the MazePrototypeFactory object
      *
-     * @param  maze  Description of the Parameter
-     * @param  wall  Description of the Parameter
-     * @param  room  Description of the Parameter
-     * @param  door  Description of the Parameter
+     * @param maze Description of the Parameter
+     * @param wall Description of the Parameter
+     * @param room Description of the Parameter
+     * @param door Description of the Parameter
      */
     public MazePrototypeFactory(Maze maze, Wall wall, Room room, Door door) {
         this.prototypeMaze = maze;
@@ -71,26 +70,26 @@ public class MazePrototypeFactory extends MazeFactory {
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @return    Description of the Return Value
+     * @return Description of the Return Value
      */
     public Maze makeMaze() {
         return new Maze();
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  n  Description of the Parameter
-     * @return    Description of the Return Value
+     * @param n Description of the Parameter
+     * @return Description of the Return Value
      */
     public Room makeRoom(int n) {
         Room room;
         try {
             room = (Room) prototypeRoom.clone();
-            MapSite[] sides = new MapSite[] { makeWall(), makeWall(),
-                                              makeWall(), makeWall(), };
+            MapSite[] sides = new MapSite[]{makeWall(), makeWall(),
+                    makeWall(), makeWall(),};
             room.initialize(n, sides);
 
             return room;
@@ -102,9 +101,9 @@ public class MazePrototypeFactory extends MazeFactory {
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @return    Description of the Return Value
+     * @return Description of the Return Value
      */
     public Wall makeWall() {
         try {
@@ -117,11 +116,11 @@ public class MazePrototypeFactory extends MazeFactory {
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  r1  Description of the Parameter
-     * @param  r2  Description of the Parameter
-     * @return     Description of the Return Value
+     * @param r1 Description of the Parameter
+     * @param r2 Description of the Parameter
+     * @return Description of the Return Value
      */
     public Door makeDoor(Room r1, Room r2) {
         try {

@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.interpreter;
 
 /**
@@ -40,11 +39,10 @@ package gamma.designpatterns.behavioral.interpreter;
  * @version 1.0
  */
 public class VariableExp implements BooleanExp {
-    private String name;
+    private final String name;
 
     /**
      * Constructs ...
-     *
      *
      * @param s
      */
@@ -55,22 +53,18 @@ public class VariableExp implements BooleanExp {
     /**
      * Method description
      *
-     *
      * @param aContext
-     *
      * @return
      */
     public boolean evaluate(Context aContext) {
-        return aContext.lookup(name);
+        return Context.lookup(name);
     }
 
     /**
      * Method description
      *
-     *
      * @param aName
      * @param exp
-     *
      * @return
      */
     public BooleanExp replace(String aName, BooleanExp exp) {
@@ -84,7 +78,6 @@ public class VariableExp implements BooleanExp {
     /**
      * Method description
      *
-     *
      * @return
      */
     public BooleanExp copy() {
@@ -93,7 +86,6 @@ public class VariableExp implements BooleanExp {
 
     /**
      * Method description
-     *
      *
      * @return
      */

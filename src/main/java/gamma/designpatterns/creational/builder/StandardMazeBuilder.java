@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.creational.builder;
 
 import gamma.designpatterns.creational.maze.Direction;
@@ -33,42 +32,43 @@ import gamma.designpatterns.creational.maze.Maze;
 import gamma.designpatterns.creational.maze.Room;
 import gamma.designpatterns.creational.maze.Wall;
 
-import java.util.*;
+import java.util.Random;
 
 /**
- *  <p>
+ * <p>
+ * <p>
+ * Title: Design Patterns</p> <p>
+ * <p>
+ * Description: </p> <p>
+ * <p>
+ * Copyright: Copyright (c) 2002</p> <p>
+ * <p>
+ * Company: GioPerLab</p>
  *
- *  Title: Design Patterns</p> <p>
- *
- *  Description: </p> <p>
- *
- *  Copyright: Copyright (c) 2002</p> <p>
- *
- *  Company: GioPerLab</p>
- *
- * @author     giorgio_peron@libero.it
- * @created    7 giugno 2002
- * @version    1.0
+ * @author giorgio_peron@libero.it
+ * @version 1.0
+ * @created 7 giugno 2002
  */
 public class StandardMazeBuilder implements MazeBuilder {
     private Maze currentMaze;
 
     /**
-     *  Constructor for the StandardMazeBuilder object
+     * Constructor for the StandardMazeBuilder object
      */
-    public StandardMazeBuilder() {}
+    public StandardMazeBuilder() {
+    }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      */
     public void buildMaze() {
         currentMaze = new Maze();
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  roomNumber  Description of the Parameter
+     * @param roomNumber Description of the Parameter
      */
     public void buildRoom(int roomNumber) {
         if (currentMaze.getRoom(roomNumber) == null) {
@@ -82,10 +82,10 @@ public class StandardMazeBuilder implements MazeBuilder {
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  roomFrom  Description of the Parameter
-     * @param  roomTo    Description of the Parameter
+     * @param roomFrom Description of the Parameter
+     * @param roomTo   Description of the Parameter
      */
     public void buildDoor(int roomFrom, int roomTo) {
         Room r1 = currentMaze.getRoom(roomFrom);
@@ -96,20 +96,20 @@ public class StandardMazeBuilder implements MazeBuilder {
     }
 
     /**
-     *  Gets the maze attribute of the StandardMazeBuilder object
+     * Gets the maze attribute of the StandardMazeBuilder object
      *
-     * @return    The maze value
+     * @return The maze value
      */
     public Maze getMaze() {
         return currentMaze;
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  r1  Description of the Parameter
-     * @param  r2  Description of the Parameter
-     * @return     Description of the Return Value
+     * @param r1 Description of the Parameter
+     * @param r2 Description of the Parameter
+     * @return Description of the Return Value
      */
     private Direction commonWall(Room r1, Room r2) {
         Direction d = null;

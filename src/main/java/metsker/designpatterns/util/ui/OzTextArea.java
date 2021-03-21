@@ -24,23 +24,22 @@
  */
 
 
-
 package metsker.designpatterns.util.ui;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import java.awt.*;
 
 import javax.swing.*;
-import javax.swing.border.*;
+import javax.swing.border.TitledBorder;
+import java.awt.*;
 
 /**
  * This class acts as a prototypical text area that applications can clone to
@@ -58,15 +57,14 @@ public class OzTextArea extends JPanel {
         setLayout(new BorderLayout());
         JScrollPane jsp = new JScrollPane(textArea);
         jsp.setBorder(
-            BorderFactory.createCompoundBorder(
-                BorderFactory.createRaisedBevelBorder(),
-                BorderFactory.createEmptyBorder(5, 5, 5, 5)));
+                BorderFactory.createCompoundBorder(
+                        BorderFactory.createRaisedBevelBorder(),
+                        BorderFactory.createEmptyBorder(5, 5, 5, 5)));
         add(jsp, "Center");
     }
 
     /**
      * Add the supplied text to this text area.
-     *
      *
      * @param text
      */
@@ -94,7 +92,6 @@ public class OzTextArea extends JPanel {
 
     /**
      * Method description
-     *
      *
      * @param font
      */

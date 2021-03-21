@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.structural.adapter;
 
 import java.awt.*;
@@ -42,11 +41,10 @@ import java.awt.*;
  * @version 1.0
  */
 public class TextShapeComposition implements Shape {
-    private TextView text;
+    private final TextView text;
 
     /**
      * Constructs ...
-     *
      *
      * @param t
      */
@@ -58,7 +56,7 @@ public class TextShapeComposition implements Shape {
      * Description of the Method
      *
      * @param bottomLeft Description of the Parameter
-     * @param topRight Description of the Parameter
+     * @param topRight   Description of the Parameter
      */
     public void boundingBox(Point bottomLeft, Point topRight) {
         Coord bottom = new Coord();
@@ -69,13 +67,14 @@ public class TextShapeComposition implements Shape {
         text.getExtent(width, height);
         bottomLeft = new Point(bottom.getValue(), left.getValue());
         topRight = new Point(bottom.getValue() + width.getValue(),
-                             left.getValue() + height.getValue());
+                left.getValue() + height.getValue());
     }
 
     /**
      * Description of the Method
      *
      * @return Description of the Return Value
+     * @todo Implement this designpatterns.structural.adapter.Shape method
      * @todo Implement this designpatterns.structural.adapter.Shape method
      */
     public Manipulator createManipulator() {
@@ -84,7 +83,6 @@ public class TextShapeComposition implements Shape {
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -95,7 +93,6 @@ public class TextShapeComposition implements Shape {
     /**
      * Method description
      *
-     *
      * @return
      */
     public String toString() {
@@ -104,7 +101,6 @@ public class TextShapeComposition implements Shape {
 
     /**
      * Method description
-     *
      *
      * @return
      */

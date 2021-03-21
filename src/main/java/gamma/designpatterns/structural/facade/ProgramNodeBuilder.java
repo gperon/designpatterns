@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.structural.facade;
 
 /**
@@ -40,11 +39,10 @@ package gamma.designpatterns.structural.facade;
  * @version 1.0
  */
 public class ProgramNodeBuilder {
-    private ProgramNode node;
+    private final ProgramNode node;
 
     /**
      * Constructs ...
-     *
      */
     public ProgramNodeBuilder() {
         node = newListOfExpression();

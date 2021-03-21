@@ -24,10 +24,9 @@
  */
 
 
-
 package gamma.designpatterns.structural.facade;
 
-import java.io.*;
+import java.io.InputStream;
 
 /**
  * <p>Title: Design Patterns</p>
@@ -45,13 +44,12 @@ public class Compiler {
 
     /**
      * Constructs ...
-     *
      */
-    public Compiler() {}
+    public Compiler() {
+    }
 
     /**
      * Method description
-     *
      *
      * @param input
      * @param output

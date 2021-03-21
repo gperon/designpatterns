@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.structural.adapter;
 
 /**
@@ -44,7 +43,6 @@ public class Coord {
 
     /**
      * Constructs ...
-     *
      */
     public Coord() {
         this.value = 0;
@@ -52,7 +50,6 @@ public class Coord {
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -62,7 +59,6 @@ public class Coord {
 
     /**
      * Method description
-     *
      *
      * @param value
      */

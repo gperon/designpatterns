@@ -24,32 +24,30 @@
  */
 
 
-
 package metsker.designpatterns.behavioral.mediator;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-import javax.swing.JList;
+import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class MoveATubMediator implements ListSelectionListener, ActionListener {
     MoveATub2 gui;
@@ -59,7 +57,6 @@ public class MoveATubMediator implements ListSelectionListener, ActionListener {
 
     /**
      * Constructs ...
-     *
      *
      * @param gui
      * @param data
@@ -71,7 +68,6 @@ public class MoveATubMediator implements ListSelectionListener, ActionListener {
 
     /**
      * Method description
-     *
      *
      * @param e
      */
@@ -90,7 +86,6 @@ public class MoveATubMediator implements ListSelectionListener, ActionListener {
     /**
      * Method description
      *
-     *
      * @param e
      */
     public void valueChanged(ListSelectionEvent e) {
@@ -106,12 +101,11 @@ public class MoveATubMediator implements ListSelectionListener, ActionListener {
             }
         }
         gui.assignButton().setEnabled(!gui.tubList().isSelectionEmpty()
-                                      && !gui.machineList().isSelectionEmpty());
+                && !gui.machineList().isSelectionEmpty());
     }
 
     /**
      * Method description
-     *
      *
      * @param machineName
      */

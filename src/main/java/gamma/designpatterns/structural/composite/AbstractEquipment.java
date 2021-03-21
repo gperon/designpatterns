@@ -24,104 +24,103 @@
  */
 
 
-
 package gamma.designpatterns.structural.composite;
 
-import java.util.*;
+import java.util.Iterator;
 
 /**
- *  <p>
+ * <p>
+ * <p>
+ * Title: </p> <p>
+ * <p>
+ * Description: Design Patterns Examples</p> <p>
+ * <p>
+ * Copyright: Copyright (c) 2003</p> <p>
+ * <p>
+ * Company: GioPerLab</p>
  *
- *  Title: </p> <p>
- *
- *  Description: Design Patterns Examples</p> <p>
- *
- *  Copyright: Copyright (c) 2003</p> <p>
- *
- *  Company: GioPerLab</p>
- *
- * @author     giorgio_peron@libero.it
- * @created    8 marzo 2003
- * @version    1.0
+ * @author giorgio_peron@libero.it
+ * @version 1.0
+ * @created 8 marzo 2003
  */
 public abstract class AbstractEquipment implements Equipment {
-    private String name;
+    private final String name;
 
     /**
-     *  Constructor for the AbstractEquipment object
+     * Constructor for the AbstractEquipment object
      *
-     * @param  name  Description of the Parameter
+     * @param name Description of the Parameter
      */
     public AbstractEquipment(String name) {
         this.name = name;
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @return    Description of the Return Value
+     * @return Description of the Return Value
      */
     public String name() {
         return name;
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @return    Description of the Return Value
+     * @return Description of the Return Value
      */
     public int power() {
         throw new java.lang.UnsupportedOperationException(
-            "Method power() not yet implemented.");
+                "Method power() not yet implemented.");
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @return    Description of the Return Value
+     * @return Description of the Return Value
      */
     public double netPrice() {
         throw new java.lang.UnsupportedOperationException(
-            "Method netPrice() not yet implemented.");
+                "Method netPrice() not yet implemented.");
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @return    Description of the Return Value
+     * @return Description of the Return Value
      */
     public double discountPrice() {
         throw new java.lang.UnsupportedOperationException(
-            "Method discountPrice() not yet implemented.");
+                "Method discountPrice() not yet implemented.");
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  equipment  Description of the Parameter
+     * @param equipment Description of the Parameter
      */
     public void add(Equipment equipment) {
         throw new java.lang.UnsupportedOperationException(
-            "Method add() not yet implemented.");
+                "Method add() not yet implemented.");
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  equipment  Description of the Parameter
+     * @param equipment Description of the Parameter
      */
     public void remove(Equipment equipment) {
         throw new java.lang.UnsupportedOperationException(
-            "Method remove() not yet implemented.");
+                "Method remove() not yet implemented.");
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @return    Description of the Return Value
+     * @return Description of the Return Value
      */
     public Iterator createIterator() {
         throw new java.lang.UnsupportedOperationException(
-            "Method createIterator() not yet implemented.");
+                "Method createIterator() not yet implemented.");
     }
 }

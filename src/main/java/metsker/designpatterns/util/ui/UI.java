@@ -24,24 +24,23 @@
  */
 
 
-
 package metsker.designpatterns.util.ui;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import java.awt.*;
 
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.TitledBorder;
+import java.awt.*;
 
 /**
  * User interface utilities.
@@ -49,10 +48,14 @@ import javax.swing.border.TitledBorder;
 public class UI {
     protected Font font = new Font("Book Antiqua", Font.PLAIN, 18);
 
-    /** Field description */
+    /**
+     * Field description
+     */
     public static final int STANDARD_PAD = 10;
 
-    /** Field description */
+    /**
+     * Field description
+     */
     public static final UI NORMAL = new UI();
 
     /**
@@ -83,7 +86,7 @@ public class UI {
     }
 
     /**
-     *     @return a standard OK! (or affirmation) button
+     * @return a standard OK! (or affirmation) button
      */
     public JButton createButtonOk() {
         JButton button = createButton();
@@ -118,10 +121,9 @@ public class UI {
     }
 
     /**
+     * @param c the control
      * @return a panel with a standard amount of padding around any particular
-     *         control
-     * @param c
-     *            the control
+     * control
      */
     public JPanel createPaddedPanel(Component c) {
         JPanel panel = createPaddedPanel();
@@ -133,9 +135,7 @@ public class UI {
     /**
      * Method description
      *
-     *
      * @param imageName
-     *
      * @return
      */
     public static Icon getIcon(String imageName) {
@@ -145,9 +145,7 @@ public class UI {
     /**
      * Method description
      *
-     *
      * @param contents
-     *
      * @return
      */
     public JList createList(Object[] contents) {
@@ -159,15 +157,14 @@ public class UI {
     }
 
     /**
-     *
      * @param title
      * @return a titled border with the given title.
      */
     public TitledBorder createTitledBorder(String title) {
         TitledBorder border = BorderFactory.createTitledBorder(
-                                  BorderFactory.createBevelBorder(
-                                      BevelBorder.RAISED), title,
-                                          TitledBorder.LEFT, TitledBorder.TOP);
+                BorderFactory.createBevelBorder(
+                        BevelBorder.RAISED), title,
+                TitledBorder.LEFT, TitledBorder.TOP);
         border.setTitleColor(Color.black);
         border.setTitleFont(getFont());
 
@@ -175,7 +172,6 @@ public class UI {
     }
 
     /**
-     *
      * @param title
      * @param in
      * @return a new panel that wraps a titled border around a given panel.

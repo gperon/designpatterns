@@ -24,35 +24,43 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.state;
 
-import java.util.*;
+import java.util.Observable;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class Door extends Observable {
 
-    /** Field description */
+    /**
+     * Field description
+     */
     public final DoorState CLOSED = new DoorClosed(this);
 
-    /** Field description */
+    /**
+     * Field description
+     */
     public final DoorState CLOSING = new DoorClosing(this);
 
-    /** Field description */
+    /**
+     * Field description
+     */
     public final DoorState OPEN = new DoorOpen(this);
 
-    /** Field description */
+    /**
+     * Field description
+     */
     public final DoorState OPENING = new DoorOpening(this);
     //
     private DoorState state = CLOSED;
 
-    /** Field description */
+    /**
+     * Field description
+     */
     public final DoorState STAYOPEN = new DoorStayOpen(this);
 
     /**

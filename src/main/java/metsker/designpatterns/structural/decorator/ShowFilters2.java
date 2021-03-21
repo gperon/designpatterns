@@ -24,23 +24,28 @@
  */
 
 
-
 package metsker.designpatterns.structural.decorator;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import java.io.*;
 
 import metsker.designpatterns.util.filter.RandomCaseFilter;
 import metsker.designpatterns.util.filter.WrapFilter;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.Writer;
 
 /**
  * Show filters that wrap text at 15 characters, center the text, set the text
@@ -53,12 +58,10 @@ public class ShowFilters2 {
     /**
      * Method description
      *
-     *
      * @param args
-     *
      * @throws IOException
      */
-    public static void main(String args[]) throws IOException {
+    public static void main(String[] args) throws IOException {
         BufferedReader in = new BufferedReader(new FileReader(args[0]));
         Writer out = new PrintWriter(System.out);
         out = new WrapFilter(new BufferedWriter(out), 15);

@@ -24,21 +24,20 @@
  */
 
 
-
 package gamma.designpatterns.structural.proxy;
 
-import java.awt.*;
-import java.awt.event.*;
-
 import javax.swing.*;
-import javax.swing.border.*;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.TitledBorder;
+import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class SwingFacade {
 
@@ -50,9 +49,9 @@ public class SwingFacade {
      */
     public static TitledBorder createTitledBorder(String title) {
         TitledBorder tb = BorderFactory.createTitledBorder(
-                              BorderFactory.createBevelBorder(
-                                  BevelBorder.RAISED), title,
-                                      TitledBorder.LEFT, TitledBorder.TOP);
+                BorderFactory.createBevelBorder(
+                        BevelBorder.RAISED), title,
+                TitledBorder.LEFT, TitledBorder.TOP);
         tb.setTitleColor(Color.black);
         tb.setTitleFont(getStandardFont());
 
@@ -64,7 +63,7 @@ public class SwingFacade {
      * given panel.
      *
      * @param title the words to show in the title border tab
-     * @param in the panel that the border goes around
+     * @param in    the panel that the border goes around
      * @return a (beveled) titled border with the given title
      */
     public static JPanel createTitledPanel(String title, JPanel in) {
@@ -87,7 +86,6 @@ public class SwingFacade {
     /**
      * Display the given component within a frame.
      *
-     *
      * @param c
      * @param title the window title for the frame
      * @return the frame
@@ -105,14 +103,13 @@ public class SwingFacade {
     /**
      * Set up an exit listener for a supplied frame.
      *
-     *
      * @param f
      */
     public static void listen(Frame f) {
         f.addWindowListener(new WindowAdapter() {
-                                public void windowClosing(WindowEvent e) {
-                                    System.exit(0);
-                                }
-                            });
+            public void windowClosing(WindowEvent e) {
+                System.exit(0);
+            }
+        });
     }
 }

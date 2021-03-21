@@ -24,32 +24,30 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.strategy;
 
-import java.awt.*;
-
-import java.util.*;
-
 import cooper.designpatterns.util.swing.InputFile;
+
+import java.awt.*;
+import java.util.StringTokenizer;
+import java.util.Vector;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class Context {
 
     // this object selects one of the strategies
     // to be used for plotting
     private PlotStrategy plotStrategy;
-    float                x[], y[];
+    float[] x;
+    float[] y;
 
     /**
      * Constructs ...
-     *
      */
     public Context() {
         setLinePlot();
@@ -57,7 +55,6 @@ public class Context {
 
     /**
      * Method description
-     *
      */
     public void plot() {
         plotStrategy.plot(x, y);
@@ -66,15 +63,14 @@ public class Context {
     /**
      * Method description
      *
-     *
      * @param filename
      */
     public void readData(String filename) {
         StringTokenizer tok;
-        InputFile       f  = new InputFile(getClass(), filename);
-        Vector          xv = new Vector();
-        Vector          yv = new Vector();
-        String          s  = "";
+        InputFile f = new InputFile(getClass(), filename);
+        Vector xv = new Vector();
+        Vector yv = new Vector();
+        String s = "";
 
         // read data into 2 Vectors
         while (s != null) {
@@ -101,7 +97,6 @@ public class Context {
 
     /**
      * Method description
-     *
      */
     public void setBarPlot() {
         plotStrategy = new BarPlotStrategy();
@@ -109,7 +104,6 @@ public class Context {
 
     /**
      * Method description
-     *
      */
     public void setLinePlot() {
         plotStrategy = new LinePlotStrategy();
@@ -117,7 +111,6 @@ public class Context {
 
     /**
      * Method description
-     *
      *
      * @param c
      */

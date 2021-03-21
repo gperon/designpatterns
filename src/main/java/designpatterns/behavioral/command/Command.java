@@ -26,12 +26,12 @@
 
 
 /*
-* Command.java
-*
-* Created on November 13, 2006, 11:32 AM
-*
-* To change this template, choose Tools | Template Manager
-* and open the template in the editor.
+ * Command.java
+ *
+ * Created on November 13, 2006, 11:32 AM
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
  */
 package designpatterns.behavioral.command;
 
@@ -40,4 +40,5 @@ package designpatterns.behavioral.command;
  *
  * @author giorgiop
  */
-public @interface Command {}
+public @interface Command {
+}

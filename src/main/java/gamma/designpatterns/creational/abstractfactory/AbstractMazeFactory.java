@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.creational.abstractfactory;
 
 import gamma.designpatterns.creational.maze.Door;
@@ -33,41 +32,41 @@ import gamma.designpatterns.creational.maze.Room;
 import gamma.designpatterns.creational.maze.Wall;
 
 /**
- *  Description of the Interface
+ * Description of the Interface
  *
- * @author     giorgio
- * @created    2 giugno 2002
+ * @author giorgio
+ * @created 2 giugno 2002
  */
 public interface AbstractMazeFactory {
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @return    Description of the Return Value
+     * @return Description of the Return Value
      */
-    public Maze makeMaze();
+    Maze makeMaze();
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @return    Description of the Return Value
+     * @return Description of the Return Value
      */
-    public Wall makeWall();
+    Wall makeWall();
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  r1  Description of the Parameter
-     * @param  r2  Description of the Parameter
-     * @return     Description of the Return Value
+     * @param r1 Description of the Parameter
+     * @param r2 Description of the Parameter
+     * @return Description of the Return Value
      */
-    public Door makeDoor(Room r1, Room r2);
+    Door makeDoor(Room r1, Room r2);
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  roomNumber  Description of the Parameter
-     * @return             Description of the Return Value
+     * @param roomNumber Description of the Parameter
+     * @return Description of the Return Value
      */
-    public Room makeRoom(int roomNumber);
+    Room makeRoom(int roomNumber);
 }

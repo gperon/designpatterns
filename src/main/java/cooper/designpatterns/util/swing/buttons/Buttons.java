@@ -24,33 +24,30 @@
  */
 
 
-
 package cooper.designpatterns.util.swing.buttons;
 
-import java.awt.*;
-import java.awt.event.*;
+import cooper.designpatterns.util.swing.JxFrame;
 
 import javax.swing.*;
-import javax.swing.border.*;
-
-import cooper.designpatterns.util.swing.JxFrame;
+import javax.swing.border.TitledBorder;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class Buttons extends JxFrame implements ActionListener {
-    JToolBar     toolbar;
-    JCheckBox    YMCA, Rotary, ACLU;
+    JToolBar toolbar;
+    JCheckBox YMCA, Rotary, ACLU;
     JRadioButton Rep, Dem, Flat;
-    JButton      Clear, Quit;
+    JButton Clear, Quit;
 
     /**
      * Constructs ...
-     *
      */
     public Buttons() {
         super("Buttons and Checks");
@@ -67,7 +64,7 @@ public class Buttons extends JxFrame implements ActionListener {
         jp.add("Center", center);
         center.setLayout(new GridLayout(1, 2));
 
-        JPanel left  = new JPanel();
+        JPanel left = new JPanel();
         JPanel right = new JPanel();
 
         center.add(left);
@@ -96,7 +93,6 @@ public class Buttons extends JxFrame implements ActionListener {
     /**
      * Method description
      *
-     *
      * @param e
      */
     public void actionPerformed(ActionEvent e) {
@@ -119,16 +115,15 @@ public class Buttons extends JxFrame implements ActionListener {
     /**
      * Method description
      *
-     *
      * @param argv
      */
-    static public void main(String argv[]) {
+    static public void main(String[] argv) {
         new Buttons();
     }
 
     private void setBar() {
         Clear = new ToolButton(new ImageIcon("erase.gif"));
-        Quit  = new ToolButton(new ImageIcon("stop.gif"));
+        Quit = new ToolButton(new ImageIcon("stop.gif"));
         toolbar.add(Clear);
         Clear.setToolTipText("Clear all boxes");
         Quit.setToolTipText("Exit from program");

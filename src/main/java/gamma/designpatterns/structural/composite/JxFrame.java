@@ -24,26 +24,26 @@
  */
 
 
-
 package gamma.designpatterns.structural.composite;
 
 //swing classes
-import java.awt.event.*;
 
 import javax.swing.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 /**
- *  Description of the Class
+ * Description of the Class
  *
- * @author     giorgio
- * @created    9 giugno 2002
+ * @author giorgio
+ * @created 9 giugno 2002
  */
 public class JxFrame extends JFrame {
 
     /**
-     *  Constructor for the JxFrame object
+     * Constructor for the JxFrame object
      *
-     * @param  title  Description of the Parameter
+     * @param title Description of the Parameter
      */
     public JxFrame(String title) {
         super(title);
@@ -52,19 +52,19 @@ public class JxFrame extends JFrame {
     }
 
     /**
-     *  Sets the closeClick attribute of the JxFrame object
+     * Sets the closeClick attribute of the JxFrame object
      */
     private void setCloseClick() {
         // create window listener to respond to window close click
         addWindowListener(new WindowAdapter() {
-                              public void windowClosing(WindowEvent e) {
-                                  System.exit(0);
-                              }
-                          });
+            public void windowClosing(WindowEvent e) {
+                System.exit(0);
+            }
+        });
     }
 
     /**
-     *  Sets the lF attribute of the JxFrame object
+     * Sets the lF attribute of the JxFrame object
      */
     private void setLF() {
         // Force SwingApp to come up in the System L&F

@@ -26,12 +26,12 @@
 
 
 /*
-* ConcreteCommand.java
-*
-* Created on November 13, 2006, 11:32 AM
-*
-* To change this template, choose Tools | Template Manager
-* and open the template in the editor.
+ * ConcreteCommand.java
+ *
+ * Created on November 13, 2006, 11:32 AM
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
  */
 package designpatterns.behavioral.command;
 
@@ -41,4 +41,5 @@ package designpatterns.behavioral.command;
  *
  * @author giorgiop
  */
-public @interface ConcreteCommand {}
+public @interface ConcreteCommand {
+}

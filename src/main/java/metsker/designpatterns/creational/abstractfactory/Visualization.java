@@ -24,34 +24,32 @@
  */
 
 
-
 package metsker.designpatterns.creational.abstractfactory;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import java.util.List;
 
-import java.awt.*;
+import metsker.designpatterns.util.ui.UI;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-
-import metsker.designpatterns.util.ui.UI;
+import java.awt.*;
+import java.util.List;
 
 /**
  * This class provides a visualization of a factory that contains
- *  machines and through which material flows. At present the only
- *  functionality is the ability to create and drag machines. In the
- *  future we'll add operational modeling functions.
+ * machines and through which material flows. At present the only
+ * functionality is the ability to create and drag machines. In the
+ * future we'll add operational modeling functions.
  */
 public class Visualization extends JPanel implements ChangeListener {
     protected UI ui;
@@ -65,7 +63,6 @@ public class Visualization extends JPanel implements ChangeListener {
 
     /**
      * Constructs ...
-     *
      *
      * @param ui
      */
@@ -131,7 +128,6 @@ public class Visualization extends JPanel implements ChangeListener {
 
     /**
      * Method description
-     *
      *
      * @param e
      */

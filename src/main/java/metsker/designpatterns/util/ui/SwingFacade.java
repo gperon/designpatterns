@@ -24,28 +24,23 @@
  */
 
 
-
 package metsker.designpatterns.util.ui;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Font;
 
-import javax.swing.BorderFactory;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.TitledBorder;
+import java.awt.*;
 
 /**
  * This utility class provides an interface that makes the Swing subsystem easy
@@ -56,15 +51,14 @@ import javax.swing.border.TitledBorder;
 public class SwingFacade {
 
     /**
-     * @param title
-     *            the words to show in the title border tab
+     * @param title the words to show in the title border tab
      * @return a (beveled) titled border with the given title
      */
     public static TitledBorder createTitledBorder(String title) {
         TitledBorder tb = BorderFactory.createTitledBorder(
-                              BorderFactory.createBevelBorder(
-                                  BevelBorder.RAISED), title,
-                                      TitledBorder.LEFT, TitledBorder.TOP);
+                BorderFactory.createBevelBorder(
+                        BevelBorder.RAISED), title,
+                TitledBorder.LEFT, TitledBorder.TOP);
         tb.setTitleColor(Color.black);
         tb.setTitleFont(getStandardFont());
 
@@ -72,10 +66,8 @@ public class SwingFacade {
     }
 
     /**
-     * @param title
-     *            the words to show in the title border tab
-     * @param in
-     *            the panel that the border goes around
+     * @param title the words to show in the title border tab
+     * @param in    the panel that the border goes around
      * @return a new panel that wraps a titled border around the given panel
      */
     public static JPanel createTitledPanel(String title, JPanel in) {
@@ -96,10 +88,8 @@ public class SwingFacade {
     /**
      * Display the given component within a frame.
      *
-     *
      * @param c
-     * @param title
-     *            the window title for the frame
+     * @param title the window title for the frame
      * @return the frame
      */
     public static JFrame launch(Component c, String title) {

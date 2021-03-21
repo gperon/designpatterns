@@ -24,7 +24,6 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.strategy;
 
 import java.awt.*;
@@ -32,19 +31,17 @@ import java.awt.*;
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class BarPlotPanel extends PlotPanel {
     Color[] colors;
 
     /**
      * Constructs ...
-     *
      */
     public BarPlotPanel() {
-        colors    = new Color[6];
+        colors = new Color[6];
         colors[0] = Color.red;
         colors[1] = Color.blue;
         colors[2] = Color.green;
@@ -55,7 +52,6 @@ public class BarPlotPanel extends PlotPanel {
 
     /**
      * Method description
-     *
      *
      * @param g
      */

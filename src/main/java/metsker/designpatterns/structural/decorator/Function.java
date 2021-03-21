@@ -24,28 +24,27 @@
  */
 
 
-
 package metsker.designpatterns.structural.decorator;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
 
 /**
  * This abstract superclass defines the role of a function that wraps itself
  * around (or "decorates") another function.
- *
+ * <p>
  * The signature of function methods in this hierarchy is "double f(double time)".
  * Each class defines this function in a way that is consistent with the class
  * name.
- *
+ * <p>
  * The "time" argument is a value from 0 to 1 that represents a normalized
  * notion of time. For example, in the arc of a parabola, time goes 0 to 1 as x
  * goes 0 to the base of the arc and y goes 0 to the apogee (at t = .5) and back
@@ -57,18 +56,16 @@ public abstract class Function {
     /**
      * Construct a function that decorates the provided source function.
      *
-     * @param f
-     *            the source function that this function wraps
+     * @param f the source function that this function wraps
      */
     public Function(Function f) {
-        this(new Function[] { f });
+        this(new Function[]{f});
     }
 
     /**
      * Construct a function that decorates the provided source functions.
      *
-     * @param sources
-     *            the source functions that this function wraps
+     * @param sources the source functions that this function wraps
      */
     public Function(Function[] sources) {
         this.sources = sources;
@@ -78,8 +75,7 @@ public abstract class Function {
      * The function that subclasses must implement -- see the subclasses for
      * examples.
      *
-     * @param t
-     *            normalized time, a value between 0 and 1
+     * @param t normalized time, a value between 0 and 1
      * @return a function value
      */
     public abstract double f(double t);

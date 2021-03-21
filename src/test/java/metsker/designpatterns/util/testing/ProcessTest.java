@@ -37,24 +37,27 @@ package metsker.designpatterns.util.testing;
 * Please use this software as you wish with the sole
 * restriction that you may not claim that you wrote it.
  */
-import junit.framework.TestCase;
-
 import metsker.designpatterns.util.process.ProcessComponent;
 import metsker.designpatterns.util.process.ProcessSequence;
 import metsker.designpatterns.util.process.ProcessStep;
 import metsker.designpatterns.util.process.ShellProcess;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
+
 /**
- *  Test the ProcessComponent hierarchy, especially its ability
- *  to model cyclic processes.
+ * Test the ProcessComponent hierarchy, especially its ability
+ * to model cyclic processes.
  */
-public class ProcessTest extends TestCase {
+public class ProcessTest {
 
     /**
-     *  @return a tiny process flow that shows a composite that is
-     *  not a tree (but also not a cycle, by the way). In this flow
-     *  A contains C and B, B contains C.
+     * @return a tiny process flow that shows a composite that is
+     * not a tree (but also not a cycle, by the way). In this flow
+     * A contains C and B, B contains C.
      */
+    @Test
     public static ProcessComponent abc() {
         ProcessSequence a = new ProcessSequence("a");
         ProcessSequence b = new ProcessSequence("b");
@@ -67,10 +70,11 @@ public class ProcessTest extends TestCase {
     }
 
     /**
-     *  @return a tiny process flow that shows a composite that is
-     *  not a tree. In this flow A contains B, B contains C,
-     *  and C contains A.
+     * @return a tiny process flow that shows a composite that is
+     * not a tree. In this flow A contains B, B contains C,
+     * and C contains A.
      */
+    @Test
     public static ProcessComponent cycle() {
         ProcessSequence a = new ProcessSequence("a");
         ProcessSequence b = new ProcessSequence("b");
@@ -82,27 +86,18 @@ public class ProcessTest extends TestCase {
         return a;
     }
 
-    /**
-     * Method description
-     *
-     */
+    @Test
     public void testCountOfCycle() {
         assertEquals(0, cycle().getStepCount());
     }
 
-    /**
-     * Method description
-     *
-     */
+    @Test
     public void testStepCountForEmptyProcess() {
         ProcessSequence nil = new ProcessSequence("nil");
         assertEquals(0, nil.getStepCount());
     }
 
-    /**
-     * Method description
-     *
-     */
+    @Test
     public void testStepCountForOneStepProcess() {
         ProcessStep uno = new ProcessStep("uno");
         assertEquals(1, uno.getStepCount());
@@ -110,7 +105,6 @@ public class ProcessTest extends TestCase {
 
     /**
      * Method description
-     *
      */
     public void testShampooProcess_ShampooRinseRepeat() {
         ProcessStep shampoo = new ProcessStep("shampoo");
@@ -124,34 +118,25 @@ public class ProcessTest extends TestCase {
         assertEquals(2, instructions.getStepCount());
     }
 
-    /**
-     * Method description
-     *
-     */
+    @Test
     public void testStepCountForAerialShellProcess() {
         assertEquals(4, ShellProcess.make().getStepCount());
     }
 
-    /**
-     * Method description
-     *
-     */
+    @Test
     public void testStepCountForNonTreeDirectedAcyclicGraph() {
         assertEquals(1, abc().getStepCount());
     }
 
-    //
-    // abc
-    // / \
-    // a   bc
-    // / \
-    // b   c
-    //
-
     /**
-     * Method description
+     *    abc
+     *   /  \
+     *  a    bc
+     *      / \
+     *     b   c
      *
      */
+    @Test
     public void testSimpleTree() {
         ProcessStep a = new ProcessStep("a");
         ProcessStep b = new ProcessStep("b");

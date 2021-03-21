@@ -24,28 +24,26 @@
  */
 
 
-
 package gamma.designpatterns.structural.flyweight;
 
-import java.util.*;
-
 import java.awt.*;
+import java.util.Map;
 
 /**
  * <p>Title: </p>
  * <p>Description: Design Patterns Examples</p>
  * <p>Copyright: Copyright (c) 2003</p>
  * <p>Company: GioPerLab</p>
+ *
  * @author giorgio_peron@libero.it
  * @version 1.0
  */
 public class GlyphContext {
     private int index;
-    private Map<Integer, Font> fonts;
+    private final Map<Integer, Font> fonts;
 
     /**
      * Constructs ...
-     *
      */
     public GlyphContext() {
         fonts = new java.util.TreeMap();
@@ -55,11 +53,13 @@ public class GlyphContext {
         index++;
     }
 
-    void insert(int quantity) {}
+    void insert(int quantity) {
+    }
 
     Font getFont() {
         return fonts.get(index);
     }
 
-    void setFont(Font font, int span) {}
+    void setFont(Font font, int span) {
+    }
 }

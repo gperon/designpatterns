@@ -24,30 +24,26 @@
  */
 
 
-
 package cooper.designpatterns.structural.composite;
-
-import java.awt.event.*;
-
-import javax.swing.*;
-import javax.swing.border.*;
 
 import cooper.designpatterns.behavioral.command.Command;
 import cooper.designpatterns.behavioral.state.Mediator;
 
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import java.awt.event.ActionListener;
+
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class RectButton extends JButton implements Command {
     Mediator med;
 
     /**
      * Constructs ...
-     *
      *
      * @param act
      * @param md
@@ -61,7 +57,7 @@ public class RectButton extends JButton implements Command {
 
     /**
      * Method description
-     *
      */
-    public void execute() {}
+    public void execute() {
+    }
 }

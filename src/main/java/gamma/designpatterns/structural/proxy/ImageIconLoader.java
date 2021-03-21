@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.structural.proxy;
 
 import javax.swing.*;
@@ -32,15 +31,14 @@ import javax.swing.*;
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class ImageIconLoader extends ImageIcon implements Runnable {
     static final ImageIcon ABSENT =
-        new ImageIcon(ClassLoader.getSystemResource("absent.jpg"));
+            new ImageIcon(ClassLoader.getSystemResource("absent.jpg"));
     static final ImageIcon LOADING =
-        new ImageIcon(ClassLoader.getSystemResource("loading.jpg"));
+            new ImageIcon(ClassLoader.getSystemResource("loading.jpg"));
     protected String filename;
     protected JFrame callbackFrame;
 
@@ -59,7 +57,6 @@ public class ImageIconLoader extends ImageIcon implements Runnable {
      * Load the desired image and call back the provided frame
      * when done.
      *
-     *
      * @param callbackFrame
      */
     public void load(JFrame callbackFrame) {
@@ -74,7 +71,7 @@ public class ImageIconLoader extends ImageIcon implements Runnable {
      */
     public void run() {
         setImage(
-            new ImageIcon(ClassLoader.getSystemResource(filename)).getImage());
+                new ImageIcon(ClassLoader.getSystemResource(filename)).getImage());
         callbackFrame.pack();
     }
 }

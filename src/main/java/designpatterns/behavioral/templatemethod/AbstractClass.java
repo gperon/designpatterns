@@ -26,12 +26,12 @@
 
 
 /*
-* AbstractClass.java
-*
-* Created on 16 dicembre 2006, 17.18
-*
-* To change this template, choose Tools | Template Manager
-* and open the template in the editor.
+ * AbstractClass.java
+ *
+ * Created on 16 dicembre 2006, 17.18
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
  */
 package designpatterns.behavioral.templatemethod;
 
@@ -41,4 +41,5 @@ package designpatterns.behavioral.templatemethod;
  *
  * @author gperon
  */
-public @interface AbstractClass {}
+public @interface AbstractClass {
+}

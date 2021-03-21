@@ -24,24 +24,21 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.state;
 
-import java.util.*;
+import java.util.Vector;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class ArrowState extends State {
-    private Mediator med;
+    private final Mediator med;
 
     /**
      * Constructs ...
-     *
      *
      * @param md
      */
@@ -51,7 +48,6 @@ public class ArrowState extends State {
 
     /**
      * Method description
-     *
      *
      * @param x
      * @param y

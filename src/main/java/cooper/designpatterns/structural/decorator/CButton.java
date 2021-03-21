@@ -24,28 +24,25 @@
  */
 
 
-
 package cooper.designpatterns.structural.decorator;
 
-import java.awt.*;
-import java.awt.event.*;
-
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class CButton extends JButton {
     private boolean mouse_over = false;
-    CButton         thisbutton;
+    CButton thisbutton;
 
     /**
      * Constructs ...
-     *
      *
      * @param caption
      */
@@ -53,20 +50,20 @@ public class CButton extends JButton {
         super(caption);
         thisbutton = this;
         addMouseListener(new MouseAdapter() {
-                             public void mouseEntered(MouseEvent e) {
-                                 mouse_over = true;
-                                 thisbutton.repaint();
-                             }
-                             public void mouseExited(MouseEvent e) {
-                                 mouse_over = false;
-                                 thisbutton.repaint();
-                             }
-                         });
+            public void mouseEntered(MouseEvent e) {
+                mouse_over = true;
+                thisbutton.repaint();
+            }
+
+            public void mouseExited(MouseEvent e) {
+                mouse_over = false;
+                thisbutton.repaint();
+            }
+        });
     }
 
     /**
      * Method description
-     *
      *
      * @param g
      */

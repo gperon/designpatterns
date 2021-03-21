@@ -24,7 +24,6 @@
  */
 
 
-
 package metsker.designpatterns.behavioral.visitor;
 
 import metsker.designpatterns.util.machine.Machine;
@@ -32,7 +31,9 @@ import metsker.designpatterns.util.machine.MachineComponent;
 import metsker.designpatterns.util.machine.MachineComposite;
 import metsker.designpatterns.util.machine.MachineVisitor;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
 /**
  * This class uses the visitor mechanics of the machine hierarchy to add a
@@ -48,7 +49,6 @@ public class RakeVisitor implements MachineVisitor {
      * Find all the leaf-node machines in a composite.
      *
      * @param mc
-     *
      * @return
      */
     public Set getLeaves(MachineComponent mc) {

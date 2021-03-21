@@ -24,30 +24,26 @@
  */
 
 
-
 package metsker.designpatterns.behavioral.observer;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import java.awt.Dimension;
+
+import metsker.designpatterns.util.Format;
+import metsker.designpatterns.util.ui.SwingFacade;
 
 import javax.swing.*;
-
-import metsker.designpatterns.util.ui.SwingFacade;
-import metsker.designpatterns.util.Format;
-
-import javax.swing.event.*;
-
-import java.awt.BorderLayout;
-import java.awt.GridLayout;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import java.awt.*;
 
 /**
  * Show the standard burn rate and thrust equations. This class is covered in
@@ -65,7 +61,7 @@ public class ShowBallistics implements ChangeListener {
      */
     public static void main(String[] args) {
         SwingFacade.launch(new ShowBallistics().mainPanel(),
-                           "Effects of tPeak");
+                "Effects of tPeak");
     }
 
     protected BallisticsPanel burnPanel;
@@ -101,7 +97,6 @@ public class ShowBallistics implements ChangeListener {
 
     /**
      * Method description
-     *
      *
      * @return
      */

@@ -24,30 +24,28 @@
  */
 
 
-
 package metsker.designpatterns.util.ui;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker. Steve Metsker makes no
-* representations or warranties about the fitness of this software for any
-* particular purpose, including the implied warranty of merchantability. Please
-* use this software as you wish with the sole restriction that you may not
-* claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker. Steve Metsker makes no
+ * representations or warranties about the fitness of this software for any
+ * particular purpose, including the implied warranty of merchantability. Please
+ * use this software as you wish with the sole restriction that you may not
+ * claim that you wrote it.
  */
-import javax.swing.JPanel;
+
+import javax.swing.*;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class OzPanel extends JPanel implements Cloneable {
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -57,7 +55,6 @@ public class OzPanel extends JPanel implements Cloneable {
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -71,7 +68,6 @@ public class OzPanel extends JPanel implements Cloneable {
 
     /**
      * Method description
-     *
      *
      * @return
      */

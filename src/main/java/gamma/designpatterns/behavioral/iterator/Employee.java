@@ -26,21 +26,20 @@
 
 
 /*
-* Employee.java
-*
-* Created on 6 novembre 2006, 21.37
-*
-* To change this template, choose Tools | Template Manager
-* and open the template in the editor.
+ * Employee.java
+ *
+ * Created on 6 novembre 2006, 21.37
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
  */
 package gamma.designpatterns.behavioral.iterator;
 
 /**
- *
  * @author gperon
  */
 public class Employee {
-    private String name;
+    private final String name;
 
     /**
      * Creates a new instance of Employee
@@ -53,7 +52,6 @@ public class Employee {
 
     /**
      * Method description
-     *
      *
      * @return
      */

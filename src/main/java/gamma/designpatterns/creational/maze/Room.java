@@ -24,47 +24,47 @@
  */
 
 
-
 package gamma.designpatterns.creational.maze;
 
 /**
- *  <p>
+ * <p>
+ * <p>
+ * Title: Design Patterns</p> <p>
+ * <p>
+ * Description: </p> <p>
+ * <p>
+ * Copyright: Copyright (c) 2002</p> <p>
+ * <p>
+ * Company: GioPerLab</p>
  *
- *  Title: Design Patterns</p> <p>
- *
- *  Description: </p> <p>
- *
- *  Copyright: Copyright (c) 2002</p> <p>
- *
- *  Company: GioPerLab</p>
- *
- * @author     giorgio_peron@libero.it
- * @created    7 giugno 2002
- * @version    1.0
+ * @author giorgio_peron@libero.it
+ * @version 1.0
+ * @created 7 giugno 2002
  */
 public class Room implements MapSite {
     private MapSite[] sides = new MapSite[4];
     private int roomNumber;
 
     /**
-     *  Constructor for the Room object
+     * Constructor for the Room object
      *
-     * @param  roomNumber  Description of the Parameter
+     * @param roomNumber Description of the Parameter
      */
     public Room(int roomNumber) {
         this.roomNumber = roomNumber;
     }
 
     /**
-     *  Constructor for the Room object
+     * Constructor for the Room object
      */
-    public Room() {}
+    public Room() {
+    }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  roomNumber  Description of the Parameter
-     * @param  sides       Description of the Parameter
+     * @param roomNumber Description of the Parameter
+     * @param sides      Description of the Parameter
      */
     public void initialize(int roomNumber, MapSite[] sides) {
         this.roomNumber = roomNumber;
@@ -72,9 +72,9 @@ public class Room implements MapSite {
     }
 
     /**
-     *  Constructor for the Room object
+     * Constructor for the Room object
      *
-     * @param  room  Description of the Parameter
+     * @param room Description of the Parameter
      */
     protected Room(Room room) {
         this.roomNumber = room.roomNumber;
@@ -93,37 +93,37 @@ public class Room implements MapSite {
     }
 
     /**
-     *  Gets the side attribute of the Room object
+     * Gets the side attribute of the Room object
      *
-     * @param  d  Description of the Parameter
-     * @return    The side value
+     * @param d Description of the Parameter
+     * @return The side value
      */
     public MapSite getSide(Direction d) {
         return sides[d.ordinal()];
     }
 
     /**
-     *  Sets the side attribute of the Room object
+     * Sets the side attribute of the Room object
      *
-     * @param  d     The new side value
-     * @param  site  The new side value
+     * @param d    The new side value
+     * @param site The new side value
      */
     public void setSide(Direction d, MapSite site) {
         sides[d.ordinal()] = site;
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      */
     public void enter() {
         throw new java.lang.UnsupportedOperationException(
-            "Method enter() not yet implemented.");
+                "Method enter() not yet implemented.");
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @return    Description of the Return Value
+     * @return Description of the Return Value
      */
     public String toString() {
         StringBuffer buffer = new StringBuffer("Room: ");
@@ -154,36 +154,32 @@ public class Room implements MapSite {
     }
 
     /**
-     *  Gets the roomNumber attribute of the Room object
+     * Gets the roomNumber attribute of the Room object
      *
-     * @return    The roomNumber value
+     * @return The roomNumber value
      */
     public int getRoomNumber() {
         return roomNumber;
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  parm1  Description of the Parameter
-     * @return        Description of the Return Value
+     * @param parm1 Description of the Parameter
+     * @return Description of the Return Value
      */
     public boolean equals(Object parm1) {
-        if ((parm1 instanceof Room)
-                && ((Room) parm1).getRoomNumber() == roomNumber) {
-            return true;
-        }
-
-        return false;
+        return (parm1 instanceof Room)
+                && ((Room) parm1).getRoomNumber() == roomNumber;
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @return                                           Description of the
-     *      Return Value
-     * @exception  java.lang.CloneNotSupportedException  Description of the
-     *      Exception
+     * @return Description of the
+     * Return Value
+     * @throws java.lang.CloneNotSupportedException Description of the
+     *                                              Exception
      */
     public Object clone() throws java.lang.CloneNotSupportedException {
         return new Room(this);

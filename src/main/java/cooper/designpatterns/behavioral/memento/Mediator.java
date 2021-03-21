@@ -24,57 +24,50 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.memento;
 
-import java.awt.*;
-
-import java.util.*;
-
 import javax.swing.*;
+import java.awt.*;
+import java.util.Vector;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class Mediator {
-    boolean          startRect;
-    boolean          rectSelected;
-    Vector           drawings;
-    Vector           undoList;
-    RectButton       rect;
-    JPanel           canvas;
+    boolean startRect;
+    boolean rectSelected;
+    Vector drawings;
+    Vector undoList;
+    RectButton rect;
+    JPanel canvas;
     VisitorRectangle selectedRectangle;
 
     /**
      * Constructs ...
-     *
      */
     public Mediator() {
-        startRect    = false;
+        startRect = false;
         rectSelected = false;
-        drawings     = new Vector();
-        undoList     = new Vector();
+        drawings = new Vector();
+        undoList = new Vector();
     }
 
     /**
      * Method description
-     *
      */
     public void clear() {
-        drawings          = new Vector();
-        undoList          = new Vector();
-        rectSelected      = false;
+        drawings = new Vector();
+        undoList = new Vector();
+        rectSelected = false;
         selectedRectangle = null;
         repaint();
     }
 
     /**
      * Method description
-     *
      *
      * @param x
      * @param y
@@ -102,7 +95,6 @@ public class Mediator {
     /**
      * Method description
      *
-     *
      * @param x
      * @param y
      */
@@ -117,7 +109,6 @@ public class Mediator {
 
     /**
      * Method description
-     *
      *
      * @param x
      * @param y
@@ -135,7 +126,7 @@ public class Mediator {
             if (v.contains(x, y))                       // did click inside a rectangle
             {
                 selectedRectangle = v;                  // save it
-                rectSelected      = true;
+                rectSelected = true;
 
                 if (selectedRectangle != lastPick) {    // but don't save twice
                     rememberPosition();
@@ -149,7 +140,6 @@ public class Mediator {
 
     /**
      * Method description
-     *
      *
      * @param g
      */
@@ -166,7 +156,6 @@ public class Mediator {
     /**
      * Method description
      *
-     *
      * @param p
      */
     public void registerCanvas(JPanel p) {
@@ -176,7 +165,6 @@ public class Mediator {
     /**
      * Method description
      *
-     *
      * @param rb
      */
     public void registerRectButton(RectButton rb) {
@@ -185,7 +173,6 @@ public class Mediator {
 
     /**
      * Method description
-     *
      */
     public void rememberPosition() {
         if (rectSelected) {
@@ -201,7 +188,6 @@ public class Mediator {
 
     /**
      * Method description
-     *
      */
     public void startRectangle() {
         startRect = true;
@@ -209,7 +195,6 @@ public class Mediator {
 
     /**
      * Method description
-     *
      */
     public void undo() {
         if (undoList.size() > 0) {

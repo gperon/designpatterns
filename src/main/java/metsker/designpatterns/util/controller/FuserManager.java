@@ -24,31 +24,29 @@
  */
 
 
-
 package metsker.designpatterns.util.controller;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
 
 /**
- *  A machine manager that adapts the common interface of
- *  the MachineManager class to the specific protocol of
- *  a fuser controller.
+ * A machine manager that adapts the common interface of
+ * the MachineManager class to the specific protocol of
+ * a fuser controller.
  */
 public class FuserManager extends MachineManager {
-    private FuserController controller = new FuserController();
+    private final FuserController controller = new FuserController();
 
     /**
      * Method description
-     *
      */
     public void startMachine() {
         controller.startMachine();
@@ -56,7 +54,6 @@ public class FuserManager extends MachineManager {
 
     /**
      * Method description
-     *
      */
     public void stopMachine() {
         controller.stopMachine();
@@ -64,7 +61,6 @@ public class FuserManager extends MachineManager {
 
     /**
      * Method description
-     *
      */
     public void startProcess() {
         controller.begin();
@@ -72,7 +68,6 @@ public class FuserManager extends MachineManager {
 
     /**
      * Method description
-     *
      */
     public void stopProcess() {
         controller.end();
@@ -80,7 +75,6 @@ public class FuserManager extends MachineManager {
 
     /**
      * Method description
-     *
      */
     public void conveyIn() {
         controller.conveyIn();
@@ -88,7 +82,6 @@ public class FuserManager extends MachineManager {
 
     /**
      * Method description
-     *
      */
     public void conveyOut() {
         controller.conveyOut();
@@ -96,7 +89,6 @@ public class FuserManager extends MachineManager {
 
     /**
      * Method description
-     *
      */
     public void switchSpool() {
         controller.switchSpool();

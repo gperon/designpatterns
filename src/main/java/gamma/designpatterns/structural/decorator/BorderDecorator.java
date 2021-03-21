@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.structural.decorator;
 
 /**
@@ -40,11 +39,10 @@ package gamma.designpatterns.structural.decorator;
  * @version 1.0
  */
 public class BorderDecorator extends Decorator {
-    private int width;
+    private final int width;
 
     /**
      * Constructs ...
-     *
      *
      * @param vc
      * @param borderWidth
@@ -56,7 +54,6 @@ public class BorderDecorator extends Decorator {
 
     /**
      * Method description
-     *
      */
     public void draw() {
         super.draw();

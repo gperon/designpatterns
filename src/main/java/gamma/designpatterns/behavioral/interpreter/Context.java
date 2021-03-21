@@ -24,10 +24,10 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.interpreter;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * <p>Title: Design Patterns</p>
@@ -45,14 +45,13 @@ public class Context {
     protected static Map<String, Boolean> map = new HashMap<String, Boolean>();
     protected static Context singletonContext = new Context();
 
-    protected Context() {}
+    protected Context() {
+    }
 
     /**
      * Method description
      *
-     *
      * @param aName
-     *
      * @return
      */
     public static boolean lookup(String aName) {
@@ -61,7 +60,6 @@ public class Context {
 
     /**
      * Method description
-     *
      *
      * @param var
      * @param b
@@ -72,7 +70,6 @@ public class Context {
 
     /**
      * Method description
-     *
      *
      * @return
      */

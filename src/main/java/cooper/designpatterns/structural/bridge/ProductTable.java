@@ -24,28 +24,24 @@
  */
 
 
-
 package cooper.designpatterns.structural.bridge;
 
-import java.util.*;
-
 import javax.swing.*;
-import javax.swing.event.*;
-import javax.swing.table.*;
+import javax.swing.event.TableModelListener;
+import javax.swing.table.TableModel;
+import java.util.Vector;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class ProductTable extends JScrollPane {
     JTable table;
 
     /**
      * Constructs ...
-     *
      *
      * @param list
      */
@@ -57,24 +53,23 @@ public class ProductTable extends JScrollPane {
 
 
 class prodModel implements TableModel {
-    int    rows, columns;
+    int rows, columns;
     Vector prodNames, quantities;
 
     /**
      * Constructs ...
      *
-     *
      * @param products
      */
     public prodModel(Vector products) {
-        rows       = products.size();
-        columns    = 2;
-        prodNames  = new Vector();
+        rows = products.size();
+        columns = 2;
+        prodNames = new Vector();
         quantities = new Vector();
 
         for (int i = 0; i < products.size(); i++) {
-            String s     = (String) products.elementAt(i);
-            int    index = s.indexOf("--");    // separate qty from name
+            String s = (String) products.elementAt(i);
+            int index = s.indexOf("--");    // separate qty from name
 
             if (index > 0) {
                 prodNames.addElement(s.substring(0, index));
@@ -88,26 +83,24 @@ class prodModel implements TableModel {
     /**
      * Method description
      *
-     *
      * @param tbm
      */
-    public void addTableModelListener(TableModelListener tbm) {}
+    public void addTableModelListener(TableModelListener tbm) {
+    }
 
     /**
      * Method description
      *
-     *
      * @param tbm
      */
-    public void removeTableModelListener(TableModelListener tbm) {}
+    public void removeTableModelListener(TableModelListener tbm) {
+    }
 
     /**
      * Method description
-     *
      *
      * @param r
      * @param c
-     *
      * @return
      */
     public boolean isCellEditable(int r, int c) {
@@ -117,18 +110,15 @@ class prodModel implements TableModel {
     /**
      * Method description
      *
-     *
      * @param c
-     *
      * @return
      */
     public Class getColumnClass(int c) {
-        return (new String("")).getClass();
+        return ("").getClass();
     }
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -139,9 +129,7 @@ class prodModel implements TableModel {
     /**
      * Method description
      *
-     *
      * @param c
-     *
      * @return
      */
     public String getColumnName(int c) {
@@ -150,7 +138,6 @@ class prodModel implements TableModel {
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -161,32 +148,30 @@ class prodModel implements TableModel {
     /**
      * Method description
      *
-     *
      * @param r
      * @param c
-     *
      * @return
      */
     public Object getValueAt(int r, int c) {
         switch (c) {
-        case 0 :
-            return prodNames.elementAt(r);
+            case 0:
+                return prodNames.elementAt(r);
 
-        case 1 :
-            return quantities.elementAt(r);
+            case 1:
+                return quantities.elementAt(r);
 
-        default :
-            return prodNames.elementAt(r);
+            default:
+                return prodNames.elementAt(r);
         }
     }
 
     /**
      * Method description
      *
-     *
      * @param obj
      * @param r
      * @param c
      */
-    public void setValueAt(Object obj, int r, int c) {}
+    public void setValueAt(Object obj, int r, int c) {
+    }
 }

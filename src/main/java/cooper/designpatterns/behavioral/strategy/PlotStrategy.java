@@ -24,13 +24,12 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.strategy;
 
-import java.awt.*;
-import java.awt.event.*;
-
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 //this is the abstact base class that
 //concrete plot strategies are derived from
@@ -38,33 +37,30 @@ import javax.swing.*;
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public abstract class PlotStrategy extends JFrame {
     protected float[] x, y;
-    protected float   minX, minY, maxX, maxY;
-    protected int     width, height;
-    protected Color   color;
+    protected float minX, minY, maxX, maxY;
+    protected int width, height;
+    protected Color color;
 
     /**
      * Constructs ...
-     *
      *
      * @param title
      */
     public PlotStrategy(String title) {
         super(title);
-        width  = 300;
+        width = 300;
         height = 200;
-        color  = Color.black;
+        color = Color.black;
         addWindowListener(new WindAp(this));
     }
 
     /**
      * Method description
-     *
      */
     public void findBounds() {
         minX = minY = Float.MAX_VALUE;
@@ -92,15 +88,13 @@ public abstract class PlotStrategy extends JFrame {
     /**
      * Method description
      *
-     *
      * @param xp
      * @param yp
      */
-    public abstract void plot(float xp[], float yp[]);
+    public abstract void plot(float[] xp, float[] yp);
 
     /**
      * Method description
-     *
      *
      * @param c
      */
@@ -111,11 +105,10 @@ public abstract class PlotStrategy extends JFrame {
     /**
      * Method description
      *
-     *
      * @param sz
      */
     public void setSize(Dimension sz) {
-        width  = sz.width;
+        width = sz.width;
         height = sz.height;
     }
 }
@@ -127,7 +120,6 @@ class WindAp extends WindowAdapter {
     /**
      * Constructs ...
      *
-     *
      * @param f
      */
     public WindAp(JFrame f) {
@@ -136,7 +128,6 @@ class WindAp extends WindowAdapter {
 
     /**
      * Method description
-     *
      *
      * @param e
      */

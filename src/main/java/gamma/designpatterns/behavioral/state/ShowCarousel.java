@@ -24,22 +24,20 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.state;
 
 import gamma.designpatterns.structural.proxy.SwingFacade;
 
-import java.awt.*;
-import java.awt.event.*;
-
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class ShowCarousel implements ActionListener {
     private Box buttonBox;
@@ -96,7 +94,7 @@ public class ShowCarousel implements ActionListener {
     }
 
     private JButton button;
-    private Carousel carousel = new Carousel();
+    private final Carousel carousel = new Carousel();
     private JLabel status;
 
     protected JButton button() {

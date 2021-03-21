@@ -24,30 +24,27 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.chainofresponsibility;
 
-import java.awt.*;
-import java.awt.event.*;
-
 import javax.swing.*;
-import javax.swing.border.*;
+import javax.swing.border.TitledBorder;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class Sender extends JPanel implements Chain, ActionListener {
-    private Chain      nextChain;
-    private JTextField tx;
-    private JButton    Send;
+    private Chain nextChain;
+    private final JTextField tx;
+    private final JButton Send;
 
     /**
      * Constructs ...
-     *
      */
     public Sender() {
         setLayout(new GridLayout(2, 1));
@@ -68,7 +65,6 @@ public class Sender extends JPanel implements Chain, ActionListener {
     /**
      * Method description
      *
-     *
      * @param e
      */
     public void actionPerformed(ActionEvent e) {
@@ -82,7 +78,6 @@ public class Sender extends JPanel implements Chain, ActionListener {
     /**
      * Method description
      *
-     *
      * @param c
      */
     public void addChain(Chain c) {
@@ -92,14 +87,13 @@ public class Sender extends JPanel implements Chain, ActionListener {
     /**
      * Method description
      *
-     *
      * @param mesg
      */
-    public void sendToChain(String mesg) {}    // this one does nothing
+    public void sendToChain(String mesg) {
+    }    // this one does nothing
 
     /**
      * Method description
-     *
      *
      * @return
      */

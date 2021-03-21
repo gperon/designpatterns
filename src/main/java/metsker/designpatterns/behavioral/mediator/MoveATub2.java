@@ -24,41 +24,29 @@
  */
 
 
-
 package metsker.designpatterns.behavioral.mediator;
-
-import java.awt.BorderLayout;
-import java.awt.Component;
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
-
-import javax.swing.BorderFactory;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JList;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 
 import metsker.designpatterns.util.ui.SwingFacade;
 import metsker.designpatterns.util.ui.UI;
+
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * This class is refactored, show a mediator class, factoring the action logic
  * out of this class.
  */
 public class MoveATub2 extends JPanel {
-    private NameBase data = new NameBase();
+    private final NameBase data = new NameBase();
     private JList boxList;
     private JList tubList;
     private JList machineList;
     private JButton assignButton;
-    private UI ui = UI.NORMAL;
+    private final UI ui = UI.NORMAL;
     MoveATubMediator mediator;
 
     /**
      * Method description
-     *
      *
      * @param args
      */
@@ -70,7 +58,6 @@ public class MoveATub2 extends JPanel {
 
     /**
      * Constructs ...
-     *
      */
     public MoveATub2() {
         super(new GridLayout(1, 4));
@@ -109,7 +96,6 @@ public class MoveATub2 extends JPanel {
     /**
      * Method description
      *
-     *
      * @return
      */
     public JList boxList() {
@@ -123,7 +109,6 @@ public class MoveATub2 extends JPanel {
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -139,12 +124,11 @@ public class MoveATub2 extends JPanel {
     /**
      * Method description
      *
-     *
      * @return
      */
     public JList tubList() {
         if (tubList == null) {
-            tubList = ui.createList(new String[] {});
+            tubList = ui.createList(new String[]{});
             tubList.addListSelectionListener(mediator);
         }
 
@@ -153,7 +137,6 @@ public class MoveATub2 extends JPanel {
 
     /**
      * Method description
-     *
      *
      * @return
      */

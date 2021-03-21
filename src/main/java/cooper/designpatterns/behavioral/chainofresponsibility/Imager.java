@@ -24,39 +24,26 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.chainofresponsibility;
 
-import java.awt.*;
-import java.awt.event.*;
-import java.awt.event.*;
-
-import java.io.*;
-
-import java.util.*;
-
-import javax.accessibility.*;
-
 import javax.swing.*;
-import javax.swing.border.*;
-import javax.swing.event.*;
-import javax.swing.text.*;
+import javax.swing.border.BevelBorder;
+import java.awt.*;
+import java.io.File;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class Imager extends JPanel implements Chain {
-    private Chain   nextChain;
-    private Image   img;
+    private Chain nextChain;
+    private Image img;
     private boolean loaded;
 
     /**
      * Constructs ...
-     *
      */
     public Imager() {
         super();
@@ -67,7 +54,6 @@ public class Imager extends JPanel implements Chain {
     /**
      * Method description
      *
-     *
      * @param c
      */
     public void addChain(Chain c) {
@@ -75,11 +61,11 @@ public class Imager extends JPanel implements Chain {
     }
 
     private boolean findImage(String file) {
-        XFile   xfile   = null;
-        File    dir     = new File(System.getProperty("user.dir"));
-        boolean found   = false;
-        String  files[] = dir.list();
-        int     i       = 0;
+        XFile xfile = null;
+        File dir = new File(System.getProperty("user.dir"));
+        boolean found = false;
+        String[] files = dir.list();
+        int i = 0;
 
         while ((!found) && (i < files.length)) {
             xfile = new XFile(files[i]);
@@ -108,7 +94,8 @@ public class Imager extends JPanel implements Chain {
         // this begins actual image loading
         try {
             tracker.waitForID(0, 1);
-        } catch (InterruptedException e) {}
+        } catch (InterruptedException e) {
+        }
 
         loaded = true;
         validate();
@@ -117,7 +104,6 @@ public class Imager extends JPanel implements Chain {
 
     /**
      * Method description
-     *
      *
      * @param g
      */
@@ -129,7 +115,6 @@ public class Imager extends JPanel implements Chain {
 
     /**
      * Method description
-     *
      *
      * @param mesg
      */
@@ -148,7 +133,6 @@ public class Imager extends JPanel implements Chain {
 
     /**
      * Method description
-     *
      *
      * @return
      */

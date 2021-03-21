@@ -24,45 +24,40 @@
  */
 
 
-
 package metsker.designpatterns.util.testing;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import junit.framework.TestCase;
 
 import metsker.designpatterns.util.Dollars;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.Test;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
-public class DollarsTest extends TestCase {
+public class DollarsTest  {
 
-    /**
-     * Method description
-     *
-     */
+    @Test
     public void testZero() {
         Dollars d = new Dollars(0);
         assertTrue(d.isZero());
     }
 
-    /**
-     * Method description
-     *
-     */
+    @Test
     public void testCents() {
         Dollars d = new Dollars(0.17);
         assertFalse(d.isZero());
@@ -70,10 +65,7 @@ public class DollarsTest extends TestCase {
         assertEquals("$0.17", d.toString());
     }
 
-    /**
-     * Method description
-     *
-     */
+    @Test
     public void testDouble() {
         Dollars d = new Dollars(0.10);
         assertFalse(d.isZero());
@@ -81,10 +73,7 @@ public class DollarsTest extends TestCase {
         assertEquals("$0.10", d.toString());
     }
 
-    /**
-     * Method description
-     *
-     */
+    @Test
     public void testEquals() {
         Dollars d1 = new Dollars(3.17);
         Dollars d2 = new Dollars(3.17);
@@ -99,7 +88,6 @@ public class DollarsTest extends TestCase {
 
     /**
      * Method description
-     *
      */
     public void testPlus() {
         Dollars d1 = new Dollars(1.27);
@@ -109,7 +97,6 @@ public class DollarsTest extends TestCase {
 
     /**
      * Method description
-     *
      */
     public void testTimes() {
         Dollars d1 = new Dollars(1.95);
@@ -118,10 +105,7 @@ public class DollarsTest extends TestCase {
         assertEquals(new Dollars(195.00), d2);
     }
 
-    /**
-     * Method description
-     *
-     */
+    @Test
     public void testDividedByDollars() {
         Dollars d1 = new Dollars(11.00);
         Dollars d2 = new Dollars(5);
@@ -129,10 +113,7 @@ public class DollarsTest extends TestCase {
         assertEquals(0.4545, d2.dividedBy(d1), 0.001);
     }
 
-    /**
-     * Method description
-     *
-     */
+    @Test
     public void testDividedByInt() {
         Dollars d1 = new Dollars(1.00);
         assertEquals(new Dollars(0.33), d1.dividedBy(3));

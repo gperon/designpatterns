@@ -24,7 +24,6 @@
  */
 
 
-
 package metsker.designpatterns.util.firework;
 
 import metsker.designpatterns.util.Dollars;
@@ -40,20 +39,18 @@ public class Rocket extends Firework {
      * Allow creation of empty objects to support reconstruction from persistent
      * store.
      */
-    public Rocket() {}
+    public Rocket() {
+    }
 
     /**
      * Create a rocket with all its expected properties. See the superclass for
      * descriptions of other parameters
      *
-     *
      * @param name
      * @param mass
      * @param price
-     * @param apogee
-     *            The height (in meters) that the rocket is expected to reach
-     * @param thrust
-     *            The rated thrust (or force, in newtons) of this rocket
+     * @param apogee The height (in meters) that the rocket is expected to reach
+     * @param thrust The rated thrust (or force, in newtons) of this rocket
      */
     public Rocket(String name, double mass, Dollars price, double apogee,
                   double thrust) {
@@ -74,7 +71,6 @@ public class Rocket extends Firework {
     /**
      * Method description
      *
-     *
      * @param value
      */
     public void setApogee(double value) {
@@ -92,7 +88,6 @@ public class Rocket extends Firework {
 
     /**
      * Method description
-     *
      *
      * @param value
      */

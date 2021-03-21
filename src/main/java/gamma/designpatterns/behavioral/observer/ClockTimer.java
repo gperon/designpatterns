@@ -24,31 +24,32 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.observer;
 
-import java.util.*;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 /**
- *  <p>
+ * <p>
+ * <p>
+ * Title: </p> <p>
+ * <p>
+ * Description: Design Patterns Examples</p> <p>
+ * <p>
+ * Copyright: Copyright (c) 2003</p> <p>
+ * <p>
+ * Company: GioPerLab</p>
  *
- *  Title: </p> <p>
- *
- *  Description: Design Patterns Examples</p> <p>
- *
- *  Copyright: Copyright (c) 2003</p> <p>
- *
- *  Company: GioPerLab</p>
- *
- * @author     giorgio_peron@libero.it
- * @created    2 marzo 2003
- * @version    1.0
+ * @author giorgio_peron@libero.it
+ * @version 1.0
+ * @created 2 marzo 2003
  */
 public class ClockTimer extends AbstractSubject {
-    private Calendar calendar;
+    private final Calendar calendar;
 
     /**
-     *  Constructor for the ClockTimer object
+     * Constructor for the ClockTimer object
      */
     public ClockTimer() {
         calendar = new GregorianCalendar();
@@ -57,34 +58,34 @@ public class ClockTimer extends AbstractSubject {
     }
 
     /**
-     *  Gets the hour attribute of the ClockTimer object
+     * Gets the hour attribute of the ClockTimer object
      *
-     * @return    The hour value
+     * @return The hour value
      */
     public int getHour() {
         return calendar.get(Calendar.HOUR_OF_DAY);
     }
 
     /**
-     *  Gets the minute attribute of the ClockTimer object
+     * Gets the minute attribute of the ClockTimer object
      *
-     * @return    The minute value
+     * @return The minute value
      */
     public int getMinute() {
         return calendar.get(Calendar.MINUTE);
     }
 
     /**
-     *  Gets the second attribute of the ClockTimer object
+     * Gets the second attribute of the ClockTimer object
      *
-     * @return    The second value
+     * @return The second value
      */
     public int getSecond() {
         return calendar.get(Calendar.SECOND);
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      */
     public void tick() {
         // update internal time-keeping state

@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.structural.decorator;
 
 /**
@@ -45,7 +44,6 @@ public class DropShadowDecorator extends Decorator {
     /**
      * Constructs ...
      *
-     *
      * @param vc
      */
     public DropShadowDecorator(VisualComponent vc) {
@@ -54,7 +52,6 @@ public class DropShadowDecorator extends Decorator {
 
     /**
      * Method description
-     *
      */
     public void draw() {
         super.draw();

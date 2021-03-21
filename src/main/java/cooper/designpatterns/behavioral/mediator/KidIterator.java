@@ -24,43 +24,40 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.mediator;
 
-import java.util.*;
+import java.util.Enumeration;
+import java.util.NoSuchElementException;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class KidIterator implements Enumeration {
-    String      clubMask;
-    int         index;
-    Kid         kid;
+    String clubMask;
+    int index;
+    Kid kid;
     Enumeration ke;
-    KidData     kdata;
+    KidData kdata;
 
     /**
      * Constructs ...
-     *
      *
      * @param kd
      * @param club
      */
     public KidIterator(KidData kd, String club) {
         clubMask = club;
-        kdata    = kd;
-        index    = 0;
-        kid      = null;
-        ke       = kdata.elements();
+        kdata = kd;
+        index = 0;
+        kid = null;
+        ke = kdata.elements();
     }
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -75,14 +72,13 @@ public class KidIterator implements Enumeration {
     /**
      * Method description
      *
-     *
      * @return
      */
     public boolean hasMoreElements() {
         boolean found = false;
 
-        while (ke.hasMoreElements() &&!found) {
-            kid   = (Kid) ke.nextElement();
+        while (ke.hasMoreElements() && !found) {
+            kid = (Kid) ke.nextElement();
             found = kid.getClub().equals(clubMask);
         }
 

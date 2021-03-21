@@ -1,5 +1,5 @@
 /*
- * @(#)FunctionTest.java   2011-11-01
+ * @(#)TestCommandTimer.java   2011-11-01
  *
  * Copyright (c) 2011 Giorgio Peron giorgio.peron@gmail.com
  * All Rights Reserved.
@@ -25,7 +25,7 @@
 
 
 
-package metsker.designpatterns.util.testing;
+package metsker.designpatterns.behavioral.command;
 
 /*
 * Copyright (c) 2001, 2005. Steven J. Metsker.
@@ -37,51 +37,41 @@ package metsker.designpatterns.util.testing;
 * Please use this software as you wish with the sole
 * restriction that you may not claim that you wrote it.
  */
-import junit.framework.TestCase;
+import metsker.designpatterns.behavioral.command.Command;
+import metsker.designpatterns.behavioral.command.CommandTimer;
 
-import metsker.designpatterns.structural.decorator.Arithmetic;
-import metsker.designpatterns.structural.decorator.Constant;
-import metsker.designpatterns.structural.decorator.Function;
-import metsker.designpatterns.structural.decorator.Scale;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 /**
- *  A few tests of Function wrappers.
+ * Class description
+ *
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
-public class FunctionTest extends TestCase {
-    double fuzz = 0.00001;
+public class TestCommandTimer {
 
-    /**
-     * Method description
-     *
-     */
-    public void testConstant() {
-        Constant c = new Constant(42);
-        assertEquals(42, c.f(0), fuzz);
-        assertEquals(42, c.f(0.5), fuzz);
-        assertEquals(42, c.f(1), fuzz);
-    }
-
-    /**
-     * Method description
-     *
-     */
-    public void testScale() {
-        Function c = new Scale(0, 100);    // let Celsius go 0 to 100
-        Function f = new Scale(new Constant(0), c, new Constant(100),
-                               new Constant(32), new Constant(212));
-        assertEquals(32.0, f.f(0), fuzz);
-        assertEquals(-40, f.f(-0.4), fuzz);
-        assertEquals(212, f.f(1), fuzz);
-    }
-
-    /**
-     * Method description
-     *
-     */
-    public void testArithmetic() {
-        Function f = new Arithmetic('+', new Constant(3), new Constant(4));
-        assertEquals(7, f.f(0), fuzz);
-        assertEquals(7, f.f(0.5), fuzz);
-        assertEquals(7, f.f(1), fuzz);
+    @Test
+    @DisplayName("Should be 2000 +/- 5ms")
+    public void testSleep() {
+        Command doze = new Command() {
+            public void execute() {
+                try {
+                    Thread.sleep(2000 + Math.round(10 * Math.random()));
+                } catch (InterruptedException ignored) {}
+            }
+        };
+        long actual = CommandTimer.time(doze);
+        long expected = 2000;
+        long delta = 5;
+        assertTrue((expected - delta <= actual)
+                   && (actual <= expected + delta), "Should be " + expected + " +/- " + delta
+                      + "ms");
     }
 }

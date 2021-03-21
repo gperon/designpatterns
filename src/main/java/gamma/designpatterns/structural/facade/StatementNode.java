@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.structural.facade;
 
 /**
@@ -43,44 +42,48 @@ public class StatementNode implements ProgramNode {
 
     /**
      * Constructs ...
-     *
      */
-    public StatementNode() {}
+    public StatementNode() {
+    }
 
     /**
      * add
      *
      * @param pn ProgramNode
      * @todo Implement this designpatterns.structural.facade.ProgramNode
-     *   method
+     * method
      */
-    public void add(ProgramNode pn) {}
+    public void add(ProgramNode pn) {
+    }
 
     /**
      * getSourcePosition
      *
-     * @param line int
+     * @param line  int
      * @param index int
      * @todo Implement this designpatterns.structural.facade.ProgramNode
-     *   method
+     * method
      */
-    public void getSourcePosition(int line, int index) {}
+    public void getSourcePosition(int line, int index) {
+    }
 
     /**
      * remove
      *
      * @param pn ProgramNode
      * @todo Implement this designpatterns.structural.facade.ProgramNode
-     *   method
+     * method
      */
-    public void remove(ProgramNode pn) {}
+    public void remove(ProgramNode pn) {
+    }
 
     /**
      * traverse
      *
      * @param cg CodeGenerator
      * @todo Implement this designpatterns.structural.facade.ProgramNode
-     *   method
+     * method
      */
-    public void traverse(CodeGenerator cg) {}
+    public void traverse(CodeGenerator cg) {
+    }
 }

@@ -24,19 +24,19 @@
  */
 
 
-
 package metsker.designpatterns.behavioral.state;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
+
 import java.util.Observable;
 
 /**
@@ -46,19 +46,29 @@ import java.util.Observable;
  */
 public class Door extends Observable {
 
-    /** Field description */
+    /**
+     * Field description
+     */
     public final int CLOSED = -1;
 
-    /** Field description */
+    /**
+     * Field description
+     */
     public final int OPENING = -2;
 
-    /** Field description */
+    /**
+     * Field description
+     */
     public final int OPEN = -3;
 
-    /** Field description */
+    /**
+     * Field description
+     */
     public final int CLOSING = -4;
 
-    /** Field description */
+    /**
+     * Field description
+     */
     public final int STAYOPEN = -5;
     private int state = CLOSED;
 
@@ -68,24 +78,24 @@ public class Door extends Observable {
      */
     public void touch() {
         switch (state) {
-            case OPENING :
-            case STAYOPEN :
+            case OPENING:
+            case STAYOPEN:
                 setState(CLOSING);
 
                 break;
 
-            case CLOSING :
-            case CLOSED :
+            case CLOSING:
+            case CLOSED:
                 setState(OPENING);
 
                 break;
 
-            case OPEN :
+            case OPEN:
                 setState(STAYOPEN);
 
                 break;
 
-            default :
+            default:
                 throw new Error("can't happen");
         }
     }
@@ -115,19 +125,19 @@ public class Door extends Observable {
      */
     public String status() {
         switch (state) {
-            case OPENING :
+            case OPENING:
                 return "Opening";
 
-            case OPEN :
+            case OPEN:
                 return "Open";
 
-            case CLOSING :
+            case CLOSING:
                 return "Closing";
 
-            case STAYOPEN :
+            case STAYOPEN:
                 return "StayOpen";
 
-            default :
+            default:
                 return "Closed";
         }
     }

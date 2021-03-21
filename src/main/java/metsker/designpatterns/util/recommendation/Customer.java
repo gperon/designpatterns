@@ -24,38 +24,38 @@
  */
 
 
-
 package metsker.designpatterns.util.recommendation;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import java.lang.String;
+
+import metsker.designpatterns.util.firework.Firework;
 
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Properties;
-
-import metsker.designpatterns.util.firework.Firework;
 
 /**
  * Represents a customer.
  */
 public class Customer {
 
-    /** Field description */
+    /**
+     * Field description
+     */
     public static final int BIG_SPENDER_DOLLARS = 1000;
 
     /**
      * @return true if this customer has registered (or entered) his or her
-     *         preference profile. This method is not actually implemented
+     * preference profile. This method is not actually implemented
      */
     public boolean isRegistered() {
         return false;
@@ -74,7 +74,7 @@ public class Customer {
     public static void main(String[] args) {
         Firework recommendation = new Customer().getRecommended();
         System.out.println("Customer recommendation: "
-                           + recommendation.toString());
+                + recommendation.toString());
     }
 
     /**
@@ -85,7 +85,7 @@ public class Customer {
         try {
             Properties p = new Properties();
             p.load(ClassLoader.getSystemResourceAsStream(
-                "config/strategy.dat"));
+                    "config/strategy.dat"));
             String promotedName = p.getProperty("promote");
             if (promotedName != null) {
                 Firework f = Firework.lookup(promotedName);
@@ -113,9 +113,9 @@ public class Customer {
     }
 
     /**
-     * @return the amount of dough this customer has spent with us since the
-     *         provided date.
      * @param date Since when?
+     * @return the amount of dough this customer has spent with us since the
+     * provided date.
      */
     public double spendingSince(Date date) {
         return 1000;

@@ -24,15 +24,13 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.state;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public abstract class DoorState {
     protected Door door;
@@ -47,7 +45,8 @@ public abstract class DoorState {
      * By default, discard notifications that the door
      * finished opening or closing.
      */
-    public void complete() {}
+    public void complete() {
+    }
 
     /**
      * Return a textual desciption of this state.
@@ -64,7 +63,8 @@ public abstract class DoorState {
      * By default, discard notifications that the door
      * began closing after having been open for a while.
      */
-    public void timeout() {}
+    public void timeout() {
+    }
 
     /**
      * Construct a state for the provided door.

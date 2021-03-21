@@ -24,10 +24,7 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.strategy;
-
-import java.awt.Point;
 
 /**
  * <p>Title: Design Patterns</p>
@@ -46,21 +43,19 @@ public abstract class Compositor {
     /**
      * Method description
      *
-     *
      * @param natural
      * @param stretch
      * @param shrink
      * @param componentCount
      * @param lineWidth
      * @param breaks
-     *
      * @return
      */
-    public abstract int compose(Coord natural[], Coord stretch[],
-                                Coord shrink[], int componentCount,
-                                int lineWidth, int breaks[]);
+    public abstract int compose(Coord[] natural, Coord[] stretch,
+                                Coord[] shrink, int componentCount,
+                                int lineWidth, int[] breaks);
 
-    protected Compositor() {}
+    protected Compositor() {
+    }
 
-    ;
 }

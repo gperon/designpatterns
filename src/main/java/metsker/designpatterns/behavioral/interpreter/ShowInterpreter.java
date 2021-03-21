@@ -24,17 +24,16 @@
  */
 
 
-
 package metsker.designpatterns.behavioral.interpreter;
 
+import metsker.designpatterns.behavioral.command.CarryCommand;
+import metsker.designpatterns.behavioral.command.CommandSequence;
 import metsker.designpatterns.util.machine.Bin;
 import metsker.designpatterns.util.machine.Fuser;
 import metsker.designpatterns.util.machine.MachineComposite;
 import metsker.designpatterns.util.machine.OozinozFactory;
 import metsker.designpatterns.util.machine.ShellAssembler;
 import metsker.designpatterns.util.machine.StarPress;
-import metsker.designpatterns.behavioral.command.CarryCommand;
-import metsker.designpatterns.behavioral.command.CommandSequence;
 
 /**
  * Demonstrate an initial carry command.
@@ -44,13 +43,12 @@ public class ShowInterpreter {
     /**
      * Method description
      *
-     *
      * @param args
      */
     public static void main(String[] args) {
         MachineComposite dublin = OozinozFactory.dublin();
         ShellAssembler assembler =
-            (ShellAssembler) dublin.find("ShellAssembler:3302");
+                (ShellAssembler) dublin.find("ShellAssembler:3302");
         StarPress press = (StarPress) dublin.find("StarPress:3404");
         Fuser fuser = (Fuser) dublin.find("Fuser:3102");
         assembler.load(new Bin(11011));

@@ -24,7 +24,6 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.templatemethod;
 
 import java.awt.*;
@@ -32,18 +31,16 @@ import java.awt.*;
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class IsocelesTriangle extends AbstractTriangle {
     Point newc;
-    int   newcx, newcy;
-    int   incr;
+    int newcx, newcy;
+    int incr;
 
     /**
      * Constructs ...
-     *
      *
      * @param a
      * @param b
@@ -52,10 +49,10 @@ public class IsocelesTriangle extends AbstractTriangle {
     public IsocelesTriangle(Point a, Point b, Point c) {
         super(a, b, c);
 
-        double dx1   = b.x - a.x;
-        double dy1   = b.y - a.y;
-        double dx2   = c.x - b.x;
-        double dy2   = c.y - b.y;
+        double dx1 = b.x - a.x;
+        double dy1 = b.y - a.y;
+        double dx2 = c.x - b.x;
+        double dy2 = c.y - b.y;
         double side1 = calcSide(dx1, dy1);
         double side2 = calcSide(dx2, dy2);
 
@@ -65,7 +62,7 @@ public class IsocelesTriangle extends AbstractTriangle {
             incr = 1;
         }
 
-        double slope     = dy2 / dx2;
+        double slope = dy2 / dx2;
         double intercept = c.y - slope * c.x;
 
         /* move point c so that this is an isoceles triangle */
@@ -77,8 +74,8 @@ public class IsocelesTriangle extends AbstractTriangle {
             /* iterate a pixel at a time until close */
             newcx += incr;
             newcy = (int) (slope * newcx + intercept);
-            dx2   = newcx - b.x;
-            dy2   = newcy - b.y;
+            dx2 = newcx - b.x;
+            dy2 = newcy - b.y;
             side2 = calcSide(dx2, dy2);
         }
 
@@ -98,7 +95,6 @@ public class IsocelesTriangle extends AbstractTriangle {
      * @param g
      * @param b
      * @param c
-     *
      * @return
      */
     public Point draw2ndLine(Graphics g, Point b, Point c) {

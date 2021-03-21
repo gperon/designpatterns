@@ -24,40 +24,34 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.interpreter;
 
-import java.util.*;
-
-//swing classes
 import javax.swing.*;
-import javax.swing.event.*;
-import javax.swing.table.*;
+import javax.swing.event.TableModelListener;
+import javax.swing.table.TableModel;
+import java.util.Vector;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class PrintTable extends JScrollPane {
-    JTable       table;
+    JTable table;
     ProductModel pmodel;
 
     /**
      * Constructs ...
-     *
      */
     public PrintTable() {
         pmodel = new ProductModel();
-        table  = new JTable(pmodel);
+        table = new JTable(pmodel);
         getViewport().add(table);
     }
 
     /**
      * Method description
-     *
      *
      * @param r
      * @param c
@@ -68,7 +62,6 @@ public class PrintTable extends JScrollPane {
 
     /**
      * Method description
-     *
      *
      * @param obj
      * @param row
@@ -81,41 +74,38 @@ public class PrintTable extends JScrollPane {
 
 
 class ProductModel implements TableModel {
-    int    rows, columns;
+    int rows, columns;
     Vector columnList;
 
     /**
      * Constructs ...
-     *
      */
     public ProductModel() {
         columns = 0;
-        rows    = 0;
+        rows = 0;
     }
 
     /**
      * Method description
      *
-     *
      * @param tbm
      */
-    public void addTableModelListener(TableModelListener tbm) {}
+    public void addTableModelListener(TableModelListener tbm) {
+    }
 
     /**
      * Method description
      *
-     *
      * @param tbm
      */
-    public void removeTableModelListener(TableModelListener tbm) {}
+    public void removeTableModelListener(TableModelListener tbm) {
+    }
 
     /**
      * Method description
-     *
      *
      * @param r
      * @param c
-     *
      * @return
      */
     public boolean isCellEditable(int r, int c) {
@@ -125,18 +115,15 @@ class ProductModel implements TableModel {
     /**
      * Method description
      *
-     *
      * @param c
-     *
      * @return
      */
     public Class getColumnClass(int c) {
-        return (new String("")).getClass();
+        return ("").getClass();
     }
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -147,9 +134,7 @@ class ProductModel implements TableModel {
     /**
      * Method description
      *
-     *
      * @param c
-     *
      * @return
      */
     public String getColumnName(int c) {
@@ -158,7 +143,6 @@ class ProductModel implements TableModel {
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -169,13 +153,12 @@ class ProductModel implements TableModel {
     /**
      * Method description
      *
-     *
      * @param r
      * @param cols
      */
     public void setSize(int r, int cols) {
-        columns    = cols;
-        rows       = r;
+        columns = cols;
+        rows = r;
         columnList = new Vector(columns);
 
         for (int i = 0; i < columns; i++) {
@@ -192,10 +175,8 @@ class ProductModel implements TableModel {
     /**
      * Method description
      *
-     *
      * @param row
      * @param col
-     *
      * @return
      */
     public Object getValueAt(int row, int col) {
@@ -208,7 +189,6 @@ class ProductModel implements TableModel {
 
     /**
      * Method description
-     *
      *
      * @param obj
      * @param row

@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.creational.abstractfactory;
 
 import gamma.designpatterns.creational.maze.BombedWall;
@@ -33,41 +32,42 @@ import gamma.designpatterns.creational.maze.RoomWithABomb;
 import gamma.designpatterns.creational.maze.Wall;
 
 /**
- *  <p>
+ * <p>
+ * <p>
+ * Title: Design Patterns</p> <p>
+ * <p>
+ * Description: </p> <p>
+ * <p>
+ * Copyright: Copyright (c) 2002</p> <p>
+ * <p>
+ * Company: GioPerLab</p>
  *
- *  Title: Design Patterns</p> <p>
- *
- *  Description: </p> <p>
- *
- *  Copyright: Copyright (c) 2002</p> <p>
- *
- *  Company: GioPerLab</p>
- *
- * @author     giorgio_peron@libero.it
- * @created    2 giugno 2002
- * @version    1.0
+ * @author giorgio_peron@libero.it
+ * @version 1.0
+ * @created 2 giugno 2002
  */
 public class BombedMazeFactory extends MazeFactory {
 
     /**
-     *  Constructor for the BombedMazeFactory object
+     * Constructor for the BombedMazeFactory object
      */
-    public BombedMazeFactory() {}
+    public BombedMazeFactory() {
+    }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @return    Description of the Return Value
+     * @return Description of the Return Value
      */
     public Wall makeWall() {
         return new BombedWall();
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  roomNumber  Description of the Parameter
-     * @return             Description of the Return Value
+     * @param roomNumber Description of the Parameter
+     * @return Description of the Return Value
      */
     public Room makeRoom(int roomNumber) {
         return new RoomWithABomb(roomNumber);

@@ -24,30 +24,26 @@
  */
 
 
-
 package cooper.designpatterns.util.swing.menu;
 
-import java.awt.*;
+import cooper.designpatterns.util.swing.JxFrame;
 
 import javax.swing.*;
-
-import cooper.designpatterns.util.swing.JxFrame;
+import java.awt.*;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class xtendMenu extends JxFrame {
-    JPanel        jp;
-    JMenuItem     menuitem;
+    JPanel jp;
+    JMenuItem menuitem;
     ActionToolBar toolbar;
 
     /**
      * Constructs ...
-     *
      */
     public xtendMenu() {
         super("Extended Menu");
@@ -93,10 +89,9 @@ public class xtendMenu extends JxFrame {
     /**
      * Method description
      *
-     *
      * @param argv
      */
-    static public void main(String argv[]) {
+    static public void main(String[] argv) {
         new xtendMenu();
     }
 }

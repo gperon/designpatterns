@@ -24,29 +24,27 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.command;
 
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class InnerCommand extends Frame {
-    Menu     mnuFile;
+    Menu mnuFile;
     MenuItem mnuOpen, mnuExit;
-    Button   btnRed;
-    Panel    p;
-    Frame    fr;
+    Button btnRed;
+    Panel p;
+    Frame fr;
 
     /**
      * Constructs ...
-     *
      */
     public InnerCommand() {
         super("Frame without commands");
@@ -62,26 +60,26 @@ public class InnerCommand extends Frame {
         mnuExit = new MenuItem("Exit");
         mnuFile.add(mnuExit);
         mnuOpen.addActionListener(new ActionListener() {
-                                      public void actionPerformed(ActionEvent e) {
-                                          FileDialog fDlg = new FileDialog(fr, "Open a file", FileDialog.LOAD);
+            public void actionPerformed(ActionEvent e) {
+                FileDialog fDlg = new FileDialog(fr, "Open a file", FileDialog.LOAD);
 
-                                          fDlg.setVisible(true);
-                                      }
-                                  });
+                fDlg.setVisible(true);
+            }
+        });
         mnuExit.addActionListener(new ActionListener() {
-                                      public void actionPerformed(ActionEvent e) {
-                                          System.exit(0);
-                                      }
-                                  });
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
         btnRed = new Button("Red");
-        p      = new Panel();
+        p = new Panel();
         add(p);
         p.add(btnRed);
         btnRed.addActionListener(new ActionListener() {
-                                     public void actionPerformed(ActionEvent e) {
-                                         p.setBackground(Color.red);
-                                     }
-                                 });
+            public void actionPerformed(ActionEvent e) {
+                p.setBackground(Color.red);
+            }
+        });
         setBounds(100, 100, 200, 100);
         setVisible(true);
     }
@@ -89,10 +87,9 @@ public class InnerCommand extends Frame {
     /**
      * Method description
      *
-     *
      * @param argv
      */
-    static public void main(String argv[]) {
+    static public void main(String[] argv) {
         new InnerCommand();
     }
 }

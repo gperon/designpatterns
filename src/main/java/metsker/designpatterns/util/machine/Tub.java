@@ -24,34 +24,34 @@
  */
 
 
-
 package metsker.designpatterns.util.machine;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
 
 /**
- *  A tub is a standard, rubber container that contains
- *  about four liters of a chemical. This class is a minimal
- *  model that helps show how to manage a one-to-many
- *  relation in an object model.
+ * A tub is a standard, rubber container that contains
+ * about four liters of a chemical. This class is a minimal
+ * model that helps show how to manage a one-to-many
+ * relation in an object model.
  */
 public class Tub {
-    private String id;
+    private final String id;
     private TubMediator mediator = null;
 
     /**
-     *  Create a tub with the given id and managed by the given
-     *  mediator.
-     * @param id the identity of this machine
+     * Create a tub with the given id and managed by the given
+     * mediator.
+     *
+     * @param id       the identity of this machine
      * @param mediator
      */
     public Tub(String id, TubMediator mediator) {
@@ -60,9 +60,9 @@ public class Tub {
     }
 
     /**
-     *  Use a mediator to control getting and setting the location
-     *  of this tub. This prevents a tub from ever being modeled as
-     *  being on two machines at once.
+     * Use a mediator to control getting and setting the location
+     * of this tub. This prevents a tub from ever being modeled as
+     * being on two machines at once.
      *
      * @return
      */
@@ -73,7 +73,6 @@ public class Tub {
     /**
      * Method description
      *
-     *
      * @param value
      */
     public void setLocation(Machine value) {
@@ -81,25 +80,24 @@ public class Tub {
     }
 
     /**
-     *  @return a textual representation of this tub.
+     * @return a textual representation of this tub.
      */
     public String toString() {
         return id;
     }
 
     /**
-     *  @return a unique id for this tub.
+     * @return a unique id for this tub.
      */
     public int hashCode() {
         return id.hashCode();
     }
 
     /**
-     *
      * @param obj
-     *  @return true if, according to business rules, this
-     *  component and the supplied object refer to the same
-     *  thing.
+     * @return true if, according to business rules, this
+     * component and the supplied object refer to the same
+     * thing.
      */
     public boolean equals(Object obj) {
         if (obj == this) {

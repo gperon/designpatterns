@@ -24,19 +24,19 @@
  */
 
 
-
 package metsker.designpatterns.behavioral.visitor;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
+
 import metsker.designpatterns.util.process.ProcessAlternation;
 import metsker.designpatterns.util.process.ProcessComponent;
 import metsker.designpatterns.util.process.ProcessComposite;
@@ -44,8 +44,8 @@ import metsker.designpatterns.util.process.ProcessSequence;
 import metsker.designpatterns.util.process.ProcessStep;
 import metsker.designpatterns.util.process.ProcessVisitor;
 
-import java.util.List;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -53,14 +53,16 @@ import java.util.Set;
  * behavior that pretty-prints a process composite. The prettiness is basically
  * indentation, although alternations are prefixed with a question mark to note
  * that they're alternations.
- *
+ * <p>
  * This visitor takes care not to print any component twice, if the original
  * component is cyclic. On encountering a node a second time, this visitor will
  * print an ellipsis (...).
  */
 public class PrettyVisitor implements ProcessVisitor {
 
-    /** Field description */
+    /**
+     * Field description
+     */
     public static final String INDENT_STRING = "    ";
     private StringBuffer buf;
     private int depth;
@@ -89,6 +91,7 @@ public class PrettyVisitor implements ProcessVisitor {
 
     /**
      * Add a step to the output buffer.
+     *
      * @param s the step
      */
     public void visit(ProcessStep s) {
@@ -97,6 +100,7 @@ public class PrettyVisitor implements ProcessVisitor {
 
     /**
      * Add an alternation to the output buffer.
+     *
      * @param a the alternation
      */
     public void visit(ProcessAlternation a) {
@@ -105,6 +109,7 @@ public class PrettyVisitor implements ProcessVisitor {
 
     /**
      * Add a sequence to the output buffer.
+     *
      * @param s the sequence
      */
     public void visit(ProcessSequence s) {
@@ -117,7 +122,7 @@ public class PrettyVisitor implements ProcessVisitor {
      * printing the children again.
      *
      * @param prefix a possible prefix
-     * @param c the composite to display
+     * @param c      the composite to display
      */
     protected void visitComposite(String prefix, ProcessComposite c) {
         if (visited.contains(c)) {

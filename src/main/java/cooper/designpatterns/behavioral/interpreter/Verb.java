@@ -24,7 +24,6 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.interpreter;
 
 import cooper.designpatterns.behavioral.command.Command;
@@ -32,17 +31,15 @@ import cooper.designpatterns.behavioral.command.Command;
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class Verb extends ParseVerb implements Command {
-    protected Data     data;
+    protected Data data;
     protected JawtList ptable;
 
     /**
      * Constructs ...
-     *
      *
      * @param s
      */
@@ -52,19 +49,18 @@ public class Verb extends ParseVerb implements Command {
 
     /**
      * Method description
-     *
      */
-    public void execute() {}
+    public void execute() {
+    }
 
     /**
      * Method description
-     *
      *
      * @param dt
      * @param pt
      */
     public void setData(Data dt, JawtList pt) {
-        data   = dt;
+        data = dt;
         ptable = pt;
     }
 }

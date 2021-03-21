@@ -24,38 +24,37 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.command;
 
 /**
- *  <p>
+ * <p>
+ * <p>
+ * Title: </p> <p>
+ * <p>
+ * Description: Design Patterns Examples</p> <p>
+ * <p>
+ * Copyright: Copyright (c) 2003</p> <p>
+ * <p>
+ * Company: GioPerLab</p>
  *
- *  Title: </p> <p>
- *
- *  Description: Design Patterns Examples</p> <p>
- *
- *  Copyright: Copyright (c) 2003</p> <p>
- *
- *  Company: GioPerLab</p>
- *
- * @author     giorgio_peron@libero.it
- * @created    2 marzo 2003
- * @version    1.0
+ * @author giorgio_peron@libero.it
+ * @version 1.0
+ * @created 2 marzo 2003
  */
 public class PasteCommand implements Command {
-    private Document doc;
+    private final Document doc;
 
     /**
-     *  Constructor for the PasteCommand object
+     * Constructor for the PasteCommand object
      *
-     * @param  doc  Description of the Parameter
+     * @param doc Description of the Parameter
      */
     public PasteCommand(Document doc) {
         this.doc = doc;
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      */
     public void execute() {
         doc.paste();

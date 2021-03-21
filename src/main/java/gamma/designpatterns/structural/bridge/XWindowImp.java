@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.structural.bridge;
 
 import java.awt.*;
@@ -45,9 +44,9 @@ public class XWindowImp extends WindowImp {
 
     /**
      * Constructs ...
-     *
      */
-    public XWindowImp() {}
+    public XWindowImp() {
+    }
 
     // lots of X window system-specific state, including:
     private Display dpy;
@@ -63,17 +62,17 @@ public class XWindowImp extends WindowImp {
      * @param b Coord
      * @todo Implement this designpatterns.structural.bridge.WindowImp method
      */
-    public void deviceBitmap(String s, Coord a, Coord b) {}
+    public void deviceBitmap(String s, Coord a, Coord b) {
+    }
 
     /**
      * deviceRect
-     *
-     * @todo Implement this designpatterns.structural.bridge.WindowImp method
      *
      * @param x0
      * @param y0
      * @param x1
      * @param y1
+     * @todo Implement this designpatterns.structural.bridge.WindowImp method
      */
     public void deviceRect(Coord x0, Coord y0, Coord x1, Coord y1) {
         long x = Math.round(Math.min(x0.getValue(), x1.getValue()));
@@ -84,7 +83,8 @@ public class XWindowImp extends WindowImp {
     }
 
     private void XDrawRectangle(Display dpy, Drawable winid, GC gc, long x,
-                                long y, long w, long h) {}
+                                long y, long w, long h) {
+    }
 
     /**
      * deviceText
@@ -94,14 +94,16 @@ public class XWindowImp extends WindowImp {
      * @param b Coord
      * @todo Implement this designpatterns.structural.bridge.WindowImp method
      */
-    public void deviceText(String s, Coord a, Coord b) {}
+    public void deviceText(String s, Coord a, Coord b) {
+    }
 
     /**
      * impBottom
      *
      * @todo Implement this designpatterns.structural.bridge.WindowImp method
      */
-    public void impBottom() {}
+    public void impBottom() {
+    }
 
     /**
      * impSetExtent
@@ -109,7 +111,8 @@ public class XWindowImp extends WindowImp {
      * @param p Point
      * @todo Implement this designpatterns.structural.bridge.WindowImp method
      */
-    public void impSetExtent(Point p) {}
+    public void impSetExtent(Point p) {
+    }
 
     /**
      * impSetOrigin
@@ -117,14 +120,16 @@ public class XWindowImp extends WindowImp {
      * @param p Point
      * @todo Implement this designpatterns.structural.bridge.WindowImp method
      */
-    public void impSetOrigin(Point p) {}
+    public void impSetOrigin(Point p) {
+    }
 
     /**
      * impTop
      *
      * @todo Implement this designpatterns.structural.bridge.WindowImp method
      */
-    public void impTop() {}
+    public void impTop() {
+    }
 
     /**
      * Returns a string representation of the object.

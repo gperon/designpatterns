@@ -24,10 +24,7 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.interpreter;
-
-import java.util.*;
 
 /**
  * this class is just a simple collection of arrays
@@ -39,7 +36,6 @@ public class Data {
     /**
      * Constructs ...
      *
-     *
      * @param kd
      */
     public Data(Kid[] kd) {
@@ -48,7 +44,6 @@ public class Data {
 
     /**
      * Method description
-     *
      *
      * @return
      */

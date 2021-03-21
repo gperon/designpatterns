@@ -24,25 +24,21 @@
  */
 
 
-
 package cooper.designpatterns.util.swing.menu;
 
-import java.awt.*;
-
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class ActionToolBar extends JToolBar {
 
     /**
      * Constructs ...
-     *
      */
     public ActionToolBar() {
         setFloatable(false);
@@ -50,7 +46,6 @@ public class ActionToolBar extends JToolBar {
 
     /**
      * Method description
-     *
      *
      * @param act
      * @param tip

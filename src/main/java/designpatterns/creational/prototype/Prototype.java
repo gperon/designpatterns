@@ -26,12 +26,12 @@
 
 
 /*
-* Prototype.java
-*
-* Created on 7 novembre 2006, 21.25
-*
-* To change this template, choose Tools | Template Manager
-* and open the template in the editor.
+ * Prototype.java
+ *
+ * Created on 7 novembre 2006, 21.25
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
  */
 package designpatterns.creational.prototype;
 
@@ -40,4 +40,5 @@ package designpatterns.creational.prototype;
  *
  * @author gperon
  */
-public @interface Prototype {}
+public @interface Prototype {
+}

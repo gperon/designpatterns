@@ -24,24 +24,23 @@
  */
 
 
-
 package metsker.designpatterns.structural.facade;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import javax.swing.*;
-
-import java.awt.*;
 
 import metsker.designpatterns.util.ui.SwingFacade;
+
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * This class shows how to draw a circle using parametric equations.
@@ -52,7 +51,6 @@ public class ShowCircle extends JPanel {
 
     /**
      * Method description
-     *
      *
      * @param args
      */

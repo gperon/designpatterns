@@ -24,24 +24,21 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.memento;
-
-import java.awt.*;
-import java.awt.event.*;
-
-//swing classes
-import javax.swing.*;
 
 import cooper.designpatterns.behavioral.command.Command;
 import cooper.designpatterns.util.swing.JxFrame;
 
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class MementoDemo extends JxFrame implements ActionListener {
     JToolBar tbar;
@@ -49,7 +46,6 @@ public class MementoDemo extends JxFrame implements ActionListener {
 
     /**
      * Constructs ...
-     *
      */
     public MementoDemo() {
         super("Memento Drawing");
@@ -93,7 +89,6 @@ public class MementoDemo extends JxFrame implements ActionListener {
     /**
      * Method description
      *
-     *
      * @param e
      */
     public void actionPerformed(ActionEvent e) {
@@ -104,7 +99,6 @@ public class MementoDemo extends JxFrame implements ActionListener {
 
     /**
      * Method description
-     *
      *
      * @param argv
      */

@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.strategy;
 
 import java.awt.*;
@@ -45,7 +44,6 @@ public class Coord extends Point {
 
     /**
      * Constructs ...
-     *
      */
     public Coord() {
         super();

@@ -26,12 +26,12 @@
 
 
 /*
-* ConcreteFactory.java
-*
-* Created on 7 novembre 2006, 21.16
-*
-* To change this template, choose Tools | Template Manager
-* and open the template in the editor.
+ * ConcreteFactory.java
+ *
+ * Created on 7 novembre 2006, 21.16
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
  */
 package designpatterns.creational.factorymethod;
 
@@ -40,4 +40,5 @@ package designpatterns.creational.factorymethod;
  *
  * @author gperon
  */
-public @interface ConcreteFactory {}
+public @interface ConcreteFactory {
+}

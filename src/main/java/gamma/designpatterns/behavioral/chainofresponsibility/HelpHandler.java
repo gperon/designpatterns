@@ -24,33 +24,32 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.chainofresponsibility;
 
 /**
- *  <p>
+ * <p>
+ * <p>
+ * Title: </p> <p>
+ * <p>
+ * Description: Design Patterns Examples</p> <p>
+ * <p>
+ * Copyright: Copyright (c) 2003</p> <p>
+ * <p>
+ * Company: GioPerLab</p>
  *
- *  Title: </p> <p>
- *
- *  Description: Design Patterns Examples</p> <p>
- *
- *  Copyright: Copyright (c) 2003</p> <p>
- *
- *  Company: GioPerLab</p>
- *
- * @author     giorgio_peron@libero.it
- * @created    2 marzo 2003
- * @version    1.0
+ * @author giorgio_peron@libero.it
+ * @version 1.0
+ * @created 2 marzo 2003
  */
 public class HelpHandler {
     private HelpHandler successor;
     private Topic topic;
 
     /**
-     *  Constructor for the HelpHandler object
+     * Constructor for the HelpHandler object
      *
-     * @param  successor  Description of the Parameter
-     * @param  topic      Description of the Parameter
+     * @param successor Description of the Parameter
+     * @param topic     Description of the Parameter
      */
     public HelpHandler(HelpHandler successor, Topic topic) {
         this.successor = successor;
@@ -58,9 +57,9 @@ public class HelpHandler {
     }
 
     /**
-     *  Constructor for the HelpHandler object
+     * Constructor for the HelpHandler object
      *
-     * @param  successor  Description of the Parameter
+     * @param successor Description of the Parameter
      */
     public HelpHandler(HelpHandler successor) {
         this.successor = successor;
@@ -68,7 +67,7 @@ public class HelpHandler {
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      */
     public void handleHelp() {
         if (successor != null) {
@@ -77,19 +76,19 @@ public class HelpHandler {
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @return    Description of the Return Value
+     * @return Description of the Return Value
      */
     public boolean hasHelp() {
         return !topic.equals(Topic.NO_HELP_TOPIC);
     }
 
     /**
-     *  Sets the handler attribute of the HelpHandler object
+     * Sets the handler attribute of the HelpHandler object
      *
-     * @param  successor  The new handler value
-     * @param  topic      The new handler value
+     * @param successor The new handler value
+     * @param topic     The new handler value
      */
     public void setHandler(HelpHandler successor, Topic topic) {
         this.successor = successor;

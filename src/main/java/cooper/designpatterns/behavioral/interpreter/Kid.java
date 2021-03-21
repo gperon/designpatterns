@@ -24,43 +24,39 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.interpreter;
 
-import java.util.*;
+import java.util.StringTokenizer;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class Kid {
     String frname, lname, club;
-    int    age;
-    float  time;
+    int age;
+    float time;
 
     /**
      * Constructs ...
      *
-     *
      * @param line
      */
     public Kid(String line) {
-        StringTokenizer tok  = new StringTokenizer(line);
-        String          lnum = tok.nextToken();
+        StringTokenizer tok = new StringTokenizer(line);
+        String lnum = tok.nextToken();
 
         frname = tok.nextToken();
-        lname  = tok.nextToken();
-        age    = new Integer(tok.nextToken()).intValue();
-        club   = tok.nextToken();
-        time   = new Float(tok.nextToken()).floatValue();
+        lname = tok.nextToken();
+        age = new Integer(tok.nextToken()).intValue();
+        club = tok.nextToken();
+        time = new Float(tok.nextToken()).floatValue();
     }
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -71,7 +67,6 @@ public class Kid {
     /**
      * Method description
      *
-     *
      * @return
      */
     public String getClub() {
@@ -81,27 +76,25 @@ public class Kid {
     /**
      * Method description
      *
-     *
      * @param key
-     *
      * @return
      */
     public Object getData(int key) {
         switch (key) {
-        case ParseVar.FRNAME :
-            return frname;
+            case ParseVar.FRNAME:
+                return frname;
 
-        case ParseVar.LNAME :
-            return lname;
+            case ParseVar.LNAME:
+                return lname;
 
-        case ParseVar.CLUB :
-            return club;
+            case ParseVar.CLUB:
+                return club;
 
-        case ParseVar.AGE :
-            return new Integer(age);
+            case ParseVar.AGE:
+                return new Integer(age);
 
-        case ParseVar.TIME :
-            return new Float(time);
+            case ParseVar.TIME:
+                return new Float(time);
         }
 
         return null;
@@ -109,7 +102,6 @@ public class Kid {
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -120,7 +112,6 @@ public class Kid {
     /**
      * Method description
      *
-     *
      * @return
      */
     public String getLname() {
@@ -129,7 +120,6 @@ public class Kid {
 
     /**
      * Method description
-     *
      *
      * @return
      */

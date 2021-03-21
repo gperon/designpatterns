@@ -26,12 +26,12 @@
 
 
 /*
-* Product.java
-*
-* Created on 7 novembre 2006, 21.23
-*
-* To change this template, choose Tools | Template Manager
-* and open the template in the editor.
+ * Product.java
+ *
+ * Created on 7 novembre 2006, 21.23
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
  */
 package designpatterns.creational.builder;
 
@@ -44,4 +44,5 @@ package designpatterns.creational.builder;
  *
  * @author gperon
  */
-public @interface Product {}
+public @interface Product {
+}

@@ -24,40 +24,35 @@
  */
 
 
-
 package metsker.designpatterns.util.chemical;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
 
 /**
  * This class represents a batch of chemicals.
  */
 public class Substance {
-    private String name;
-    private String symbol;
-    private double atomicWeight;
-    private double grams;
+    private final String name;
+    private final String symbol;
+    private final double atomicWeight;
+    private final double grams;
 
     /**
      * Model a batch of stuff.
      *
-     * @param name
-     *            The name of this substance, such as "Saltpeter."
-     * @param symbol
-     *            The chemical symbol for this substance, such as "KNO3."
-     * @param atomicWeight
-     *            The atomic weight of this substance (101 for saltpeter).
-     * @param grams
-     *            The mass of this batch of substance.
+     * @param name         The name of this substance, such as "Saltpeter."
+     * @param symbol       The chemical symbol for this substance, such as "KNO3."
+     * @param atomicWeight The atomic weight of this substance (101 for saltpeter).
+     * @param grams        The mass of this batch of substance.
      */
     public Substance(String name, String symbol, double atomicWeight,
                      double grams) {

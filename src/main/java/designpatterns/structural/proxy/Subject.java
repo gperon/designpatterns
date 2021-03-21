@@ -26,12 +26,12 @@
 
 
 /*
-* Subject.java
-*
-* Created on 16 dicembre 2006, 17.28
-*
-* To change this template, choose Tools | Template Manager
-* and open the template in the editor.
+ * Subject.java
+ *
+ * Created on 16 dicembre 2006, 17.28
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
  */
 package designpatterns.structural.proxy;
 
@@ -40,4 +40,5 @@ package designpatterns.structural.proxy;
  *
  * @author gperon
  */
-public @interface Subject {}
+public @interface Subject {
+}

@@ -24,39 +24,39 @@
  */
 
 
-
 package gamma.designpatterns.creational.maze;
 
 import gamma.designpatterns.creational.abstractfactory.AbstractMazeFactory;
 import gamma.designpatterns.creational.builder.MazeBuilder;
 
 /**
- *  <p>
+ * <p>
+ * <p>
+ * Title: Design Patterns</p> <p>
+ * <p>
+ * Description: </p> <p>
+ * <p>
+ * Copyright: Copyright (c) 2002</p> <p>
+ * <p>
+ * Company: GioPerLab</p>
  *
- *  Title: Design Patterns</p> <p>
- *
- *  Description: </p> <p>
- *
- *  Copyright: Copyright (c) 2002</p> <p>
- *
- *  Company: GioPerLab</p>
- *
- * @author     giorgio_peron@libero.it
- * @created    7 giugno 2002
- * @version    1.0
+ * @author giorgio_peron@libero.it
+ * @version 1.0
+ * @created 7 giugno 2002
  */
 public class MazeGame {
 
     /**
-     *  Constructor for the MazeGame object
+     * Constructor for the MazeGame object
      */
-    public MazeGame() {}
+    public MazeGame() {
+    }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  factory  Description of the Parameter
-     * @return          Description of the Return Value
+     * @param factory Description of the Parameter
+     * @return Description of the Return Value
      */
     public static Maze createMaze(AbstractMazeFactory factory) {
         Maze aMaze = factory.makeMaze();
@@ -78,10 +78,10 @@ public class MazeGame {
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  builder  Description of the Parameter
-     * @return          Description of the Return Value
+     * @param builder Description of the Parameter
+     * @return Description of the Return Value
      */
     public Maze createMaze(MazeBuilder builder) {
         builder.buildMaze();
@@ -93,10 +93,10 @@ public class MazeGame {
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  builder  Description of the Parameter
-     * @return          Description of the Return Value
+     * @param builder Description of the Parameter
+     * @return Description of the Return Value
      */
     public Maze createComplexMaze(MazeBuilder builder) {
         builder.buildRoom(1);
@@ -107,9 +107,9 @@ public class MazeGame {
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @return    Description of the Return Value
+     * @return Description of the Return Value
      */
     public Maze createMaze() {
         Maze aMaze = makeMaze();
@@ -131,39 +131,39 @@ public class MazeGame {
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @return    Description of the Return Value
+     * @return Description of the Return Value
      */
     public Maze makeMaze() {
         return new Maze();
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  n  Description of the Parameter
-     * @return    Description of the Return Value
+     * @param n Description of the Parameter
+     * @return Description of the Return Value
      */
     public Room makeRoom(int n) {
         return new Room(n);
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @return    Description of the Return Value
+     * @return Description of the Return Value
      */
     public Wall makeWall() {
         return new Wall();
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  r1  Description of the Parameter
-     * @param  r2  Description of the Parameter
-     * @return     Description of the Return Value
+     * @param r1 Description of the Parameter
+     * @param r2 Description of the Parameter
+     * @return Description of the Return Value
      */
     public Door makeDoor(Room r1, Room r2) {
         return new Door(r1, r2);

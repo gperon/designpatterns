@@ -24,38 +24,37 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.chainofresponsibility;
 
 /**
- *  <p>
+ * <p>
+ * <p>
+ * Title: </p> <p>
+ * <p>
+ * Description: Design Patterns Examples</p> <p>
+ * <p>
+ * Copyright: Copyright (c) 2003</p> <p>
+ * <p>
+ * Company: GioPerLab</p>
  *
- *  Title: </p> <p>
- *
- *  Description: Design Patterns Examples</p> <p>
- *
- *  Copyright: Copyright (c) 2003</p> <p>
- *
- *  Company: GioPerLab</p>
- *
- * @author     giorgio_peron@libero.it
- * @created    2 marzo 2003
- * @version    1.0
+ * @author giorgio_peron@libero.it
+ * @version 1.0
+ * @created 2 marzo 2003
  */
 public class Button extends Widget {
 
     /**
-     *  Constructor for the Button object
+     * Constructor for the Button object
      *
-     * @param  widget  Description of the Parameter
-     * @param  topic   Description of the Parameter
+     * @param widget Description of the Parameter
+     * @param topic  Description of the Parameter
      */
     public Button(Widget widget, Topic topic) {
         super(widget, topic);
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      */
     public void handleHelp() {
         if (hasHelp()) {

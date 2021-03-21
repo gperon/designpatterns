@@ -24,19 +24,19 @@
  */
 
 
-
 package metsker.designpatterns.util.machine;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
+
 import metsker.designpatterns.util.planning.MachinePlanner;
 import metsker.designpatterns.util.planning.StarPressPlanner;
 
@@ -45,17 +45,14 @@ import metsker.designpatterns.util.planning.StarPressPlanner;
  * "stars".
  *
  * @author Steven J. Metsker
- *
  */
 public class StarPress extends Machine {
 
     /**
      * Create a press with the given id and with the supplied parent machine.
      *
-     * @param id
-     *            the identity of this star press
-     * @param parent
-     *            the composite this machine belongs to
+     * @param id     the identity of this star press
+     * @param parent the composite this machine belongs to
      */
     public StarPress(int id, MachineComponent parent) {
         super(id, parent);
@@ -64,8 +61,7 @@ public class StarPress extends Machine {
     /**
      * Create a press with the given id.
      *
-     * @param id
-     *            the identity of this star press
+     * @param id the identity of this star press
      */
     public StarPress(int id) {
         super(id);
@@ -75,10 +71,8 @@ public class StarPress extends Machine {
      * Create a press with the given id and with access to the mediator that
      * will control bin/machine relations.
      *
-     * @param id
-     *            the identity of this star press
-     * @param Mediator
-     *            the mediator that controls this machine's relation to bins
+     * @param id       the identity of this star press
+     * @param Mediator the mediator that controls this machine's relation to bins
      */
     protected StarPress(int id, TubMediator mediator) {
         this(id, mediator, null);
@@ -88,11 +82,9 @@ public class StarPress extends Machine {
      * Create a press with the given id, with access to the mediator that will
      * control bin/machine relations, and with the supplied parent machine.
      *
-     * @param id
-     *            the identity of this star press
+     * @param id       the identity of this star press
      * @param mediator
-     * @param parent
-     *            the composite this machine belongs to
+     * @param parent   the composite this machine belongs to
      */
     public StarPress(int id, TubMediator mediator, MachineComponent parent) {
         super(id, mediator, parent);

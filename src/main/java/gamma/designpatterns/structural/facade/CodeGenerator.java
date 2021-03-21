@@ -24,13 +24,11 @@
  */
 
 
-
 package gamma.designpatterns.structural.facade;
 
-import java.io.*;
+import java.io.IOException;
 
 /**
- *
  * <p>Title: Design Patterns</p>
  *
  * <p>Description: </p>
@@ -38,8 +36,8 @@ import java.io.*;
  * <p>Copyright: Copyright (c) 2003-2005</p>
  *
  * <p>Company: GioPerLab</p>
- *
- *  The class CodeGenerator is a visitor
+ * <p>
+ * The class CodeGenerator is a visitor
  *
  * @author giorgio_peron@libero.it
  * @version 1.0
@@ -54,14 +52,13 @@ public class CodeGenerator {
     /**
      * Method description
      *
-     *
      * @param sn
      */
-    public void visit(StatementNode sn) {}
+    public void visit(StatementNode sn) {
+    }
 
     /**
      * Method description
-     *
      *
      * @param vn
      */
@@ -79,22 +76,21 @@ public class CodeGenerator {
     /**
      * Method description
      *
-     *
      * @param en
      */
-    public void visit(ExpressionNode en) {}
+    public void visit(ExpressionNode en) {
+    }
 
     /**
      * Method description
-     *
      *
      * @param tn
      */
-    public void visit(TermNode tn) {}
+    public void visit(TermNode tn) {
+    }
 
     /**
      * Method description
-     *
      *
      * @param fn
      */
@@ -112,9 +108,9 @@ public class CodeGenerator {
     /**
      * Method description
      *
-     *
      * @param loen
      */
-    public void visit(ListOfExpressionNode loen) {}
+    public void visit(ListOfExpressionNode loen) {
+    }
     // ...
 }

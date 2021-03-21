@@ -24,38 +24,38 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.command;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- *  <p>
+ * <p>
+ * <p>
+ * Title: </p> <p>
+ * <p>
+ * Description: Design Patterns Examples</p> <p>
+ * <p>
+ * Copyright: Copyright (c) 2003</p> <p>
+ * <p>
+ * Company: GioPerLab</p>
  *
- *  Title: </p> <p>
- *
- *  Description: Design Patterns Examples</p> <p>
- *
- *  Copyright: Copyright (c) 2003</p> <p>
- *
- *  Company: GioPerLab</p>
- *
- * @author     giorgio_peron@libero.it
- * @created    2 marzo 2003
- * @version    1.0
+ * @author giorgio_peron@libero.it
+ * @version 1.0
+ * @created 2 marzo 2003
  */
 public class MacroCommand implements Command {
-    private List<Command> cmds;
+    private final List<Command> cmds;
 
     /**
-     *  Constructor for the MacroCommand object
+     * Constructor for the MacroCommand object
      */
     public MacroCommand() {
         cmds = new ArrayList();
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      */
     public void execute() {
         for (Command cmd : cmds) {
@@ -64,18 +64,18 @@ public class MacroCommand implements Command {
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  c  Description of the Parameter
+     * @param c Description of the Parameter
      */
     public void add(Command c) {
         cmds.add(c);
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  c  Description of the Parameter
+     * @param c Description of the Parameter
      */
     public void remove(Command c) {
         cmds.remove(c);

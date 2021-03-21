@@ -24,12 +24,12 @@
  */
 
 
-
 package gamma.designpatterns.structural.facade;
 
-import java.io.*;
-
-import java.util.*;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * <p>Title: Design Patterns</p>
@@ -44,11 +44,11 @@ import java.util.*;
  * @version 1.0
  */
 public class Scanner {
-    private InputStream is;
-    private StringBuffer lexbuf = new StringBuffer(128);
+    private final InputStream is;
+    private final StringBuffer lexbuf = new StringBuffer(128);
     private int lineno;
     private int position;
-    private static Map<String, TokenType> lookup = new HashMap();
+    private static final Map<String, TokenType> lookup = new HashMap();
 
     static {
         lookup.put("div", TokenType.DIV);
@@ -57,7 +57,6 @@ public class Scanner {
 
     /**
      * Constructs ...
-     *
      *
      * @param is
      */
@@ -68,9 +67,7 @@ public class Scanner {
     /**
      * Method description
      *
-     *
      * @return
-     *
      * @throws IOException
      */
     public Token scan() throws IOException {
@@ -131,7 +128,6 @@ public class Scanner {
     /**
      * Method description
      *
-     *
      * @return
      */
     public int getLine() {
@@ -140,7 +136,6 @@ public class Scanner {
 
     /**
      * Method description
-     *
      *
      * @return
      */

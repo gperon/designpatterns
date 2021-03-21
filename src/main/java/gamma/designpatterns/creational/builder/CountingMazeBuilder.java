@@ -24,32 +24,31 @@
  */
 
 
-
 package gamma.designpatterns.creational.builder;
 
 import gamma.designpatterns.creational.maze.Maze;
 
 /**
- *  <p>
+ * <p>
+ * <p>
+ * Title: Design Patterns</p> <p>
+ * <p>
+ * Description: </p> <p>
+ * <p>
+ * Copyright: Copyright (c) 2002</p> <p>
+ * <p>
+ * Company: GioPerLab</p>
  *
- *  Title: Design Patterns</p> <p>
- *
- *  Description: </p> <p>
- *
- *  Copyright: Copyright (c) 2002</p> <p>
- *
- *  Company: GioPerLab</p>
- *
- * @author     giorgio_peron@libero.it
- * @created    7 giugno 2002
- * @version    1.0
+ * @author giorgio_peron@libero.it
+ * @version 1.0
+ * @created 7 giugno 2002
  */
 public class CountingMazeBuilder implements MazeBuilder {
     private int doors;
     private int rooms;
 
     /**
-     *  Constructor for the CountingMazeBuilder object
+     * Constructor for the CountingMazeBuilder object
      */
     public CountingMazeBuilder() {
         doors = 0;
@@ -57,51 +56,52 @@ public class CountingMazeBuilder implements MazeBuilder {
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      */
-    public void buildMaze() {}
+    public void buildMaze() {
+    }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  roomNumber  Description of the Parameter
+     * @param roomNumber Description of the Parameter
      */
     public void buildRoom(int roomNumber) {
         rooms++;
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  roomFrom  Description of the Parameter
-     * @param  roomTo    Description of the Parameter
+     * @param roomFrom Description of the Parameter
+     * @param roomTo   Description of the Parameter
      */
     public void buildDoor(int roomFrom, int roomTo) {
         doors++;
     }
 
     /**
-     *  Gets the maze attribute of the CountingMazeBuilder object
+     * Gets the maze attribute of the CountingMazeBuilder object
      *
-     * @return    The maze value
+     * @return The maze value
      */
     public Maze getMaze() {
         return null;
     }
 
     /**
-     *  Gets the roomCount attribute of the CountingMazeBuilder object
+     * Gets the roomCount attribute of the CountingMazeBuilder object
      *
-     * @return    The roomCount value
+     * @return The roomCount value
      */
     public int getRoomCount() {
         return rooms;
     }
 
     /**
-     *  Gets the doorCount attribute of the CountingMazeBuilder object
+     * Gets the doorCount attribute of the CountingMazeBuilder object
      *
-     * @return    The doorCount value
+     * @return The doorCount value
      */
     public int getDoorCount() {
         return doors;

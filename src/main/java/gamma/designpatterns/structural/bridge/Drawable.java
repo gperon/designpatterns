@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.structural.bridge;
 
 /**
@@ -43,7 +42,7 @@ public class Drawable {
 
     /**
      * Constructs ...
-     *
      */
-    public Drawable() {}
+    public Drawable() {
+    }
 }

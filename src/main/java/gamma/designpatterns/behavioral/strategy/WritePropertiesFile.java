@@ -24,19 +24,16 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.strategy;
 
-import java.io.*;
-
-import java.util.*;
+import java.io.FileOutputStream;
+import java.util.Properties;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class WritePropertiesFile {
 
@@ -44,13 +41,12 @@ public class WritePropertiesFile {
      * Write a recommended rocket properties file.
      *
      * @param args
-     *
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
         FileOutputStream out =
-            new FileOutputStream(
-                "src/java/designpatterns/behavioral/strategy/strategy.dat");
+                new FileOutputStream(
+                        "src/java/designpatterns/behavioral/strategy/strategy.dat");
         Properties p = new Properties(System.getProperties());
         p.setProperty("promote", "JSquirrel");
         p.store(out, "myheader");

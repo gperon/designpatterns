@@ -24,26 +24,27 @@
  */
 
 
-
 package metsker.designpatterns.creational.builder;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import java.text.DateFormat;
-import java.text.ParseException;
-
-import java.util.Calendar;
-import java.util.Date;
 
 import metsker.designpatterns.util.Dollars;
+
+import java.text.DateFormat;
+import static java.text.DateFormat.DEFAULT;
+import java.text.ParseException;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 /**
  * This class parses a request for a fireworks exhibition. The request must be a
@@ -61,10 +62,11 @@ import metsker.designpatterns.util.Dollars;
  * next occurs.
  */
 public class ReservationParser {
-    private ReservationBuilder builder;
+    private final ReservationBuilder builder;
 
     /**
      * Create a parser that will pass its results to the specified builder.
+     *
      * @param builder the builder to pass parameters to
      */
     public ReservationParser(ReservationBuilder builder) {
@@ -73,8 +75,8 @@ public class ReservationParser {
 
     /**
      * Parse a reservation request, passing its information to the builder.
-     * @param s the request
      *
+     * @param s the request
      * @throws ParseException
      */
     public void parse(String s) throws ParseException {
@@ -83,8 +85,8 @@ public class ReservationParser {
             String type = tokens[i];
             String val = tokens[i + 1];
             if ("date".compareToIgnoreCase(type) == 0) {
-                Calendar now = Calendar.getInstance();
-                DateFormat formatter = DateFormat.getDateInstance();
+                Calendar now = Calendar.getInstance(Locale.US);
+                DateFormat formatter = DateFormat.getDateInstance(DEFAULT, Locale.US);
                 Date d = formatter.parse(val + ", " + now.get(Calendar.YEAR));
                 builder.setDate(ReservationBuilder.futurize(d));
             } else if ("headcount".compareToIgnoreCase(type) == 0) {

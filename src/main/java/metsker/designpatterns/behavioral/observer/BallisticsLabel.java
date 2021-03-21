@@ -24,24 +24,24 @@
  */
 
 
-
 package metsker.designpatterns.behavioral.observer;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import javax.swing.*;
 
 import metsker.designpatterns.util.Format;
 
-import java.util.*;
+import javax.swing.*;
+import java.util.Observable;
+import java.util.Observer;
 
 /**
  * Instances of this class are labels that show the value of a Tpeak model.
@@ -53,8 +53,7 @@ public class BallisticsLabel extends JLabel implements Observer {
     /**
      * Construct a label that will show the value of a Tpeak object.
      *
-     * @param tPeak
-     *            the model to observe
+     * @param tPeak the model to observe
      */
     public BallisticsLabel(Tpeak tPeak) {
         tPeak.addObserver(this);
@@ -63,10 +62,8 @@ public class BallisticsLabel extends JLabel implements Observer {
     /**
      * Respond to a change in the observed Tpeak model
      *
-     *
      * @param obj
-     * @param arg
-     *            ignored
+     * @param arg ignored
      */
     public void update(Observable obj, Object arg) {
         setText(Format.formatToNPlaces(((Tpeak) obj).getValue(), 2));

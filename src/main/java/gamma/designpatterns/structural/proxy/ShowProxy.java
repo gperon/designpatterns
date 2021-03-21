@@ -24,24 +24,22 @@
  */
 
 
-
 package gamma.designpatterns.structural.proxy;
 
-import java.awt.*;
-import java.awt.event.*;
-
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class ShowProxy implements ActionListener {
-    private ImageIconProxy proxy =
-        new ImageIconProxy("designpatterns/structural/proxy/fest.jpg");
+    private final ImageIconProxy proxy =
+            new ImageIconProxy("designpatterns/structural/proxy/fest.jpg");
     private JFrame frame;
     private JButton loadButton;
 

@@ -24,19 +24,19 @@
  */
 
 
-
 package metsker.designpatterns.behavioral.visitor;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
+
 import metsker.designpatterns.util.machine.MachineComponent;
 import metsker.designpatterns.util.machine.OozinozFactory;
 
@@ -51,13 +51,12 @@ public class ShowFindVisitor {
     /**
      * Method description
      *
-     *
      * @param args
      */
     public static void main(String[] args) {
         MachineComponent factory = OozinozFactory.dublin();
         MachineComponent machine = new FindVisitor().find(factory, 3404);
         System.out.println((machine != null)
-                           ? machine.toString() : "Not found");
+                ? machine.toString() : "Not found");
     }
 }

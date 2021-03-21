@@ -24,18 +24,17 @@
  */
 
 
-
 package metsker.designpatterns.behavioral.state;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
 
 /**
@@ -54,13 +53,15 @@ public abstract class DoorState {
      * By default, discard notifications that the door finished opening or
      * closing.
      */
-    public void complete() {}
+    public void complete() {
+    }
 
     /**
      * By default, discard notifications that the door began closing after
      * having been open for a while.
      */
-    public void timeout() {}
+    public void timeout() {
+    }
 
     /**
      * Return a textual desciption of this state.
@@ -75,7 +76,6 @@ public abstract class DoorState {
 
     /**
      * Construct a state for the provided door.
-     *
      *
      * @param door
      */

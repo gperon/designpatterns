@@ -24,39 +24,34 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.chainofresponsibility;
 
 /**
  * Interface description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public interface Chain {
 
     /**
      * Method description
      *
-     *
      * @param c
      */
-    public abstract void addChain(Chain c);
+    void addChain(Chain c);
 
     /**
      * Method description
-     *
      *
      * @param mesg
      */
-    public abstract void sendToChain(String mesg);
+    void sendToChain(String mesg);
 
     /**
      * Method description
      *
-     *
      * @return
      */
-    public Chain getChain();
+    Chain getChain();
 }

@@ -24,15 +24,16 @@
  */
 
 
-
 package metsker.designpatterns.behavioral.visitor;
 
+import metsker.designpatterns.util.filter.WrapFilter;
 import metsker.designpatterns.util.machine.MachineComponent;
 import metsker.designpatterns.util.machine.OozinozFactory;
 
-import java.io.*;
-
-import metsker.designpatterns.util.filter.WrapFilter;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.Writer;
 
 /**
  * Show the use of the rake visitor that collects leaves.
@@ -45,9 +46,7 @@ public class ShowRakeVisitor {
     /**
      * Method description
      *
-     *
      * @param args
-     *
      * @throws IOException
      */
     public static void main(String[] args) throws IOException {

@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.memento;
 
 import java.awt.*;
@@ -49,7 +48,6 @@ public class MoveCommand {
     /**
      * Constructs ...
      *
-     *
      * @param target
      * @param delta
      */
@@ -59,7 +57,6 @@ public class MoveCommand {
 
     /**
      * Method description
-     *
      */
     public void execute() {
         ConstraintSolver solver = ConstraintSolver.instance();
@@ -70,7 +67,6 @@ public class MoveCommand {
 
     /**
      * Method description
-     *
      */
     public void unexecute() {
         ConstraintSolver solver = ConstraintSolver.instance();

@@ -24,39 +24,36 @@
  */
 
 
-
 package metsker.designpatterns.creational.construction;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import java.awt.Point;
 
+import java.awt.*;
 import java.lang.reflect.Constructor;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class ShowReflection {
 
     /**
      * Method description
      *
-     *
      * @param args
      */
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Constructor[] cc = Point.class.getConstructors();
         Constructor cons = null;
         for (int i = 0; i < cc.length; i++) {
@@ -65,8 +62,8 @@ public class ShowReflection {
             }
         }
         try {
-            Object obj = cons.newInstance(new Object[] { new Integer(3),
-                                                         new Integer(4) });
+            Object obj = cons.newInstance(new Integer(3),
+                    new Integer(4));
             System.out.println(obj);
         } catch (Exception e) {
             System.out.println("Exception: " + e.getMessage());

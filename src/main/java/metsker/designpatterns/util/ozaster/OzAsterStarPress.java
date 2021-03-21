@@ -24,19 +24,19 @@
  */
 
 
-
 package metsker.designpatterns.util.ozaster;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
+
 import metsker.designpatterns.behavioral.templatemethod.AsterStarPress;
 import metsker.designpatterns.util.businesscore.Factory;
 import metsker.designpatterns.util.businesscore.MaterialManager;
@@ -44,16 +44,15 @@ import metsker.designpatterns.util.businesscore.MaterialManager;
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class OzAsterStarPress extends AsterStarPress {
 
     /**
-     *  Override the superclass to have our robot collect the
-     *  discharged paste before the star presses flushes
-     *  itself with water.
+     * Override the superclass to have our robot collect the
+     * discharged paste before the star presses flushes
+     * itself with water.
      */
     public void dischargePaste() {
         super.dischargePaste();
@@ -61,23 +60,24 @@ public class OzAsterStarPress extends AsterStarPress {
     }
 
     /**
-     *  @return the material manager singleton.
+     * @return the material manager singleton.
      */
     public MaterialManager getManager() {
         return MaterialManager.getManager();
     }
 
     /**
-     *  Let the Oozinoz material manager know that this
-     *  mold is only partly processed.
-     *  @param id which mold
+     * Let the Oozinoz material manager know that this
+     * mold is only partly processed.
+     *
+     * @param id which mold
      */
     public void markMoldIncomplete(int id) {
         getManager().setMoldIncomplete(id);
     }
 
     /**
-     *  @return the factory singleton; not actually implemented
+     * @return the factory singleton; not actually implemented
      */
     public Factory getFactory() {
         return null;

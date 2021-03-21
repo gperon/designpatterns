@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.structural.facade;
 
 /**
@@ -35,7 +34,7 @@ package gamma.designpatterns.structural.facade;
  * <p>Copyright: Copyright (c) 2003-2005</p>
  *
  * <p>Company: GioPerLab</p>
- *
+ * <p>
  * The ProgramNode hierarchy is an example of the Composite pattern.
  *
  * @author giorgio_peron@libero.it
@@ -47,11 +46,10 @@ public interface ProgramNode {
     /**
      * Method description
      *
-     *
      * @param line
      * @param index
      */
-    public void getSourcePosition(int line, int index);
+    void getSourcePosition(int line, int index);
 
     // ...
     // child manipulation
@@ -59,26 +57,23 @@ public interface ProgramNode {
     /**
      * Method description
      *
-     *
      * @param pn
      */
-    public void add(ProgramNode pn);
+    void add(ProgramNode pn);
 
     /**
      * Method description
      *
-     *
      * @param pn
      */
-    public void remove(ProgramNode pn);
+    void remove(ProgramNode pn);
 
     // ...
 
     /**
      * Method description
      *
-     *
      * @param cg
      */
-    public void traverse(CodeGenerator cg);
+    void traverse(CodeGenerator cg);
 }

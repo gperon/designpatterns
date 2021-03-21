@@ -24,26 +24,25 @@
  */
 
 
-
 package cooper.designpatterns.util.swing;
 
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
+import java.io.RandomAccessFile;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class InputFile {
     RandomAccessFile f = null;
-    String           s = null;
-    boolean          errflag;
+    String s = null;
+    boolean errflag;
 
     /**
      * Constructs ...
-     *
      *
      * @param cls
      * @param fname
@@ -66,7 +65,6 @@ public class InputFile {
     /**
      * Method description
      *
-     *
      * @return
      */
     public boolean checkErr() {
@@ -75,7 +73,6 @@ public class InputFile {
 
     /**
      * Method description
-     *
      */
     public void close() {
         try {
@@ -88,7 +85,6 @@ public class InputFile {
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -110,10 +106,10 @@ public class InputFile {
 
             if (i <= 0) {
                 ret = s.trim();                    // if no commas go to end of line
-                s   = null;                        // and null out stored string
+                s = null;                        // and null out stored string
             } else {
                 ret = s.substring(0, i).trim();    // return left of comma
-                s   = s.substring(i + 1);          // save right of comma
+                s = s.substring(i + 1);          // save right of comma
             }
         } else {
             ret = null;
@@ -124,7 +120,6 @@ public class InputFile {
 
     /**
      * Method description
-     *
      *
      * @return
      */

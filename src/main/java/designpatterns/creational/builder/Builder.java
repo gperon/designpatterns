@@ -26,12 +26,12 @@
 
 
 /*
-* Builder.java
-*
-* Created on 7 novembre 2006, 21.21
-*
-* To change this template, choose Tools | Template Manager
-* and open the template in the editor.
+ * Builder.java
+ *
+ * Created on 7 novembre 2006, 21.21
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
  */
 package designpatterns.creational.builder;
 
@@ -40,4 +40,5 @@ package designpatterns.creational.builder;
  *
  * @author gperon
  */
-public @interface Builder {}
+public @interface Builder {
+}

@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.mediator;
 
 import java.awt.*;
@@ -46,7 +45,6 @@ public class MouseEvent extends AWTEvent {
     /**
      * Constructs ...
      *
-     *
      * @param event
      */
     public MouseEvent(Event event) {
@@ -55,7 +53,6 @@ public class MouseEvent extends AWTEvent {
 
     /**
      * Constructs ...
-     *
      *
      * @param source
      * @param id

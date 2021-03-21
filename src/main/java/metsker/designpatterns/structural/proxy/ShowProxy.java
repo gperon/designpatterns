@@ -24,25 +24,25 @@
  */
 
 
-
 package metsker.designpatterns.structural.proxy;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
+
 import metsker.designpatterns.util.ui.SwingFacade;
 
-import java.awt.*;
-import java.awt.event.*;
-
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Show the use of ImageIconProxy. This application is discussed in the "Proxy"
@@ -50,12 +50,13 @@ import javax.swing.*;
  * preferring the techniques used in the ImageIconLoader class. For this class
  * to execute, an "images" directory must be in the classpath, and this
  * directory must contain absent.jpg, loading.jpg, and fest.jpg.
+ *
  * @author Steven J. Metsker
  * @see ImageIconProxy
  * @see LoadingImageIcon
  */
 public class ShowProxy implements ActionListener {
-    private ImageIconProxy proxy = new ImageIconProxy("images/fest.jpg");
+    private final ImageIconProxy proxy = new ImageIconProxy("images/fest.jpg");
     private JFrame frame;
     private JButton loadButton;
 

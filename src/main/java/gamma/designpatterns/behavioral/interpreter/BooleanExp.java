@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.interpreter;
 
 /**
@@ -33,18 +32,18 @@ package gamma.designpatterns.behavioral.interpreter;
  * <p>Description: </p>
  *
  * <p>Copyright: Copyright (c) 2003-2005</p>
- *
- *  * <p>Company: GioPerLab</p>
- *
- *  The grammar is defined as follows1:
- *
- *   BooleanExp ::= VariableExp | Constant | OrExp | AndExp | NotExp |
- *                   '(' BooleanExp ')'
- *   AndExp ::= BooleanExp  'and' BooleanExp
- *   OrExp ::= BooleanExp  'or' BooleanExp
- *   NotExp ::= 'not' BooleanExp
- *   Constant ::= 'true' |  'false'
- *   VariableExp ::= 'A' | 'B' | ... | 'X' | 'Y' | 'Z'
+ * <p>
+ * * <p>Company: GioPerLab</p>
+ * <p>
+ * The grammar is defined as follows1:
+ * <p>
+ * BooleanExp ::= VariableExp | Constant | OrExp | AndExp | NotExp |
+ * '(' BooleanExp ')'
+ * AndExp ::= BooleanExp  'and' BooleanExp
+ * OrExp ::= BooleanExp  'or' BooleanExp
+ * NotExp ::= 'not' BooleanExp
+ * Constant ::= 'true' |  'false'
+ * VariableExp ::= 'A' | 'B' | ... | 'X' | 'Y' | 'Z'
  *
  * @author giorgio_peron@libero.it
  * @version 1.0
@@ -54,29 +53,24 @@ public interface BooleanExp {
     /**
      * Method description
      *
-     *
      * @param aContext
-     *
      * @return
      */
-    public boolean evaluate(Context aContext);
+    boolean evaluate(Context aContext);
 
     /**
      * Method description
-     *
      *
      * @param aName
      * @param exp
-     *
      * @return
      */
-    public BooleanExp replace(String aName, BooleanExp exp);
+    BooleanExp replace(String aName, BooleanExp exp);
 
     /**
      * Method description
      *
-     *
      * @return
      */
-    public BooleanExp copy();
+    BooleanExp copy();
 }

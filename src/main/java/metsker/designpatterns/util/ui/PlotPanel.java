@@ -24,25 +24,23 @@
  */
 
 
-
 package metsker.designpatterns.util.ui;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import java.awt.Color;
-import java.awt.Graphics;
-
-import javax.swing.JPanel;
 
 import metsker.designpatterns.structural.decorator.Function;
+
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * This class displays pair of functions in a panel. The functions
@@ -50,11 +48,11 @@ import metsker.designpatterns.structural.decorator.Function;
  * time goes 0 to 1.
  */
 public class PlotPanel extends JPanel {
-    private int points;
-    private int[] xPoints;
-    private int[] yPoints;
-    private Function xFunction;
-    private Function yFunction;
+    private final int points;
+    private final int[] xPoints;
+    private final int[] yPoints;
+    private final Function xFunction;
+    private final Function yFunction;
 
     /**
      * Create a plot calculated from the provided x and y functions.

@@ -24,23 +24,20 @@
  */
 
 
-
 package cooper.designpatterns.structural.bridge;
 
-import java.util.*;
+import java.util.Vector;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class ProductList extends JawtList {
 
     /**
      * Constructs ...
-     *
      *
      * @param products
      */
@@ -51,8 +48,8 @@ public class ProductList extends JawtList {
 
             // take each strig apart and keep only
             // the product names, discarding the quntities
-            String s     = (String) products.elementAt(i);
-            int    index = s.indexOf("--");    // separate qty from name
+            String s = (String) products.elementAt(i);
+            int index = s.indexOf("--");    // separate qty from name
 
             if (index > 0) {
                 add(s.substring(0, index));

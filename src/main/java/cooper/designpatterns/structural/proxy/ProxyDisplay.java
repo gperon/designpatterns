@@ -24,35 +24,32 @@
  */
 
 
-
 package cooper.designpatterns.structural.proxy;
-
-import java.awt.*;
-
-import javax.swing.*;
 
 import cooper.designpatterns.util.swing.JxFrame;
 
+import javax.swing.*;
+import java.awt.*;
+
 class ImageProxy extends JPanel implements Runnable {
-    int          height, width;
+    int height, width;
     MediaTracker tracker;
-    Image        img;
-    JFrame       frame;
-    Thread       imageCheck;    // to monitor loading
+    Image img;
+    JFrame frame;
+    Thread imageCheck;    // to monitor loading
 
     /**
      * Constructs ...
-     *
      *
      * @param filename
      * @param w
      * @param h
      */
     public ImageProxy(String filename, int w, int h) {
-        height  = h;
-        width   = w;
+        height = h;
+        width = w;
         tracker = new MediaTracker(this);
-        img     = Toolkit.getDefaultToolkit().getImage(getClass().getResource(filename));
+        img = Toolkit.getDefaultToolkit().getImage(getClass().getResource(filename));
         tracker.addImage(img, 0);    // watch for image loading
         imageCheck = new Thread(this);
         imageCheck.start();    // start 2nd thread monitor
@@ -60,19 +57,19 @@ class ImageProxy extends JPanel implements Runnable {
         // this begins actual image loading
         try {
             tracker.waitForID(0, 1);
-        } catch (InterruptedException e) {}
+        } catch (InterruptedException e) {
+        }
     }
 
     /**
      * Method description
-     *
      *
      * @param g
      */
     public void paint(Graphics g) {
         if (tracker.checkID(0)) {
             height = img.getHeight(frame);    // get height
-            width  = img.getWidth(frame);     // and width
+            width = img.getWidth(frame);     // and width
             g.setColor(Color.lightGray);      // erase box
             g.fillRect(0, 0, width, height);
             g.drawImage(img, 0, 0, this);     // draw loaded image
@@ -90,7 +87,6 @@ class ImageProxy extends JPanel implements Runnable {
 
     /**
      * Method description
-     *
      */
     public void run() {
 
@@ -104,14 +100,14 @@ class ImageProxy extends JPanel implements Runnable {
             while (!tracker.checkID(0)) {
                 Thread.sleep(1000);
             }
-        } catch (Exception e) {}
+        } catch (Exception e) {
+        }
 
         repaint();
     }
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -124,15 +120,13 @@ class ImageProxy extends JPanel implements Runnable {
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class ProxyDisplay extends JxFrame {
 
     /**
      * Constructs ...
-     *
      */
     public ProxyDisplay() {
         super("Display proxied image");
@@ -153,7 +147,6 @@ public class ProxyDisplay extends JxFrame {
 
     /**
      * Method description
-     *
      *
      * @param argv
      */

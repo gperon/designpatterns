@@ -24,21 +24,18 @@
  */
 
 
-
 package cooper.designpatterns.creational.factorymethod;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public abstract class Garden {
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -47,14 +44,12 @@ public abstract class Garden {
     /**
      * Method description
      *
-     *
      * @return
      */
     public abstract Plant getCenter();
 
     /**
      * Method description
-     *
      *
      * @return
      */

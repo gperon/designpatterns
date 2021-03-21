@@ -24,37 +24,33 @@
  */
 
 
-
 package cooper.designpatterns.structural.flyweight;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class FlyTest {
 
     /**
      * Constructs ...
-     *
      */
     public FlyTest() {
-        Integer five   = new Integer(5);
+        Integer five = new Integer(5);
         Integer myfive = new Integer(5);
 
         System.out.println(five == myfive);
 
-        String fred  = new String("fred");
-        String fred1 = new String("fred");
+        String fred = "fred";
+        String fred1 = "fred";
 
         System.out.println(fred == fred1);
     }
 
     /**
      * Method description
-     *
      *
      * @param argv
      */

@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.structural.facade;
 
 /**
@@ -49,16 +48,18 @@ public class StackMachineCodeGenerator extends CodeGenerator {
      *
      * @param en ExpressionNode
      * @todo Implement this designpatterns.structural.facade.CodeGenerator
-     *   method
+     * method
      */
-    public void visit(ExpressionNode en) {}
+    public void visit(ExpressionNode en) {
+    }
 
     /**
      * visit
      *
      * @param sn StatementNode
      * @todo Implement this designpatterns.structural.facade.CodeGenerator
-     *   method
+     * method
      */
-    public void visit(StatementNode sn) {}
+    public void visit(StatementNode sn) {
+    }
 }

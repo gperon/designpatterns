@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.memento;
 
 import java.awt.*;
@@ -45,7 +44,6 @@ public class Graphic {
 
     /**
      * Constructs ...
-     *
      */
     public Graphic() {
         super();
@@ -56,8 +54,8 @@ public class Graphic {
     /**
      * Method description
      *
-     *
      * @param p
      */
-    public void move(Point p) {}
+    public void move(Point p) {
+    }
 }

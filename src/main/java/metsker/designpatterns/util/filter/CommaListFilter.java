@@ -24,19 +24,19 @@
  */
 
 
-
 package metsker.designpatterns.util.filter;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
+
 import java.io.IOException;
 import java.io.Writer;
 
@@ -58,8 +58,8 @@ public class CommaListFilter extends OozinozFilter {
 
     /**
      * Plug a comma and a blank in front of this character if need be.
-     * @param c the character to write
      *
+     * @param c the character to write
      * @throws IOException
      */
     public void write(int c) throws IOException {
@@ -73,8 +73,8 @@ public class CommaListFilter extends OozinozFilter {
 
     /**
      * Plug a comma and a blank in front of this string if need be.
-     * @param s the string to write
      *
+     * @param s the string to write
      * @throws IOException
      */
     public void write(String s) throws IOException {

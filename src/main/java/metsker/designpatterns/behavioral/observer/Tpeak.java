@@ -24,19 +24,19 @@
  */
 
 
-
 package metsker.designpatterns.behavioral.observer;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
+
 import java.util.Observable;
 
 /**
@@ -51,8 +51,7 @@ public class Tpeak extends Observable {
     /**
      * Create a model of the time at which a fuel's burn area peaks.
      *
-     * @param value
-     *            the initial peak time
+     * @param value the initial peak time
      */
     public Tpeak(double value) {
         this.value = value;
@@ -66,8 +65,7 @@ public class Tpeak extends Observable {
     }
 
     /**
-     * @param value
-     *            the new value for the peak time
+     * @param value the new value for the peak time
      */
     public void setValue(double value) {
         this.value = value;

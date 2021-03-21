@@ -24,48 +24,49 @@
  */
 
 
-
 package gamma.designpatterns.creational.maze;
 
-import java.util.*;
+import java.util.Hashtable;
+import java.util.Map;
 
 /**
- *  Description of the Class
+ * Description of the Class
  *
- * @author     giorgio
- * @created    2 giugno 2002
+ * @author giorgio
+ * @created 2 giugno 2002
  */
 public class Maze {
-    private Map<Integer, Room> rooms = new Hashtable();
+    private final Map<Integer, Room> rooms = new Hashtable();
 
     /**
-     *  Constructor for the Maze object
+     * Constructor for the Maze object
      */
-    public Maze() {}
+    public Maze() {
+    }
 
     /**
-     *  Adds a feature to the Room attribute of the Maze object
+     * Adds a feature to the Room attribute of the Maze object
      *
-     * @param  r  The feature to be added to the Room attribute
+     * @param r The feature to be added to the Room attribute
      */
     public void addRoom(Room r) {
         rooms.put(r.getRoomNumber(), r);
     }
 
     /**
-     *  Gets the room attribute of the Maze object
+     * Gets the room attribute of the Maze object
      *
-     * @param  index  Description of the Parameter
-     * @return        The room value
+     * @param index Description of the Parameter
+     * @return The room value
      */
     public Room getRoom(int index) {
         return rooms.get(index);
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @return    Description of the Return Value
+     * @return Description of the Return Value
      */
     public String toString() {
         StringBuilder buffer = new StringBuilder("Maze description:\n");

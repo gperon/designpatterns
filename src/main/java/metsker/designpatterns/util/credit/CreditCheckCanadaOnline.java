@@ -24,7 +24,6 @@
  */
 
 
-
 package metsker.designpatterns.util.credit;
 
 import metsker.designpatterns.util.Dollars;
@@ -38,7 +37,7 @@ public class CreditCheckCanadaOnline implements CreditCheck {
     /**
      * @param id a customer's ID number
      * @return the acceptable credit limit for the person with the supplied
-     *         identification number.
+     * identification number.
      */
     public Dollars creditLimit(int id) {
         // logic goes here to contact a Canadian credit agency

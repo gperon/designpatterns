@@ -24,7 +24,6 @@
  */
 
 
-
 package metsker.designpatterns.structural.decorator;
 
 import metsker.designpatterns.util.ui.SwingFacade;
@@ -39,10 +38,9 @@ public class ShowBrightness2 {
     /**
      * Method description
      *
-     *
      * @param args
      */
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         FunPanel panel = new FunPanel();
         panel.setPreferredSize(new java.awt.Dimension(200, 200));
         Function brightness = new Brightness(new T());

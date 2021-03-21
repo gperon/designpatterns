@@ -24,18 +24,17 @@
  */
 
 
-
 package metsker.designpatterns.util.businesscore;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
 
 /**
@@ -45,7 +44,8 @@ package metsker.designpatterns.util.businesscore;
  */
 public class MaterialManager {
     // Force use of the singleton
-    private MaterialManager() {}
+    private MaterialManager() {
+    }
 
     /**
      * This method is not implemented, but only shows the role of a method that
@@ -63,5 +63,6 @@ public class MaterialManager {
      *
      * @param id
      */
-    public void setMoldIncomplete(int id) {}
+    public void setMoldIncomplete(int id) {
+    }
 }

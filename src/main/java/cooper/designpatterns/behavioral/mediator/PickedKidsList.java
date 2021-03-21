@@ -24,7 +24,6 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.mediator;
 
 import cooper.designpatterns.structural.adapter.JawtList;
@@ -32,16 +31,14 @@ import cooper.designpatterns.structural.adapter.JawtList;
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class PickedKidsList extends JawtList {
     Mediator med;
 
     /**
      * Constructs ...
-     *
      *
      * @param md
      */

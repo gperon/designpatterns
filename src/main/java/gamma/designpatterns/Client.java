@@ -24,21 +24,21 @@
  */
 
 
-
 package gamma.designpatterns;
-
-import java.io.*;
 
 import gamma.designpatterns.behavioral.BehavioralClient;
 import gamma.designpatterns.creational.CreationalClient;
 import gamma.designpatterns.structural.StructuralClient;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class Client {
     static final char CREATIONAL = '1';
@@ -49,33 +49,32 @@ public class Client {
     /**
      * Method description
      *
-     *
      * @param args
      */
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         int choice;
         System.out.println("The purpose of this program is to demonstrate design patterns issues.");
-        System.out.println("");
+        System.out.println();
         while (true) {
             switch (showMenu()) {
-                case CREATIONAL :
+                case CREATIONAL:
                     startCreationalExample();
 
                     break;
 
-                case STRUCTURAL :
+                case STRUCTURAL:
                     startStructuralExample();
 
                     break;
 
-                case BEHAVIORAL :
+                case BEHAVIORAL:
                     startBehavioralExample();
 
                     break;
 
-                case 'q' :
+                case 'q':
                     System.exit(0);
-                default :
+                default:
                     break;
             }
         }
@@ -87,9 +86,9 @@ public class Client {
         System.out.println("1) Creational");
         System.out.println("2) Structural");
         System.out.println("3) Behavioral");
-        System.out.println("");
+        System.out.println();
         System.out.println("Press q to quit");
-        System.out.println("");
+        System.out.println();
         System.out.print("-> ");
         System.out.flush();
         if (input == null) {

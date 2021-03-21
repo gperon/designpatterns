@@ -24,26 +24,23 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.templatemethod;
 
-import java.awt.*;
-
 import designpatterns.behavioral.templatemethod.ConcreteClass;
+
+import java.awt.*;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 @ConcreteClass
 public class StandardTriangle extends AbstractTriangle {
 
     /**
      * Constructs ...
-     *
      *
      * @param a
      * @param b
@@ -56,11 +53,9 @@ public class StandardTriangle extends AbstractTriangle {
     /**
      * Method description
      *
-     *
      * @param g
      * @param a
      * @param b
-     *
      * @return
      */
     @Override

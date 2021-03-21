@@ -24,23 +24,26 @@
  */
 
 
-
 package metsker.designpatterns.util.machine;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import java.util.*;
 
 import metsker.designpatterns.behavioral.iterator.ComponentIterator;
 import metsker.designpatterns.behavioral.iterator.CompositeIterator;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Represent a collection of machines: a manufacturing line, a bay, or a
@@ -62,10 +65,8 @@ public class MachineComposite extends MachineComponent {
      * Create a composite with the given id and with the supplied parent machine
      * component.
      *
-     * @param id
-     *            the identity of this composite
-     * @param parent
-     *            the component that this machine belongs to
+     * @param id     the identity of this composite
+     * @param parent the component that this machine belongs to
      */
     public MachineComposite(int id, MachineComponent parent) {
         this(id, parent, (Engineer) null);
@@ -73,7 +74,6 @@ public class MachineComposite extends MachineComponent {
 
     /**
      * Constructs ...
-     *
      *
      * @param id
      * @param parent
@@ -88,12 +88,9 @@ public class MachineComposite extends MachineComponent {
      * Create a composite with the given id, with the supplied parent machine
      * component, and containing the given components.
      *
-     * @param id
-     *            the identity of this composite
-     * @param parent
-     *            the component that this composite belongs to
-     * @param components
-     *            the children of this composite
+     * @param id         the identity of this composite
+     * @param parent     the component that this composite belongs to
+     * @param components the children of this composite
      */
     public MachineComposite(int id, MachineComponent parent,
                             MachineComponent[] components) {
@@ -105,7 +102,7 @@ public class MachineComposite extends MachineComponent {
 
     /**
      * @return the number of machines (leaf nodes) in the tree that this
-     *         composite represents
+     * composite represents
      */
     public int getMachineCount() {
         int count = 0;
@@ -139,7 +136,6 @@ public class MachineComposite extends MachineComponent {
      * here is to call back the visitor indicating the type of this node, namely
      * MachineComposite.
      *
-     *
      * @param v
      */
     public void accept(MachineVisitor v) {
@@ -172,10 +168,9 @@ public class MachineComposite extends MachineComponent {
     }
 
     /**
-     *
      * @param thatId
      * @return a component in this machine graph whose id matches the provided
-     *         one.
+     * one.
      */
     public MachineComponent find(int thatId) {
         if (id == thatId) {
@@ -194,10 +189,9 @@ public class MachineComposite extends MachineComponent {
     }
 
     /**
-     *
      * @param name
      * @return a component in this machine graph whose name matches the provided
-     *         one.
+     * one.
      */
     public MachineComponent find(String name) {
         if (name.equals(this.toString())) {
@@ -216,7 +210,6 @@ public class MachineComposite extends MachineComponent {
     }
 
     /**
-     *
      * @param visited
      * @return an iterator for this composite.
      */

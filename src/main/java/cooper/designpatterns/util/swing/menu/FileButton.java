@@ -24,27 +24,23 @@
  */
 
 
-
 package cooper.designpatterns.util.swing.menu;
 
-import java.awt.*;
-import java.awt.event.*;
-
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class FileButton extends ActionButton {
     JFrame fr;
 
     /**
      * Constructs ...
-     *
      *
      * @param caption
      * @param img
@@ -57,7 +53,6 @@ public class FileButton extends ActionButton {
 
     /**
      * Method description
-     *
      *
      * @param e
      */

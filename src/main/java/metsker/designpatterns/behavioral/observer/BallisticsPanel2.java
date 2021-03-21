@@ -24,27 +24,23 @@
  */
 
 
-
 package metsker.designpatterns.behavioral.observer;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
-import java.awt.Graphics;
 
-import javax.swing.JPanel;
-import javax.swing.JSlider;
+import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-
-import metsker.designpatterns.behavioral.observer.BallisticsFunction;
+import java.awt.*;
 
 /**
  * Plot a ballistics function. This class is refactored from BallisticsPanel_1
@@ -64,11 +60,9 @@ public class BallisticsPanel2 extends JPanel implements ChangeListener {
      * Create a panel that can display the provided function, evaluated against
      * the value of the provided slider.
      *
-     * @param func
-     *            the ballistics function to plot. Ballistics functions vary
-     *            with time and with the time of peak burn area.
+     * @param func   the ballistics function to plot. Ballistics functions vary
+     *               with time and with the time of peak burn area.
      * @param slider
-     *
      */
     public BallisticsPanel2(BallisticsFunction func, JSlider slider) {
         this.func = func;

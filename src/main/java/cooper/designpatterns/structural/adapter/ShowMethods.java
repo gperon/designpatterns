@@ -24,34 +24,30 @@
  */
 
 
-
 package cooper.designpatterns.structural.adapter;
 
+import javax.swing.*;
 import java.lang.reflect.Method;
-
-import javax.swing.JList;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class ShowMethods {
 
     /**
      * Constructs ...
-     *
      */
     public ShowMethods() {
-        JList    list    = new JList();
+        JList list = new JList();
         Method[] methods = list.getClass().getMethods();
 
         for (int i = 0; i < methods.length; i++) {
             System.out.println(methods[i].getName());
 
-            Class cl[] = methods[i].getParameterTypes();
+            Class[] cl = methods[i].getParameterTypes();
 
             for (int j = 0; j < cl.length; j++) {
                 System.out.println(cl[j].toString());
@@ -62,10 +58,9 @@ public class ShowMethods {
     /**
      * Method description
      *
-     *
      * @param argv
      */
-    static public void main(String argv[]) {
+    static public void main(String[] argv) {
         new ShowMethods();
     }
 }

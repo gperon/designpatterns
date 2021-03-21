@@ -24,35 +24,36 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.strategy;
 
-import java.util.*;
+import java.util.Properties;
 
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class PromotionAdvisor implements Advisor {
 
-    /** Field description */
+    /**
+     * Field description
+     */
     public static final PromotionAdvisor singleton = new PromotionAdvisor();
     private Firework promoted;
 
-//  look for a promoted firework
+    //  look for a promoted firework
     private PromotionAdvisor() {
         try {
             Properties p = new Properties();
             p.load(ClassLoader.getSystemResourceAsStream(
-                "config/strategy.dat"));
+                    "config/strategy.dat"));
             String promotedFireworkName = p.getProperty("promote");
             if (promotedFireworkName != null) {
                 promoted = Firework.lookup(promotedFireworkName);
             }
-        } catch (Exception e) {}
+        } catch (Exception e) {
+        }
     }
 
     /**
@@ -60,7 +61,7 @@ public class PromotionAdvisor implements Advisor {
      * promoted firework.
      *
      * @return true if the constructor was able to find a
-     *         promoted firework.
+     * promoted firework.
      */
     public boolean hasItem() {
         return promoted != null;
@@ -69,7 +70,6 @@ public class PromotionAdvisor implements Advisor {
     /**
      * Recommend a nice item for this customer, based what we're
      * promoting.
-     *
      *
      * @param c
      * @return a nice item for the customer to buy

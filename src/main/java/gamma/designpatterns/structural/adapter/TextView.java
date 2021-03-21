@@ -24,7 +24,6 @@
  */
 
 
-
 package gamma.designpatterns.structural.adapter;
 
 import gamma.designpatterns.structural.bridge.View;
@@ -35,6 +34,7 @@ import gamma.designpatterns.structural.bridge.Window;
  * <p>Description: </p>
  * <p>Copyright: Copyright (c) 2002</p>
  * <p>Company: GioPerLab</p>
+ *
  * @author giorgio_peron@libero.it
  * @version 1.0
  */
@@ -45,7 +45,6 @@ public class TextView implements View {
 
     /**
      * Constructs ...
-     *
      */
     public TextView() {
         this(0, 0, 20, 4);
@@ -53,7 +52,6 @@ public class TextView implements View {
 
     /**
      * Constructs ...
-     *
      *
      * @param x
      * @param y
@@ -65,12 +63,11 @@ public class TextView implements View {
         this.y = y;
         this.w = w;
         this.h = h;
-        this.text = new String("Text in the view.");
+        this.text = "Text in the view.";
     }
 
     /**
      * Method description
-     *
      *
      * @param x
      * @param y
@@ -83,7 +80,6 @@ public class TextView implements View {
     /**
      * Method description
      *
-     *
      * @param width
      * @param height
      */
@@ -95,7 +91,6 @@ public class TextView implements View {
     /**
      * Method description
      *
-     *
      * @return
      */
     public boolean isEmpty() {
@@ -104,7 +99,6 @@ public class TextView implements View {
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -115,7 +109,6 @@ public class TextView implements View {
     /**
      * Method description
      *
-     *
      * @param text
      */
     public void setText(String text) {
@@ -124,7 +117,6 @@ public class TextView implements View {
 
     /**
      * Method description
-     *
      *
      * @return
      */
@@ -159,7 +151,7 @@ public class TextView implements View {
      * draw
      *
      * @todo Implement this
-     *   designpatterns.structural.decorator.VisualComponent method
+     * designpatterns.structural.decorator.VisualComponent method
      */
     public void draw() {
         System.out.print("draw TextView: " + text);
@@ -169,15 +161,16 @@ public class TextView implements View {
      * resize
      *
      * @todo Implement this
-     *   designpatterns.structural.decorator.VisualComponent method
+     * designpatterns.structural.decorator.VisualComponent method
      */
-    public void resize() {}
+    public void resize() {
+    }
 
     /**
      * Method description
      *
-     *
      * @param w
      */
-    public void drawOn(Window w) {}
+    public void drawOn(Window w) {
+    }
 }

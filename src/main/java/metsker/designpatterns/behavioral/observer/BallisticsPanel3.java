@@ -24,26 +24,23 @@
  */
 
 
-
 package metsker.designpatterns.behavioral.observer;
 
 /*
-* Copyright (c) 2001, 2005. Steven J. Metsker.
-*
-* Steve Metsker makes no representations or warranties about
-* the fitness of this software for any particular purpose,
-* including the implied warranty of merchantability.
-*
-* Please use this software as you wish with the sole
-* restriction that you may not claim that you wrote it.
+ * Copyright (c) 2001, 2005. Steven J. Metsker.
+ *
+ * Steve Metsker makes no representations or warranties about
+ * the fitness of this software for any particular purpose,
+ * including the implied warranty of merchantability.
+ *
+ * Please use this software as you wish with the sole
+ * restriction that you may not claim that you wrote it.
  */
+
 import javax.swing.*;
-
-import metsker.designpatterns.behavioral.observer.BallisticsFunction;
-
 import java.awt.*;
-
-import java.util.*;
+import java.util.Observable;
+import java.util.Observer;
 
 /**
  * Plot a ballistics function. This class is refactored from BallisticsPanel_2
@@ -61,11 +58,9 @@ public class BallisticsPanel3 extends JPanel implements Observer {
     /**
      * Create a panel that can display the provided function.
      *
-     * @param func
-     *            the ballistics function to plot. Ballistics functions vary
-     *            with time and with the time of peak burn area.
-     * @param tPeak
-     *            an observable model of the time when burn area peaks
+     * @param func  the ballistics function to plot. Ballistics functions vary
+     *              with time and with the time of peak burn area.
+     * @param tPeak an observable model of the time when burn area peaks
      */
     public BallisticsPanel3(BallisticsFunction func, Tpeak tPeak) {
         this.func = func;
@@ -75,10 +70,8 @@ public class BallisticsPanel3 extends JPanel implements Observer {
     /**
      * Respond to a change in the observed Tpeak model
      *
-     *
      * @param o
-     * @param arg
-     *            ignored
+     * @param arg ignored
      */
     public void update(Observable o, Object arg) {
         tPeak = ((Tpeak) o).getValue();

@@ -24,7 +24,6 @@
  */
 
 
-
 package cooper.designpatterns.behavioral.state;
 
 import java.awt.*;
@@ -39,21 +38,19 @@ class CircleMemento extends Memento {
     /**
      * Constructs ...
      *
-     *
      * @param r
      */
     public CircleMemento(VisitorCircle r) {
         super(r);
         circ = r;
-        x    = circ.x;
-        y    = circ.y;
-        w    = circ.w;
-        h    = circ.h;
+        x = circ.x;
+        y = circ.y;
+        w = circ.w;
+        h = circ.h;
     }
 
     /**
      * Method description
-     *
      */
     public void restore() {
 
@@ -70,15 +67,13 @@ class CircleMemento extends Memento {
 /**
  * Class description
  *
- *
- * @version        0.1.1, 2011-11-01
- * @author         <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @author <a href="mailto:giorgio.peron@gmail.com">Giorgio Peron</a>
+ * @version 0.1.1, 2011-11-01
  */
 public class VisitorCircle extends Drawing {
 
     /**
      * Constructs ...
-     *
      *
      * @param xpt
      * @param ypt
@@ -93,7 +88,6 @@ public class VisitorCircle extends Drawing {
 
     /**
      * Method description
-     *
      *
      * @param g
      */

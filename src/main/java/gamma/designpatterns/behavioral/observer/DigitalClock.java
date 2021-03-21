@@ -24,31 +24,30 @@
  */
 
 
-
 package gamma.designpatterns.behavioral.observer;
 
 /**
- *  <p>
+ * <p>
+ * <p>
+ * Title: </p> <p>
+ * <p>
+ * Description: Design Patterns Examples</p> <p>
+ * <p>
+ * Copyright: Copyright (c) 2003</p> <p>
+ * <p>
+ * Company: GioPerLab</p>
  *
- *  Title: </p> <p>
- *
- *  Description: Design Patterns Examples</p> <p>
- *
- *  Copyright: Copyright (c) 2003</p> <p>
- *
- *  Company: GioPerLab</p>
- *
- * @author     giorgio_peron@libero.it
- * @created    2 marzo 2003
- * @version    1.0
+ * @author giorgio_peron@libero.it
+ * @version 1.0
+ * @created 2 marzo 2003
  */
 public class DigitalClock implements Observer {
-    private ClockTimer subject;
+    private final ClockTimer subject;
 
     /**
-     *  Constructor for the DigitalClock object
+     * Constructor for the DigitalClock object
      *
-     * @param  subject  Description of the Parameter
+     * @param subject Description of the Parameter
      */
     public DigitalClock(ClockTimer subject) {
         this.subject = subject;
@@ -56,9 +55,9 @@ public class DigitalClock implements Observer {
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      *
-     * @param  theChangedSubject  Description of the Parameter
+     * @param theChangedSubject Description of the Parameter
      */
     public void update(Subject theChangedSubject) {
         if (theChangedSubject == subject) {
@@ -67,7 +66,7 @@ public class DigitalClock implements Observer {
     }
 
     /**
-     *  Description of the Method
+     * Description of the Method
      */
     private void draw() {
         int hour = subject.getHour();

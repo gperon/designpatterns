@@ -26,12 +26,12 @@
 
 
 /*
-* Proxy.java
-*
-* Created on 16 dicembre 2006, 17.26
-*
-* To change this template, choose Tools | Template Manager
-* and open the template in the editor.
+ * Proxy.java
+ *
+ * Created on 16 dicembre 2006, 17.26
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
  */
 package designpatterns.structural.proxy;
 
@@ -45,6 +45,8 @@ package designpatterns.structural.proxy;
  * <lu>Virtual proxies may cache additional information about the real subject so that they can postpone accessing it. For example, the ImageProxy from the Motivation caches the real image's extent. </lu>
  * <lu>Protection proxies check that the caller has the access permissions required to perform a request. </lu>
  * </il>
+ *
  * @author gperon
  */
-public @interface Proxy {}
+public @interface Proxy {
+}
