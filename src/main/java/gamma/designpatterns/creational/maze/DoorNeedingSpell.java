@@ -24,6 +24,7 @@
  */
 
 
+
 package gamma.designpatterns.creational.maze;
 
 /**
@@ -42,50 +43,23 @@ package gamma.designpatterns.creational.maze;
  * @created 8 giugno 2002
  */
 public class DoorNeedingSpell extends Door {
-
-    /**
-     * Constructor for the DoorNeedingSpell object
-     *
-     * @param r1 Description of the Parameter
-     * @param r2 Description of the Parameter
-     */
     public DoorNeedingSpell(Room r1, Room r2) {
         super(r1, r2);
     }
 
-    /**
-     * Constructor for the DoorNeedingSpell object
-     */
     public DoorNeedingSpell() {
         super();
     }
 
-    /**
-     * Constructor for the DoorNeedingSpell object
-     *
-     * @param door Description of the Parameter
-     */
     protected DoorNeedingSpell(DoorNeedingSpell door) {
         super(door);
     }
 
-    /**
-     * Description of the Method
-     *
-     * @return Description of the Return Value
-     */
+	@Override
     public String toString() {
         return super.toString() + " needing spell";
     }
 
-    /**
-     * Description of the Method
-     *
-     * @return Description of the
-     * Return Value
-     * @throws java.lang.CloneNotSupportedException Description of the
-     *                                              Exception
-     */
     public Object clone() throws java.lang.CloneNotSupportedException {
         return new DoorNeedingSpell(this);
     }

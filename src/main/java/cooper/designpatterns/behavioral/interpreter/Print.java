@@ -24,9 +24,10 @@
  */
 
 
+
 package cooper.designpatterns.behavioral.interpreter;
 
-import java.util.Vector;
+import java.util.List;
 
 /**
  * Class description
@@ -37,56 +38,32 @@ import java.util.Vector;
 public class Print extends Verb {
     Kid[] kids;
 
-    /**
-     * Constructs ...
-     *
-     * @param s
-     */
     public Print(String s) {
         super(s);
         value = PRINT;
     }
 
-    /**
-     * Method description
-     */
     public void execute() {
         String pline;
-
         kids = data.getData();
-
-        // ptable.setDims(kids.length, args.size());
         ptable.clear();
-
         for (int i = 0; i < kids.length; i++) {
             pline = "";    // line in output list
-
             for (int j = 0; j < args.size(); j++) {
-                ParseVar v = (ParseVar) args.elementAt(j);
-
+                ParseVar v = (ParseVar) args.get(j);
                 if (v instanceof MultVar) {
                     MultVar mv = (MultVar) v;
-                    Vector vlist = mv.getVector();
-
+                    List<ParseObject> vlist = mv.getVector();
                     for (int k = 0; k < vlist.size(); k++) {
-                        ParseVar pv = (ParseVar) vlist.elementAt(k);
-
-                        // System.out.print(kids[i].getData(pv.getValue())+"   ");
+                        ParseVar pv = (ParseVar) vlist.get(k);
                         pline += kids[i].getData(pv.getValue()) + "   ";
                     }
                 } else {
-
-                    // System.out.print(kids[i].getData(v.getValue())+"   ");
-                    // ptable.setValueAt( kids[i].getData(v.getValue()), i, j);
                     pline += kids[i].getData(v.getValue()) + "   ";
                 }
             }
-
             ptable.add(pline);
-
-            // System.out.println();
         }
-
         ptable.validate();
         ptable.repaint();
     }

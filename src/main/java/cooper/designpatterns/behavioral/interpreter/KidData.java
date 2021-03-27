@@ -27,8 +27,9 @@
 package cooper.designpatterns.behavioral.interpreter;
 
 import cooper.designpatterns.util.swing.InputFile;
+import java.util.ArrayList;
+import java.util.List;
 
-import java.util.Vector;
 
 /**
  * Class description
@@ -37,7 +38,7 @@ import java.util.Vector;
  * @version 0.1.1, 2011-11-01
  */
 public class KidData {
-    Vector kids;
+    List<Kid> kids;
 
     /**
      * Constructs ...
@@ -45,7 +46,7 @@ public class KidData {
      * @param filename
      */
     public KidData(String filename) {
-        kids = new Vector();
+        kids = new ArrayList<>();
 
         InputFile f = new InputFile(getClass(), filename);
         String s = f.readLine();
@@ -54,69 +55,41 @@ public class KidData {
             if (s.trim().length() > 0) {
                 Kid k = new Kid(s);
 
-                kids.addElement(k);
+                kids.add(k);
             }
 
             s = f.readLine();
         }
     }
 
-    /**
-     * Method description
-     *
-     * @return
-     */
     public int size() {
         return kids.size();
     }
 
-    /**
-     * Method description
-     *
-     * @return
-     */
     public Kid[] getData() {
         Kid[] kd = new Kid[kids.size()];
 
         for (int i = 0; i < kids.size(); i++) {
-            kd[i] = (Kid) kids.elementAt(i);
+            kd[i] = kids.get(i);
         }
 
         return kd;
     }
 
-    /**
-     * Method description
-     *
-     * @param i
-     * @return
-     */
     public Kid getKid(int i) {
-        return (Kid) kids.elementAt(i);
+        return kids.get(i);
     }
 
-    /**
-     * Method description
-     *
-     * @param key
-     * @return
-     */
-    public Vector getKidData(int key) {
-        Vector v = new Vector();
+    public List<Object> getKidData(int key) {
+        List<Object> v = new ArrayList<>();
 
         for (int i = 0; i < kids.size(); i++) {
-            v.addElement(getKid(i).getData(key));
+            v.add(getKid(i).getData(key));
         }
 
         return v;
     }
 
-    /**
-     * Method description
-     *
-     * @param tabName
-     * @return
-     */
     public int getTableKey(String tabName) {
         int key = -1;
 
@@ -145,26 +118,27 @@ public class KidData {
         return key;
     }
 
-    /**
-     * Method description
-     *
-     * @param i
-     * @return
-     */
     public String getTableName(int i) {
         String name = "";
 
         switch (i) {
             case ParseVar.FRNAME:
                 name = "frname";
+				break;
             case ParseVar.LNAME:
                 name = "lname";
+				break;
             case ParseVar.AGE:
                 name = "age";
+				break;
             case ParseVar.CLUB:
                 name = "club";
+				break;
             case ParseVar.TIME:
                 name = "time";
+				break;
+			default:
+				name = "";
         }
 
         return name;

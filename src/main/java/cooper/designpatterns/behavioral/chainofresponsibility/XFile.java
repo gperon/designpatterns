@@ -24,6 +24,7 @@
  */
 
 
+
 package cooper.designpatterns.behavioral.chainofresponsibility;
 
 import java.io.File;
@@ -35,32 +36,14 @@ import java.io.File;
  * @version 0.1.1, 2011-11-01
  */
 public class XFile extends File {
-
-    /**
-     * Constructs ...
-     *
-     * @param filename
-     */
     public XFile(String filename) {
         super(filename);
     }
 
-    /**
-     * Method description
-     *
-     * @param filename
-     * @return
-     */
     public boolean matchName(String filename) {
-        return filename.toLowerCase().equals(getName().toLowerCase());
+        return filename.equalsIgnoreCase(getName());
     }
 
-    /**
-     * Method description
-     *
-     * @param filename
-     * @return
-     */
     public boolean matchRoot(String filename) {
         String root = getRoot().toLowerCase();
         String fname = filename.toLowerCase();
@@ -68,15 +51,9 @@ public class XFile extends File {
         return fname.equals(root);
     }
 
-    /**
-     * Method description
-     *
-     * @return
-     */
     public String getRoot() {
         String name = getName();
         int i = name.lastIndexOf(".");
-
         if (i > 0) {
             name = name.substring(0, i);
         }

@@ -24,8 +24,11 @@
  */
 
 
+
 package cooper.designpatterns.behavioral.interpreter;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Vector;
 
 /**
@@ -35,46 +38,27 @@ import java.util.Vector;
  * @version 0.1.1, 2011-11-01
  */
 public class MultVar extends ParseVar {
-    Vector multVec;
+    List<ParseObject> multVec;
 
-    /**
-     * Constructs ...
-     */
     public MultVar() {
         super("");
-        multVec = new Vector();
+        multVec = new ArrayList<>();
         type = MULTVAR;
     }
 
-    /**
-     * Constructs ...
-     *
-     * @param v1
-     * @param v2
-     */
     public MultVar(ParseObject v1, ParseObject v2) {
         super("");
-        multVec = new Vector();
-        multVec.addElement(v1);
-        multVec.addElement(v2);
+        multVec = new ArrayList<>();
+        multVec.add(v1);
+        multVec.add(v2);
         type = MULTVAR;
     }
 
-    /**
-     * Method description
-     *
-     * @param v1
-     */
     public void add(ParseObject v1) {
-        multVec.addElement(v1);
+        multVec.add(v1);
     }
 
-    /**
-     * Method description
-     *
-     * @return
-     */
-    public Vector getVector() {
+    public List<ParseObject> getVector() {
         return multVec;
     }
 }

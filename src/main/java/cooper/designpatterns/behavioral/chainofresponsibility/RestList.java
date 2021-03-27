@@ -24,11 +24,13 @@
  */
 
 
+
 package cooper.designpatterns.behavioral.chainofresponsibility;
 
 import cooper.designpatterns.structural.adapter.JawtList;
 
 import javax.swing.border.LineBorder;
+
 import java.awt.*;
 
 /**
@@ -40,42 +42,23 @@ import java.awt.*;
 public class RestList extends JawtList implements Chain {
     private Chain nextChain = null;
 
-    /**
-     * Constructs ...
-     */
     public RestList() {
         super(10);    // arg to JawtList
         setBorder(new LineBorder(Color.black));
     }
 
-    /**
-     * Method description
-     *
-     * @param c
-     */
     public void addChain(Chain c) {
         nextChain = c;
     }
 
-    /**
-     * Method description
-     *
-     * @param mesg
-     */
     public void sendToChain(String mesg) {
         add(mesg);    // this is the end of the chain
         repaint();
-
         if (nextChain != null) {
             nextChain.sendToChain(mesg);
         }
     }
 
-    /**
-     * Method description
-     *
-     * @return
-     */
     public Chain getChain() {
         return nextChain;
     }

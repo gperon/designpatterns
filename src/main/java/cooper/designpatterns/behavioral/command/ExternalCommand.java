@@ -24,6 +24,7 @@
  */
 
 
+
 package cooper.designpatterns.behavioral.command;
 
 import java.awt.*;
@@ -38,124 +39,80 @@ import java.awt.event.ActionListener;
  */
 public class ExternalCommand extends Frame implements ActionListener {
     Menu mnuFile;
-    fileOpenCommand mnuOpen;
-    fileExitCommand mnuExit;
-    btnRedCommand btnRed;
+    FileOpenCommand mnuOpen;
+    FileExitCommand mnuExit;
+    BtnRedCommand btnRed;
     Panel p;
     Frame fr;
 
-    /**
-     * Constructs ...
-     */
     public ExternalCommand() {
         super("Frame with external commands");
         fr = this;    // save frame object
-
         MenuBar mbar = new MenuBar();
-
         setMenuBar(mbar);
         mnuFile = new Menu("File", true);
         mbar.add(mnuFile);
-        mnuOpen = new fileOpenCommand("Open...", this);
+        mnuOpen = new FileOpenCommand("Open...", this);
         mnuFile.add(mnuOpen);
-        mnuExit = new fileExitCommand("Exit");
+        mnuExit = new FileExitCommand("Exit");
         mnuFile.add(mnuExit);
         mnuOpen.addActionListener(this);
         mnuExit.addActionListener(this);
         p = new Panel();
         add(p);
-        btnRed = new btnRedCommand("Red", p);
+        btnRed = new BtnRedCommand("Red", p);
         p.add(btnRed);
         btnRed.addActionListener(this);
         setBounds(100, 100, 200, 100);
         setVisible(true);
     }
 
-    /**
-     * Method description
-     *
-     * @param e
-     */
     public void actionPerformed(ActionEvent e) {
         Command obj = (Command) e.getSource();
-
         obj.execute();
     }
 
-    /**
-     * Method description
-     *
-     * @param argv
-     */
-    static public void main(String[] argv) {
+    public static void main(String[] argv) {
         new ExternalCommand();
     }
 }
 
 
-class btnRedCommand extends Button implements Command {
+class BtnRedCommand extends Button implements Command {
     Panel p;
 
-    /**
-     * Constructs ...
-     *
-     * @param caption
-     * @param pnl
-     */
-    public btnRedCommand(String caption, Panel pnl) {
+    public BtnRedCommand(String caption, Panel pnl) {
         super(caption);
         p = pnl;
     }
 
-    /**
-     * Method description
-     */
     public void execute() {
         p.setBackground(Color.red);
     }
 }
 
 
-class fileExitCommand extends MenuItem implements Command {
-
-    /**
-     * Constructs ...
-     *
-     * @param caption
-     */
-    public fileExitCommand(String caption) {
+class FileExitCommand extends MenuItem implements Command {
+    public FileExitCommand(String caption) {
         super(caption);
     }
 
-    /**
-     * Method description
-     */
     public void execute() {
         System.exit(0);
     }
 }
 
 
-class fileOpenCommand extends MenuItem implements Command {
+class FileOpenCommand extends MenuItem implements Command {
     Frame fr;
 
-    /**
-     * Constructs ...
-     *
-     * @param caption
-     * @param frm
-     */
-    public fileOpenCommand(String caption, Frame frm) {
+    public FileOpenCommand(String caption, Frame frm) {
         super(caption);
         fr = frm;
     }
 
-    /**
-     * Method description
-     */
     public void execute() {
         FileDialog fDlg = new FileDialog(fr, "Open file");
-
         fDlg.setVisible(true);
     }
 }

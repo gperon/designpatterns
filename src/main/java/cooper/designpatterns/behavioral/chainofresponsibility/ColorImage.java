@@ -39,28 +39,15 @@ import java.awt.*;
 public class ColorImage extends JPanel implements Chain {
     private Chain nextChain;
 
-    /**
-     * Constructs ...
-     */
     public ColorImage() {
         super();
         setBorder(new LineBorder(Color.black));
     }
 
-    /**
-     * Method description
-     *
-     * @param c
-     */
     public void addChain(Chain c) {
         nextChain = c;
     }
 
-    /**
-     * Method description
-     *
-     * @param mesg
-     */
     public void sendToChain(String mesg) {
         Color c = getColor(mesg);
 
@@ -74,11 +61,6 @@ public class ColorImage extends JPanel implements Chain {
         }
     }
 
-    /**
-     * Method description
-     *
-     * @return
-     */
     public Chain getChain() {
         return nextChain;
     }

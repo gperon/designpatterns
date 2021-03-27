@@ -24,6 +24,7 @@
  */
 
 
+
 package cooper.designpatterns.behavioral.iterator;
 
 /**
@@ -33,32 +34,11 @@ package cooper.designpatterns.behavioral.iterator;
  * @version 0.1.1, 2011-11-01
  */
 public interface Iterator {
-
-    /**
-     * Method description
-     *
-     * @return
-     */
     Object currentItem();
 
-    /**
-     * Method description
-     *
-     * @return
-     */
     Object first();
 
-    /**
-     * Method description
-     *
-     * @return
-     */
     Object next();
 
-    /**
-     * Method description
-     *
-     * @return
-     */
     boolean isDone();
 }

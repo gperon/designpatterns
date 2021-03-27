@@ -24,9 +24,11 @@
  */
 
 
+
 package cooper.designpatterns.behavioral.interpreter;
 
-import java.util.Vector;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Class description
@@ -35,73 +37,42 @@ import java.util.Vector;
  * @version 0.1.1, 2011-11-01
  */
 public class Stack {
-    Vector stk;
+    List<ParseObject> stk;
 
-    /**
-     * Constructs ...
-     */
     public Stack() {
-        stk = new Vector();
+        stk = new ArrayList<>();
     }
 
-    /**
-     * Method description
-     */
     public void dump() {
         for (int i = 0; i < stk.size(); i++) {
-            ParseObject p = (ParseObject) stk.elementAt(i);
-
-            System.out.println(i + " " + p.getType());
+            ParseObject p = stk.get(i);
         }
     }
 
-    /**
-     * Method description
-     *
-     * @param s
-     */
     public void dump(String s) {
         System.out.println(s);
         dump();
     }
 
-    /**
-     * Method description
-     *
-     * @return
-     */
     public ParseObject nextTop() {
         int i = stk.size();
-
         if (i > 1) {
-            return (ParseObject) stk.elementAt(i - 2);
+            return stk.get(i - 2);
         } else {
             return null;
         }
     }
 
-    /**
-     * Method description
-     *
-     * @return
-     */
     public ParseObject pop() {
-        ParseObject obj = (ParseObject) stk.lastElement();
         int i = stk.size() - 1;
-
-        stk.removeElementAt(i);
+        ParseObject obj = stk.get(i);
+        stk.remove(i);
 
         return obj;
     }
 
-    /**
-     * Method description
-     *
-     * @param p
-     */
     public void pop2Push(ParseObject p) {
         int i = stk.size();
-
         if (i >= 2) {
             pop();
             pop();
@@ -111,30 +82,15 @@ public class Stack {
         }
     }
 
-    /**
-     * Method description
-     *
-     * @param obj
-     */
-    public void push(Object obj) {
-        stk.addElement(obj);
+    public void push(ParseObject obj) {
+        stk.add(obj);
     }
 
-    /**
-     * Method description
-     *
-     * @return
-     */
     public ParseObject top() {
-        return (ParseObject) stk.lastElement();
+        return stk.get(stk.size() - 1);
     }
 
-    /**
-     * Method description
-     *
-     * @return
-     */
     public boolean hasMoreElements() {
-        return (stk.size() > 0);
+        return !stk.isEmpty();
     }
 }

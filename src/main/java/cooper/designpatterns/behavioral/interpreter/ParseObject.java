@@ -24,6 +24,7 @@
  */
 
 
+
 package cooper.designpatterns.behavioral.interpreter;
 
 /**
@@ -34,30 +35,16 @@ package cooper.designpatterns.behavioral.interpreter;
  */
 public class ParseObject {
 
-    /**
-     * Field description
-     */
-    public static final int
-            VERB = 1000,
-            VAR = 1010,
-            MULTVAR = 1020;
+    public static final int VERB = 1000;
+    public static final int VAR = 1010;
+    public static final int MULTVAR = 1020;
     protected int value;
     protected int type;
 
-    /**
-     * Method description
-     *
-     * @return
-     */
     public int getType() {
         return type;
     }
 
-    /**
-     * Method description
-     *
-     * @return
-     */
     public int getValue() {
         return value;
     }

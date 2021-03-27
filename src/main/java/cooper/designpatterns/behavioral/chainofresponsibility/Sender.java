@@ -24,10 +24,12 @@
  */
 
 
+
 package cooper.designpatterns.behavioral.chainofresponsibility;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -43,15 +45,10 @@ public class Sender extends JPanel implements Chain, ActionListener {
     private final JTextField tx;
     private final JButton Send;
 
-    /**
-     * Constructs ...
-     */
     public Sender() {
         setLayout(new GridLayout(2, 1));
-
         JPanel tp = new JPanel();
         JPanel bp = new JPanel();
-
         add(tp);
         add(bp);
         tx = new JTextField(10);
@@ -62,41 +59,21 @@ public class Sender extends JPanel implements Chain, ActionListener {
         setBorder(new TitledBorder("Send commands"));
     }
 
-    /**
-     * Method description
-     *
-     * @param e
-     */
     public void actionPerformed(ActionEvent e) {
         String file = tx.getText();
-
         if ((file.length() > 0) && (nextChain != null)) {
             nextChain.sendToChain(file);
         }
     }
 
-    /**
-     * Method description
-     *
-     * @param c
-     */
     public void addChain(Chain c) {
         nextChain = c;
     }
 
-    /**
-     * Method description
-     *
-     * @param mesg
-     */
     public void sendToChain(String mesg) {
-    }    // this one does nothing
+        // this one does nothing
+    }
 
-    /**
-     * Method description
-     *
-     * @return
-     */
     public Chain getChain() {
         return nextChain;
     }

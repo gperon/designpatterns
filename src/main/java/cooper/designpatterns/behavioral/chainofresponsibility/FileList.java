@@ -42,9 +42,6 @@ public class FileList extends RestList {
     String[] files;
     private Chain nextChain;
 
-    /**
-     * Constructs ...
-     */
     public FileList() {
         super();
         setBorder(new CompoundBorder(new EmptyBorder(5, 5, 5, 5), new LineBorder(Color.black)));
@@ -69,20 +66,10 @@ public class FileList extends RestList {
         }
     }
 
-    /**
-     * Method description
-     *
-     * @param c
-     */
     public void addChain(Chain c) {
         nextChain = c;    // next in chain of resp
     }
 
-    /**
-     * Method description
-     *
-     * @param mesg
-     */
     public void sendToChain(String mesg) {
         boolean found = false;
         int i = 0;

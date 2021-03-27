@@ -43,45 +43,21 @@ package gamma.designpatterns.creational.maze;
  */
 public class Wall implements MapSite {
 
-    /**
-     * Constructor for the Wall object
-     */
     public Wall() {
     }
 
-    /**
-     * Constructor for the Wall object
-     *
-     * @param wall Description of the Parameter
-     */
     protected Wall(Wall wall) {
     }
 
-    /**
-     * Description of the Method
-     */
     public void enter() {
         throw new java.lang.UnsupportedOperationException(
                 "Method enter() not yet implemented.");
     }
 
-    /**
-     * Description of the Method
-     *
-     * @return Description of the
-     * Return Value
-     * @throws java.lang.CloneNotSupportedException Description of the
-     *                                              Exception
-     */
     public Object clone() throws java.lang.CloneNotSupportedException {
         return new Wall();
     }
 
-    /**
-     * Description of the Method
-     *
-     * @return Description of the Return Value
-     */
     public String toString() {
         return "Wall";
     }

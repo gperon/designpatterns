@@ -24,9 +24,11 @@
  */
 
 
+
 package cooper.designpatterns.behavioral.interpreter;
 
-import java.util.Vector;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Class description
@@ -39,74 +41,46 @@ public class ParseVerb extends ParseObject {
     /**
      * Field description
      */
-    static public final int
-            PRINT = 100,
-            SORTBY = 110,
-            THENBY = 120;
-    protected Vector args;
+    public static final int PRINT = 100;
+    public static final int SORTBY = 110;
+    public static final int THENBY = 120;
+    protected List<ParseObject> args;
 
-    /**
-     * Constructs ...
-     *
-     * @param s
-     */
     public ParseVerb(String s) {
-        args = new Vector();
+        args = new ArrayList<>();
         s = s.toLowerCase();
         value = -1;
         type = VERB;
-
         if (s.equals("print")) {
             value = PRINT;
         }
-
         if (s.equals("sortby")) {
             value = SORTBY;
         }
     }
 
-    /**
-     * Method description
-     *
-     * @param mv
-     */
     public void addArgs(MultVar mv) {
         args = mv.getVector();
     }
 
-    /**
-     * Method description
-     *
-     * @param p
-     */
     public void addArgs(ParseObject p) {
-        args.addElement(p);
+        args.add(p);
     }
 
-    /**
-     * Method description
-     *
-     * @return
-     */
     public boolean isLegal() {
         return (value >= 0);
     }
 
-    /**
-     * Method description
-     *
-     * @param s
-     * @return
-     */
     public ParseVerb getVerb(String s) {
         switch (value) {
-            case PRINT:
+            case PRINT :
                 return new Print(s);
 
-            case SORTBY:
+            case SORTBY :
                 return new Sort(s);
-        }
 
-        return null;
+            default :
+                return null;
+        }
     }
 }

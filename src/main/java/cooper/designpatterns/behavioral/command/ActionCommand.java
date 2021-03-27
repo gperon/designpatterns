@@ -24,6 +24,7 @@
  */
 
 
+
 package cooper.designpatterns.behavioral.command;
 
 import java.awt.*;
@@ -38,20 +39,16 @@ import java.awt.event.ActionListener;
  */
 public class ActionCommand extends Frame {
     Menu mnuFile;
-    MenuItem mnuOpen, mnuExit;
+    MenuItem mnuOpen;
+    MenuItem mnuExit;
     Button btnRed;
     Panel p;
     Frame fr;
 
-    /**
-     * Constructs ...
-     */
     public ActionCommand() {
         super("Frame without commands");
         fr = this;    // sae cop of this frame
-
         MenuBar mbar = new MenuBar();
-
         setMenuBar(mbar);
         mnuFile = new Menu("File", true);
         mbar.add(mnuFile);
@@ -59,13 +56,13 @@ public class ActionCommand extends Frame {
         mnuFile.add(mnuOpen);
         mnuExit = new MenuItem("Exit");
         mnuFile.add(mnuExit);
-        mnuOpen.addActionListener(new fileOpen());
-        mnuExit.addActionListener(new fileExit());
+        mnuOpen.addActionListener(new FileOpen());
+        mnuExit.addActionListener(new FileExit());
         btnRed = new Button("Red");
         p = new Panel();
         add(p);
         p.add(btnRed);
-        btnRed.addActionListener(new btnRed());
+        btnRed.addActionListener(new BtnRed());
         setBounds(100, 100, 200, 100);
         setVisible(true);
     }
@@ -74,54 +71,27 @@ public class ActionCommand extends Frame {
         System.exit(0);
     }
 
-    /**
-     * Method description
-     *
-     * @param argv
-     */
     static public void main(String[] argv) {
         new ActionCommand();
     }
 
-    class btnRed implements ActionListener {
-
-        /**
-         * Method description
-         *
-         * @param e
-         */
+    class BtnRed implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             p.setBackground(Color.red);
         }
     }
 
 
-    class fileExit implements ActionListener {
-
-        /**
-         * Method description
-         *
-         * @param e
-         */
+    class FileExit implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             System.exit(0);
         }
     }
 
 
-    /*
-     * inner classes
-     */
-    class fileOpen implements ActionListener {
-
-        /**
-         * Method description
-         *
-         * @param e
-         */
+    class FileOpen implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             FileDialog fDlg = new FileDialog(fr, "Open a file", FileDialog.LOAD);
-
             fDlg.setVisible(true);
         }
     }

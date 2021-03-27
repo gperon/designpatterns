@@ -24,6 +24,7 @@
  */
 
 
+
 package cooper.designpatterns.behavioral.command;
 
 /**
@@ -33,9 +34,5 @@ package cooper.designpatterns.behavioral.command;
  * @version 0.1.1, 2011-11-01
  */
 public interface Command {
-
-    /**
-     * Method description
-     */
     void execute();
 }

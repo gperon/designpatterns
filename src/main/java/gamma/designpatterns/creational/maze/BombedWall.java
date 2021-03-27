@@ -43,38 +43,17 @@ package gamma.designpatterns.creational.maze;
  */
 public class BombedWall extends Wall {
 
-    /**
-     * Constructor for the BombedWall object
-     */
     public BombedWall() {
     }
 
-    /**
-     * Constructor for the BombedWall object
-     *
-     * @param wall Description of the Parameter
-     */
     protected BombedWall(BombedWall wall) {
         super(wall);
     }
 
-    /**
-     * Description of the Method
-     *
-     * @return Description of the Return Value
-     */
     public String toString() {
         return "Bombed " + super.toString();
     }
 
-    /**
-     * Description of the Method
-     *
-     * @return Description of the
-     * Return Value
-     * @throws java.lang.CloneNotSupportedException Description of the
-     *                                              Exception
-     */
     public Object clone() throws java.lang.CloneNotSupportedException {
         return new BombedWall(this);
     }

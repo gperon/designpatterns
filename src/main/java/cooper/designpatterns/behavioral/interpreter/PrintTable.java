@@ -24,11 +24,16 @@
  */
 
 
+
 package cooper.designpatterns.behavioral.interpreter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.*;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.TableModel;
+
 import java.util.Vector;
 
 /**
@@ -41,32 +46,16 @@ public class PrintTable extends JScrollPane {
     JTable table;
     ProductModel pmodel;
 
-    /**
-     * Constructs ...
-     */
     public PrintTable() {
         pmodel = new ProductModel();
         table = new JTable(pmodel);
         getViewport().add(table);
     }
 
-    /**
-     * Method description
-     *
-     * @param r
-     * @param c
-     */
     public void setDims(int r, int c) {
         pmodel.setSize(r, c);
     }
 
-    /**
-     * Method description
-     *
-     * @param obj
-     * @param row
-     * @param col
-     */
     public void setValueAt(Object obj, int row, int col) {
         pmodel.setValueAt(obj, row, col);
     }
@@ -74,129 +63,60 @@ public class PrintTable extends JScrollPane {
 
 
 class ProductModel implements TableModel {
-    int rows, columns;
-    Vector columnList;
+    int rows;
+    int columns;
+    List<List<String>> columnList;
 
-    /**
-     * Constructs ...
-     */
     public ProductModel() {
         columns = 0;
         rows = 0;
     }
 
-    /**
-     * Method description
-     *
-     * @param tbm
-     */
-    public void addTableModelListener(TableModelListener tbm) {
-    }
+    public void addTableModelListener(TableModelListener tbm) {}
 
-    /**
-     * Method description
-     *
-     * @param tbm
-     */
-    public void removeTableModelListener(TableModelListener tbm) {
-    }
+    public void removeTableModelListener(TableModelListener tbm) {}
 
-    /**
-     * Method description
-     *
-     * @param r
-     * @param c
-     * @return
-     */
     public boolean isCellEditable(int r, int c) {
         return false;
     }
 
-    /**
-     * Method description
-     *
-     * @param c
-     * @return
-     */
     public Class getColumnClass(int c) {
         return ("").getClass();
     }
 
-    /**
-     * Method description
-     *
-     * @return
-     */
     public int getColumnCount() {
         return columns;
     }
 
-    /**
-     * Method description
-     *
-     * @param c
-     * @return
-     */
     public String getColumnName(int c) {
         return "";
     }
 
-    /**
-     * Method description
-     *
-     * @return
-     */
     public int getRowCount() {
         return rows;
     }
 
-    /**
-     * Method description
-     *
-     * @param r
-     * @param cols
-     */
     public void setSize(int r, int cols) {
         columns = cols;
         rows = r;
-        columnList = new Vector(columns);
-
+        columnList = new ArrayList<>(columns);
         for (int i = 0; i < columns; i++) {
-            Vector v = new Vector(r);
-
+            List<String> v = new ArrayList<>(r);
             for (int j = 0; j < r; j++) {
-                v.addElement("");
+                v.add("");
             }
-
-            columnList.addElement(v);
+            columnList.add(v);
         }
     }
 
-    /**
-     * Method description
-     *
-     * @param row
-     * @param col
-     * @return
-     */
     public Object getValueAt(int row, int col) {
-        Vector v = (Vector) columnList.elementAt(col);
+        List<String> v = columnList.get(col);
 
-        System.out.println(row + " " + v.elementAt(row));
-
-        return v.elementAt(row);
+        return v.get(row);
     }
 
-    /**
-     * Method description
-     *
-     * @param obj
-     * @param row
-     * @param col
-     */
     public void setValueAt(Object obj, int row, int col) {
-        Vector v = (Vector) columnList.elementAt(col);
-
-        v.setElementAt(obj, row);
+        List<String> v = columnList.get(col);
+        v.add(row, (String) obj);
     }
 }

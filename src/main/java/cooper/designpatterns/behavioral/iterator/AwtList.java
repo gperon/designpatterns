@@ -24,6 +24,7 @@
  */
 
 
+
 package cooper.designpatterns.behavioral.iterator;
 
 /**
@@ -33,25 +34,9 @@ package cooper.designpatterns.behavioral.iterator;
  * @version 0.1.1, 2011-11-01
  */
 public interface AwtList {
-
-    /**
-     * Method description
-     *
-     * @param s
-     */
     void add(String s);
 
-    /**
-     * Method description
-     *
-     * @param s
-     */
     void remove(String s);
 
-    /**
-     * Method description
-     *
-     * @return
-     */
     String[] getSelectedItems();
 }

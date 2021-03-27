@@ -98,7 +98,7 @@ public class Door implements MapSite {
             }
         } catch (java.lang.CloneNotSupportedException cnse) {
             cnse.printStackTrace();
-            this.r1 = null;
+            this.r2 = null;
         }
         this.isOpen = door.isOpen;
     }

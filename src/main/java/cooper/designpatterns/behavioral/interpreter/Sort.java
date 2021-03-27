@@ -24,9 +24,10 @@
  */
 
 
+
 package cooper.designpatterns.behavioral.interpreter;
 
-import java.util.Vector;
+import java.util.List;
 
 /**
  * Class description
@@ -38,11 +39,6 @@ public class Sort extends Verb {
     Kid[] kids;
     int pindex;
 
-    /**
-     * Constructs ...
-     *
-     * @param s
-     */
     public Sort(String s) {
         super(s);
         value = SORTBY;
@@ -50,34 +46,33 @@ public class Sort extends Verb {
 
     private boolean compare(int i, int j, int key) {
         boolean cval;
-
         switch (key) {
-            case ParseVar.FRNAME:
+            case ParseVar.FRNAME :
                 cval = kids[i].getFrname().compareTo(kids[j].getFrname()) > 0;
 
                 break;
 
-            case ParseVar.LNAME:
+            case ParseVar.LNAME :
                 cval = kids[i].getLname().compareTo(kids[j].getLname()) > 0;
 
                 break;
 
-            case ParseVar.CLUB:
+            case ParseVar.CLUB :
                 cval = kids[i].getClub().compareTo(kids[j].getClub()) > 0;
 
                 break;
 
-            case ParseVar.AGE:
+            case ParseVar.AGE :
                 cval = kids[i].getAge() > kids[j].getAge();
 
                 break;
 
-            case ParseVar.TIME:
+            case ParseVar.TIME :
                 cval = kids[i].getTime() > kids[j].getTime();
 
                 break;
 
-            default:
+            default :
                 cval = false;
         }
 
@@ -89,19 +84,14 @@ public class Sort extends Verb {
      */
     public void execute() {
         int sortKey;
-
         kids = data.getData();
-
         for (int a = 0; a < args.size(); a++) {
-            ParseVar v = (ParseVar) args.elementAt(a);
-
+            ParseVar v =  (ParseVar) args.get(a);
             if (v instanceof MultVar) {
                 MultVar mv = (MultVar) v;
-                Vector mvec = mv.getVector();
-
+                List<ParseObject> mvec = mv.getVector();
                 for (int k = mvec.size() - 1; k >= 0; k--) {
-                    ParseVar pv = (ParseVar) mvec.elementAt(k);
-
+                    ParseVar pv = (ParseVar) mvec.get(k);
                     sortKey = pv.getValue();
                     sortByKey(sortKey);
                 }
@@ -113,13 +103,10 @@ public class Sort extends Verb {
     }
 
     private void sortByKey(int sortkey) {
-        System.out.println(sortkey);
-
         for (int i = 0; i < kids.length; i++) {
             for (int j = i + 1; j < kids.length; j++) {
                 if (compare(i, j, sortkey)) {
                     Kid tmp = kids[i];
-
                     kids[i] = kids[j];
                     kids[j] = tmp;
                 }

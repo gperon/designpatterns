@@ -38,11 +38,6 @@ import java.awt.event.WindowEvent;
  */
 public class JxFrame extends JFrame {
 
-    /**
-     * Constructs ...
-     *
-     * @param title
-     */
     public JxFrame(String title) {
         super(title);
         setCloseClick();

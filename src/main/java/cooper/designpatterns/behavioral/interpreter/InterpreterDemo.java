@@ -24,9 +24,11 @@
  */
 
 
+
 package cooper.designpatterns.behavioral.interpreter;
 
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -43,27 +45,18 @@ public class InterpreterDemo extends JxFrame implements ActionListener {
     KidData kdata;
     JawtList ptable;
 
-    /**
-     * Constructs ...
-     */
     public InterpreterDemo() {
         super("Interpreter Demo");
         tx = new JTextField(20);
         tx.setText("print frname lname age club time");
         go = new JButton("Go");
-
         JLabel hlp = new JLabel("Ex: print frname age sortby age");
         JPanel p = new JPanel();
-
         getContentPane().add(p);
         p.setLayout(new BorderLayout());
-
         JPanel np = new JPanel();
-
         np.setLayout(new BorderLayout());
-
         JPanel nnp = new JPanel();
-
         p.add("North", np);
         nnp.add(tx);
         nnp.add(go);
@@ -77,24 +70,13 @@ public class InterpreterDemo extends JxFrame implements ActionListener {
         setVisible(true);
     }
 
-    /**
-     * Method description
-     *
-     * @param e
-     */
     public void actionPerformed(ActionEvent e) {
         Parser p = new Parser(tx.getText());
-
         p.setData(kdata, ptable);
         p.execute();
     }
 
-    /**
-     * Method description
-     *
-     * @param argv
-     */
-    static public void main(String[] argv) {
+    public static void main(String[] argv) {
         new InterpreterDemo();
     }
 }

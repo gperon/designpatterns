@@ -38,27 +38,13 @@ public class Verb extends ParseVerb implements Command {
     protected Data data;
     protected JawtList ptable;
 
-    /**
-     * Constructs ...
-     *
-     * @param s
-     */
     public Verb(String s) {
         super(s);
     }
 
-    /**
-     * Method description
-     */
     public void execute() {
     }
 
-    /**
-     * Method description
-     *
-     * @param dt
-     * @param pt
-     */
     public void setData(Data dt, JawtList pt) {
         data = dt;
         ptable = pt;

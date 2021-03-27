@@ -44,44 +44,20 @@ package gamma.designpatterns.creational.maze;
 public class EnchantedRoom extends Room {
     private final Spell spell;
 
-    /**
-     * Constructor for the EnchantedRoom object
-     *
-     * @param roomNumber Description of the Parameter
-     * @param spell      Description of the Parameter
-     */
     public EnchantedRoom(int roomNumber, Spell spell) {
         super(roomNumber);
         this.spell = spell;
     }
 
-    /**
-     * Constructor for the EnchantedRoom object
-     *
-     * @param room Description of the Parameter
-     */
     protected EnchantedRoom(EnchantedRoom room) {
         super(room);
         this.spell = room.spell;
     }
 
-    /**
-     * Description of the Method
-     *
-     * @return Description of the Return Value
-     */
     public String toString() {
         return super.toString() + " spell " + spell;
     }
 
-    /**
-     * Description of the Method
-     *
-     * @return Description of the
-     * Return Value
-     * @throws java.lang.CloneNotSupportedException Description of the
-     *                                              Exception
-     */
     public Object clone() throws java.lang.CloneNotSupportedException {
         return new EnchantedRoom(this);
     }

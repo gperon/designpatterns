@@ -24,6 +24,7 @@
  */
 
 
+
 package cooper.designpatterns.behavioral.chainofresponsibility;
 
 /**
@@ -33,25 +34,9 @@ package cooper.designpatterns.behavioral.chainofresponsibility;
  * @version 0.1.1, 2011-11-01
  */
 public interface Chain {
-
-    /**
-     * Method description
-     *
-     * @param c
-     */
     void addChain(Chain c);
 
-    /**
-     * Method description
-     *
-     * @param mesg
-     */
     void sendToChain(String mesg);
 
-    /**
-     * Method description
-     *
-     * @return
-     */
     Chain getChain();
 }

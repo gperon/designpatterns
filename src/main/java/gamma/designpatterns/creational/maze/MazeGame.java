@@ -24,6 +24,7 @@
  */
 
 
+
 package gamma.designpatterns.creational.maze;
 
 import gamma.designpatterns.creational.abstractfactory.AbstractMazeFactory;
@@ -45,19 +46,8 @@ import gamma.designpatterns.creational.builder.MazeBuilder;
  * @created 7 giugno 2002
  */
 public class MazeGame {
+    public MazeGame() {}
 
-    /**
-     * Constructor for the MazeGame object
-     */
-    public MazeGame() {
-    }
-
-    /**
-     * Description of the Method
-     *
-     * @param factory Description of the Parameter
-     * @return Description of the Return Value
-     */
     public static Maze createMaze(AbstractMazeFactory factory) {
         Maze aMaze = factory.makeMaze();
         Room r1 = factory.makeRoom(1);
@@ -77,12 +67,6 @@ public class MazeGame {
         return aMaze;
     }
 
-    /**
-     * Description of the Method
-     *
-     * @param builder Description of the Parameter
-     * @return Description of the Return Value
-     */
     public Maze createMaze(MazeBuilder builder) {
         builder.buildMaze();
         builder.buildRoom(1);
@@ -92,12 +76,6 @@ public class MazeGame {
         return builder.getMaze();
     }
 
-    /**
-     * Description of the Method
-     *
-     * @param builder Description of the Parameter
-     * @return Description of the Return Value
-     */
     public Maze createComplexMaze(MazeBuilder builder) {
         builder.buildRoom(1);
         // ...
@@ -106,11 +84,6 @@ public class MazeGame {
         return builder.getMaze();
     }
 
-    /**
-     * Description of the Method
-     *
-     * @return Description of the Return Value
-     */
     public Maze createMaze() {
         Maze aMaze = makeMaze();
         Room r1 = makeRoom(1);
@@ -130,41 +103,18 @@ public class MazeGame {
         return aMaze;
     }
 
-    /**
-     * Description of the Method
-     *
-     * @return Description of the Return Value
-     */
     public Maze makeMaze() {
         return new Maze();
     }
 
-    /**
-     * Description of the Method
-     *
-     * @param n Description of the Parameter
-     * @return Description of the Return Value
-     */
     public Room makeRoom(int n) {
         return new Room(n);
     }
 
-    /**
-     * Description of the Method
-     *
-     * @return Description of the Return Value
-     */
     public Wall makeWall() {
         return new Wall();
     }
 
-    /**
-     * Description of the Method
-     *
-     * @param r1 Description of the Parameter
-     * @param r2 Description of the Parameter
-     * @return Description of the Return Value
-     */
     public Door makeDoor(Room r1, Room r2) {
         return new Door(r1, r2);
     }

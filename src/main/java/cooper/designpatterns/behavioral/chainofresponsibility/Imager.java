@@ -39,12 +39,9 @@ import java.io.File;
  */
 public class Imager extends JPanel implements Chain {
     private Chain nextChain;
-    private Image img;
+    private transient Image img;
     private boolean loaded;
 
-    /**
-     * Constructs ...
-     */
     public Imager() {
         super();
         loaded = false;
@@ -94,7 +91,7 @@ public class Imager extends JPanel implements Chain {
         // this begins actual image loading
         try {
             tracker.waitForID(0, 1);
-        } catch (InterruptedException e) {
+        } catch (InterruptedException ignore) {
         }
 
         loaded = true;

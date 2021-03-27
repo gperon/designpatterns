@@ -27,6 +27,8 @@
 package cooper.designpatterns.behavioral.interpreter;
 
 import cooper.designpatterns.behavioral.command.Command;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.util.StringTokenizer;
 import java.util.Vector;
@@ -39,21 +41,15 @@ import java.util.Vector;
  */
 public class Parser implements Command {
     Stack stk;
-    Vector actionList;
+    List<ParseObject> actionList;
     KidData kdata;
     Data data;
 
-    // PrintTable ptable;
     JawtList ptable;
 
-    /**
-     * Constructs ...
-     *
-     * @param line
-     */
     public Parser(String line) {
         stk = new Stack();
-        actionList = new Vector();
+        actionList = new ArrayList<>();
 
         StringTokenizer tok = new StringTokenizer(line);
 
@@ -97,10 +93,10 @@ public class Parser implements Command {
 
                 mv.add(v);
 
-                Vector mvec = mvo.getVector();
+                List<ParseObject> mvec = mvo.getVector();
 
                 for (int i = 0; i < mvec.size(); i++) {
-                    mv.add((ParseVar) mvec.elementAt(i));
+                    mv.add((ParseVar) mvec.get(i));
                 }
 
                 stk.push(mv);
@@ -128,13 +124,13 @@ public class Parser implements Command {
 
             /* move top verb to action list */
             if (stk.top().getType() == ParseObject.VERB) {
-                actionList.addElement(stk.pop());
+                actionList.add(stk.pop());
             }
         }
 
         /* now execute the verbs */
         for (int i = 0; i < actionList.size(); i++) {
-            Verb v = (Verb) actionList.elementAt(i);
+            Verb v = (Verb) actionList.get(i);
 
             v.setData(data, ptable);
             v.execute();
@@ -155,12 +151,6 @@ public class Parser implements Command {
         return (stk.top().getType() == c1) && (stk.nextTop().getType() == c2);
     }
 
-    /**
-     * Method description
-     *
-     * @param k
-     * @param pt
-     */
     public void setData(KidData k, JawtList pt) {
         data = new Data(k.getData());
         ptable = pt;

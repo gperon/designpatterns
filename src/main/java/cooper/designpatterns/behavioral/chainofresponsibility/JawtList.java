@@ -27,64 +27,40 @@
 package cooper.designpatterns.behavioral.chainofresponsibility;
 
 import cooper.designpatterns.util.swing.AwtList;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-import java.util.Vector;
 
-class JListData extends AbstractListModel {
-    private final Vector data;
+class JListData extends AbstractListModel<String> {
+    private final List<String> data;
 
-    /**
-     * Constructs ...
-     */
     public JListData() {
-        data = new Vector();
+        data = new ArrayList<>();
     }
 
-    /**
-     * Method description
-     *
-     * @param s
-     */
     public void addElement(String s) {
-        data.addElement(s);
+        data.add(s);
         fireIntervalAdded(this, data.size() - 1, data.size());
     }
 
-    /**
-     * Method description
-     *
-     * @param s
-     */
     public void removeElement(String s) {
-        data.removeElement(s);
+        data.remove(s);
         fireIntervalRemoved(this, 0, data.size());
     }
 
-    /**
-     * Method description
-     *
-     * @param index
-     * @return
-     */
-    public Object getElementAt(int index) {
-        return data.elementAt(index);
+    public String getElementAt(int index) {
+        return data.get(index);
     }
 
-    /**
-     * Method description
-     *
-     * @return
-     */
     public int getSize() {
         return data.size();
     }
 }
 
 
-//
 
 /**
  * This is a simple adapter class to
@@ -94,62 +70,32 @@ class JListData extends AbstractListModel {
  * @version 0.1.1, 2011-11-01
  */
 public class JawtList extends JScrollPane implements ListSelectionListener, AwtList {
-    private final JList listWindow;
+    private final JList<String> listWindow;
     private final JListData listContents;
 
-    /**
-     * Constructs ...
-     *
-     * @param rows
-     */
-    public JawtList(int rows) {
+    public JawtList() {
         listContents = new JListData();
-        listWindow = new JList(listContents);
+        listWindow = new JList<>(listContents);
         listWindow.setPrototypeCellValue("Abcdefg Hijkmnop");
         getViewport().add(listWindow);
     }
 
-    /**
-     * Method description
-     *
-     * @param s
-     */
     public void add(String s) {
         listContents.addElement(s);
     }
 
-    /**
-     * Method description
-     *
-     * @param s
-     */
     public void remove(String s) {
         listContents.removeElement(s);
     }
 
-    /**
-     * Method description
-     *
-     * @param e
-     */
     public void valueChanged(ListSelectionEvent e) {
     }
 
-    /**
-     * Method description
-     *
-     * @param i
-     */
     public void setSelectedIndex(int i) {
         listWindow.setSelectedIndex(i);
         listWindow.ensureIndexIsVisible(i);
     }
 
-    /**
-     * Method description
-     *
-     * @return
-     */
     public String[] getSelectedItems() {
         Object[] obj = listWindow.getSelectedValues();
         String[] s = new String[obj.length];

@@ -38,18 +38,15 @@ import java.awt.event.ActionListener;
  * @version 0.1.1, 2011-11-01
  */
 public class InterpDemo extends JxFrame implements ActionListener {
-    JButton Go;
+    JButton go;
     KidData kdata;
     JawtList ptable;
     JTextField tx;
 
-    /**
-     * Constructs ...
-     */
     public InterpDemo() {
         super("Interpreter Demo");
         tx = new JTextField(20);
-        Go = new JButton("Go");
+        go = new JButton("Go");
 
         JPanel p = new JPanel();
 
@@ -60,8 +57,8 @@ public class InterpDemo extends JxFrame implements ActionListener {
 
         p.add("North", np);
         np.add(tx);
-        np.add(Go);
-        Go.addActionListener(this);
+        np.add(go);
+        go.addActionListener(this);
         ptable = new JawtList(20);
         p.add("Center", ptable);
         kdata = new KidData("50free.txt");
@@ -69,11 +66,6 @@ public class InterpDemo extends JxFrame implements ActionListener {
         setVisible(true);
     }
 
-    /**
-     * Method description
-     *
-     * @param e
-     */
     public void actionPerformed(ActionEvent e) {
         Parser p = new Parser(tx.getText());
 
@@ -81,12 +73,7 @@ public class InterpDemo extends JxFrame implements ActionListener {
         p.execute();
     }
 
-    /**
-     * Method description
-     *
-     * @param argv
-     */
-    static public void main(String[] argv) {
+    public static void main(String[] argv) {
         new InterpDemo();
     }
 }
